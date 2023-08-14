@@ -1,7 +1,6 @@
 ---
 title: "Envitia MapLink Pro Docs"
 author: "Envitia"
-date: "DATE"
 output: 
   html_document:
      css: css/main.css
