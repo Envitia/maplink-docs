@@ -9,6 +9,7 @@ output:
 
 ---
 [![Envitia MapLink Pro](https://user-images.githubusercontent.com/60386764/159908069-b33f1ba7-6ad9-45d0-a872-dfd38dc40c91.png)](http://maplinkpro.com/){: .center-image }
+
 [![API reference](https://img.shields.io/badge/MapLink%20Pro%20API%20Documentation-84bd00)](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html) [![Blog](https://img.shields.io/badge/Envitia%20Blog-1F2A44)](https://www.envitia.com/category/the-envitia-blog/) 
 
 ## Introduction
