@@ -16,6 +16,9 @@ Envitia’s software technology for mission system developers, enabling them to 
 [Envitia MapLink Pro API Documentation](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html)
 ## Try Envitia MapLink Pro
 [Get an evaluation copy of MapLink Pro](mailto:info@envitia.com?subject=I%20want%20to%20evaluate%20MapLink%20Pro%20please)
+
+## Docs
+| [MapLink Developers Guide](./pdf/MapLink Developer's Guide.pdf) |
 ## Licensing
 Copyright 2023 Envitia Ltd
 
