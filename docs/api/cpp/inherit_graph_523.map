@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_t_m_object.html" title=" " alt="" coords="5,76,92,99"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_t_m_primitive.html" title=" " alt="" coords="140,76,235,99"/>
+<area shape="poly" id="edge301_Node000000_Node000001" title=" " alt="" coords="106,85,140,85,140,90,106,90"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_geometric_primitive.html" title=" " alt="" coords="285,52,428,75"/>
+<area shape="poly" id="edge302_Node000001_Node000002" title=" " alt="" coords="248,76,284,71,285,76,249,81"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_t_m_topological_primitive.html" title=" " alt="" coords="283,99,431,121"/>
+<area shape="poly" id="edge305_Node000001_Node000005" title=" " alt="" coords="249,93,283,97,282,103,248,98"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_instant.html" title=" " alt="" coords="479,5,565,28"/>
+<area shape="poly" id="edge303_Node000002_Node000003" title=" " alt="" coords="410,46,480,26,481,31,411,51"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_period.html" title=" " alt="" coords="479,52,565,75"/>
+<area shape="poly" id="edge304_Node000002_Node000004" title=" " alt="" coords="442,61,479,61,479,66,442,66"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_edge.html" title=" " alt="" coords="483,99,561,121"/>
+<area shape="poly" id="edge306_Node000005_Node000006" title=" " alt="" coords="444,107,482,107,482,113,444,113"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_t_m_node.html" title=" " alt="" coords="482,145,562,168"/>
+<area shape="poly" id="edge307_Node000005_Node000007" title=" " alt="" coords="412,123,483,143,481,148,410,128"/>
+</map>

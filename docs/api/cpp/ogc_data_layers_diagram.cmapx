@@ -1,0 +1,5 @@
+<map id="ogc_data_layers_diagram_map" name="ogc_data_layers_diagram_map">
+<area shape="rect" id="id1" href="class_t_s_l_w_m_s_data_layer.html" title="TSLWMSDataLayer" alt="" coords="241,218,353,244"/>
+<area shape="rect" id="id2" href="class_t_s_l_w_m_t_s_data_layer.html" title="TSLWMTSDataLayer" alt="" coords="86,218,205,244"/>
+<area shape="rect" id="id3" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="78,39,348,94"/>
+</map>

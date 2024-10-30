@@ -1,0 +1,613 @@
+@startuml api_geometry_diagram.png
+hide circle
+hide members
+
+together {
+class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+note top of TSLEntitySet
+  A group of
+  geometries
+  (TSLEntity)
+endnote
+}
+package "Simple Feature Geometry" as Simple_Feature_Geometry <<Rectangle>> [[group__apigroup__geometry__api.html#simple_feature_geometry_diagram{Simple Feature Geometry Package}]]{
+}
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> [[group__apigroup__geometry__api.html#geometry_geodetic_diagram{Geodetic Geometry Package}]]{
+} 
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> [[group__apigroup__geometry__api.html#geometry_multi_diagram{Multi Geometry Groups Package}]]{
+} 
+package "User Geometry" as User_Geometry <<Rectangle>> [[group__apigroup__geometry__api.html#user_geometry_diagram{User Geometry Package}]]{
+} 
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|--down- Geodetic_Geometry
+TSLEntity <|--down- Simple_Feature_Geometry
+TSLEntity <|--down- Multi_Geometry_Groups
+TSLEntity <|--down- User_Geometry
+@enduml
+@startuml api_data_layers_diagram.png
+hide circle
+hide members
+
+together {
+  class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+} 
+
+together {
+  package "Grid Data Layers" as Grid_Data_Layers <<Rectangle>> [[group__apigroup__datalayers.html#grid_data_layers_diagram{Grid Data Layers package}]]{
+  }
+  package "Map Data Layers" as Map_Data_Layers <<Rectangle>> [[group__apigroup__datalayers.html#map_data_layers_diagram{Map Data Layers package}]]{
+  }
+  package "Direct Load Data Layers" as Direct_Load_Data_Layers <<Rectangle>> [[group__apigroup__datalayers.html#direct_load_data_layers_diagram{Direct Load Data Layers package}]]{
+  }
+  package "Overlays" as Overlay_Data_Layers <<Rectangle>> [[group__apigroup__datalayers.html#overlay_data_layers_diagram{Overlays package}]]{
+  }
+  package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> [[group__apigroup__datalayers.html#ogc_data_layers_diagram{OGC Data Layers package}]]{
+  }
+}
+
+TSLDataLayer <|-down Grid_Data_Layers
+TSLDataLayer <|-down OGC_Data_Layers
+TSLDataLayer <|-down Direct_Load_Data_Layers
+TSLDataLayer <|-down Overlay_Data_Layers
+TSLDataLayer <|-down Map_Data_Layers
+@enduml
+@startuml api_drawing_surface_diagram.png
+hide circle
+hide members
+
+class TSLDrawingSurfaceBase [[class_t_s_l_drawing_surface_base.html{TSLDrawingSurfaceBase}]]
+class TSLDrawingSurface [[class_t_s_l_drawing_surface.html{TSLDrawingSurface}]]
+together {
+  class TSLMotifSurface [[class_t_s_l_motif_surface.html{TSLMotifSurface}]]
+  class TSLNTSurface [[class_t_s_l_n_t_surface.html{TSLNTSurface}]]
+  class TSLOpenGLSurface [[class_t_s_l_open_g_l_surface{TSLOpenGLSurface}]]
+}
+together {
+class TSLGLXSurface [[class_t_s_l_g_l_x_surface.html{TSLGLXSurface}]]
+class TSLWGLSurface [[class_t_s_l_w_g_l_surface.html{TSLWGLSurface}]]
+}
+
+TSLDrawingSurfaceBase <|-down- TSLDrawingSurface
+
+TSLDrawingSurface <|-down TSLMotifSurface 
+TSLDrawingSurface <|-down TSLNTSurface
+TSLDrawingSurface <|-down TSLOpenGLSurface
+
+TSLOpenGLSurface <|-down TSLGLXSurface
+TSLOpenGLSurface <|-down TSLWGLSurface 
+@enduml
+@startuml base_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+ } 
+
+ together {
+   package "Grid Data Layers" as Grid_Data_Layers <<Rectangle>> [[#grid_data_layers_diagram{Grid Data Layers package}]]{
+   }
+   package "Map Data Layers" as Map_Data_Layers <<Rectangle>> [[#map_data_layers_diagram{Map Data Layers package}]]{
+   }
+   package "Direct Load Data Layers" as Direct_Load_Data_Layers <<Rectangle>> [[#direct_load_data_layers_diagram{Direct Load Data Layers package}]]{
+   }
+   package "Overlays" as Overlay_Data_Layers <<Rectangle>> [[#overlay_data_layers_diagram{Overlays package}]]{
+   }
+   package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> [[#ogc_data_layers_diagram{OGC Data Layers package}]]{
+   }
+ }
+ 
+ TSLDataLayer <|-down Grid_Data_Layers
+ TSLDataLayer <|-down OGC_Data_Layers
+ TSLDataLayer <|-down Direct_Load_Data_Layers
+ TSLDataLayer <|-down Overlay_Data_Layers
+ TSLDataLayer <|-down Map_Data_Layers
+@enduml
+@startuml grid_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+ } 
+ together {
+   together {
+     package "Map Data Layers" as Map_Data_Layers <<Rectangle>> [[#map_data_layers_diagram{Map Data Layers package}]]{
+     }
+     package "Direct Load Data Layers" as Direct_Load_Data_Layers <<Rectangle>> [[#direct_load_data_layers_diagram{Direct Load Data Layers package}]]{
+     }
+   }
+   together {
+     package "Grid Data Layers" as Grid_Data_Layers <<Rectangle>> {  
+       together {
+         class TSLGARSGridDataLayer [[class_t_s_l_g_a_r_s_grid_data_layer.html{TSLGARSGridDataLayer}]]
+         class TSLLatLongGridDataLayer [[class_t_s_l_lat_long_grid_data_layer.html{TSLLatLongGridDataLayer}]]
+         class TSLMGRSGridDataLayer [[class_t_s_l_c_a_d_r_g_data_layer.html{TSLMGRSGridDataLayer}]]
+       }
+     }
+   }
+   together {
+     package "Overlays" as Overlay_Data_Layers <<Rectangle>> [[#overlay_data_layers_diagram{Overlays package}]]{
+     }
+     package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> [[#ogc_data_layers_diagram{OGC Data Layers package}]]{
+     }
+   }
+ }
+ TSLDataLayer <|- TSLGARSGridDataLayer
+ TSLDataLayer <|- TSLLatLongGridDataLayer
+ TSLDataLayer <|- TSLMGRSGridDataLayer
+
+ TSLDataLayer <|-left Map_Data_Layers
+ TSLDataLayer <|-left Direct_Load_Data_Layers
+
+ TSLDataLayer <|-right Overlay_Data_Layers
+ TSLDataLayer <|-right OGC_Data_Layers
+
+ TSLDataLayer -[hidden]left Map_Data_Layers
+ TSLDataLayer -[hidden]right Overlay_Data_Layers
+@enduml
+@startuml map_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+ }
+ 
+ together {
+   package "Grid Data Layers" as Grid_Data_Layers <<Rectangle>> [[#grid_data_layers_diagram{Grid Data Layers package}]]{
+   }
+   package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> [[#ogc_data_layers_diagram{OGC Data Layers package}]]{
+   }
+ }
+ together {
+   package "Overlays" as Overlay_Data_Layers <<Rectangle>> [[#overlay_data_layers_diagram{Overlays package}]]{
+   }
+   package "Direct Load Data Layers" as Direct_Load_Data_Layers <<Rectangle>> [[#direct_load_data_layers_diagram{Direct Load Data Layers package}]]{
+   }
+ }
+
+ together {
+   package "Map Data Layers" as Map_Data_Layers <<Rectangle>> {
+     together {
+       class TSLMapDataLayer [[class_t_s_l_map_data_layer.html{TSLMapDataLayer}]]]
+       class TSLStaticMapDataLayer [[class_t_s_l_static_map_data_layer.html{TSLStaticMapDataLayer}]]
+     }
+   }
+ }
+
+ TSLDataLayer <|-down Grid_Data_Layers
+ TSLDataLayer <|-down OGC_Data_Layers
+ OGC_Data_Layers -[hidden]down Map_Data_Layers
+ OGC_Data_Layers -[hidden]down Map_Data_Layers
+
+ TSLDataLayer <|-down- TSLMapDataLayer
+ TSLDataLayer <|-down- TSLStaticMapDataLayer
+ 
+ TSLDataLayer <|-down Overlay_Data_Layers
+ TSLDataLayer <|-down Direct_Load_Data_Layers
+ Overlay_Data_Layers -[hidden]down Map_Data_Layers  
+ Direct_Load_Data_Layers -[hidden]down Map_Data_Layers  
+@enduml
+@startuml direct_load_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   package "Map Data Layers" as Map_Data_Layers <<Rectangle>> [[#map_data_layers_diagram{Map Data Layers package}]]{
+   }
+   package "Overlays" as Overlay_Data_Layers <<Rectangle>> [[#overlay_data_layers_diagram{Overlays package}]]{
+   }
+ }
+ together {
+   package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> [[#ogc_data_layers_diagram{OGC Data Layers package}]]{
+   }
+   package "Grid Data Layers" as Grid_Data_Layers <<Rectangle>> [[#grid_data_layers_diagram{Grid Data Layers package}]]{
+   }
+ }
+
+   together {
+     class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+   }
+   together {
+     package "Direct Load Data Layers" as Direct_Load_Data_Layers <<Rectangle>> {
+       together {
+         class TSLDirectImportDataLayer [[class_t_s_l_direct_import_data_layer.html{TSLDirectImportDataLayer}]]
+         class TSLFilterDataLayer [[class_t_s_l_filter_data_layer.html{TSLFilterDataLayer}]]
+     
+         together {
+           class TSLNITFFilterDataLayer [[class_t_s_l_n_i_t_f_filter_data_layer.html{TSLNITFFilterDataLayer}]]
+           class TSLRasterFilterDataLayer [[class_t_s_l_raster_filter_data_layer.html{TSLRasterFilterDataLayer}]]
+         }
+         class TSLKMLDataLayer [[class_t_s_l_k_m_l_data_layer.html{TSLKMLDataLayer}]]
+         class TSLRasterDataLayer [[class_t_s_l_raster_data_layer.html{TSLRasterDataLayer}]]
+         class TSLS63DataLayer [[class_t_s_l_s63_data_layer.html{TSLS63DataLayer}]]
+       }
+     }
+   }
+
+ TSLDataLayer <|-down Map_Data_Layers 
+ TSLDataLayer <|-down Overlay_Data_Layers
+ Overlay_Data_Layers -[hidden]down- Direct_Load_Data_Layers
+
+ TSLDataLayer <|-down- TSLDirectImportDataLayer
+ TSLDataLayer <|-down- TSLFilterDataLayer
+ TSLFilterDataLayer <|-down TSLNITFFilterDataLayer
+ TSLFilterDataLayer <|-down TSLRasterFilterDataLayer
+ TSLDataLayer <|-down- TSLKMLDataLayer
+ TSLDataLayer <|-down- TSLRasterDataLayer
+ TSLDataLayer <|-down- TSLS63DataLayer
+
+ TSLDataLayer <|-right OGC_Data_Layers
+ TSLDataLayer <|-right Grid_Data_Layers
+ OGC_Data_Layers -[hidden]down- Direct_Load_Data_Layers
+ Direct_Load_Data_Layers -[hidden]right- OGC_Data_Layers
+@enduml
+@startuml overlay_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+ }
+ 
+ together {
+   package "Overlays" as Overlay_Data_Layers <<Rectangle>> {
+     together {
+       class TSLCustomDataLayer [[class_t_s_l_custom_data_layer.html{TSLCustomDataLayer}]]
+       together {
+         class TSLCustomClient [[class_t_s_l_custom_client.html{TSLCustomClient}]]
+       }
+       class TSLObjectDataLayer [[class_t_s_l_object_data_layer.html{TSLObjectDataLayer}]]
+       class TSLStandardDataLayer [[class_t_s_l_standard_data_layer.html{TSLStandardDataLayer}]]
+     }
+   }
+ }
+
+ TSLDataLayer <|-down TSLCustomDataLayer
+ TSLCustomDataLayer o-down TSLCustomClient
+ 
+ TSLDataLayer <|-down TSLObjectDataLayer
+ TSLDataLayer <|-down TSLStandardDataLayer
+@enduml
+@startuml ogc_data_layers_diagram.png
+ hide circle
+ hide members
+ 
+ together {
+   class "\n\t\t\t\tTSLDataLayer\t\t\t\t\n" as TSLDataLayer [[class_t_s_l_data_layer.html{TSLDataLayer}]]
+ }
+
+ together {
+   package "OGC Data Layers" as OGC_Data_Layers <<Rectangle>> {
+     together {
+       class TSLWMSDataLayer [[class_t_s_l_w_m_s_data_layer.html{TSLWMSDataLayer}]]
+       class TSLWMTSDataLayer [[class_t_s_l_w_m_t_s_data_layer.html{TSLWMTSDataLayer}]]
+     }
+   }
+ }
+ TSLDataLayer <|-down TSLWMSDataLayer
+ TSLDataLayer <|-down TSLWMTSDataLayer
+@enduml
+@startuml geometry_base_diagram.png
+hide circle
+hide members
+
+together {
+class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+note top of TSLEntitySet
+  A group of
+  geometries
+  (TSLEntity)
+endnote
+}
+package "Simple Feature Geometry" as Simple_Feature_Geometry  <<Rectangle>> [[#simple_feature_geometry_diagram{Simple Feature Geometry Package}]]{
+}
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> [[#geometry_geodetic_diagram{Geodetic Geometry Package}]]{
+} 
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> [[#geometry_multi_diagram{Multi Geometry Groups Package}]]{
+} 
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent 
+TSLEnvelope -[hidden]down- Simple_Feature_Geometry
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|--down- Geodetic_Geometry
+TSLEntity <|--down- Simple_Feature_Geometry
+TSLEntity <|--down- Multi_Geometry_Groups
+@enduml
+@startuml simple_feature_geometry_diagram.png
+hide circle
+hide members
+
+together {
+class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+note top of TSLEntitySet
+  A group of
+  geometries
+  (TSLEntity)
+endnote
+}
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> [[#geometry_geodetic_diagram{Geodetic Geometry Package}]]{
+} 
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> [[#geometry_multi_diagram{Multi Geometry Groups Package}]]{
+} 
+package "User Geometry" as User_Geometry <<Rectangle>> [[#user_geometry_diagram{User Geometry Package}]]{
+} 
+package "Simple Feature Geometry" as Simple_Feature_Geometry <<Rectangle>> {
+  together {
+    together {
+      class TSLPolygon [[class_t_s_l_polygon.html{TSLPolygon}]]
+      class TSLPolyline [[class_t_s_l_polyline.html{TSLPolyline}]]
+    }
+    together {
+    class TSLText [[class_t_s_l_text.html{TSLText}]]
+    class TSLEllipse [[class_t_s_l_ellipse.html{TSLEllipse}]]
+    class TSLArc [[class_t_s_l_arc.html{TSLArc}]]
+    class TSLSymbol [[class_t_s_l_symbol.html{TSLSymbol}]]
+    class TSLRectangle [[class_t_s_l_rectangle.html{TSLRectangle}]]
+    }
+  }
+  class TSLBorderedPolygon [[class_t_s_l_bordered_polygon.html{TSLBorderedPolygon}]]
+} 
+
+together {
+  class TSLCoord [[class_t_s_l_coord.html{TSLCoord}]]
+  class TSLCoordSet [[class_t_s_l_coord_set.html{TSLCoordSet}]]
+}
+
+class TSLBorderInfo [[class_t_s_l_border_info.html{TSLBorderInfo}]]
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|-right- User_Geometry
+TSLEntity <|-left- Geodetic_Geometry
+TSLEntity <|-right- Multi_Geometry_Groups
+
+TSLEnvelope -[hidden]down- Geodetic_Geometry
+TSLEntitySet -[hidden]down- Multi_Geometry_Groups
+
+TSLEntity <|--down- TSLText
+TSLEntity <|--down- TSLArc
+TSLEntity <|--down- TSLEllipse
+TSLEntity <|--down- TSLSymbol
+TSLEntity <|--down- TSLRectangle
+TSLEntity <|--down- TSLPolygon
+TSLEntity <|--down- TSLPolyline
+
+TSLText o--down- TSLCoord
+TSLArc o--down- TSLCoord
+TSLEllipse o--down- TSLCoord
+TSLSymbol o--down- TSLCoord
+TSLRectangle o--down- TSLCoord
+
+TSLCoord "1..n" -right-o "1" TSLCoordSet
+TSLPolyline o-down- TSLCoordSet
+TSLPolygon o-down- "1..n" TSLCoordSet
+TSLPolygon <|-down- TSLBorderedPolygon
+
+TSLBorderedPolygon .down.> TSLBorderInfo
+@enduml
+@startuml geometry_geodetic_diagram.png
+hide circle
+hide members
+
+together {
+class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+note top of TSLEntitySet
+  A group of
+  geometries
+  (TSLEntity)
+endnote
+}
+package "Simple Feature Geometry" as Simple_Feature_Geometry <<Rectangle>> [[#simple_feature_geometry_diagram{Simple Feature Geometry Package}]]{
+}
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> [[#geometry_multi_diagram{Multi Geometry Groups Package}]]{
+}
+package "User Geometry" as User_Geometry <<Rectangle>> [[#user_geometry_diagram{User Geometry Package}]]{
+} 
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> {
+  together {
+    together {
+      class TSLGeodeticPolygon [[class_t_s_l_geodetic_polygon.html{TSLGeodeticPolygon}]]
+      class TSLGeodeticPolyline [[class_t_s_l_geodetic_polyline.html{TSLGeodeticPolyline}]]
+    }
+  
+    together {
+      class TSLGeodeticText [[class_t_s_l_geodetic_text.html{TSLGeodeticText}]]
+      class TSLGeodeticEllipse [[class_t_s_l_geodetic_ellipse.html{TSLGeodeticEllipse}]]
+      class TSLGeodeticArc [[class_t_s_l_geodetic_arc.html{TSLGeodeticArc}]]
+      class TSLGeodeticSymbol [[class_t_s_l_geodetic_symbol.html{TSLGeodeticSymbol}]]
+    }
+  }
+  class TSLBorderedPolygon [[class_t_s_l_bordered_polygon.html{TSLBorderedPolygon}]]
+} 
+
+together {
+class TSLCoord [[class_t_s_l_coord.html{TSLCoord}]]
+class TSLCoordSet [[class_t_s_l_coord_set.html{TSLCoordSet}]]
+}
+
+class TSLBorderInfo [[class_t_s_l_border_info.html{TSLBorderInfo}]]
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|-left- Simple_Feature_Geometry
+TSLEntity <|-right- Multi_Geometry_Groups
+TSLEntity <|-right- User_Geometry
+
+TSLEnvelope -[hidden]down- Simple_Feature_Geometry
+TSLEntitySet -[hidden]down- Multi_Geometry_Groups 
+
+TSLEntity <|--down- TSLGeodeticText
+TSLEntity <|--down- TSLGeodeticArc
+TSLEntity <|--down- TSLGeodeticEllipse
+TSLEntity <|--down- TSLGeodeticSymbol
+TSLEntity <|--down- TSLGeodeticPolygon
+TSLEntity <|--down- TSLGeodeticPolyline
+
+TSLGeodeticText o--down- TSLCoord
+TSLGeodeticArc o--down- TSLCoord
+TSLGeodeticEllipse o--down- TSLCoord
+TSLGeodeticSymbol o--down- TSLCoord
+
+TSLCoord "1..n" -right-o "1" TSLCoordSet
+TSLGeodeticPolygon <|-down- TSLBorderedPolygon
+TSLGeodeticPolygon o-down- "1..n" TSLCoordSet
+TSLGeodeticPolyline o-down- TSLCoordSet
+
+TSLBorderedPolygon .down.> TSLBorderInfo
+@enduml
+@startuml geometry_multi_diagram.png
+hide circle
+hide members
+
+together {
+  class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+  class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+  class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+  class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+  note top of TSLEntitySet
+    A group of 
+    geometries 
+    (TSLEntity)
+  end note
+}
+package "Simple Feature Geometry" as Simple_Feature_Geometry <<Rectangle>> [[#simple_feature_geometry_diagram{Simple Feature Geometry Package}]]{
+}
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> [[#geometry_geodetic_diagram{Geodetic Geometry Package}]]{
+} 
+package "User Geometry" as User_Geometry <<Rectangle>> [[#user_geometry_diagram{User Geometry Package}]]{
+} 
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> {
+  together {
+    together {
+      class TSLMultiPolygon [[class_t_s_l_multi_polygon.html{TSLMultiPolygon}]]
+      class TSLMultiPolyline [[class_t_s_l_multi_polyline.html{TSLMultiPolyline}]]
+    }
+    together {
+      class TSLMultiPoint [[class_t_s_l_multi_point.html{TSLMultiPoint}]]
+    }
+  }
+} 
+
+together {
+class TSLCoord [[class_t_s_l_coord.html{TSLCoord}]]
+class TSLCoordSet [[class_t_s_l_coord_set.html{TSLCoordSet}]]
+}
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|-right- User_Geometry
+TSLEntity <|-left- Simple_Feature_Geometry
+TSLEntity <|-right- Geodetic_Geometry
+
+TSLEnvelope -[hidden]down- Simple_Feature_Geometry
+TSLEntitySet -[hidden]down- Geodetic_Geometry
+
+TSLEntity <|--down- TSLMultiPoint
+TSLEntity <|--down- TSLMultiPolyline
+TSLEntity <|--down- TSLMultiPolygon
+
+TSLMultiPoint o--down- TSLCoord
+
+TSLCoord "1..n" -right-o "1" TSLCoordSet
+TSLMultiPolyline o-down- TSLCoordSet
+TSLMultiPolygon o-down- "1..n" TSLCoordSet
+@enduml
+@startuml user_geometry_diagram.png
+hide circle
+hide members
+
+together {
+  class TSLEntityBase [[class_t_s_l_entity_base.html{TSLEntityBase}]]
+  class TSLEntitySet [[class_t_s_l_entity_set.html{TSLEntitySet}]]
+  class TSLEnvelope [[class_t_s_l_envelope.html{TSLEnvelope}]]
+  class "\n\t\t\t\tTSLEntity\t\t\t\t\n" as TSLEntity [[class_t_s_l_entity.html{TSLEntity}]]
+  note top of TSLEntitySet
+    A group of 
+    geometries 
+    (TSLEntity)
+  end note
+}
+package "Simple Feature Geometry" as Simple_Feature_Geometry <<Rectangle>> [[#simple_feature_geometry_diagram{Simple Feature Geometry Package}]]{
+}
+package "User Geometry" as User_Geometry <<Rectangle>> {
+  class TSLUserGeometryEntity [[class_t_s_l_user_geometry_entity.html{TSLUserGeometryEntity}]]
+} 
+package "Geodetic Geometry" as Geodetic_Geometry <<Rectangle>> [[#geometry_geodetic_diagram{Geodetic Geometry Package}]]{
+} 
+package "Multi Geometry Groups" as Multi_Geometry_Groups <<Rectangle>> [[#geometry_multi_diagram{Multi Geometry Groups Package}]]{
+} 
+
+class TSLCoord [[class_t_s_l_coord.html{TSLCoord}]]
+
+TSLEntityBase <|-down- TSLEntity
+TSLEntity -left- TSLEnvelope : extent
+TSLEntity "1" -right- "0..*" TSLEntitySet 
+TSLEntity <|-right- TSLEntitySet
+
+TSLEntity <|-left- Simple_Feature_Geometry
+TSLEntity <|-right- Multi_Geometry_Groups
+TSLEntity <|-right- Geodetic_Geometry
+
+TSLEnvelope -[hidden]down- Simple_Feature_Geometry
+TSLEntitySet -[hidden]down- Geodetic_Geometry
+
+TSLEntity <|--down- TSLUserGeometryEntity
+
+TSLUserGeometryEntity o-down TSLCoord
+@enduml
+@startuml base_drawing_surface_diagram.png
+hide circle
+hide members
+
+class TSLDrawingSurfaceBase [[class_t_s_l_drawing_surface_base.html{TSLDrawingSurfaceBase}]]
+class TSLDrawingSurface [[class_t_s_l_drawing_surface.html{TSLDrawingSurface}]]
+together {
+  class TSLMotifSurface [[class_t_s_l_motif_surface.html{TSLMotifSurface}]]
+  class TSLNTSurface [[class_t_s_l_n_t_surface.html{TSLNTSurface}]]
+  class TSLOpenGLSurface [[class_t_s_l_open_g_l_surface.html{TSLOpenGLSurface}]]
+}
+together {
+class TSLGLXSurface [[class_t_s_l_g_l_x_surface.html{TSLGLXSurface}]]
+class TSLWGLSurface [[class_t_s_l_w_g_l_surface.html{TSLWGLSurface}]]
+}
+
+TSLDrawingSurfaceBase <|-down- TSLDrawingSurface
+
+TSLDrawingSurface <|-down TSLMotifSurface 
+TSLDrawingSurface <|-down TSLNTSurface
+TSLDrawingSurface <|-down TSLOpenGLSurface
+
+TSLOpenGLSurface <|-down TSLGLXSurface
+TSLOpenGLSurface <|-down TSLWGLSurface 
+@enduml

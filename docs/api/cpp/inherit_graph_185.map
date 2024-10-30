@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_direct_import_data_set.html" title=" " alt="" coords="5,35,141,58"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_direct_import_data_set_raster.html" title=" " alt="" coords="190,11,358,34"/>
+<area shape="poly" id="edge84_Node000000_Node000001" title=" " alt="" coords="155,34,190,30,190,35,155,40"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_direct_import_data_set_vector.html" title=" " alt="" coords="189,58,359,81"/>
+<area shape="poly" id="edge86_Node000000_Node000003" title=" " alt="" coords="155,53,190,57,189,62,155,59"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_direct_import_data_set_multi_level_raster.html" title=" " alt="" coords="407,5,564,40"/>
+<area shape="poly" id="edge85_Node000001_Node000002" title=" " alt="" coords="372,20,407,20,407,25,372,25"/>
+</map>

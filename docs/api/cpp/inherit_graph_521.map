@@ -1,0 +1,15 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_t_m_clock_time.html" title=" " alt="" coords="201,5,304,28"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_t_m_date_and_time.html" title=" " alt="" coords="364,29,483,52"/>
+<area shape="poly" id="edge294_Node000000_Node000001" title=" " alt="" coords="318,23,364,30,364,35,318,28"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_temporal_position.html" title=" " alt="" coords="5,99,141,121"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_cal_date.html" title=" " alt="" coords="207,52,299,75"/>
+<area shape="poly" id="edge295_Node000003_Node000002" title=" " alt="" coords="130,93,207,72,209,77,132,98"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_coordinate.html" title=" " alt="" coords="199,99,306,121"/>
+<area shape="poly" id="edge297_Node000003_Node000004" title=" " alt="" coords="155,107,199,107,199,113,155,113"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_ordinal_position.html" title=" " alt="" coords="189,145,316,168"/>
+<area shape="poly" id="edge299_Node000003_Node000006" title=" " alt="" coords="132,122,209,143,207,148,130,127"/>
+<area shape="poly" id="edge296_Node000002_Node000001" title=" " alt="" coords="312,53,363,46,364,51,313,58"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_julian_date.html" title=" " alt="" coords="378,99,469,121"/>
+<area shape="poly" id="edge298_Node000004_Node000005" title=" " alt="" coords="320,107,378,107,378,113,320,113"/>
+</map>
