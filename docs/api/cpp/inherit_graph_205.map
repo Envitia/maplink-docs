@@ -1,0 +1,17 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_d_s_aggregate.html" title=" " alt="" coords="5,52,112,75"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_d_s_initiative.html" title=" " alt="" coords="180,5,273,28"/>
+<area shape="poly" id="edge124_Node000000_Node000001" title=" " alt="" coords="113,46,184,26,185,31,114,51"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_s_other_aggregate.html" title=" " alt="" coords="160,52,293,75"/>
+<area shape="poly" id="edge125_Node000000_Node000002" title=" " alt="" coords="126,61,160,61,160,66,126,66"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_d_s_series.html" title=" " alt="" coords="183,121,270,144"/>
+<area shape="poly" id="edge127_Node000000_Node000004" title=" " alt="" coords="101,78,199,119,197,124,99,83"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_s_stereo_mate.html" title=" " alt="" coords="355,40,465,63"/>
+<area shape="poly" id="edge126_Node000002_Node000003" title=" " alt="" coords="307,55,354,52,355,58,307,61"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_d_s_platform.html" title=" " alt="" coords="363,87,457,109"/>
+<area shape="poly" id="edge128_Node000004_Node000005" title=" " alt="" coords="283,119,362,104,363,110,284,125"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_d_s_production_series.html" title=" " alt="" coords="341,133,479,156"/>
+<area shape="poly" id="edge129_Node000004_Node000006" title=" " alt="" coords="284,134,341,138,341,143,284,139"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_d_s_sensor.html" title=" " alt="" coords="365,180,455,203"/>
+<area shape="poly" id="edge130_Node000004_Node000007" title=" " alt="" coords="277,146,374,177,373,182,275,151"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_e_x_geographic_extent.html" title=" " alt="" coords="5,52,145,75"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_e_x_bounding_polygon.html" title=" " alt="" coords="212,5,349,28"/>
+<area shape="poly" id="edge175_Node000000_Node000001" title=" " alt="" coords="139,46,229,25,231,31,140,52"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_e_x_geographic_bounding_box.html" title=" " alt="" coords="193,52,368,75"/>
+<area shape="poly" id="edge176_Node000000_Node000002" title=" " alt="" coords="159,61,193,61,193,66,159,66"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_e_x_geographic_description.html" title=" " alt="" coords="199,99,363,121"/>
+<area shape="poly" id="edge177_Node000000_Node000003" title=" " alt="" coords="140,75,231,96,229,101,139,80"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry.html" title=" " alt="" coords="5,123,132,157"/>
+<area shape="rect" id="Node000001" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html" title=" " alt="" coords="180,5,323,40"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="97,111,135,80,179,50,202,38,204,43,181,54,138,84,101,115"/>
+<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polygon.html" title=" " alt="" coords="189,64,314,99"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="135,116,196,96,197,101,137,121"/>
+<area shape="rect" id="Node000003" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polyline.html" title=" " alt="" coords="189,123,314,157"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="146,137,188,137,188,143,146,143"/>
+<area shape="rect" id="Node000004" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_symbol.html" title=" " alt="" coords="189,181,314,216"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="137,159,197,179,196,184,135,164"/>
+<area shape="rect" id="Node000005" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_text.html" title=" " alt="" coords="189,240,314,275"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="101,165,138,196,181,226,204,237,202,242,179,230,135,200,97,169"/>
+</map>

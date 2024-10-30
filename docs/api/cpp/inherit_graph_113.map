@@ -1,0 +1,23 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_t_s_l_attribute_value_operation.html" title=" " alt="" coords="5,252,163,275"/>
+<area shape="rect" id="Node000001" href="$class_t_s_l_attribute_value_operation_and.html" title=" " alt="" coords="211,5,388,28"/>
+<area shape="poly" id="edge38_Node000000_Node000001" title=" " alt="" coords="89,238,104,195,129,140,163,85,185,59,209,37,229,26,232,30,212,41,188,63,167,88,133,143,109,197,94,240"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_attribute_value_operation_else.html" title=" " alt="" coords="211,52,388,75"/>
+<area shape="poly" id="edge39_Node000000_Node000002" title=" " alt="" coords="93,238,111,204,136,163,169,121,209,85,234,72,237,77,212,90,173,124,141,166,116,207,98,241"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_attribute_value_operation_equal_to.html" title=" " alt="" coords="221,99,378,134"/>
+<area shape="poly" id="edge40_Node000000_Node000003" title=" " alt="" coords="101,240,147,192,177,166,209,144,234,132,236,137,212,148,180,170,151,196,105,243"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_attribute_value_operation_greater_than.html" title=" " alt="" coords="221,158,378,193"/>
+<area shape="poly" id="edge41_Node000000_Node000004" title=" " alt="" coords="119,244,210,202,242,190,244,195,212,207,121,248"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_attribute_value_operation_greater_than_or_equal_to.html" title=" " alt="" coords="221,217,378,251"/>
+<area shape="poly" id="edge42_Node000000_Node000005" title=" " alt="" coords="176,248,220,242,221,247,176,253"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_attribute_value_operation_less_than.html" title=" " alt="" coords="221,275,378,310"/>
+<area shape="poly" id="edge43_Node000000_Node000006" title=" " alt="" coords="176,273,221,279,220,285,176,278"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_attribute_value_operation_less_than_or_equal_to.html" title=" " alt="" coords="221,334,378,369"/>
+<area shape="poly" id="edge44_Node000000_Node000007" title=" " alt="" coords="121,278,212,320,244,331,242,336,210,324,119,283"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l_attribute_value_operation_not.html" title=" " alt="" coords="213,393,386,416"/>
+<area shape="poly" id="edge45_Node000000_Node000008" title=" " alt="" coords="105,284,150,332,180,357,212,378,242,391,240,396,209,383,177,361,147,336,101,287"/>
+<area shape="rect" id="Node000009" href="$class_t_s_l_attribute_value_operation_not_equal_to.html" title=" " alt="" coords="221,441,378,475"/>
+<area shape="poly" id="edge46_Node000000_Node000009" title=" " alt="" coords="100,285,143,354,175,392,212,425,236,438,233,443,209,430,171,396,139,357,95,288"/>
+<area shape="rect" id="Node000010" href="$class_t_s_l_attribute_value_operation_or.html" title="This classification operation combines two other TSLAttributeValueOperation instances via an OR state..." alt="" coords="215,500,384,523"/>
+<area shape="poly" id="edge47_Node000000_Node000010" title=" " alt="" coords="95,287,109,330,134,384,168,439,189,464,212,485,234,498,232,502,209,489,185,467,163,442,129,386,104,332,90,289"/>
+</map>
