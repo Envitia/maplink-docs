@@ -21,6 +21,7 @@ The following table lists the operating systems that the MapLink release has bee
 # Compilers
 
 MapLink Pro 11.1+ is built with these components:
+
 | OS | Compiler | Version |
 | ----- | ----- | ----- |
 | Linux | GCC | 11.x |
