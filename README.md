@@ -13,12 +13,12 @@ Envitia’s software technology for mission system developers, enabling them to 
 
 # Getting Started
 ## Installation
-Get the installation package you require from the Downloads section.
-Get a trial licence from our [licensing team](mailto:info@envitia.com?subject=I%20want%20to%20evaluate%20MapLink%20Pro%20please).
-Take a look at our [Quick Start Guide](./pdf/MapLink Pro Quick Start Guide.pdf) to see you through the process.
+- [Get a trial version of MapLink Pro](https://forms.office.com/e/6ydUswfjEe).
+
+- Our [Quick Start Guide](./pdf/MapLink Pro Quick Start Guide.pdf) will see you through the process of getting started.
 
 ## Samples
-MapLink Pro comes unstalled with a variety of sample applications to get you started quickly.
+MapLink Pro comes installed with a variety of sample applications to get you started quickly.
 You can also view our sample code and tips in our [GitHub repos](https://github.com/envitia).
 
 ## Platform Requirements
@@ -26,7 +26,7 @@ MapLink Pro has APIs for [C++](https://www.envitia.com/technologies/products/map
 
 ## Resources
 - [Envitia MapLink Pro API Documentation](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html)
-- [Technical Support](mailto:support@envitia.com)
+- [Technical Support](https://support.envitia.com)
 - [Support Pages](./pages/support/support.md)
 
 # Docs
