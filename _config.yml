@@ -1,9 +1,11 @@
-title: Envitia MapLink Pro
-description: Envitia MapLink Pro documentation.
-show_downloads: false
+title: Envitia MapLink Pro Developer Site
+description: Resources for developers using the Envitia MapLink Pro mapping SDK.
+logo: "/favicon.svg"
+show_downloads: true
 google_analytics:
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
-- jekyll-remote-theme 
+- jekyll-remote-theme
+- jekyll-sitemap
   
   
