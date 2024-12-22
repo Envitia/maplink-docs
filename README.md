@@ -1,19 +1,12 @@
-[![Envitia MapLink Pro](https://user-images.githubusercontent.com/60386764/159908069-b33f1ba7-6ad9-45d0-a872-dfd38dc40c91.png)](https://www.envitia.com/for-developers/maplink-pro/)
-
-[![MapLink Pro Developer Site](https://img.shields.io/badge/MapLink%20Pro%20Developer%20Site-6cc4ea)](https://envitia.github.io/maplink-docs)
-[![API reference](https://img.shields.io/badge/MapLink%20Pro%20API%20Documentation-84bd00)](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html)
-[![Blog](https://img.shields.io/badge/Envitia%20Blog-1F2A44)](https://www.envitia.com/category/the-envitia-blog/) 
-
-# Introduction
+# Envitia MapLink Pro
 
 > **Under construction**
 
-# Envitia MapLink Pro
 Envitia’s software technology for mission system developers, enabling them to create high performance geospatial intelligence, situational awareness and map-based systems. Feature rich and proven in demanding operational systems, Envitia’s MapLink Pro provides system integrators and OEMs with the application control and flexibility they need while minimising delivery time and cost.
 
 # Getting Started
 ## Installation
-- [Get a trial version of MapLink Pro](https://forms.office.com/e/6ydUswfjEe).
+- [Get a trial version of MapLink Pro](https://forms.office.com/e/Lr7jN9TCC0).
 - Our [Quick Start Guide](./pdf/MapLink Pro Quick Start Guide.pdf) will see you through the process of getting started.
 
 ## Samples
@@ -37,7 +30,3 @@ MapLink Pro has APIs for [C++](https://www.envitia.com/technologies/products/map
 - [MapLink 11.1 Installation and Upgrade Notes.pdf](./pdf/MapLink 11.1 Installation and Upgrade Notes.pdf)
 - [MapLink OGC Services Deployment User Guide.pdf](./pdf/MapLink OGC Services Deployment User Guide.pdf)
 - [MapLink S63 & S52 SDK Developers Guide.pdf](./pdf/MapLink S63 & S52 SDK Developers Guide.pdf)
-
-Copyright 2024 Envitia Ltd
-
-[![Envitia MapLink Pro](https://user-images.githubusercontent.com/60386764/159908069-b33f1ba7-6ad9-45d0-a872-dfd38dc40c91.png)](https://www.envitia.com/for-developers/maplink-pro/)
