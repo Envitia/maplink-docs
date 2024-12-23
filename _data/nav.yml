@@ -1,15 +1,36 @@
 nav_title: Navigation
 pages:
-- title: Home
-  url: https://envitia.github.io/maplink-docs/
+- title: HOME
+  url: /
+  colour: 84bd00
 
-- title: Envitia MapLink Pro API Documentation
+- title: INSIGHTS
+  url: https://www.envitia.com/insights/
+  colour: 84bd00
+
+- title: API DOCS
   url: https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html
+  colour: 84bd00
 
-- title: Technical Support
-  url: http://support.envitia.com
+- title: SAMPLES
+  url: https://github.com/envitia
+  colour: 84bd00
 
-- title: Support Pages
-  url: ./pages/support/support.html
+- title: SUPPORT
+  url: /pages/support/support.html
+  colour: 84bd00
+
+- title: RELEASES
+  url: /pages/support/version-lifecycle.html
+  colour: 84bd00
+
+- title: REQUEST A TRIAL
+  url: https://forms.office.com/e/Lr7jN9TCC0
+  colour: 1F2A44
+  
+messages:
+- title: MAPLINK 11 COMING SOON
+  url: /pages/support/version-lifecycle.html
+  colour: red
 
 #https://jekyllrb.com/tutorials/navigation/

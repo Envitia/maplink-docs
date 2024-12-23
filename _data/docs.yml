@@ -1,0 +1,32 @@
+docs:
+- title: MapLink Pro Quick Start Guide
+  url: ./pdf/MapLink Pro Quick Start Guide.pdf
+  colour: 84bd00
+
+- title: MapLink Pro Developer's Guide
+  url: ./pdf/MapLink Developer's Guide.pdf
+  colour: 84bd00
+
+- title: MapLink Studio User Guide
+  url: ./pdf/MapLink Studio User Guide.pdf
+  colour: 84bd00
+
+- title: MapLink 11.0 Deployment of End User Applications
+  url: ./pdf/MapLink 11.0 Deployment of End User Applications.pdf
+  colour: 84bd00
+
+- title: MapLink Pro for Android Developer's Guide
+  url: ./pdf/MapLink Pro for Android Developer's Guide.pdf
+  colour: 84bd00
+
+- title: MapLink 11.1 Installation and Upgrade Notes
+  url: ./pdf/MapLink 11.1 Installation and Upgrade Notes.pdf
+  colour: 84bd00
+
+- title: MapLink OGC Services Deployment User Guide
+  url: ./pdf/MapLink OGC Services Deployment User Guide.pdf
+  colour: 84bd00
+
+- title: MapLink S63 & S52 SDK Developers Guide
+  url: ./pdf/MapLink S63 & S52 SDK Developers Guide.pdf
+  colour: 84bd00

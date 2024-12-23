@@ -1,7 +1,5 @@
 # Envitia MapLink Pro
 
-> **Under construction**
-
 Envitia’s software technology for mission system developers, enabling them to create high performance geospatial intelligence, situational awareness and map-based systems. Feature rich and proven in demanding operational systems, Envitia’s MapLink Pro provides system integrators and OEMs with the application control and flexibility they need while minimising delivery time and cost.
 
 # Getting Started
@@ -22,11 +20,10 @@ MapLink Pro has APIs for [C++](https://www.envitia.com/technologies/products/map
 - [Support Pages](./pages/support/support.md)
 
 # Docs
-- [MapLink Pro Quick Start Guide](./pdf/MapLink Pro Quick Start Guide.pdf)
-- [MapLink Developers Guide](./pdf/MapLink Developer's Guide.pdf)
-- [MapLink Studio User Guide](./pdf/MapLink Studio User Guide.pdf)
-- [MapLink 11.0 Deployment of End User Applications.pdf](./pdf/MapLink 11.0 Deployment of End User Applications.pdf)
-- [MapLink Pro for Android Developer's Guide.pdf](./pdf/MapLink Pro for Android Developer's Guide.pdf)
-- [MapLink 11.1 Installation and Upgrade Notes.pdf](./pdf/MapLink 11.1 Installation and Upgrade Notes.pdf)
-- [MapLink OGC Services Deployment User Guide.pdf](./pdf/MapLink OGC Services Deployment User Guide.pdf)
-- [MapLink S63 & S52 SDK Developers Guide.pdf](./pdf/MapLink S63 & S52 SDK Developers Guide.pdf)
+<ul>
+    {% for item in site.data.docs.docs %}
+    <li>
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
