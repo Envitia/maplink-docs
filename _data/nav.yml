@@ -20,17 +20,13 @@ pages:
   url: /pages/support/support.html
   colour: 84bd00
 
-- title: RELEASES
-  url: /pages/support/version-lifecycle.html
-  colour: 84bd00
-
 - title: REQUEST A TRIAL
   url: https://forms.office.com/e/Lr7jN9TCC0
   colour: 1F2A44
   
 messages:
 - title: MAPLINK 11 COMING SOON
-  url: /pages/support/version-lifecycle.html
+  url: /pages/support/support.html
   colour: red
 
 #https://jekyllrb.com/tutorials/navigation/
