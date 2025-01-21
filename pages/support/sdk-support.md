@@ -122,7 +122,7 @@ Because MapLink Studio is only currently supported on Windows, all filters are a
 | CIB | Supported | 11.1 |
 | CRP | **Deprecated** | 10.2 |
 | DAFIF | Supported | 11.1 |
-| DBDBV | Supported | 11.1 |
+| DBDBV | Supported | 10.2 |
 | DFAD | **Deprecated** | 10.2 |
 | DTM/DTED | Supported | 11.1 |
 | DXF | Supported | 11.1 |
