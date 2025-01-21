@@ -71,7 +71,7 @@ These components provide capabilities to distribute geospatial information over 
 | Component | Status | Windows | Linux | C++ API |
 | ----- | ----- | ----- | ----- | ----- |
 | Web Map Service (WMS) Server (tomcat) | Supported | 10.2 | 10.2 | |
-| WPS Plugin API | Supported | 10.2 | 10.2 | Yes |
+| WMS Plugin API | Supported | 10.2 | 10.2 | Yes |
 | WMS Server (IIS) | **Archived** | | | |
 | WMS Server (docker) | Supported | | 10.2 | |
 | WMS Basic Map Config SDK | **Archived** | | | |
