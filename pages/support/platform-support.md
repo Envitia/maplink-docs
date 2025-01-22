@@ -27,4 +27,6 @@ MapLink Pro 11.1+ is built with these components:
 | Windows | MSVC | v143 (VS2022) |
 |  |  | .NET Framework 4.8 |
 
-
+# C++ Version
+The MapLink Pro C++ API is C++ 03 compliant to ensure maximum compatibility.
+On Windows, Visual Studio v143 (VS2022) imposes minimum support for C++ 14.

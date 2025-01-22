@@ -38,9 +38,12 @@ Certain MapLink Pro components installed on Windows require a licence to be inst
 ## Upgrading to MapLink 11.1 on Windows
 
 - MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly.
+- You may encounter some build errors in your C++ application code if you are using features that have been deprecated or removed from the C++ 17 standard. These tend to be concerned with C++ features that have been removed from the C++ standard, and tend to require fairly straight-forward code replacements.
 - MapLink Pro no longer includes "Debug for Release" (*xxx64**D**.xxx*) libraries. If your Debug configurations use these libraries, please change them to use the MapLink Pro Release libraries (*xxx64.xxx*). The Release libraries have been updated to include Frame Pointers so there should be no regression of the debugging experience.
-- MapLink Pro no longer includes 32 bit libraries. You will need to update your environment and application to a 64 bit architecture.
+- MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
 - [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
+
+[Create a technical support ticket](https://support.envitia.com) if you run into any issues.
 
 
 # Linux Development Machine
@@ -60,6 +63,12 @@ installations of older versions of MapLink Pro to allow them to support their le
 built against them. However, the most recently installed version will be referenced by the *LD_LIBRARY_PATH* environment variable.
 
 To ensure that your application runtime loads the desired MapLink Pro library versions, update the value of the *LD_LIBRARY_PATH* environment variable to point to the desired MapLink Pro version's *lib64* directory.
+
+## Upgrading to MapLink 11.1 on Linux
+
+- MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly.
+- MapLink Pro no longer includes 32 bit libraries. You will need to update your environment and application to a 64 bit architecture.
+- [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
 
 ## Linux Licensing
 Although the UNIX/Linux/VxWorks runtime libraries are not locked, a valid licence is required to legally use them.
