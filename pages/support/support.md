@@ -24,7 +24,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 
 [Request a trial of MapLink Pro 11.1](https://forms.office.com/e/Lr7jN9TCC0)
 
-Following this major release, Envitia will be releasing quarterly updates that will include new capabilities along with any bug fixes and third-party dependency updates, removing the need for ad-hoc patches allowing you to plan more effectively and efficiently.
+Following this major release, Envitia will be releasing quarterly updates that will include new capabilities along with any bug fixes and third-party dependency updates.
 
 # Links
 - [What operating systems and compilers does MapLink Pro support?](platform-support.md)
