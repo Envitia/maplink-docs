@@ -18,7 +18,7 @@ A deprecated SDK or feature will continue to be available in the product until t
 Where possible, a deprecation will be accompanied with a recommendation for an alternative solution.
 
 # Planned Releases
-**MapLink Pro 11.1 is due for release on the 14th of February, 2025.**
+**MapLink Pro 11.1 is due for release on the 20<sup>th</sup> of February, 2025.**
 
 [MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
 
