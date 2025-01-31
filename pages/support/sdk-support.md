@@ -71,7 +71,7 @@ These components provide capabilities to distribute geospatial information over 
 | Component | Status | Windows | Linux | C++ API |
 | ----- | ----- | ----- | ----- | ----- |
 | Web Map Service (WMS) Server (tomcat) | Supported | 10.2 | 10.2 | |
-| WPS Plugin API | Supported | 10.2 | 10.2 | Yes |
+| WMS Plugin API | Supported | 10.2 | 10.2 | Yes |
 | WMS Server (IIS) | **Archived** | | | |
 | WMS Server (docker) | Supported | | 10.2 | |
 | WMS Basic Map Config SDK | **Archived** | | | |
@@ -122,7 +122,7 @@ Because MapLink Studio is only currently supported on Windows, all filters are a
 | CIB | Supported | 11.1 |
 | CRP | **Deprecated** | 10.2 |
 | DAFIF | Supported | 11.1 |
-| DBDBV | Supported | 11.1 |
+| DBDBV | Supported | 10.2 |
 | DFAD | **Deprecated** | 10.2 |
 | DTM/DTED | Supported | 11.1 |
 | DXF | Supported | 11.1 |
