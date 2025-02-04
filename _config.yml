@@ -2,7 +2,8 @@ title: Envitia MapLink Pro Developers
 description: Resources for developers using the Envitia MapLink Pro mapping SDK.
 baseurl: "/maplink-docs/"
 url: "https://envitia.github.io"
-logo: "https://user-images.githubusercontent.com/60386764/159908069-b33f1ba7-6ad9-45d0-a872-dfd38dc40c91.png"
+logo: "/img/maplink-small.png"
+icon: "/img/maplink-m-inverse.ico"
 show_downloads: false
 under_construction: true
 google_analytics:

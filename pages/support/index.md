@@ -18,9 +18,11 @@ A deprecated SDK or feature will continue to be available in the product until t
 Where possible, a deprecation will be accompanied with a recommendation for an alternative solution.
 
 # Planned Releases
-**MapLink Pro 11.1 is due for release on the 14th of February, 2025.**
+**MapLink Pro 11.1 is due for release on the 20<sup>th</sup> of February, 2025.**
 
-[Upgrade to MapLink Pro 11.1](https://forms.office.com/e/6ydUswfjEe)
+[MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
+
+[Tell us you want to upgrade to MapLink Pro 11.1](https://forms.office.com/e/6ydUswfjEe)
 
 [Request a trial of MapLink Pro 11.1](https://forms.office.com/e/Lr7jN9TCC0)
 
@@ -29,4 +31,5 @@ Following this major release, Envitia will be releasing quarterly updates that w
 # Links
 - [What operating systems and compilers does MapLink Pro support?](platform-support.md)
 - [Which MapLink Pro SDKs are currently supported?](sdk-support.md)
+- [Install and upgrade notes](install-and-upgrade.md)
 - [Create a technical support ticket](https://support.envitia.com) (Requires an active maintenance & support contract)
