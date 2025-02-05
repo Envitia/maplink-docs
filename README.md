@@ -30,6 +30,7 @@ MapLink Pro has APIs for [C++](https://www.envitia.com/technologies/products/map
 ## Resources
 - [Envitia MapLink Pro API Documentation](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html)
 - [Support Pages](./pages/support/support.md)
+- [Licences](./licences)
 
 # Docs
 <ul>

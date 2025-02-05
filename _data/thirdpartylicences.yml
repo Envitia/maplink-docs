@@ -1,0 +1,10 @@
+libs:
+- title: GDAL/OGR
+  url: https://github.com/OSGeo/gdal/blob/master/LICENSE.TXT
+
+- title: proj
+  url: https://proj.org/en/5.0/license.html
+
+data:
+- title: Natural Earth
+  url: https://www.naturalearthdata.com/about/terms-of-use/
