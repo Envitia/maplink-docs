@@ -1,0 +1,14 @@
+<map id="direct_load_data_layers_diagram_map" name="direct_load_data_layers_diagram_map">
+<area shape="rect" id="id1" href="class_t_s_l_s63_data_layer.html" title="TSLS63DataLayer" alt="" coords="658,332,764,357"/>
+<area shape="rect" id="id2" href="class_t_s_l_k_m_l_data_layer.html" title="TSLKMLDataLayer" alt="" coords="984,332,1092,357"/>
+<area shape="rect" id="id3" href="class_t_s_l_filter_data_layer.html" title="TSLFilterDataLayer" alt="" coords="355,332,466,357"/>
+<area shape="rect" id="id4" href="#overlay_data_layers_diagram" title="Overlays package" alt="" coords="201,155,277,192"/>
+<area shape="rect" id="id5" href="class_t_s_l_raster_data_layer.html" title="TSLRasterDataLayer" alt="" coords="501,332,622,357"/>
+<area shape="rect" id="id6" href="class_t_s_l_n_i_t_f_filter_data_layer.html" title="TSLNITFFilterDataLayer" alt="" coords="379,417,516,443"/>
+<area shape="rect" id="id7" href="class_t_s_l_raster_filter_data_layer.html" title="TSLRasterFilterDataLayer" alt="" coords="552,417,700,443"/>
+<area shape="rect" id="id8" href="class_t_s_l_direct_import_data_layer.html" title="TSLDirectImportDataLayer" alt="" coords="798,332,949,357"/>
+<area shape="rect" id="id9" href="#grid_data_layers_diagram" title="Grid Data Layers package" alt="" coords="551,155,679,192"/>
+<area shape="rect" id="id10" href="#map_data_layers_diagram" title="Map Data Layers package" alt="" coords="38,155,166,192"/>
+<area shape="rect" id="id11" href="#ogc_data_layers_diagram" title="OGC Data Layers package" alt="" coords="382,155,515,192"/>
+<area shape="rect" id="id12" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="480,39,750,95"/>
+</map>

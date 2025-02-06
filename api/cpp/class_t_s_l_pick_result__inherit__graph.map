@@ -1,0 +1,21 @@
+<map id="TSLPickResult" name="TSLPickResult">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,208,97,235"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_pick_result3_d_entity.html" title=" " alt="" coords="172,5,306,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,192,68,158,86,117,110,77,143,42,171,27,173,32,146,46,115,80,90,120,73,160,62,194"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_pick_result_custom.html" title=" " alt="" coords="172,56,306,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="63,193,95,141,117,115,143,92,171,79,173,84,146,97,121,119,99,145,67,195"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_pick_result_display_object.html" title=" " alt="" coords="156,107,322,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="74,195,106,168,143,143,171,132,173,136,146,148,109,172,78,199"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_pick_result_entity.html" title=" " alt="" coords="179,157,300,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="111,202,144,193,186,182,187,187,145,199,112,208"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_pick_result_satellite.html" title=" " alt="" coords="172,208,307,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="112,219,171,219,171,224,112,224"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_pick_result_track.html" title=" " alt="" coords="180,259,299,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="112,235,145,244,187,256,186,261,144,249,111,240"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l_pick_result_track_graphic.html" title=" " alt="" coords="159,309,320,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="78,244,109,271,146,295,173,306,171,311,143,300,106,275,74,248"/>
+<area shape="rect" id="Node000009" href="$classenvitia_1_1maplink_1_1earth_1_1_pick_result_track.html" title=" " alt="" coords="170,360,308,403"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="68,247,100,297,121,323,146,346,171,360,168,365,143,350,118,327,96,301,64,250"/>
+<area shape="rect" id="Node000010" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_pick_result_geometry.html" title=" " alt="" coords="145,427,334,469"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="61,249,72,286,89,330,114,374,146,413,162,424,159,428,143,417,109,377,84,332,67,288,56,251"/>
+</map>

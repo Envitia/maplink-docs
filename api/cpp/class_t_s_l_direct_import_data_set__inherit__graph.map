@@ -1,0 +1,9 @@
+<map id="TSLDirectImportDataSet" name="TSLDirectImportDataSet">
+<area shape="rect" id="Node000001" title=" " alt="" coords="126,5,276,32"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_direct_import_data_set_raster.html" title=" " alt="" coords="5,80,189,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,43,117,82,114,77,169,39"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_direct_import_data_set_vector.html" title=" " alt="" coords="213,80,397,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,39,288,77,285,82,230,43"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_direct_import_data_set_multi_level_raster.html" title=" " alt="" coords="9,155,185,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,122,100,154,94,154,94,122"/>
+</map>
