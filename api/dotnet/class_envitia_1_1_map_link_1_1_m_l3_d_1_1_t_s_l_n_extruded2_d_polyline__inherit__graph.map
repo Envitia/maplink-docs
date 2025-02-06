@@ -1,0 +1,9 @@
+<map id="Envitia::MapLink::ML3D::TSLNExtruded2DPolyline" name="Envitia::MapLink::ML3D::TSLNExtruded2DPolyline">
+<area shape="rect" id="Node000001" title=" " alt="" coords="116,171,295,213"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_entity.html" title=" " alt="" coords="125,80,286,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,138,208,170,203,170,203,138"/>
+<area shape="rect" id="Node000003" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_entity_base.html" title=" " alt="" coords="5,5,230,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,41,185,78,181,81,141,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="253,5,336,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="271,45,230,81,227,78,268,41"/>
+</map>
