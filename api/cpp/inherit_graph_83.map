@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_t_s_l_accelerated_render_control.html" title=" " alt="" coords="5,38,175,61"/>
-<area shape="rect" id="Node000001" href="$class_t_s_l_accelerated_blocking_render_control.html" title=" " alt="" coords="227,5,401,40"/>
-<area shape="poly" id="edge36_Node000000_Node000001" title=" " alt="" coords="188,35,226,30,227,36,189,40"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_accelerated_m_t_render_control.html" title=" " alt="" coords="223,65,405,87"/>
-<area shape="poly" id="edge37_Node000000_Node000002" title=" " alt="" coords="189,58,223,62,222,68,188,64"/>
-</map>

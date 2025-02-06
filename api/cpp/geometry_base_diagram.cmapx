@@ -1,9 +1,0 @@
-<map id="geometry_base_diagram_map" name="geometry_base_diagram_map">
-<area shape="rect" id="id1" href="class_t_s_l_entity_set.html" title="TSLEntitySet" alt="" coords="576,195,651,220"/>
-<area shape="rect" id="id2" href="class_t_s_l_envelope.html" title="TSLEnvelope" alt="" coords="37,195,116,220"/>
-<area shape="rect" id="id3" href="class_t_s_l_entity_base.html" title="TSLEntityBase" alt="" coords="293,57,379,82"/>
-<area shape="rect" id="id4" href="#geometry_geodetic_diagram" title="Geodetic Geometry Package" alt="" coords="256,380,399,417"/>
-<area shape="rect" id="id5" href="#geometry_multi_diagram" title="Multi Geometry Groups Package" alt="" coords="435,380,601,417"/>
-<area shape="rect" id="id6" href="#simple_feature_geometry_diagram" title="Simple Feature Geometry Package" alt="" coords="31,380,213,417"/>
-<area shape="rect" id="id7" href="class_t_s_l_entity.html" title="TSLEntity" alt="" coords="213,180,459,235"/>
-</map>
