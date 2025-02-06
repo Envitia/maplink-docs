@@ -9,7 +9,7 @@ pages:
   colour: 84bd00
 
 - title: API DOCS
-  url: https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html
+  url: /api/
   colour: 84bd00
 
 - title: SAMPLES

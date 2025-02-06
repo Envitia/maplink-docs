@@ -1,8 +1,8 @@
 <map id="api_data_layers_diagram_map" name="api_data_layers_diagram_map">
-<area shape="rect" id="id1" href="group__apigroup__datalayers.html#overlay_data_layers_diagram" title="Overlays package" alt="" coords="201,155,277,192"/>
-<area shape="rect" id="id2" href="group__apigroup__datalayers.html#grid_data_layers_diagram" title="Grid Data Layers package" alt="" coords="690,155,818,192"/>
-<area shape="rect" id="id3" href="group__apigroup__datalayers.html#map_data_layers_diagram" title="Map Data Layers package" alt="" coords="38,155,166,192"/>
-<area shape="rect" id="id4" href="group__apigroup__datalayers.html#ogc_data_layers_diagram" title="OGC Data Layers package" alt="" coords="521,155,654,192"/>
-<area shape="rect" id="id5" href="group__apigroup__datalayers.html#direct_load_data_layers_diagram" title="Direct Load Data Layers package" alt="" coords="312,155,486,192"/>
-<area shape="rect" id="id6" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="264,40,534,95"/>
+<area shape="rect" id="id1" href="group__apigroup__datalayers.html#overlay_data_layers_diagram" title="Overlays package" alt="" coords="579,155,655,192"/>
+<area shape="rect" id="id2" href="group__apigroup__datalayers.html#map_data_layers_diagram" title="Map Data Layers package" alt="" coords="690,155,818,192"/>
+<area shape="rect" id="id3" href="group__apigroup__datalayers.html#grid_data_layers_diagram" title="Grid Data Layers package" alt="" coords="38,155,166,192"/>
+<area shape="rect" id="id4" href="group__apigroup__datalayers.html#ogc_data_layers_diagram" title="OGC Data Layers package" alt="" coords="201,155,334,192"/>
+<area shape="rect" id="id5" href="group__apigroup__datalayers.html#direct_load_data_layers_diagram" title="Direct Load Data Layers package" alt="" coords="370,155,544,192"/>
+<area shape="rect" id="id6" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="322,40,592,95"/>
 </map>

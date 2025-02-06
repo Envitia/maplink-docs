@@ -1,0 +1,13 @@
+<map id="envitia::maplink::earth::Vec3" name="envitia::maplink::earth::Vec3">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,139,144,181"/>
+<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1_geocentric_direction.html" title=" " alt="" coords="192,5,330,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,126,145,92,190,58,210,46,213,51,193,62,149,96,110,130"/>
+<area shape="rect" id="Node000003" href="$classenvitia_1_1maplink_1_1earth_1_1_geocentric_point.html" title=" " alt="" coords="192,72,330,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,131,198,113,200,118,151,136"/>
+<area shape="rect" id="Node000004" href="$classenvitia_1_1maplink_1_1earth_1_1_geodetic_direction.html" title=" " alt="" coords="192,139,330,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,157,191,157,191,163,160,163"/>
+<area shape="rect" id="Node000005" href="$classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html" title=" " alt="" coords="192,205,330,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,184,200,202,198,207,149,189"/>
+<area shape="rect" id="Node000006" href="$classenvitia_1_1maplink_1_1earth_1_1_rotation.html" title=" " alt="" coords="192,272,330,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="110,190,149,224,193,258,213,269,210,274,190,262,145,228,107,194"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="TSLMDContentInformation" name="TSLMDContentInformation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="117,5,280,32"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_m_d_coverage_description.html" title=" " alt="" coords="5,80,176,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,43,111,82,108,77,166,39"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_m_d_feature_catalogue_description.html" title=" " alt="" coords="200,80,416,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,39,290,77,287,82,229,43"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_m_d_image_description.html" title=" " alt="" coords="14,155,167,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,122,93,154,88,154,88,122"/>
+</map>
