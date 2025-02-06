@@ -5,6 +5,9 @@ libs:
 - title: proj
   url: https://proj.org/en/5.0/license.html
 
+- title: WiX
+  url: https://wixtoolset.org/docs/v3/main/license/
+
 data:
 - title: Natural Earth
   url: https://www.naturalearthdata.com/about/terms-of-use/
