@@ -1,24 +1,28 @@
 .title {
 	color: #1F2A44;
 	font-size: 200%;
+	font-family: Poppins,sans-serif;
 }
 
-body {
+.body {
 	background-color: white;
 	color: #1F2A44;
 	margin: 0;
+	font-family: Poppins,sans-serif;
 }
 
-h1 {
-	font-size: 200%;
+.p {
+	font-family: Poppins,sans-serif;
 }
 
-h2, h3, h4, h5, h6 {
-	font-size: 150%;
-}
 
 h1, h2, h3, h4, h5, h6 {
-	color: #1F2A44;
+	font-family: Poppins,sans-serif;
+	color: #84bd00;
+}
+
+body, table, div, p, dl {
+    font-family: Poppins,sans-serif;
 }
 
 div.header {
@@ -27,32 +31,37 @@ div.header {
 	border-bottom: 1px solid #1F2A44;
 	background-image: none;
 	position: sticky;
+	font-family: Poppins,sans-serif;
 }
 
-div.headertitle
-{
+div.headertitle {
 	padding: 5px 5px 5px 10px;
+	font-family: Poppins,sans-serif;
 }
 
 table.doxtable td, table.doxtable th {
 	border: none;
 	padding: 3px 7px 2px;
+	font-family: Poppins,sans-serif;
 }
 
 .sm-dox {
-    background-image: none;
-	border:solid 1px #1F2A44;
+	background-image: none;
+	border: solid 1px #1F2A44;
+	font-family: Poppins,sans-serif;
 }
 
 address.footer {
 	text-align: right;
 	vertical-align: middle;
 	padding-right: 12px;
+	font-family: Poppins,sans-serif;
 }
 
 #side-nav {
 	background: none;
 	background-color: none;
+	font-family: Poppins,sans-serif;
 }
 
 #nav-tree {
@@ -62,13 +71,14 @@ address.footer {
 	border-radius: 7px 7px 7px 7px;
 	margin: 8px 0px 8px 8px;
 	padding: 0px 20px;
+	font-family: Poppins,sans-serif;
 }
 
-#nav-tree .label {
-	margin: 0px;
-	padding: 0px;
-	font: 12px Roboto,sans-serif;
-}
+	#nav-tree .label {
+		margin: 0px;
+		padding: 0px;
+		font-family: Poppins,sans-serif;
+	}
 
 div.toc {
 	padding: 14px 25px;
@@ -80,18 +90,18 @@ div.toc {
 	margin: 0 8px 10px 10px;
 	width: 200px;
 	color: #1F2A44;
-	font: 10px/1.2 Roboto,sans-serif;
+	font-family: Poppins,sans-serif;
 }
 
-div.toc h3 {
-	font: bold 12px/1.2 "Roboto","Helvetica","Arial",sans-serif;
-	color: #1F2A44;
-}
+	div.toc h3 {
+		font-family: Poppins,sans-serif;
+		color: #1F2A44;
+	}
 
-div.toc li {
-	color: #1F2A44;
-	font: 10px/1.2 Roboto,sans-serif;
-}
+	div.toc li {
+		color: #1F2A44;
+		font-family: Poppins,sans-serif;
+	}
 
 .ui-resizable-e {
 	background-image: none;
@@ -111,6 +121,7 @@ div.toc li {
 	border-right: 1px solid #84BD00;
 	background-image: none;
 	background-color: white;
+	font-family: Poppins,sans-serif;
 }
 
 .memproto, dl.reflist dt {
@@ -119,6 +130,7 @@ div.toc li {
 	border-right: 1px solid #84BD00;
 	color: #1F2A44;
 	background-color: white;
+	font-family: Poppins,sans-serif;
 }
 
 .memdoc, dl.reflist dd {
@@ -127,26 +139,31 @@ div.toc li {
 	border-right: 1px solid #84BD00;
 	background-color: white;
 	background-image: none;
+	font-family: Poppins,sans-serif;
 }
 
 .mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
 	background-color: white;
 	border: 1px solid rgba(132,189,0,0.3);
 	color: #1F2A44;
+	font-family: Poppins,sans-serif;
 }
 
 .memSeparator {
 	border-bottom: none;
 	line-height: 0px;
+	font-family: Poppins,sans-serif;
 }
 
 table.markdownTable td, table.markdownTable th {
 	border: 1px solid #1F2A44;
+	font-family: Poppins,sans-serif;
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
 	background-color: #84BD00;
-	color:#1F2A44;
+	color: #1F2A44;
+	font-family: Poppins,sans-serif;
 }
 
 pre.fragment {
@@ -171,25 +188,30 @@ table.fieldtable {
 	-webkit-border-top-left-radius: 0;
 	-webkit-border-top-right-radius: 0px;
 	position: sticky;
+	font-family: Poppins,sans-serif;
 }
 
 
 .fieldtable td.fielddoc {
 	border-right: none;
 	border-bottom: 1px solid rgba(31,42,68,.4);
+	font-family: Poppins,sans-serif;
 }
 
 .fieldtable th.fieldtype, .fieldtable th.fieldname, .fieldtable td.fieldtype, .fieldtable td.fieldname {
 	border-right: none;
 	border-bottom: 1px solid rgba(31,42,68,.4);
+	font-family: Poppins,sans-serif;
 }
 
 a {
 	color: #1F2A44;
+	font-family: Poppins,sans-serif;
 }
 
 table.memberdecls {
 	border-spacing: 1px;
+	font-family: Poppins,sans-serif;
 }
 
 h2.groupheader {
@@ -202,7 +224,7 @@ h2.groupheader {
 }
 
 #MSearchField {
-	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	font-family: Poppins,sans-serif;
 }
 
 img.cf_left {
@@ -237,10 +259,24 @@ img.cf_right {
 	display: inline-block;
 	vertical-align: middle;
 	width: calc(100% - 100px);
+	font-family: Poppins,sans-serif;
 }
 
 span.mlabel {
 	background-color: white;
 	border: 1px solid #84BD00;
 	color: #1F2A44;
+}
+
+#projectname {
+    font-family: Poppins,sans-serif;
+}
+
+#projectbrief {
+    font-family: Poppins,sans-serif;
+}
+
+.navpath li.navelem a
+{
+	font-family: Poppins,sans-serif;
 }

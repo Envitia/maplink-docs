@@ -1,0 +1,83 @@
+<map id="Envitia::MapLink::TSLNEntityBase" name="Envitia::MapLink::TSLNEntityBase">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,1144,230,1171"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_entity.html" title=" " alt="" coords="294,605,456,648"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,1129,361,647,365,650,134,1131"/>
+<area shape="rect" id="Node000021" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_entity.html" title=" " alt="" coords="278,1675,472,1701"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="134,1183,369,1673,365,1676,129,1186"/>
+<area shape="rect" id="Node000003" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_a_p_p6_a_symbol.html" title=" " alt="" coords="555,5,722,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,590,395,470,425,311,444,231,466,159,491,99,518,58,535,45,554,36,556,41,538,50,522,62,495,102,471,160,449,233,430,312,401,471,383,590"/>
+<area shape="rect" id="Node000004" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_ellipse.html" title=" " alt="" coords="558,72,719,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="373,590,377,497,384,437,396,372,414,306,440,240,474,179,518,125,536,111,556,102,559,107,539,116,522,129,478,182,445,242,419,307,401,374,389,438,382,498,378,590"/>
+<area shape="rect" id="Node000005" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_entity_set.html" title=" " alt="" coords="558,139,719,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="375,590,383,508,405,401,423,344,448,289,479,237,518,191,536,178,557,169,559,174,539,183,522,195,483,240,452,291,428,346,410,402,388,509,380,590"/>
+<area shape="rect" id="Node000006" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_model.html" title=" " alt="" coords="558,205,719,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="377,589,389,519,414,430,432,383,455,338,484,295,518,258,536,245,557,236,559,241,539,250,522,262,488,299,460,340,437,385,419,432,395,520,383,590"/>
+<area shape="rect" id="Node000007" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_polygon.html" title=" " alt="" coords="558,272,719,315"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="381,589,397,531,424,460,463,387,489,354,518,325,537,312,557,304,559,309,539,317,522,329,493,357,468,390,428,462,402,533,386,591"/>
+<area shape="rect" id="Node000008" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_polyline.html" title=" " alt="" coords="558,339,719,381"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="386,590,405,545,434,491,471,437,494,413,519,391,557,372,559,376,521,396,497,416,475,440,438,494,410,547,391,592"/>
+<area shape="rect" id="Node000009" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_quad.html" title=" " alt="" coords="558,405,719,448"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="395,590,446,523,480,488,519,458,556,440,559,445,521,462,484,492,450,526,399,593"/>
+<area shape="rect" id="Node000010" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_quad_strip.html" title=" " alt="" coords="558,472,719,515"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="412,593,461,558,519,524,557,510,559,515,521,529,464,562,415,598"/>
+<area shape="rect" id="Node000011" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_sensor.html" title=" " alt="" coords="558,539,719,581"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="470,600,557,578,558,583,471,605"/>
+<area shape="rect" id="Node000012" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_symbol.html" title=" " alt="" coords="558,605,719,648"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="471,624,558,624,558,629,471,629"/>
+<area shape="rect" id="Node000013" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_text.html" title=" " alt="" coords="558,672,719,715"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="471,648,558,670,557,676,470,653"/>
+<area shape="rect" id="Node000014" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_triangle.html" title=" " alt="" coords="558,739,719,781"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="415,656,464,691,521,724,559,739,557,744,519,729,461,696,412,660"/>
+<area shape="rect" id="Node000015" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_triangle_fan.html" title=" " alt="" coords="558,805,719,848"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="399,660,450,727,484,762,521,791,559,808,556,813,519,796,480,766,446,731,395,663"/>
+<area shape="rect" id="Node000016" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_triangle_strip.html" title=" " alt="" coords="558,872,719,915"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="391,661,410,706,438,760,475,813,497,837,521,858,559,877,557,882,519,862,494,841,471,816,434,762,405,709,386,663"/>
+<area shape="rect" id="Node000017" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_user_geometry_entity.html" title=" " alt="" coords="539,939,738,981"/>
+<area shape="poly" id="edge16_Node000002_Node000017" title=" " alt="" coords="386,663,402,721,428,791,468,863,493,896,522,925,540,937,537,941,518,929,489,900,463,866,424,794,397,722,381,664"/>
+<area shape="rect" id="Node000018" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n_extruded2_d_polygon.html" title=" " alt="" coords="549,1005,728,1048"/>
+<area shape="poly" id="edge17_Node000002_Node000018" title=" " alt="" coords="383,663,395,733,419,822,437,868,460,913,488,955,522,991,550,1009,547,1014,518,995,484,958,455,916,432,870,414,823,389,734,377,664"/>
+<area shape="rect" id="Node000019" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n_extruded2_d_polyline.html" title=" " alt="" coords="550,1072,728,1115"/>
+<area shape="poly" id="edge18_Node000002_Node000019" title=" " alt="" coords="380,663,388,744,410,851,428,907,452,962,483,1013,522,1058,550,1076,547,1081,518,1062,479,1016,448,965,423,909,405,852,383,745,375,664"/>
+<area shape="rect" id="Node000020" href="$class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n_extruded2_d_rectangle.html" title=" " alt="" coords="543,1139,734,1181"/>
+<area shape="poly" id="edge19_Node000002_Node000020" title=" " alt="" coords="378,663,382,756,389,815,401,880,419,946,445,1011,478,1072,522,1125,544,1141,541,1145,518,1129,474,1075,440,1013,414,948,396,881,384,816,377,756,373,663"/>
+<area shape="rect" id="Node000022" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_arc.html" title=" " alt="" coords="548,1205,729,1232"/>
+<area shape="poly" id="edge21_Node000021_Node000022" title=" " alt="" coords="374,1659,379,1577,387,1522,399,1464,418,1403,443,1344,476,1289,518,1242,547,1225,549,1230,522,1246,480,1293,447,1347,423,1405,404,1465,392,1523,385,1577,379,1659"/>
+<area shape="rect" id="Node000023" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_ellipse.html" title=" " alt="" coords="539,1256,738,1283"/>
+<area shape="poly" id="edge22_Node000021_Node000023" title=" " alt="" coords="375,1659,384,1585,406,1485,424,1433,449,1381,480,1334,518,1293,537,1280,540,1285,522,1297,484,1337,453,1384,429,1435,411,1487,389,1586,380,1659"/>
+<area shape="rect" id="Node000024" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_entity_set.html" title=" " alt="" coords="532,1307,746,1333"/>
+<area shape="poly" id="edge23_Node000021_Node000024" title=" " alt="" coords="377,1659,388,1593,413,1508,432,1463,455,1419,484,1378,518,1343,537,1332,539,1336,522,1347,488,1382,459,1421,436,1465,418,1509,394,1595,382,1660"/>
+<area shape="rect" id="Node000026" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_arc.html" title=" " alt="" coords="522,1357,755,1384"/>
+<area shape="poly" id="edge25_Node000021_Node000026" title=" " alt="" coords="379,1658,394,1602,420,1530,439,1492,461,1456,487,1423,518,1394,538,1382,541,1387,522,1398,491,1426,465,1459,443,1495,425,1532,399,1603,384,1660"/>
+<area shape="rect" id="Node000027" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_ellipse.html" title=" " alt="" coords="532,1408,745,1451"/>
+<area shape="poly" id="edge26_Node000021_Node000027" title=" " alt="" coords="384,1659,403,1615,432,1562,470,1507,493,1482,518,1461,538,1449,541,1453,522,1465,497,1486,474,1511,436,1565,408,1618,389,1661"/>
+<area shape="rect" id="Node000028" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_polygon.html" title=" " alt="" coords="532,1475,745,1517"/>
+<area shape="poly" id="edge27_Node000021_Node000028" title=" " alt="" coords="391,1660,443,1593,478,1558,519,1527,541,1515,544,1520,521,1532,482,1562,447,1597,395,1663"/>
+<area shape="rect" id="Node000029" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_polyline.html" title=" " alt="" coords="532,1541,745,1584"/>
+<area shape="poly" id="edge28_Node000021_Node000029" title=" " alt="" coords="404,1663,456,1628,519,1594,548,1582,550,1587,521,1598,459,1632,407,1668"/>
+<area shape="rect" id="Node000030" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_symbol.html" title=" " alt="" coords="532,1608,745,1651"/>
+<area shape="poly" id="edge29_Node000021_Node000030" title=" " alt="" coords="452,1668,539,1649,540,1654,453,1673"/>
+<area shape="rect" id="Node000031" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_geodetic_text.html" title=" " alt="" coords="520,1675,757,1701"/>
+<area shape="poly" id="edge30_Node000021_Node000031" title=" " alt="" coords="487,1685,520,1685,520,1691,487,1691"/>
+<area shape="rect" id="Node000032" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_multi_point.html" title=" " alt="" coords="544,1725,733,1768"/>
+<area shape="poly" id="edge31_Node000021_Node000032" title=" " alt="" coords="454,1703,545,1723,544,1728,452,1708"/>
+<area shape="rect" id="Node000033" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html" title=" " alt="" coords="544,1792,733,1835"/>
+<area shape="poly" id="edge32_Node000021_Node000033" title=" " alt="" coords="407,1708,459,1744,521,1778,550,1789,548,1794,519,1782,456,1748,404,1713"/>
+<area shape="rect" id="Node000034" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polyline.html" title=" " alt="" coords="544,1859,733,1901"/>
+<area shape="poly" id="edge33_Node000021_Node000034" title=" " alt="" coords="395,1713,447,1779,482,1814,521,1844,545,1857,543,1861,519,1849,478,1818,443,1783,391,1716"/>
+<area shape="rect" id="Node000035" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_polygon.html" title=" " alt="" coords="535,1925,742,1952"/>
+<area shape="poly" id="edge34_Node000021_Node000035" title=" " alt="" coords="388,1715,407,1759,435,1813,473,1867,496,1891,521,1911,542,1922,540,1927,519,1916,493,1894,469,1870,431,1816,402,1762,383,1717"/>
+<area shape="rect" id="Node000037" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_polyline.html" title=" " alt="" coords="536,1976,742,2003"/>
+<area shape="poly" id="edge36_Node000021_Node000037" title=" " alt="" coords="385,1716,401,1769,427,1836,467,1905,493,1935,522,1962,541,1973,538,1978,518,1966,489,1939,463,1908,423,1839,396,1771,380,1717"/>
+<area shape="rect" id="Node000038" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_rectangle.html" title=" " alt="" coords="529,2027,748,2053"/>
+<area shape="poly" id="edge37_Node000021_Node000038" title=" " alt="" coords="383,1716,395,1779,420,1859,439,1902,461,1943,489,1980,522,2013,540,2024,537,2029,518,2017,485,1984,457,1945,434,1904,415,1861,390,1780,377,1717"/>
+<area shape="rect" id="Node000039" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_symbol.html" title=" " alt="" coords="536,2077,741,2104"/>
+<area shape="poly" id="edge38_Node000021_Node000039" title=" " alt="" coords="381,1717,390,1788,413,1882,432,1932,455,1980,485,2025,522,2063,539,2074,536,2079,518,2067,481,2028,451,1983,427,1934,408,1884,385,1789,376,1718"/>
+<area shape="rect" id="Node000040" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_text.html" title=" " alt="" coords="546,2128,731,2155"/>
+<area shape="poly" id="edge39_Node000021_Node000040" title=" " alt="" coords="379,1717,386,1796,394,1848,407,1904,425,1962,449,2018,481,2069,522,2114,547,2129,544,2134,518,2118,477,2073,445,2020,420,1963,401,1905,389,1849,381,1797,374,1717"/>
+<area shape="rect" id="Node000041" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_user_geometry_entity.html" title=" " alt="" coords="544,2179,733,2221"/>
+<area shape="poly" id="edge40_Node000021_Node000041" title=" " alt="" coords="379,1717,383,1804,390,1861,402,1924,420,1989,445,2053,479,2113,522,2165,546,2181,542,2186,518,2169,474,2116,441,2055,415,1991,397,1926,385,1862,378,1804,373,1717"/>
+<area shape="rect" id="Node000025" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_arrow.html" title=" " alt="" coords="814,1307,1009,1333"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="762,1317,814,1317,814,1323,762,1323"/>
+<area shape="rect" id="Node000036" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_bordered_polygon.html" title=" " alt="" coords="805,1917,1018,1960"/>
+<area shape="poly" id="edge35_Node000035_Node000036" title=" " alt="" coords="758,1936,805,1936,805,1941,758,1941"/>
+</map>

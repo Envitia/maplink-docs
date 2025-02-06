@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_t_s_l_interaction_mode_manager.html" title=" " alt="" coords="5,65,164,87"/>
-<area shape="rect" id="Node000001" href="$class_t_s_l_interaction_mode_manager_generic.html" title=" " alt="" coords="222,5,381,40"/>
-<area shape="poly" id="edge202_Node000000_Node000001" title=" " alt="" coords="145,59,230,37,231,43,146,64"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_interaction_mode_manager_n_t.html" title=" " alt="" coords="215,65,387,87"/>
-<area shape="poly" id="edge203_Node000000_Node000002" title=" " alt="" coords="178,73,215,73,215,79,178,79"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_interaction_mode_manager_x11.html" title=" " alt="" coords="212,111,391,134"/>
-<area shape="poly" id="edge204_Node000000_Node000003" title=" " alt="" coords="152,88,248,109,247,114,151,93"/>
-</map>

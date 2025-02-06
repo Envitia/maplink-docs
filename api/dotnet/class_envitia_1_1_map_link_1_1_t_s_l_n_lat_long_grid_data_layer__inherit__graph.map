@@ -1,0 +1,5 @@
+<map id="Envitia::MapLink::TSLNLatLongGridDataLayer" name="Envitia::MapLink::TSLNLatLongGridDataLayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,96,189,139"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_data_layer.html" title=" " alt="" coords="5,5,194,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,64,102,96,97,96,97,64"/>
+</map>

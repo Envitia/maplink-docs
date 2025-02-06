@@ -1,0 +1,65 @@
+<map id="TSLDataLayer" name="TSLDataLayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,655,99,681"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l2_d_satellite_data_layer.html" title=" " alt="" coords="157,31,308,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,639,56,517,70,346,82,259,98,179,119,113,131,88,145,68,159,56,163,60,149,71,135,90,124,115,103,181,87,260,76,347,62,517,57,639"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l3_d_data_layer.html" title=" " alt="" coords="179,81,286,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="52,639,58,526,73,371,85,291,101,219,121,160,145,118,160,106,178,98,180,103,163,111,149,122,125,162,106,221,91,292,79,371,63,526,57,639"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l_accelerated_custom_data_layer.html" title=" " alt="" coords="147,132,319,175"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="53,639,62,539,79,404,91,336,106,273,124,221,145,185,158,173,161,177,149,188,129,224,111,275,97,337,84,405,67,540,58,639"/>
+<area shape="rect" id="Node000009" href="$class_t_s_l_c_a_d_r_g_data_layer.html" title=" " alt="" coords="168,199,298,225"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="53,639,63,548,81,428,108,312,125,267,145,235,166,221,169,225,149,239,130,269,113,314,86,429,68,549,58,640"/>
+<area shape="rect" id="Node000010" href="$class_t_s_l_custom_data_layer.html" title=" " alt="" coords="165,249,301,276"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="54,639,65,557,84,452,111,352,127,313,145,286,163,273,166,277,149,290,132,316,116,354,90,454,71,558,59,639"/>
+<area shape="rect" id="Node000011" href="$class_t_s_l_direct_import_data_layer.html" title=" " alt="" coords="152,300,314,327"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="50,639,53,577,66,496,78,453,95,411,117,372,145,337,161,325,164,329,149,341,121,375,99,413,83,455,71,497,59,577,55,639"/>
+<area shape="rect" id="Node000012" href="$class_t_s_l_filter_data_layer.html" title=" " alt="" coords="173,351,292,377"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="52,639,58,585,73,518,85,483,100,448,120,416,145,387,171,371,174,376,148,391,125,419,105,451,90,485,78,520,63,586,57,639"/>
+<area shape="rect" id="Node000015" href="$class_t_s_l_g_a_r_s_grid_data_layer.html" title=" " alt="" coords="162,401,304,428"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="54,639,63,595,80,541,106,486,124,460,145,438,163,426,166,431,148,442,128,464,111,489,85,543,68,596,60,640"/>
+<area shape="rect" id="Node000016" href="$class_t_s_l_grid_data_layer.html" title=" " alt="" coords="175,452,290,479"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="58,638,70,604,88,564,113,523,145,489,173,473,176,478,148,493,117,527,93,566,75,606,63,640"/>
+<area shape="rect" id="Node000017" href="$class_t_s_l_heat_map_data_layer.html" title="Class to display heat map data." alt="" coords="162,503,304,529"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="64,639,96,588,119,562,145,539,167,528,169,532,148,544,123,566,101,592,69,642"/>
+<area shape="rect" id="Node000018" href="$class_t_s_l_k_m_l_data_layer.html" title=" " alt="" coords="176,553,290,580"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="76,642,108,615,145,590,175,577,177,582,148,594,111,619,79,646"/>
+<area shape="rect" id="Node000019" href="$class_t_s_l_lat_long_grid_data_layer.html" title=" " alt="" coords="154,604,312,631"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="113,648,182,629,183,634,114,653"/>
+<area shape="rect" id="Node000020" href="$class_t_s_l_m_g_r_s_grid_data_layer.html" title=" " alt="" coords="161,655,305,681"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="114,665,160,665,160,671,114,671"/>
+<area shape="rect" id="Node000021" href="$class_t_s_l_map_data_layer.html" title=" " alt="" coords="175,705,291,732"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="114,683,183,702,182,707,113,688"/>
+<area shape="rect" id="Node000022" href="$class_t_s_l_national_grid_data_layer.html" title=" " alt="" coords="153,756,313,783"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="79,690,111,717,148,742,175,753,173,758,145,746,108,721,76,694"/>
+<area shape="rect" id="Node000023" href="$class_t_s_l_object_data_layer.html" title=" " alt="" coords="169,807,297,833"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="69,694,101,744,123,770,148,792,169,804,167,808,145,797,119,774,96,748,64,697"/>
+<area shape="rect" id="Node000024" href="$class_t_s_l_pooled_map_data_layer.html" title=" " alt="" coords="156,857,310,884"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="63,696,75,730,93,770,117,809,148,843,167,854,164,859,145,847,113,813,88,772,70,732,58,698"/>
+<area shape="rect" id="Node000025" href="$class_t_s_l_raster_data_layer.html" title=" " alt="" coords="169,908,296,935"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="60,696,68,740,85,793,111,847,128,872,148,894,170,907,167,912,145,898,124,876,106,850,80,795,63,741,54,697"/>
+<area shape="rect" id="Node000026" href="$class_t_s_l_s52_no_data_layer.html" title=" " alt="" coords="170,959,296,985"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="57,697,63,750,78,816,90,851,105,885,125,917,148,945,171,959,168,963,145,949,120,920,100,888,85,853,73,818,58,751,52,697"/>
+<area shape="rect" id="Node000027" href="$class_t_s_l_s63_data_layer.html" title=" " alt="" coords="177,1009,289,1036"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="55,697,59,759,71,839,83,881,99,923,121,961,149,995,162,1005,177,1012,175,1017,159,1010,145,999,117,964,95,925,78,883,66,840,53,759,50,697"/>
+<area shape="rect" id="Node000028" href="$class_t_s_l_standard_data_layer.html" title=" " alt="" coords="162,1060,304,1087"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="59,697,71,778,90,882,116,982,132,1020,149,1046,163,1057,160,1062,145,1050,127,1023,111,984,84,884,65,779,54,697"/>
+<area shape="rect" id="Node000029" href="$class_t_s_l_static_map_data_layer.html" title=" " alt="" coords="160,1111,306,1137"/>
+<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="58,696,68,787,86,907,113,1022,130,1067,149,1097,163,1108,160,1112,145,1100,125,1069,108,1024,81,908,63,788,53,697"/>
+<area shape="rect" id="Node000030" href="$class_t_s_l_view_shed_data_layer.html" title=" " alt="" coords="160,1161,306,1188"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="58,697,66,797,83,932,95,1001,110,1063,128,1113,149,1148,163,1159,159,1163,145,1151,123,1115,105,1064,90,1002,78,933,61,798,52,697"/>
+<area shape="rect" id="Node000031" href="$class_t_s_l_w_m_s_data_layer.html" title=" " alt="" coords="174,1212,292,1239"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="57,697,64,806,80,957,92,1033,107,1103,126,1160,149,1198,160,1208,174,1215,172,1220,157,1212,145,1202,121,1162,102,1104,86,1034,74,958,59,807,52,697"/>
+<area shape="rect" id="Node000032" href="$class_t_s_l_w_m_t_s_data_layer.html" title=" " alt="" coords="171,1263,295,1289"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="57,697,62,816,76,981,88,1066,104,1143,124,1206,136,1230,149,1249,172,1265,168,1269,145,1253,131,1233,119,1208,99,1144,83,1067,71,982,57,816,51,697"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l3_d_custom_data_layer.html" title=" " alt="" coords="370,5,520,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,74,318,67,366,42,397,30,398,35,368,46,320,72,302,79"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l3_d_satellite_data_layer.html" title=" " alt="" coords="370,56,521,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="302,84,369,76,369,81,303,89"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l3_d_standard_data_layer.html" title=" " alt="" coords="367,107,523,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="303,100,367,108,366,113,302,106"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l3_d_terrain_data_layer.html" title=" " alt="" coords="372,157,518,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="302,111,320,118,368,143,398,154,397,159,366,148,318,122,300,116"/>
+<area shape="rect" id="Node000013" href="$class_t_s_l_n_i_t_f_filter_data_layer.html" title=" " alt="" coords="375,325,515,352"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="307,352,374,344,375,350,308,358"/>
+<area shape="rect" id="Node000014" href="$class_t_s_l_raster_filter_data_layer.html" title=" " alt="" coords="368,376,522,403"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="309,370,368,378,368,383,308,376"/>
+</map>

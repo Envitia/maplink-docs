@@ -1,0 +1,7 @@
+<map id="Envitia::MapLink::TSLNMapDataLayer::DetailLayerCollection" name="Envitia::MapLink::TSLNMapDataLayer::DetailLayerCollection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,219,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="14,5,98,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,43,100,78,96,81,71,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,5,216,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,47,129,81,124,78,149,43"/>
+</map>

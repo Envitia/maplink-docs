@@ -1,0 +1,27 @@
+<map id="TSLDrawingSurface" name="TSLDrawingSurface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="205,132,329,159"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_accelerated_surface.html" title=" " alt="" coords="377,56,521,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,122,376,92,406,81,408,86,378,97,311,127"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_motif_surface.html" title=" " alt="" coords="396,107,502,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="344,132,395,125,396,130,345,137"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l_n_t_surface.html" title=" " alt="" coords="403,157,495,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="345,153,403,162,402,167,344,159"/>
+<area shape="rect" id="Node000009" href="$class_t_s_l_open_g_l_surface.html" title=" " alt="" coords="388,208,510,235"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="311,163,378,194,408,205,406,210,376,198,309,168"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_drawing_surface_base.html" title=" " alt="" coords="5,132,157,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,143,205,143,205,148,172,148"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_d_x_accelerated_surface.html" title=" " alt="" coords="575,5,734,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="521,49,597,30,598,35,522,54"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_w_g_l_accelerated_surface.html" title=" " alt="" coords="571,56,738,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="537,67,570,67,570,72,537,72"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_x11_g_l_accelerated_surface.html" title=" " alt="" coords="569,107,740,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="522,84,598,103,597,109,521,90"/>
+<area shape="rect" id="Node000010" href="$class_t_s_l_e_g_l_surface.html" title=" " alt="" coords="606,157,703,184"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="520,201,605,180,606,185,522,206"/>
+<area shape="rect" id="Node000012" href="$class_t_s_l_g_l_x_surface.html" title=" " alt="" coords="605,208,704,235"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="525,219,605,219,605,224,525,224"/>
+<area shape="rect" id="Node000013" href="$class_t_s_l_w_g_l_surface.html" title=" " alt="" coords="603,259,706,285"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="522,236,604,257,602,262,520,242"/>
+<area shape="rect" id="Node000011" href="$class_t_s_l_native_e_g_l_surface.html" title=" " alt="" coords="788,157,919,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="719,168,787,168,787,173,719,173"/>
+</map>

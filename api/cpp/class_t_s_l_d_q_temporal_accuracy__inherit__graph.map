@@ -1,0 +1,11 @@
+<map id="TSLDQTemporalAccuracy" name="TSLDQTemporalAccuracy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="264,80,420,107"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_accuracy_of_a_time_measurement.html" title=" " alt="" coords="5,155,231,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="290,114,158,157,157,151,288,109"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_d_q_temporal_consistency.html" title=" " alt="" coords="255,155,429,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="345,122,345,154,339,154,339,122"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_d_q_temporal_validity.html" title=" " alt="" coords="453,155,599,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="389,110,495,152,493,157,387,115"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="293,5,391,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="345,48,345,80,339,80,339,48"/>
+</map>

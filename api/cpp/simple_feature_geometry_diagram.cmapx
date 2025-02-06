@@ -1,20 +1,20 @@
 <map id="simple_feature_geometry_diagram_map" name="simple_feature_geometry_diagram_map">
-<area shape="rect" id="id1" href="class_t_s_l_arc.html" title="TSLArc" alt="" coords="505,486,550,511"/>
-<area shape="rect" id="id2" href="class_t_s_l_text.html" title="TSLText" alt="" coords="319,486,369,511"/>
-<area shape="rect" id="id3" href="class_t_s_l_coord.html" title="TSLCoord" alt="" coords="450,709,512,734"/>
-<area shape="rect" id="id4" href="class_t_s_l_ellipse.html" title="TSLEllipse" alt="" coords="404,486,470,511"/>
-<area shape="rect" id="id5" href="class_t_s_l_symbol.html" title="TSLSymbol" alt="" coords="585,486,654,511"/>
-<area shape="rect" id="id6" href="class_t_s_l_polyline.html" title="TSLPolyline" alt="" coords="192,486,263,511"/>
-<area shape="rect" id="id7" href="class_t_s_l_polygon.html" title="TSLPolygon" alt="" coords="86,486,158,511"/>
-<area shape="rect" id="id8" href="class_t_s_l_entity_set.html" title="TSLEntitySet" alt="" coords="735,195,810,220"/>
-<area shape="rect" id="id9" href="class_t_s_l_envelope.html" title="TSLEnvelope" alt="" coords="196,195,275,220"/>
-<area shape="rect" id="id10" href="class_t_s_l_coord_set.html" title="TSLCoordSet" alt="" coords="252,709,332,734"/>
-<area shape="rect" id="id11" href="class_t_s_l_rectangle.html" title="TSLRectangle" alt="" coords="690,486,774,511"/>
-<area shape="rect" id="id12" href="class_t_s_l_border_info.html" title="TSLBorderInfo" alt="" coords="64,708,149,734"/>
-<area shape="rect" id="id13" href="class_t_s_l_entity_base.html" title="TSLEntityBase" alt="" coords="452,57,538,82"/>
-<area shape="rect" id="id14" href="class_t_s_l_bordered_polygon.html" title="TSLBorderedPolygon" alt="" coords="45,598,168,624"/>
-<area shape="rect" id="id15" href="#user_geometry_diagram" title="User Geometry Package" alt="" coords="702,318,817,355"/>
-<area shape="rect" id="id16" href="#geometry_geodetic_diagram" title="Geodetic Geometry Package" alt="" coords="28,318,171,355"/>
-<area shape="rect" id="id17" href="#geometry_multi_diagram" title="Multi Geometry Groups Package" alt="" coords="853,318,1019,355"/>
-<area shape="rect" id="id18" href="class_t_s_l_entity.html" title="TSLEntity" alt="" coords="372,180,618,235"/>
+<area shape="rect" id="id1" href="class_t_s_l_arc.html" title="TSLArc" alt="" coords="505,446,550,471"/>
+<area shape="rect" id="id2" href="class_t_s_l_text.html" title="TSLText" alt="" coords="319,446,369,471"/>
+<area shape="rect" id="id3" href="class_t_s_l_coord.html" title="TSLCoord" alt="" coords="411,648,473,674"/>
+<area shape="rect" id="id4" href="class_t_s_l_ellipse.html" title="TSLEllipse" alt="" coords="404,446,470,471"/>
+<area shape="rect" id="id5" href="class_t_s_l_symbol.html" title="TSLSymbol" alt="" coords="585,446,654,471"/>
+<area shape="rect" id="id6" href="class_t_s_l_polyline.html" title="TSLPolyline" alt="" coords="192,446,263,471"/>
+<area shape="rect" id="id7" href="class_t_s_l_polygon.html" title="TSLPolygon" alt="" coords="86,446,158,471"/>
+<area shape="rect" id="id8" href="class_t_s_l_entity_set.html" title="TSLEntitySet" alt="" coords="665,174,740,200"/>
+<area shape="rect" id="id9" href="class_t_s_l_envelope.html" title="TSLEnvelope" alt="" coords="198,174,277,200"/>
+<area shape="rect" id="id10" href="class_t_s_l_coord_set.html" title="TSLCoordSet" alt="" coords="262,648,342,674"/>
+<area shape="rect" id="id11" href="class_t_s_l_rectangle.html" title="TSLRectangle" alt="" coords="690,446,774,471"/>
+<area shape="rect" id="id12" href="class_t_s_l_border_info.html" title="TSLBorderInfo" alt="" coords="72,648,157,674"/>
+<area shape="rect" id="id13" href="class_t_s_l_entity_base.html" title="TSLEntityBase" alt="" coords="430,56,516,81"/>
+<area shape="rect" id="id14" href="class_t_s_l_bordered_polygon.html" title="TSLBorderedPolygon" alt="" coords="53,558,176,583"/>
+<area shape="rect" id="id15" href="#user_geometry_diagram" title="User Geometry Package" alt="" coords="702,278,817,315"/>
+<area shape="rect" id="id16" href="#geometry_geodetic_diagram" title="Geodetic Geometry Package" alt="" coords="28,278,171,315"/>
+<area shape="rect" id="id17" href="#geometry_multi_diagram" title="Multi Geometry Groups Package" alt="" coords="853,278,1019,315"/>
+<area shape="rect" id="id18" href="class_t_s_l_entity.html" title="TSLEntity" alt="" coords="350,159,596,215"/>
 </map>

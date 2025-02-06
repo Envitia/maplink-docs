@@ -1,0 +1,7 @@
+<map id="TSLMDIdentification" name="TSLMDIdentification">
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,238,32"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_m_d_data_identification.html" title=" " alt="" coords="5,80,159,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,44,99,82,96,78,145,40"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_m_d_service_identification.html" title=" " alt="" coords="183,80,349,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,40,252,78,249,82,200,44"/>
+</map>

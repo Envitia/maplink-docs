@@ -1,0 +1,7 @@
+<map id="TSLTrackSymbol" name="TSLTrackSymbol">
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,212,32"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_track_history_symbol.html" title=" " alt="" coords="5,80,149,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,44,93,82,89,78,131,41"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_track_point_symbol.html" title=" " alt="" coords="173,80,306,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,41,227,78,224,82,182,44"/>
+</map>

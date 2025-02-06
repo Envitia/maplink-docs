@@ -1,0 +1,41 @@
+<map id="TSL3DEntity" name="TSL3DEntity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="148,436,229,463"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l3_d_a_p_p6_a_symbol.html" title=" " alt="" coords="294,5,419,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,421,199,335,216,222,241,114,257,72,275,42,292,29,295,34,279,46,261,74,246,116,221,223,204,335,195,421"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l3_d_ellipse.html" title=" " alt="" coords="314,56,400,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,420,201,344,219,247,244,154,259,118,275,93,292,80,312,72,314,77,295,85,279,96,263,121,249,156,225,248,207,345,196,421"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l3_d_entity_set.html" title=" " alt="" coords="308,107,406,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="187,420,190,363,203,289,214,250,229,211,250,175,275,143,289,132,306,125,308,130,292,137,279,147,254,178,234,214,219,252,208,290,196,363,192,421"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l3_d_model.html" title=" " alt="" coords="314,157,399,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,420,195,372,210,311,235,249,253,220,275,194,293,182,313,174,315,179,295,186,279,198,257,223,240,251,215,313,201,373,194,421"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l3_d_polygon.html" title=" " alt="" coords="309,208,404,235"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="192,421,201,381,217,334,241,286,275,245,290,234,307,227,309,232,293,239,279,249,246,289,222,336,206,383,197,422"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l3_d_polyline.html" title=" " alt="" coords="310,259,404,285"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="196,420,225,358,247,324,275,295,308,278,310,283,279,299,251,328,230,360,201,423"/>
+<area shape="rect" id="Node000009" href="$class_t_s_l3_d_quad.html" title=" " alt="" coords="316,309,397,336"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="204,422,234,383,276,346,315,329,317,333,278,350,238,386,208,425"/>
+<area shape="rect" id="Node000010" href="$class_t_s_l3_d_quad_strip.html" title=" " alt="" coords="304,360,409,387"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="222,425,276,396,306,385,308,390,278,401,225,430"/>
+<area shape="rect" id="Node000011" href="$class_t_s_l3_d_sensor.html" title=" " alt="" coords="312,411,401,437"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="244,438,312,428,312,433,244,444"/>
+<area shape="rect" id="Node000012" href="$class_t_s_l3_d_symbol.html" title=" " alt="" coords="310,461,403,488"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="245,455,311,465,310,470,244,460"/>
+<area shape="rect" id="Node000013" href="$class_t_s_l3_d_text.html" title=" " alt="" coords="320,512,394,539"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="225,469,278,498,320,513,318,518,276,502,222,474"/>
+<area shape="rect" id="Node000014" href="$class_t_s_l3_d_triangle.html" title=" " alt="" coords="308,563,405,589"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="208,474,238,512,278,548,309,563,307,568,276,553,234,516,204,477"/>
+<area shape="rect" id="Node000015" href="$class_t_s_l3_d_triangle_fan.html" title=" " alt="" coords="299,613,414,640"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="201,476,230,538,251,571,279,599,300,612,297,616,275,603,247,575,225,541,196,478"/>
+<area shape="rect" id="Node000016" href="$class_t_s_l3_d_triangle_strip.html" title=" " alt="" coords="296,664,417,691"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="197,477,206,516,222,562,246,609,279,650,297,662,294,666,275,654,241,612,217,564,201,517,192,478"/>
+<area shape="rect" id="Node000017" href="$class_t_s_l3_d_user_geometry_entity.html" title=" " alt="" coords="277,715,436,741"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="194,478,201,526,215,586,240,647,257,676,279,701,295,712,292,716,275,705,253,679,235,650,210,587,195,527,189,478"/>
+<area shape="rect" id="Node000018" href="$class_t_s_l_extruded2_d_polygon.html" title=" " alt="" coords="286,765,427,792"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="192,478,196,535,208,609,219,647,234,685,254,720,279,751,294,763,291,767,275,755,250,723,229,687,214,649,203,610,190,536,187,478"/>
+<area shape="rect" id="Node000019" href="$class_t_s_l_extruded2_d_polyline.html" title=" " alt="" coords="286,816,427,843"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="196,478,207,554,225,651,249,743,263,778,279,802,294,813,290,818,275,806,259,781,244,744,219,652,201,555,191,479"/>
+<area shape="rect" id="Node000020" href="$class_t_s_l_extruded2_d_rectangle.html" title=" " alt="" coords="280,867,433,893"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="195,478,204,563,221,676,246,783,261,825,279,853,293,864,290,868,275,856,257,827,241,784,216,677,199,564,189,478"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="5,436,100,463"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,447,147,447,147,452,115,452"/>
+</map>

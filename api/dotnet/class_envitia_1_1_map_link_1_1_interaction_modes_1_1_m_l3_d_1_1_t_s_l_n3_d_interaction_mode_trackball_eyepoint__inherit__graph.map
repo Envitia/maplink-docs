@@ -1,0 +1,5 @@
+<map id="Envitia::MapLink::InteractionModes::ML3D::TSLN3DInteractionModeTrackballEyepoint" name="Envitia::MapLink::InteractionModes::ML3D::TSLN3DInteractionModeTrackballEyepoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,261,155"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_interaction_modes_1_1_m_l3_d_1_1_t_s_l_n3_d_interaction_mode.html" title=" " alt="" coords="5,5,261,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,63,136,96,130,96,130,63"/>
+</map>

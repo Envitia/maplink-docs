@@ -1,0 +1,9 @@
+<map id="TSLFeatureClassifier" name="TSLFeatureClassifier">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,136,83"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_feature_classifier_categorised.html" title=" " alt="" coords="184,5,381,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,49,223,30,224,35,145,54"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_feature_classifier_custom.html" title=" " alt="" coords="196,56,369,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,67,195,67,195,72,151,72"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_feature_classifier_graduated.html" title=" " alt="" coords="188,107,376,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,84,224,103,223,109,144,90"/>
+</map>

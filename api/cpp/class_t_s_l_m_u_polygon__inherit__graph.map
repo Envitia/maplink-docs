@@ -1,0 +1,5 @@
+<map id="TSLMUPolygon" name="TSLMUPolygon">
+<area shape="rect" id="Node000001" title="A polygon containing geometry in Map&#45;Units, i.e. geometry in a particular coordinate system." alt="" coords="11,80,108,107"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_m_u_geometry.html" title=" " alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,48,62,80,57,80,57,48"/>
+</map>

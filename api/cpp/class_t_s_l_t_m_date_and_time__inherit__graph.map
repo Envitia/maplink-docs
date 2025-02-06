@@ -1,0 +1,9 @@
+<map id="TSLTMDateAndTime" name="TSLTMDateAndTime">
+<area shape="rect" id="Node000001" title=" " alt="" coords="80,155,207,181"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_cal_date.html" title=" " alt="" coords="31,80,128,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,117,134,152,130,156,99,120"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_temporal_position.html" title=" " alt="" coords="5,5,154,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,48,82,80,77,80,77,48"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_clock_time.html" title=" " alt="" coords="153,80,262,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,120,157,156,153,152,184,117"/>
+</map>

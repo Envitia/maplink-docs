@@ -1,7 +1,7 @@
 <map id="overlay_data_layers_diagram_map" name="overlay_data_layers_diagram_map">
-<area shape="rect" id="id1" href="class_t_s_l_custom_client.html" title="TSLCustomClient" alt="" coords="410,303,514,329"/>
-<area shape="rect" id="id2" href="class_t_s_l_object_data_layer.html" title="TSLObjectDataLayer" alt="" coords="255,218,374,243"/>
-<area shape="rect" id="id3" href="class_t_s_l_custom_data_layer.html" title="TSLCustomDataLayer" alt="" coords="410,218,538,243"/>
-<area shape="rect" id="id4" href="class_t_s_l_standard_data_layer.html" title="TSLStandardDataLayer" alt="" coords="86,218,220,243"/>
-<area shape="rect" id="id5" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="180,39,450,94"/>
+<area shape="rect" id="id1" href="class_t_s_l_custom_client.html" title="TSLCustomClient" alt="" coords="110,303,214,329"/>
+<area shape="rect" id="id2" href="class_t_s_l_object_data_layer.html" title="TSLObjectDataLayer" alt="" coords="249,218,368,243"/>
+<area shape="rect" id="id3" href="class_t_s_l_custom_data_layer.html" title="TSLCustomDataLayer" alt="" coords="86,218,214,243"/>
+<area shape="rect" id="id4" href="class_t_s_l_standard_data_layer.html" title="TSLStandardDataLayer" alt="" coords="404,218,538,243"/>
+<area shape="rect" id="id5" href="class_t_s_l_data_layer.html" title="TSLDataLayer" alt="" coords="174,39,444,94"/>
 </map>

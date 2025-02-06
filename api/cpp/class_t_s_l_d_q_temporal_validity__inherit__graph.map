@@ -1,0 +1,7 @@
+<map id="TSLDQTemporalValidity" name="TSLDQTemporalValidity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,155,156,181"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_temporal_accuracy.html" title=" " alt="" coords="5,80,161,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,122,86,154,80,154,80,122"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="34,5,132,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,48,86,80,80,80,80,48"/>
+</map>
