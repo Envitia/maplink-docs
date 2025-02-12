@@ -59,7 +59,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | Spatial | **Deprecated** Will be merged into Editor | 10.2 | 10.2 | | Yes | Yes | |
 | Terrain | Supported | 11.1 | 11.1 | 10.2 | Yes | Yes | Yes |
 | Terrain Viewshed | Supported | 11.1 | 11.1 | 10.2 | Yes | Yes | Yes |
-| Terrain Contouring | **Archived** Use gdal_contour | | | | Yes | | |
+| Terrain Contouring | **Deprecated** Use gdal_contour | | | | Yes | | |
 | Time | **Deprecated** | 10.2 | | | Yes | | |
 | Tracks | Supported | 10.2 | 10.2 | 10.2 | Yes | Yes | Yes |
 | WMTS Data Layer | Supported | 11.1 | 11.1 | 10.2 | Yes | | |
