@@ -42,7 +42,7 @@ Following this major release, Envitia will be releasing quarterly updates that w
 [All previous releases](../releases/)
 
 ## 11.1.1.0
-- [11.1.1.0 release](../releases/11.1.1.0/)
+- [11.1.1.0 release](../releases/11.1.1.0/release-notes)
 - [Supported OS and compilers for MapLink Pro 11.1.1.0](platform-support.md)
 - [Supported SDKs in MapLink Pro 11.1.1.0](sdk-support.md)
 - [MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
