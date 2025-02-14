@@ -1,8 +1,8 @@
 # Release Notes - MapLink Pro - Version 11.1.1.0
 
-- [Upgrade Notes](/pages/support/install-and-upgrade)
-- [Supported Platforms](/pages/support/platform-support)
-- [Supported SDKs](/pages/support/sdk-support.md)
+- [Upgrade Notes](../../support/install-and-upgrade)
+- [Supported Platforms](../../support/platform-support)
+- [Supported SDKs](../../support/sdk-support.md)
 
 ## Defects
     * [MLK-381] - GDAL envitiacode.h contains 'This file must not be distributed' but is shipped
