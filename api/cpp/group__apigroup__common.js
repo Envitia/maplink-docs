@@ -242,7 +242,7 @@ var group__apigroup__common =
       [ "TSL_MAPLINK_10_0", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a69d90f75ac21f9107325a3a4e2355891", null ],
       [ "TSL_MAPLINK_10_1", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a6e2382ec732d66b62a24c271bbedfa0c", null ],
       [ "TSL_MAPLINK_10_2", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a0aeeb33190ad1808fab0af09f5c8564a", null ],
-      [ "TSL_MAPLINK_11_0", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a2a183d50f340e70ccd22f41721c600c6", null ],
+      [ "TSL_MAPLINK_11_1", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758ac4e39ec75864ff13e406bb85f8f5643b", null ],
       [ "TSL_CURRENT_MAPLINK_VERSION", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a0ecdea6c91f1d3104d6166d69b57c88d", null ],
       [ "TSL_RELEASED_MAPLINK_VERSION", "group__apigroup__common.html#gga8141b1e165228e088c49024076e13758ab2c63a98775ab563f432e01ec44b4e71", null ]
     ] ],
