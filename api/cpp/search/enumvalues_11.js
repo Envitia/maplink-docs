@@ -59,7 +59,7 @@ var searchData=
   ['tsl_5fmaplink_5f10_5f0_56',['TSL_MAPLINK_10_0',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a69d90f75ac21f9107325a3a4e2355891',1,'tslmaplinkversion.h']]],
   ['tsl_5fmaplink_5f10_5f1_57',['TSL_MAPLINK_10_1',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a6e2382ec732d66b62a24c271bbedfa0c',1,'tslmaplinkversion.h']]],
   ['tsl_5fmaplink_5f10_5f2_58',['TSL_MAPLINK_10_2',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a0aeeb33190ad1808fab0af09f5c8564a',1,'tslmaplinkversion.h']]],
-  ['tsl_5fmaplink_5f11_5f0_59',['TSL_MAPLINK_11_0',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a2a183d50f340e70ccd22f41721c600c6',1,'tslmaplinkversion.h']]],
+  ['tsl_5fmaplink_5f11_5f1_59',['TSL_MAPLINK_11_1',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758ac4e39ec75864ff13e406bb85f8f5643b',1,'tslmaplinkversion.h']]],
   ['tsl_5fmaplink_5f5_5f0_60',['TSL_MAPLINK_5_0',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a81bead057f0f9d060ac70e76c23e47ba',1,'tslmaplinkversion.h']]],
   ['tsl_5fmaplink_5f5_5f1_61',['TSL_MAPLINK_5_1',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a12c1f3921482b8ce5b8465a0da96a961',1,'tslmaplinkversion.h']]],
   ['tsl_5fmaplink_5f5_5f2_62',['TSL_MAPLINK_5_2',['../group__apigroup__common.html#gga8141b1e165228e088c49024076e13758a9f7f8ad764773f4c07532cddc0ed6d22',1,'tslmaplinkversion.h']]],
