@@ -134,6 +134,8 @@ Drawing</h2>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:abacaa6c8453ae59d8f6e7793be2efdb2" id="r_abacaa6c8453ae59d8f6e7793be2efdb2"><td class="memItemLeft" align="right" valign="top">TSLStyleID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abacaa6c8453ae59d8f6e7793be2efdb2">createFontID</a> (const <a class="el" href="class_t_s_l_simple_string.html">TSLSimpleString</a> &amp;name, TSLFontType meaningOfName, int fontWeight, bool italic=false, bool underline=false, bool antiAliased=false, const unsigned char *memoryBlock=NULL, TSLSize memoryBlockSize=0)</td></tr>
+<tr class="separator:abacaa6c8453ae59d8f6e7793be2efdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8681e399b1b4755464104ba38d85f19f" id="r_a8681e399b1b4755464104ba38d85f19f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_s_l_raster_buffer.html">TSLRasterBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8681e399b1b4755464104ba38d85f19f">createRasterBuffer</a> (unsigned int width, unsigned int height, <a class="el" href="class_t_s_l_raster_buffer.html#a1fafd2ab8f125b29ddceb5a2aaa91f7e">TSLRasterBuffer::Format</a> format, <a class="el" href="class_t_s_l_raster_buffer.html#a02b2cc2b1da9b354c4a40466d650cf24">TSLRasterBuffer::FilterMode</a> filterMode=<a class="el" href="class_t_s_l_raster_buffer.html#a02b2cc2b1da9b354c4a40466d650cf24a91eaf68f9a0200a02757022d9d863dae">TSLRasterBuffer::Linear</a>)</td></tr>
 <tr class="separator:a8681e399b1b4755464104ba38d85f19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f00e6a915bb0570c6bccd5fbd843444" id="r_a9f00e6a915bb0570c6bccd5fbd843444"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f00e6a915bb0570c6bccd5fbd843444">drawArc</a> (const <a class="el" href="class_t_s_l_coord.html">TSLCoord</a> &amp;centre_point, TSLTMC xradius, TSLTMC yradius, double start_angle, double end_angle, double rot_angle=0.0)</td></tr>
@@ -226,6 +228,75 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae7dee08525d2343499ecd3fa6d652f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abacaa6c8453ae59d8f6e7793be2efdb2" name="abacaa6c8453ae59d8f6e7793be2efdb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abacaa6c8453ae59d8f6e7793be2efdb2">&#9670;&#160;</a></span>createFontID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TSLStyleID TSLRenderingInterface::createFontID </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_simple_string.html">TSLSimpleString</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TSLFontType</td>          <td class="paramname"><span class="paramname"><em>meaningOfName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fontWeight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>italic</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>underline</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>antiAliased</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *</td>          <td class="paramname"><span class="paramname"><em>memoryBlock</em></span><span class="paramdefsep"> = </span><span class="paramdefval">NULL</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TSLSize</td>          <td class="paramname"><span class="paramname"><em>memoryBlockSize</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a new font identifier object that can be used to specify a font used in drawing. Example usage: </p><div class="fragment"><div class="line">*<span class="keywordtype">int</span> fontId = m_surface-&gt;createFontID(<span class="stringliteral">&quot;Haettenschweiler&quot;</span>, TSLFontType::TSLFontTypeFontName, 20, <span class="keyword">true</span>);*</div>
+<div class="line">basicAttribs.m_textFont = *fontId*;</div>
+<div class="line">basicAttribs.m_textColour = <a class="code hl_define" href="group__apigroup__common.html#gaf1d873dffc3335f3c9d991a3c6602e38">TSLComposeRGB</a>(0x00, 0x00, 0x00);</div>
+<div class="line">basicAttribs.m_textSizeFactor = 15.0;</div>
+<div class="line">basicAttribs.m_textSizeFactorUnits = <a class="code hl_enumvalue" href="group__apigroup__geometry__api.html#gga575681bd39e0be106648609e4958788caf115f80ec172374a45e39eab7fbebcfa">TSLDimensionUnitsPixels</a>;</div>
+<div class="ttc" id="agroup__apigroup__common_html_gaf1d873dffc3335f3c9d991a3c6602e38"><div class="ttname"><a href="group__apigroup__common.html#gaf1d873dffc3335f3c9d991a3c6602e38">TSLComposeRGB</a></div><div class="ttdeci">#define TSLComposeRGB(r, g, b)</div><div class="ttdef"><b>Definition</b> tslcolourhelper.h:21</div></div>
+<div class="ttc" id="agroup__apigroup__geometry__api_html_gga575681bd39e0be106648609e4958788caf115f80ec172374a45e39eab7fbebcfa"><div class="ttname"><a href="group__apigroup__geometry__api.html#gga575681bd39e0be106648609e4958788caf115f80ec172374a45e39eab7fbebcfa">TSLDimensionUnitsPixels</a></div><div class="ttdeci">@ TSLDimensionUnitsPixels</div><div class="ttdoc">Pixels.</div><div class="ttdef"><b>Definition</b> tsldimensionunits.h:32</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The font name.</td></tr>
+    <tr><td class="paramname">meaningOfName</td><td>Specify TSLFontType::TSLFontTypeFontName.</td></tr>
+    <tr><td class="paramname">fontWeight</td><td></td></tr>
+    <tr><td class="paramname">italic</td><td>true for italics</td></tr>
+    <tr><td class="paramname">underline</td><td>true for underline</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ID of the font. -1 on failure. </dd></dl>
+
+</div>
+</div>
 <a id="a8681e399b1b4755464104ba38d85f19f" name="a8681e399b1b4755464104ba38d85f19f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8681e399b1b4755464104ba38d85f19f">&#9670;&#160;</a></span>createRasterBuffer()</h2>
 
@@ -1884,7 +1955,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.1.0. | Documentation created Fri Feb 14 2025 19:42:32 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.1.0. | Documentation created Mon Feb 17 2025 14:21:34 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>
