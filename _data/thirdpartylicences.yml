@@ -1,5 +1,4 @@
-libs:
-libs:
+libs_url:
 - title: ActiveMQ-CPP
   version: 3.9.5
   url: https://github.com/apache/activemq-cpp/blob/master/LICENSE.txt
@@ -205,6 +204,18 @@ libs:
   version: 1.3.1
   url: https://www.zlib.net/zlib_license.html
 
-data:
+data_url:
 - title: Natural Earth
   url: https://www.naturalearthdata.com/about/terms-of-use/
+- title: NOAA S-57 ENC
+  url: https://www.charts.noaa.gov/ENCs/ENC_Agreement.shtml
+
+data_message:
+- title: Ordnance Survey
+  message: The Dorset map and EnterpriseCompressedMap have been generated from Ordnance Survey® Land-Line® and MeridianTM sample data. © Crown copyright.
+- title: US Geological Survey
+  message: The Terrain Data has been generated from data compiled by U.S. Geological Survey, EROS Data Center, Sioux Falls, SD.
+- title: OpenStreetMap
+  message: Some map samples have been generated from the OpenStreetMap Database. The OpenStreetMap data is copyright © OpenStreetMap contributors and is available under the OpenStreetMap Licence, details of which can be found <a href="https://www.openstreetmap.org/copyright">here</a>.
+- title: VMAP0 Edition 5
+  message: This product was developed using materials from the United States National Imagery and Mapping Agency and are reproduced with permission. This product has neither been endorsed nor authorized by the United States National Imagery and Mapping Agency or the United States Department of Defense.
