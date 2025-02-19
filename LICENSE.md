@@ -4,7 +4,7 @@
 
 The MapLink Pro SDK is proprietary commercial software. Copyright (c) Envitia Ltd.
 - [MapLink Pro Windows Licence](licences/MapLink%20Pro%20Windows%20Licence.pdf)
-- [MapLink Pro Windows Evalution Licence](licences/MapLink%20Pro%20Windows%20Eval%20Licence.pdf)
+- [MapLink Pro Windows Evaluation Licence](licences/MapLink%20Pro%20Windows%20Eval%20Licence.pdf)
 
 ## maplink-docs Developer Site Licence
 
