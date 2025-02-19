@@ -1,13 +1,221 @@
-libs:
-- title: GDAL/OGR
-  url: https://github.com/OSGeo/gdal/blob/master/LICENSE.TXT
-
-- title: proj
-  url: https://proj.org/en/5.0/license.html
-
+libs_url:
+- title: ActiveMQ-CPP
+  version: 3.9.5
+  url: https://github.com/apache/activemq-cpp/blob/master/LICENSE.txt
+- title: APR
+  uversionrl: 1.7.4
+  url: https://github.com/apache/apr#Apache-2.0-1-ov-file
+- title: Boost
+  version: 1.85.0
+  url: https://github.com/boostorg/boost/blob/master/LICENSE_1_0.txt
+- title: Cairo
+  version: 1.18.0
+  url: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+- title: Collada DOM
+  version: 2.5.0
+  url: https://github.com/rdiankov/collada-dom/blob/v2.5.0/licenses/dom_license_e.txt
+- title: Crypto++
+  version: 8.9.0
+  url: https://github.com/weidai11/cryptopp/blob/master/License.txt
+- title: Curl
+  version: 8.8.0
+  url: https://github.com/curl/curl/blob/master/COPYING
+- title: etcpack
+  version: 2.7.4
+  url: https://github.com/Ericsson/ETCPACK/blob/master/licence.txt
+- title: expat
+  version: 2.6.2
+  url: https://github.com/libexpat/libexpat/blob/master/COPYING
+- title: fontconfig
+  version: 2.14.2
+  url: https://fontconfig.pages.freedesktop.org/fontconfig/fontconfig-devel/
+- title: FreeImage
+  version: 3.18.0
+  url: https://github.com/libexpat/libexpat/blob/master/COPYING
+- title: freetype
+  version: 2.13.2
+  url: https://github.com/libexpat/libexpat/blob/master/COPYING
+- title: fribidi
+  version: 1.0.15
+  url: https://github.com/fribidi/fribidi/blob/master/COPYING
+- title: ftgl
+  version: 2.4.0
+  url: https://github.com/frankheckenbach/ftgl/blob/master/COPYING
+- title: gdal/ogr
+  version: 3.9.0
+  url: https://gdal.org/en/stable/license.html
+- title: geographiclib
+  version: 2.4
+  url: https://github.com/geographiclib/geographiclib/blob/main/LICENSE.txt
+- title: geos
+  version: 3.12.2
+  url: https://github.com/geographiclib/geographiclib/blob/main/LICENSE.txt
+- title: glew
+  version: 2.2.0
+  url: https://mit-license.org/
+- title: glib
+  version: 2.80.3
+  url: https://gitlab.gnome.org/GNOME/glib/-/blob/main/COPYING
+- title: gmp
+  version: 6.3.0
+  url: https://www.gnu.org/licenses/lgpl.html
+- title: gnutls
+  version: 3.7.11
+  url: https://gitlab.com/gnutls/gnutls/-/blob/master/COPYING
+- title: GraphicsMagick
+  version: 1.3.43
+  url: https://mit-license.org/
+- title: gts
+  version: 121130
+  url: http://www.gnu.org/licenses/lgpl.html
+- title: harfbuzz
+  version: 8.5.0
+  url: https://github.com/harfbuzz/harfbuzz/blob/main/COPYING
+- title: heatmap-master
+  version: Unversioned - Master Branch
+  url: https://github.com/lucasb-eyer/libheatmap#MIT-1-ov-file
+- title: icu
+  version: 75.1
+  url: https://github.com/unicode-org/icu/blob/main/LICENSE
+- title: LEADTOOLS
+  version: 23
+  url: https://www.leadtools.com/help/sdk/v23/licensing/intellectual-property-notices.html
+- title: ijpeg
+  version: 9f
+  url: https://www.ijg.org/files/README
+- title: IntelTBB
+  version: 2021.12.0
+  url: https://github.com/uxlfoundation/oneTBB/blob/master/LICENSE.txt
+- title: lib3ds
+  version: 1.3.0
+  url: http://www.gnu.org/licenses/lgpl.html
+- title: libdom
+  version: 0.4.2
+  url: http://opensource.org/licenses/mit-license.php
+- title: libffi
+  version: 3.4.6
+  url: https://github.com/libffi/libffi/blob/master/LICENSE
+- title: libiconv
+  version: 1.17
+  url: https://www.gnu.org/licenses/lgpl-3.0.en.html
+- title: libkml
+  version: 1.3.0
+  url: https://github.com/libkml/libkml/blob/1.3.0/LICENSE
+- title: libparserutils
+  version: 0.2.5
+  url: https://github.com/libkml/libkml/blob/1.3.0/LICENSE
+- title: libspatialite
+  version: 5.1.0
+  url: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+- title: libsquish
+  version: 1.15
+  url: http://opensource.org/licenses/mit-license.php
+- title: libsvgtiny
+  version: 0.1.8
+  url: http://opensource.org/licenses/mit-license.php
+- title: libtasn1
+  version: 4.19
+  url: https://ftp.gnu.org/gnu/Licenses/lgpl-3.0.txt
+- title: libtess
+  version: 9.0.3
+  url: http://opensource.org/licenses/mit-license.php
+- title: libwebsockets
+  version: 4.4.0
+  url: https://libwebsockets.org/git/libwebsockets/tree/LICENSE
+- title: libxft
+  version: 2.3.8
+  url: https://gitlab.freedesktop.org/xorg/lib/libxft/-/blob/master/COPYING
+- title: libxml2
+  version: 2.13.1
+  url: https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/Copyright
+- title: lpng
+  version: 1.6.43
+  url: https://github.com/pnggroup/libpng/blob/libpng16/LICENSE
+- title: nettle
+  version: 3.8.1
+  url: https://github.com/gnutls/nettle/blob/master/COPYING.LESSERv3
+- title: Openjpeg
+  version: 2.5.2
+  url: https://github.com/uclouvain/openjpeg/blob/master/LICENSE
+- title: OpenNavSurf
+  version: 2.0.2
+  url: https://github.com/OpenNavigationSurface/BAG/blob/master/LICENSE
+- title: OSG
+  version: 3.6.5
+  url: https://github.com/openscenegraph/OpenSceneGraph/blob/master/LICENSE.txt
+- title: OsgEarth
+  version: 3.5.0
+  url: https://github.com/gwaldron/osgearth/blob/master/LICENSE.txt
+- title: pango
+  version: 1.54.0
+  url: https://github.com/GNOME/pango/blob/main/COPYING
+- title: pcre
+  version: 10.44
+  url: https://github.com/PCRE2Project/pcre2/blob/pcre2-10.44/LICENCE
+- title: pdfium
+  version: Unversioned-master
+  url: https://pdfium.googlesource.com/pdfium/+/refs/heads/main/LICENSE
+- title: pixman
+  version: 0.43.4
+  url: https://github.com/libpixman/pixman#License-1-ov-file
+- title: podofo
+  version: 0.10.3
+  url: https://github.com/podofo/podofo/blob/master/COPYING
+- title: poppler
+  version: 24.06.1
+  url: https://gitlab.freedesktop.org/poppler/poppler/-/blob/master/COPYING
+- title: poppler-data
+  version: 0.4.12
+  url: https://gitlab.freedesktop.org/poppler/poppler-data/-/blob/master/COPYING
+- title: proj.4
+  version: 9.4.1
+  url: https://proj.org/en/9.4/about.html#license
+- title: qt-everywhere-opensource-src
+  version: 6.7.2
+  url: https://www.gnu.org/licenses/lgpl-3.0.en.html
+- title: rapidjson
+  version: 1.1.0
+  url: https://github.com/Tencent/rapidjson/blob/master/license.txt
+- title: sqlite
+  version: 3.46
+  url: https://sqlite.org/copyright.html
+- title: sqlite3x
+  version: 1.1.0
+  url: https://sqlite.org/copyright.html
+- title: tiff (libtiff)
+  version: 4.6.0t
+  url: https://gitlab.com/libtiff/libtiff/-/blob/master/LICENSE.md
+- title: uriparser
+  version: 0.9.8
+  url: https://github.com/uriparser/uriparser/blob/master/COPYING
+- title: valgrind
+  version: 3.23.0
+  url: http://www.gnu.org/licenses/gpl-2.0.html
 - title: WiX
+  version: 3.14.1
   url: https://wixtoolset.org/docs/v3/main/license/
+- title: Xalan-C
+  version: 1.12.0
+  url: https://github.com/apache/xalan-c/blob/master/LICENSE
+- title: xmlxerces
+  version: 3.2.5
+  url: https://www.apache.org/licenses/LICENSE-2.0
+- title: zlib
+  version: 1.3.1
+  url: https://www.zlib.net/zlib_license.html
 
-data:
+data_url:
 - title: Natural Earth
   url: https://www.naturalearthdata.com/about/terms-of-use/
+- title: NOAA S-57 ENC
+  url: https://www.charts.noaa.gov/ENCs/ENC_Agreement.shtml
+
+data_message:
+- title: Ordnance Survey
+  message: The Dorset map and EnterpriseCompressedMap have been generated from Ordnance Survey® Land-Line® and MeridianTM sample data. © Crown copyright.
+- title: US Geological Survey
+  message: The Terrain Data has been generated from data compiled by U.S. Geological Survey, EROS Data Center, Sioux Falls, SD.
+- title: OpenStreetMap
+  message: Some map samples have been generated from the OpenStreetMap Database. The OpenStreetMap data is copyright © OpenStreetMap contributors and is available under the OpenStreetMap Licence, details of which can be found <a href="https://www.openstreetmap.org/copyright">here</a>.
+- title: VMAP0 Edition 5
+  message: This product was developed using materials from the United States National Imagery and Mapping Agency and are reproduced with permission. This product has neither been endorsed nor authorized by the United States National Imagery and Mapping Agency or the United States Department of Defense.
