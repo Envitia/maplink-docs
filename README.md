@@ -25,11 +25,12 @@ MapLink Pro comes installed with a variety of sample applications to get you sta
 You can also view our sample code and tips in our [GitHub repos](https://github.com/envitia).
 
 ## Platform Requirements
-MapLink Pro has APIs for [C++](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html) and .Net and can be used on Windows and Linux.
+MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be used on Windows and Linux.
 
 ## Resources
-- [Envitia MapLink Pro API Documentation](https://www.envitia.com/technologies/products/maplink-pro/userguide/index.html)
-- [Support Pages](./pages/support/support.md)
+- [Envitia MapLink Pro API Documentation](./api/)
+- [MapLink Studio Documentation](./studio/)
+- [Support Pages](./pages/support/)
 - [Licences](./licences)
 
 # Docs
