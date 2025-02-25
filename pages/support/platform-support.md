@@ -14,7 +14,6 @@ The following table lists the operating systems that the MapLink release has bee
 | Windows | 11, 10 | 11.1 |
 | Linux: Rocky | 8 | 11.1 |
 | Linux: RHEL | 8 | 11.1 |
-| Linux: Ubuntu | 22 LTS | 11.1 |
 | Android | - | 10.2 |
 
 # MapLink 11.1 Compilers
