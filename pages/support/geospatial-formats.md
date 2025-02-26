@@ -19,19 +19,19 @@ The geospatial raster formats supported by MapLink Pro are listed in the followi
 | ARCGrid | :heavy_check_mark: | :heavy_check_mark: | | |
 | ARCS Chart | :heavy_check_mark: (on request) | | | |
 | ASCII DEM | :heavy_check_mark: | :heavy_check_mark: | | |
-| ASRP | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: TSLFilterTypeASRP |
+| ASRP | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: [TSLFilterTypeASRP](../../api/cpp/group__apigroup__api.html#gga2dce89b747707f4d70f4135a54a36ff7abc922097ef260d09507e17262a2c7a96) |
 | BSB Nautical Chart | :heavy_check_mark: | :heavy_check_mark: | | |
-| CADRG/CIB | :heavy_check_mark: | | :heavy_check_mark: TSLKeyedCADRGDataLayer | :heavy_check_mark: TSLKeyedCADRGDataLayer |
+| CADRG/CIB | :heavy_check_mark: | | :heavy_check_mark: [TSLKeyedCADRGDataLayer](../../api/cpp/group__apigroup__api.html#ggabe69c639edbea50d68f890ed6838d685a8e7d78db9647a36c83bc3b9a2a46f844) | :heavy_check_mark: [TSLKeyedCADRGDataLayer](../../api/cpp/group__apigroup__api.html#ggabe69c639edbea50d68f890ed6838d685a8e7d78db9647a36c83bc3b9a2a46f844) |
 | CRP | Deprecated | | | |
 | DBDB | :heavy_check_mark: | | | |
 | DMED | :heavy_check_mark: | | | |
 | DTED | :heavy_check_mark: | | | |
-| ECW | :heavy_check_mark: | | :heavy_check_mark: TSLKeyedECWDataLayer | |
+| ECW | :heavy_check_mark: | | | |
 | GeoPackage | :heavy_check_mark: | | | |
 | Geospatial PDF | :heavy_check_mark: | | | |
-| GeoTIFF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: TSLFilterTypeGeoTIFF | |
+| GeoTIFF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: [TSLFilterTypeGeoTIFF](../../api/cpp/group__apigroup__api.html#gga2dce89b747707f4d70f4135a54a36ff7a084974d1342b6e1f8761c23e40fc6d5c) | |
 | MrSID | :heavy_check_mark: | :heavy_check_mark: | | |
-| NTIF/NSIF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: TSLFilterTypeNITF| |
+| NTIF/NSIF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: [TSLFilterTypeNITF](../../api/cpp/group__apigroup__api.html#gga2dce89b747707f4d70f4135a54a36ff7a5151bdafd9d2842aec4c3bbee1956244) | |
 | USRP | :heavy_check_mark: | :heavy_check_mark: | | |
 | All in-built GDAL formats (e.g. JPG, IMG, PNG, etc) | :heavy_check_mark: | :heavy_check_mark: | | |
 | Extended GDAL formats (if driver available) | :heavy_check_mark: | :heavy_check_mark: | | |
