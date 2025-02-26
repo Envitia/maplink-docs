@@ -42,7 +42,7 @@ The geospatial raster formats supported by MapLink Pro are listed in the followi
 
 ## Vector Formats
 
-Geospatial vector data representing geographic information using points, lines, and polygons. It can be used for visualisation and analysis. Vector data can represent features like roads, cities, properties, boundaries, mountains, and bodies of water. Vector data can be analyzed to show how different features interact with each other.
+Geospatial vector data represent geographic information using points, lines, and polygons. It can be used for visualisation and analysis. Vector data can represent features like roads, cities, properties, boundaries, mountains, and bodies of water. Vector data can be analyzed to show how different features interact with each other.
 
 MapLink Studio can be used to read vector data and generate an optimised MapLink Map for runtime loading by [the TSLMapDataLayer class](../../api/cpp/class_t_s_l_map_data_layer.html).
 
