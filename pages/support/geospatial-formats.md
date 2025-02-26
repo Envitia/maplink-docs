@@ -15,7 +15,7 @@ MapLink Studio can be used to read raster data and generate an optimised MapLink
 
 The geospatial raster formats supported by MapLink Pro are listed in the following table.
 
-| Raster format | Can be read by [MapLink Studio](../../pdf/MapLink%20Studio%20User%20Guide.pdf)? | Can be read by [Direct Import SDK](../../api/cpp/class_t_s_l_direct_import_data_layer.html) | Other runtime import (read) | Runtime export (write) |
+| Raster format | Can be read by [MapLink Studio](../../pdf/MapLink%20Studio%20User%20Guide.pdf)? | Can be read at runtime by [Direct Import SDK](../../api/cpp/class_t_s_l_direct_import_data_layer.html) | Other runtime import (read) | Runtime export (write) |
 | --- | --- | --- | --- | --- |
 | ADRG | :heavy_check_mark: | :heavy_check_mark: | | |
 | ARCGrid | :heavy_check_mark: | :heavy_check_mark: | | |
@@ -48,7 +48,7 @@ MapLink Studio can be used to read vector data and generate an optimised MapLink
 
 The geospatial vector formats supported by MapLink Pro are listed in the following table.
 
-| Vector format | Can be read by [MapLink Studio](../../pdf/MapLink%20Studio%20User%20Guide.pdf)? | Can be read by [Direct Import SDK](../../api/cpp/class_t_s_l_direct_import_data_layer.html) | Other runtime import (read) | Runtime export (write) |
+| Vector format | Can be read by [MapLink Studio](../../pdf/MapLink%20Studio%20User%20Guide.pdf)? | Can be read at runtime by [Direct Import SDK](../../api/cpp/class_t_s_l_direct_import_data_layer.html) | Other runtime import (read) | Runtime export (write) |
 | --- | --- | --- | --- | --- |
 | DAFIF | :heavy_check_mark: | | | |
 | DBDB | :heavy_check_mark: | | | |
