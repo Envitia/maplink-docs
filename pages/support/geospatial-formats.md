@@ -91,3 +91,5 @@ The geospatial terrain and elevation gridded formats supported by MapLink Pro ar
 | DEM/DTM | <img src="../../img/tick.png" alt="Yes!" width="25" height="25"> | |
 | DMED | <img src="../../img/tick.png" alt="Yes!" width="25" height="25"> | <img src="../../img/tick.png" alt="Yes!" width="25" height="25"> [TSLKeyedDMEDTerrainDatabase](../../api/cpp/group__apigroup__api.html#ggabe69c639edbea50d68f890ed6838d685a2052a244eba73f51c85146e8b838572a) |
 | DTED | <img src="../../img/tick.png" alt="Yes!" width="25" height="25"> | <img src="../../img/tick.png" alt="Yes!" width="25" height="25"> [TSLKeyedDMEDTerrainDatabase](../../api/cpp/group__apigroup__api.html#ggabe69c639edbea50d68f890ed6838d685a2052a244eba73f51c85146e8b838572a) |
+
+<a href="https://www.flaticon.com/free-icons/success" title="success icons">Success icons created by hqrloveq - Flaticon</a>
