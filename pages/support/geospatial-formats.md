@@ -15,24 +15,24 @@ The geospatial raster formats supported by MapLink Pro are listed in the followi
 
 | Raster format | Can be read by [MapLink Studio](../../pdf/MapLink%20Studio%20User%20Guide.pdf)? | Can be read by [Direct Import SDK](../../api/cpp/class_t_s_l_direct_import_data_layer.html) | Other runtime import (read) | Runtime export (write) |
 | --- | --- | --- | --- | --- |
-| ADRG | :white_check_mark: | :white_check_mark: | | |
-| ARCGrid | :white_check_mark: | :white_check_mark: | | |
-| ARCS Chart | :white_check_mark: (on request) | | | |
-| ASCII DEM | :white_check_mark: | :white_check_mark: | | |
-| ASRP | :white_check_mark: | :white_check_mark: | | :white_check_mark: TSLFilterTypeASRP |
-| BSB Nautical Chart | :white_check_mark: | :white_check_mark: | | |
-| CADRG/CIB | :white_check_mark: | | :white_check_mark: TSLKeyedCADRGDataLayer | :white_check_mark: TSLKeyedCADRGDataLayer |
+| ADRG | :heavy_check_mark: | :heavy_check_mark: | | |
+| ARCGrid | :heavy_check_mark: | :heavy_check_mark: | | |
+| ARCS Chart | :heavy_check_mark: (on request) | | | |
+| ASCII DEM | :heavy_check_mark: | :heavy_check_mark: | | |
+| ASRP | :heavy_check_mark: | :heavy_check_mark: | | :heavy_check_mark: TSLFilterTypeASRP |
+| BSB Nautical Chart | :heavy_check_mark: | :heavy_check_mark: | | |
+| CADRG/CIB | :heavy_check_mark: | | :heavy_check_mark: TSLKeyedCADRGDataLayer | :heavy_check_mark: TSLKeyedCADRGDataLayer |
 | CRP | Deprecated | | | |
-| DBDB | :white_check_mark: | | | |
-| DMED | :white_check_mark: | | | |
-| DTED | :white_check_mark: | | | |
-| ECRG | :white_check_mark: | :white_check_mark: | | |
-| ECW | :white_check_mark: | | :white_check_mark: TSLKeyedECWDataLayer | |
-| GeoPackage | :white_check_mark: | | | |
-| Geospatial PDF | :white_check_mark: | | | |
-| GeoTIFF | :white_check_mark: | :white_check_mark: | :white_check_mark: TSLFilterTypeGeoTIFF | |
-| MrSID | :white_check_mark: | :white_check_mark: | | |
-| NTIF/NSIF | :white_check_mark: | :white_check_mark: | :white_check_mark: TSLFilterTypeNITF| |
-| USRP | :white_check_mark: | :white_check_mark: | | |
-| All in-built GDAL formats (e.g. JPG, IMG, PNG, etc) | :white_check_mark: | :white_check_mark: | | |
-| Extended GDAL formats (if driver available) | :white_check_mark: | :white_check_mark: | | |
+| DBDB | :heavy_check_mark: | | | |
+| DMED | :heavy_check_mark: | | | |
+| DTED | :heavy_check_mark: | | | |
+| ECW | :heavy_check_mark: | | :heavy_check_mark: TSLKeyedECWDataLayer | |
+| GeoPackage | :heavy_check_mark: | | | |
+| Geospatial PDF | :heavy_check_mark: | | | |
+| GeoTIFF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: TSLFilterTypeGeoTIFF | |
+| MrSID | :heavy_check_mark: | :heavy_check_mark: | | |
+| NTIF/NSIF | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: TSLFilterTypeNITF| |
+| USRP | :heavy_check_mark: | :heavy_check_mark: | | |
+| All in-built GDAL formats (e.g. JPG, IMG, PNG, etc) | :heavy_check_mark: | :heavy_check_mark: | | |
+| Extended GDAL formats (if driver available) | :heavy_check_mark: | :heavy_check_mark: | | |
+| OGC WMS | | | :heavy_check_mark: [TSLWMSDataLayer](../../api/cpp/class_t_s_l_w_m_s_data_layer.html) | |
