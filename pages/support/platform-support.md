@@ -28,4 +28,4 @@ MapLink Pro 11.1+ is built with these components:
 
 # C++ Version
 The MapLink Pro C++ API is C++ 03 compliant to ensure maximum compatibility.
-On Windows, Visual Studio v143 (VS2022) imposes minimum support for C++ 14.
+On Windows and Linux, the minimum required version is C++17 to ensure compatibility with latest third party dependencies 
