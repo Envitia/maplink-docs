@@ -22,7 +22,7 @@ MapLink Pro 11.1+ is built with these components:
 
 | OS | Compiler | Version |
 | ----- | ----- | ----- |
-| Linux | GCC | 11.x |
+| Linux | GCC | 11.4 |
 | Windows | MSVC | v143 (VS2022) |
 |  |  | .NET Framework 4.8 |
 
