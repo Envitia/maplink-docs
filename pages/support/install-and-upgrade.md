@@ -3,9 +3,7 @@
 * toc
 {:toc}
 
-> **MapLink Pro 11: The next major release of MapLink Pro is coming soon. When this happens, MapLink Pro 8.x will enter support and maintenance end-of-life. If this affects your contracts, [please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/6ydUswfjEe).**
-
-If you have an active MapLink Pro support and maintenance contract with Envitia, you can upgrade to MapLink Pro 11.1 when it becomes available ([see the Support page for more details of the release date](index.md)).
+> **MapLink Pro 11: The next major release of MapLink Pro is now available. MapLink Pro 8.x has now entered support and maintenance end-of-life. [Please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/6ydUswfjEe).**
 
 There are structural differences between 11.1 and previous versions of MapLink Pro. This page explains how to upgrade your application to MapLink Pro 11.1.
 
@@ -29,7 +27,7 @@ To ensure that your application runtime loads the desired MapLink Pro library ve
 after the change has been made, not ones that were opened before. If the application is
 a system service, such as Microsoft's Internet Information Services (IIS), a reboot may
 be required.
-- Or, set the application's working directory to the desired MapLink Pro version's bin directory.
+- Or, set the application's working directory to the desired MapLink Pro version's bin64 directory.
 
 ## Windows Licensing
 Certain MapLink Pro components installed on Windows require a licence to be installed on the machine before they will work.
@@ -37,8 +35,8 @@ Certain MapLink Pro components installed on Windows require a licence to be inst
 
 ## Upgrading to MapLink 11.1 on Windows
 
-- MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly.
-- You may encounter some build errors in your C++ application code if you are using features that have been deprecated or removed from the C++ 17 standard. These tend to be concerned with C++ features that have been removed from the C++ standard, and tend to require fairly straight-forward code replacements.
+- MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro installation.**
+- You may encounter some build errors in your C++ application code if you are using C++ features that have been deprecated or removed from the C++ 17 standard. These tend to be concerned with C++ features that have been removed from the C++ standard, and tend to require fairly straight-forward code replacements.
 - MapLink Pro no longer includes "Debug for Release" (*xxx64**D**.xxx*) libraries. If your Debug configurations use these libraries, please change them to use the MapLink Pro Release libraries (*xxx64.xxx*). The Release libraries have been updated to include Frame Pointers so there should be no regression of the debugging experience.
 - MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
 - [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
@@ -66,7 +64,7 @@ To ensure that your application runtime loads the desired MapLink Pro library ve
 
 ## Upgrading to MapLink 11.1 on Linux
 
-- MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly.
+- MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro distribution package.**
 - MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
 - [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
 
