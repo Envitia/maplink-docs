@@ -23,7 +23,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 
 | --- | --- | --- | --- |
 | February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.1.0/release-notes) |
-| March 31 2025 | 11.1.2 | Upgrade of [remaining in-support components not upgraded by 11.1.1](sdk-support.md) | |
+| April XX 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
 | June 30 2025 | 11.x | TBC | |
 | September 30 2025 | 11.x | TBC | |
 | December 19 2025 | 11.x | TBC | |
@@ -31,6 +31,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 [All previous releases](../releases/)
 
 ## 11.1
+- [11.1.2.0 release](../releases/11.1.2.0/release-notes)
 - [11.1.1.0 release](../releases/11.1.1.0/release-notes)
 - [Supported OS and compilers for MapLink Pro 11.1](platform-support.md)
 - [Supported SDKs in MapLink Pro 11.1](sdk-support.md)
