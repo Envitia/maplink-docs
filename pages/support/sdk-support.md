@@ -24,7 +24,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | **MapLink Pro Core** | **Supported** | **11.1.2** | **11.1.2** | **10.2** | **Yes** | **Yes** | **Yes** |
 | 3D | **Deprecated** Superseded by Earth | 11.1.2 | 11.1.2 | | Yes | Yes | |
-| Accelerator | **Deprecated** Superseded by OpenGLDrawingSurface | 10.2 | | | Yes | | |
+| Accelerator | **Deprecated** Superseded by OpenGLDrawingSurface | 11.1.2 | | | Yes | | |
 | Android Native Surface | Supported | | | 10.2 | Yes | | |
 | App11 | Supported | 11.1.2 | | | Yes | | |
 | ASRP Exporter SDK | **Archived** | | | | | | |
@@ -38,7 +38,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | Editor | Supported | 11.1.2 | 11.1.2 | | Yes | Yes | |
 | Entity Store | **Archived** | | | | | | |
 | ER Mapper | **Archived** | | | | | | |
-| GeoPackage | Supported | 10.2 | | 10.2 | Yes | Yes | Yes |
+| GeoPackage | Supported | 11.1.2 | | 11.1.2 | Yes | Yes | Yes |
 | GML Interop | Supported | 11.1.2 | 11.1.2 | | Yes | | |
 | Impact Assessment | **Archived** | | | | | | |
 | Interaction Modes | Supported | 11.1.2 | 11.1.2 | | Yes | Yes | |
@@ -51,7 +51,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | OpenGL Track Helper | Supported | 11.1.2 | 11.1.2 | | Yes | Yes | |
 | OWS Context | Supported | 11.1.2 | | 10.2 | Yes | | |
 | OSGEarth Bridge | **Deprecated** Use Earth SDK | 10.2 | | | Yes | | |
-| Rendering Attribute Panel | Supported | 11.1.1 | | | Yes | Yes | |
+| Rendering Attribute Panel | Supported | 11.1.2 | | | Yes | Yes | |
 | S-52 | Supported | 11.1.2 | 11.1.2 | | Yes | Yes | |
 | S-63 | Supported | 11.1.2 | | | Yes | | |
 | Satellite Propagator | **Deprecated** | 10.2 | | | Yes | | |
