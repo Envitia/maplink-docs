@@ -49,8 +49,7 @@ These files and directories are normally required by a deployment:
 | fillstyles | MapLink Pro Fillstyle configuration files. |
 | Fonts | Additional fonts used by MapLink Pro. | 
 | Linestyles | MapLink Pro Linestyle configuration files. | 
-| Symbols | MapLink Pro symbol configuration files and symbols. *NB: There is considerable scope for reducing the number of symbols deployed in the symbols
-directory to just the ones you use in your application and maps.* | 
+| Symbols | MapLink Pro symbol configuration files and symbols. *NB: You can significantly reduce the size of the Symbols folder by distributing only the symbols used in your application and maps.* | 
 | tslandroidfonts.dat | Android font list | 
 | tslcolours.dat | Colours list | 
 | tslfillstyles.dat | Fillstyle list | 
@@ -195,3 +194,32 @@ Where:
   - ```MAPL_HOME```
   - The parent directory of the resource file being loaded.
 - *GDAL_VERSION_MAJOR.GDAL_VERSION_MINOR* = GDAL/OGR Major/Minor version
+
+# Windows Deployed Libraries
+
+See: [Windows Deployed Libraries](./windows-deployed-libs)
+
+# Linux Deployed Libraries
+
+See: [Linux Deployed Libraries](./linux-deployed-libs)
+
+# Common Deployment Problems
+
+If a problem persists, **[create a technical support ticket](https://support.envitia.com) (Requires an active maintenance & support contract)**
+
+## DLL/Shared Library Not Found
+On Windows use dependency walker to see what DLLs are loaded and if they can be found.
+.NET may require the use of a ResolveEventHandler.
+
+On Linux use ldd to see what libraries are being used by a shared library or executable.
+
+Make sure that the MapLink DLLs are in the path environment variable or that you run your
+application in the directory containing the MapLink DLLs.
+Alternatvely, to facilitate deployment of multiple versions of your application to a single machine you
+should avoid setting the path in the environment variable and run the application in the bin64
+directory. If you do this then be careful that the application or GUI toolkit does not change the
+working directory.
+
+## MapLink Studio Automation
+Only one version of the Automation interface can be registered at any one time.
+Please refer to XXX for further help.
