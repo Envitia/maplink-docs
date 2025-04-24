@@ -455,7 +455,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The 'printf' style format string code set by the user. Default value is: f </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The 'printf' style format string code set by the user. Default value is: %f </dd></dl>
 
 </div>
 </div>
@@ -480,8 +480,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Set the formatting for the displayed bearing label.</p>
 <p>This function expects a string that is compliant with the C/C++ printf formatting syntax. Passing null or an empty string will revert the formatting to display the default bearing formatting. If the <a class="el" href="#a7a55aebe362a71ef5df43c0a8fa110eb" title="Specifies the unit of measure used by the ruler.">TSLTrackGraphicRuler::UnitOfMeasure</a> used is a standard UoM, reverting the formatting will ensure the bearing label has the associated suffix when it is displayed.</p>
 <p>Examples:</p><ul>
-<li>"%f0.4" - 42.0000</li>
-<li>"%f0.1 degrees" - 42.0 degrees</li>
+<li>"%0.4f" - 42.0000</li>
+<li>"%0.1f degrees" - 42.0 degrees</li>
 <li>"%e degrees" - Bearing in degrees, using scientific notation</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -893,8 +893,8 @@ Additional Inherited Members</h2></td></tr>
 <p>This function expects a string that is compliant with the C/C++ printf formatting syntax. Passing null or an empty string will revert the formatting to display the default distance formatting. If the <a class="el" href="#a7a55aebe362a71ef5df43c0a8fa110eb" title="Specifies the unit of measure used by the ruler.">TSLTrackGraphicRuler::UnitOfMeasure</a> used is a standard UoM, reverting the formatting will ensure the distance label has the associated suffix when it is displayed.</p>
 <p>Passing an empty string will display just the value.</p>
 <p>Examples:</p><ul>
-<li>"%f0.4" - 42.0000</li>
-<li>"%f0.1Km" - 42.0Km</li>
+<li>"%0.4f" - 42.0000</li>
+<li>"%0.1fKm" - 42.0Km</li>
 <li>"%eKm" - Distance in Km, using scientific notation</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
