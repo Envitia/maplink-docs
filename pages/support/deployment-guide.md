@@ -222,4 +222,4 @@ working directory.
 
 ## MapLink Studio Automation
 Only one version of the Automation interface can be registered at any one time.
-Please refer to XXX for further help.
+Please refer to Envitia support for further help.
