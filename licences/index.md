@@ -1,8 +1,5 @@
 # Licences
 
-* toc
-{:toc}
-
 The MapLink Pro SDK is proprietary commercial software. Copyright (c) Envitia Ltd.
 
 # Restrictions
