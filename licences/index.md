@@ -25,7 +25,7 @@ All applications require the follow statement:
 > Portions hereof copyright © 1991-2025 Envitia Group PLC. All rights reserved;
 
 MapLink Pro-derived applications that use raster maps or raster images require the following statement:
-> Portions of this product were created using LEADTOOLS ©1991-2023, LEAD Technologies, Inc. and its licensors. ALL RIGHTS RESERVED. Portions of this product are licensed under US patents 9,552,527, 10,318,563, 10,579,653, 11,488,407 and 11,613,114 and foreign counterparts.
+> Portions of this product were created using LEADTOOLS ©1991-2025, LEAD Technologies, Inc. and its licensors. ALL RIGHTS RESERVED. Portions of this product are licensed under US patents 9,552,527, 10,318,563, 10,579,653, 11,488,407 and 11,613,114 and foreign counterparts.
 
 Additional copyright statements may be required for other third-party open source and proprietary components. Please see the [Third Party licences page](./third-party).
 
