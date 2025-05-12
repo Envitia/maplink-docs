@@ -23,7 +23,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 
 | --- | --- | --- | --- |
 | February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.1.0/release-notes) |
-| April XX 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
+| May 12 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
 | May 2025 | 11.1.3 | Upgrade of Earth SDK | |
 | June 30 2025 | 11.x | TBC | |
 | September 30 2025 | 11.x | TBC | |
