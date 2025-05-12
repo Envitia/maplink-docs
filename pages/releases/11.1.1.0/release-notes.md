@@ -1,4 +1,4 @@
-# Release Notes - MapLink Pro - Version 11.1.1.0
+# Release Notes - MapLink Pro - Version 11.1.2.0
 
 - [Upgrade Notes](../../support/install-and-upgrade)
 - [Supported Platforms](../../support/platform-support)
