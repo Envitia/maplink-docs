@@ -22,8 +22,9 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 # Releases
 
 | --- | --- | --- | --- |
-| February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.2.0/release-notes) |
-| March 31 2025 | 11.1.2 | Upgrade of [remaining in-support components not upgraded by 11.1.1](sdk-support.md) | |
+| February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.1.0/release-notes) |
+| May 12 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
+| May 2025 | 11.1.3 | Upgrade of Earth SDK | |
 | June 30 2025 | 11.x | TBC | |
 | September 30 2025 | 11.x | TBC | |
 | December 19 2025 | 11.x | TBC | |
@@ -32,6 +33,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 
 ## 11.1
 - [11.1.2.0 release](../releases/11.1.2.0/release-notes)
+- [11.1.1.0 release](../releases/11.1.1.0/release-notes)
 - [Supported OS and compilers for MapLink Pro 11.1](platform-support.md)
 - [Supported SDKs in MapLink Pro 11.1](sdk-support.md)
 - [Supported geospatial data formats in MapLink Pro 11.1](geospatial-formats.md)
