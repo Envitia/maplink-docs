@@ -1,10 +1,14 @@
-# Release Notes - MapLink Pro - Version 11.1.1.0
+# Release Notes - MapLink Pro - Version 11.1.2.0
 
+* toc
+{:toc}
+
+# Related Pages
 - [Upgrade Notes](../../support/install-and-upgrade)
 - [Supported Platforms](../../support/platform-support)
 - [Supported SDKs](../../support/sdk-support.md)
 
-## Defects
+# Defects
     * [MLK-381] - GDAL envitiacode.h contains 'This file must not be distributed' but is shipped
     * [MLK-868] - Qt samples contain readme with incorrect information
     * [MLK-1672] - MapLink Filters include copies of libjpeg from the 1990s
@@ -12,7 +16,7 @@
     * [MLK-2493] - Installer does not properly display the license agreement
     * [MLK-2504] - Broken doxygen generated API docs
 
-## Stories
+# Stories
     * [MLK-2057] - Update boost libraries to latest version
     * [MLK-2058] - Update Crypto++ to latest version
     * [MLK-2059] - Update Curl to latest version
@@ -157,3 +161,5 @@
     * 1228       - Regenerate Wix Installer
     
 
+# Known Issues
+    * 1451	KML overlay translucency
