@@ -27,5 +27,12 @@ Our user guides explain how to use MapLink Pro's supporting tools and utilities.
 
 The deployment guides help you through the process of deploying your application built using MapLink Pro.
 
-- **[Deployment of End User Applications](../pdf/MapLink%2011.0%20Deployment%20of%20End%20User%20Applications.pdf)**
+- **[NEW - Deployment of End User Applications](./support/deployment-guide)**
+- [LEGACY - Deployment of End User Applications](../pdf/MapLink%2011.0%20Deployment%20of%20End%20User%20Applications.pdf)
 - [MapLink OGC Services Deployment User Guide](../pdf/MapLink%20OGC%20Services%20Deployment%20User%20Guide.pdf)
+
+## Data Sheet
+
+Information data sheets.
+
+- **[NEW - MapLink Pro 11 Data Sheet](../pdf/MapLink Pro 11 White Paper V1.0.pdf)**
