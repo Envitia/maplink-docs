@@ -38,6 +38,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 - [Supported SDKs in MapLink Pro 11.1](sdk-support.md)
 - [Supported geospatial data formats in MapLink Pro 11.1](geospatial-formats.md)
 - [MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
+- [Deployment of End User Applications](deployment-guide)
 
 [Tell us you want to upgrade to MapLink Pro 11.1](https://forms.office.com/e/6ydUswfjEe)
 
