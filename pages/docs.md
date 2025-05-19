@@ -35,4 +35,4 @@ The deployment guides help you through the process of deploying your application
 
 Information data sheets.
 
-- **[NEW - MapLink Pro 11 Data Sheet](../pdf/MapLink Pro 11 White Paper V1.0.pdf)**
+- **[NEW - MapLink Pro 11 Data Sheet](../pdf/MapLink Pro 11 Data Sheet.pdf)**
