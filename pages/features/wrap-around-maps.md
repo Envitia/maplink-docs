@@ -42,6 +42,7 @@ So, to find features, raster tiles and data to display, use queryExtent to query
 # Limitations
 - Wrap-around mode is supported only when your drawing surface is using an appropriate coordinate system, e.g. WGS84, World Mercator or Dynamic Arc Grid.
 - Wrap-around mode is not supported when using a Realtime Reprojection map. Realtime reprojection maps can provide similar functionality to wrap-around maps by moving the reference datum to a specified location, often the centre of the screen, so that the map re-projects around the location of interest even if the location is at the dateline.
+- Wrap-around mode is not yet tested with rotated drawing surfaces.
 
 # Considerations
  As maps are now being drawn the maps over a potentially larger area of the drawing surface when zoomed out, there is an increased potential for the maths used in TMC coordinates to overflow. When MapLink detects this, it stops drawing tiles so that your application will not crash which results in the map containing blank tiles temporarily.
