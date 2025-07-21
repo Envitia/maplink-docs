@@ -5,12 +5,14 @@
 
 # Related Pages
 
+- **[Wrap-around Maps](../../features/wrap-around-maps)**
+
 - [Upgrade Notes](../../support/install-and-upgrade)
 - [Supported Platforms](../../support/platform-support)
 - [Supported SDKs](../../support/sdk-support.md)
 
 # Features
-    * 1875	[Wrap-around 2D maps](../../features/wrap-around-maps)
+    * 1875	Wrap-around 2D maps
         * As a C2 operator, I want my 2D world map to wrap around coordinate system bounds, so that I have a realistic display of geospatial features that span the dateline
 
 # Improvements
