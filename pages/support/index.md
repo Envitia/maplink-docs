@@ -24,22 +24,19 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 | --- | --- | --- | --- |
 | February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.1.0/release-notes) |
 | May 12 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
-| May 2025 | 11.1.3 | Upgrade of Earth SDK | |
-| June 30 2025 | 11.x | TBC | |
+| July 21 2025 | 11.2.1 | New feature: Wrap-around maps | [Release notes](../releases/11.2.1/release-notes) |
+| August 2025 | 11.2.2 | Upgrade of Earth SDK | |
 | September 30 2025 | 11.x | TBC | |
 | December 19 2025 | 11.x | TBC | |
 
-[All previous releases](../releases/)
+[All releases](../releases/)
 
-## 11.1
-- [11.1.2.0 release](../releases/11.1.2.0/release-notes)
-- [11.1.1.0 release](../releases/11.1.1.0/release-notes)
-- [Supported OS and compilers for MapLink Pro 11.1](platform-support.md)
-- [Supported SDKs in MapLink Pro 11.1](sdk-support.md)
-- [Supported geospatial data formats in MapLink Pro 11.1](geospatial-formats.md)
+- [Supported OS and compilers for MapLink Pro](platform-support.md)
+- [Supported SDKs in MapLink Pro](sdk-support.md)
+- [Supported geospatial data formats in MapLink Pro](geospatial-formats.md)
 - [MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
 - [Deployment of End User Applications](deployment-guide)
 
-[Tell us you want to upgrade to MapLink Pro 11.1](https://forms.office.com/e/6ydUswfjEe)
+[Tell us you want to upgrade to MapLink Pro 11](https://forms.office.com/e/6ydUswfjEe)
 
-[Request a trial of MapLink Pro 11.1](https://forms.office.com/e/Lr7jN9TCC0)
+[Request a trial of MapLink Pro 11](https://forms.office.com/e/Lr7jN9TCC0)
