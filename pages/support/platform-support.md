@@ -3,20 +3,20 @@
 * toc
 {:toc}
 
-The MapLink 11.1 release is targeting Windows and Linux operating systems. The next MapLink for Android release will follow, but users can continue to use MapLink 10.2 on Android.
+For the time being, MapLink Pro releases are targeting Windows and Linux operating systems. The next MapLink for Android release will follow, but users can continue to use MapLink 10.2 on Android.
 
 The following table lists the operating systems that the MapLink release has been tested on. 
 
-# Operating Systems Supported by MapLink 11.1
+# Supported Operating Systems
 
 | Supported OS | OS Versions | Tested MapLink Version |
 | ----- | ----- | ----- |
-| Windows | 11, 10 | 11.1 |
-| Linux: Rocky | 8 | 11.1 |
-| Linux: RHEL | 8 | 11.1 |
+| Windows | 11, 10 | 11.2 |
+| Linux: Rocky | 8 | 11.2 |
+| Linux: RHEL | 8 | 11.2 |
 | Android | - | 10.2 |
 
-# MapLink 11.1 Compilers
+# MapLink 11 Compilers
 
 MapLink Pro 11.1+ is built with these components:
 
