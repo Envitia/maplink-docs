@@ -16,7 +16,6 @@ var searchData=
   ['envitia_3a_3amaplink_3a_3arenderingattributepanel_13',['RenderingAttributePanel',['../namespace_envitia_1_1_map_link_1_1_rendering_attribute_panel.html',1,'Envitia::MapLink']]],
   ['envitia_3a_3amaplink_3a_3as52_14',['S52',['../namespace_envitia_1_1_map_link_1_1_s52.html',1,'Envitia::MapLink']]],
   ['envitia_3a_3amaplink_3a_3as63_15',['S63',['../namespace_envitia_1_1_map_link_1_1_s63.html',1,'Envitia::MapLink']]],
-  ['envitia_3a_3amaplink_3a_3aspatial_16',['Spatial',['../namespace_envitia_1_1_map_link_1_1_spatial.html',1,'Envitia::MapLink']]],
-  ['envitia_3a_3amaplink_3a_3aterrain_17',['Terrain',['../namespace_envitia_1_1_map_link_1_1_terrain.html',1,'Envitia::MapLink']]],
-  ['envitia_3a_3amaplink_3a_3atrackmanager_18',['TrackManager',['../namespace_envitia_1_1_map_link_1_1_track_manager.html',1,'Envitia::MapLink']]]
+  ['envitia_3a_3amaplink_3a_3aterrain_16',['Terrain',['../namespace_envitia_1_1_map_link_1_1_terrain.html',1,'Envitia::MapLink']]],
+  ['envitia_3a_3amaplink_3a_3atrackmanager_17',['TrackManager',['../namespace_envitia_1_1_map_link_1_1_track_manager.html',1,'Envitia::MapLink']]]
 ];

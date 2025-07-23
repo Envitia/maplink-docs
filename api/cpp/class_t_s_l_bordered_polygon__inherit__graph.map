@@ -1,9 +1,9 @@
 <map id="TSLBorderedPolygon" name="TSLBorderedPolygon">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,137,256"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_polygon.html" title=" " alt="" coords="30,155,112,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,197,74,229,68,229,68,197"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_entity.html" title=" " alt="" coords="37,80,105,107"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,122,74,154,68,154,68,122"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="24,5,118,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="74,48,74,80,68,80,68,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,217,127,240"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_polygon.html" title=" " alt="" coords="27,147,105,169"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,183,69,217,63,217,63,183"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_entity.html" title=" " alt="" coords="33,76,99,99"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,112,69,147,63,147,63,112"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="21,5,111,28"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="69,41,69,76,63,76,63,41"/>
 </map>

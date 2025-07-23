@@ -1,5 +1,5 @@
 <map id="TSLWMSGetLegendGraphicRequest" name="TSLWMSGetLegendGraphicRequest">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,214,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_request.html" title=" " alt="" coords="56,5,163,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,48,112,80,107,80,107,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,196,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_request.html" title=" " alt="" coords="49,5,152,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,41,103,76,98,76,98,41"/>
 </map>

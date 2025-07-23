@@ -1,7 +1,7 @@
 <map id="TSL3DAPP6ASymbol" name="TSL3DAPP6ASymbol">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,131,181"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l3_d_entity.html" title=" " alt="" coords="27,80,109,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,122,71,154,65,154,65,122"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="21,5,115,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,48,71,80,65,80,65,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,147,124,169"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l3_d_entity.html" title=" " alt="" coords="25,76,105,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,112,67,147,62,147,62,112"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="19,5,110,28"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,41,67,76,62,76,62,41"/>
 </map>

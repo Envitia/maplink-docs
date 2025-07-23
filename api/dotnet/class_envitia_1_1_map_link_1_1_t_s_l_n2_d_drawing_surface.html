@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.1</span>
+   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -109,6 +109,7 @@ $(function(){initNavTree('class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surf
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -123,15 +124,15 @@ Inheritance diagram for Envitia::MapLink::TSLN2DDrawingSurface:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface__inherit__graph.png" border="0" usemap="#a_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface_inherit__map" id="a_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface_inherit__map">
-<area shape="rect" title=" " alt="" coords="262,39,487,81"/>
-<area shape="rect" href="class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_surface.html" title=" " alt="" coords="535,5,754,48"/>
-<area shape="poly" title=" " alt="" coords="502,42,534,38,535,43,503,47"/>
-<area shape="rect" href="class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface.html" title=" " alt="" coords="540,72,749,115"/>
-<area shape="poly" title=" " alt="" coords="503,73,540,78,540,83,502,78"/>
-<area shape="rect" href="class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base.html" title=" " alt="" coords="5,39,214,81"/>
-<area shape="poly" title=" " alt="" coords="229,57,261,57,261,63,229,63"/>
-<area shape="rect" href="class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html" title=" " alt="" coords="802,5,1022,48"/>
-<area shape="poly" title=" " alt="" coords="770,24,802,24,802,29,770,29"/>
+<area shape="rect" title=" " alt="" coords="256,37,475,77"/>
+<area shape="rect" href="class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_surface.html" title=" " alt="" coords="523,5,740,45"/>
+<area shape="poly" title=" " alt="" coords="488,40,522,36,523,41,489,45"/>
+<area shape="rect" href="class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface.html" title=" " alt="" coords="530,69,733,109"/>
+<area shape="poly" title=" " alt="" coords="489,69,530,75,529,80,488,75"/>
+<area shape="rect" href="class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base.html" title=" " alt="" coords="5,37,208,77"/>
+<area shape="poly" title=" " alt="" coords="221,55,256,55,256,60,221,60"/>
+<area shape="rect" href="class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html" title=" " alt="" coords="788,5,1005,45"/>
+<area shape="poly" title=" " alt="" coords="754,23,788,23,788,28,754,28"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -158,6 +159,31 @@ Inheritance diagram for Envitia::MapLink::TSLN2DDrawingSurface:</div>
 <p>This class is an abstract class, specifying the generic behaviour of a 2D drawing surface.</p>
 <p>This class is the .NET equivalent of TSLDrawingSurface in the C++ API. </p>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5613feabd363d4b0e55c8c87ac1f499a" id="r_a5613feabd363d4b0e55c8c87ac1f499a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> { <br />
+&#160;&#160;<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581">WrapAroundDisabled</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1">WrapAroundLongitudinal</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32">WrapAroundDefault</a> = WrapAroundDisabled
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581">WrapAroundDisabled</a>
+, <br />
+&#160;&#160;<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1">WrapAroundLongitudinal</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32">WrapAroundDefault</a> = WrapAroundDisabled
+<br />
+ }</td></tr>
+<tr class="separator:a5613feabd363d4b0e55c8c87ac1f499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5613feabd363d4b0e55c8c87ac1f499a" id="r_a5613feabd363d4b0e55c8c87ac1f499a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> { <br />
+&#160;&#160;<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581">WrapAroundDisabled</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1">WrapAroundLongitudinal</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32">WrapAroundDefault</a> = WrapAroundDisabled
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581">WrapAroundDisabled</a>
+, <br />
+&#160;&#160;<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1">WrapAroundLongitudinal</a>
+, <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32">WrapAroundDefault</a> = WrapAroundDisabled
+<br />
+ }</td></tr>
+<tr class="separator:a5613feabd363d4b0e55c8c87ac1f499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab293d039504171d7e265841e087212fa" id="r_ab293d039504171d7e265841e087212fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab293d039504171d7e265841e087212fa">clearAllRendering</a> ()</td></tr>
@@ -362,6 +388,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afea1ca387159100b939cf2570cc0add1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484f3255d630a87da06abd5abad74f51" id="r_a484f3255d630a87da06abd5abad74f51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a484f3255d630a87da06abd5abad74f51">wndResize</a> (int x1, int y1, int x2, int y2)</td></tr>
 <tr class="separator:a484f3255d630a87da06abd5abad74f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac044acd8c6dcd309234c6081541161ac" id="r_ac044acd8c6dcd309234c6081541161ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac044acd8c6dcd309234c6081541161ac">wrapAroundMode</a> (<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> mode)</td></tr>
+<tr class="separator:ac044acd8c6dcd309234c6081541161ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4118df1ee6aab24fe9329a46cb1ed0d" id="r_ad4118df1ee6aab24fe9329a46cb1ed0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4118df1ee6aab24fe9329a46cb1ed0d">wrapAroundMode</a> ()</td></tr>
+<tr class="separator:ad4118df1ee6aab24fe9329a46cb1ed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac044acd8c6dcd309234c6081541161ac" id="r_ac044acd8c6dcd309234c6081541161ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac044acd8c6dcd309234c6081541161ac">wrapAroundMode</a> (<a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> mode)</td></tr>
+<tr class="separator:ac044acd8c6dcd309234c6081541161ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4118df1ee6aab24fe9329a46cb1ed0d" id="r_ad4118df1ee6aab24fe9329a46cb1ed0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4118df1ee6aab24fe9329a46cb1ed0d">wrapAroundMode</a> ()</td></tr>
+<tr class="separator:ad4118df1ee6aab24fe9329a46cb1ed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e82738e03d25d6422faaf385c54a342" id="r_a1e82738e03d25d6422faaf385c54a342"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e82738e03d25d6422faaf385c54a342">zoom</a> (double percent, bool zoom_in, bool auto_redraw)</td></tr>
 <tr class="separator:a1e82738e03d25d6422faaf385c54a342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfbdb1d099127f1699cb11b0e34e4e33" id="r_adfbdb1d099127f1699cb11b0e34e4e33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfbdb1d099127f1699cb11b0e34e4e33">zoom</a> (double percent, bool zoom_in)</td></tr>
@@ -598,6 +632,67 @@ Properties</h2></td></tr>
 <tr class="memitem:a62f820430aa4b4f19697040ee074e2d0 inherit properties_class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base" id="r_a62f820430aa4b4f19697040ee074e2d0"><td class="memItemLeft" align="right" valign="top">Object^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base.html#a62f820430aa4b4f19697040ee074e2d0">userWord</a><code> [get, set]</code></td></tr>
 <tr class="separator:a62f820430aa4b4f19697040ee074e2d0 inherit properties_class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a5613feabd363d4b0e55c8c87ac1f499a" name="a5613feabd363d4b0e55c8c87ac1f499a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5613feabd363d4b0e55c8c87ac1f499a">&#9670;&#160;</a></span>WrapAroundMode <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">Envitia::MapLink::TSLN2DDrawingSurface::WrapAroundMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581" name="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581"></a>WrapAroundDisabled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1" name="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1"></a>WrapAroundLongitudinal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32" name="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32"></a>WrapAroundDefault&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581" name="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581"></a>WrapAroundDisabled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1" name="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1"></a>WrapAroundLongitudinal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32" name="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32"></a>WrapAroundDefault&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a5613feabd363d4b0e55c8c87ac1f499a" name="a5613feabd363d4b0e55c8c87ac1f499a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5613feabd363d4b0e55c8c87ac1f499a">&#9670;&#160;</a></span>WrapAroundMode <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">Envitia::MapLink::TSLN2DDrawingSurface::WrapAroundMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581" name="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581"></a>WrapAroundDisabled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1" name="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1"></a>WrapAroundLongitudinal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32" name="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32"></a>WrapAroundDefault&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581" name="a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581"></a>WrapAroundDisabled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1" name="a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1"></a>WrapAroundLongitudinal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32" name="a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32"></a>WrapAroundDefault&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5a37a9d5a6906ee60ce07b0d8f23bbdb" name="a5a37a9d5a6906ee60ce07b0d8f23bbdb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a37a9d5a6906ee60ce07b0d8f23bbdb">&#9670;&#160;</a></span>TSLN2DDrawingSurface() <span class="overload">[1/2]</span></h2>
@@ -5499,6 +5594,77 @@ setupFillStyles( "tslfillstyles.dat" );
 
 </div>
 </div>
+<a id="ad4118df1ee6aab24fe9329a46cb1ed0d" name="ad4118df1ee6aab24fe9329a46cb1ed0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4118df1ee6aab24fe9329a46cb1ed0d">&#9670;&#160;</a></span>wrapAroundMode() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> Envitia::MapLink::TSLN2DDrawingSurface::wrapAroundMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4118df1ee6aab24fe9329a46cb1ed0d" name="ad4118df1ee6aab24fe9329a46cb1ed0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4118df1ee6aab24fe9329a46cb1ed0d">&#9670;&#160;</a></span>wrapAroundMode() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a> Envitia::MapLink::TSLN2DDrawingSurface::wrapAroundMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current wrap-around mode. </p>
+
+</div>
+</div>
+<a id="ac044acd8c6dcd309234c6081541161ac" name="ac044acd8c6dcd309234c6081541161ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac044acd8c6dcd309234c6081541161ac">&#9670;&#160;</a></span>wrapAroundMode() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Envitia::MapLink::TSLN2DDrawingSurface::wrapAroundMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac044acd8c6dcd309234c6081541161ac" name="ac044acd8c6dcd309234c6081541161ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac044acd8c6dcd309234c6081541161ac">&#9670;&#160;</a></span>wrapAroundMode() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Envitia::MapLink::TSLN2DDrawingSurface::wrapAroundMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5613feabd363d4b0e55c8c87ac1f499a">WrapAroundMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>New in <a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a> Pro 11.2.1.</p>
+<p>Set the wrap-around mode. Options are disabled or longitudinal wrapping. Longitudinal wrapping will cause the map display to continue across the dateline in both easterly and westerly directions. The wrap-around option will be applied on the next draw. If wrap-around mode is enabled and your application implements a <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_client_custom_data_layer.html">TSLNClientCustomDataLayer</a>, you will need to override the new drawLayer(TSLNRenderingInterface, const TSLNEnvelope, const TSLNEnvelope, TSLNCustomDataLayerHandler ) virtual method to find the features to draw when drawing a wrap tile. </p>
+
+</div>
+</div>
 <a id="adfbdb1d099127f1699cb11b0e34e4e33" name="adfbdb1d099127f1699cb11b0e34e4e33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfbdb1d099127f1699cb11b0e34e4e33">&#9670;&#160;</a></span>zoom() <span class="overload">[1/2]</span></h2>
 
@@ -5745,7 +5911,7 @@ setupFillStyles( "tslfillstyles.dat" );
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_envitia.html">Envitia</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a></li><li class="navelem"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html">TSLN2DDrawingSurface</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.1&nbsp;Documentation created Mon May 12 2025&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.2&nbsp;Documentation created Wed Jul 23 2025 18:26:25&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

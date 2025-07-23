@@ -898,6 +898,7 @@ var group__apigroup__geometry__api =
       [ "m_textVerticalAlignment", "class_t_s_l_rendering_attributes.html#af204190269cc6631b1bca966818382fa", null ]
     ] ],
     [ "TSLRenderingInterface", "class_t_s_l_rendering_interface.html", [
+      [ "createFontID", "class_t_s_l_rendering_interface.html#abacaa6c8453ae59d8f6e7793be2efdb2", null ],
       [ "createRasterBuffer", "class_t_s_l_rendering_interface.html#a8681e399b1b4755464104ba38d85f19f", null ],
       [ "drawArc", "class_t_s_l_rendering_interface.html#a9f00e6a915bb0570c6bccd5fbd843444", null ],
       [ "drawEllipse", "class_t_s_l_rendering_interface.html#a0f5bb5a5c26abe86097e227566f20808", null ],
@@ -935,6 +936,7 @@ var group__apigroup__geometry__api =
       [ "setupEdgeAttributes", "class_t_s_l_rendering_interface.html#a6339a9d606adecacec4bbd901bdb2b7d", null ],
       [ "setupSymbolAttributes", "class_t_s_l_rendering_interface.html#ac22cf09924b8c077dfbe2a6159fec20e", null ],
       [ "setupTextAttributes", "class_t_s_l_rendering_interface.html#a2e0c047c4858f611be0087ac2ada3309", null ],
+      [ "shiftCoord", "class_t_s_l_rendering_interface.html#aa676cebefe792a1ff3b7a43143dbf1e9", null ],
       [ "TMCPerDU", "class_t_s_l_rendering_interface.html#a6f2be38102370682c6b190695f5b4eea", null ],
       [ "TMCPerMU", "class_t_s_l_rendering_interface.html#a7fa047c59bf9f56cfb7432b7f2e89f03", null ],
       [ "TMCToDU", "class_t_s_l_rendering_interface.html#a764e89d914767dad93b6d9c6785a5400", null ],
