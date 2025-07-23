@@ -1,7 +1,7 @@
 <map id="TSL3DInteractionMode" name="TSL3DInteractionMode">
-<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,277,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l3_d_interaction_mode_trackball_eyepoint.html" title=" " alt="" coords="5,80,195,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,44,129,82,126,77,176,39"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l3_d_interaction_mode_trackball_world.html" title=" " alt="" coords="219,80,408,123"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,39,288,77,284,82,234,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,256,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l3_d_interaction_mode_trackball_eyepoint.html" title=" " alt="" coords="5,76,179,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,38,115,78,112,74,165,34"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l3_d_interaction_mode_trackball_world.html" title=" " alt="" coords="203,76,376,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,34,269,74,266,78,214,38"/>
 </map>

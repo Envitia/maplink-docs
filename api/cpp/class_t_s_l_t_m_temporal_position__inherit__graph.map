@@ -1,13 +1,13 @@
 <map id="TSLTMTemporalPosition" name="TSLTMTemporalPosition">
-<area shape="rect" id="Node000001" title=" " alt="" coords="128,5,276,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_cal_date.html" title=" " alt="" coords="23,80,120,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,42,96,82,93,77,165,38"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_coordinate.html" title=" " alt="" coords="145,80,260,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,48,205,80,200,80,200,48"/>
-<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_ordinal_position.html" title=" " alt="" coords="284,80,419,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="243,37,327,77,324,82,241,42"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_date_and_time.html" title=" " alt="" coords="5,155,133,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,123,72,154,67,154,68,122"/>
-<area shape="rect" id="Node000005" href="$class_t_s_l_julian_date.html" title=" " alt="" coords="156,155,254,181"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,122,207,154,202,154,201,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,5,258,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_cal_date.html" title=" " alt="" coords="20,76,111,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,37,85,78,83,74,159,32"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_coordinate.html" title=" " alt="" coords="137,76,244,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,41,193,76,188,76,188,41"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_ordinal_position.html" title=" " alt="" coords="269,76,393,99"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="225,32,311,74,309,78,222,36"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_date_and_time.html" title=" " alt="" coords="5,147,123,169"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="68,112,67,147,62,147,62,112"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_julian_date.html" title=" " alt="" coords="147,147,237,169"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,112,194,147,189,147,188,112"/>
 </map>

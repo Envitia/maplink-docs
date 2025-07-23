@@ -416,6 +416,8 @@ var group__apigroup__api =
       [ "coordinateSystem", "class_t_s_l_client_custom_data_layer.html#a55d222b7e8fd0985bd422d887681aef2", null ],
       [ "coordinateSystemHasChanged", "class_t_s_l_client_custom_data_layer.html#a4333d7fffdbf1fd62fd6ce86561c2f37", null ],
       [ "dataLayer", "class_t_s_l_client_custom_data_layer.html#a75d8b53fb7a786feb28844baf40de190", null ],
+      [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#a7a06424da689eca18159fc47cf692e85", null ],
+      [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#ab25d365a3e0a8a70f34a803e93fe7d8a", null ],
       [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#a236ed157d7b68602ec2c5fe3a7987edc", null ],
       [ "editableSearchDepth", "class_t_s_l_client_custom_data_layer.html#af265fb0272e75a5cdcb65daf7d81a609", null ],
       [ "getActiveLayer", "class_t_s_l_client_custom_data_layer.html#a8353613b7dde9db8192d241f3194483a", null ],
@@ -503,6 +505,8 @@ var group__apigroup__api =
       [ "mgrsToUTM", "class_t_s_l_coordinate_converter.html#ab83b696765e18a3e1b02bab3cbc2501e", null ],
       [ "mgrsToUTM", "class_t_s_l_coordinate_converter.html#a539f0a4dc06666976addfe434bd2e0a5", null ],
       [ "normaliseDegrees", "class_t_s_l_coordinate_converter.html#a1087a3eb4cb2cbbae84e0c4ff86f725a", null ],
+      [ "normaliseLatitude", "class_t_s_l_coordinate_converter.html#a26e9e5af37b07155a4aad70049b4fbdf", null ],
+      [ "normaliseLongitude", "class_t_s_l_coordinate_converter.html#aaf36c5406f2d89e4a97d939e5e982315", null ],
       [ "rhumbLineDestination", "class_t_s_l_coordinate_converter.html#a020dda4434a5dca0d13e517cd2249f61", null ],
       [ "rhumbLineDistance", "class_t_s_l_coordinate_converter.html#a65d0ca7cc7e1ac6ee8fe954e9487f5c4", null ],
       [ "rhumbLineMidPoint", "class_t_s_l_coordinate_converter.html#a4398f3c2844301da731292a6e46602e9", null ],
@@ -671,6 +675,7 @@ var group__apigroup__api =
     [ "TSLCustomDataLayerHandler", "class_t_s_l_custom_data_layer_handler.html", [
       [ "dataLayerProperties", "class_t_s_l_custom_data_layer_handler.html#a2ed92447d3daa9c20197d540201561d5", null ],
       [ "drawingSurface", "class_t_s_l_custom_data_layer_handler.html#a45a34c3810cecfa78c4f4e49afebcc61", null ],
+      [ "drawLayer", "class_t_s_l_custom_data_layer_handler.html#a8ccd20872ce5360151892f972c070e93", null ],
       [ "drawLayer", "class_t_s_l_custom_data_layer_handler.html#af07dd33c6625b9d53e8499e0e64d0f50", null ]
     ] ],
     [ "TSLCustomDataLayerProperties", "class_t_s_l_custom_data_layer_properties.html", [
@@ -767,6 +772,11 @@ var group__apigroup__api =
       [ "verticalPixels", "class_t_s_l_device_capabilities.html#ae522162d3fe8b2a79de0f67b7da1740c", null ]
     ] ],
     [ "TSLDrawingSurface", "class_t_s_l_drawing_surface.html", [
+      [ "WrapAroundMode", "class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4d", [
+        [ "WrapAroundDisabled", "class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4dae974251fd572874806c0865c5f7e1074", null ],
+        [ "WrapAroundLongitudinal", "class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4da7fc530ad8a9c207615b51a80ad96b514", null ],
+        [ "WrapAroundDefault", "class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4dac88f4fdbdb2a79c90d03127d4e8dd1f8", null ]
+      ] ],
       [ "TSLDrawingSurface", "class_t_s_l_drawing_surface.html#af30e410f6da8fb2f7c1b1c3ac570c0b7", null ],
       [ "~TSLDrawingSurface", "class_t_s_l_drawing_surface.html#a19a5f72960f6f6184d429ae5cbbc99f0", null ],
       [ "cleanup", "class_t_s_l_drawing_surface.html#a1856e3df51781fb80a1e85613fb99b90", null ],
@@ -867,6 +877,8 @@ var group__apigroup__api =
       [ "UUToMU", "class_t_s_l_drawing_surface.html#ad3708fb917b3f5d376322fb4aeee38ee", null ],
       [ "UUToTMC", "class_t_s_l_drawing_surface.html#a381ad674e87bbb437ad98b75ebb52a9e", null ],
       [ "wndResize", "class_t_s_l_drawing_surface.html#ab82700ea425c05e6350ecb8a3f66db1d", null ],
+      [ "wrapAroundMode", "class_t_s_l_drawing_surface.html#adce0c475875f8c018714e9b85ff9551f", null ],
+      [ "wrapAroundMode", "class_t_s_l_drawing_surface.html#a704fc118e3ab51a056cec73b0b02e63d", null ],
       [ "zoom", "class_t_s_l_drawing_surface.html#aac788a5c33da53c07951fc0ce7de2d17", null ],
       [ "TSLBoundaryHelper", "class_t_s_l_drawing_surface.html#aacb972aa51152212f69548a72e0ba232", null ],
       [ "TSLEditor", "class_t_s_l_drawing_surface.html#ac8de2f85ed322b2b0512e09fdea1d0d8", null ],
@@ -1528,6 +1540,7 @@ var group__apigroup__api =
     ] ],
     [ "TSLPickResult", "class_t_s_l_pick_result.html", [
       [ "getDataLayer", "class_t_s_l_pick_result.html#a812075f3c6d7fc5816a3d2fd3db460b2", null ],
+      [ "pickExtent", "class_t_s_l_pick_result.html#a348e437e97a88e9dcd7d79bc111620d9", null ],
       [ "queryType", "class_t_s_l_pick_result.html#a4efb9439bf97377329056664d5d672b7", null ]
     ] ],
     [ "TSLPickResultCustom", "class_t_s_l_pick_result_custom.html", [
@@ -1746,7 +1759,8 @@ var group__apigroup__api =
     ] ],
     [ "TSLSelector", "class_t_s_l_selector.html", [
       [ "~TSLSelector", "class_t_s_l_selector.html#a87c3672277b95727256e4ab11872a23c", null ],
-      [ "select", "class_t_s_l_selector.html#a5206b2ee761cd20f8a40296dee42bfc5", null ]
+      [ "select", "class_t_s_l_selector.html#a0669484918219d2d392e2ba94941c315", null ],
+      [ "select", "class_t_s_l_selector.html#a53f92f029ff2dbd3e7763c8ba6d3a06f", null ]
     ] ],
     [ "TSLSingleThreadCache", "class_t_s_l_single_thread_cache.html", [
       [ "TSLSingleThreadCache", "class_t_s_l_single_thread_cache.html#a4d11242af5b1ec74c57cf5a6434b1792", null ],

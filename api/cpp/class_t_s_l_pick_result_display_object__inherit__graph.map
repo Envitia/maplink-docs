@@ -1,5 +1,5 @@
 <map id="TSLPickResultDisplayObject" name="TSLPickResultDisplayObject">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,172,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_pick_result.html" title=" " alt="" coords="43,5,134,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,48,91,80,86,80,86,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,159,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_pick_result.html" title=" " alt="" coords="39,5,125,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,41,85,76,79,76,79,41"/>
 </map>

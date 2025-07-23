@@ -329,10 +329,12 @@ var group__group__dotnet__editor =
       [ "deselect", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a92af4fa728379e328b61d48be83d8f5c", null ],
       [ "dialogEntered", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a6c645c5b9ccb55577a0b7b072ffaa246", null ],
       [ "done", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#aa33bc7ded33c90bd3d78077bc560b65f", null ],
+      [ "enableGlobalUndo", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a2f13a0aa81cf24b1d3e07a7aa0affc3c", null ],
       [ "initialise", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a7dc70b4595dd6ae19ddd57eb5631d277", null ],
       [ "locator", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a8230699ccb7c0a84b5226cf2703e076a", null ],
       [ "query", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a0f7bc02a5580c6d5e7b034352d707b38", null ],
       [ "querySelectedAttributes", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#afd2f70b4cd8ede880a14c65427dac363", null ],
+      [ "redo", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#ab898a42b213ed4f81201ff0841bcaa97", null ],
       [ "reset", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a8007f068b34236c6cb911950b423cc27", null ],
       [ "select", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a1e7fe9c853eec99d5bf67f2875a33444", null ],
       [ "selectedEntity", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#afc56e51b9146f9cb5ae0728c89543129", null ],
@@ -343,7 +345,9 @@ var group__group__dotnet__editor =
       [ "AttachedDrawingSurface", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a646c1654cc197db2f56ecb567744e028", null ],
       [ "BackupPossible", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a1e97d1029b05efd698bbc7d15c41de4e", null ],
       [ "Changed", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#ade9065d43be1895744936168d88b364f", null ],
+      [ "FollowMode", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a005a570490cf2a95d67abd08761d8ab8", null ],
       [ "NumberOfSelectedEntities", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a06e64ba6816fbc7166e10817e53b730b", null ],
+      [ "RedoPossible", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a6ebc2d2ef8cda2669dceaa094e419304", null ],
       [ "UndoPossible", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#aea62b16f9a9849e9b5fc1c9c374edfbe", null ]
     ] ],
     [ "Envitia::MapLink::Editor::TSLNEditorRequest", "class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html", [

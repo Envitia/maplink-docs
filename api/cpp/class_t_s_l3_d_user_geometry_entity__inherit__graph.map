@@ -1,7 +1,7 @@
 <map id="TSL3DUserGeometryEntity" name="TSL3DUserGeometryEntity">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,165,181"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l3_d_entity.html" title=" " alt="" coords="44,80,126,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,122,88,154,82,154,82,122"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="38,5,132,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,48,88,80,82,80,82,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,147,155,169"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l3_d_entity.html" title=" " alt="" coords="40,76,120,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,112,83,147,77,147,77,112"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="35,5,125,28"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,41,83,76,77,76,77,41"/>
 </map>

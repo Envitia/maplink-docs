@@ -1,5 +1,5 @@
 <map id="Envitia::MapLink::OpenGLSurface::TSLNOpenGLSurfaceCreationParameters" name="Envitia::MapLink::OpenGLSurface::TSLNOpenGLSurfaceCreationParameters">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,278,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="93,5,190,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,48,144,80,139,80,139,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,275,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="93,5,187,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,44,143,79,137,79,137,44"/>
 </map>

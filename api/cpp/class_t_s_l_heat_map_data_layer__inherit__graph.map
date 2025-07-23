@@ -1,5 +1,5 @@
 <map id="TSLHeatMapDataLayer" name="TSLHeatMapDataLayer">
-<area shape="rect" id="Node000001" title="Class to display heat map data." alt="" coords="5,80,147,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_data_layer.html" title=" " alt="" coords="29,5,123,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,48,79,80,73,80,73,48"/>
+<area shape="rect" id="Node000001" title="Class to display heat map data." alt="" coords="5,76,137,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_data_layer.html" title=" " alt="" coords="27,5,116,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,41,74,76,69,76,69,41"/>
 </map>

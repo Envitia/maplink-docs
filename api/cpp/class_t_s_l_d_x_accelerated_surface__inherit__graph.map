@@ -1,9 +1,9 @@
 <map id="TSLDXAcceleratedSurface" name="TSLDXAcceleratedSurface">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,165,256"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_accelerated_surface.html" title=" " alt="" coords="13,155,157,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,197,88,229,82,229,82,197"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_drawing_surface.html" title=" " alt="" coords="23,80,147,107"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,122,88,154,82,154,82,122"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_drawing_surface_base.html" title=" " alt="" coords="9,5,161,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="88,48,88,80,82,80,82,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,217,152,240"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_accelerated_surface.html" title=" " alt="" coords="12,147,145,169"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,183,81,217,76,217,76,183"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_drawing_surface.html" title=" " alt="" coords="21,76,136,99"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,112,81,147,76,147,76,112"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_drawing_surface_base.html" title=" " alt="" coords="9,5,148,28"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="81,41,81,76,76,76,76,41"/>
 </map>

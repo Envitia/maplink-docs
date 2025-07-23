@@ -1,7 +1,7 @@
 <map id="TSLDQResult" name="TSLDQResult">
-<area shape="rect" id="Node000001" title=" " alt="" coords="134,5,221,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_conformance_result.html" title=" " alt="" coords="5,80,168,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,44,104,82,100,78,148,40"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_quantitative_result.html" title=" " alt="" coords="192,80,346,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,40,255,78,252,82,203,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,5,207,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_conformance_result.html" title=" " alt="" coords="5,76,153,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,39,94,78,90,74,140,34"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_quantitative_result.html" title=" " alt="" coords="178,76,322,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,34,239,74,236,78,186,39"/>
 </map>
