@@ -25,6 +25,7 @@
         * XXXX-121 BUG: Spatial.NET cannot return values from "calcarea" or "calclinelength" query operations
         * XXXX-124 Polygon intersections have the wrong styling when activated via Editor/Spatial .NET wrappers
         * XXXX-126 MapLink's osmastermapfilter triggers repeated assertion failures when reading certain datasets
+    * 2463  [TS023878] BUG: MapLink Studio mlc file doubling in size
 
 # Known Issues
     * 4133	Some raster tiles temporarily do not draw when using wrap-around mode
