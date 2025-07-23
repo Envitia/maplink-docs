@@ -3,7 +3,7 @@ var searchData=
   ['temporal_0',['ISO19108 Temporal',['../group__group__meta__19108.html',1,'']]],
   ['temporal_20objects_1',['Temporal Objects',['../group__group__meta__19108__temporalobjects.html',1,'']]],
   ['temporal_20reference_20system_2',['Temporal Reference System',['../group__group__meta__19108__temporalreferencesystem.html',1,'']]],
-  ['terrain_20api_3',['Terrain API',['../group__apigroup__maplink__terrain__api.html',1,'MapLink Terrain API'],['../group__apigroup__terrain__api.html',1,'Terrain API']]],
+  ['terrain_20api_3',['terrain api',['../group__apigroup__maplink__terrain__api.html',1,'MapLink Terrain API'],['../group__apigroup__terrain__api.html',1,'Terrain API']]],
   ['text_4',['Text',['../group__group__meta__19103__primitive__text.html',1,'']]],
   ['third_20party_20interoperability_5',['MapLink Third Party Interoperability',['../group__group__thirdpartyinterop.html',1,'']]],
   ['threaded_20map_20cache_20api_6',['Threaded Map Cache API',['../group__group__threadedmapcache.html',1,'']]],

@@ -7,5 +7,5 @@ var searchData=
   ['rendering_20attribute_20panel_4',['Rendering Attribute Panel',['../group__apigroup__rendering__attribute__panel.html',1,'']]],
   ['rendering_20notifications_5',['Rendering Notifications',['../group__group__maf__renderingnotifications.html',1,'']]],
   ['representation_20information_6',['Spatial Representation Information',['../group__group__meta__19115__spatialrepresentationinformation.html',1,'']]],
-  ['responsible_20party_20information_7',['Citation and Responsible Party Information',['../group__group__meta__19115__citationandresponsiblepartyinformation.html',1,'']]]
+  ['responsible_20party_20information_20br_7',['Citation and Responsible Party Information  &lt;br&gt;',['../group__group__meta__19115__citationandresponsiblepartyinformation.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 <map id="envitia::maplink::earth::GeocentricPoint" name="envitia::maplink::earth::GeocentricPoint">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,144,139"/>
-<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1_vec3.html" title=" " alt="" coords="5,5,144,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,64,77,96,72,96,72,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,88,136,123"/>
+<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1_vec3.html" title=" " alt="" coords="5,5,136,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,54,73,88,68,88,68,54"/>
 </map>

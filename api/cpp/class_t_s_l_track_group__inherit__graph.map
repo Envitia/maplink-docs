@@ -1,5 +1,5 @@
 <map id="TSLTrackGroup" name="TSLTrackGroup">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,105,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_track_base.html" title=" " alt="" coords="8,5,102,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,48,58,80,52,80,52,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,100,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_track_base.html" title=" " alt="" coords="9,5,97,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,41,55,76,50,76,50,41"/>
 </map>

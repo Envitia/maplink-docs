@@ -1,7 +1,7 @@
 <map id="TSLAcceleratedRenderControl" name="TSLAcceleratedRenderControl">
-<area shape="rect" id="Node000001" title=" " alt="" coords="116,5,297,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_accelerated_blocking_render_control.html" title=" " alt="" coords="5,80,192,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,44,128,82,125,77,176,39"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_accelerated_m_t_render_control.html" title=" " alt="" coords="216,88,413,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,39,299,85,296,90,234,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,272,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_accelerated_blocking_render_control.html" title=" " alt="" coords="5,76,175,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,38,113,78,110,74,163,34"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_accelerated_m_t_render_control.html" title=" " alt="" coords="199,82,379,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,34,276,80,273,84,212,39"/>
 </map>

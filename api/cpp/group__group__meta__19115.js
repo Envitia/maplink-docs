@@ -1,7 +1,7 @@
 var group__group__meta__19115 =
 [
     [ "Application Schema Information", "group__group__meta__19115__applicationschemainformation.html", "group__group__meta__19115__applicationschemainformation" ],
-    [ "Citation and Responsible Party Information", "group__group__meta__19115__citationandresponsiblepartyinformation.html", "group__group__meta__19115__citationandresponsiblepartyinformation" ],
+    [ "Citation and Responsible Party Information  <br>", "group__group__meta__19115__citationandresponsiblepartyinformation.html", "group__group__meta__19115__citationandresponsiblepartyinformation" ],
     [ "Constraint Information", "group__group__meta__19115__constraintinformation.html", "group__group__meta__19115__constraintinformation" ],
     [ "Content Information", "group__group__meta__19115__contentinformation.html", "group__group__meta__19115__contentinformation" ],
     [ "Data Quality Information", "group__group__meta__19115__dataqualityinformation.html", "group__group__meta__19115__dataqualityinformation" ],

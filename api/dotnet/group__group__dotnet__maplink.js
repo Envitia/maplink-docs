@@ -332,6 +332,8 @@ var group__group__dotnet__maplink =
       [ "mgrsToUPS", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#ab81d09987799b6b280745557830f5a02", null ],
       [ "mgrsToUTM", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#ac6a9f3be24e38f5c79848300b97cbeb4", null ],
       [ "mgrsToUTM", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#ad651fda7ab40a50144149ec12d060b57", null ],
+      [ "normaliseLatitude", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#a401137d8bf73f4ba1c62e403aeb2f1b3", null ],
+      [ "normaliseLongitude", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#a78540b8a7966dcc3afdcf74655f6270c", null ],
       [ "upsToLatLong", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#ab5d431795adcf672bc7b62b892d78e9f", null ],
       [ "upsToMGRS", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#af4ff06fb428bb5e0500d6ed9eb27d8d2", null ],
       [ "upsToMGRS", "class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#ad9991b2ed3876e43b9b14318243bf34b", null ],
@@ -1027,7 +1029,7 @@ var group__group__dotnet__maplink =
     [ "Envitia::MapLink::TSLNInteropManager", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html", [
       [ "TSLNInteropManager", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html#a4be297610f8131605b692d7e245e7269", null ],
       [ "~TSLNInteropManager", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html#aec70239c072c56577d731055cf064e68", null ],
-      [ "postImportProcess", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html#aa8995e48edb511ee11e3c63a2b3e6ca5", null ],
+      [ "postImportProcess", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html#a33cfc1980d56a6cf96ba7e0e2151d0ed", null ],
       [ "preExportProcess", "class_envitia_1_1_map_link_1_1_t_s_l_n_interop_manager.html#ac3b01ff83e75d96671954fe69e0c053c", null ]
     ] ],
     [ "Envitia::MapLink::TSLNMapQuery", "class_envitia_1_1_map_link_1_1_t_s_l_n_map_query.html", [
@@ -1497,7 +1499,8 @@ var group__group__dotnet__maplink =
     [ "Envitia::MapLink::TSLNSelector", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html", [
       [ "TSLNSelector", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html#a17251c491b135a436fd0453e33367cac", null ],
       [ "~TSLNSelector", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html#a96266a6540899282da7d5f319e54dcb0", null ],
-      [ "select", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html#a37918b73e85db337ddcb23c8b2bd23a4", null ]
+      [ "select", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html#ae4f8214dbd46b39465a475bc08cc33b3", null ],
+      [ "select", "class_envitia_1_1_map_link_1_1_t_s_l_n_selector.html#a466b1afe60a2d3904a4074e27dc537a7", null ]
     ] ],
     [ "Envitia::MapLink::TSLNSLMEntityRef", "class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref.html", [
       [ "TSLNSLMEntityRef", "class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref.html#ae3f706618dbad1aeb19cbae0743917b6", null ],
@@ -1620,7 +1623,7 @@ var group__group__dotnet__maplink =
       [ "legacyGetOutputEncodingOverride", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a5f1f46a0298ce0abc7ec1ac2c0848e2d", null ],
       [ "legacySetInputEncodingOverride", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a4dc643943659f5281596c79fbdc69ac0", null ],
       [ "legacySetOutputEncodingOverride", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a7bed6c7a26740da07b9817281e531420", null ],
-      [ "nearestPointOnLine", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#ab2d3b4488d1ec419d49c5db4f65d6ebd", null ],
+      [ "nearestPointOnLine", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a1f37efbe5a739657cff0a224b5c5f9b2", null ],
       [ "rotateEnvelope", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a9a749262a5ee1826374c199a544b88fe", null ],
       [ "setMapLinkHome", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#ab6d6d9fce39d21e626a42c3d84cd2ea5", null ],
       [ "sizeOfEntity", "class_envitia_1_1_map_link_1_1_t_s_l_n_utility_functions.html#a46f73db90ddc5b089e997b052c514463", null ],
@@ -1933,7 +1936,6 @@ var group__group__dotnet__maplink =
     ] ],
     [ "Envitia::MapLink::TSLNHistoryVersion", "group__group__dotnet__maplink.html#ga552246aca8282182baaa9a32d2d52460", null ],
     [ "Envitia::MapLink::TSLNArcZoneEnum", "group__group__dotnet__maplink.html#ga3b7fa0c17b34328ee2deed547ffcc9fd", [
-      [ "Envitia::MapLink::TSLNArcZoneEnum::", "group__group__dotnet__maplink.html#gga3b7fa0c17b34328ee2deed547ffcc9fdad41d8cd98f00b204e9800998ecf8427e", null ],
       [ "Envitia::MapLink::TSLNArcZoneEnum::TSLNArcZone_Undefined", "group__group__dotnet__maplink.html#gga3b7fa0c17b34328ee2deed547ffcc9fdaec8c55e799ec05b62ff86bf51ec9a1eb", null ],
       [ "Envitia::MapLink::TSLNArcZoneEnum::TSLNArcZone_H", "group__group__dotnet__maplink.html#gga3b7fa0c17b34328ee2deed547ffcc9fda181b5264ac9d6699fade18a375db3249", null ],
       [ "Envitia::MapLink::TSLNArcZoneEnum::TSLNArcZone_G", "group__group__dotnet__maplink.html#gga3b7fa0c17b34328ee2deed547ffcc9fda5c4b316d4e81843919c66fce20907908", null ],
@@ -2376,7 +2378,7 @@ var group__group__dotnet__maplink =
       [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNMAPLINK_10_0", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976ae5776b80e7b8f94f7055d39a43df22f1", null ],
       [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNMAPLINK_10_1", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976ae67decc44e32af587f45c0551ef25d9d", null ],
       [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNMAPLINK_10_2", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976a59feef0b3b88d69a3753b675a5423836", null ],
-      [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNMAPLINK_11_0", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976a171387faf306fd98ad1bf56927a5aa2a", null ],
+      [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNMAPLINK_11_1", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976aead7b217a1d42218a461e9046699050c", null ],
       [ "Envitia::MapLink::TSLNMapLinkVersion::TSLNCURRENT_MAPLINK_VERSION", "group__group__dotnet__maplink.html#gga61e9bd3699958b4b2b0b750e8aaac976a83a275c5f4d9c895de5499827766e008", null ]
     ] ],
     [ "Envitia::MapLink::TSLNModifierType", "group__group__dotnet__maplink.html#ga454c44d16be53d27e71c852a1d81d7eb", [
@@ -2597,7 +2599,6 @@ var group__group__dotnet__maplink =
       [ "Envitia::MapLink::TSLNSymbolRotation::TSLNSymbolRotationEnabled", "group__group__dotnet__maplink.html#gga0b81baef52fd5ce8e88b3b8fc6485e1babe07e762d9b01ebf46b999e01a4fc889", null ]
     ] ],
     [ "Envitia::MapLink::TSLNTextBackgroundMode", "group__group__dotnet__maplink.html#ga39cb946b4cd65930e53d5ab00c613b4f", [
-      [ "Envitia::MapLink::TSLNTextBackgroundMode::", "group__group__dotnet__maplink.html#gga39cb946b4cd65930e53d5ab00c613b4fad41d8cd98f00b204e9800998ecf8427e", null ],
       [ "Envitia::MapLink::TSLNTextBackgroundMode::TSLNTextBackgroundModeMultiple", "group__group__dotnet__maplink.html#gga39cb946b4cd65930e53d5ab00c613b4fa3ad8de3d4467d1286ce1f83668233c6b", null ],
       [ "Envitia::MapLink::TSLNTextBackgroundMode::TSLNTextBackgroundModeUndefined", "group__group__dotnet__maplink.html#gga39cb946b4cd65930e53d5ab00c613b4fa6a17545336ed09696f6e4a052bba59b9", null ],
       [ "Envitia::MapLink::TSLNTextBackgroundMode::TSLNTextBackgroundModeNone", "group__group__dotnet__maplink.html#gga39cb946b4cd65930e53d5ab00c613b4fafce83052262a07e6747902eeeeb7fac5", null ],

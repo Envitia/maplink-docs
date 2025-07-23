@@ -1,5 +1,5 @@
 <map id="TSLTerrainContourCallbacks" name="TSLTerrainContourCallbacks">
-<area shape="rect" id="Node000001" title=" " alt="" coords="19,80,191,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_contour_base_callbacks.html" title=" " alt="" coords="5,5,205,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,48,108,80,102,80,102,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,76,173,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_contour_base_callbacks.html" title=" " alt="" coords="5,5,184,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,41,97,76,92,76,92,41"/>
 </map>

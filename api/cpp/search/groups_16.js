@@ -8,7 +8,7 @@ var searchData=
   ['satellite_20propagator_20api_5',['MapLink Satellite Propagator API',['../group__group__satellitepropagatorsdk.html',1,'']]],
   ['schema_20information_6',['Application Schema Information',['../group__group__meta__19115__applicationschemainformation.html',1,'']]],
   ['schema_20language_7',['ISO19103 Conceptual Schema Language',['../group__group__meta__19103.html',1,'']]],
-  ['sdk_8',['SDK',['../group__group__ogc__geopackagesdk.html',1,'Geo Package SDK'],['../group__group__ogc__wmts.html',1,'WMTS Data Layer SDK']]],
+  ['sdk_8',['sdk',['../group__group__ogc__geopackagesdk.html',1,'Geo Package SDK'],['../group__group__ogc__wmts.html',1,'WMTS Data Layer SDK']]],
   ['search_20api_9',['LandLink Address Search API',['../group__group__landlinkqas.html',1,'']]],
   ['selection_20operations_10',['Selection Operations',['../group__apigroup__editor__selection__operations.html',1,'']]],
   ['service_20providers_11',['Service Providers',['../group__group__maf__serviceproviders.html',1,'']]],

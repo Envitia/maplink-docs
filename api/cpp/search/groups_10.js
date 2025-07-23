@@ -44,7 +44,7 @@ var searchData=
   ['maplink_20wms_20plugin_20api_41',['MapLink WMS Plugin API',['../group__group__ogc__wms.html',1,'']]],
   ['maplink_20wps_20plugin_20api_42',['MapLink WPS Plugin API',['../group__group__ogc__wps.html',1,'']]],
   ['measure_43',['Units of Measure',['../group__group__meta__19103__units.html',1,'']]],
-  ['metadata_44',['Metadata',['../group__group__meta__19115.html',1,'ISO19115 Metadata'],['../group__group__meta__19103__implementation__recordsandclass.html',1,'Records and Class Metadata']]],
+  ['metadata_44',['metadata',['../group__group__meta__19115.html',1,'ISO19115 Metadata'],['../group__group__meta__19103__implementation__recordsandclass.html',1,'Records and Class Metadata']]],
   ['metadata_20application_20information_45',['Metadata Application Information',['../group__group__meta__19115__metadataapplicationinformation.html',1,'']]],
   ['metadata_20entity_20set_20information_46',['Metadata Entity Set Information',['../group__group__meta__19115__metadataentitysetinformation.html',1,'']]],
   ['metadata_20extension_20information_47',['Metadata Extension Information',['../group__group__meta__19115__metadataextensioninformation.html',1,'']]],
@@ -53,7 +53,7 @@ var searchData=
   ['miscellaneous_20notifications_50',['Miscellaneous Notifications',['../group__group__maf__miscellaneousnotifications.html',1,'']]],
   ['miscellaneous_20operations_51',['Miscellaneous Operations',['../group__group__landlinkapi__miscellaneousops.html',1,'']]],
   ['model_20api_52',['3D Model API',['../group__group__3dsdk__model.html',1,'']]],
-  ['modes_53',['Modes',['../group__group__3dsdk__interactionmodes.html',1,'3D Interaction Modes'],['../group__apigroup__editor__interaction__modes.html',1,'Editor Interaction Modes'],['../group__apigroup__interaction__modes.html',1,'Interaction Modes']]],
+  ['modes_53',['modes',['../group__group__3dsdk__interactionmodes.html',1,'3D Interaction Modes'],['../group__apigroup__editor__interaction__modes.html',1,'Editor Interaction Modes'],['../group__apigroup__interaction__modes.html',1,'Interaction Modes']]],
   ['modules_54',['MapLink Pro C++ Modules',['../group__group__maplink__cpp__modules.html',1,'']]],
   ['multiplicities_55',['Multiplicities',['../group__group__meta__19103__primitive__multiplicities.html',1,'']]]
 ];

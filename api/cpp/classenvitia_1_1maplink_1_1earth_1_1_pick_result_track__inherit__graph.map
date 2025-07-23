@@ -1,5 +1,5 @@
 <map id="envitia::maplink::earth::PickResultTrack" name="envitia::maplink::earth::PickResultTrack">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,144,123"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_pick_result.html" title=" " alt="" coords="29,5,120,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,48,77,80,72,80,72,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,136,111"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_pick_result.html" title=" " alt="" coords="27,5,114,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,42,73,76,68,76,68,42"/>
 </map>
