@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -122,6 +122,8 @@ $(function(){initNavTree('class_t_s_l_custom_data_layer_handler.html',''); initR
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af07dd33c6625b9d53e8499e0e64d0f50" id="r_af07dd33c6625b9d53e8499e0e64d0f50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af07dd33c6625b9d53e8499e0e64d0f50">drawLayer</a> (<a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> *dataLayer, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;extent, const char *layerName=NULL, const <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> *layerProperties=NULL)</td></tr>
 <tr class="separator:af07dd33c6625b9d53e8499e0e64d0f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccd20872ce5360151892f972c070e93" id="r_a8ccd20872ce5360151892f972c070e93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ccd20872ce5360151892f972c070e93">drawLayer</a> (<a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> *dataLayer, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;drawExtent, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;queryExtent, const char *layerName=NULL, const <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> *layerProperties=NULL)</td></tr>
+<tr class="separator:a8ccd20872ce5360151892f972c070e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45a34c3810cecfa78c4f4e49afebcc61" id="r_a45a34c3810cecfa78c4f4e49afebcc61"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_s_l_drawing_surface.html">TSLDrawingSurface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45a34c3810cecfa78c4f4e49afebcc61">drawingSurface</a> () const</td></tr>
 <tr class="separator:a45a34c3810cecfa78c4f4e49afebcc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed92447d3daa9c20197d540201561d5" id="r_a2ed92447d3daa9c20197d540201561d5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ed92447d3daa9c20197d540201561d5">dataLayerProperties</a> ()</td></tr>
@@ -166,8 +168,56 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8ccd20872ce5360151892f972c070e93" name="a8ccd20872ce5360151892f972c070e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ccd20872ce5360151892f972c070e93">&#9670;&#160;</a></span>drawLayer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TSLCustomDataLayerHandler::drawLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> *</td>          <td class="paramname"><span class="paramname"><em>dataLayer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>drawExtent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>queryExtent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>layerName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">NULL</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> *</td>          <td class="paramname"><span class="paramname"><em>layerProperties</em></span><span class="paramdefsep"> = </span><span class="paramdefval">NULL</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>New as of version 11.2.1: Overload of drawLayer that supports wrap-around maps.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataLayer</td><td>The <a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> to draw to the drawing surface containing the <a class="el" href="class_t_s_l_custom_data_layer.html">TSLCustomDataLayer</a>. The user retains ownership of this data layer.</td></tr>
+    <tr><td class="paramname">drawExtent</td><td>The extent in TMCs of the data layer to draw. In most cases this will be the same as the <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> passed to the <a class="el" href="class_t_s_l_client_custom_data_layer.html#a236ed157d7b68602ec2c5fe3a7987edc">TSLClientCustomDataLayer::drawLayer()</a> method.</td></tr>
+    <tr><td class="paramname">queryExtent</td><td>The extent in TMCs to use to find features in the data layer to draw. Will differ from drawExtent if a wrap tile is being drawn as part of a wrap-arond map.</td></tr>
+    <tr><td class="paramname">layerName</td><td>The name of the layer being drawn. Defaults to NULL, meaning the layer inherits the name of the parent <a class="el" href="class_t_s_l_custom_data_layer.html">TSLCustomDataLayer</a> given when it was added to the drawing surface,</td></tr>
+    <tr><td class="paramname">layerProperties</td><td>An instance of the <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> class that defines the data layer properties to use when drawing the layer. For information on the available properties see the documentation for the <a class="el" href="group__apigroup__api.html#ga1c467581ddf31341ac6acf6baa297a9a">TSLPropertyEnum</a> enumeration. The user retains ownership of this object. Defaults to NULL, meaning the layer uses the properties of the parent <a class="el" href="class_t_s_l_custom_data_layer.html">TSLCustomDataLayer</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the layer was drawn successfully, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="af07dd33c6625b9d53e8499e0e64d0f50" name="af07dd33c6625b9d53e8499e0e64d0f50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07dd33c6625b9d53e8499e0e64d0f50">&#9670;&#160;</a></span>drawLayer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af07dd33c6625b9d53e8499e0e64d0f50">&#9670;&#160;</a></span>drawLayer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +250,7 @@ Public Member Functions</h2></td></tr>
 <h2><a class="anchor" id="autotoc_md63"></a>
 Limitations</h2>
 <ul>
+<li>New limitation as of 11.2.1: This overload does not support wrap-around mode. Use the overload with two extents instead, if you are using wrap-around mode.</li>
 <li>Multiple data layers may be drawn in a single <a class="el" href="class_t_s_l_client_custom_data_layer.html#a236ed157d7b68602ec2c5fe3a7987edc">TSLClientCustomDataLayer::drawLayer()</a> call, however all layers drawn this way will use the active <a class="el" href="class_t_s_l_coordinate_system.html">TSLCoordinateSystem</a> for the drawing surface for all coordinate transformations. Thus if two TSLMapDataLayers are being drawn they must use the same <a class="el" href="class_t_s_l_coordinate_system.html">TSLCoordinateSystem</a> for both layers to draw correctly.</li>
 <li>Transparency for data layers drawn via this method will only function if the parent <a class="el" href="class_t_s_l_custom_data_layer.html">TSLCustomDataLayer</a> has been set up for transparency to work. For more information see the documentation for the <a class="el" href="group__apigroup__api.html#ga1c467581ddf31341ac6acf6baa297a9a">TSLPropertyEnum</a> enumeration.</li>
 <li>Data layers drawn via this method will use the TSLPropertyBuffered setting of the parent <a class="el" href="class_t_s_l_custom_data_layer.html">TSLCustomDataLayer</a> regardless of the value set on the <a class="el" href="class_t_s_l_custom_data_layer_properties.html">TSLCustomDataLayerProperties</a> instance passed in.</li>
@@ -225,7 +276,7 @@ Limitations</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 17:42:38 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

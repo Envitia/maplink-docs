@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.1</span>
+   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -159,6 +159,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ac6a9f3be24e38f5c79848300b97cbeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad651fda7ab40a50144149ec12d060b57" id="r_ad651fda7ab40a50144149ec12d060b57"><td class="memItemLeft" align="right" valign="top">static String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad651fda7ab40a50144149ec12d060b57">mgrsToUTM</a> (String^ mgrs, <a class="el" href="group__group__dotnet__maplink.html#ga44aeda0ff767128983c28dd9531729b1">TSLNTransverseMercatorFormulaEnum</a> formula)</td></tr>
 <tr class="separator:ad651fda7ab40a50144149ec12d060b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401137d8bf73f4ba1c62e403aeb2f1b3" id="r_a401137d8bf73f4ba1c62e403aeb2f1b3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a401137d8bf73f4ba1c62e403aeb2f1b3">normaliseLatitude</a> (double unnormalisedLatitude)</td></tr>
+<tr class="separator:a401137d8bf73f4ba1c62e403aeb2f1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78540b8a7966dcc3afdcf74655f6270c" id="r_a78540b8a7966dcc3afdcf74655f6270c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78540b8a7966dcc3afdcf74655f6270c">normaliseLongitude</a> (double unnormalisedLongitude)</td></tr>
+<tr class="separator:a78540b8a7966dcc3afdcf74655f6270c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d431795adcf672bc7b62b892d78e9f" id="r_ab5d431795adcf672bc7b62b892d78e9f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5d431795adcf672bc7b62b892d78e9f">upsToLatLong</a> (System::Char zone, double easting, double northing, OUT double% latitude, OUT double% longitude)</td></tr>
 <tr class="separator:ab5d431795adcf672bc7b62b892d78e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9991b2ed3876e43b9b14318243bf34b" id="r_ad9991b2ed3876e43b9b14318243bf34b"><td class="memItemLeft" align="right" valign="top">static String ^&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9991b2ed3876e43b9b14318243bf34b">upsToMGRS</a> (System::Char band, double easting, double northing)</td></tr>
@@ -1253,6 +1257,58 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a401137d8bf73f4ba1c62e403aeb2f1b3" name="a401137d8bf73f4ba1c62e403aeb2f1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401137d8bf73f4ba1c62e403aeb2f1b3">&#9670;&#160;</a></span>normaliseLatitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double Envitia::MapLink::TSLNCoordinateConverter::normaliseLatitude </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>unnormalisedLatitude</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ensures the degrees are within valid bounds. </p>
+
+</div>
+</div>
+<a id="a78540b8a7966dcc3afdcf74655f6270c" name="a78540b8a7966dcc3afdcf74655f6270c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78540b8a7966dcc3afdcf74655f6270c">&#9670;&#160;</a></span>normaliseLongitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double Envitia::MapLink::TSLNCoordinateConverter::normaliseLongitude </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>unnormalisedLongitude</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ensures the degrees are within valid bounds. </p>
+
+</div>
+</div>
 <a id="ab5d431795adcf672bc7b62b892d78e9f" name="ab5d431795adcf672bc7b62b892d78e9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5d431795adcf672bc7b62b892d78e9f">&#9670;&#160;</a></span>upsToLatLong()</h2>
 
@@ -2165,7 +2221,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_envitia.html">Envitia</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a></li><li class="navelem"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html">TSLNCoordinateConverter</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.1&nbsp;Documentation created Mon May 12 2025&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.2&nbsp;Documentation created Wed Jul 23 2025 17:46:33&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

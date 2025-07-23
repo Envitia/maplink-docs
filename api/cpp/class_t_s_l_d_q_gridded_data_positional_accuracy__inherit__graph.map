@@ -1,7 +1,7 @@
 <map id="TSLDQGriddedDataPositionalAccuracy" name="TSLDQGriddedDataPositionalAccuracy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,182,197"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_positional_accuracy.html" title=" " alt="" coords="15,80,172,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,122,96,154,91,154,91,122"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="44,5,143,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,48,96,80,91,80,91,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,147,164,181"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_positional_accuracy.html" title=" " alt="" coords="13,76,156,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,112,87,146,82,146,82,112"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="39,5,131,28"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,41,87,76,82,76,82,41"/>
 </map>

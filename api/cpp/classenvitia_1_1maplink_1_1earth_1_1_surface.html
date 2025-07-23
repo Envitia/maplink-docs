@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -122,9 +122,9 @@ Inheritance diagram for envitia::maplink::earth::Surface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classenvitia_1_1maplink_1_1earth_1_1_surface__inherit__graph.png" border="0" usemap="#aenvitia_1_1maplink_1_1earth_1_1_surface_inherit__map" alt="Inheritance graph"/></div>
 <map name="aenvitia_1_1maplink_1_1earth_1_1_surface_inherit__map" id="aenvitia_1_1maplink_1_1earth_1_1_surface_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,144,48"/>
-<area shape="rect" href="classenvitia_1_1maplink_1_1earth_1_1_surface3_d.html" title=" " alt="" coords="5,96,144,139"/>
-<area shape="poly" title=" " alt="" coords="77,64,77,96,72,96,72,64"/>
+<area shape="rect" title=" " alt="" coords="5,5,136,40"/>
+<area shape="rect" href="classenvitia_1_1maplink_1_1earth_1_1_surface3_d.html" title=" " alt="" coords="5,88,136,123"/>
+<area shape="poly" title=" " alt="" coords="73,54,73,88,68,88,68,54"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -166,12 +166,12 @@ Inheritance diagram for envitia::maplink::earth::Surface:</div>
 </ul>
 <p>setDeclutterStats may be used to declutter individual features, or groups of features.</p>
 <p>A drawing surface internally has two sets of declutter settings, a global list that is applied to all data layers in the drawing surface, and a per-layer list that applies to a single data layer that inherits and extends the global list. When modifying declutter settings using the above methods the application can control whether the setting should be set on the global list (and thus apply to all layers in the drawing surface) or a specific data layer's list through the layer name argument of each method.</p>
-<h2><a class="anchor" id="autotoc_md143"></a>
+<h2><a class="anchor" id="autotoc_md151"></a>
 Thread Safety</h2>
 <p>MapLink can be used in multiple threads if a degree of care is taken by the user.</p>
 <p>The principle rule is that Drawing surfaces and data layers must not be shared between threads.</p>
 <p>Additionally loading of the Coordinate Systems and adding or removing coordinate systems is not thread safe.</p>
-<h2><a class="anchor" id="autotoc_md144"></a>
+<h2><a class="anchor" id="autotoc_md152"></a>
 OS Specific Types</h2>
 <p>The types used to return OS specific drawing are as follows:</p>
 <p>TSLDeviceContext : Windows 'HDC'. TSLWindowHandle : Windows 'HWND'. TSLBitmapHandle : Windows 'HBITMAP', X11 a pointer to a structure declared in tslplatformtypes.h. TSLDrawableHandle : X11 'Drawable'. TSLVisualHandle : X11 'Visual *'. TSLColourmapHandle : X11 'Colormap'. TSLScreenHandle : X11 'Screen *'. TSLDisplayHandle : X11 'Display *'.</p>
@@ -2875,7 +2875,7 @@ Pick operations may not preserve the original geometry hierarchy in some cases.<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceenvitia.html">envitia</a></li><li class="navelem"><a class="el" href="namespaceenvitia_1_1maplink.html">maplink</a></li><li class="navelem"><a class="el" href="namespaceenvitia_1_1maplink_1_1earth.html">earth</a></li><li class="navelem"><a class="el" href="classenvitia_1_1maplink_1_1earth_1_1_surface.html">Surface</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 17:43:57 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

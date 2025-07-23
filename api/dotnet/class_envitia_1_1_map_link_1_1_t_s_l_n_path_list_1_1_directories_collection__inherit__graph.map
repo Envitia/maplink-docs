@@ -1,7 +1,7 @@
 <map id="Envitia::MapLink::TSLNPathList::DirectoriesCollection" name="Envitia::MapLink::TSLNPathList::DirectoriesCollection">
-<area shape="rect" id="Node000001" title=" " alt="" coords="9,80,197,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,89,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,43,91,78,87,81,62,46"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="113,5,208,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,47,120,81,115,78,140,43"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,79,195,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,88,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,40,91,77,87,80,61,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="113,5,207,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,43,119,80,114,77,141,40"/>
 </map>

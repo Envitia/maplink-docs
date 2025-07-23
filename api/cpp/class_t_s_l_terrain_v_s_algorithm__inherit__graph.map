@@ -1,5 +1,5 @@
 <map id="TSLTerrainVSAlgorithm" name="TSLTerrainVSAlgorithm">
-<area shape="rect" id="Node000001" title=" " alt="" coords="17,5,160,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_v_s_algorithm_r_f_v_s.html" title=" " alt="" coords="5,80,172,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,48,91,80,86,80,86,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,5,148,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_v_s_algorithm_r_f_v_s.html" title=" " alt="" coords="5,76,160,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,41,85,76,80,76,80,41"/>
 </map>

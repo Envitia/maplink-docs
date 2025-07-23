@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.1</span>
+   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -116,7 +116,7 @@ $(function(){initNavTree('class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_edit
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This component handles the exchange of information between the editor and the user.</p>
-<p>The <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> must be paired with an object derived from <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> Request. The methods of the request object are invoked by the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> component when information needs to be requested from or sent to the user. </p>
+<p>The <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> must be paired with an object derived from <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html">TSLNEditorRequest</a>. The methods of the request object are invoked by the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> component when information needs to be requested from or sent to the user. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -391,7 +391,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This method is triggered to indicate that the cursor has moved. The meanings of the parameters are configured using the TSLEditor::cursorMovement Config method</p>
+<p>This method is triggered to indicate that the cursor has moved. The meanings of the parameters are configured using the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#aea48bee2a86ffc91445db5c380d3105f">TSLNEditor::cursorMovementConfig</a> method</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">displayString</td><td>Text string to be displayed, according to configuration via cursorMovementConfig.</td></tr>
@@ -488,7 +488,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This method is called whenever the attached drawing surface changes. The user can then query the attached drawing surface from the editor. For most uses of the editor this callback need not be overridden, it is intended for cases where the editor may be attached to difference drawing surface during the workflow of the using application. </p>
+<p>This method is called whenever the attached drawing surface changes. The user can then query the attached drawing surface from the editor. For most uses of the editor this callback need not be overridden, it is intended for cases where the editor may be attached to different drawing surfaces during the workflow of the using application. </p>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Called when editor requests a redraw of specified extent.</p>
-<p>This method is triggered to indicate that the editor has requested a redraw of the specified extent. If the extent is NULL then the entire drawing Surface has been redrawn.</p>
+<p>This method is triggered to indicate that the editor has requested a redraw of the specified extent. If the extent is NULL then the entire drawing surface has been redrawn.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">extent</td><td>Specifies the extent of the requested redraw.</td></tr>
@@ -636,6 +636,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Request user input from a dialog box.</p>
 <p>This method requests that the user select one of the specified choices. An empty string indicates that the button should not be shown.</p>
+<p>The client application should call the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a6c645c5b9ccb55577a0b7b072ffaa246">TSLNEditor::dialogEntered</a> method when the text has been entered by the user.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prompt</td><td>The prompt requesting a user selection.</td></tr>
@@ -678,7 +679,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Request text input from the user.</p>
 <p>This method is called to request that the client application ask the user to enter some text.</p>
-<p>The client application should called the textEntered method when the text has been entered by the user.</p>
+<p>The client application should call the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html#a217659a207982d537ecdea46d716ebda">TSLNEditor::textEntered</a> method when the text has been entered by the user.</p>
 <p>prompt: A pointer to the string prompting the user for input.</p>
 <p>initialValue: A pointer to the initial value of the text field.</p>
 <p>Returns true on success, otherwise false. </p>
@@ -726,7 +727,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_envitia.html">Envitia</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link_1_1_editor.html">Editor</a></li><li class="navelem"><a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html">TSLNEditorRequest</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.1&nbsp;Documentation created Mon May 12 2025&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.2&nbsp;Documentation created Wed Jul 23 2025 17:46:35&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

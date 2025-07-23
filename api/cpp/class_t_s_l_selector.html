@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -120,8 +120,10 @@ $(function(){initNavTree('class_t_s_l_selector.html',''); initResizable(true); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5206b2ee761cd20f8a40296dee42bfc5" id="r_a5206b2ee761cd20f8a40296dee42bfc5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__apigroup__api.html#ga3e56f53a5153d4b827e133fd41bd419a">TSLSelectorActionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5206b2ee761cd20f8a40296dee42bfc5">select</a> (const <a class="el" href="class_t_s_l_entity.html">TSLEntity</a> *entity)=0</td></tr>
-<tr class="separator:a5206b2ee761cd20f8a40296dee42bfc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0669484918219d2d392e2ba94941c315" id="r_a0669484918219d2d392e2ba94941c315"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__apigroup__api.html#ga3e56f53a5153d4b827e133fd41bd419a">TSLSelectorActionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0669484918219d2d392e2ba94941c315">select</a> (const <a class="el" href="class_t_s_l_entity.html">TSLEntity</a> *entity)</td></tr>
+<tr class="separator:a0669484918219d2d392e2ba94941c315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f92f029ff2dbd3e7763c8ba6d3a06f" id="r_a53f92f029ff2dbd3e7763c8ba6d3a06f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__apigroup__api.html#ga3e56f53a5153d4b827e133fd41bd419a">TSLSelectorActionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53f92f029ff2dbd3e7763c8ba6d3a06f">select</a> (const <a class="el" href="class_t_s_l_entity.html">TSLEntity</a> *entity, const <a class="el" href="namespace_3global_scope_4.html#class_t_s_l_selector_params">TSLSelectorParams</a> &amp;params)</td></tr>
+<tr class="separator:a53f92f029ff2dbd3e7763c8ba6d3a06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87c3672277b95727256e4ab11872a23c" id="r_a87c3672277b95727256e4ab11872a23c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87c3672277b95727256e4ab11872a23c">~TSLSelector</a> ()=0</td></tr>
 <tr class="separator:a87c3672277b95727256e4ab11872a23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -154,8 +156,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5206b2ee761cd20f8a40296dee42bfc5" name="a5206b2ee761cd20f8a40296dee42bfc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5206b2ee761cd20f8a40296dee42bfc5">&#9670;&#160;</a></span>select()</h2>
+<a id="a0669484918219d2d392e2ba94941c315" name="a0669484918219d2d392e2ba94941c315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0669484918219d2d392e2ba94941c315">&#9670;&#160;</a></span>select() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,18 +174,60 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>This method should return the type of action required of the search algorithm based on the supplied entity.</p>
 <p>NOTE : In earlier releases of MapLink, this method was const. This requirement has now been removed to allow derived classes to store data for use during the traversal of the entities.</p>
+<p>Change in MapLink Pro 11.2. This overload was previously abstract. It is no longer abstract so that clients can choose which overload is needed. If wrap-around mode is enabled on your drawing surface, it is recommended that the overload with 2 arguments is implemented.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">entity</td><td>the entity for the search </td></tr>
+    <tr><td class="paramname">entity</td><td>the entity for the search</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Enumerated type determines how the <a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> query algorithm proceeds as it searches for entities that match the <a class="el" href="class_t_s_l_selector.html">TSLSelector</a> object. Default implementation returns TSLSelectorActionSelectNext to select the entity. </dd></dl>
+
+</div>
+</div>
+<a id="a53f92f029ff2dbd3e7763c8ba6d3a06f" name="a53f92f029ff2dbd3e7763c8ba6d3a06f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f92f029ff2dbd3e7763c8ba6d3a06f">&#9670;&#160;</a></span>select() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__apigroup__api.html#ga3e56f53a5153d4b827e133fd41bd419a">TSLSelectorActionType</a> TSLSelector::select </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_entity.html">TSLEntity</a> *</td>          <td class="paramname"><span class="paramname"><em>entity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_3global_scope_4.html#class_t_s_l_selector_params">TSLSelectorParams</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>params</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>New in MapLink Pro 11.2.</p>
+<p>This method should return the type of action required of the search algorithm based on the supplied entity.</p>
+<p>An override of this virtual method overload is only required when your drawing surface has wrap-around enabled. The default implementation defers to the overload of this method that only takes a <a class="el" href="class_t_s_l_entity.html">TSLEntity</a> as an argument.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>the entity for the search </td></tr>
+    <tr><td class="paramname">params</td><td>Supplementary parameters, inlcuding the selectionExtent.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Enumerated type determines how the <a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> query algorithm proceeds as it searches for entities that match the <a class="el" href="class_t_s_l_selector.html">TSLSelector</a> object. </dd></dl>
 
 </div>
 </div>
@@ -194,7 +238,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_selector.html">TSLSelector</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 17:43:19 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.1</span>
+   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -165,6 +165,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6c645c5b9ccb55577a0b7b072ffaa246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33bc7ded33c90bd3d78077bc560b65f" id="r_aa33bc7ded33c90bd3d78077bc560b65f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa33bc7ded33c90bd3d78077bc560b65f">done</a> ()</td></tr>
 <tr class="separator:aa33bc7ded33c90bd3d78077bc560b65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f13a0aa81cf24b1d3e07a7aa0affc3c" id="r_a2f13a0aa81cf24b1d3e07a7aa0affc3c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f13a0aa81cf24b1d3e07a7aa0affc3c">enableGlobalUndo</a> (int numSlots)</td></tr>
+<tr class="separator:a2f13a0aa81cf24b1d3e07a7aa0affc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dc70b4595dd6ae19ddd57eb5631d277" id="r_a7dc70b4595dd6ae19ddd57eb5631d277"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dc70b4595dd6ae19ddd57eb5631d277">initialise</a> (String^ configFileName, String^ configSectionName)</td></tr>
 <tr class="separator:a7dc70b4595dd6ae19ddd57eb5631d277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8230699ccb7c0a84b5226cf2703e076a" id="r_a8230699ccb7c0a84b5226cf2703e076a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8230699ccb7c0a84b5226cf2703e076a">locator</a> (<a class="el" href="group__group__dotnet__editor.html#struct_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_locator_event">TSLNLocatorEvent</a>% event)</td></tr>
@@ -173,6 +175,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0f7bc02a5580c6d5e7b034352d707b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd2f70b4cd8ede880a14c65427dac363" id="r_afd2f70b4cd8ede880a14c65427dac363"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2f70b4cd8ede880a14c65427dac363">querySelectedAttributes</a> (<a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html">TSLNRenderingAttributes</a>^% attributes)</td></tr>
 <tr class="separator:afd2f70b4cd8ede880a14c65427dac363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab898a42b213ed4f81201ff0841bcaa97" id="r_ab898a42b213ed4f81201ff0841bcaa97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab898a42b213ed4f81201ff0841bcaa97">redo</a> ()</td></tr>
+<tr class="separator:ab898a42b213ed4f81201ff0841bcaa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8007f068b34236c6cb911950b423cc27" id="r_a8007f068b34236c6cb911950b423cc27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8007f068b34236c6cb911950b423cc27">reset</a> ()</td></tr>
 <tr class="separator:a8007f068b34236c6cb911950b423cc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e7fe9c853eec99d5bf67f2875a33444" id="r_a1e7fe9c853eec99d5bf67f2875a33444"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e7fe9c853eec99d5bf67f2875a33444">select</a> (<a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_entity.html">TSLNEntity</a>^ entity, bool clearSelectListFirst, bool feedback)</td></tr>
@@ -196,8 +200,12 @@ Properties</h2></td></tr>
 <tr class="separator:a1e97d1029b05efd698bbc7d15c41de4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade9065d43be1895744936168d88b364f" id="r_ade9065d43be1895744936168d88b364f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade9065d43be1895744936168d88b364f">Changed</a><code> [get, set]</code></td></tr>
 <tr class="separator:ade9065d43be1895744936168d88b364f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005a570490cf2a95d67abd08761d8ab8" id="r_a005a570490cf2a95d67abd08761d8ab8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a005a570490cf2a95d67abd08761d8ab8">FollowMode</a><code> [get, set]</code></td></tr>
+<tr class="separator:a005a570490cf2a95d67abd08761d8ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06e64ba6816fbc7166e10817e53b730b" id="r_a06e64ba6816fbc7166e10817e53b730b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06e64ba6816fbc7166e10817e53b730b">NumberOfSelectedEntities</a><code> [get]</code></td></tr>
 <tr class="separator:a06e64ba6816fbc7166e10817e53b730b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebc2d2ef8cda2669dceaa094e419304" id="r_a6ebc2d2ef8cda2669dceaa094e419304"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ebc2d2ef8cda2669dceaa094e419304">RedoPossible</a><code> [get]</code></td></tr>
+<tr class="separator:a6ebc2d2ef8cda2669dceaa094e419304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea62b16f9a9849e9b5fc1c9c374edfbe" id="r_aea62b16f9a9849e9b5fc1c9c374edfbe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea62b16f9a9849e9b5fc1c9c374edfbe">UndoPossible</a><code> [get]</code></td></tr>
 <tr class="separator:aea62b16f9a9849e9b5fc1c9c374edfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -295,7 +303,7 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opname</td><td>This is the name of the operation to be activated by the editor.</td></tr>
-    <tr><td class="paramname">data</td><td>A pointer to data required by the operation. This may be information is contained within the TSLSpecialised data object. The specific data required by each operation is specified in the operation class.</td></tr>
+    <tr><td class="paramname">data</td><td>A pointer to data required by the operation. The specific data required by each operation is documented in the operation's class.</td></tr>
   </table>
   </dd>
 </dl>
@@ -318,7 +326,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Ask whether it is possible to activate the specified operation.</p>
-<p>This asks the editor to activate the specified operation. Some operations are dependent upon specific circumstances to work, for example the move/scale/rotate operations all rely on entities being selected.</p>
+<p>This asks the editor if the specified operation is currently activatable. Some operations are dependent upon specific circumstances to work, for example the move/scale/rotate operations all rely on entities being selected.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opname</td><td>This is the name of the operation to be queried for activation by the editor.</td></tr>
@@ -402,7 +410,7 @@ Properties</h2></td></tr>
 <p>Create an operation by cloning an existing operation.</p>
 <p>An operation alias will allow an existing operation to be invoked using a different name.</p>
 <p>This is useful when combined with User Operations to provide multiple implementations of essentially the same operation. For example, an application may require several kinds of polyline to be drawn, each with a different feature code. The operation alias mechanism may be used to create different named operations which all perform the same original polyline functionality, with the advantage that overriding user-defined operations can modify the feature code after the polyline has been created.</p>
-<p>Note that the current implementation at the time of the method call is used, regardless of subsequent operation additions. Thus, if the basic <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_polyline_operation.html">TSLNPolylineOperation</a> is added, the addOperationAlias called and a user-defined polyline operation added, then the alias would use the basic <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_polyline_operation.html">TSLNPolylineOperation</a> rather than the user-defined polyline operation. If the addOperationAlias call occurred after the user-defined polyline operation had been added, then that would be used as the basic of the alias.</p>
+<p>Note that the current implementation at the time of the method call is used, regardless of subsequent operation additions. Thus, if the basic <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_polyline_operation.html">TSLNPolylineOperation</a> is added, the addOperationAlias called and a user-defined polyline operation added, then the alias would use the basic <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_polyline_operation.html">TSLNPolylineOperation</a> rather than the user-defined polyline operation. If the addOperationAlias call occurred after the user-defined polyline operation had been added, then that would be used as the basis of the alias.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">originalName</td><td>Name of original operation to clone.</td></tr>
@@ -438,8 +446,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Add a new user-defined operation to the editor.</p>
-<p>The user-defined operation is an instance of a class derived from the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_user_operation.html">TSLNUserOperation</a> class. When the editor receives an activation request for the named operation, it is activated.</p>
-<p>A user-defined operation can override an existing operation by specifying the same name. For example, if the client application wished to override the "polygon" operation to perform some action after the polygon had been created, then it should add the normal polygon operation (TSLNPolygonOperation::add( editor ) then add a user-defined operation of the same name - "polygon". The methods of the user-defined operation would then be called in place of the original operation methods. To invoke the original operation methods from within the user-defined operation methods, call the 'invokeOriginal' method of the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_user_operation_request.html">TSLNUserOperationRequest</a> handler.</p>
+<p>The user-defined operation is defined by an instance of a class derived from the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_user_operation.html">TSLNUserOperation</a> class. When the editor receives an activation request for the named operation, the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_user_operation.html">TSLNUserOperation</a> is activated in turn.</p>
+<p>A user-defined operation can override an existing operation by specifying the same name. For example, if the client application wished to override the "polygon" operation to perform some action after the polygon had been created, then it should add the normal polygon operation (TSLNPolygonOperation::add( editor )) then add a user-defined operation of the same name - "polygon". The methods of the user-defined operation would then be called in place of the original operation methods. To invoke the original operation methods from within the user-defined operation methods, call the 'invokeOriginal' method of the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_user_operation_request.html">TSLNUserOperationRequest</a> handler.</p>
 <p>Note that this can be combined with an addOperationAlias call to provide multiple implementations of essentially the same operation. For example, an application may require several kinds of polyline to be drawn, each with a different feature code. The operation alias mechanism may be used to create different named operations which all perform the same original polyline functionality, with the advantage that overriding user-defined operations can modify the feature code after the polyline has been created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -520,7 +528,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the entity is successfully deselected, false if it is not on the select list. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the select list is successfully cleared, false if the deselection failed.. </dd></dl>
 
 </div>
 </div>
@@ -542,7 +550,7 @@ Properties</h2></td></tr>
 <p>This method allows the user application to change the current constraint.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>A TSLNEditorConstraint value determining the new constraint type.</td></tr>
+    <tr><td class="paramname">type</td><td>A <a class="el" href="group__group__dotnet__editor.html#ga99c12b926e4de4abacdf1aebd93a99e2">TSLNEditorConstraintType</a> value determining the new constraint type.</td></tr>
   </table>
   </dd>
 </dl>
@@ -572,7 +580,7 @@ Properties</h2></td></tr>
 <p>This method allows the user application to change the current constraint.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>A TSLNEditorConstraint value determining the new constraint type.</td></tr>
+    <tr><td class="paramname">type</td><td>A <a class="el" href="group__group__dotnet__editor.html#ga99c12b926e4de4abacdf1aebd93a99e2">TSLNEditorConstraintType</a> value determining the new constraint type.</td></tr>
     <tr><td class="paramname">parameter</td><td>For angle constraints, this is the angle in degrees, anti-clockwise from the +ve X axis. For distance constraints, this is the distance in TMC units. For other constraints, this parameter is unused.</td></tr>
   </table>
   </dd>
@@ -605,7 +613,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This method configures any cursor movement callback that may be required by the application.</p>
-<p>When a cursor movement has been configured, the TSLNEditorRequest::onCursor Movement method will be triggered. The default is none.</p>
+<p>When a cursor movement has been configured, the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html#ade3a8fdd04a2e57e8878bda901aae20a">TSLNEditorRequest::onCursorMovement</a> method will be triggered. The default is none.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td>The type of coordinate information required</td></tr>
@@ -633,8 +641,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Informs the editor that the current data layer has changed.</p>
-<p>This informs the editor that the current editable data layer has changed in the current drawing Surface. This will cause the editor to reset back to the select operation, clear the select list and to request the current entity set from the data layer.</p>
-<p>This method should be called after client application has changed the data in the data layer, such as after a 'loadData' call.</p>
+<p>This informs the editor that the current editable data layer has changed in the current drawing surface. This will cause the editor to reset back to the select operation, clear the select list and to request the current entity set from the data layer.</p>
+<p>This method should be called after a client application has changed the data in the data layer, such as after a 'loadData' call.</p>
 <p>Returns true on success, false otherwise. </p>
 
 </div>
@@ -725,8 +733,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Dialog option selected by user.</p>
-<p>This method is called by the client application when the user has selected one of the choices in a 'requestDialog' call. The user's choice is passed to the current operation for processing.</p>
+<p>Provide dialog option selected by user.</p>
+<p>This method is called by the client application when the user has selected one of the choices in a '<a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html#ada6d2b58c8111875563e2d22841992ee">TSLNEditorRequest::requestDialog</a>' call. The user's choice is passed to the current operation for processing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">button</td><td>The button selected by the user during the 'requestDialog' call. The index starts from 1.</td></tr>
@@ -752,8 +760,27 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Inform the editor of the completion of the current operation.</p>
-<p>This informs the editor that the user has requested a completion of the current operation. This may be on a button press. The Right Button usually invokes this functionality automatically.</p>
+<p>This informs the editor that the user has requested to complete the current operation. This may be due to a button press. The right mouse button usually invokes this functionality automatically.</p>
 <p>Returns true on success, false otherwise. </p>
+
+</div>
+</div>
+<a id="a2f13a0aa81cf24b1d3e07a7aa0affc3c" name="a2f13a0aa81cf24b1d3e07a7aa0affc3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f13a0aa81cf24b1d3e07a7aa0affc3c">&#9670;&#160;</a></span>enableGlobalUndo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Envitia::MapLink::Editor::TSLNEditor::enableGlobalUndo </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numSlots</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable the global undo capability, with the specified number of undo slots. This capability allows for multiple undo slots, with 'redo' also available, at the expense of greater memory use.</p>
+<p>Returns true if successful, false otherwise </p>
 
 </div>
 </div>
@@ -777,8 +804,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialise the <a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a> class.</p>
 <p>This method initialises the class. It is separate from the constructor in order to avoid memory leaks if constructors fail.</p>
-<p>configFileName: A string containing the path of the configuration file.</p>
-<p>configSectionName: A string containing the name of the relevant section of the configuration file.</p>
+<p>configFileName: A string containing the path of the configuration .ini file.</p>
+<p>configSectionName: A string containing the name of the relevant section of the configuration .ini file.</p>
 <p>It will return true on successful initialisation, false otherwise. </p>
 
 </div>
@@ -798,8 +825,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Inform the editor of a locator event.</p>
-<p>This methods informs the editor that a locator event has occurred in the current drawing surface. The information concerning the event passed to the current operation in a <a class="el" href="group__group__dotnet__editor.html#struct_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_locator_event">TSLNLocatorEvent</a> for processing. Press, motion and release events should be passed to the editor.</p>
-<p>NOTE : A Right Button locator event is automatically mapped to a 'done' method call.</p>
+<p>This methods informs the editor that a locator event has occurred in the current drawing surface. The information concerning the event passed to the current operation in a <a class="el" href="group__group__dotnet__editor.html#struct_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_locator_event">TSLNLocatorEvent</a> for processing. Press (mouse down), motion (mouse move) and release (mouse up) events should all be passed to the editor.</p>
+<p>NOTE : A Right Mouse Button locator event is automatically mapped to a 'done' method call.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>The <a class="el" href="group__group__dotnet__editor.html#struct_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_locator_event">TSLNLocatorEvent</a> object containing information about the event.</td></tr>
@@ -829,7 +856,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Query the data associated with the specified operation.</p>
-<p>This method queries the named operation. The value queried is operation specific and is described in each operations documentation.</p>
+<p>This method queries the named operation. The value returned is operation-specific and is described in each operation's documentation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>A string containing the name of the operation to be queried.</td></tr>
@@ -864,6 +891,26 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if structure populated, false if no objects are selected. </dd></dl>
+
+</div>
+</div>
+<a id="ab898a42b213ed4f81201ff0841bcaa97" name="ab898a42b213ed4f81201ff0841bcaa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab898a42b213ed4f81201ff0841bcaa97">&#9670;&#160;</a></span>redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Envitia::MapLink::Editor::TSLNEditor::redo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Revert an <a class="el" href="#a050ab1ed951a1eaabba7814b0220eb42">undo()</a>.</p>
+<p>Only available if global undo is enabled.</p>
+<p>Returns true on success, false otherwise. </p>
 
 </div>
 </div>
@@ -986,8 +1033,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Called when text is entered by user.</p>
-<p>This method is called by the client application when a text string has been entered by the user. If the entry was cancelled by the user, then the 'cancelled' flag should be set. The entry is passed to the current operation for processing.</p>
+<p>Call when text is entered by user.</p>
+<p>This method should be called by the client application when a text string has been entered by the user due to a '<a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor_request.html#ab0b863d6011cfeba8733e9f5894ce942">TSLNEditorRequest::requestText</a>' call. If the text entry was cancelled by the user, then the 'cancelled' flag should be set instead. The text is passed to the current operation for processing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>The string entered by the user.</td></tr>
@@ -1117,6 +1164,37 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a005a570490cf2a95d67abd08761d8ab8" name="a005a570490cf2a95d67abd08761d8ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005a570490cf2a95d67abd08761d8ab8">&#9670;&#160;</a></span>FollowMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Envitia::MapLink::Editor::TSLNEditor::FollowMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether follow mode is enabled.</p>
+<p>If enabled, then certain landlink API operations will follow the edges defined by existing primitives. The specific operations affected are:</p>
+<ul>
+<li>"polyline" (TSLNFollowPolylineOperation)</li>
+<li>"polygon" (TSLNFollowPolygonOperation)</li>
+<li>"replacesection" (TSLNReplaceSectionOperation)</li>
+<li>"topologicalreplacesection" (TSLNTopologicalReplaceSectionOperation)</li>
+</ul>
+<p>This can be toggled on and off midway through drawing a line/ring. </p>
+
+</div>
+</div>
 <a id="a06e64ba6816fbc7166e10817e53b730b" name="a06e64ba6816fbc7166e10817e53b730b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06e64ba6816fbc7166e10817e53b730b">&#9670;&#160;</a></span>NumberOfSelectedEntities</h2>
 
@@ -1137,6 +1215,30 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Query the number of entries in the current select list. </p>
+
+</div>
+</div>
+<a id="a6ebc2d2ef8cda2669dceaa094e419304" name="a6ebc2d2ef8cda2669dceaa094e419304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ebc2d2ef8cda2669dceaa094e419304">&#9670;&#160;</a></span>RedoPossible</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Envitia::MapLink::Editor::TSLNEditor::RedoPossible</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ask whether redo is currently available.</p>
+<p>Returns true if it is possible to redo, false otherwise. </p>
 
 </div>
 </div>
@@ -1171,7 +1273,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_envitia.html">Envitia</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link_1_1_editor.html">Editor</a></li><li class="navelem"><a class="el" href="class_envitia_1_1_map_link_1_1_editor_1_1_t_s_l_n_editor.html">TSLNEditor</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.1&nbsp;Documentation created Mon May 12 2025&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.2&nbsp;Documentation created Wed Jul 23 2025 17:46:35&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

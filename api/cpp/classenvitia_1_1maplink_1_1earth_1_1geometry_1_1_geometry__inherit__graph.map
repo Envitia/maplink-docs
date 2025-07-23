@@ -1,13 +1,13 @@
 <map id="envitia::maplink::earth::geometry::Geometry" name="envitia::maplink::earth::geometry::Geometry">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,139,144,181"/>
-<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html" title=" " alt="" coords="192,5,345,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,126,145,91,190,58,211,46,213,51,193,62,148,95,109,130"/>
-<area shape="rect" id="Node000003" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polygon.html" title=" " alt="" coords="199,72,338,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,131,203,113,205,118,153,136"/>
-<area shape="rect" id="Node000004" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polyline.html" title=" " alt="" coords="199,139,338,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,157,199,157,199,163,160,163"/>
-<area shape="rect" id="Node000005" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_symbol.html" title=" " alt="" coords="199,205,338,248"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="153,184,205,202,203,207,152,189"/>
-<area shape="rect" id="Node000006" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_text.html" title=" " alt="" coords="199,272,338,315"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="109,190,148,225,193,258,213,269,211,274,190,262,145,229,106,194"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,136,157"/>
+<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html" title=" " alt="" coords="184,5,331,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,111,138,80,183,50,207,38,209,42,185,54,141,84,103,115"/>
+<area shape="rect" id="Node000003" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polygon.html" title=" " alt="" coords="192,64,323,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,116,200,96,202,101,141,121"/>
+<area shape="rect" id="Node000004" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polyline.html" title=" " alt="" coords="192,123,323,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,137,192,137,192,143,150,143"/>
+<area shape="rect" id="Node000005" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_symbol.html" title=" " alt="" coords="192,181,323,216"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="141,159,202,179,200,184,139,164"/>
+<area shape="rect" id="Node000006" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_text.html" title=" " alt="" coords="192,240,323,275"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="103,165,141,196,185,226,209,238,207,242,183,230,138,200,99,169"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="TSLSLMEntityRefHandler" name="TSLSLMEntityRefHandler">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,152,83"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_s_l_m_entity_ref_handler_custom.html" title=" " alt="" coords="213,5,402,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,49,244,30,245,35,158,55"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="226,56,390,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,67,225,67,225,72,167,72"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_threaded_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="200,107,416,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,84,245,103,244,109,157,89"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,52,145,75"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_s_l_m_entity_ref_handler_custom.html" title=" " alt="" coords="207,5,383,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,46,240,25,241,31,143,52"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="217,52,373,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,61,217,61,217,66,159,66"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_threaded_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="193,99,396,121"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,75,241,96,240,101,142,80"/>
 </map>

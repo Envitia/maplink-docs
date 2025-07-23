@@ -203,7 +203,7 @@ var group__group__directimport =
         [ "operator==", "struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html#ae20556c86742cba1b443bf7fdec56c46", null ],
         [ "reset", "struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html#a074741e5e7358d204efb64e965da6da9", null ],
         [ "m_format", "struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html#ae990abdbd96ea4d9c7e925a7f0ab61ed", null ],
-        [ "m_value", "struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html#a6eb17a4ebe876038ac44ce81245dfa04", null ]
+        [ "m_value", "struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html#a8dfdee08397b0f2e38fbfcd5fc01b8b3", null ]
       ] ],
       [ "RasterChannelData.m_value", "class_t_s_l_direct_import_raster.html#union_t_s_l_direct_import_raster_1_1_raster_channel_data_8m__value", [
         [ "m_float32", "class_t_s_l_direct_import_raster.html#a56ab9f3ce39fb74ff735882152432111", null ],

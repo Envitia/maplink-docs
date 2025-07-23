@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -186,6 +186,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a539f0a4dc06666976addfe434bd2e0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1087a3eb4cb2cbbae84e0c4ff86f725a" id="r_a1087a3eb4cb2cbbae84e0c4ff86f725a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1087a3eb4cb2cbbae84e0c4ff86f725a">normaliseDegrees</a> (double angle)</td></tr>
 <tr class="separator:a1087a3eb4cb2cbbae84e0c4ff86f725a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e9e5af37b07155a4aad70049b4fbdf" id="r_a26e9e5af37b07155a4aad70049b4fbdf"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e9e5af37b07155a4aad70049b4fbdf">normaliseLatitude</a> (double unnormalisedLatitude)</td></tr>
+<tr class="separator:a26e9e5af37b07155a4aad70049b4fbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf36c5406f2d89e4a97d939e5e982315" id="r_aaf36c5406f2d89e4a97d939e5e982315"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf36c5406f2d89e4a97d939e5e982315">normaliseLongitude</a> (double unnormalisedLongitude)</td></tr>
+<tr class="separator:aaf36c5406f2d89e4a97d939e5e982315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65d0ca7cc7e1ac6ee8fe954e9487f5c4" id="r_a65d0ca7cc7e1ac6ee8fe954e9487f5c4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65d0ca7cc7e1ac6ee8fe954e9487f5c4">rhumbLineDistance</a> (const <a class="el" href="class_t_s_l_lat_long_coord.html">TSLLatLongCoord</a> &amp;startPoint, const <a class="el" href="class_t_s_l_lat_long_coord.html">TSLLatLongCoord</a> &amp;destinationPoint, double &amp;trueCourse)</td></tr>
 <tr class="separator:a65d0ca7cc7e1ac6ee8fe954e9487f5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a020dda4434a5dca0d13e517cd2249f61" id="r_a020dda4434a5dca0d13e517cd2249f61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020dda4434a5dca0d13e517cd2249f61">rhumbLineDestination</a> (const <a class="el" href="class_t_s_l_lat_long_coord.html">TSLLatLongCoord</a> &amp;startPoint, double trueCourse, double distance, <a class="el" href="class_t_s_l_lat_long_coord.html">TSLLatLongCoord</a> &amp;destination)</td></tr>
@@ -1513,6 +1517,58 @@ int numPoints = (int)((totalDistance / postDistance)  + 0.5) + 1;
 
 </div>
 </div>
+<a id="a26e9e5af37b07155a4aad70049b4fbdf" name="a26e9e5af37b07155a4aad70049b4fbdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e9e5af37b07155a4aad70049b4fbdf">&#9670;&#160;</a></span>normaliseLatitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TSLCoordinateConverter::normaliseLatitude </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>unnormalisedLatitude</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ensures the degrees are within valid bounds. </p>
+
+</div>
+</div>
+<a id="aaf36c5406f2d89e4a97d939e5e982315" name="aaf36c5406f2d89e4a97d939e5e982315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf36c5406f2d89e4a97d939e5e982315">&#9670;&#160;</a></span>normaliseLongitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double TSLCoordinateConverter::normaliseLongitude </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>unnormalisedLongitude</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Ensures the degrees are within valid bounds. </p>
+
+</div>
+</div>
 <a id="a020dda4434a5dca0d13e517cd2249f61" name="a020dda4434a5dca0d13e517cd2249f61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a020dda4434a5dca0d13e517cd2249f61">&#9670;&#160;</a></span>rhumbLineDestination()</h2>
 
@@ -2650,7 +2706,7 @@ int numPoints = (int)((totalDistance / postDistance)  + 0.5) + 1;
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_coordinate_converter.html">TSLCoordinateConverter</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 17:42:38 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>
