@@ -1,5 +1,5 @@
 <map id="TSLInteractionModeEditRequest" name="TSLInteractionModeEditRequest">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,196,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_editor_request.html" title=" " alt="" coords="44,5,157,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,48,103,80,98,80,98,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,181,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_editor_request.html" title=" " alt="" coords="40,5,147,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,41,96,76,91,76,91,41"/>
 </map>

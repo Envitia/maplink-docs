@@ -1,7 +1,7 @@
 <map id="TSLTMCalDate" name="TSLTMCalDate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="31,80,128,107"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_date_and_time.html" title=" " alt="" coords="16,155,143,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,122,82,154,77,154,77,122"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_temporal_position.html" title=" " alt="" coords="5,5,154,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,48,82,80,77,80,77,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,76,118,99"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_date_and_time.html" title=" " alt="" coords="14,147,131,169"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,112,75,147,70,147,70,112"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_temporal_position.html" title=" " alt="" coords="5,5,140,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,41,75,76,70,76,70,41"/>
 </map>

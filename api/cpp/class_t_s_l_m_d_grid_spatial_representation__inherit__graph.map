@@ -1,9 +1,9 @@
 <map id="TSLMDGridSpatialRepresentation" name="TSLMDGridSpatialRepresentation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="49,80,246,107"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_m_d_georectified.html" title=" " alt="" coords="5,155,128,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,119,82,156,79,152,121,115"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_m_d_georeferenceable.html" title=" " alt="" coords="152,155,306,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,115,217,152,213,156,171,119"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_m_d_spatial_representation.html" title=" " alt="" coords="60,5,236,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,48,150,80,145,80,145,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="47,76,225,99"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_m_d_georectified.html" title=" " alt="" coords="5,147,117,169"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,110,74,149,71,145,113,106"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_m_d_georeferenceable.html" title=" " alt="" coords="142,147,282,169"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="159,106,203,145,199,149,156,110"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_m_d_spatial_representation.html" title=" " alt="" coords="56,5,216,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,41,139,76,133,76,133,41"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="TSLTrackGraphic" name="TSLTrackGraphic">
-<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,286,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_track_graphic_arrow.html" title=" " alt="" coords="5,80,145,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,41,104,82,102,77,190,36"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_track_graphic_link.html" title=" " alt="" coords="168,80,296,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,48,235,80,230,80,230,48"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_track_graphic_ruler.html" title=" " alt="" coords="321,80,456,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="274,36,362,77,360,82,272,41"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="169,5,271,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_track_graphic_arrow.html" title=" " alt="" coords="5,76,136,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,36,94,78,92,73,185,31"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_track_graphic_link.html" title=" " alt="" coords="161,76,279,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,41,223,76,217,76,217,41"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_track_graphic_ruler.html" title=" " alt="" coords="303,76,430,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,31,346,74,344,78,253,36"/>
 </map>
