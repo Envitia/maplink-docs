@@ -1,9 +1,9 @@
 <map id="TSLWMSGetMapResponse" name="TSLWMSGetMapResponse">
-<area shape="rect" id="Node000001" title=" " alt="" coords="144,5,302,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_get_map_raster_response.html" title=" " alt="" coords="126,80,319,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,48,225,80,220,80,220,48"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_w_m_s_get_map_raster_response_n_t.html" title=" " alt="" coords="5,155,211,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,118,130,156,127,152,188,113"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_w_m_s_get_map_raster_response_x11.html" title=" " alt="" coords="235,155,440,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="257,113,319,152,316,156,254,118"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="137,5,284,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_get_map_raster_response.html" title=" " alt="" coords="121,76,300,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,41,213,76,208,76,208,41"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_w_m_s_get_map_raster_response_n_t.html" title=" " alt="" coords="5,147,197,169"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,108,119,149,116,144,181,104"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_w_m_s_get_map_raster_response_x11.html" title=" " alt="" coords="221,147,419,169"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="240,104,305,144,302,149,237,108"/>
 </map>

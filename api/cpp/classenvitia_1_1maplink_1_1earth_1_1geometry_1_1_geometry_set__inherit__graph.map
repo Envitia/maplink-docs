@@ -1,5 +1,5 @@
 <map id="envitia::maplink::earth::geometry::GeometrySet" name="envitia::maplink::earth::geometry::GeometrySet">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,159,139"/>
-<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry.html" title=" " alt="" coords="13,5,151,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,64,85,96,79,96,79,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,88,152,123"/>
+<area shape="rect" id="Node000002" href="$classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry.html" title=" " alt="" coords="13,5,144,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,54,81,88,76,88,76,54"/>
 </map>

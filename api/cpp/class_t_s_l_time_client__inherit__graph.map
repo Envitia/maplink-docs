@@ -1,5 +1,5 @@
 <map id="TSLTimeClient" name="TSLTimeClient">
-<area shape="rect" id="Node000001" title=" " alt="" coords="22,5,119,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_camera_manager.html" title=" " alt="" coords="5,80,136,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,48,73,80,68,80,68,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="21,5,109,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_camera_manager.html" title=" " alt="" coords="5,76,124,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,41,67,76,62,76,62,41"/>
 </map>

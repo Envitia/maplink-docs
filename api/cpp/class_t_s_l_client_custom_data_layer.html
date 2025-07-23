@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -135,6 +135,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a75d8b53fb7a786feb28844baf40de190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a236ed157d7b68602ec2c5fe3a7987edc" id="r_a236ed157d7b68602ec2c5fe3a7987edc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a236ed157d7b68602ec2c5fe3a7987edc">drawLayer</a> (<a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a> *renderingInterface, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *extent, <a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> &amp;layerHandler)=0</td></tr>
 <tr class="separator:a236ed157d7b68602ec2c5fe3a7987edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25d365a3e0a8a70f34a803e93fe7d8a" id="r_ab25d365a3e0a8a70f34a803e93fe7d8a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab25d365a3e0a8a70f34a803e93fe7d8a">drawLayer</a> (<a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a> *renderingInterface, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *extent, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *queryExtent, <a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> &amp;layerHandler)</td></tr>
+<tr class="separator:ab25d365a3e0a8a70f34a803e93fe7d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a06424da689eca18159fc47cf692e85" id="r_a7a06424da689eca18159fc47cf692e85"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a06424da689eca18159fc47cf692e85">drawLayer</a> (<a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a> *renderingInterface, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *drawExtent, const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *queryExtent, <a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> &amp;layerHandler)</td></tr>
+<tr class="separator:a7a06424da689eca18159fc47cf692e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af265fb0272e75a5cdcb65daf7d81a609" id="r_af265fb0272e75a5cdcb65daf7d81a609"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af265fb0272e75a5cdcb65daf7d81a609">editableSearchDepth</a> () const</td></tr>
 <tr class="separator:af265fb0272e75a5cdcb65daf7d81a609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8353613b7dde9db8192d241f3194483a" id="r_a8353613b7dde9db8192d241f3194483a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_s_l_data_layer.html">TSLDataLayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8353613b7dde9db8192d241f3194483a">getActiveLayer</a> (const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> &amp;extent, double screenResolution)</td></tr>
@@ -325,8 +329,100 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7a06424da689eca18159fc47cf692e85" name="a7a06424da689eca18159fc47cf692e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a06424da689eca18159fc47cf692e85">&#9670;&#160;</a></span>drawLayer() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool TSLClientCustomDataLayer::drawLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a> *</td>          <td class="paramname"><span class="paramname"><em>renderingInterface</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *</td>          <td class="paramname"><span class="paramname"><em>drawExtent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *</td>          <td class="paramname"><span class="paramname"><em>queryExtent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>layerHandler</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>New in MapLink Pro 11.2.1.</p>
+<p>Overload of drawLayer that works with wrap-around mode. If wrap-around mode is enabled and your application implements a <a class="el" href="class_t_s_l_client_custom_data_layer.html">TSLClientCustomDataLayer</a>, you will need to override the new <a class="el" href="#ab25d365a3e0a8a70f34a803e93fe7d8a">drawLayer(TSLRenderingInterface* , const TSLEnvelope* , const TSLEnvelope* , TSLCustomDataLayerHandler&amp; )</a> virtual method to find the features to draw when drawing a wrap tile.</p>
+<p>Provides callbacks to the application when the layer is redrawing.</p>
+<p>The developer should provide an implementation of this method to allow custom drawing within the application.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderingInterface</td><td>Provides a handle to the drawing operations within a layer.</td></tr>
+    <tr><td class="paramname">drawExtent</td><td>Provides the extent of the area being drawn by the drawing surface in TMCs.</td></tr>
+    <tr><td class="paramname">queryExtent</td><td>Specified the extent of the area being queried for features and data to draw. queryExtent is the normalised equivalent of drawExtent, so queryExtent should always intersect with the data model even when drawing wrap tiles, while drawExtent might not.</td></tr>
+    <tr><td class="paramname">layerHandler</td><td>A <a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> instance that can be used to draw additional TSLDataLayer-derived classes as part of the drawing of the custom data layer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The implementation should return true if the drawing succeeds, or false otherwise. </p>
+
+</div>
+</div>
+<a id="ab25d365a3e0a8a70f34a803e93fe7d8a" name="ab25d365a3e0a8a70f34a803e93fe7d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab25d365a3e0a8a70f34a803e93fe7d8a">&#9670;&#160;</a></span>drawLayer() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool TSLClientCustomDataLayer::drawLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_s_l_rendering_interface.html">TSLRenderingInterface</a> *</td>          <td class="paramname"><span class="paramname"><em>renderingInterface</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *</td>          <td class="paramname"><span class="paramname"><em>extent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> *</td>          <td class="paramname"><span class="paramname"><em>queryExtent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_t_s_l_custom_data_layer_handler.html">TSLCustomDataLayerHandler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>layerHandler</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a236ed157d7b68602ec2c5fe3a7987edc" name="a236ed157d7b68602ec2c5fe3a7987edc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a236ed157d7b68602ec2c5fe3a7987edc">&#9670;&#160;</a></span>drawLayer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a236ed157d7b68602ec2c5fe3a7987edc">&#9670;&#160;</a></span>drawLayer() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -943,7 +1039,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_client_custom_data_layer.html">TSLClientCustomDataLayer</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 18:03:59 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

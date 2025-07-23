@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -186,6 +186,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ada8ecff97f96ffedabf4d398bfac9c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12dc2ff318fe9232bbaa0805b4b5a472" id="r_a12dc2ff318fe9232bbaa0805b4b5a472"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12dc2ff318fe9232bbaa0805b4b5a472">translate</a> (TSLTMC dx, TSLTMC dy)</td></tr>
 <tr class="separator:a12dc2ff318fe9232bbaa0805b4b5a472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cff973b4330ae9b2fb0ad5573556f67" id="r_a2cff973b4330ae9b2fb0ad5573556f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cff973b4330ae9b2fb0ad5573556f67">shift</a> (TSLTMC xshift) const</td></tr>
+<tr class="separator:a2cff973b4330ae9b2fb0ad5573556f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e05320e56b5a4ba1ff645cd25b883a0" id="r_a5e05320e56b5a4ba1ff645cd25b883a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e05320e56b5a4ba1ff645cd25b883a0">move</a> (TSLTMC x, TSLTMC y)</td></tr>
 <tr class="separator:a5e05320e56b5a4ba1ff645cd25b883a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830795149280f5a3bb139d820dee44f9" id="r_a830795149280f5a3bb139d820dee44f9"><td class="memItemLeft" align="right" valign="top">TSLULong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a830795149280f5a3bb139d820dee44f9">width</a> () const</td></tr>
@@ -1251,6 +1253,40 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a2cff973b4330ae9b2fb0ad5573556f67" name="a2cff973b4330ae9b2fb0ad5573556f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cff973b4330ae9b2fb0ad5573556f67">&#9670;&#160;</a></span>shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a> TSLEnvelope::shift </td>
+          <td>(</td>
+          <td class="paramtype">TSLTMC</td>          <td class="paramname"><span class="paramname"><em>xshift</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a copy of this, shifted along the x axis by the number of TMCs specified.</p>
+<p>If the shift moves the envelope outside of TMC-space, the shifted envelope will equal to the original.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xshift</td><td>Number of TMCs to shift the envelope along the x axis. If negative, the envelope will shift to the left.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The shifted envelope. </dd></dl>
+
+</div>
+</div>
 <a id="a0f8de33b22264427ac6dc21e19a9177b" name="a0f8de33b22264427ac6dc21e19a9177b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f8de33b22264427ac6dc21e19a9177b">&#9670;&#160;</a></span>squareDistance()</h2>
 
@@ -1589,7 +1625,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_envelope.html">TSLEnvelope</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 18:04:00 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

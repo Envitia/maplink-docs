@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.1.2.0.</span>
+   <div id="projectname">MapLink Pro<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -172,6 +172,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a30858b7bd35df06fd8ec91fcdd2c6f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7597fa572c59e44e54af721e354f950b" id="r_a7597fa572c59e44e54af721e354f950b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7597fa572c59e44e54af721e354f950b">enableGlobalUndo</a> (int numSlots)</td></tr>
 <tr class="separator:a7597fa572c59e44e54af721e354f950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066826293fe58fd8ffbdafef0ffe4bae" id="r_a066826293fe58fd8ffbdafef0ffe4bae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a066826293fe58fd8ffbdafef0ffe4bae">followMode</a> (bool enabled)</td></tr>
+<tr class="separator:a066826293fe58fd8ffbdafef0ffe4bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722418c62d2683826269d69cfbc153e2" id="r_a722418c62d2683826269d69cfbc153e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a722418c62d2683826269d69cfbc153e2">followMode</a> () const</td></tr>
+<tr class="separator:a722418c62d2683826269d69cfbc153e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fb9f3be6781ce91af5463a73aba3000" id="r_a6fb9f3be6781ce91af5463a73aba3000"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fb9f3be6781ce91af5463a73aba3000">initialise</a> (const char *configFileName, const char *configSectionName)</td></tr>
 <tr class="separator:a6fb9f3be6781ce91af5463a73aba3000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4faa7b6ed61e16c61f9e3117dc0ff29" id="r_ae4faa7b6ed61e16c61f9e3117dc0ff29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4faa7b6ed61e16c61f9e3117dc0ff29">locator</a> (const <a class="el" href="group__apigroup__editor__api.html#struct_t_s_l_locator_event">TSLLocatorEvent</a> &amp;event)</td></tr>
@@ -259,7 +263,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opname</td><td>This is the name of the operation to be activated by the editor.</td></tr>
-    <tr><td class="paramname">data</td><td>A pointer to data required by the operation. This may be information is contained within the TSLSpecialised data object. The specific data required by each operation is specified in the operation class.</td></tr>
+    <tr><td class="paramname">data</td><td>A pointer to data required by the operation. The specific data required by each operation is documented in the operation's class.</td></tr>
   </table>
   </dd>
 </dl>
@@ -282,7 +286,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Ask whether it is possible to activate the specified operation.</p>
-<p>This asks the editor to activate the specified operation. Some operations are dependent upon specific circumstances to work, for example the move/scale/rotate operations all rely on entities being selected.</p>
+<p>This asks the editor if the specified operation is currently activatable. Some operations are dependent upon specific circumstances to work, for example the move/scale/rotate operations all rely on entities being selected.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opname</td><td>This is the name of the operation to be queried for activation by the editor.</td></tr>
@@ -385,7 +389,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Create an operation by cloning an existing operation.</p>
 <p>An operation alias will allow an existing operation to be invoked using a different name.</p>
 <p>This is useful when combined with User Operations to provide multiple implementations of essentially the same operation. For example, an application may require several kinds of polyline to be drawn, each with a different feature code. The operation alias mechanism may be used to create different named operations which all perform the same original polyline functionality, with the advantage that overriding user-defined operations can modify the feature code after the polyline has been created.</p>
-<p>Note that the current implementation at the time of the method call is used, regardless of subsequent operation additions. Thus, if the basic <a class="el" href="class_t_s_l_polyline.html">TSLPolyline</a> Operation is added, the addOperationAlias called and a user-defined polyline operation added, then the alias would use the basic <a class="el" href="class_t_s_l_polyline_operation.html">TSLPolylineOperation</a> rather than the user-defined polyline operation. If the addOperationAlias call occurred after the user-defined polyline operation had been added, then that would be used as the basic of the alias.</p>
+<p>Note that the current implementation at the time of the method call is used, regardless of subsequent operation additions. Thus, if the basic <a class="el" href="class_t_s_l_polyline_operation.html">TSLPolylineOperation</a> is added, the addOperationAlias called and a user-defined polyline operation added, then the alias would use the basic <a class="el" href="class_t_s_l_polyline_operation.html">TSLPolylineOperation</a> rather than the user-defined polyline operation. If the addOperationAlias call occurred after the user-defined polyline operation had been added, then that would be used as the basis of the alias.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">originalName</td><td>Name of original operation to clone.</td></tr>
@@ -421,8 +425,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Add a new user-defined operation to the editor.</p>
-<p>The user-defined operation is an instance of a class derived from the TSLUser Operation class. When the editor receives an activation request for the named operation, it is activated.</p>
-<p>A user-defined operation can override an existing operation by specifying the same name. For example, if the client application wished to override the "polygon" operation to perform some action after the polygon had been created, then it should add the normal polygon operation (<a class="el" href="class_t_s_l_polygon.html">TSLPolygon</a> Operation::add( editor )), then add a user-defined operation of the same name - "polygon". The methods of the user-defined operation would then be called in place of the original operation methods. To invoke the original operation methods from within the user-defined operation methods, call the 'invokeOriginal' method of the <a class="el" href="class_t_s_l_user_operation_request.html">TSLUserOperationRequest</a> handler.</p>
+<p>The user-defined operation is defined by an instance of a class derived from the <a class="el" href="class_t_s_l_user_operation.html">TSLUserOperation</a> class. When the editor receives an activation request for the named operation, the <a class="el" href="class_t_s_l_user_operation.html">TSLUserOperation</a> is activated in turn.</p>
+<p>A user-defined operation can override an existing operation by specifying the same name. For example, if the client application wished to override the "polygon" operation to perform some action after the polygon had been created, then it should add the normal polygon operation (TSLPolygonOperation::add( editor )), then add a user-defined operation of the same name - "polygon". The methods of the user-defined operation would then be called in place of the original operation methods. To invoke the original operation methods from within the user-defined operation methods, call the 'invokeOriginal' method of the <a class="el" href="class_t_s_l_user_operation_request.html">TSLUserOperationRequest</a> handler.</p>
 <p>Note that this can be combined with an addOperationAlias call to provide multiple implementations of essentially the same operation. For example, an application may require several kinds of polyline to be drawn, each with a different feature code. The operation alias mechanism may be used to create different named operations which all perform the same original polyline functionality, with the advantage that overriding user-defined operations can modify the feature code after the polyline has been created.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -554,7 +558,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set the editor changed flag.</p>
-<p>This flag sets the editor's changed flag to determine if any operations have changed the current data layer. This gives control over the changed flag to the user application.</p>
+<p>This method sets the editor's changed flag to determine if any operations have changed the current data layer. This gives control over the changed flag to the user application.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newValue</td><td>The new state of the editor's changed flag. </td></tr>
@@ -586,7 +590,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the entity is successfully deselected, false if it is not on the select list. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the select list is successfully cleared, false if the deselection failed. </dd></dl>
 
 </div>
 </div>
@@ -612,7 +616,7 @@ Static Public Member Functions</h2></td></tr>
 <p>This method allows the user application to change the current constraint.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>A TSLEditorConstraint value determining the new constraint type.</td></tr>
+    <tr><td class="paramname">type</td><td>A <a class="el" href="group__apigroup__editor__api.html#ga9659dc1aac0d60216e47e4cdb9aa799d">TSLEditorConstraintType</a> value determining the new constraint type.</td></tr>
     <tr><td class="paramname">parameter</td><td>For angle constraints, this is the angle in degrees, anti-clockwise from the +ve X axis. For distance constraints, this is the distance in TMC units. For other constraints, this parameter is unused.</td></tr>
   </table>
   </dd>
@@ -645,7 +649,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This method configures any cursor movement callback that may be required by the application.</p>
-<p>When a cursor movement has been configured, the TSLEditorRequest::onCursor Movement method will be triggered. The default is none.</p>
+<p>When a cursor movement has been configured, the <a class="el" href="class_t_s_l_editor_request.html#ab7803bf44e0a189cecdfaf38d1643553">TSLEditorRequest::onCursorMovement</a> method will be triggered. The default is none.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td>The type of coordinate information required</td></tr>
@@ -673,8 +677,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Informs the editor that the current data layer has changed.</p>
-<p>This informs the editor that the current editable data layer has changed in the current drawing Surface. This will cause the editor to reset back to the select operation, clear the select list and to request the current entity set from the data layer.</p>
-<p>This method should be called after client application has changed the data in the data layer, such as after a 'loadData' call.</p>
+<p>This informs the editor that the current editable data layer has changed in the current drawing surface. This will cause the editor to reset back to the select operation, clear the select list and to request the current entity set from the data layer.</p>
+<p>This method should be called after a client application has changed the data in the data layer, such as after a 'loadData' call.</p>
 <p>Returns true on success, false otherwise. </p>
 
 </div>
@@ -784,8 +788,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Dialog option selected by user.</p>
-<p>This method is called by the client application when the user has selected one of the choices in a 'requestDialog' call. The user's choice is passed to the current operation for processing.</p>
+<p>Provide dialog option selected by user.</p>
+<p>This method is called by the client application when the user has selected one of the choices in a '<a class="el" href="class_t_s_l_editor_request.html#a196c5eac21dac9c7aba319b2b7f97621">TSLEditorRequest::requestDialog</a>' call. The user's choice is passed to the current operation for processing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">button</td><td>The button selected by the user during the 'requestDialog' call. The index starts from 1.</td></tr>
@@ -811,7 +815,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Inform the editor of the completion of the current operation.</p>
-<p>This informs the editor that the user has requested a completion of the current operation. This may be on a button press. The Right Button usually invokes this functionality automatically.</p>
+<p>This informs the editor that the user has requested to complete the current operation. This may be due to a button press. The right mouse button usually invokes this functionality automatically.</p>
 <p>Returns true on success, false otherwise. </p>
 
 </div>
@@ -835,6 +839,50 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a722418c62d2683826269d69cfbc153e2" name="a722418c62d2683826269d69cfbc153e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722418c62d2683826269d69cfbc153e2">&#9670;&#160;</a></span>followMode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TSLEditor::followMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get whether follow mode is enabled. </p>
+
+</div>
+</div>
+<a id="a066826293fe58fd8ffbdafef0ffe4bae" name="a066826293fe58fd8ffbdafef0ffe4bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066826293fe58fd8ffbdafef0ffe4bae">&#9670;&#160;</a></span>followMode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TSLEditor::followMode </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable/disable follow mode.</p>
+<p>If enabled, then certain landlink API operations will follow the edges defined by existing primitives. The specific operations affected are:</p>
+<ul>
+<li>"polyline" (TSLFollowPolylineOperation)</li>
+<li>"polygon" (TSLFollowPolygonOperation)</li>
+<li>"replacesection" (TSLReplaceSectionOperation)</li>
+<li>"topologicalreplacesection" (TSLTopologicalReplaceSectionOperation)</li>
+</ul>
+<p>This can be toggled on and off midway through drawing a line/ring. </p>
+
+</div>
+</div>
 <a id="a6fb9f3be6781ce91af5463a73aba3000" name="a6fb9f3be6781ce91af5463a73aba3000"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fb9f3be6781ce91af5463a73aba3000">&#9670;&#160;</a></span>initialise()</h2>
 
@@ -855,8 +903,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Initialise the <a class="el" href="class_t_s_l_editor.html">TSLEditor</a> class.</p>
 <p>This method initialises the class. It is separate from the constructor in order to avoid memory leaks if constructors fail.</p>
-<p>configFileName: A pointer to a string containing the path of the configuration file.</p>
-<p>configSectionName: A pointer to a string containing the name of the relevant section of the configuration file.</p>
+<p>configFileName: A pointer to a string containing the path of the configuration .ini file.</p>
+<p>configSectionName: A pointer to a string containing the name of the relevant section of the configuration .ini file.</p>
 <p>It will return true on successful initialisation, false otherwise. </p>
 
 </div>
@@ -876,8 +924,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Inform the editor of a locator event.</p>
-<p>This methods informs the editor that a locator event has occurred in the current drawing surface. The information concerning the event passed to the current operation in a <a class="el" href="group__apigroup__editor__api.html#struct_t_s_l_locator_event">TSLLocatorEvent</a> for processing. Press, motion and release events should be passed to the editor.</p>
-<p>NOTE : A Right Button locator event is automatically mapped to a 'done' method call.</p>
+<p>This methods informs the editor that a locator event has occurred in the current drawing surface. The information concerning the event passed to the current operation in a <a class="el" href="group__apigroup__editor__api.html#struct_t_s_l_locator_event">TSLLocatorEvent</a> for processing. Press (mouse down), motion (mouse move) and release (mouse up) events should all be passed to the editor.</p>
+<p>NOTE : A Right Mouse Button locator event is automatically mapped to a 'done' method call.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td>A reference to the <a class="el" href="group__apigroup__editor__api.html#struct_t_s_l_locator_event">TSLLocatorEvent</a> object containing information about the event.</td></tr>
@@ -996,7 +1044,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Query the data associated with the specified operation.</p>
-<p>This method queries the named operation. The value queried is operation specific and is described in each operations documentation.</p>
+<p>This method queries the named operation. The value returned is operation-specific and is described in each operation's documentation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>A pointer to a string containing the name of the operation to be queried.</td></tr>
@@ -1048,7 +1096,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If global undo is enabled, then this is available.</p>
+<p>Revert an <a class="el" href="#ae283a292f5b08a31569fc149cbe11197">undo()</a>.</p>
+<p>Only available if global undo is enabled.</p>
 <p>Returns true on success, false otherwise. </p>
 
 </div>
@@ -1191,8 +1240,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Called when text is entered by user.</p>
-<p>This method is called by the client application when a text string has been entered by the user. If the entry was cancelled by the user, then the 'cancelled' flag should be set. The entry is passed to the current operation for processing.</p>
+<p>Call when text is entered by user.</p>
+<p>This method should be called by the client application when a text string has been entered by the user due to a '<a class="el" href="class_t_s_l_editor_request.html#a1c894ad47582265ea8e840d3021a48b9">TSLEditorRequest::requestText</a>' call. If the text entry was cancelled by the user, then the 'cancelled' flag should be set instead. The text is passed to the current operation for processing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>Pointer to the string entered by the user.</td></tr>
@@ -1249,7 +1298,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_t_s_l_editor.html">TSLEditor</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.1.2.0. | Documentation created Mon May 12 2025 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro</a> 11.2 | Documentation created Wed Jul 23 2025 18:04:00 | Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a> | <a href="mailto:support@envitia.com">Contact Us</a> | &copy; 2025 <a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

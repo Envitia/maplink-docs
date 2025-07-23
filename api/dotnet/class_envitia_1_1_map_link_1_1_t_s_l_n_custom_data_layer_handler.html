@@ -35,7 +35,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="MapLink Pro 11 Logo New V1.1.png"/></td>
   <td id="projectalign">
-   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.1</span>
+   <div id="projectname">MapLink Pro .NET<span id="projectnumber">&#160;11.2</span>
    </div>
    <div id="projectbrief">Envitia MapLink Pro: The Ultimate Mapping Application Toolkit</div>
   </td>
@@ -166,7 +166,7 @@ Properties</h2></td></tr>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Limitations</h2>
 <ul>
-<li>Multiple data layers may be drawn in a single <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_client_custom_data_layer.html#a79add283639ff35468d6bde9ec8cd31d">TSLNClientCustomDataLayer::drawLayer()</a> call, however all layers drawn this way will use the active <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_system.html">TSLNCoordinateSystem</a> for the drawing surface for all coordinate transformations. Thus if two TSLNMapDataLayers are being drawn they must use the same <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_system.html">TSLNCoordinateSystem</a> for both layers to draw correctly.</li>
+<li>Multiple data layers may be drawn in a single <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_client_custom_data_layer.html#a502323e93affffd225e3ae0e10241a48">TSLNClientCustomDataLayer::drawLayer()</a> call, however all layers drawn this way will use the active <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_system.html">TSLNCoordinateSystem</a> for the drawing surface for all coordinate transformations. Thus if two TSLNMapDataLayers are being drawn they must use the same <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_system.html">TSLNCoordinateSystem</a> for both layers to draw correctly.</li>
 <li>Transparency for data layers drawn via this method will only function if the parent <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer.html">TSLNCustomDataLayer</a> has been set up for transparency to work. For more information see the documentation for the TSLPropertyEnum enumeration.</li>
 <li>Data layers drawn via this method will use the TSLPropertyBuffered setting of the parent <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer.html">TSLNCustomDataLayer</a> regardless of the value set on the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer_properties.html">TSLNCustomDataLayerProperties</a> instance passed in.</li>
 <li>The TSLNPropertyDetect, TSLNPropertySelect and TSLNPropertyTransparent data layer properties have no effect on data layers drawn via this method.</li>
@@ -174,7 +174,7 @@ Limitations</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataLayer</td><td>The <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_data_layer.html">TSLNDataLayer</a> to draw to the drawing surface containing the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer.html">TSLNCustomDataLayer</a>. The user retains ownership of this data layer.</td></tr>
-    <tr><td class="paramname">extent</td><td>The extent in TMCs of the data layer to draw. In most cases this will be the same as the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_envelope.html">TSLNEnvelope</a> passed to the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_client_custom_data_layer.html#a79add283639ff35468d6bde9ec8cd31d">TSLNClientCustomDataLayer::drawLayer()</a> method.</td></tr>
+    <tr><td class="paramname">extent</td><td>The extent in TMCs of the data layer to draw. In most cases this will be the same as the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_envelope.html">TSLNEnvelope</a> passed to the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_client_custom_data_layer.html#a502323e93affffd225e3ae0e10241a48">TSLNClientCustomDataLayer::drawLayer()</a> method.</td></tr>
     <tr><td class="paramname">layerName</td><td>The name of the layer being drawn.</td></tr>
     <tr><td class="paramname">layerProperties</td><td>An instance of the <a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer_properties.html">TSLNCustomDataLayerProperties</a> class that defines the data layer properties to use when drawing the layer. For information on the available properties see the documentation for the <a class="el" href="group__group__dotnet__maplink.html#gad44b6979683e3ad8fb3d15fc5d5003ba">TSLNPropertyEnum</a> enumeration. The user retains ownership of this object.</td></tr>
   </table>
@@ -238,7 +238,7 @@ Limitations</h2>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_envitia.html">Envitia</a></li><li class="navelem"><a class="el" href="namespace_envitia_1_1_map_link.html">MapLink</a></li><li class="navelem"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_custom_data_layer_handler.html">TSLNCustomDataLayerHandler</a></li>
-    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.1&nbsp;Documentation created Mon May 12 2025&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
+    <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> 11.2&nbsp;Documentation created Wed Jul 23 2025 18:07:55&nbsp;Generated with <a href="http://www.doxygen.org/index.html">Doxygen 1.13.2</a>&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; 2025<a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
 </body>

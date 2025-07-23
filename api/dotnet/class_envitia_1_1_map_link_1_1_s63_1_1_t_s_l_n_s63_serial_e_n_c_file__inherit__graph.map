@@ -1,5 +1,5 @@
 <map id="Envitia::MapLink::S63::TSLNS63SerialENCFile" name="Envitia::MapLink::S63::TSLNS63SerialENCFile">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,175,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="41,5,139,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,48,93,80,87,80,87,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,172,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="41,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,44,91,79,86,79,86,44"/>
 </map>

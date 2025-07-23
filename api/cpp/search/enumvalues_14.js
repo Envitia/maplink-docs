@@ -5,5 +5,8 @@ var searchData=
   ['widthunitspixels_2',['WidthUnitsPixels',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style.html#a5d7b1474b71e06e387825c4b680c08c3a4079c51c0ce886122ff2c014471a9230',1,'envitia::maplink::earth::geometry::Style']]],
   ['wmsoffering_3',['WMSOffering',['../class_t_s_l_o_w_c_offering.html#a16db910daef1422a17b2812627b4efcea35552a51f00ba611e81f5db6da0ce9cd',1,'TSLOWCOffering']]],
   ['wmtsoffering_4',['WMTSOffering',['../class_t_s_l_o_w_c_offering.html#a16db910daef1422a17b2812627b4efcea63e541c4f8ef9cb974e710e5a4a464e3',1,'TSLOWCOffering']]],
-  ['write_5',['Write',['../class_t_s_l_raster_buffer.html#af64ce196ee976c1e4c4de75c3d7dbabfa4c92bb35abe75431fa0c48159ad240ca',1,'TSLRasterBuffer']]]
+  ['wraparounddefault_5',['WrapAroundDefault',['../class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4dac88f4fdbdb2a79c90d03127d4e8dd1f8',1,'TSLDrawingSurface']]],
+  ['wraparounddisabled_6',['WrapAroundDisabled',['../class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4dae974251fd572874806c0865c5f7e1074',1,'TSLDrawingSurface']]],
+  ['wraparoundlongitudinal_7',['WrapAroundLongitudinal',['../class_t_s_l_drawing_surface.html#aaba61c0ed8fec83bff08dd66f9a05d4da7fc530ad8a9c207615b51a80ad96b514',1,'TSLDrawingSurface']]],
+  ['write_8',['Write',['../class_t_s_l_raster_buffer.html#af64ce196ee976c1e4c4de75c3d7dbabfa4c92bb35abe75431fa0c48159ad240ca',1,'TSLRasterBuffer']]]
 ];

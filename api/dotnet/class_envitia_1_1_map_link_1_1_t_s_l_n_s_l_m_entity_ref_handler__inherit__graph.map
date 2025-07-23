@@ -1,7 +1,7 @@
 <map id="Envitia::MapLink::TSLNSLMEntityRefHandler" name="Envitia::MapLink::TSLNSLMEntityRefHandler">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,227,81"/>
-<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref_handler_custom.html" title=" " alt="" coords="275,5,496,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,42,274,38,275,43,242,47"/>
-<area shape="rect" id="Node000003" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="275,72,496,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,73,275,77,274,82,242,78"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,224,77"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref_handler_custom.html" title=" " alt="" coords="272,5,491,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,40,271,36,272,41,238,45"/>
+<area shape="rect" id="Node000003" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_s_l_m_entity_ref_handler_file.html" title=" " alt="" coords="272,69,491,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,69,272,74,271,79,237,75"/>
 </map>
