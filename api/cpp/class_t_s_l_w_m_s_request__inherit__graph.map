@@ -1,15 +1,15 @@
 <map id="TSLWMSRequest" name="TSLWMSRequest">
-<area shape="rect" id="Node000001" title=" " alt="" coords="271,5,379,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_get_capabilities_request.html" title=" " alt="" coords="5,80,197,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,40,141,82,140,77,271,35"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_w_m_s_get_legend_graphic_request.html" title=" " alt="" coords="221,80,429,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="328,48,328,80,322,80,322,48"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_w_m_s_get_map_request_base.html" title=" " alt="" coords="453,80,629,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="378,35,504,77,502,82,376,40"/>
-<area shape="rect" id="Node000005" href="$class_t_s_l_w_m_s_get_feature_info_request_base.html" title=" " alt="" coords="329,155,545,181"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="512,118,457,156,454,152,509,113"/>
-<area shape="rect" id="Node000007" href="$class_t_s_l_w_m_s_get_map_request.html" title=" " alt="" coords="569,155,718,181"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="573,114,627,152,624,156,570,118"/>
-<area shape="rect" id="Node000006" href="$class_t_s_l_w_m_s_get_feature_info_request.html" title=" " alt="" coords="343,229,531,256"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="440,197,440,229,434,229,434,197"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="248,5,351,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_w_m_s_get_capabilities_request.html" title=" " alt="" coords="5,76,180,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,35,124,78,122,73,255,30"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_w_m_s_get_legend_graphic_request.html" title=" " alt="" coords="204,76,395,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,41,302,76,297,76,297,41"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_w_m_s_get_map_request_base.html" title=" " alt="" coords="419,76,582,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="343,30,472,73,470,78,341,35"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_w_m_s_get_feature_info_request_base.html" title=" " alt="" coords="303,147,504,169"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="477,109,419,149,416,144,474,104"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_w_m_s_get_map_request.html" title=" " alt="" coords="528,147,668,169"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="528,104,585,144,582,149,525,109"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_w_m_s_get_feature_info_request.html" title=" " alt="" coords="314,217,493,240"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="406,183,406,217,401,217,401,183"/>
 </map>

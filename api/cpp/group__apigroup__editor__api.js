@@ -101,6 +101,8 @@ var group__apigroup__editor__api =
       [ "dialogEntered", "class_t_s_l_editor.html#a828a472ec07eeda48d606c266d0afdfa", null ],
       [ "done", "class_t_s_l_editor.html#a30858b7bd35df06fd8ec91fcdd2c6f86", null ],
       [ "enableGlobalUndo", "class_t_s_l_editor.html#a7597fa572c59e44e54af721e354f950b", null ],
+      [ "followMode", "class_t_s_l_editor.html#a722418c62d2683826269d69cfbc153e2", null ],
+      [ "followMode", "class_t_s_l_editor.html#a066826293fe58fd8ffbdafef0ffe4bae", null ],
       [ "initialise", "class_t_s_l_editor.html#a6fb9f3be6781ce91af5463a73aba3000", null ],
       [ "locator", "class_t_s_l_editor.html#ae4faa7b6ed61e16c61f9e3117dc0ff29", null ],
       [ "numSelected", "class_t_s_l_editor.html#aab0385c9bbd1fe250fb2ecdf332488de", null ],

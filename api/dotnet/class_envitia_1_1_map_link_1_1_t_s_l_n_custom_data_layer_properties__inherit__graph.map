@@ -1,5 +1,5 @@
 <map id="Envitia::MapLink::TSLNCustomDataLayerProperties" name="Envitia::MapLink::TSLNCustomDataLayerProperties">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,212,123"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="67,5,150,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,48,111,80,106,80,106,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,208,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="65,5,148,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,44,109,79,104,79,104,44"/>
 </map>

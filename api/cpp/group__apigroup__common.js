@@ -55,6 +55,7 @@ var group__apigroup__common =
       [ "rotate", "class_t_s_l_envelope.html#a81f0828d968ae173f7100dc262663156", null ],
       [ "scale", "class_t_s_l_envelope.html#a05c5885df6aca32b1ec0bdfec59faf80", null ],
       [ "scale", "class_t_s_l_envelope.html#a62d5acc23d80a53d151977f898391f2d", null ],
+      [ "shift", "class_t_s_l_envelope.html#a2cff973b4330ae9b2fb0ad5573556f67", null ],
       [ "squareDistance", "class_t_s_l_envelope.html#a0f8de33b22264427ac6dc21e19a9177b", null ],
       [ "topRight", "class_t_s_l_envelope.html#ada8ecff97f96ffedabf4d398bfac9c3b", null ],
       [ "translate", "class_t_s_l_envelope.html#a12dc2ff318fe9232bbaa0805b4b5a472", null ],

@@ -1,13 +1,13 @@
 <map id="TSLWPSDescriptionType" name="TSLWPSDescriptionType">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,154,108"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_w_p_s_input_description_type.html" title=" " alt="" coords="206,5,382,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,72,201,41,238,30,239,35,203,47,126,77"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_w_p_s_output_data_type.html" title=" " alt="" coords="220,56,369,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,81,219,76,219,81,169,87"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_w_p_s_output_description_type.html" title=" " alt="" coords="202,107,387,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,103,201,106,201,112,168,108"/>
-<area shape="rect" id="Node000005" href="$class_t_s_l_w_p_s_process_brief_type.html" title=" " alt="" coords="218,157,371,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="126,112,203,143,239,154,238,159,201,148,124,117"/>
-<area shape="rect" id="Node000006" href="$class_t_s_l_w_p_s_process_description_type.html" title=" " alt="" coords="435,157,625,184"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="386,168,435,168,435,173,386,173"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,144,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_w_p_s_input_description_type.html" title=" " alt="" coords="196,5,360,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,68,191,37,229,25,231,31,193,42,114,73"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_w_p_s_output_data_type.html" title=" " alt="" coords="207,52,349,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,75,206,69,207,74,158,80"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_w_p_s_output_description_type.html" title=" " alt="" coords="192,99,364,121"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,94,192,98,191,103,158,99"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_w_p_s_process_brief_type.html" title=" " alt="" coords="206,145,350,168"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="116,101,193,130,234,143,233,148,191,135,114,106"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_w_p_s_process_description_type.html" title=" " alt="" coords="412,145,587,168"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="364,154,412,154,412,159,364,159"/>
 </map>
