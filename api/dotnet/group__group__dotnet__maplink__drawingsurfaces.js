@@ -9,17 +9,6 @@ var group__group__dotnet__maplink__drawingsurfaces =
       [ "WrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499a", [
         [ "WrapAroundDisabled", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581", null ],
         [ "WrapAroundLongitudinal", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1", null ],
-        [ "WrapAroundDefault", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32", null ],
-        [ "WrapAroundDisabled", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581", null ],
-        [ "WrapAroundLongitudinal", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1", null ],
-        [ "WrapAroundDefault", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32", null ]
-      ] ],
-      [ "WrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499a", [
-        [ "WrapAroundDisabled", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581", null ],
-        [ "WrapAroundLongitudinal", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1", null ],
-        [ "WrapAroundDefault", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32", null ],
-        [ "WrapAroundDisabled", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581", null ],
-        [ "WrapAroundLongitudinal", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1", null ],
         [ "WrapAroundDefault", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32", null ]
       ] ],
       [ "TSLN2DDrawingSurface", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5a37a9d5a6906ee60ce07b0d8f23bbdb", null ],
@@ -139,8 +128,6 @@ var group__group__dotnet__maplink__drawingsurfaces =
       [ "wndResize", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#afea1ca387159100b939cf2570cc0add1", null ],
       [ "wndResize", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a013e42cac4e9db2186948dcf2ff5c3b3", null ],
       [ "wrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#ad4118df1ee6aab24fe9329a46cb1ed0d", null ],
-      [ "wrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#ad4118df1ee6aab24fe9329a46cb1ed0d", null ],
-      [ "wrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#ac044acd8c6dcd309234c6081541161ac", null ],
       [ "wrapAroundMode", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#ac044acd8c6dcd309234c6081541161ac", null ],
       [ "zoom", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#adfbdb1d099127f1699cb11b0e34e4e33", null ],
       [ "zoom", "class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a1e82738e03d25d6422faaf385c54a342", null ],

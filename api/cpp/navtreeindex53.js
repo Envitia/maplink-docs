@@ -1,6 +1,5 @@
 var NAVTREEINDEX53 =
 {
-"classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a568ab8a3cbd00777f22b3526910fd263":[2,13,7,6],
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a5748e0a102f4d9baadcc8f190347ac14":[2,13,7,4],
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a62fb5ea5fe6b3fff0d94ebac89a0770d":[2,13,7,1],
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a6a661cea8e8b0a95b7ec89bf76ed9549":[2,13,7,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX53 =
 "group__apigroup__api.html#gga300a9e2821107532e1b1685b8f6454e8a5843b06503e4c59dda1e18c5865976b7":[2,0,0,157,2],
 "group__apigroup__api.html#gga300a9e2821107532e1b1685b8f6454e8a905c25b167724f4d101bf9384419d171":[2,0,0,157,0],
 "group__apigroup__api.html#gga328a9ed29e7e4ca0565f6c25865e61a8a06ad8b67529cc180ebdb50e1ea672ca3":[2,0,0,184,2],
-"group__apigroup__api.html#gga328a9ed29e7e4ca0565f6c25865e61a8a63823b182c5e7f234276c6a9f22e6638":[2,0,0,184,3]
+"group__apigroup__api.html#gga328a9ed29e7e4ca0565f6c25865e61a8a63823b182c5e7f234276c6a9f22e6638":[2,0,0,184,3],
+"group__apigroup__api.html#gga328a9ed29e7e4ca0565f6c25865e61a8a953714887c6f253e756377fdc213e3a1":[2,0,0,184,1]
 };
