@@ -1,5 +1,5 @@
 <map id="TSL2DCustomSatelliteHandler" name="TSL2DCustomSatelliteHandler">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,187,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_custom_satellite_handler.html" title=" " alt="" coords="12,5,180,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,48,99,80,93,80,93,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,168,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_custom_satellite_handler.html" title=" " alt="" coords="11,5,162,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,41,89,76,84,76,84,41"/>
 </map>

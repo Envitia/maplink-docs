@@ -1,9 +1,9 @@
 <map id="TSLEXGeographicExtent" name="TSLEXGeographicExtent">
-<area shape="rect" id="Node000001" title=" " alt="" coords="195,5,340,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_e_x_bounding_polygon.html" title=" " alt="" coords="5,80,151,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,40,112,82,110,77,219,35"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_e_x_geographic_bounding_box.html" title=" " alt="" coords="175,80,360,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,48,270,80,265,80,265,48"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_e_x_geographic_description.html" title=" " alt="" coords="384,80,559,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,35,436,77,435,82,316,40"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,315,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_e_x_bounding_polygon.html" title=" " alt="" coords="5,76,139,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,35,99,78,97,73,207,30"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_e_x_geographic_bounding_box.html" title=" " alt="" coords="163,76,330,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,41,249,76,244,76,244,41"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_e_x_geographic_description.html" title=" " alt="" coords="354,76,513,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,30,407,73,405,78,286,35"/>
 </map>

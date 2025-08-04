@@ -1,17 +1,17 @@
 <map id="TSLTMObject" name="TSLTMObject">
-<area shape="rect" id="Node000001" title=" " alt="" coords="192,5,280,32"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_primitive.html" title=" " alt="" coords="186,80,286,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,48,239,80,234,80,234,48"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_geometric_primitive.html" title=" " alt="" coords="66,155,223,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,119,162,156,159,152,207,114"/>
-<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_topological_primitive.html" title=" " alt="" coords="247,155,410,181"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="266,114,314,152,311,156,262,119"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_instant.html" title=" " alt="" coords="5,229,97,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="118,193,69,231,65,227,114,189"/>
-<area shape="rect" id="Node000005" href="$class_t_s_l_t_m_period.html" title=" " alt="" coords="121,229,208,256"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="154,196,163,228,158,230,149,197"/>
-<area shape="rect" id="Node000007" href="$class_t_s_l_t_m_edge.html" title=" " alt="" coords="270,229,349,256"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="324,197,315,230,310,228,319,196"/>
-<area shape="rect" id="Node000008" href="$class_t_s_l_t_m_node.html" title=" " alt="" coords="373,229,454,256"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="356,189,401,227,397,231,353,194"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="184,5,269,28"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_t_m_primitive.html" title=" " alt="" coords="180,76,273,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,41,229,76,224,76,224,41"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_t_m_geometric_primitive.html" title=" " alt="" coords="72,147,213,169"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,109,157,149,153,145,202,105"/>
+<area shape="rect" id="Node000006" href="$class_t_s_l_t_m_topological_primitive.html" title=" " alt="" coords="237,147,384,169"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="251,105,300,145,297,149,248,109"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_t_m_instant.html" title=" " alt="" coords="5,217,93,240"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="119,180,65,219,62,215,116,175"/>
+<area shape="rect" id="Node000005" href="$class_t_s_l_t_m_period.html" title=" " alt="" coords="117,217,200,240"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="151,182,159,217,154,218,145,183"/>
+<area shape="rect" id="Node000007" href="$class_t_s_l_t_m_edge.html" title=" " alt="" coords="256,217,333,240"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="308,183,300,218,294,217,303,182"/>
+<area shape="rect" id="Node000008" href="$class_t_s_l_t_m_node.html" title=" " alt="" coords="358,217,437,240"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="336,176,386,215,383,219,333,180"/>
 </map>

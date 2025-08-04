@@ -1,9 +1,9 @@
 <map id="TSLTerrainVSInput" name="TSLTerrainVSInput">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,123,83"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_v_s_input_array.html" title=" " alt="" coords="197,5,342,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,49,212,30,213,35,137,54"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_terrain_v_s_input_earth_curvature.html" title=" " alt="" coords="171,56,369,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,67,170,67,170,72,138,72"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_terrain_v_s_input_terrain_database.html" title=" " alt="" coords="192,107,348,149"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="129,85,193,103,192,109,127,90"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,52,116,75"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_terrain_v_s_input_array.html" title=" " alt="" coords="188,5,327,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,46,208,25,209,31,123,51"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_terrain_v_s_input_earth_curvature.html" title=" " alt="" coords="164,52,351,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,61,164,61,164,66,130,66"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_terrain_v_s_input_terrain_database.html" title=" " alt="" coords="185,99,330,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,76,193,97,192,102,116,81"/>
 </map>

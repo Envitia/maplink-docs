@@ -1,7 +1,7 @@
 <map id="TSLGeodeticText" name="TSLGeodeticText">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,115,181"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_entity.html" title=" " alt="" coords="26,80,94,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,122,63,154,57,154,57,122"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="13,5,107,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="63,48,63,80,57,80,57,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,147,108,169"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_entity.html" title=" " alt="" coords="23,76,90,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,112,59,147,54,147,54,112"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_entity_base.html" title=" " alt="" coords="11,5,102,28"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,41,59,76,54,76,54,41"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="TSLTrackPointSymbol" name="TSLTrackPointSymbol">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,139,107"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_track_symbol.html" title=" " alt="" coords="19,5,125,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,48,75,80,69,80,69,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,76,128,99"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_track_symbol.html" title=" " alt="" coords="17,5,116,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,41,69,76,64,76,64,41"/>
 </map>
