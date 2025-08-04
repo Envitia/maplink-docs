@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['observer_0',['Observer',['../struct_t_s_l_view_shed_data_layer_1_1_observer.html',1,'TSLViewShedDataLayer']]]
+  ['node_5fiterator_0',['node_iterator',['../class_t_s_l_network_1_1node__iterator.html',1,'TSLNetwork::node_iterator'],['../class_t_s_l_tiled_network_1_1node__iterator.html',1,'TSLTiledNetwork::node_iterator']]]
 ];

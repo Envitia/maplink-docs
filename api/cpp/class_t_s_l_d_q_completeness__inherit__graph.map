@@ -1,9 +1,9 @@
 <map id="TSLDQCompleteness" name="TSLDQCompleteness">
-<area shape="rect" id="Node000001" title=" " alt="" coords="149,80,284,107"/>
-<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_completeness_commission.html" title=" " alt="" coords="5,155,209,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,118,128,156,125,152,183,113"/>
-<area shape="rect" id="Node000004" href="$class_t_s_l_d_q_completeness_omission.html" title=" " alt="" coords="233,155,418,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="250,113,308,152,305,156,247,118"/>
-<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="167,5,266,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,48,219,80,214,80,214,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="129,76,250,99"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_d_q_completeness_commission.html" title=" " alt="" coords="5,147,181,169"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,109,109,149,106,144,163,104"/>
+<area shape="rect" id="Node000004" href="$class_t_s_l_d_q_completeness_omission.html" title=" " alt="" coords="205,147,368,169"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="216,104,274,144,271,149,213,109"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_d_q_element.html" title=" " alt="" coords="143,5,235,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,41,192,76,187,76,187,41"/>
 </map>

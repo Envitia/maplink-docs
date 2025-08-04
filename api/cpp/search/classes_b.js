@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['rasterchanneldata_0',['RasterChannelData',['../struct_t_s_l_direct_import_raster_1_1_raster_channel_data.html',1,'TSLDirectImportRaster']]],
-  ['rasterchanneldata_2em_5fvalue_1',['RasterChannelData.m_value',['../class_t_s_l_direct_import_raster.html#union_t_s_l_direct_import_raster_1_1_raster_channel_data_8m__value',1,'TSLDirectImportRaster']]],
-  ['registration_5f_2',['Registration_',['../class_t_s_l_dynamic_data_object_1_1_registration__.html',1,'TSLDynamicDataObject']]],
-  ['rotation_3',['Rotation',['../classenvitia_1_1maplink_1_1earth_1_1_rotation.html',1,'envitia::maplink::earth']]]
+  ['parameters_0',['Parameters',['../class_t_s_l_terrain_v_s_algorithm_1_1_parameters.html',1,'TSLTerrainVSAlgorithm']]],
+  ['params_1',['Params',['../struct_t_s_l_opt_node_cmp_1_1_params.html',1,'TSLOptNodeCmp']]],
+  ['pickresultgeometry_2',['PickResultGeometry',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_pick_result_geometry.html',1,'envitia::maplink::earth::geometry']]],
+  ['pickresulttrack_3',['PickResultTrack',['../classenvitia_1_1maplink_1_1earth_1_1_pick_result_track.html',1,'envitia::maplink::earth']]],
+  ['polygon_4',['Polygon',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polygon.html',1,'envitia::maplink::earth::geometry']]],
+  ['polyline_5',['Polyline',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polyline.html',1,'envitia::maplink::earth::geometry']]],
+  ['properties_6',['Properties',['../struct_t_s_l_arrow_operation_1_1_properties.html',1,'TSLArrowOperation']]]
 ];

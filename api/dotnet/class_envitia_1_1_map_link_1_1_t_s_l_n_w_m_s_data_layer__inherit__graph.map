@@ -1,5 +1,5 @@
 <map id="Envitia::MapLink::TSLNWMSDataLayer" name="Envitia::MapLink::TSLNWMSDataLayer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,227,139"/>
-<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_data_layer.html" title=" " alt="" coords="22,5,210,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,64,119,96,113,96,113,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,223,133"/>
+<area shape="rect" id="Node000002" href="$class_envitia_1_1_map_link_1_1_t_s_l_n_data_layer.html" title=" " alt="" coords="22,5,206,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,59,117,93,111,93,111,59"/>
 </map>
