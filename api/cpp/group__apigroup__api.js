@@ -417,7 +417,6 @@ var group__apigroup__api =
       [ "coordinateSystemHasChanged", "class_t_s_l_client_custom_data_layer.html#a4333d7fffdbf1fd62fd6ce86561c2f37", null ],
       [ "dataLayer", "class_t_s_l_client_custom_data_layer.html#a75d8b53fb7a786feb28844baf40de190", null ],
       [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#a7a06424da689eca18159fc47cf692e85", null ],
-      [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#ab25d365a3e0a8a70f34a803e93fe7d8a", null ],
       [ "drawLayer", "class_t_s_l_client_custom_data_layer.html#a236ed157d7b68602ec2c5fe3a7987edc", null ],
       [ "editableSearchDepth", "class_t_s_l_client_custom_data_layer.html#af265fb0272e75a5cdcb65daf7d81a609", null ],
       [ "getActiveLayer", "class_t_s_l_client_custom_data_layer.html#a8353613b7dde9db8192d241f3194483a", null ],

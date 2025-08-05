@@ -1,17 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_point_part.html#abe01172c34f49160182c0c260c5f7fcb":[2,0,0,63,1],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html":[2,0,0,64],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#a196d99d786006a1226bf9420abc5d8ea":[2,0,0,64,2],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#a40810d03fb7b11c9616de6194645aabd":[2,0,0,64,7],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#a65d7506d0a417d52fcd4c866a25112b4":[2,0,0,64,4],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#a8270627556b06eebf08b17c85493dda1":[2,0,0,64,0],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#aacbcef8537369112e1a17fcfc294cf0d":[2,0,0,64,1],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#aba2d7afc31f87310846bdaaaf334ce6e":[2,0,0,64,6],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#ac555233350ccefb8cd5e5883769025c7":[2,0,0,64,3],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#ae0dd8c0ae54140d494d0e93ac8ca0bc1":[2,0,0,64,5],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon.html#affe2558c49f91085cce9e58a055c8123":[2,0,0,64,8],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon_part.html":[2,0,0,65],
 "class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon_part.html#a2b82716737c4028384309613753d9e52":[2,0,0,65,5],
 "class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon_part.html#a385282117b66006211cace85f18d7bb3":[2,0,0,65,3],
 "class_envitia_1_1_map_link_1_1_t_s_l_n_multi_polygon_part.html#a3f18480003330f4f012fcb1f5145b0e9":[2,0,0,65,6],
@@ -249,5 +237,17 @@ var NAVTREEINDEX12 =
 "class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a08e6d01d5a998948a78e64fc1fb51361":[2,0,0,82,5],
 "class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a16f22378d21db738541b05b7fdd479c5":[2,0,0,82,37],
 "class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a1a7cbe50618f4b3570c57b8fb97b1175":[2,0,0,82,44],
-"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a1e33893cfbbb000aea71dcba47ef1502":[2,0,0,82,63]
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a1e33893cfbbb000aea71dcba47ef1502":[2,0,0,82,63],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a20658e39c4d8f9e6f587a3636fcd0b77":[2,0,0,82,53],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a2205d51ee05be3beff0f8ead3788cac2":[2,0,0,82,32],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a30b835671e0b2522e41f97dbc63a50b4":[2,0,0,82,56],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a3211fad87ab549f9e562b5bd777e66b0":[2,0,0,82,31],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a345f6f0a2de8b29c3a573a9238a39d36":[2,0,0,82,43],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a35b17dc9ac7fbd28c9061be6d31403d7":[2,0,0,82,67],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a3758f1bc02d13a767680438943c091a9":[2,0,0,82,1],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a3a1e58b2e07b0bf4413afc4355602679":[2,0,0,82,49],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a3bf03871a8dbb930ce6c659d704464ad":[2,0,0,82,40],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a3d094500b6dcb2a03676151ba95629c6":[2,0,0,82,3],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a451b6cb9d790d4bd1a26afb647f211d1":[2,0,0,82,24],
+"class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_attributes.html#a4a6a79a2342f326ebad29c4078dcaacb":[2,0,0,82,19]
 };
