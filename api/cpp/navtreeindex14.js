@@ -1,6 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"class_t_s_l_direct_import_driver.html":[2,0,2,7],
 "class_t_s_l_direct_import_driver.html#a0228f13ad356e4f526569db9dcbc022a":[2,0,2,7,40],
 "class_t_s_l_direct_import_driver.html#a0617f14675d7f9eb3bc410d72694a6d5":[2,0,2,7,30],
 "class_t_s_l_direct_import_driver.html#a0ce969c13ee052fa4c2848ca0a2cd042":[2,0,2,7,28],
@@ -249,5 +248,6 @@ var NAVTREEINDEX14 =
 "class_t_s_l_distance.html#aebaffdc9656f275ca00e35e0643482cc":[2,0,6,0,0,0,0,4,8],
 "class_t_s_l_drawing_surface.html":[2,0,0,42],
 "class_t_s_l_drawing_surface.html#a01a09056395ae216959f9cdab30d7744":[2,0,0,42,9],
-"class_t_s_l_drawing_surface.html#a0265147d1b95af2e58dba9044794e7ad":[2,0,0,42,4]
+"class_t_s_l_drawing_surface.html#a0265147d1b95af2e58dba9044794e7ad":[2,0,0,42,4],
+"class_t_s_l_drawing_surface.html#a046b8114dfb56a9d09f85dcb7716479d":[2,0,0,42,81]
 };
