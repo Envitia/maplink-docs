@@ -1,6 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"class_t_s_lifstream.html#a2045706fd581628f7112775e7fc2885e":[2,0,4,29,10],
 "class_t_s_lifstream.html#a20f0aef09ce63f359f492f722bfc2671":[2,0,4,29,47],
 "class_t_s_lifstream.html#a22dfd48489474f786e269379e8d019a0":[2,0,4,29,40],
 "class_t_s_lifstream.html#a2a59cde70be3a3c2b75b1a305239607f":[2,0,4,29,29],
@@ -249,5 +248,6 @@ var NAVTREEINDEX51 =
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a21cd30434b95b42bf9b1b2e54ad8599f":[2,13,16,32],
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a232c389f0fcdebcad75a5026b86653c2":[2,13,16,62],
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a2b3aecdc445a5dc217b31ef68ceba73c":[2,13,16,19],
-"classenvitia_1_1maplink_1_1earth_1_1_surface.html#a2bddbaefba323d0c5d752ac7417d227e":[2,13,16,45]
+"classenvitia_1_1maplink_1_1earth_1_1_surface.html#a2bddbaefba323d0c5d752ac7417d227e":[2,13,16,45],
+"classenvitia_1_1maplink_1_1earth_1_1_surface.html#a2d68f91630de2b7fee8c6cdb88754860":[2,13,16,57]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"class_t_s_l_data_handler.html#ae15ca2c247769067ff5283123886b46c":[2,0,4,13,7],
 "class_t_s_l_data_handler.html#aeaec853ebbc4abe00983e74a1e6063c1":[2,0,4,13,2],
 "class_t_s_l_data_layer.html":[2,0,0,38],
 "class_t_s_l_data_layer.html#a01692e748c350a23675ad3d78807e684":[2,0,0,38,48],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "class_t_s_l_direct_import_data_set_raster.html#ae9652c17504a3f74f4b89575d263a1e6":[2,0,2,5,0],
 "class_t_s_l_direct_import_data_set_vector.html":[2,0,2,6],
 "class_t_s_l_direct_import_data_set_vector.html#a05718e61e4d9af48d910a1bb38851c5b":[2,0,2,6,1],
-"class_t_s_l_direct_import_data_set_vector.html#a920db5585acc269ad1aee8b1693f4bff":[2,0,2,6,0]
+"class_t_s_l_direct_import_data_set_vector.html#a920db5585acc269ad1aee8b1693f4bff":[2,0,2,6,0],
+"class_t_s_l_direct_import_driver.html":[2,0,2,7]
 };
