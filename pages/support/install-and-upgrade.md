@@ -5,7 +5,7 @@
 
 > **MapLink Pro 11: The next major release of MapLink Pro is now available. MapLink Pro 8.x has now entered support and maintenance end-of-life. [Please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/6ydUswfjEe).**
 
-There are structural differences between 11.1 and previous versions of MapLink Pro. This page explains how to upgrade your application to MapLink Pro 11.1.
+There are structural differences between 11.1 and previous versions of MapLink Pro. This page explains how to upgrade your application to MapLink Pro 11.1 and above.
 
 # Windows Development Machine
 ## Installation
@@ -33,7 +33,7 @@ be required.
 Certain MapLink Pro components installed on Windows require a licence to be installed on the machine before they will work.
 [Please contact us for a trial licence](https://forms.office.com/e/Lr7jN9TCC0) if you do not yet have a licence.
 
-## Upgrading to MapLink 11.1 on Windows
+## Upgrading to MapLink 11.1 and above on Windows
 
 - MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro installation.**
 - You may encounter some build errors in your C++ application code if you are using C++ features that have been deprecated or removed from the C++ 17 standard. These tend to be concerned with C++ features that have been removed from the C++ standard, and tend to require fairly straight-forward code replacements.
@@ -62,7 +62,7 @@ built against them. However, the most recently installed version will be referen
 
 To ensure that your application runtime loads the desired MapLink Pro library versions, update the value of the *LD_LIBRARY_PATH* environment variable to point to the desired MapLink Pro version's *lib64* directory.
 
-## Upgrading to MapLink 11.1 on Linux
+## Upgrading to MapLink 11.1 and above on Linux
 
 - MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro distribution package.**
 - MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
