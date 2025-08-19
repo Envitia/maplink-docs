@@ -1731,6 +1731,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Ensures the coordinate lies within the main tile when wrapping is enabled. Will shift the coordinate correctly only if the rendering interface is currently being used to draw a wrap tile.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coordinate</td><td>A coordinate potentially in the TMC space of a wrap tile.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The coordinate shifted into the TMC space of the main tile. </dd></dl>
 
 </div>
 </div>
