@@ -25,7 +25,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 | February 20 2025 | 11.1.1 | Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site. | [Release notes](../releases/11.1.1.0/release-notes) |
 | May 12 2025 | 11.1.2 | Upgrade of remaining in-support components not upgraded by 11.1.1 | [Release notes](../releases/11.1.2.0/release-notes) |
 | July 21 2025 | 11.2.1 | New feature: Wrap-around maps | [Release notes](../releases/11.2.1/release-notes) |
-| August 2025 | 11.2.2 | Upgrade of Earth SDK | |
+| August XX 2025 | 11.2.2 | Bug fixes | [Release notes](../releases/11.2.2/release-notes) |
 | September 30 2025 | 11.x | TBC | |
 | December 19 2025 | 11.x | TBC | |
 
@@ -34,7 +34,7 @@ Where possible, a deprecation will be accompanied with a recommendation for an a
 - [Supported OS and compilers for MapLink Pro](platform-support.md)
 - [Supported SDKs in MapLink Pro](sdk-support.md)
 - [Supported geospatial data formats in MapLink Pro](geospatial-formats.md)
-- [MapLink Pro 11.1 Install and Upgrade Notes](install-and-upgrade.md)
+- [MapLink Pro 11 Install and Upgrade Notes](install-and-upgrade.md)
 - [Deployment of End User Applications](deployment-guide)
 
 [Tell us you want to upgrade to MapLink Pro 11](https://forms.office.com/e/6ydUswfjEe)
