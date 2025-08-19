@@ -1,7 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"group__apigroup__geometry__api.html#gad7cb2d07feb3f9761ff84711de0919b4":[2,0,4,57],
-"group__apigroup__geometry__api.html#gadc41e8eb8a2981626bb3a8384e095abd":[2,0,4,69],
 "group__apigroup__geometry__api.html#gade94c3a0eac926ae59c8acfff92dc8bc":[2,0,4,65],
 "group__apigroup__geometry__api.html#gae0eb632a088e75e56134fe3fa3608ac9":[2,0,4,64],
 "group__apigroup__geometry__api.html#gae65a7bfe7db7f7472badbd064d2607f4":[2,0,4,76],
@@ -249,5 +247,7 @@ var NAVTREEINDEX56 =
 "group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a33682da437792874c8ad60908f712ac5":[2,1,2,10,10],
 "group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a353c057c7ec3647d549038b3e6c8c1fc":[2,1,2,10,0],
 "group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a3d88dac0d0be642da9e78819b8c121d4":[2,1,2,10,40],
-"group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a41fa84ddbc42709a0b15aa374d21643b":[2,1,2,10,16]
+"group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a41fa84ddbc42709a0b15aa374d21643b":[2,1,2,10,16],
+"group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a45bc9999955eaad04800aa556578f838":[2,1,2,10,22],
+"group__apigroup__terrain__api.html#gga48ad6538e23c8ee6f69564d8b4274375a49234c35678e5a4b3ecb910f277d9b2e":[2,1,2,10,39]
 };

@@ -194,8 +194,6 @@ var group__apigroup__api =
       [ "getTextLabelAttribute", "class_t_s_l_feature.html#ae0d5187c559adb8d5a66ce0c75db7b73", null ],
       [ "numAttributes", "class_t_s_l_feature.html#a8d08a37494ce4454b570747a891dc6d8", null ],
       [ "numChildren", "class_t_s_l_feature.html#a780fb3214f31265ec10972d2d58c947d", null ],
-      [ "operator new", "class_t_s_l_feature.html#a49ad22fe4f1f18ac9ab9fee4ab943083", null ],
-      [ "operator new", "class_t_s_l_feature.html#aa58cd1ff1fe874469be642171514546c", null ],
       [ "parent", "class_t_s_l_feature.html#acd2d7755d1150b44e26615200a1ea07f", null ],
       [ "removeAttribute", "class_t_s_l_feature.html#a11e59648fd386bc4c1cb22b6ae313a36", null ],
       [ "removeAttribute", "class_t_s_l_feature.html#a749f629579b781b28d4dce8263f95c87", null ],

@@ -1,7 +1,5 @@
 var NAVTREEINDEX52 =
 {
-"classenvitia_1_1maplink_1_1earth_1_1_surface.html#a2d8d67b9ea469b02ddf69811ec3315c3":[2,13,16,35],
-"classenvitia_1_1maplink_1_1earth_1_1_surface.html#a3066b27dc86ed0165a712d4925756a34":[2,13,16,12],
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a311de9af37bbde3b8a577be0575054fd":[2,13,16,44],
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a3d97acc0b34827c400a98a5500e8bc45":[2,13,16,71],
 "classenvitia_1_1maplink_1_1earth_1_1_surface.html#a3e11aa450f1ec74e59dded3eeb66aa6a":[2,13,16,2],
@@ -249,5 +247,7 @@ var NAVTREEINDEX52 =
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html":[2,13,7],
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a205084d71ed08e1ee733353b8b051294":[2,13,7,10],
 "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a3d17b30eaa367596b01c2a101784c743":[2,13,7,11],
-"classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a568ab8a3cbd00777f22b3526910fd263":[2,13,7,6]
+"classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a568ab8a3cbd00777f22b3526910fd263":[2,13,7,6],
+"classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a5748e0a102f4d9baadcc8f190347ac14":[2,13,7,4],
+"classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry_set.html#a62fb5ea5fe6b3fff0d94ebac89a0770d":[2,13,7,1]
 };
