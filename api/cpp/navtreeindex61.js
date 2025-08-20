@@ -1,7 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"struct_t_s_l_track_aggregator_echelon_1_1_aggregation_rule.html#ae8753fc0355ea32be8284eff2d9be97c":[2,8,9,0,4],
-"struct_t_s_l_view_shed_data_layer_1_1_observer.html":[2,1,1,13,0],
 "struct_t_s_l_view_shed_data_layer_1_1_observer.html#a027134884dd4f04f2eadee1e96959621":[2,1,1,13,0,2],
 "struct_t_s_l_view_shed_data_layer_1_1_observer.html#a0a16711c59ad30b857102e04576cab3a":[2,1,1,13,0,10],
 "struct_t_s_l_view_shed_data_layer_1_1_observer.html#a0f753ad8f0f675b8d6eae7cc197bd552":[2,1,1,13,0,4],

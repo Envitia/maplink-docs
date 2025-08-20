@@ -115,12 +115,12 @@ $(function(){initNavTree('class_t_s_l_g_m_l_instance_data_loader.html',''); init
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class is used for loading GML instance data into a MapLink TSLStandard DataLayer.</p>
+<div class="textblock"><p>This class is used for loading GML instance data into a MapLink <a class="el" href="class_t_s_l_standard_data_layer.html">TSLStandardDataLayer</a>.</p>
 <p>There are 3 main ways of loading a GML instance data document:</p>
 <ul>
-<li>Pre-loading the application schema A pre-loaded application schema is provided along with the location of the application schema. The application schema should be pre-loaded using the <a class="el" href="class_t_s_l_g_m_l_application_schema_loader.html">TSLGMLApplicationSchemaLoader</a> class.</li>
-<li>Loading the referenced application schema The location of the application schema is extracted from the instance data document and loaded before the instance data is parsed.</li>
-<li>Loading without an application schema The instance data document can be loaded without an application schema. This is not advised but may be necessary when the instance data does not conform to the application schema or the schema is not accessible.</li>
+<li>Pre-loading the application schema. A pre-loaded application schema is provided along with the location of the application schema. The application schema should be pre-loaded using the <a class="el" href="class_t_s_l_g_m_l_application_schema_loader.html">TSLGMLApplicationSchemaLoader</a> class.</li>
+<li>Loading the referenced application schema. The location of the application schema is extracted from the instance data document and loaded before the instance data is parsed.</li>
+<li>Loading without an application schema. The instance data document can be loaded without an application schema. This is not advised but may be necessary when the instance data does not conform to the application schema or the schema is not accessible.</li>
 </ul>
 <p>Furthermore, the instance data can be provided in one of the following 3 ways:</p>
 <ul>
@@ -131,7 +131,7 @@ $(function(){initNavTree('class_t_s_l_g_m_l_instance_data_loader.html',''); init
 <p>Through the other methods of this class, certain other aspects of the loading may be altered. These include:</p>
 <ul>
 <li>Altering the MU to TMC scaling and translation.</li>
-<li>A <a class="el" href="class_t_s_l_g_m_l_unhandled_feature_callback.html">TSLGMLUnhandledFeatureCallback</a> may optionally be provided to an instance of this class which allows feature instances that are not supported to be returned to the caller. Refer to the documentation for the unhandledFeature Callback method for details of this callbacks use and the cases in which it will be invoked.</li>
+<li>A <a class="el" href="class_t_s_l_g_m_l_unhandled_feature_callback.html">TSLGMLUnhandledFeatureCallback</a> may optionally be provided to an instance of this class which allows feature instances that are not supported to be returned to the caller. Refer to the documentation for the <a class="el" href="#a737b2b6ece10d4e9758ca3d6f5a31027">unhandledFeatureCallback()</a> method for details of this callbacks use and the cases in which it will be invoked.</li>
 <li>A <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> or <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> may be provided to the load call that alters how properties of the a GML feature are stored on the MapLink geometry object that represents the feature. </li>
 </ul>
 </div><table class="memberdecls">
@@ -245,7 +245,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Queries if the Transverse Mercator JHS formula is to be used when data is in a Transverse Mercator projection.</p>
-<p>The setting will be used to create a local Coordinate System to place the retrieved data. If the setting is changed after the layer has been configured or during layer configuration you may either end up using the USGS Snyder or JHS formula, which you end up with is undefined in these cases.</p>
+<p>The setting will be used to create a local Coordinate System to place the retrieved data. If the setting is changed after the layer has been configured or during layer configuration, you may either end up using the USGS Snyder or JHS formula; which you end up with is undefined in these cases.</p>
 <p>The default setting is to use the USGS Snyder formula.</p>
 <p>Returns true if the layer is set to use the JHS formula for Transverse Mercator. </p>
 
@@ -372,7 +372,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">destination</td><td>This standard data layer will be populated with the feature instance data and feature definition.</td></tr>
     <tr><td class="paramname">coordinateSystem</td><td>This parameter will be populated with the common coordinate system used in the instance data. The user assumes ownership of the coordinate system and should call its destroy method when it is no longer required.</td></tr>
     <tr><td class="paramname">schemaLoader</td><td>This schema loader will be used when loading the schema should the instance data reference one. If the user does not provide a schema loader, a stock loader shall be used.</td></tr>
-    <tr><td class="paramname">schema</td><td>Should the user wish to retain the schema definition for the loading of additional instance data, then they should pass a pointer to be populated with the definition loaded. The user assumes ownership of the schema definition and should delete it when it is no longer needed. If the instance data does not contain a reference to a schema, then the passed pointer will be pointed at NULL.</td></tr>
+    <tr><td class="paramname">schema</td><td>Should the user wish to retain the schema definition for the loading of additional instance data, then they should pass a pointer to be populated with the loaded definition. The user assumes ownership of the schema definition and should delete it when it is no longer needed. If the instance data does not contain a reference to a schema, then the passed pointer will be pointed at NULL.</td></tr>
   </table>
   </dd>
 </dl>
@@ -525,7 +525,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">coordinateSystem</td><td>This parameter will be populated with the common coordinate system used in the instance data. The user assumes ownership of the coordinate system and should call its destroy method when it is no longer required.</td></tr>
     <tr><td class="paramname">location</td><td>If the instance data contains a relative path to the schema location, this location will be used to location it. Its value should be the original location that the instance data was retrieved from. Null may be passed for this argument, but should the instance data used a relative path then the call will fail.</td></tr>
     <tr><td class="paramname">schemaLoader</td><td>This schema loader will be used when loading the schema should the instance data reference one. If the user does not provide a schema loader, a stock loader shall be used.</td></tr>
-    <tr><td class="paramname">schema</td><td>Should the user wish to retain the schema definition for the loading of additional instance data, then they should pass a pointer to be populated with the definition loaded. The user assumes ownership of the schema definition and should delete it when it is no longer needed. If the instance data does not contain a reference to a schema, then the passed pointer will be pointed at NULL.</td></tr>
+    <tr><td class="paramname">schema</td><td>Should the user wish to retain the schema definition for the loading of additional instance data, then they should pass a pointer to be populated with the loaded definition. The user assumes ownership of the schema definition and should delete it when it is no longer needed. If the instance data does not contain a reference to a schema, then the passed pointer will be pointed at NULL.</td></tr>
   </table>
   </dd>
 </dl>
@@ -679,13 +679,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Queries the current property mapping object set on the loader. The current property mapping can be set via the other propertyMapping method.</p>
-<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provide so that they are instead used to populated rendering attributes or property of the entity, such as its name or entity id.</p>
+<p>Queries the current property mapping object set on the loader. The current property mapping can be changed via the other propertyMapping method.</p>
+<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provided so that they are instead used to populate rendering attributes or property of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All attributes are are added to the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the loader using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All attributes are added to the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the <a class="el" href="#ac3991c2416b881278e28629a9d24e53c">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the loader using the <a class="el" href="#a7be0bd35d91986e4b90ab5406efc21c7">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -706,12 +706,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the current property mapping object set on the loader. The current property mapping can be queried via the other propertyMapping method.</p>
 <p>By setting a property mapping, and previously set property mapping or property mapping set will be cleared.</p>
-<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provide so that they are instead used to populated rendering attributes or property of the entity, such as its name or entity id.</p>
+<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provided so that they are instead used to populate rendering attributes or property of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All attributes are are added to the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the loader using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined.</li>
+<li>Use neither. All attributes are added to the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the <a class="el" href="#ac3991c2416b881278e28629a9d24e53c">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the loader using the <a class="el" href="#a7be0bd35d91986e4b90ab5406efc21c7">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -736,13 +736,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Queries the current property mapping set object held on the loader. The current property mapping set can be set via the other propertyMappingSet method.</p>
-<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provide so that they are instead used to populated rendering attributes or property of the entity, such as its name or entity id.</p>
+<p>Queries the current property mapping set object held on the loader. The current property mapping set can be changed via the other propertyMappingSet method.</p>
+<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provided so that they are instead used to populate rendering attributes or property of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All attributes are are added to the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the loader using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All attributes are added to the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the <a class="el" href="#ac3991c2416b881278e28629a9d24e53c">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the loader using the <a class="el" href="#a7be0bd35d91986e4b90ab5406efc21c7">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -763,12 +763,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the current property mapping set object held on the loader. The current property mapping set can be queried via the other propertyMappingSet method.</p>
 <p>By setting a property mapping set, any previously set property mapping or property mapping set will be cleared.</p>
-<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provide so that they are instead used to populated rendering attributes or property of the entity, such as its name or entity id.</p>
+<p>Rather than adding the properties of each GML feature instance as attributes to the corresponding MapLink entity's data sets, a mapping can be provided so that they are instead used to populate rendering attributes or property of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All attributes are are added to the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the loader using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined.</li>
+<li>Use neither. All attributes are added to the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the loader using the <a class="el" href="#ac3991c2416b881278e28629a9d24e53c">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the loader using the <a class="el" href="#a7be0bd35d91986e4b90ab5406efc21c7">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -794,7 +794,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>If passed true then the Transverse Mercator JHS formula will be used when using processing data in a Transverse Mercator projection.</p>
-<p>The setting will be used to create the Coordinate System returned as part of the load method.</p>
+<p>The setting will be used to create the Coordinate System returned as part of the <a class="el" href="#a4237637d79e440798098ce1d3fb02a6f">load()</a> method.</p>
 <p>The default setting is to use the USGS Snyder formula.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -819,7 +819,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>if the swapXandY flag is true, then GML geometry will be loaded with the X and Y positions swapped around. By default this flag's value is false.</p>
+<p>If the swapXandY flag is true, then GML geometry will be loaded with the X and Y positions swapped around. By default this flag's value is false.</p>
 <p>This method queries the value of the flag. </p>
 
 </div>
@@ -838,7 +838,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>if the swapXandY flag is true, then GML geometry will be loaded with the X and Y positions swapped around. By default this flag's value is false.</p>
+<p>If the swapXandY flag is true, then GML geometry will be loaded with the X and Y positions swapped around. By default this flag's value is false.</p>
 <p>This method sets the value of the flag. </p>
 
 </div>

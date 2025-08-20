@@ -239,7 +239,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Buffers provided via the write methods of this class should be freed by calling this method.</p>
+<p>Buffers returned from the <a class="el" href="#aed35b999c13aadff08dfbbf3e8b37d3b">write()</a> methods of this class should be freed by calling this method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The buffer to be deleted. </td></tr>
@@ -326,13 +326,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Queries the currently set property mapping object held on the writer. The current property mapping can be set via the other propertyMapping method.</p>
+<p>Queries the currently set property mapping object held on the writer. The current property mapping can be changed via the other propertyMapping method.</p>
 <p>Rather than acquiring the values of each of the properties of the GML feature instance from the MapLink entity's data sets, a mapping can be provide so that the value are taken from the rendering attributes or properties of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All property values are taken from the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the writer using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All property values are taken from the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the <a class="el" href="#a6842f59cbf32ccf87d73e1123f6ba842">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the writer using the <a class="el" href="#a9aea0845ea90123ef82ba1832bc2b784">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -355,9 +355,9 @@ Static Public Member Functions</h2></td></tr>
 <p>Rather than acquiring the values of each of the properties of the GML feature instance from the MapLink entity's data sets, a mapping can be provide so that the value are taken from the rendering attributes or properties of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All property values are taken from the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the writer using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All property values are taken from the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the <a class="el" href="#a6842f59cbf32ccf87d73e1123f6ba842">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the writer using the <a class="el" href="#a9aea0845ea90123ef82ba1832bc2b784">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -376,13 +376,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Queries the current property mapping set object held on the writer. The current property mapping set can be set via the other propertyMappingSet method.</p>
+<p>Queries the current property mapping set object held on the writer. The current property mapping set can be changed via the other propertyMappingSet method.</p>
 <p>Rather than acquiring the values of each of the properties of the GML feature instance from the MapLink entity's data sets, a mapping can be provide so that the value are taken from the rendering attributes or properties of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All property values are taken from the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the writer using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All property values are taken from the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the <a class="el" href="#a6842f59cbf32ccf87d73e1123f6ba842">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the writer using the <a class="el" href="#a9aea0845ea90123ef82ba1832bc2b784">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -405,9 +405,9 @@ Static Public Member Functions</h2></td></tr>
 <p>Rather than acquiring the values of each of the properties of the GML feature instance from the MapLink entity's data sets, a mapping can be provide so that the value are taken from the rendering attributes or properties of the entity, such as its name or entity id.</p>
 <p>There are 3 possible ways of using a mapping or mapping set:</p>
 <ul>
-<li>Use neither. All property values are taken from the MapLink entity's data set</li>
-<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the property Mapping method. The same mapping is performed for all feature types.</li>
-<li>Set a TSLGMLPrropertyMappingSet instance on the writer using the property Mapping method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
+<li>Use neither. All property values are taken from the MapLink entity's data set.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping.html">TSLGMLPropertyMapping</a> instance on the writer using the <a class="el" href="#a6842f59cbf32ccf87d73e1123f6ba842">propertyMapping()</a> method. The same mapping is performed for all feature types.</li>
+<li>Set a <a class="el" href="class_t_s_l_g_m_l_property_mapping_set.html">TSLGMLPropertyMappingSet</a> instance on the writer using the <a class="el" href="#a9aea0845ea90123ef82ba1832bc2b784">propertyMappingSet()</a> method. Different mappings can be performed for each feature type and not all features types need have a mapping defined. </li>
 </ul>
 
 </div>
@@ -493,7 +493,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Writes instance data to a buffer.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bufferPtr</td><td>On success, this will be pointed to a buffer containing the written instance data. Once this buffer is no longer needed, it should be deleted via the deleteBuffer method.</td></tr>
+    <tr><td class="paramname">bufferPtr</td><td>On success, this will be pointed to a buffer containing the written instance data. Once this buffer is no longer needed, it should be deleted via the <a class="el" href="#ae70030fdbebd97b931290a66a9b4fe32">deleteBuffer()</a> method.</td></tr>
     <tr><td class="paramname">bufferLen</td><td>On success, this will be populated with the length of the buffer provided in the bufferPtr parameter.</td></tr>
     <tr><td class="paramname">layer</td><td>The <a class="el" href="class_t_s_l_standard_data_layer.html">TSLStandardDataLayer</a> containing the data to be written.</td></tr>
     <tr><td class="paramname">coordinateSystem</td><td>The coordinate system that the geometry data, contained by the provided layer, should be written in. The coordinate system should also have had the correct TMC to MU scaling and translations setup.</td></tr>

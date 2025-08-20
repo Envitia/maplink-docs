@@ -115,7 +115,7 @@ $(function(){initNavTree('class_t_s_l_g_m_l_application_schema_creation_paramete
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An instance of this class should be passed to the <a class="el" href="class_t_s_l_g_m_l_application_schema.html">TSLGMLApplicationSchema</a> Factory to create a GML application schema, represented by a <a class="el" href="class_t_s_l_g_m_l_application_schema.html">TSLGMLApplicationSchema</a> object.</p>
+<div class="textblock"><p>An instance of this class should be passed to the <a class="el" href="class_t_s_l_g_m_l_application_schema_factory.html">TSLGMLApplicationSchemaFactory</a> to create a GML application schema, represented by a <a class="el" href="class_t_s_l_g_m_l_application_schema.html">TSLGMLApplicationSchema</a> object.</p>
 <p>It is used to define certain properties of the schema, such as the version, target namespace, desired target namespace prefix and if the schema should conform to a supported schema profile. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -267,11 +267,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets the parameters of the GML application schema profile that the schema to be created should declare its conformance to.</p>
-<p>Either an instance of a class that derives from <a class="el" href="class_t_s_l_g_m_l_application_schema.html">TSLGMLApplicationSchema</a> Profile or null should be passed. Null clears the currently set profile parameters - implying that the schema to be created should not conform to a profile.</p>
+<p>Either an instance of a class that derives from <a class="el" href="class_t_s_l_g_m_l_application_schema_profile_parameters.html">TSLGMLApplicationSchemaProfileParameters</a> or null should be passed. Null clears the currently set profile parameters - implying that the schema to be created should not conform to a profile.</p>
 <p>Currently the only GML profile supported is the GML Simple Features (SF) profile.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">profile</td><td>The parameters of the GML application schema proifile that the schema to be created should declare its conformance to. If null, then no conformance shall be declared. This class takes ownership of the profile parameters passed. </td></tr>
+    <tr><td class="paramname">profile</td><td>The parameters of the GML application schema profile that the schema to be created should declare its conformance to. If null, then no conformance shall be declared. This class takes ownership of the profile parameters passed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -334,7 +334,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Queries the current target namespace prefix of the GML application schema to be created. An empty prefix string causes the target namespace to become the default namespace of the document. If the prefix specified clashes with a an existing prefix, then a new prefix will be generated.</p>
+<p>Queries the current target namespace prefix of the GML application schema to be created. An empty prefix string causes the target namespace to become the default namespace of the document. If the prefix specified clashes with an existing prefix, then a new prefix will be generated.</p>
 <p>By default, the prefix will be 'ns1'. </p>
 
 </div>
@@ -353,7 +353,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the desired target namespace prefix that will be used when writing the schema to a file or buffer. Setting the target namespace prefix to the empty string will cause the target namespace to become the default namespace of the document. If the prefix specified clashes with a an existing prefix, then a new prefix will be generated.</p>
+<p>Sets the desired target namespace prefix that will be used when writing the schema to a file or buffer. Setting the target namespace prefix to the empty string will cause the target namespace to become the default namespace of the document. If the prefix specified clashes with an existing prefix, then a new prefix will be generated.</p>
 <p>By default, the prefix will be 'ns1'.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
