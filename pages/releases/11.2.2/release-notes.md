@@ -14,7 +14,6 @@
 
 # Improvements
     * 654   [TS023856] BUG: MapLink memory consumption when loading SLD
-    * 3072  [TS023893] BUG: Linux redist library conflict on Rocky 9.2
     * 3730  [TS023900] BUG: Cannot load rasters into TSLRasterFilterDataLayer
     * 3890 BUG: LibTiff requires JPEG support
     * 4075 Misc fixes and changes for Delphi and COM application upgrade work
