@@ -74,4 +74,4 @@ Although the UNIX/Linux/VxWorks runtime libraries are not locked, a valid licenc
 Some SDKs are shipped in encrypted packages in the folder *OptionalComponents*. This folder contains a README.txt file which explains how to decrypt and extract the SDKs.
 
 # Deploying an Application with MapLink Pro
-[MapLink 11.0 Deployment of End User Applications.pdf]({{ "/pdf/MapLink 11.0 Deployment of End User Applications.pdf" | relative_url }})
+[Deployment of a MapLink Pro-Based Application]({{ "./deployment-guide" | relative_url }})
