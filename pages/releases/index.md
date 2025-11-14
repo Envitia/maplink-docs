@@ -1,5 +1,5 @@
 ---
-releases: 
+releases-11: 
  -  version: 11.2.3
     date: October 10 2025
     summary: Bug fixes.
@@ -20,11 +20,24 @@ releases:
     date: February 20 2025
     summary: Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site.
     release-notes: 11.1/11.1.1
+
+releases-10:
+ -  version: 10.2.9.42
+    date: November 11 2025
+    summary: Linux 32-bit release only. Fixed a memory leak in SLD management.
+    release-notes: 10.2/10.2.9.42
 ---
 
-# MapLink Pro Releases
+# MapLink Pro 11 Releases
 
 | Version | Release Date  | Summary | Release Notes |
 | --- | --- | --- | --- |
-{% for release in page.releases %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
+{% for release in page.releases-11 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
+{% endfor %}
+
+# MapLink Pro 10 Releases
+
+| Version | Release Date  | Summary | Release Notes |
+| --- | --- | --- | --- |
+{% for release in page.releases-10 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
 {% endfor %}
