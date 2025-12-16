@@ -3,6 +3,7 @@ releases-11:
  -  version: 11.2.4
     date: December 12 2025
     summary: Bug fixes.
+    release-notes: 11.2/11.2.4
  -  version: 11.2.3
     date: October 10 2025
     summary: Bug fixes.
