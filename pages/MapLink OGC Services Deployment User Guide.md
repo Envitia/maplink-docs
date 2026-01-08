@@ -314,151 +314,81 @@ The Required column denotes whether the Key is required. If a required key is no
 
 ### 4.3.2.	
 
-Heading ‘Server_Data_Sources_Index’
-Required	Key	Description
-Y	DatasourceCount	Defines the number of data sources that are deployed on the WMS server. For each data source there is expected to be keys under this heading in the form:
-DatasourceNLocation
-DatasourceNPlugin
-DatasourceNConfiguration
-where N defines the index of that data source starting from 0.
-Y	DatasourceNLocation
-	Defines the location of the resource used by the data source. This may be a MapLink map or a database connection string. Its value is dependent upon the plug-in that appears as the following key. If this value defines a path then it should be either a fully qualified path or a path relative to the start up locale of the server.
-Y	DatasourceNPlugin
-	The library name of the plug-in used to serve up this data source. This may be a custom defined plug-in using the MapLink WMS Plug-In API or a pre-built library supplied by Envitia.
-Y	DatasourceNConfiguration
-	The location of a configuration file used by the plug-in to define how the resource is to be served up. In certain cases a plug-in may not require such a file, but this key should still be defined and its value should be blank.
+**Heading ‘Server_Data_Sources_Index’**
+| Required | Key                       | Description                                                                                                                                                                                                                                                                                                                                                                 |
+|:--------:|-------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Y        | DatasourceCount           | Defines the number of data sources that are deployed on the WMS server. For each data source there is expected to be keys under this heading in the form:<br>DatasourceNLocation<br>DatasourceNPlugin<br>DatasourceNConfiguration<br>where N defines the index of that data source starting from 0.                                         |
+| Y        | DatasourceNLocation       | Defines the location of the resource used by the data source. This may be a MapLink map or a database connection string. Its value is dependent upon the plug-in that appears as the following key. If this value defines a path then it should be either a fully qualified path or a path relative to the start up locale of the server. |
+| Y        | DatasourceNPlugin         | The library name of the plug-in used to serve up this data source. This may be a custom defined plug-in using the MapLink WMS Plug-In API or a pre-built library supplied by Envitia.                                                                                                                                                |
+| Y        | DatasourceNConfiguration  | The location of a configuration file used by the plug-in to define how the resource is to be served up. In certain cases a plug-in may not require such a file, but this key should still be defined and its value should be blank.                                                               |
+
 	
 ### 4.3.3.	
 
-Heading ‘Server_Properties’
-Required	Key	Description
-Y	ServiceTitle	The WMS title defined in the GetCapabilities.
-WMS_Capabilities>Service>Title
-N	ServiceAbstract	The WMS abstract defined in the GetCapabilities.
-WMS_Capabilities>Service>Abstract
-N	ServiceKeywordCount	The number of service keywords that are expected in this configuration file. If this value is not supplied it is assumed to be 0. When this value is supplied and is non-zero then ServiceKeywordN is expected under this heading where N is the index up to this value starting from 0. 
-e.g.
-ServiceKeywordCount=3
-ServiceKeyword0=Keyword 1
-ServiceKeyword1=Keyword 2
-ServiceKeyword2=Keyword 3
-N	ServiceKeywordN	The Nth keyword that describes the WMS in the GetCapabilities of the server.
-WMS_Capabilities>Service>KeywordList>Keyword
-N	ServiceFees	A description of the fee for using the WMS.
-WMS_Capabilities>Service>Fees
-N	ServiceAccessConstraints	A description of the access constraints for using the WMS.
-WMS_Capabilities>Service>AccessConstraints
-N	ServiceLayerLimit	The maximum number of layers that can be requested in a single GetMap request. If a user requests more layers then permitted then the request will fail. If this value is not set then there is no limit placed.
-WMS_Capabilities>Service>LayerLimit
-N	ServiceMaxWidth	The maximum width, in pixels, of a GetMap requested. If a user requests a larger width than permitted then the request will fail. If this value is not set then there is no limit placed.
-WMS_Capabilities>Service>MaxWidth
-N	ServiceMaxHeight	The maximum height, in pixels, of a GetMap request. If a user requests a larger height than permitted then the request will fail. If this value is not set then there is no limit placed.
-WMS_Capabilities>Service>MaxHeight
-N	ServiceProvider	The URL of the service provider.
-WMS_Capabilities>Service>ServiceProvider
+** Heading ‘Server_Properties’ **
+
+| Required | Key                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|:--------:|------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Y        | ServiceTitle             | The WMS title defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;Title                                                                                                                                                                                                                                                                                                                                                                |
+| N        | ServiceAbstract          | The WMS abstract defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;Abstract                                                                                                                                                                                                                                                                                                                                                          |
+| N        | ServiceKeywordCount      | The number of service keywords that are expected in this configuration file. If this value is not supplied it is assumed to be 0. When this value is supplied and is non-zero then ServiceKeywordN is expected under this heading where N is the index up to this value starting from 0.<br>e.g.<br>ServiceKeywordCount=3<br>ServiceKeyword0=Keyword 1<br>ServiceKeyword1=Keyword 2<br>ServiceKeyword2=Keyword 3 |
+| N        | ServiceKeywordN          | The Nth keyword that describes the WMS in the GetCapabilities of the server.<br>WMS_Capabilities&gt;Service&gt;KeywordList&gt;Keyword                                                                                                                                                                                                                                                                        |
+| N        | ServiceFees              | A description of the fee for using the WMS.<br>WMS_Capabilities&gt;Service&gt;Fees                                                                                                                                                                                                                                                                                                                                                                   |
+| N        | ServiceAccessConstraints | A description of the access constraints for using the WMS.<br>WMS_Capabilities&gt;Service&gt;AccessConstraints                                                                                                                                                                                                                                                                                                |
+| N        | ServiceLayerLimit        | The maximum number of layers that can be requested in a single GetMap request. If a user requests more layers than permitted then the request will fail. If this value is not set then there is no limit placed.<br>WMS_Capabilities&gt;Service&gt;LayerLimit                                                                                                                                                |
+| N        | ServiceMaxWidth          | The maximum width, in pixels, of a GetMap request. If a user requests a larger width than permitted then the request will fail. If this value is not set then there is no limit placed.<br>WMS_Capabilities&gt;Service&gt;MaxWidth                                                                                                                                    |
+| N        | ServiceMaxHeight         | The maximum height, in pixels, of a GetMap request. If a user requests a larger height than permitted then the request will fail. If this value is not set then there is no limit placed.<br>WMS_Capabilities&gt;Service&gt;MaxHeight                                                                                                                                |
+| N        | ServiceProvider          | The URL of the service provider.<br>WMS_Capabilities&gt;Service&gt;ServiceProvider                                                                                                                                                                                                                                                                                                                            |
 
 ### 4.3.4.	
 
-Heading ‘Service_Contact’
-Required	Key	Description
-N	ContactPerson	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactPersonPrimary>ContactPerson
-N	ContactOrganisation	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactPersonPrimary>ContactOrganisation
-N	ContactPosition	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactPosition
-N	ContactAddressType	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress>AddressType
-N	ContactAddress	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress>Address
-N	ContactAddressCity	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress>City
-N	ContactAddressStateOrProvince	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress> StateOrProvince
-N	ContactAddressPostalCode	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress>PostCode
-N	ContactAddressCountry	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactAddress>Country
-N	ContactTelephoneNumber	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactVoiceTelephone
-N	ContactFaxNumber	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactFacsimileTelephone
-N	ContactEmailAddress	The contact details defined in the GetCapabilities.
-WMS_Capabilities>Service>ContactInformation> ContactElectronicMailAddress
+** Heading ‘Service_Contact’ **
+
+| Required | Key                          | Description                                                                                                                                                                      |
+|:--------:|----------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| N        | ContactPerson                | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactPersonPrimary&gt;ContactPerson                                 |
+| N        | ContactOrganisation          | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactPersonPrimary&gt;ContactOrganisation                           |
+| N        | ContactPosition              | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactPosition                                                      |
+| N        | ContactAddressType           | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;AddressType                                        |
+| N        | ContactAddress               | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;Address                                            |
+| N        | ContactAddressCity           | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;City                                               |
+| N        | ContactAddressStateOrProvince| The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;StateOrProvince                                   |
+| N        | ContactAddressPostalCode     | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;PostCode                                           |
+| N        | ContactAddressCountry        | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactAddress&gt;Country                                            |
+| N        | ContactTelephoneNumber       | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactVoiceTelephone                                               |
+| N        | ContactFaxNumber             | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactFacsimileTelephone                                           |
+| N        | ContactEmailAddress          | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactElectronicMailAddress                                        |
 
  
 ### 4.3.5.	
 
-Heading ‘Service_Addresses’
-Required	Key	Description
-Y	GetCapabilitiesAddressesCount	The number of service addresses through which the capabilities of this server can be requested. At the minimum this should be set to 1 for the address of the main server serving this WMS. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.
-For each index, starting at 0, up to 1 less then this value, the following must be specified (where N is the index)
-GetCapabilitiesAddressNGet
-And optionally the following may be specified
-GetCapabilitiesAddressNPost
-e.g.
-GetCapabilitiesAddressesCount=2
-GetCapabilitiesAddress0Get= http://localhost:8080/wms?
-GetCapabilitiesAddress1Get= 
-http://anotherhost:80/wms?
-GetCapabilitiesAddress1Post=
-http://anotherhost:80/wms?
-Y	GetCapabilitiesAddressNGet	The Nth address of this server or mirror server where the server capabilities can be requested via a HTTP Get
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request>GetCapabilities> DCPType>HTTP>Get>OnlineResource
-N	GetCapabilitiesAddressNPost	The Nth address of this server or mirror server where the server capabilities can be requested via a HTTP Post
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request>GetCapabilities> DCPType>HTTP>Post>OnlineResource
-Y	GetMapAddressesCount	The number of service addresses through which a GetMap request can be serviced. At the minimum this should be set to 1 for the address of the main server serving this WMS. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.
-For each index, starting at 0, up to 1 less then this value, the following must be specified (where N is the index)
-GetMapAddressNGet
-And optionally the following may be specified
-GetMapAddressNPost
-e.g.
-GetMapAddressesCount=2
-GetMapAddress0Get= http://localhost:8080/wms?
-GetMapAddress1Get= 
-http://anotherhost:80/wms?
-GetMapAddress1Post=
-http://anotherhost:80/wms?
-Y	GetMapAddressNGet	The Nth address of this server or mirror server where a GetMap request can be serviced via a HTTP Get
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request>GetMap> DCPType>HTTP>Get>OnlineResource
-N	GetMapAddressNPost	The Nth address of this server or mirror server where a GetMap request can be serviced via a HTTP Post
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request>GetMap> DCPType>HTTP>Post>OnlineResource
-N	GetFeatureInfoAddressesCount	The number of service addresses through which a GetFeatureInfo request can be serviced. This value can be omitted to denote that GetFeatureInfo is not supported. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.
-For each index, starting at 0, up to 1 less then this value, the following must be specified (where N is the index)
-GetFeatureInfoAddressNGet
-And optionally the following may be specified
-GetFeatureInfoAddressNPost
-e.g.
-GetFeatureInfoAddressCount=2
-GetFeatureInfoAddress0Get= http://localhost:8080/wms?
-GetFeatureInfoAddress1Get= 
-http://anotherhost:80/wms?
-GetFeatureInfoAddress1Post=
-http://anotherhost:80/wms?
-N	GetFeatureInfoAddressNGet	The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Get
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request> GetFeatureInfo > DCPType>HTTP>Get>OnlineResource
-N	GetFeatureInfoAddressNPost	The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Post
-If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.
-WMS_Capabilities>Capability>Request>GetFeatureInfo> DCPType>HTTP>Post>OnlineResource
+** Heading ‘Service_Addresses’ **
 
+| Required | Key                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|:--------:|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Y        | GetCapabilitiesAddressesCount    | The number of service addresses through which the capabilities of this server can be requested. At the minimum this should be set to 1 for the address of the main server serving this WMS. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.<br>For each index, starting at 0, up to 1 less than this value, the following must be specified (where N is the index):<br>GetCapabilitiesAddressNGet<br>And optionally:<br>GetCapabilitiesAddressNPost<br>e.g.<br>GetCapabilitiesAddressesCount=2<br>GetCapabilitiesAddress0Get= http://localhost:8080/wms?<br>GetCapabilitiesAddress1Get= http://anotherhost:80/wms?<br>GetCapabilitiesAddress1Post= http://anotherhost:80/wms? |
+| Y        | GetCapabilitiesAddressNGet       | The Nth address of this server or mirror server where the server capabilities can be requested via a HTTP Get.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetCapabilities&gt;DCPType&gt;HTTP&gt;Get&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| N        | GetCapabilitiesAddressNPost      | The Nth address of this server or mirror server where the server capabilities can be requested via a HTTP Post.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetCapabilities&gt;DCPType&gt;HTTP&gt;Post&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Y        | GetMapAddressesCount             | The number of service addresses through which a GetMap request can be serviced. At the minimum this should be set to 1 for the address of the main server serving this WMS. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.<br>For each index, starting at 0, up to 1 less than this value, the following must be specified (where N is the index):<br>GetMapAddressNGet<br>And optionally:<br>GetMapAddressNPost<br>e.g.<br>GetMapAddressesCount=2<br>GetMapAddress0Get= http://localhost:8080/wms?<br>GetMapAddress1Get= http://anotherhost:80/wms?<br>GetMapAddress1Post= http://anotherhost:80/wms?         |
+| Y        | GetMapAddressNGet                | The Nth address of this server or mirror server where a GetMap request can be serviced via a HTTP Get.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetMap&gt;DCPType&gt;HTTP&gt;Get&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| N        | GetMapAddressNPost               | The Nth address of this server or mirror server where a GetMap request can be serviced via a HTTP Post.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetMap&gt;DCPType&gt;HTTP&gt;Post&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| N        | GetFeatureInfoAddressesCount     | The number of service addresses through which a GetFeatureInfo request can be serviced. This value can be omitted to denote that GetFeatureInfo is not supported. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.<br>For each index, starting at 0, up to 1 less than this value, the following must be specified (where N is the index):<br>GetFeatureInfoAddressNGet<br>And optionally:<br>GetFeatureInfoAddressNPost<br>e.g.<br>GetFeatureInfoAddressCount=2<br>GetFeatureInfoAddress0Get= http://localhost:8080/wms?<br>GetFeatureInfoAddress1Get= http://anotherhost:80/wms?<br>GetFeatureInfoAddress1Post= http://anotherhost:80/wms? |
+| N        | GetFeatureInfoAddressNGet        | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Get.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Get&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
+| N        | GetFeatureInfoAddressNPost       | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Post.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Post&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
  
 ### 4.3.6.	
 
-Heading ‘Root_Layer_Details’
-Required	Key	Description
-Y	RootLayerTitle	The title given to the root layer of the WMS as defined in the GetCapabilities.
-WMS_Capabilities>Capability>Layer>Title 
-N	RootLayerCRS	The root coordinate reference system attributed to the root layer of WMS as defined in the GetCapabilities. If this value is set then all data sources must conform to this coordinate system, so it is not usually set.
-WMS_Capabilities>Capability>Layer>CRS
+** Heading ‘Root_Layer_Details’ **
+
+| Required | Key            | Description                                                                                                                                                                                                                   |
+|:--------:|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Y        | RootLayerTitle | The title given to the root layer of the WMS as defined in the GetCapabilities.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;Title                                                     |
+| N        | RootLayerCRS   | The root coordinate reference system attributed to the root layer of WMS as defined in the GetCapabilities. If this value is set then all data sources must conform to this coordinate system, so it is not usually set.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;CRS |
 
 ### 4.3.7.	
 
-Heading ‘Response_Configuration_Details’
+** Heading ‘Response_Configuration_Details’ ** 
+
 Required	Key	Description
 N	DrawingSurfacePoolSize	This numerical value defines the maximum number of MapLink drawing surfaces that are created in a server pool. If none of the plug-ins loaded on the server use a MapLink Drawing Surface then this value will be irrelevant.
 If a drawing surface is required by a plug-in however, then rather than creating its own one, it should request one from the pool administered by the server. This is to prevent threading issues concerning the use of multiple Drawing Surfaces.
