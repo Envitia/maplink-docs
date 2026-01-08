@@ -4,29 +4,41 @@
 ## 1.	INTRODUCTION
 
 This document describes how to deploy one of the MapLink Open Geospatial Consortium (OGC) services, on a variety of proprietary web serving software. Currently MapLink supports for following OGC services:
-•	The MapLink Web Map Service (WMS). A WMS is used to serve up user defined map data, in a standardised format, for use by client software across a network.
-•	The MapLink Web Processing Service (WPS). A WPS is offers general purpose processing services that can be submitted and the results retrieved across a network. 
+
+	•	The MapLink Web Map Service (WMS). A WMS is used to serve up user defined map data, in a standardised format, for use by client software across a network.
+	
+	•	The MapLink Web Processing Service (WPS). A WPS is offers general purpose processing services that can be submitted and the results retrieved across a network. 
 
 It is intended that further MapLink OGC services will be release in the future.
+
 It is assumed that users of this guide have a basic understanding of the MapLink SDKs and the OGC produced standard for the OGC service being deployed.
 
 ### 1.1.	Pre-requisites
 
 In addition to these notes and sample data you will need:
-•	A server with Envitia MapLink Pro installed. 
-•	Some of the MapLink OGC services require an appropriate licence to have been installed on the machine. These licences can be retrieved from Envitia, either as an evaluation or permanent licence, for either an SDK or standard deployment. An SDK deployment uses debug libraries and is intended to allow development of user created plug-ins for the OGC service, while standard deployments use release libraries and offers the best performance.
-•	The MapLink WPS Service requires a valid deployment licence. Please contact sales@envitia.com for additional information.
-•	Third-party Web Server software for deploying the WMS. Examples in this guide cover the following Web Server software:
-•	Apache Tomcat 10.1.50
+
+	•	A server with Envitia MapLink Pro installed. 
+	
+	•	Some of the MapLink OGC services require an appropriate licence to have been installed on the machine. These licences can be retrieved from Envitia, either as an evaluation or permanent licence, for either an SDK or standard deployment. An SDK deployment uses debug libraries and is intended to allow development of user created plug-ins for the OGC service, while standard deployments use release libraries and offers the best performance.
+	
+	•	The MapLink WPS Service requires a valid deployment licence. Please contact sales@envitia.com for additional information.
+	
+	•	Third-party Web Server software for deploying the WMS. Examples in this guide cover the following Web Server software:
+	
+		•	Apache Tomcat 10.1.50
 
 
 ## 2.	THE MAPLINK OGC SERVICES SDK
 
 ### 2.1.	Introduction
 
-The OGC Services SDK provides the ability to construct instances of Envitia provided OGC service implementations, such as the MapLink WMS. This SDK abstracts the actual service from the API used to construct the service. Each OGC Service exists as a plug-in to the OGC Services SDK, while each OGC Service itself may also have its own plug-ins for providing data sources. 
+The OGC Services SDK provides the ability to construct instances of Envitia provided OGC service implementations, such as the MapLink WMS. 
+
+This SDK abstracts the actual service from the API used to construct the service. Each OGC Service exists as a plug-in to the OGC Services SDK, while each OGC Service itself may also have its own plug-ins for providing data sources. 
+
 When deploying an OGC service, it is usually unnecessary to use the MapLink OGC Services SDK directly, but it may be helpful to have understanding of its use. 
-The following diagram demonstrates the use of this SDK
+
+The following diagram demonstrates the use of this SDK :
 
 <TODO ADD DIAGRAM>
  
