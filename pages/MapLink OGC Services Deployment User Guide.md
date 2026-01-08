@@ -23,6 +23,7 @@ In addition to these notes and sample data you will need:
 ## 2.	THE MAPLINK OGC SERVICES SDK
 
 ### 2.1.	Introduction
+
 The OGC Services SDK provides the ability to construct instances of Envitia provided OGC service implementations, such as the MapLink WMS. This SDK abstracts the actual service from the API used to construct the service. Each OGC Service exists as a plug-in to the OGC Services SDK, while each OGC Service itself may also have its own plug-ins for providing data sources. 
 When deploying an OGC service, it is usually unnecessary to use the MapLink OGC Services SDK directly, but it may be helpful to have understanding of its use. 
 The following diagram demonstrates the use of this SDK
@@ -30,11 +31,13 @@ The following diagram demonstrates the use of this SDK
 <TODO ADD DIAGRAM>
  
 Figure 1 - How the OGC Services SDK is used.
+
 1.	The supplied MapLinkOGCServices Java Servlet can be used to deploy a MapLink OGC Service using a Java Web Server such as Tomcat.
 2.	The MapLink OGC Services SDK offers three APIs - C++, .NET and Java. Both the .NET and Java use the C++ library internally.
 3.	Through the OGC Services SDK, a MapLink OGC Service can be constructed, configured and used.
 
 ## 2.2.	Using the OGC Services SDK Directly
+
 An Envitia OGC service instance can be constructed via the TSLOGCService  class’ static create method, passing in the name of the OGC Service, E.G. “MapLinkWMS” for the MapLink WMS. The service name should not contain any suffixes, such as 'd' to imply debug or '64' to imply constructing a 64-bit service. 
 Assuming that a service instance is returned, the next step is to configure the service by passing in the location to a service specific configuration file to the loadConfiguration method. The format of the configuration file is described later in this document for each of the OGC Service offered.
 Once the service has been constructed and configured, it is ready to use. Requests can be made via the processGetRequest or processPostRequest methods, which will return an instance of the TSLOGCMIMEResponse class. Not all service types support both HTTP GET and POST requests - the WMS for instance only supports HTTP GET. The call to the service should include the address that the request was made via and the contents of the request.
@@ -45,6 +48,7 @@ The response object principally holds the raw service response data, but also th
 •	HTTP code. Some of the newer OGC services require that when an error message is returned the HTTP code of the response should be set to reflect the type of error.
 
 ## 2.3.	Available APIs
+
 Currently the OGC Services SDK is available in the following APIs:
 •	A C++ API – All other APIs utilise this API, but it can be used directly by users. Provided through the MapLinkOGCServices64 library.
 •	A .NET wrapper API – Provided through the Envitia.MapLink.OGCServices64 assembly
@@ -52,6 +56,7 @@ Currently the OGC Services SDK is available in the following APIs:
 All three APIs are provided in 64-bit debug and 64-bit release forms, with the normal MapLink suffixes used to differentiate between them. The release forms should be used for a final system while the debug form is intended to allow users to create their own plug-ins to a particular OGC Service.
 
 ## 2.4.	Licencing
+
 For Deployment you must use do the following:
 •	Use Release DLLs.
 •	Obtain a ‘MapLink WMS (Deployment)’ Licence from Envitia .
@@ -63,15 +68,18 @@ For Development you must do the following:
 # 3.	DEPLOYING MAPLINK OGC SERVICES ON A JAVA WEB SERVER
 
 ## 3.1.	Introduction
+
 To provide access from Java compatible Web Servers, a Java Wrapper library is supplied with the MapLink OGC Services SDK which uses the Java Native Interface to access the OGC Services SDK’s C++ libraries. Additionally a pre-built Java Servlet is supplied which handles communication with the JNI wrapper and serves HTTP GET requests made to it.
 This section outlines how to deploy this example Servlet to the Tomcat web server, although the steps should be fairly similar when using other Java based web servers
 
 ## 3.2.	Configuring the Native Library path
+
 The OGC Services SDK requires access to the appropriate MapLink bin directory in order to access the native C++ libraries and any WMS plug-ins. When MapLink is installed on Windows base machines, the PATH environment variable is modified to add the bin64 directory from the MapLink installation. 
 If the bin directory referenced is not the one being targeted or the PATH environment variable has been edited to remove MapLink, then this section should be followed. Otherwise it can be ignored.
 Non Windows platforms will also need to follow these instructions, but the lib64 directory is referenced.
 
 ### 3.2.1.	Apache Tomcat
+
 The instructions under this immediate heading are only applicable when Tomcat is not deployed as a service/daemon.
 •	Navigate to the following directory 
 •	$CATALINA_HOME/bin
@@ -94,12 +102,14 @@ export LD_LIBRARY_PATH
 •	Tomcat will need to be restarted for this change to take effect.
 
 ### 3.2.2.	Apache Tomcat Running As A Windows Service
+
 •	Start the "Configure Tomcat" shortcut found under the Tomcat group in the Start Menu.
 •	Under the "Startup" tab of the application that starts, change the working path setting to point at the appropriate bin directory.
 •	Ensure you click the Apply button after making this change. It would appear that the change does not always get registered if you don't.
 •	Tomcat will need to be restarted for this change to take effect.
 
 ## 3.3.	Installing the shared MapLinkOGCServices library
+
 To allow multiple OGC Services or multiple service instances to be deployed on a single Web Server, a MapLink library, MapLinkOGCServices, must be added to the servers common class path directory. As this jar file loads the appropriate native C++ library, there are 2 different versions that could be used (pre MapLink 11.1):
 •	MapLinkOGCServices64.jar - 64-bit Release JAR
 •	MapLinkOGCServices64d.jar - 64-bit Release JAR
@@ -114,14 +124,17 @@ The JAR files can usually be located:
 <MAPLINK_INSTALL_DIR>\java\MapLinkOGC\
 
 ### 3.3.1.	Linux Specific
+
 For non-Windows platforms the same JAR file is used for all deployment types, MapLinkOGCServices64.jar. Debug and Release is not a concept on non-Windows platforms. The lib64 directory should have been referenced when completing the instructions from section 3.2.
 
 ### 3.3.2.	Apache Tomcat
+
 Place the required JAR file in the following directory 
 $CATALINA_HOME/lib
 Tomcat will need to be restarted for this change to take effect.
 
 ## 3.4.	Configuring a deployment
+
 Each deployment of a MapLink OGC Service, such as the MapLink WMS, requires a configuration file to load such settings as the plug-ins, spatial data and data source configuration files used. The contents of this configuration file are service specific and are described in later sections of this document.
 By default the supplied Java Servlet is configured for use with the MapLink WMS and with the location of a configuration file expected to be at ‘./MapLinkWMSConfiguration.ini’. If a different service type, multiple instances of the same service type or if this location is not suitable for a particular server configuration, the settings contained in the war file will need to be changed.
 Example configuration files can be found in MAPLINK_INSTALL_DIR\config\ogcservices. The file paths within these configs will need to be edited, to reflect the location of the MapLink installation.
@@ -144,21 +157,25 @@ The following instructions should be followed to edit the servlet's settings:
 •	The files unzipped earlier will need to be either re-added to the war file or zipped into a new archive. The folder structure must be maintained in the archive and the extension may need to be reverted to .war.
 
 ## 3.5.	Deploying the OGC Services Servlet
+
 This section discusses how to deploy the Servlet on the Web Server and specifically how to deploy a second instance in a way that will not conflict with the first.
 
 ### 3.5.1.	Apache Tomcat
+
 •	Log on to the ‘Tomcat Web Application Manager’, usually accessible from the following URL http://127.0.0.1:8080/manager/html. It may be necessary to setup a Tomcat user that has sufficient privileges to access to the Tomcat Manager first.
 •	Under the heading ‘Deploy’ and sub-heading ‘WAR file to deploy’, click on the ‘Browse’ button and upload the WMS war file
 •	Click ‘Deploy’
 •	To deploy a second WMS, then simply create a copy of the war file with a different filename and follow the above instructions.
 
 ## 3.6.	Testing the Deployment
+
 The WMS service can be accessed with a request in the following form:
 http://.../MapLinkOGCServices/OGC?
 For instance, a WMS request for the service Capabilities metadata would be made as follows:
 http://.../MapLinkOGCServices/OGC?service=WMS&request=GetCapabilities
 
 ## 3.7.	Common Problems
+
 Here is a list of some of the common problems that affect deployments to Java and how to resolve them. This list does not include issues that relate to deploying a particular service type which will be covered in later sections.
 •	When accessing the Servlet's URL you receive a 404 error stating that the Servlet is not available. This is likely to be caused by the shared MapLinkOGCServices library not being found. Return to section 3.3 and check that the instructions have been followed correctly. 
 •	When accessing the Servlet's URL you receive a 500 error stating that the Servlet's init() for servlet MapLinkOGCServices threw an exception. This is usually due to the required C++ DLLs not being located by the runtime. 
@@ -230,37 +247,44 @@ export ENV_WMS_DEBUG=1
 export ENV_WMS_DEBUG_STARTUP=1
 This will enable additional error messages to be output to the console.
 
-4.	THE MAPLINK WMS SERVICE
-4.1.	Web Map Service Introduction
+# 4.	THE MAPLINK WMS SERVICE
+
+## 4.1.	Web Map Service Introduction
+
 A Web Map Service (WMS) produces maps of spatially referenced data dynamically from geographic information. The WMS international standard defines three operations that can be performed on such a server; one returns service-level metadata, ‘GetCapabilities’; another returns a map whose geographic and dimensional parameters are well-defined, ‘GetMap’; and an optional third operation returns information about particular features shown on a map, ‘GetFeatureInfo’. 
 A WMS is intended to be accessed either programmatically or using a standard web browser by submitting requests in the form of Uniform Resource Locators (URLs). The exact request string is dependent upon the operation being performed and the extra parameters that the operation requires. For instance a ‘GetMap’ request requires the width, height and geographic location, amongst other parameters, for the WMS to produce the returned image.
 The data that a WMS serves is divided into layers, where a single layer can have zero or more sub layers. These layers are advertised via the ‘GetCapabilities’ operation's response, the service Capabilities. The service Capabilities are an XML document based upon a well a standard defined schema or DTD. The exact schema or DTD followed is dependent upon the version of standard, but are similar in structure across all versions.
 Advertised layers can be generally split into two simple categories:
 •	Unnamed layers - These are often used to categorise their child layers or provide content information about their parent, but cannot be requested as part of a GetMap request. 
 •	Named layers - These can be requested as part of GetMap request.
-4.2.	The Structure of the MapLink WMS
-4.2.1.	Introduction
+
+# 4.2.	The Structure of the MapLink WMS
+
+### 4.2.1.	Introduction
+
 The MapLink WMS is designed to be as flexible as possible so that it can be used in many different scenarios. The server itself supports version 1.0.0, 1.1.0, 1.1.1 and 1.3.0 of the OGC standard. It uses a plug-in architecture, via a documented API, to load plug-ins that respond to incoming requests. 
 There are three terms that this section introduces: ‘plug-ins’, ‘spatial data’ and ‘data sources’. Figure 2 demonstrates how these roles interact within an instance of a WMS. The ‘spatial data’ role refers to the data that is used to create the WMS response, the ‘plug-in’ refers to the library that interprets the ‘spatial data’ and the ‘data source’ is the combination of a ‘spatial data’ and ‘plug-in’ role. 
 The reason that these three roles are separate is that two different plug-ins may serve the same spatial data differently. Alternatively, even the same plug-in may serve up the same spatial data in two different ways, resulting in two separate data sources. The previous example is permissible as each data source, or link between a spatial data role and plug-in role, is defined by the service configuration file. 
 
- 
+### 4.2.2.	Plug-Ins to the MapLink WMS
 
-4.2.2.	Plug-Ins to the MapLink WMS
 A plug-in to the MapLink WMS dictates both the type of spatial data that it can serve and the format of the configuration file that configures the data source it provides. The WMS service instance only sees the spatial data and configuration file as strings that are passed to the plug-in when creating a data source. For this reason these can refer to absolutely anything, although usually the configuration file will be a file path and the data source either a file path or database address.
 A number of pre-built WMS plug-ins are supplied with MapLink which are detailed in section 5.4 of this document. Alternately a MapLink WMS Plug-In SDK is also supplied to allow users to create their own plug-ins using custom data in conjunction with the normal MapLink framework of SDKs. For more information on this SDK please consult the MapLink Developer's Guide.
  
-4.2.3.	Data Sources
+### 4.2.3.	Data Sources
 Each deployed data source provides a child layer to the root unnamed layer in the service Capabilities. It should provide at least one named sub layer to permit serving data. Figure 3 demonstrates this basic layer structure using two data sources.
  
+# 4.3.	Configuring a MapLink WMS
 
- 
-4.3.	Configuring a MapLink WMS
-4.3.1.	Introduction
+### 4.3.1.	Introduction
+
 An instance of the MapLink WMS requires a configuration file to define what data sources it should serve up and how. This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
 This section is intended to serve as a reference, along with the example configuration file at the end, to describe how to configure a server. The format of the configuration file is that of a Windows INI file and as such appears under headings. The sub headings of most of the following sections correspond to the expected headings in the file. 
 The Required column denotes whether the Key is required. If a required key is not provided a service exception will appear be returned whenever the service is accessed.
-4.3.2.	Heading ‘Server_Data_Sources_Index’
+
+### 4.3.2.	
+
+Heading ‘Server_Data_Sources_Index’
 Required	Key	Description
 Y	DatasourceCount	Defines the number of data sources that are deployed on the WMS server. For each data source there is expected to be keys under this heading in the form:
 DatasourceNLocation
@@ -273,7 +297,10 @@ Y	DatasourceNPlugin
 	The library name of the plug-in used to serve up this data source. This may be a custom defined plug-in using the MapLink WMS Plug-In API or a pre-built library supplied by Envitia.
 Y	DatasourceNConfiguration
 	The location of a configuration file used by the plug-in to define how the resource is to be served up. In certain cases a plug-in may not require such a file, but this key should still be defined and its value should be blank.
-4.3.3.	Heading ‘Server_Properties’
+	
+### 4.3.3.	
+
+Heading ‘Server_Properties’
 Required	Key	Description
 Y	ServiceTitle	The WMS title defined in the GetCapabilities.
 WMS_Capabilities>Service>Title
@@ -299,7 +326,10 @@ N	ServiceMaxHeight	The maximum height, in pixels, of a GetMap request. If a user
 WMS_Capabilities>Service>MaxHeight
 N	ServiceProvider	The URL of the service provider.
 WMS_Capabilities>Service>ServiceProvider
-4.3.4.	Heading ‘Service_Contact’
+
+### 4.3.4.	
+
+Heading ‘Service_Contact’
 Required	Key	Description
 N	ContactPerson	The contact details defined in the GetCapabilities.
 WMS_Capabilities>Service>ContactInformation> ContactPersonPrimary>ContactPerson
@@ -327,7 +357,9 @@ N	ContactEmailAddress	The contact details defined in the GetCapabilities.
 WMS_Capabilities>Service>ContactInformation> ContactElectronicMailAddress
 
  
-4.3.5.	Heading ‘Service_Addresses’
+### 4.3.5.	
+
+Heading ‘Service_Addresses’
 Required	Key	Description
 Y	GetCapabilitiesAddressesCount	The number of service addresses through which the capabilities of this server can be requested. At the minimum this should be set to 1 for the address of the main server serving this WMS. Usually a value greater than 1 would be to specify either virtual domains of the server or WMS servers that mirror the local configuration.
 For each index, starting at 0, up to 1 less then this value, the following must be specified (where N is the index)
@@ -385,13 +417,18 @@ If this is set to "DYNAMIC", then the value that appears in the capabilities wil
 WMS_Capabilities>Capability>Request>GetFeatureInfo> DCPType>HTTP>Post>OnlineResource
 
  
-4.3.6.	Heading ‘Root_Layer_Details’
+### 4.3.6.	
+
+Heading ‘Root_Layer_Details’
 Required	Key	Description
 Y	RootLayerTitle	The title given to the root layer of the WMS as defined in the GetCapabilities.
 WMS_Capabilities>Capability>Layer>Title 
 N	RootLayerCRS	The root coordinate reference system attributed to the root layer of WMS as defined in the GetCapabilities. If this value is set then all data sources must conform to this coordinate system, so it is not usually set.
 WMS_Capabilities>Capability>Layer>CRS
-4.3.7.	Heading ‘Response_Configuration_Details’
+
+### 4.3.7.	
+
+Heading ‘Response_Configuration_Details’
 Required	Key	Description
 N	DrawingSurfacePoolSize	This numerical value defines the maximum number of MapLink drawing surfaces that are created in a server pool. If none of the plug-ins loaded on the server use a MapLink Drawing Surface then this value will be irrelevant.
 If a drawing surface is required by a plug-in however, then rather than creating its own one, it should request one from the pool administered by the server. This is to prevent threading issues concerning the use of multiple Drawing Surfaces.
@@ -429,7 +466,9 @@ This setting only applies when running the server on Windows (using the GDI draw
 If this setting is not provided text anti-aliasing will be enabled. 
 
  
-4.3.8.	Heading ‘MapLink_Standard_Configuration’
+### 4.3.8.	
+
+Heading ‘MapLink_Standard_Configuration’
 Required	Key	Description
 N	Std_Config_Path	If supplied, this is the path from which the standard MapLink configuration files are to be loaded. If this value is omitted, then the files are assumed to be present in the \config subdirectory of the MapLink installation on the local machine (whose location is found using TSLUtilityFunctions::getMapLinkHome())
 All instances of the MapLink WMS within a single process must share the same path. The first instance that is loaded will have this value examined and make the equivalent MapLink SDK call:
@@ -443,7 +482,9 @@ TSLDrawingSurface::setupColours
 Further instances loaded into the same process will have this value ignored.
 N	JPEG_Compression_Factor	Allows control over the compression factor used when a client requests a JPEG image from the MapLink WMS. Valid values are in the range 0,2-255. 0 equates to lossless JPEG, while the values 2-255 give increasingly lossy compression.
 The default compression factor is 2.
-4.3.9.	Example
+
+### 4.3.9.	Example
+
 [Server_Data_Sources_Index]
 DatasourceCount=2
 Datasource0Location=C:\Maps\BasicMap\BasicMap1.map
@@ -502,23 +543,29 @@ SupportPNG24=1
 [MapLink_Standard_Configuration]
 Std_Config_Path=c:\program files\envitia\maplink pro\8.1\config
 Colour_List_Location=c:\maps\wms.pal
-4.4.	Supplied MapLink WMS Plug-Ins
-4.4.1.	Introduction
+
+
+## 4.4.	Supplied MapLink WMS Plug-Ins
+
+### 4.4.1.	Introduction
 Envitia supplies some pre built WMS plug-ins that facilitate serving common spatial data. This section will outline those plug-ins, what they're for and how to configure them.
 Note: The plugins are in the plugins directory of the bin64 folder.
-4.4.2.	The Basic Map Plug-In
+
+### 4.4.2.	The Basic Map Plug-In
 This plug-in is largely deprecated as using the Super Map Plug-In offers far better performance and reduced memory foot print.
 The basic map plug-in is used to serve standard MapLink maps, built using MapLink Studio, in a customisable manner. In this case the spatial data would be the fully qualified path to the MapLink map, the plug-in would be the ‘basicmapplugin’ (BasicMapWMS_plugin on Linux) and the configuration file would be a fully qualified path to an xml file.
 The XML configuration file can be created using the BMCCreator utility supplied with MapLink. This utility allows different map features to be associated with WMS layers as well as configuring all the standard WMS layer attributes. 
 To create a configuration manually, the schema for the configuration file can be used as a reference. It can be access from the Envitia website at the following URL:
 http://www.envitia.com/schemas/maplinkwms/basicmapplugin/1.0/BasicMapConfiguration.xsd
 The Basic Map Plug-In services requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. Each Map Data Layer has a cache of the map files that it most recently accessed, which by default is limited to 32 Megabytes, while the pool of Map Data Layers by default contains 20 layers. The total amount of memory that deployment of the Basic Map Plug-In requires therefore, by default, is at least 640 Megabytes, but in fact it usually uses approximately 50% more than this in practice. These defaults can be configured through the BMCCreator however. It is because of this high memory requirement that the Basic Map Plug-In was replaced by the Super Map Plug-In.
-4.4.3.	The Historical Map Plug-In (Removed in MapLink 11.1)
+
+### 4.4.3.	The Historical Map Plug-In (Removed in MapLink 11.1)
 This plug-in is largely deprecated as using the Super Map Plug-In offers far better performance and reduced memory foot print. Configuring the Super Map Plug-In to use historical data can be difficult however, so for expediency the Historical Map Plug-In is often used. 
 The historical map plug-in is almost identical to the basic map plug-in explained in the previous section except it is intended to serve MapLink Maps with historical information built using the Seamless Layer Manager. The plug-in requires the archive directory of the seamless layer map to be located in the same directory as the .map file.
 As with the basic map plug-in, the spatial data of the plug-in is the absolute path to the map and the configuration file is an xml file created using the BMCCreator utility. The plug-in string for the historical map plug-in is ‘historicalmapplugin’ however.
 The historical map plug-in adds a time dimension to the capabilities of the basic map plug-in so that WMS users can rollback the map to previous versions. Although the historical map plug-in can be used to serve a non historical MapLink map, the super map plug-in is better optimised for speedier responses from these maps.
-4.4.4.	The Super Map Plug-In 
+
+### 4.4.4.	The Super Map Plug-In 
 The Super Map Plug-In is a new addition to MapLink that replaces the existing Basic and Historical Map Plug-Ins, allowing both standard and historical MapLink maps to be served. It offers the best performance and lowest memory footprint of any of the Envitia supplied WMS plug-ins, through the use of the new MapLink Threaded Map Cache SDK.
 The Basic and Historical Map Plug-Ins service requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. This is because standard MapLink Map Data Layers cannot be shared amongst threads due to thread safety issues. The Threaded Map Cache offers a variant of the Map Data Layer that allows a loaded map to be shared amongst threads. Additionally, each standard Map Data Layer has a cache of the map files that it most recently accessed, whereas the Threaded Map Cache shares a single, lock-free but thread safe, cache amongst all requests. This greatly reduces the memory footprint whilst improving performance thanks to a greater likelihood of locating the required map file in the memory cache, rather than having to load it from disk.
 Unlike the Basic and Historical Map plug-ins, the Super Map plug-in supports GetFeatureInfo requests for vector layers in MapLink maps. By default this returns an XML document containing information on the selected feature(s), the schema of which is available at the following location:
@@ -541,7 +588,8 @@ The following example shows the default output format of GetFeatureInfo requests
 </FeatureCollection>
 In addition, the Super Map plug-in allows extra response formats to be generated through user-supplied XSL transforms  that process the default XML document into the desired format.
 The Super Map plug-in has two modes of configuration, henceforth referred to as 'single map mode' and 'multi-map mode'. The configuration mode used determines how the MapLink map or maps used as the data sources are served from the WMS. In both cases its plug-in string would be 'supermapplugin' on Windows and ‘SuperMapWMS_plugin’ on all other platforms.
-4.4.4.1.	Single Map Mode
+
+#### 4.4.4.1.	Single Map Mode
 In single map mode the Super Map plug-in operates similarly to the Basic Map plug-in. As the name suggests, this configuration mode should be used to serve a single MapLink map from a data source. Like the basic and historical map plug-ins, the super map plug-in in single map mode takes the fully qualified path to the MapLink map as its Spatial Data parameter and the configuration file would be a fully qualified path to an xml file. It accepts the same format of XML configuration file that is produced by the BMCCreator utility, with the following differences:
 •	The "Number of Map Data Layers" setting from the BMCCreator's Options menu should be set to a much higher level than would be used for the Basic or Historical Map Plug-Ins. Ideally it should match the drawing surface pool size, configured in the service's configuration file, as described in section 5.3.7.
 •	The "Cache Size Per Data Layer (KB)" setting from the BMCCreator's Options menu has a different meaning. Rather than refer the cache size per pooled data layers, as for the Basic or Historical Map Plug-Ins, it instead refers to the shared cache's size. This should be set fairly high, if possible, preferably in the hundreds of Megabytes range.
@@ -550,6 +598,7 @@ http://www.envitia.com/schemas/maplinkwms/supermapplugin/1.0/SuperMapConfigurati
 This format is very similar to that output from the BMCCreator utility, but allows configuration of two additional pieces of functionality only offered by the Super Map plug-in. The first of these pieces of functionality is the ability to use MapLink dynamic renderers to implement specific named WMS styles. These dynamic renders should be built as separate DLLs/shared objects and register themselves with the MapLink TSLDynamicRendererFactory on DLL/shared object load. The dynamicRendererStore attribute on the SuperMapConfiguration element should then be set to the location of the dynamic renderer(s). The name used to register the dynamic renderer with the factory determines the name that the style is advertised as in the server's capabilities document.
 The second piece of functionality allows for the user-defined GetFeatureInfo formats mentioned in section 5.4.4 to be specified through the optional GetFeatureInfoResponseList element. Within this element a list of ResponseFormat elements can be provided, each of which defines an additional response format to be advertised by the server. The transform, advertisedFormat and mimeType attributes must be provided for each response format and define the location of the XSL transform that should be run on the normal XML output document before being returned to the client, the value for the Format string that will be listed in the server's GetFeatureInfo format list and the MIME type that will be used for the responses respectively. The optional WMSCapabilities1_0_0Format attribute is only used when clients issue requests using version 1.0.0 of the WMS standard. This version restricts advertised GetFeatureInfo formats to the second part of the MIME type and thus cannot use the same configuration setting. If this attribute is not specified, the response format will not be advertised to clients using version 1.0.0 of the WMS standard.
 The following example configuration file shows the extended single map mode configuration format:
+
 <?xml version="1.0" encoding="UTF-8"?>
 <SuperMapConfiguration   xmlns="http://www.envitia.com/schemas/maplinkwms/supermapplugin"
    xmlns:wms="http://www.opengis.net/wms"
@@ -591,7 +640,9 @@ mapDataLayerCount="50" mapDataLayerCacheSize="262144" symbolTextViewExpansion="1
     <ResponseFormat transform="/path/to/xml_html.xsl" 				advertisedFormat="text/html" mimeType="text/html" 	WMSCapabilities1_0_0Format="HTML"/>
   </GetFeatureInfoResponseList>
 </SuperMapConfiguration>
-4.4.4.2.	Multi-Map Mode
+
+#### 4.4.4.2.	Multi-Map Mode
+
 In multi-map mode the Super Map plug-in operates similarly to the Historical Map plug-in but offers additional functionality. In addition to serving a single MapLink map containing historical information, the Super map plug-in in this mode is capable of taking multiple separate MapLink maps that may or may not contain history and present them as a single set of layers with the combined history of all the maps.
 In this mode both the Spatial Data parameter and the configuration file would be fully qualified paths to xml files. The format of the Spatial Data configuration file is described by the schema at the following location:
 http://www.envitia.com/schemas/maplinkwms/supermapplugin/datasource/1.0/SuperMapDataSource.xsd
@@ -677,9 +728,13 @@ mapDataLayerCount="50" mapDataLayerCacheSize="262144" symbolTextViewExpansion="1
     <ResponseFormat transform="/path/to/xml_html.xsl" 	advertisedFormat="text/html" mimeType="text/html" 	WMSCapabilities1_0_0Format="HTML"/>
   </GetFeatureInfoResponseList>
 </SuperMultiMapConfiguration>
-4.4.5.	The CADRG Map Plug-In
+
+### 4.4.5.	The CADRG Map Plug-In
+
 Please see the document ‘MapLink CADRG WMS Plug-In User Guide.
-4.5.	Common Problems
+
+## 4.5.	Common Problems
+
 •	When making requests an exception is returned. This normally indicates that a configuration error has been made or a GetMap request string is invalid. It is recommended that the user reads the content of the ServiceException element to amend the problem. 
 •	After deployment, a service exception is shown when using the service stating that the WMS cannot find or access the MapLink WMS configuration file. This is usually caused by either the configuration file not being where the WMS is configured to expect it or that it doesn't have sufficient permission to access it. 
 Please remember when deploying to non-Windows platforms that the case of the configuration file path is important.
@@ -693,18 +748,25 @@ o	On Windows only, the filename of the DLL was not suffixed correctly to match t
 The most common cause of this error is that the GetMap address that appears in the service Capabilities does not match the address that the service is deployed on. Refer to section 5.3.5 for details of how to configure the address that appear.
 When using one of the Envitia supplied service plug-ins, this issue may be cause by the geographic area configured to be advertised for a data source not containing any data.
 •	The service works when accessed from the server it is deployed upon, but not from another machine on the same network.
-This issue is mainly beyond the scope of this document, but two common causes are that the server's firewall is blocking access to the web server's port and the second is that a loopback address has been used when configuring the Capabilities of the server (E.G. "localhost" or "127.0.0.1") when completing section 5.3.5 of the service's configuration file.
+This issue is mainly beyond the scope of this document, but two common causes are that the server's firewall is blocking access to the web server's port and the second is that a loopback address has been used when configuring the Capabilities of the server (E.G. "localhost" or "127.0.0.1") when completing section 
+
+### 5.3.5 of the service's configuration file.
 •	When using a TSLWMSDataLayer with any WMS data source a situation can occur where tiles are constantly loaded and unloaded which causes a flickering effect. This issue is not at the server end, but arises because the layer's tile cache does not have enough memory to store all of the requested tiles. To resolve this issue the user should increase the size of the tile cache using the cacheSize() method on the data layer.
 
 
-4.6.	Docker
-4.6.1.	Prerequisites:
+## 4.6.	Docker
+
+### 4.6.1.	Prerequisites:
+
 Make sure you have Docker 1.29+ installed on your Linux box.
-4.6.2.	Building The WMS Docker Image
+
+### 4.6.2.	Building The WMS Docker Image
+
 Build the WMS image using the following command:
 docker build -t maplink-wms:11.2.5.0 -f redist64/docker/wms/Dockerfile .
 
-4.6.3.	Running The WMS Container
+### 4.6.3.	Running The WMS Container
+
 Run the container using the following command:
 docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps --name maplink-wms -d maplink-wms:11.2.5.0 
 Where: 
@@ -714,12 +776,14 @@ To check that the WMS is running correctly, visit the following URL:
 http://host:8022/MapLinkOGCServices/OGC?SERVICE=WMS&Request=GetCapabilities
 Replace the host with your linux host name/ip.
 
-4.6.4.	Stopping The Container
+### 4.6.4.	Stopping The Container
+
 docker stop maplink-wms
 docker rm maplink-wms
 NOTE: the container has to be removed before starting it again.
 
-4.6.5.	Customising Your WMS Configuration
+### 4.6.5.	Customising Your WMS Configuration
+
 Create a folder on your host for your base configuration.
 E.g. mkdir -p /home/user/wms/baseconfig
 Copy the example base config from redist64/docker/wms/baseconfig.ini to the baseconfig folder.
@@ -729,7 +793,8 @@ docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps -v /home/user/wms/b
 Where:
 /home/user/wms/maps - Is the root of your maps folder.
 /home/user/wms/baseconfig - Contains the base configuration file called baseconfig.ini
-4.6.6.	Mount Points
+
+### 4.6.6.	Mount Points
 
 /opt/wms/maps	You must mount this folder as this is the location where the container will search for maps
 /opt/wms/config
@@ -737,7 +802,8 @@ Where:
 /opt/wms/baseconfig
 	This folder stores the base configuration file
 
-4.6.7.	Generating WMS Config XMLs
+### 4.6.7.	Generating WMS Config XMLs
+
 Ensure that you have xsltproc installed. E.G.: 
   apt-get install xsltproc
 Make sure that the MapLink environment variables are set and the bin folder is added to the path.
@@ -745,28 +811,42 @@ source mapl_init.bash
 export PATH=$MAPL_HOME/bin/x86_64:$PATH
 Use the following scripts to generate XMLs for the map files you wish to add to your WMS as data sources.
 Once generated, copy the map files and the corresponding XML files into your “/home/user/wms/maps” folder.
-4.6.7.1.	Generating WMS Configuration For A Single Map
+
+### 4.6.7.1.	Generating WMS Configuration For A Single Map
+
 Use the following command:
 genwmsconf.sh ./maps/NaturalEarthBasic/NaturalEarthBasic.map
-4.6.7.2.	Generating WMS Configuration XMLs For A Directory of Maps
+
+#### 4.6.7.2.	Generating WMS Configuration XMLs For A Directory of Maps
+
 Navigate to the directory of maps that you want to generate config files for and execute the following command:
 genwmsdir.sh ./maps/
 
-5.	THE MAPLINK WPS SERVICE
-5.1.	Web Processing Service Introduction
+# 5.	THE MAPLINK WPS SERVICE
+
+## 5.1.	Web Processing Service Introduction
+
 The Web Processing Service (WPS) can provide a set of "processes" that receive zero or more inputs and return one or more outputs. The WPS standard describes a process as "any algorithm, calculation or model that operates on spatially referenced data," although its interface is not limited to geospatial operations.
 The MapLink WPS Plug-In SDK can be used to create user plug-ins. For more information on this SDK please consult the MapLink Developer's Guide.
-5.2.	The Structure of the MapLink WPS
-5.2.1.	Introduction
+
+## 5.2.	The Structure of the MapLink WPS
+
+### 5.2.1.	Introduction
+
 The WPS itself supports version 1.0.0 of the standard, currently the only published version. It is intended that when further versions are released, the MapLink WPS will be extended to support them.
 Each WPS plugin can provide one or more WPS processes 
 On start-up the WPS service will read its configuration file and determine what WPS plugins it needs to load.
-5.3.	Configuring a MapLink WPS
-5.3.1.	MapLink WPS Configuration File
+
+## 5.3.	Configuring a MapLink WPS
+
+### 5.3.1.	MapLink WPS Configuration File
+
 The MapLink WPS configuration file defines what data sources (‘processes’) it should serve up and how. This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
 The format of the configuration file is that of an XML file the schema of which is available at the following URL:
 	http://www.envitia.com/schemas/maplinkwps/1.0/MaplinkWPS.xsd
-5.3.2.	The DataSources element
+
+### 5.3.2.	The DataSources element
+
 In the WPS Service configuration file is a ‘DataSources’ xml element which contains a number of ‘DataSource’ xml elements.  
 Each ‘DataSource’ xml element:
 •	Represents a WPS plugin.
@@ -774,20 +854,29 @@ Each ‘DataSource’ xml element:
 •	Has a ‘DataPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up
 •	Has a ‘ConfigPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up, this parameter tends to be used to define the configuration file
 
-5.3.3.	The DataStore element
+### 5.3.3.	The DataStore element
+
 This optional element defines the data store of the service. This allows for WPS requests to ask the WPS service to store the result, so it can be picked up later. 
 Note: it is optional for a WPS plugin to support data store usage.  This is defined in the implementation of the WPS plugin itself.
 The DataStore element is defined in the schema as abstract with currently only one derivate supported; ‘FileStore’. This type of store will use a file system directory to store asynchronous responses and referenced outputs, which is provided via the "Directory" attribute. The File Store can optionally be configured with a purge strategy which indicates how older items should be removed. If a purge strategy is not configured, then the directory can grow large over time and will need to be manually purged.
-5.3.4.	The Options element
+
+### 5.3.4.	The Options element
+
 The Options element is used to configure various MapLink settings, although currently there is only one offered by the MapLink WPS. It is expected that the configurable options will be expanded upon in patches and future releases.
 Each Option sub-element must be provided with the "name" attribute to indicate what is being configured and therefore the type of content to be expected inside the element. The "name" attribute is an XML union of an enumeration and the string type. The enumeration defines the current build-in names, with "StandardConfigPath" with being the only current value to configure the location of the MapLink configuration directory, whilst the string allows future additions and undocumented values.
-5.3.5.	The DefaultLanguage and LanguageSpecificMetadata elements
+
+### 5.3.5.	The DefaultLanguage and LanguageSpecificMetadata elements
+
 The WPS standard is one of the first OGC standards to offer the service Capabilities in more than one language, specifically the parts that are for consumption by a user rather than the client software. The MapLink WPS offers this functionality in the service capabilities and other service responses.
 A LanguageSpecificMetadata element is used to define the parts of the Capabilities document for a specific language, including the ServiceIndentification, ServiceProvider, OperationsMetadata and WSDL elements. When the Capabilities of the service are requested for that language, what appears in the LanguageSpecificMetadata will be included in exactly the same way as it appears in the configuration file. To support multiple languages, simply include a LanguageSpecificMetadata element for each of them.
 The service must also be told which of the supported languages it should treat as the default, for when a request does not specify which language it would like the response in. The language type that appears in the DefaultLanugage element must reference one of the languages used in an included LanguageSpecificMetadata element.
-5.3.5.1.	The OperationsMetadata element
+
+#### 5.3.5.1.	The OperationsMetadata element
+
 The OperationsMetadata element is used to describe the Operations that the service supports. This is of importance to the MapLink WMS as it also describes the addresses that these services are available at. These addresses can either be full, qualified, or, like offered in the MapLink WMS, use the DYNAMIC keyword. The DYNAMIC keyword will be replaced in the Capabilities returned during a "GetCapabilities" request with the address that the request was made to.
-5.3.6.	Example
+
+### 5.3.6.	Example
+
 The following example demonstrates a configuration file which has the following settings:
 •	It deploys two data sources; one that uses "MyPlugin" and the other uses "MyOtherPlugin". Both take a TXT file for their data and an INI file for their configuration.
 •	It is configured to offer a file based data store, that uses c:\temp\WPSStore to store asynchronous and referenced resources, and perform a purge job everyday which will remove items which were created at least 2 days ago. 
@@ -954,8 +1043,10 @@ The following example demonstrates a configuration file which has the following 
   </mwps:LanguageSpecificMetadata>
 </mwps:WPSConfiguration>
 
-5.4.	WPS Router Plugin
-5.4.1.	Deployment
+## 5.4.	WPS Router Plugin
+
+### 5.4.1.	Deployment
+
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
 •	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
 •	Set the ‘Plugin’ element to ‘RouterWPSPlugin’
@@ -975,7 +1066,8 @@ Check through the RouterWPSplugin.ini file.  The configuration file’s comments
 •	The ‘transformsDatFile’ value at the top of the configuration file.
 •	Each ‘Network’ setup must be scrutinised.
 
-5.4.2.	Describe Process
+### 5.4.2.	Describe Process
+
 Sample GET Call
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=RouteWPS
 Sample POST Call
@@ -992,12 +1084,16 @@ The response to this request will provide:
 •	A list of available Vehicle Types
 •	Details of the start the end locations
 •	A list of available outputs (GML and Directions)
-5.4.3.	Execute
+
+### 5.4.3.	Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteWPS&datainputs=network=63843-SZ1085;routeAlgorithm=shortest;start_lon=-1.7786362;start_lat=50.7356394;end_lon=-1.7804886;end_lat=50.7355128;costAlgorithm=simple;vehicleType=car&responsedocument=gml;directions
 Sample POST Call
 See Section 7.1.1.
-5.4.3.1.	Available Data Input Parameters
+
+#### 5.4.3.1.	Available Data Input Parameters
+
 network (Network Identifier)
 •	This specifies which network map to plan a route against.
 •	The available networks are defined in the ‘RouterWPSplugin.ini’ file.
@@ -1033,7 +1129,9 @@ end_lon/end_lat Start Location
 •	This specifies the end location of the route to calculate
 •	The coordinate system these points must be in are WGS84 (lat/lon)
 •	The actual end point of the route will be the nearest point found on the Network Map to this end location
-5.4.3.2.	Response Document/ Raw Data Parameters
+
+#### 5.4.3.2.	Response Document/ Raw Data Parameters
+
 There are two available output formats:
 •	gml
 •	directions
@@ -1047,8 +1145,11 @@ GML
 Directions
 •	This is a list of string instructions the user needs to follow
 •	The distance in brackets specifies the distance required for the next instruction
-5.5.	WPS View Shed Plugin
-5.5.1.	Deployment
+
+## 5.5.	WPS View Shed Plugin
+
+### 5.5.1.	Deployment
+
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
 •	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
 •	Set the ‘Plugin’ element to ‘ViewShedWPSPlugin’
@@ -1065,7 +1166,9 @@ Sample:
 </mwps:DataSource>
 
 Check through the ViewShedWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that each ‘SourceData’ section must be scrutinised.
-5.5.2.	Describe Process
+
+### 5.5.2.	Describe Process
+
 Sample GET Call
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=ViewShedWPS
 Sample POST Call
@@ -1085,13 +1188,17 @@ In the sample above the ‘ViewShedWPS’ value represents the standard Single V
 
 Response Description
 The response to this request will provide details of the parameters and outputs each service provides.
-5.5.3.	Single View Shed Execute
+
+### 5.5.3.	Single View Shed Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=ViewShedWPS&datainputs=source=sanfran;view_lat=37.711949;view_lon=-122.308167;view_height=0;view_htype=groundHeight;view_minRadius=0;view_maxRadius=10000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-122.384258,37.716004,-122.357822,37.734605,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
 
 Sample POST Call
 See Section 7.1.2.
-5.5.3.1.	Available Data Input Parameters
+
+#### 5.5.3.1.	Available Data Input Parameters
+
 source (Source Data)
 •	This specifies which source data to perform a View Shed against.
 •	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
@@ -1144,12 +1251,16 @@ There are two ways of distributing the image:
 •	Raw Data Format - This will simply return the binary image directly in the response without any XML.
 •	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
-5.5.4.	Multi View Shed Execute
+
+### 5.5.4.	Multi View Shed Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=MultiViewShedWPS&datainputs=source=sanfran;viewPoints=-122.308167,37.711949,0;view_htype=groundHeight;view_maxRadius=10000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-122.384258,37.716004,-122.357822,37.734605,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
 Sample POST Call
 See Section 7.1.3.
-5.5.4.1.	Available Data Input Parameters
+
+#### 5.5.4.1.	Available Data Input Parameters
+
 source (Source Data)
 •	This specifies which source data to perform a View Shed against.
 •	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
@@ -1189,7 +1300,9 @@ displayStyle (Display Style)
 •	This specifies the display style to use when generating the View Shed image.
 •	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
 •	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
-5.5.4.2.	Response Document/ Raw Data Parameters
+
+#### 5.5.4.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting View Shed image. 
 Available Formats
 There are two available image formats:
@@ -1203,12 +1316,15 @@ There are two ways of distributing the image:
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
 
  
-5.5.5.	Route View Shed Execute
+### 5.5.5.	Route View Shed Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteViewShedWPS&datainputs=source=britsouth;routePoints=51.1244288,-1.8908794,51.1244876,-1.8914126,51.1245858,-1.8921404,51.1245918,-1.892175;viewShedPointSpacing=300;view_height=0;view_htype=groundHeight;view_maxRadius=3000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-1.98,51.096,-1.7925,51.2125,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
 Sample POST Call
 See Section 7.1.4.
-5.5.5.1.	Available Data Input Parameters
+
+#### 5.5.5.1.	Available Data Input Parameters
+
 source (Source Data)
 •	This specifies which source data to perform a View Shed against.
 •	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
@@ -1252,7 +1368,9 @@ displayStyle (Display Style)
 •	This specifies the display style to use when generating the View Shed image.
 •	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
 •	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
-5.5.5.2.	Response Document/ Raw Data Parameters
+
+#### 5.5.5.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting View Shed image. 
 Available Formats
 There are two available image formats:
@@ -1265,12 +1383,15 @@ There are two ways of distributing the image:
 •	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
  
-5.5.6.	Route Breakdown Execute
+### 5.5.6.	Route Breakdown Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteBreakdownWPS&datainputs=routePoints=51.1244288,-1.8908794,51.1247762,-1.8931956;viewShedPointSpacing=100&RawDataOutput=gmlDoc=@mimetype=text/xml
 Sample POST Call
 See Section 7.1.5.
-5.5.6.1.	Available Data Input Parameters
+
+#### 5.5.6.1.	Available Data Input Parameters
+
 routePoints (Viewing Location)
 •	This is a GML string
 •	This specifies a set of viewing locations, each which will generate a View Shed 
@@ -1310,15 +1431,20 @@ displayStyle (Display Style)
 •	This specifies the display style to use when generating the View Shed image.
 •	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
 •	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
-5.5.6.2.	Response Document/ Raw Data Parameters
+
+#### 5.5.6.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting GML String of the broken down route. 
 Distribution
 There are two ways of distributing the image:
 •	Raw Data Format - This will simply return the GML string directly in the response without any XML.
 •	Response Document as reference - This will store the resulting GML string the WPS store and will return a url via the XML response. The caller can use this url to access the GML string. The length of time the GML string will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
 •	Response Document – This will return the GML string in a response document.  The GML string will be encoded.
-5.6.	WPS Terrain Profile Plugin
-5.6.1.	Deployment
+
+## 5.6.	WPS Terrain Profile Plugin
+
+### 5.6.1.	Deployment
+
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
 •	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
 •	Set the ‘Plugin’ element to ‘TerrainProfileWPSPlugin’
@@ -1335,7 +1461,9 @@ config\plugins\ViewShedWPSplugin.ini
 </mwps:DataSource>
 
 Check through the TerrainProfileWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that each ‘SourceData’ section must be scrutinised.
-5.6.2.	Describe Process
+
+### 5.6.2.	Describe Process
+
 Sample GET Call
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=TerrainProfileWPS
 Sample POST Call
@@ -1348,12 +1476,16 @@ POST data:
 
 Response Description
 The response to this request will provide details of the parameters and outputs each service provides.
-5.6.3.	Execute
+
+### 5.6.3.	Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=TerrainProfileWPS&datainputs=source=sanfran;profilePoints=37.726258,-122.111137,37.724840,-122.108669;viewShedPointSpacing=100;requiredDisplayWidth=800;requiredDisplayHeight=600;displayStyle=clearVis&RawDataOutput=image=@mimetype=image/png
 Sample POST Call
 See Section 7.1.6.
-5.6.3.1.	Available Data Input Parameters
+
+#### 5.6.3.1.	Available Data Input Parameters
+
 source (Source Data)
 •	This specifies which source data to perform a Terrain Profile against.
 •	The available source data are defined in the ‘TerrainProfileWPSplugin.ini’ file.
@@ -1382,7 +1514,9 @@ displayStyle (Display Style)
 •	This specifies the display style to use when generating the Terrain Profile image.
 •	The available display styles are defined in the ‘TerrainProfileWPSplugin.ini’ file.
 •	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
-5.6.3.2.	Response Document/ Raw Data Parameters
+
+#### 5.6.3.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting Terrain Profile image. 
 Available Formats
 There are two available image formats:
@@ -1395,8 +1529,10 @@ There are two ways of distributing the image:
 •	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
 
-5.7.	WPS Import Raster Plugin
-5.7.1.	Deployment
+## 5.7.	WPS Import Raster Plugin
+
+### 5.7.1.	Deployment
+
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
 •	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
 •	Set the ‘Plugin’ element to ‘TerrainProfileWPSPlugin’
@@ -1413,7 +1549,9 @@ config\plugins\ImportRasterWPSplugin.ini
 </mwps:DataSource>
 
 Check through the ImportRasterWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean. 
-5.7.2.	Describe Process
+
+### 5.7.2.	Describe Process
+
 Sample GET Call
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=ImportRasterWPS
 
@@ -1426,12 +1564,16 @@ POST data:
  </wps:DescribeProcess >
 Response Description
 The response to this request will provide details of the parameters and outputs each service provides.
-5.7.3.	Execute
+
+### 5.7.3.	Execute
+
 Sample GET Call 
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=TerrainProfileWPS&datainputs=source=sanfran;profilePoints=37.726258,-122.111137,37.724840,-122.108669;viewShedPointSpacing=100;requiredDisplayWidth=800;requiredDisplayHeight=600;displayStyle=clearVis&RawDataOutput=image=@mimetype=image/png
 Sample POST Call
 See Section 7.1.6.
-5.7.3.1.	Available Data Input Parameters
+
+#### 5.7.3.1.	Available Data Input Parameters
+
 source (Source Data)
 •	This specifies which source data to perform a Terrain Profile against.
 •	The available source data are defined in the ‘TerrainProfileWPSplugin.ini’ file.
@@ -1460,7 +1602,9 @@ displayStyle (Display Style)
 •	This specifies the display style to use when generating the Terrain Profile image.
 •	The available display styles are defined in the ‘TerrainProfileWPSplugin.ini’ file.
 •	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
-5.7.3.2.	Response Document/ Raw Data Parameters
+
+#### 5.7.3.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting Terrain Profile image. 
 Available Formats
 There are two available image formats:
@@ -1474,13 +1618,12 @@ There are two ways of distributing the image:
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
 
 
+# 6.	APPENDIX A
 
+## 6.1.	WPS Plugin Sample Execute POST Calls
 
+### 6.1.1.	Router
 
-
-6.	APPENDIX A
-6.1.	WPS Plugin Sample Execute POST Calls
-6.1.1.	Router
 Calculate a route with a response document returned
 <?xml version="1.0" encoding="UTF-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
@@ -1623,7 +1766,9 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
-6.1.2.	Single View Shed
+
+### 6.1.2.	Single View Shed
+
 Calculate a route with a response document returned
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
@@ -1823,7 +1968,8 @@ Calculate a route with a raw output returned
   </wps:ResponseForm>
 </wps:Execute>
 
-6.1.3.	Multi View Shed
+### 6.1.3.	Multi View Shed
+
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_Multi_Service_Identifier}</ows:Identifier>   source=sanfran   view_lat=37.711949   view_lon=-122.308167   view_height=0   view_htype=groundHeight   view_minRadius=0   view_maxRadius=10000   target_height=0   target_htype=groundHeight   requiredDisplayWidth=800   requiredDisplayHeight=600   requiredDisplayExtent=-122.420041,37.612468,-122.167013,37.822128,EPSG:4326   displayStyle=redGreen   <wps:DataInputs>
@@ -1893,7 +2039,8 @@ Calculate a route with a raw output returned
   </wps:ResponseForm>
 </wps:Execute>
 
-6.1.4.	Route View Shed
+### 6.1.4.	Route View Shed
+
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_Route_Service_Identifier}</ows:Identifier>
@@ -1979,7 +2126,8 @@ Calculate a route with a raw output returned
   </wps:ResponseForm>
 </wps:Execute>
 
-6.1.5.	Route Breakdown
+### 6.1.5.	Route Breakdown
+
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_RouteBreakdown_Service_Identifier}</ows:Identifier>
