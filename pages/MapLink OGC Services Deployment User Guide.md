@@ -130,7 +130,11 @@ For non-Windows platforms the same JAR file is used for all deployment types, Ma
 ### 3.3.2.	Apache Tomcat
 
 Place the required JAR file in the following directory 
+
+```
 $CATALINA_HOME/lib
+```
+
 Tomcat will need to be restarted for this change to take effect.
 
 ## 3.4.	Configuring a deployment
@@ -139,11 +143,17 @@ Each deployment of a MapLink OGC Service, such as the MapLink WMS, requires a co
 By default the supplied Java Servlet is configured for use with the MapLink WMS and with the location of a configuration file expected to be at ‘./MapLinkWMSConfiguration.ini’. If a different service type, multiple instances of the same service type or if this location is not suitable for a particular server configuration, the settings contained in the war file will need to be changed.
 Example configuration files can be found in MAPLINK_INSTALL_DIR\config\ogcservices. The file paths within these configs will need to be edited, to reflect the location of the MapLink installation.
 The supplied Java Servlet, called MapLinkOGCServices.war, is normally located:
+
+```
 MAPLINK_INSTALL_DIR\java\MapLinkOGC\
+```
+
 The following instructions should be followed to edit the servlet's settings:
 •	Using a zip utility (such as PKZip, WinZip, 7zip or WinRAR) unzip the war file to disk, ensuring that the contained folder structure is maintained. It may be necessary to change the extension of the war file to .zip for it to be recognised.
 •	Under the WEB-INF directory of the unzipped files, edit the web.xml file using a text editor.
 •	Roughly halfway through the file there should appear the following snippet:
+
+```xml
     <init-param>
       <param-name>ServicePlugin</param-name>
       <param-value>MapLinkWMS</param-value>
@@ -152,6 +162,8 @@ The following instructions should be followed to edit the servlet's settings:
       <param-name>ServiceConfigurationFile</param-name>
       <param-value>./mapLinkwmsconfiguration.ini</param-value>
     </init-param>
+```
+
 •	The MapLinkWMS string may be edited to target a different service type. 
 •	The string './mapLinkwmsconfiguration.ini' may be edited to point at a different service configuration file. See 4.4 Configuring a Deployment.
 •	The files unzipped earlier will need to be either re-added to the war file or zipped into a new archive. The folder structure must be maintained in the archive and the extension may need to be reverted to .war.
@@ -170,9 +182,16 @@ This section discusses how to deploy the Servlet on the Web Server and specifica
 ## 3.6.	Testing the Deployment
 
 The WMS service can be accessed with a request in the following form:
+
+```
 http://.../MapLinkOGCServices/OGC?
+```
+
 For instance, a WMS request for the service Capabilities metadata would be made as follows:
+
+```
 http://.../MapLinkOGCServices/OGC?service=WMS&request=GetCapabilities
+```
 
 ## 3.7.	Common Problems
 
@@ -211,16 +230,21 @@ Newer versions of MapLink Studio will create a WMS config.xml for a map. For map
 
 For example the following is a valid entry for the SuperMap plugin on Linux:
 
+```
 [Server_Data_Sources_Index]
 DatasourceCount=1
 Datasource0Location=/projects/TestAndData/output.map
 Datasource0Plugin=SuperMapWMS_plugin
 Datasource0Configuration=/projects/TestAndData/config.xml
+```
+
 For simplicity it is advised to initially use the basicmap plugin before considering to use the SuperMap plugin.
 •	The Datasource0Configuration must point to a valid ‘MapLink Pro’ Map WMS configuration file.
 Newer versions of MapLink Studio will create a WMS config.xml for a map. For maps generated using an older version of MapLink Studio you can use the BMCCreator.exe on Windows.
 It is advised to keep the config.xml file alongside the .map file.
 An example of this file is as follows:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <BasicMapConfiguration   xmlns="http://www.envitia.com/schemas/maplinkwms/basicmapplugin" 
    xmlns:wms="http://www.opengis.net/wms" 
@@ -241,10 +265,16 @@ An example of this file is as follows:
 <ImplementedFeature>Rasters</ImplementedFeature>
 </ImplementedFeaturesList>
 </BasicMapConfiguration>
+```
+
 •	If debugging an installation set the following environment variables:
+
+```
 export ENV_VERBOSE=verbose,lasterror
 export ENV_WMS_DEBUG=1
 export ENV_WMS_DEBUG_STARTUP=1
+```
+
 This will enable additional error messages to be output to the console.
 
 # 4.	THE MAPLINK WMS SERVICE
@@ -485,6 +515,7 @@ The default compression factor is 2.
 
 ### 4.3.9.	Example
 
+```
 [Server_Data_Sources_Index]
 DatasourceCount=2
 Datasource0Location=C:\Maps\BasicMap\BasicMap1.map
@@ -543,6 +574,7 @@ SupportPNG24=1
 [MapLink_Standard_Configuration]
 Std_Config_Path=c:\program files\envitia\maplink pro\8.1\config
 Colour_List_Location=c:\maps\wms.pal
+```
 
 
 ## 4.4.	Supplied MapLink WMS Plug-Ins
@@ -572,6 +604,8 @@ Unlike the Basic and Historical Map plug-ins, the Super Map plug-in supports Get
 http://www.envitia.com/schemas/maplinkwms/supermapplugin/getfeatureinfo/1.0/GetFeatureInfo.xsd
  
 The following example shows the default output format of GetFeatureInfo requests:
+
+```xml
 <FeatureCollection xmlns="http://www.envitia.com/schemas/maplinkwms/supermapplugin/getfeatureinfo"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -586,6 +620,8 @@ The following example shows the default output format of GetFeatureInfo requests
     <Physical_Level>50</Physical_Level>
   </Polygon>
 </FeatureCollection>
+```
+
 In addition, the Super Map plug-in allows extra response formats to be generated through user-supplied XSL transforms  that process the default XML document into the desired format.
 The Super Map plug-in has two modes of configuration, henceforth referred to as 'single map mode' and 'multi-map mode'. The configuration mode used determines how the MapLink map or maps used as the data sources are served from the WMS. In both cases its plug-in string would be 'supermapplugin' on Windows and ‘SuperMapWMS_plugin’ on all other platforms.
 
@@ -599,6 +635,7 @@ This format is very similar to that output from the BMCCreator utility, but allo
 The second piece of functionality allows for the user-defined GetFeatureInfo formats mentioned in section 5.4.4 to be specified through the optional GetFeatureInfoResponseList element. Within this element a list of ResponseFormat elements can be provided, each of which defines an additional response format to be advertised by the server. The transform, advertisedFormat and mimeType attributes must be provided for each response format and define the location of the XSL transform that should be run on the normal XML output document before being returned to the client, the value for the Format string that will be listed in the server's GetFeatureInfo format list and the MIME type that will be used for the responses respectively. The optional WMSCapabilities1_0_0Format attribute is only used when clients issue requests using version 1.0.0 of the WMS standard. This version restricts advertised GetFeatureInfo formats to the second part of the MIME type and thus cannot use the same configuration setting. If this attribute is not specified, the response format will not be advertised to clients using version 1.0.0 of the WMS standard.
 The following example configuration file shows the extended single map mode configuration format:
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <SuperMapConfiguration   xmlns="http://www.envitia.com/schemas/maplinkwms/supermapplugin"
    xmlns:wms="http://www.opengis.net/wms"
@@ -640,6 +677,7 @@ mapDataLayerCount="50" mapDataLayerCacheSize="262144" symbolTextViewExpansion="1
     <ResponseFormat transform="/path/to/xml_html.xsl" 				advertisedFormat="text/html" mimeType="text/html" 	WMSCapabilities1_0_0Format="HTML"/>
   </GetFeatureInfoResponseList>
 </SuperMapConfiguration>
+```
 
 #### 4.4.4.2.	Multi-Map Mode
 
@@ -650,6 +688,8 @@ The element type used to contain all of the source layers defines how the MapLin
 Within this element is a list of the MapLink maps to use as data sources. If a map has historical information it should be listed using the HistoricalMapMultiVersion element, with the archiveDirectory attribute set to the location of the archive directory of the map. Unlike the Historical Map plug-in, this directory does not have to be in the same folder as the .map file. If the map does not have historical information it should be listed using the HistoricalMapVersion element with the timestamp attribute set to the time that the MapLink map represents.
 Regardless of which element is used to identify the MapLink map location, the id attribute should be set to a unique value. This identifier is used to match the data sources listed within the Spatial Data configuration file to the WMS layer configurations within the data source's configuration file.
 The following example demonstrates a Spatial Data configuration file that includes MapLink maps with and without historical information:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <SuperMapDataSource xmlns="http://www.envitia.com/schemas/maplinkwms/supermapplugin/datasource"
    xmlns:wms="http://www.opengis.net/wms"
@@ -661,6 +701,7 @@ The following example demonstrates a Spatial Data configuration file that includ
     <HistoricalMapVersion sourceMap="/path/to/normal_map/map0.map" 	timestamp="2010-11-25T11:45:09Z" id="3"/>
   </HistoricalMap>
 </SuperMapDataSource>
+```
 
 In multi-map mode the WMS data source configuration file uses the SuperMultiMapConfiguration element as its root node. This element has a list of SuperMapConfiguration child elements that define the WMS layer configurations for each of the data sources defined within the Spatial Data configuration file. The contents of each SuperMapConfiguration element is the same as if the data source was being used in single map mode, with the following exceptions:
 •	The additional id attribute must be set to the same value as used in the attribute of the same name for the data source.
@@ -671,6 +712,8 @@ Additionally, the following restrictions apply when using multiple MapLink maps 
 •	The bounding boxes of a WMS layer should be consistent across all definitions of that layer.
 •	The value of the queryable attribute of a WMS layer should be consistent across all definitions of that layer.
 The following example demonstrates the corresponding configuration for the above Spatial Data example configuration:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <SuperMultiMapConfiguration xmlns="http://www.envitia.com/schemas/maplinkwms/supermapplugin"
    xmlns:wms="http://www.opengis.net/wms"
@@ -728,6 +771,7 @@ mapDataLayerCount="50" mapDataLayerCacheSize="262144" symbolTextViewExpansion="1
     <ResponseFormat transform="/path/to/xml_html.xsl" 	advertisedFormat="text/html" mimeType="text/html" 	WMSCapabilities1_0_0Format="HTML"/>
   </GetFeatureInfoResponseList>
 </SuperMultiMapConfiguration>
+```
 
 ### 4.4.5.	The CADRG Map Plug-In
 
@@ -763,12 +807,19 @@ Make sure you have Docker 1.29+ installed on your Linux box.
 ### 4.6.2.	Building The WMS Docker Image
 
 Build the WMS image using the following command:
+
+```
 docker build -t maplink-wms:11.2.5.0 -f redist64/docker/wms/Dockerfile .
+```
 
 ### 4.6.3.	Running The WMS Container
 
 Run the container using the following command:
-docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps --name maplink-wms -d maplink-wms:11.2.5.0 
+
+```
+docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps --name maplink-wms -d maplink-wms:11.2.5.0
+```
+
 Where: 
 •	/home/user/wms/maps is the root of your maps folder.
 •	8022 is the port where the container gets mapped on your Docker host.
@@ -778,19 +829,34 @@ Replace the host with your linux host name/ip.
 
 ### 4.6.4.	Stopping The Container
 
+```
 docker stop maplink-wms
 docker rm maplink-wms
+```
+
 NOTE: the container has to be removed before starting it again.
 
 ### 4.6.5.	Customising Your WMS Configuration
 
 Create a folder on your host for your base configuration.
-E.g. mkdir -p /home/user/wms/baseconfig
+
+E.g. 
+
+```
+mkdir -p /home/user/wms/baseconfig
+```
+
 Copy the example base config from redist64/docker/wms/baseconfig.ini to the baseconfig folder.
+
 Edit the configuration file, as outlined in 5.3.
+
 Run the container using:
+
+```
 docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps -v /home/user/wms/baseconfig:/opt/wms/baseconfig --name maplink-wms -d maplink-wms:11.2.5.0
+```
 Where:
+
 /home/user/wms/maps - Is the root of your maps folder.
 /home/user/wms/baseconfig - Contains the base configuration file called baseconfig.ini
 
@@ -886,6 +952,7 @@ The following example demonstrates a configuration file which has the following 
 •	Both defined LanguageSpecificMetadata elements include the same Service Identification and Service Provider sub elements.
 •	Both defined LanguageSpecificMetadata elements include OperationsMetadata sub element which describe the service's end-points using the DYNAMIC keyword.
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mwps:WPSConfiguration 
   xmlns:mwps="http://www.envitia.com/schemas/maplinkwps" 
@@ -1042,6 +1109,7 @@ The following example demonstrates a configuration file which has the following 
     </ows:OperationsMetadata>
   </mwps:LanguageSpecificMetadata>
 </mwps:WPSConfiguration>
+```
 
 ## 5.4.	WPS Router Plugin
 
@@ -1054,6 +1122,8 @@ Before the deployment of a WPS Plugin can take place it is assumed all WPS deplo
 •	Leave the DataPath xml element empty as it is not used.
 
 Sample:
+
+```xml
 <mwps:DataSource>
   <mwps:Plugin>RouterWPSplugin</mwps:Plugin>
   <mwps:DataPath></mwps:DataPath>
@@ -1061,6 +1131,7 @@ Sample:
     config\plugins\RouterWPSplugin.ini
   </mwps:ConfigPath>
 </mwps:DataSource>
+```
 
 Check through the RouterWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that the following entries will require attention:
 •	The ‘transformsDatFile’ value at the top of the configuration file.
@@ -1069,14 +1140,26 @@ Check through the RouterWPSplugin.ini file.  The configuration file’s comments
 ### 5.4.2.	Describe Process
 
 Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=RouteWPS
+```
+
 Sample POST Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?
+```
+
 POST data:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <wps:DescribeProcess  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
    <ows:Identifier>RouteWPS</ows:Identifier>
  </wps:DescribeProcess >
+```
+
 The response to this request will provide:
 •	A list of network definitions available
 •	A list of available Route Algorithms (short or quick)
@@ -1087,8 +1170,12 @@ The response to this request will provide:
 
 ### 5.4.3.	Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteWPS&datainputs=network=63843-SZ1085;routeAlgorithm=shortest;start_lon=-1.7786362;start_lat=50.7356394;end_lon=-1.7804886;end_lat=50.7355128;costAlgorithm=simple;vehicleType=car&responsedocument=gml;directions
+```
+
 Sample POST Call
 See Section 7.1.1.
 
@@ -1157,6 +1244,8 @@ Before the deployment of a WPS Plugin can take place it is assumed all WPS deplo
 •	Leave the DataPath xml element empty as it is not used.
 
 Sample:
+
+```xml
 <mwps:DataSource>
   <mwps:Plugin>ViewShedWPSplugin</mwps:Plugin>
   <mwps:DataPath></mwps:DataPath>
@@ -1164,20 +1253,32 @@ Sample:
     config\plugins\ViewShedWPSplugin.ini
   </mwps:ConfigPath>
 </mwps:DataSource>
+```
 
 Check through the ViewShedWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that each ‘SourceData’ section must be scrutinised.
 
 ### 5.5.2.	Describe Process
 
 Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=ViewShedWPS
+```
+
 Sample POST Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?
+```
+
 POST data:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <wps:DescribeProcess  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
    <ows:Identifier>ViewShedWPS</ows:Identifier>
  </wps:DescribeProcess >
+```
 
 Available Options
 In the sample above the ‘ViewShedWPS’ value represents the standard Single View Shed service. The available options for services are:
@@ -1192,7 +1293,10 @@ The response to this request will provide details of the parameters and outputs 
 ### 5.5.3.	Single View Shed Execute
 
 Sample GET Call 
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=ViewShedWPS&datainputs=source=sanfran;view_lat=37.711949;view_lon=-122.308167;view_height=0;view_htype=groundHeight;view_minRadius=0;view_maxRadius=10000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-122.384258,37.716004,-122.357822,37.734605,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
+```
 
 Sample POST Call
 See Section 7.1.2.
@@ -1254,8 +1358,12 @@ Note: Complex binary data (image data) cannot be returned through the response d
 
 ### 5.5.4.	Multi View Shed Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=MultiViewShedWPS&datainputs=source=sanfran;viewPoints=-122.308167,37.711949,0;view_htype=groundHeight;view_maxRadius=10000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-122.384258,37.716004,-122.357822,37.734605,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
+```
+
 Sample POST Call
 See Section 7.1.3.
 
@@ -1318,8 +1426,12 @@ Note: Complex binary data (image data) cannot be returned through the response d
  
 ### 5.5.5.	Route View Shed Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteViewShedWPS&datainputs=source=britsouth;routePoints=51.1244288,-1.8908794,51.1244876,-1.8914126,51.1245858,-1.8921404,51.1245918,-1.892175;viewShedPointSpacing=300;view_height=0;view_htype=groundHeight;view_maxRadius=3000;target_height=0;target_htype=groundHeight;requiredDisplayWidth=800;requiredDisplayHeight=600;requiredDisplayExtent=-1.98,51.096,-1.7925,51.2125,EPSG:4326;displayStyle=redGreen&RawDataOutput=image=@mimetype=image/png
+```
+
 Sample POST Call
 See Section 7.1.4.
 
@@ -1385,8 +1497,12 @@ Note: Complex binary data (image data) cannot be returned through the response d
  
 ### 5.5.6.	Route Breakdown Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=RouteBreakdownWPS&datainputs=routePoints=51.1244288,-1.8908794,51.1247762,-1.8931956;viewShedPointSpacing=100&RawDataOutput=gmlDoc=@mimetype=text/xml
+```
+
 Sample POST Call
 See Section 7.1.5.
 
@@ -1452,6 +1568,8 @@ Before the deployment of a WPS Plugin can take place it is assumed all WPS deplo
 •	Leave the DataPath xml element empty as it is not used.
 
 Sample:
+
+```xml
 <mwps:DataSource>
   <mwps:Plugin>TerrainProfileWPSPlugin</mwps:Plugin>
   <mwps:DataPath></mwps:DataPath>
@@ -1459,28 +1577,44 @@ Sample:
 config\plugins\ViewShedWPSplugin.ini
   </mwps:ConfigPath>
 </mwps:DataSource>
+```
 
 Check through the TerrainProfileWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that each ‘SourceData’ section must be scrutinised.
 
 ### 5.6.2.	Describe Process
 
 Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=TerrainProfileWPS
+```
+
 Sample POST Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?
+```
+
 POST data:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <wps:DescribeProcess  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
    <ows:Identifier>TerrainProfileWPS</ows:Identifier>
  </wps:DescribeProcess >
+```
 
 Response Description
 The response to this request will provide details of the parameters and outputs each service provides.
 
 ### 5.6.3.	Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=TerrainProfileWPS&datainputs=source=sanfran;profilePoints=37.726258,-122.111137,37.724840,-122.108669;viewShedPointSpacing=100;requiredDisplayWidth=800;requiredDisplayHeight=600;displayStyle=clearVis&RawDataOutput=image=@mimetype=image/png
+```
+
 Sample POST Call
 See Section 7.1.6.
 
@@ -1540,6 +1674,8 @@ Before the deployment of a WPS Plugin can take place it is assumed all WPS deplo
 •	Leave the DataPath xml element empty as it is not used.
 
 Sample:
+
+```xml
 <mwps:DataSource>
   <mwps:Plugin>ImportRasterWPSPlugin</mwps:Plugin>
   <mwps:DataPath></mwps:DataPath>
@@ -1547,28 +1683,45 @@ Sample:
 config\plugins\ImportRasterWPSplugin.ini
   </mwps:ConfigPath>
 </mwps:DataSource>
+```
 
 Check through the ImportRasterWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean. 
 
 ### 5.7.2.	Describe Process
 
 Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=DescribeProcess&version=1.0.0&identifier=ImportRasterWPS
+```
 
 Sample POST Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?
+```
+
 POST data:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <wps:DescribeProcess  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
    <ows:Identifier>ImportRasterWPS</ows:Identifier>
  </wps:DescribeProcess >
+```
+
 Response Description
+
 The response to this request will provide details of the parameters and outputs each service provides.
 
 ### 5.7.3.	Execute
 
-Sample GET Call 
+Sample GET Call
+
+```
 http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&version=1.0.0&identifier=TerrainProfileWPS&datainputs=source=sanfran;profilePoints=37.726258,-122.111137,37.724840,-122.108669;viewShedPointSpacing=100;requiredDisplayWidth=800;requiredDisplayHeight=600;displayStyle=clearVis&RawDataOutput=image=@mimetype=image/png
+```
+
 Sample POST Call
 See Section 7.1.6.
 
@@ -1625,6 +1778,8 @@ Note: Complex binary data (image data) cannot be returned through the response d
 ### 6.1.1.	Router
 
 Calculate a route with a response document returned
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>RouteWPS</ows:Identifier>
@@ -1697,8 +1852,11 @@ Calculate a route with a response document returned
     </wps:ResponseDocument>
   </wps:ResponseForm>
 </wps:Execute>
+```
 
 Calculate a route with a raw output returned
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>RouteWPS</ows:Identifier>
@@ -1766,10 +1924,13 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
+```
 
 ### 6.1.2.	Single View Shed
 
 Calculate a route with a response document returned
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_valid_identifier}</ows:Identifier>
@@ -1967,9 +2128,11 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
+```
 
 ### 6.1.3.	Multi View Shed
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_Multi_Service_Identifier}</ows:Identifier>   source=sanfran   view_lat=37.711949   view_lon=-122.308167   view_height=0   view_htype=groundHeight   view_minRadius=0   view_maxRadius=10000   target_height=0   target_htype=groundHeight   requiredDisplayWidth=800   requiredDisplayHeight=600   requiredDisplayExtent=-122.420041,37.612468,-122.167013,37.822128,EPSG:4326   displayStyle=redGreen   <wps:DataInputs>
@@ -2038,9 +2201,11 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
+```
 
 ### 6.1.4.	Route View Shed
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_Route_Service_Identifier}</ows:Identifier>
@@ -2125,9 +2290,11 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
+```
 
 ### 6.1.5.	Route Breakdown
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <wps:Execute  service="WPS"  version="1.0.0" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" >
   <ows:Identifier>${WPS_RouteBreakdown_Service_Identifier}</ows:Identifier>
@@ -2219,4 +2386,4 @@ Calculate a route with a raw output returned
     </wps:RawDataOutput>
   </wps:ResponseForm>
 </wps:Execute>
-
+```
