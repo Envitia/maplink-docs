@@ -1531,56 +1531,101 @@ See Section 7.1.2.
 #### 5.5.3.1.	Available Data Input Parameters
 
 source (Source Data)
-•	This specifies which source data to perform a View Shed against.
-•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
+	•	This specifies which source data to perform a View Shed against.
+	
+	•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
 view_lat/view_lon (Viewing Location)
-•	This specifies the viewing location for the View Shed.
-•	The coordinate system these points must be in WGS84 (lat/lon).
+	
+	•	This specifies the viewing location for the View Shed.
+	
+	•	The coordinate system these points must be in WGS84 (lat/lon).
+
 view_height (Viewing Height)
-•	This specifies the viewing height in meters.
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
-•	This parameter is used in conjunction with the ‘view_htype’ parameter.
+	
+	•	This specifies the viewing height in meters.
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	This parameter is used in conjunction with the ‘view_htype’ parameter.
+
 view_htype (Viewing Height Type)
-•	This specifies where the ‘view_height’ originates from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code.
-view_maxRadius (Viewing Maximum Radius)
-•	This specifies the maximum radius of the view shed.
-•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
+	•	This specifies where the ‘view_height’ originates from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code.
+	
+	view_maxRadius (Viewing Maximum Radius)
+	
+	•	This specifies the maximum radius of the view shed.
+	
+	•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
 target_height (Target Height)
-•	This specifies the target height in meters.
-•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
-•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
+	•	This specifies the target height in meters.
+	
+	•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
 target_htype (Target Height Type)
-•	This specifies where the ‘target_height’ originates from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code.
+
+	•	This specifies where the ‘target_height’ originates from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code.
+
 requiredDisplayWidth/requiredDisplayHeight (Required Display)
-•	These two parameters define the resulting image’s size in pixels.
-•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+	
+	•	These two parameters define the resulting image’s size in pixels.
+	
+	•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+
 requiredDisplayExtent (Required Display Extent)
-•	This specifies the lat/lon bounding box the resulting image will cover.
+	
+	•	This specifies the lat/lon bounding box the resulting image will cover.
+
 displayStyle (Display Style)
-•	This specifies the display style to use when generating the View Shed image.
-•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
+
+	•	This specifies the display style to use when generating the View Shed image.
+	
+	•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
+
 5.5.3.2.	Response Document/ Raw Data Parameters
+
 There is only one type of output, which is the resulting View Shed image. 
+
 Available Formats
+
 There are two available image formats:
-•	png
-•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
+
+	•	png
+	•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
+
 Note: The resulting format will not have an alpha channel.
+
 Distribution
+
 There are two ways of distributing the image:
-•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
-•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
+
+	•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
+	•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
+
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
 
 ### 5.5.4.	Multi View Shed Execute
@@ -1597,59 +1642,100 @@ See Section 7.1.3.
 #### 5.5.4.1.	Available Data Input Parameters
 
 source (Source Data)
-•	This specifies which source data to perform a View Shed against.
-•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
+	•	This specifies which source data to perform a View Shed against.
+	
+	•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
 viewPoints (Viewing Location)
-•	This specifies a set of viewing locations, each which will generate a View Shed 
-•	The XY points of the viewing location must be in WGS84 (lat/lon)
-•	Each location will also specify a height in meters.  
-•	The height will either be the absolute height or the surface height (this is defined by the ‘view_htype’ parameter
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
+	•	This specifies a set of viewing locations, each which will generate a View Shed 
+	
+	•	The XY points of the viewing location must be in WGS84 (lat/lon)
+	
+	•	Each location will also specify a height in meters.  
+	
+	•	The height will either be the absolute height or the surface height (this is defined by the ‘view_htype’ parameter
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
 view_htype (Viewing Height Type)
-•	This specifies where the viewing height points originate from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code 
-view_maxRadius (Viewing Maximum Radius)
-•	This specifies the maximum radius of the view shed.
-•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
+	•	This specifies where the viewing height points originate from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code 
+	
+	view_maxRadius (Viewing Maximum Radius)
+	
+	•	This specifies the maximum radius of the view shed.
+	
+	•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
 target_height (Target Height)
-•	This specifies the target height in meters.
-•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
-•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
+	•	This specifies the target height in meters.
+	
+	•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
 target_htype (Target Height Type)
-•	This specifies where the ‘target_height’ originates from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code 
+
+	•	This specifies where the ‘target_height’ originates from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code 
+
 requiredDisplayWidth/requiredDisplayHeight (Required Display)
-•	These two parameters define the resulting image’s size in pixels.
-•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+
+	•	These two parameters define the resulting image’s size in pixels.
+	
+	•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+
 requiredDisplayExtent (Required Display Extent)
-•	This specifies the lat/lon bounding box the resulting image will cover.
+
+	•	This specifies the lat/lon bounding box the resulting image will cover.
+
 displayStyle (Display Style)
-•	This specifies the display style to use when generating the View Shed image.
-•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
+
+	•	This specifies the display style to use when generating the View Shed image.
+	
+	•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
 
 #### 5.5.4.2.	Response Document/ Raw Data Parameters
 
 There is only one type of output, which is the resulting View Shed image. 
-Available Formats
-There are two available image formats:
-•	png
-•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
-Note: The resulting format will not have an alpha channel.
-Distribution
-There are two ways of distributing the image:
-•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
-•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
-Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
 
+Available Formats
+
+There are two available image formats:
+
+	•	png
+	•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
+
+Note: The resulting format will not have an alpha channel.
+
+Distribution
+
+There are two ways of distributing the image:
+
+	•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
+	•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
+
+Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
  
 ### 5.5.5.	Route View Shed Execute
 
@@ -1665,61 +1751,107 @@ See Section 7.1.4.
 #### 5.5.5.1.	Available Data Input Parameters
 
 source (Source Data)
-•	This specifies which source data to perform a View Shed against.
-•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
+	•	This specifies which source data to perform a View Shed against.
+	
+	•	The available source data are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘SourceData’ sections.
+
 routePoints (Viewing Location)
-•	This is a GML string.
-•	This specifies a set of viewing locations, each which will generate a View Shed 
-•	The XY points of the viewing location must be in WGS84 (lat/lon)
+
+	•	This is a GML string.
+	
+	•	This specifies a set of viewing locations, each which will generate a View Shed 
+	
+	•	The XY points of the viewing location must be in WGS84 (lat/lon)
+
 viewShedPointSpacing
-•	This defines the number of meters to exist between each point of the new version of the route.
+	
+	•	This defines the number of meters to exist between each point of the new version of the route.
+
 view_height (Viewing Height)
-•	This specifies the viewing height in meters.
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
-•	This parameter is used in conjunction with the ‘view_htype’ parameter.
+
+	•	This specifies the viewing height in meters.
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	This parameter is used in conjunction with the ‘view_htype’ parameter.
+
 view_htype (Viewing Height Type)
-•	This specifies where the viewing height points originate from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code 
+
+	•	This specifies where the viewing height points originate from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code 
+
 view_maxRadius (Viewing Maximum Radius)
-•	This specifies the maximum radius of the view shed.
-•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
+	•	This specifies the maximum radius of the view shed.
+	
+	•	The maximum radius for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+
 target_height (Target Height)
-•	This specifies the target height in meters.
-•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
-•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
-•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
+	•	This specifies the target height in meters.
+	
+	•	This means the resulting image will only show consider a point visible if it is visible at the height specified by both this parameter and the ‘target_htype’ parameter.
+	
+	•	The maximum height for any particular source data is defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	This parameter is used in conjunction with the ‘target_htype’ parameter.
+
 target_htype (Target Height Type)
-•	This specifies where the ‘target_height’ originates from.
-•	There are two options:
-o	Surface Height
-o	Absolute Height
-•	Available height types are defined in code 
+
+	•	This specifies where the ‘target_height’ originates from.
+	
+	•	There are two options:
+		o	Surface Height
+		o	Absolute Height
+	
+	•	Available height types are defined in code 
+
 requiredDisplayWidth/requiredDisplayHeight (Required Display)
-•	These two parameters define the resulting image’s size in pixels.
-•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+
+	•	These two parameters define the resulting image’s size in pixels.
+	
+	•	The image is first generated based on the source data’s resolution, it is then scaled to fit the required size.
+
 requiredDisplayExtent (Required Display Extent)
-•	This specifies the lat/lon bounding box the resulting image will cover.
+	
+	•	This specifies the lat/lon bounding box the resulting image will cover.
+
 displayStyle (Display Style)
-•	This specifies the display style to use when generating the View Shed image.
-•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
+
+	•	This specifies the display style to use when generating the View Shed image.
+	
+	•	The available display styles are defined in the ‘ViewShedWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Colour’ sections.
 
 #### 5.5.5.2.	Response Document/ Raw Data Parameters
 
 There is only one type of output, which is the resulting View Shed image. 
+
 Available Formats
+
 There are two available image formats:
-•	png
-•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
+
+	•	png
+	•	tiff - this is not always recognised by internet browsers, so can force a download instead of being able to view directly in the browser.
+
 Note: The resulting format will not have an alpha channel.
+
 Distribution
+
 There are two ways of distributing the image:
-•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
-•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
+
+	•	Raw Data Format - This will simply return the binary image directly in the response without any XML.
+	•	Response Document as reference - This will store the resulting image in the WPS store and will return a url via the XML response. The caller can use this url to access the image. The length of time the image will be stored is defined in the ‘MapLinkWPSConfiguration.xml’ file.
+
 Note: Complex binary data (image data) cannot be returned through the response document directly, only as a reference (this is as per the WPS specifications).
  
 ### 5.5.6.	Route Breakdown Execute
@@ -1731,6 +1863,7 @@ http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&versio
 ```
 
 Sample POST Call
+
 See Section 7.1.5.
 
 #### 5.5.6.1.	Available Data Input Parameters
