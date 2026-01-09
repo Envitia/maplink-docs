@@ -40,8 +40,8 @@ When deploying an OGC service, it is usually unnecessary to use the MapLink OGC 
 
 The following diagram demonstrates the use of this SDK :
 
-<TODO ADD DIAGRAM>
- 
+<img width="932" height="370" alt="image" src="https://github.com/user-attachments/assets/e089227e-c79d-40ab-9946-adf2d059078f" />
+
 Figure 1 - How the OGC Services SDK is used.
 
 1.	The supplied MapLinkOGCServices Java Servlet can be used to deploy a MapLink OGC Service using a Java Web Server such as Tomcat.
@@ -409,6 +409,10 @@ The reason that these three roles are separate is that two different plug-ins ma
 Alternatively, even the same plug-in may serve up the same spatial data in two different ways, resulting in two separate data sources. 
 
 The previous example is permissible as each data source, or link between a spatial data role and plug-in role, is defined by the service configuration file. 
+
+<img width="800" height="795" alt="image" src="https://github.com/user-attachments/assets/a3beb3ac-1f22-4036-928f-dbe26197b1bc" />
+
+Figure 2
 
 ### 4.2.2.	Plug-Ins to the MapLink WMS
 
