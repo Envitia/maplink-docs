@@ -370,40 +370,80 @@ This will enable additional error messages to be output to the console.
 
 ## 4.1.	Web Map Service Introduction
 
-A Web Map Service (WMS) produces maps of spatially referenced data dynamically from geographic information. The WMS international standard defines three operations that can be performed on such a server; one returns service-level metadata, ‘GetCapabilities’; another returns a map whose geographic and dimensional parameters are well-defined, ‘GetMap’; and an optional third operation returns information about particular features shown on a map, ‘GetFeatureInfo’. 
-A WMS is intended to be accessed either programmatically or using a standard web browser by submitting requests in the form of Uniform Resource Locators (URLs). The exact request string is dependent upon the operation being performed and the extra parameters that the operation requires. For instance a ‘GetMap’ request requires the width, height and geographic location, amongst other parameters, for the WMS to produce the returned image.
-The data that a WMS serves is divided into layers, where a single layer can have zero or more sub layers. These layers are advertised via the ‘GetCapabilities’ operation's response, the service Capabilities. The service Capabilities are an XML document based upon a well a standard defined schema or DTD. The exact schema or DTD followed is dependent upon the version of standard, but are similar in structure across all versions.
+A Web Map Service (WMS) produces maps of spatially referenced data dynamically from geographic information. 
+
+The WMS international standard defines three operations that can be performed on such a server; one returns service-level metadata, ‘GetCapabilities’; another returns a map whose geographic and dimensional parameters are well-defined, ‘GetMap’; and an optional third operation returns information about particular features shown on a map, ‘GetFeatureInfo’. 
+
+A WMS is intended to be accessed either programmatically or using a standard web browser by submitting requests in the form of Uniform Resource Locators (URLs). 
+
+The exact request string is dependent upon the operation being performed and the extra parameters that the operation requires. For instance a ‘GetMap’ request requires the width, height and geographic location, amongst other parameters, for the WMS to produce the returned image.
+
+The data that a WMS serves is divided into layers, where a single layer can have zero or more sub layers. 
+
+These layers are advertised via the ‘GetCapabilities’ operation's response, the service Capabilities. 
+
+The service Capabilities are an XML document based upon a well a standard defined schema or DTD. 
+
+The exact schema or DTD followed is dependent upon the version of standard, but are similar in structure across all versions.
+
 Advertised layers can be generally split into two simple categories:
-•	Unnamed layers - These are often used to categorise their child layers or provide content information about their parent, but cannot be requested as part of a GetMap request. 
-•	Named layers - These can be requested as part of GetMap request.
+
+	•	Unnamed layers - These are often used to categorise their child layers or provide content information about their parent, but cannot be requested as part of a GetMap request. 
+	
+	•	Named layers - These can be requested as part of GetMap request.
 
 # 4.2.	The Structure of the MapLink WMS
 
 ### 4.2.1.	Introduction
 
-The MapLink WMS is designed to be as flexible as possible so that it can be used in many different scenarios. The server itself supports version 1.0.0, 1.1.0, 1.1.1 and 1.3.0 of the OGC standard. It uses a plug-in architecture, via a documented API, to load plug-ins that respond to incoming requests. 
-There are three terms that this section introduces: ‘plug-ins’, ‘spatial data’ and ‘data sources’. Figure 2 demonstrates how these roles interact within an instance of a WMS. The ‘spatial data’ role refers to the data that is used to create the WMS response, the ‘plug-in’ refers to the library that interprets the ‘spatial data’ and the ‘data source’ is the combination of a ‘spatial data’ and ‘plug-in’ role. 
-The reason that these three roles are separate is that two different plug-ins may serve the same spatial data differently. Alternatively, even the same plug-in may serve up the same spatial data in two different ways, resulting in two separate data sources. The previous example is permissible as each data source, or link between a spatial data role and plug-in role, is defined by the service configuration file. 
+The MapLink WMS is designed to be as flexible as possible so that it can be used in many different scenarios. 
+
+The server itself supports version 1.0.0, 1.1.0, 1.1.1 and 1.3.0 of the OGC standard. It uses a plug-in architecture, via a documented API, to load plug-ins that respond to incoming requests. 
+
+There are three terms that this section introduces: ‘plug-ins’, ‘spatial data’ and ‘data sources’. 
+
+Figure 2 demonstrates how these roles interact within an instance of a WMS. The ‘spatial data’ role refers to the data that is used to create the WMS response, the ‘plug-in’ refers to the library that interprets the ‘spatial data’ and the ‘data source’ is the combination of a ‘spatial data’ and ‘plug-in’ role. 
+
+The reason that these three roles are separate is that two different plug-ins may serve the same spatial data differently. 
+
+Alternatively, even the same plug-in may serve up the same spatial data in two different ways, resulting in two separate data sources. 
+
+The previous example is permissible as each data source, or link between a spatial data role and plug-in role, is defined by the service configuration file. 
 
 ### 4.2.2.	Plug-Ins to the MapLink WMS
 
-A plug-in to the MapLink WMS dictates both the type of spatial data that it can serve and the format of the configuration file that configures the data source it provides. The WMS service instance only sees the spatial data and configuration file as strings that are passed to the plug-in when creating a data source. For this reason these can refer to absolutely anything, although usually the configuration file will be a file path and the data source either a file path or database address.
-A number of pre-built WMS plug-ins are supplied with MapLink which are detailed in section 5.4 of this document. Alternately a MapLink WMS Plug-In SDK is also supplied to allow users to create their own plug-ins using custom data in conjunction with the normal MapLink framework of SDKs. For more information on this SDK please consult the MapLink Developer's Guide.
+A plug-in to the MapLink WMS dictates both the type of spatial data that it can serve and the format of the configuration file that configures the data source it provides. 
+
+The WMS service instance only sees the spatial data and configuration file as strings that are passed to the plug-in when creating a data source. 
+
+For this reason these can refer to absolutely anything, although usually the configuration file will be a file path and the data source either a file path or database address.
+
+A number of pre-built WMS plug-ins are supplied with MapLink which are detailed in section 5.4 of this document.
+
+Alternately a MapLink WMS Plug-In SDK is also supplied to allow users to create their own plug-ins using custom data in conjunction with the normal MapLink framework of SDKs. 
+
+For more information on this SDK please consult the MapLink Developer's Guide.
  
 ### 4.2.3.	Data Sources
-Each deployed data source provides a child layer to the root unnamed layer in the service Capabilities. It should provide at least one named sub layer to permit serving data. Figure 3 demonstrates this basic layer structure using two data sources.
+Each deployed data source provides a child layer to the root unnamed layer in the service Capabilities. 
+
+It should provide at least one named sub layer to permit serving data. Figure 3 demonstrates this basic layer structure using two data sources.
  
 # 4.3.	Configuring a MapLink WMS
 
 ### 4.3.1.	Introduction
 
-An instance of the MapLink WMS requires a configuration file to define what data sources it should serve up and how. This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
-This section is intended to serve as a reference, along with the example configuration file at the end, to describe how to configure a server. The format of the configuration file is that of a Windows INI file and as such appears under headings. The sub headings of most of the following sections correspond to the expected headings in the file. 
+An instance of the MapLink WMS requires a configuration file to define what data sources it should serve up and how. 
+
+This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
+
+This section is intended to serve as a reference, along with the example configuration file at the end, to describe how to configure a server. 
+
+The format of the configuration file is that of a Windows INI file and as such appears under headings. The sub headings of most of the following sections correspond to the expected headings in the file. 
+
 The Required column denotes whether the Key is required. If a required key is not provided a service exception will appear be returned whenever the service is accessed.
 
-### 4.3.2.	
-
-**Heading ‘Server_Data_Sources_Index’**
+### 4.3.2. **Heading ‘Server_Data_Sources_Index’**
 | Required | Key                       | Description                                                                                                                                                                                                                                                                                                                                                                 |
 |:--------:|-------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Y        | DatasourceCount           | Defines the number of data sources that are deployed on the WMS server. For each data source there is expected to be keys under this heading in the form:<br>DatasourceNLocation<br>DatasourceNPlugin<br>DatasourceNConfiguration<br>where N defines the index of that data source starting from 0.                                         |
@@ -412,9 +452,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | Y        | DatasourceNConfiguration  | The location of a configuration file used by the plug-in to define how the resource is to be served up. In certain cases a plug-in may not require such a file, but this key should still be defined and its value should be blank.                                                               |
 
 	
-### 4.3.3.	
-
-** Heading ‘Server_Properties’ **
+### 4.3.3. ** Heading ‘Server_Properties’ **
 
 | Required | Key                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |:--------:|------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -429,9 +467,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | ServiceMaxHeight         | The maximum height, in pixels, of a GetMap request. If a user requests a larger height than permitted then the request will fail. If this value is not set then there is no limit placed.<br>WMS_Capabilities&gt;Service&gt;MaxHeight                                                                                                                                |
 | N        | ServiceProvider          | The URL of the service provider.<br>WMS_Capabilities&gt;Service&gt;ServiceProvider                                                                                                                                                                                                                                                                                                                            |
 
-### 4.3.4.	
-
-** Heading ‘Service_Contact’ **
+### 4.3.4.	** Heading ‘Service_Contact’ **
 
 | Required | Key                          | Description                                                                                                                                                                      |
 |:--------:|----------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -449,9 +485,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | ContactEmailAddress          | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactElectronicMailAddress                                        |
 
  
-### 4.3.5.	
-
-** Heading ‘Service_Addresses’ **
+### 4.3.5.	** Heading ‘Service_Addresses’ **
 
 | Required | Key                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |:--------:|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -465,18 +499,14 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | GetFeatureInfoAddressNGet        | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Get.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Get&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
 | N        | GetFeatureInfoAddressNPost       | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Post.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Post&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
  
-### 4.3.6.	
-
-** Heading ‘Root_Layer_Details’ **
+### 4.3.6.	** Heading ‘Root_Layer_Details’ **
 
 | Required | Key            | Description                                                                                                                                                                                                                   |
 |:--------:|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Y        | RootLayerTitle | The title given to the root layer of the WMS as defined in the GetCapabilities.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;Title                                                     |
 | N        | RootLayerCRS   | The root coordinate reference system attributed to the root layer of WMS as defined in the GetCapabilities. If this value is set then all data sources must conform to this coordinate system, so it is not usually set.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;CRS |
 
-### 4.3.7.	
-
-** Heading ‘Response_Configuration_Details’ ** 
+### 4.3.7.	** Heading ‘Response_Configuration_Details’ ** 
 
 Required	Key	Description
 N	DrawingSurfacePoolSize	This numerical value defines the maximum number of MapLink drawing surfaces that are created in a server pool. If none of the plug-ins loaded on the server use a MapLink Drawing Surface then this value will be irrelevant.
