@@ -443,7 +443,7 @@ The format of the configuration file is that of a Windows INI file and as such a
 
 The Required column denotes whether the Key is required. If a required key is not provided a service exception will appear be returned whenever the service is accessed.
 
-### 4.3.2. **Heading ‘Server_Data_Sources_Index’**
+### 4.3.2. Heading ‘Server_Data_Sources_Index’
 | Required | Key                       | Description                                                                                                                                                                                                                                                                                                                                                                 |
 |:--------:|-------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Y        | DatasourceCount           | Defines the number of data sources that are deployed on the WMS server. For each data source there is expected to be keys under this heading in the form:<br>DatasourceNLocation<br>DatasourceNPlugin<br>DatasourceNConfiguration<br>where N defines the index of that data source starting from 0.                                         |
@@ -452,7 +452,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | Y        | DatasourceNConfiguration  | The location of a configuration file used by the plug-in to define how the resource is to be served up. In certain cases a plug-in may not require such a file, but this key should still be defined and its value should be blank.                                                               |
 
 	
-### 4.3.3. ** Heading ‘Server_Properties’ **
+### 4.3.3. Heading ‘Server_Properties’
 
 | Required | Key                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |:--------:|------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -467,7 +467,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | ServiceMaxHeight         | The maximum height, in pixels, of a GetMap request. If a user requests a larger height than permitted then the request will fail. If this value is not set then there is no limit placed.<br>WMS_Capabilities&gt;Service&gt;MaxHeight                                                                                                                                |
 | N        | ServiceProvider          | The URL of the service provider.<br>WMS_Capabilities&gt;Service&gt;ServiceProvider                                                                                                                                                                                                                                                                                                                            |
 
-### 4.3.4.	** Heading ‘Service_Contact’ **
+### 4.3.4.	Heading ‘Service_Contact’
 
 | Required | Key                          | Description                                                                                                                                                                      |
 |:--------:|----------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -485,7 +485,7 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | ContactEmailAddress          | The contact details defined in the GetCapabilities.<br>WMS_Capabilities&gt;Service&gt;ContactInformation&gt;ContactElectronicMailAddress                                        |
 
  
-### 4.3.5.	** Heading ‘Service_Addresses’ **
+### 4.3.5.	Heading ‘Service_Addresses’
 
 | Required | Key                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |:--------:|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -499,68 +499,32 @@ The Required column denotes whether the Key is required. If a required key is no
 | N        | GetFeatureInfoAddressNGet        | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Get.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Get&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
 | N        | GetFeatureInfoAddressNPost       | The Nth address of this server or mirror server where a GetFeatureInfo request can be serviced via a HTTP Post.<br>If this is set to "DYNAMIC", then the value that appears in the capabilities will be set to the address used to access the capabilities.<br>WMS_Capabilities&gt;Capability&gt;Request&gt;GetFeatureInfo&gt;DCPType&gt;HTTP&gt;Post&gt;OnlineResource                                                                                                                                                                                                                                                                                                                                                                                                |
  
-### 4.3.6.	** Heading ‘Root_Layer_Details’ **
+### 4.3.6.	Heading ‘Root_Layer_Details’
 
 | Required | Key            | Description                                                                                                                                                                                                                   |
 |:--------:|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Y        | RootLayerTitle | The title given to the root layer of the WMS as defined in the GetCapabilities.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;Title                                                     |
 | N        | RootLayerCRS   | The root coordinate reference system attributed to the root layer of WMS as defined in the GetCapabilities. If this value is set then all data sources must conform to this coordinate system, so it is not usually set.<br>WMS_Capabilities&gt;Capability&gt;Layer&gt;CRS |
 
-### 4.3.7.	** Heading ‘Response_Configuration_Details’ ** 
+### 4.3.7.	Heading ‘Response_Configuration_Details’
 
-Required	Key	Description
-N	DrawingSurfacePoolSize	This numerical value defines the maximum number of MapLink drawing surfaces that are created in a server pool. If none of the plug-ins loaded on the server use a MapLink Drawing Surface then this value will be irrelevant.
-If a drawing surface is required by a plug-in however, then rather than creating its own one, it should request one from the pool administered by the server. This is to prevent threading issues concerning the use of multiple Drawing Surfaces.
-The size of the pool must be limited to stop the server running out of resources under heavy load. Higher values permit servicing of more concurrent requests but use more resources; lower values limit the number of requests and should stop the server falling over under heavy load. 
-A maximum pool size of between 10 and 20 is recommended, but for high specification servers it may be possible to increase this value. Experimentation is certainly the best way to find a suitable balance.
-Please note that the pool is only populated as needed until the maximum pool size is reached. The pool is not allocated on start-up of the WMS.
-If this value is not specified then a default value of 20 is used.
-N	TransparentColourR
-TransparentColourG
-TransparentColourB	To enable transparent raster responses to GetMap requests, a global transparent colour is used. This should be defined as a colour that will not appear in the responses of any of the data sources or else that part of the image will also appear transparent.
-These values represent the 0-255 red, green and blue components of the transparent colour. The default for each colour channel is 0 if they are not specified.
-N	UseBGCOLORasTransparentColour	Certain third party WMS viewers do not correctly support image transparency, instead treating a certain colour value as transparent. In most cases, they supply this colour through the BGCOLOR parameter, along with requesting a transparent response.
-While this is not required by the WMS, it is also not strictly forbidden. This option therefore, allows the BGCOLOR value passed to be used as the transparent colour in responses. If the response format also supports transparency, this colour will be set as the transparent colour in the response image.
-To enable this feature, set this value to be non-zero. The default is 0, meaning turned off.
-N	SupportPNG24 [deprecated]	Certain WMS clients will only handle PNG transparency through the use of an alpha channel, rather than a designated colour value. Performing a GetMap  request to a MapLink WMS, using the request format "image/png" and transparency set to true, will use the latter type of PNG transparency.
-By adding this setting and using the value "1", an additional image request format will be offered called "image/png24" which will return a PNG using the alpha-channel for transparency.
-By default this additional format is not offered or advertised.
-N	SupportedFormat[1..n]
-SupportedMimeType[1..n]
-SupportedV100Format[1..n]	Each supported map format should include a set of attributes, each attribute having the same index suffix. A supported format must have a SupportedFormat attribute. SupportedMimeType and SupportedV100Format are optional.
-If these attributes exist, SupportPNG24 will not be checked. If you would set SupportPNG24, provide a SupportedFormat configuation for PNG24.
-If these attributes are not provided, the WMS will revert to the legacy built-in supported formats (GIF, PNG, TIFF, JPEG, [if SupportPNG24=1] PNG24).
-The configuration should look something like this: SupportedFormat1=image/png
-SupportedMimeType1=image/png
-SupportedV100Format1=PNG
-SupportedFormat2=image/tiff
-SupportedMimeType2=image/tiff
-SupportedV100Format2=TIFF
-...
-SupportedFormatn=image/jpeg
-SupportedMimeTypen=image/jpeg
-SupportedV100Formatn=JPEG
-N	EnableAntiAliasedFonts	This Boolean value specifies whether anti-aliasing is enabled for the server when rendering TrueType fonts.
-This setting only applies when running the server on Windows (using the GDI drawing surface).
-If this setting is not provided text anti-aliasing will be enabled. 
+| Required | Key | Description |
+|---------|-----|-------------|
+| N | DrawingSurfacePoolSize | This numerical value defines the maximum number of MapLink drawing surfaces that are created in a server pool. If none of the plug-ins loaded on the server use a MapLink Drawing Surface then this value will be irrelevant.<br><br>If a drawing surface is required by a plug-in however, then rather than creating its own one, it should request one from the pool administered by the server. This is to prevent threading issues concerning the use of multiple Drawing Surfaces.<br><br>The size of the pool must be limited to stop the server running out of resources under heavy load. Higher values permit servicing of more concurrent requests but use more resources; lower values limit the number of requests and should stop the server falling over under heavy load.<br><br>A maximum pool size of between 10 and 20 is recommended, but for high specification servers it may be possible to increase this value. Experimentation is certainly the best way to find a suitable balance.<br><br>Please note that the pool is only populated as needed until the maximum pool size is reached. The pool is not allocated on start-up of the WMS.<br><br>If this value is not specified then a default value of 20 is used. |
+| N | TransparentColourR<br>TransparentColourG<br>TransparentColourB | To enable transparent raster responses to GetMap requests, a global transparent colour is used. This should be defined as a colour that will not appear in the responses of any of the data sources or else that part of the image will also appear transparent.<br><br>These values represent the 0–255 red, green and blue components of the transparent colour. The default for each colour channel is 0 if they are not specified. |
+| N | UseBGCOLORasTransparentColour | Certain third party WMS viewers do not correctly support image transparency, instead treating a certain colour value as transparent. In most cases, they supply this colour through the BGCOLOR parameter, along with requesting a transparent response.<br><br>While this is not required by the WMS, it is also not strictly forbidden. This option therefore allows the BGCOLOR value passed to be used as the transparent colour in responses. If the response format also supports transparency, this colour will be set as the transparent colour in the response image.<br><br>To enable this feature, set this value to be non-zero. The default is 0, meaning turned off. |
+| N | SupportPNG24 *(deprecated)* | Certain WMS clients will only handle PNG transparency through the use of an alpha channel, rather than a designated colour value. Performing a GetMap request to a MapLink WMS, using the request format `image/png` and transparency set to true, will use the latter type of PNG transparency.<br><br>By adding this setting and using the value `1`, an additional image request format will be offered called `image/png24` which will return a PNG using the alpha-channel for transparency.<br><br>By default this additional format is not offered or advertised. |
+| N | SupportedFormat[1..n]<br>SupportedMimeType[1..n]<br>SupportedV100Format[1..n] | Each supported map format should include a set of attributes, each attribute having the same index suffix. A supported format must have a `SupportedFormat` attribute. `SupportedMimeType` and `SupportedV100Format` are optional.<br><br>If these attributes exist, `SupportPNG24` will not be checked. If you would set `SupportPNG24`, provide a `SupportedFormat` configuration for PNG24.<br><br>If these attributes are not provided, the WMS will revert to the legacy built-in supported formats (GIF, PNG, TIFF, JPEG, [if `SupportPNG24=1`] PNG24).<br><br>Example configuration:<br>`SupportedFormat1=image/png`<br>`SupportedMimeType1=image/png`<br>`SupportedV100Format1=PNG`<br>`SupportedFormat2=image/tiff`<br>`SupportedMimeType2=image/tiff`<br>`SupportedV100Format2=TIFF`<br>...<br>`SupportedFormatn=image/jpeg`<br>`SupportedMimeTypen=image/jpeg`<br>`SupportedV100Formatn=JPEG` |
+| N | EnableAntiAliasedFonts | This Boolean value specifies whether anti-aliasing is enabled for the server when rendering TrueType fonts.<br><br>This setting only applies when running the server on Windows (using the GDI drawing surface).<br><br>If this setting is not provided, text anti-aliasing will be enabled. |
 
  
-### 4.3.8.	
+### 4.3.8.	Heading ‘MapLink_Standard_Configuration’
 
-Heading ‘MapLink_Standard_Configuration’
-Required	Key	Description
-N	Std_Config_Path	If supplied, this is the path from which the standard MapLink configuration files are to be loaded. If this value is omitted, then the files are assumed to be present in the \config subdirectory of the MapLink installation on the local machine (whose location is found using TSLUtilityFunctions::getMapLinkHome())
-All instances of the MapLink WMS within a single process must share the same path. The first instance that is loaded will have this value examined and make the equivalent MapLink SDK call:
-TSLDrawingSurface::loadStandardConfig
-Further instances loaded into the same process will have this value ignored.
-N	Colour_List_Location	MapLink Maps loaded into any of the pre-built plug-ins will have their palette file suppressed to ensure thread safety. If any of the maps loaded in a MapLink WMS extend the standard palette, then these entities will not appear correctly unless this value is used. 
-Providing this value will use the palette file found at this location for the loading of all maps and will be set on all MapLink Drawing Surfaces.
-Omitting this value will mean that all maps loaded and all drawing surfaces will use the standard palette file loaded either from the \config directory of the MapLink installation on the local machine or via providing the Std_Config_Path value.
-All instances of the MapLink WMS within a single process must share the same path. The first instance that is loaded will have this value examined and make the equivalent MapLink SDK call:
-TSLDrawingSurface::setupColours
-Further instances loaded into the same process will have this value ignored.
-N	JPEG_Compression_Factor	Allows control over the compression factor used when a client requests a JPEG image from the MapLink WMS. Valid values are in the range 0,2-255. 0 equates to lossless JPEG, while the values 2-255 give increasingly lossy compression.
-The default compression factor is 2.
+| Required | Key | Description |
+|---------|-----|-------------|
+| N | Std_Config_Path | If supplied, this is the path from which the standard MapLink configuration files are to be loaded. If this value is omitted, then the files are assumed to be present in the `\config` subdirectory of the MapLink installation on the local machine (whose location is found using `TSLUtilityFunctions::getMapLinkHome()`).<br><br>All instances of the MapLink WMS within a single process must share the same path. The first instance that is loaded will have this value examined and make the equivalent MapLink SDK call:<br>`TSLDrawingSurface::loadStandardConfig`<br><br>Further instances loaded into the same process will have this value ignored. |
+| N | Colour_List_Location | MapLink Maps loaded into any of the pre-built plug-ins will have their palette file suppressed to ensure thread safety. If any of the maps loaded in a MapLink WMS extend the standard palette, then these entities will not appear correctly unless this value is used.<br><br>Providing this value will use the palette file found at this location for the loading of all maps and will be set on all MapLink Drawing Surfaces.<br><br>Omitting this value will mean that all maps loaded and all drawing surfaces will use the standard palette file loaded either from the `\config` directory of the MapLink installation on the local machine or via providing the `Std_Config_Path` value.<br><br>All instances of the MapLink WMS within a single process must share the same path. The first instance that is loaded will have this value examined and make the equivalent MapLink SDK call:<br>`TSLDrawingSurface::setupColours`<br><br>Further instances loaded into the same process will have this value ignored. |
+| N | JPEG_Compression_Factor | Allows control over the compression factor used when a client requests a JPEG image from the MapLink WMS. Valid values are in the range `0, 2–255`. `0` equates to lossless JPEG, while the values `2–255` give increasingly lossy compression.<br><br>The default compression factor is `2`. |
 
 ### 4.3.9.	Example
 
@@ -630,26 +594,63 @@ Colour_List_Location=c:\maps\wms.pal
 
 ### 4.4.1.	Introduction
 Envitia supplies some pre built WMS plug-ins that facilitate serving common spatial data. This section will outline those plug-ins, what they're for and how to configure them.
+
 Note: The plugins are in the plugins directory of the bin64 folder.
 
 ### 4.4.2.	The Basic Map Plug-In
+
 This plug-in is largely deprecated as using the Super Map Plug-In offers far better performance and reduced memory foot print.
-The basic map plug-in is used to serve standard MapLink maps, built using MapLink Studio, in a customisable manner. In this case the spatial data would be the fully qualified path to the MapLink map, the plug-in would be the ‘basicmapplugin’ (BasicMapWMS_plugin on Linux) and the configuration file would be a fully qualified path to an xml file.
+
+The basic map plug-in is used to serve standard MapLink maps, built using MapLink Studio, in a customisable manner. 
+
+In this case the spatial data would be the fully qualified path to the MapLink map, the plug-in would be the ‘basicmapplugin’ (BasicMapWMS_plugin on Linux) and the configuration file would be a fully qualified path to an xml file.
+
 The XML configuration file can be created using the BMCCreator utility supplied with MapLink. This utility allows different map features to be associated with WMS layers as well as configuring all the standard WMS layer attributes. 
+
 To create a configuration manually, the schema for the configuration file can be used as a reference. It can be access from the Envitia website at the following URL:
+
 http://www.envitia.com/schemas/maplinkwms/basicmapplugin/1.0/BasicMapConfiguration.xsd
-The Basic Map Plug-In services requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. Each Map Data Layer has a cache of the map files that it most recently accessed, which by default is limited to 32 Megabytes, while the pool of Map Data Layers by default contains 20 layers. The total amount of memory that deployment of the Basic Map Plug-In requires therefore, by default, is at least 640 Megabytes, but in fact it usually uses approximately 50% more than this in practice. These defaults can be configured through the BMCCreator however. It is because of this high memory requirement that the Basic Map Plug-In was replaced by the Super Map Plug-In.
+
+The Basic Map Plug-In services requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. 
+
+Each Map Data Layer has a cache of the map files that it most recently accessed, which by default is limited to 32 Megabytes, while the pool of Map Data Layers by default contains 20 layers. 
+
+The total amount of memory that deployment of the Basic Map Plug-In requires therefore, by default, is at least 640 Megabytes, but in fact it usually uses approximately 50% more than this in practice. 
+
+These defaults can be configured through the BMCCreator however. It is because of this high memory requirement that the Basic Map Plug-In was replaced by the Super Map Plug-In.
 
 ### 4.4.3.	The Historical Map Plug-In (Removed in MapLink 11.1)
-This plug-in is largely deprecated as using the Super Map Plug-In offers far better performance and reduced memory foot print. Configuring the Super Map Plug-In to use historical data can be difficult however, so for expediency the Historical Map Plug-In is often used. 
-The historical map plug-in is almost identical to the basic map plug-in explained in the previous section except it is intended to serve MapLink Maps with historical information built using the Seamless Layer Manager. The plug-in requires the archive directory of the seamless layer map to be located in the same directory as the .map file.
+
+This plug-in is largely deprecated as using the Super Map Plug-In offers far better performance and reduced memory foot print. 
+
+Configuring the Super Map Plug-In to use historical data can be difficult however, so for expediency the Historical Map Plug-In is often used. 
+
+The historical map plug-in is almost identical to the basic map plug-in explained in the previous section except it is intended to serve MapLink Maps with historical information built using the Seamless Layer Manager. 
+
+The plug-in requires the archive directory of the seamless layer map to be located in the same directory as the .map file.
+
 As with the basic map plug-in, the spatial data of the plug-in is the absolute path to the map and the configuration file is an xml file created using the BMCCreator utility. The plug-in string for the historical map plug-in is ‘historicalmapplugin’ however.
-The historical map plug-in adds a time dimension to the capabilities of the basic map plug-in so that WMS users can rollback the map to previous versions. Although the historical map plug-in can be used to serve a non historical MapLink map, the super map plug-in is better optimised for speedier responses from these maps.
+
+The historical map plug-in adds a time dimension to the capabilities of the basic map plug-in so that WMS users can rollback the map to previous versions. 
+
+Although the historical map plug-in can be used to serve a non historical MapLink map, the super map plug-in is better optimised for speedier responses from these maps.
 
 ### 4.4.4.	The Super Map Plug-In 
-The Super Map Plug-In is a new addition to MapLink that replaces the existing Basic and Historical Map Plug-Ins, allowing both standard and historical MapLink maps to be served. It offers the best performance and lowest memory footprint of any of the Envitia supplied WMS plug-ins, through the use of the new MapLink Threaded Map Cache SDK.
-The Basic and Historical Map Plug-Ins service requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. This is because standard MapLink Map Data Layers cannot be shared amongst threads due to thread safety issues. The Threaded Map Cache offers a variant of the Map Data Layer that allows a loaded map to be shared amongst threads. Additionally, each standard Map Data Layer has a cache of the map files that it most recently accessed, whereas the Threaded Map Cache shares a single, lock-free but thread safe, cache amongst all requests. This greatly reduces the memory footprint whilst improving performance thanks to a greater likelihood of locating the required map file in the memory cache, rather than having to load it from disk.
+
+The Super Map Plug-In is a new addition to MapLink that replaces the existing Basic and Historical Map Plug-Ins, allowing both standard and historical MapLink maps to be served. 
+
+It offers the best performance and lowest memory footprint of any of the Envitia supplied WMS plug-ins, through the use of the new MapLink Threaded Map Cache SDK.
+
+The Basic and Historical Map Plug-Ins service requests using a pool of MapLink Map Data Layers, assigning one temporarily to each request to allow a draw to occur before returning it the pool. 
+
+This is because standard MapLink Map Data Layers cannot be shared amongst threads due to thread safety issues. The Threaded Map Cache offers a variant of the Map Data Layer that allows a loaded map to be shared amongst threads. 
+
+Additionally, each standard Map Data Layer has a cache of the map files that it most recently accessed, whereas the Threaded Map Cache shares a single, lock-free but thread safe, cache amongst all requests. 
+
+This greatly reduces the memory footprint whilst improving performance thanks to a greater likelihood of locating the required map file in the memory cache, rather than having to load it from disk.
+
 Unlike the Basic and Historical Map plug-ins, the Super Map plug-in supports GetFeatureInfo requests for vector layers in MapLink maps. By default this returns an XML document containing information on the selected feature(s), the schema of which is available at the following location:
+
 http://www.envitia.com/schemas/maplinkwms/supermapplugin/getfeatureinfo/1.0/GetFeatureInfo.xsd
  
 The following example shows the default output format of GetFeatureInfo requests:
@@ -672,16 +673,45 @@ The following example shows the default output format of GetFeatureInfo requests
 ```
 
 In addition, the Super Map plug-in allows extra response formats to be generated through user-supplied XSL transforms  that process the default XML document into the desired format.
-The Super Map plug-in has two modes of configuration, henceforth referred to as 'single map mode' and 'multi-map mode'. The configuration mode used determines how the MapLink map or maps used as the data sources are served from the WMS. In both cases its plug-in string would be 'supermapplugin' on Windows and ‘SuperMapWMS_plugin’ on all other platforms.
+
+The Super Map plug-in has two modes of configuration, henceforth referred to as 'single map mode' and 'multi-map mode'. 
+
+The configuration mode used determines how the MapLink map or maps used as the data sources are served from the WMS. In both cases its plug-in string would be 'supermapplugin' on Windows and ‘SuperMapWMS_plugin’ on all other platforms.
 
 #### 4.4.4.1.	Single Map Mode
-In single map mode the Super Map plug-in operates similarly to the Basic Map plug-in. As the name suggests, this configuration mode should be used to serve a single MapLink map from a data source. Like the basic and historical map plug-ins, the super map plug-in in single map mode takes the fully qualified path to the MapLink map as its Spatial Data parameter and the configuration file would be a fully qualified path to an xml file. It accepts the same format of XML configuration file that is produced by the BMCCreator utility, with the following differences:
-•	The "Number of Map Data Layers" setting from the BMCCreator's Options menu should be set to a much higher level than would be used for the Basic or Historical Map Plug-Ins. Ideally it should match the drawing surface pool size, configured in the service's configuration file, as described in section 5.3.7.
-•	The "Cache Size Per Data Layer (KB)" setting from the BMCCreator's Options menu has a different meaning. Rather than refer the cache size per pooled data layers, as for the Basic or Historical Map Plug-Ins, it instead refers to the shared cache's size. This should be set fairly high, if possible, preferably in the hundreds of Megabytes range.
+In single map mode the Super Map plug-in operates similarly to the Basic Map plug-in. 
+
+As the name suggests, this configuration mode should be used to serve a single MapLink map from a data source. 
+
+Like the basic and historical map plug-ins, the super map plug-in in single map mode takes the fully qualified path to the MapLink map as its Spatial Data parameter and the configuration file would be a fully qualified path to an xml file. 
+
+It accepts the same format of XML configuration file that is produced by the BMCCreator utility, with the following differences:
+
+	•	The "Number of Map Data Layers" setting from the BMCCreator's Options menu should be set to a much higher level than would be used for the Basic or Historical Map Plug-Ins. Ideally it should match the drawing surface pool size, configured in the service's configuration file, as described in section 5.3.7.
+	•	The "Cache Size Per Data Layer (KB)" setting from the BMCCreator's Options menu has a different meaning. Rather than refer the cache size per pooled data layers, as for the Basic or Historical Map Plug-Ins, it instead refers to the shared cache's size. This should be set fairly high, if possible, preferably in the hundreds of Megabytes range.
+
 The Super Map plug-in also has an extended configuration format for single map mode, the format of which is described by the schema at the following location:
+
 http://www.envitia.com/schemas/maplinkwms/supermapplugin/1.0/SuperMapConfiguration.xsd
-This format is very similar to that output from the BMCCreator utility, but allows configuration of two additional pieces of functionality only offered by the Super Map plug-in. The first of these pieces of functionality is the ability to use MapLink dynamic renderers to implement specific named WMS styles. These dynamic renders should be built as separate DLLs/shared objects and register themselves with the MapLink TSLDynamicRendererFactory on DLL/shared object load. The dynamicRendererStore attribute on the SuperMapConfiguration element should then be set to the location of the dynamic renderer(s). The name used to register the dynamic renderer with the factory determines the name that the style is advertised as in the server's capabilities document.
-The second piece of functionality allows for the user-defined GetFeatureInfo formats mentioned in section 5.4.4 to be specified through the optional GetFeatureInfoResponseList element. Within this element a list of ResponseFormat elements can be provided, each of which defines an additional response format to be advertised by the server. The transform, advertisedFormat and mimeType attributes must be provided for each response format and define the location of the XSL transform that should be run on the normal XML output document before being returned to the client, the value for the Format string that will be listed in the server's GetFeatureInfo format list and the MIME type that will be used for the responses respectively. The optional WMSCapabilities1_0_0Format attribute is only used when clients issue requests using version 1.0.0 of the WMS standard. This version restricts advertised GetFeatureInfo formats to the second part of the MIME type and thus cannot use the same configuration setting. If this attribute is not specified, the response format will not be advertised to clients using version 1.0.0 of the WMS standard.
+
+This format is very similar to that output from the BMCCreator utility, but allows configuration of two additional pieces of functionality only offered by the Super Map plug-in. 
+
+The first of these pieces of functionality is the ability to use MapLink dynamic renderers to implement specific named WMS styles. These dynamic renders should be built as separate DLLs/shared objects and register themselves with the MapLink TSLDynamicRendererFactory on DLL/shared object load. 
+
+The dynamicRendererStore attribute on the SuperMapConfiguration element should then be set to the location of the dynamic renderer(s). The name used to register the dynamic renderer with the factory determines the name that the style is advertised as in the server's capabilities document.
+
+The second piece of functionality allows for the user-defined GetFeatureInfo formats mentioned in section 5.4.4 to be specified through the optional GetFeatureInfoResponseList element. 
+
+Within this element a list of ResponseFormat elements can be provided, each of which defines an additional response format to be advertised by the server. 
+
+The transform, advertisedFormat and mimeType attributes must be provided for each response format and define the location of the XSL transform that should be run on the normal XML output document before being returned to the client, the value for the Format string that will be listed in the server's GetFeatureInfo format list and the MIME type that will be used for the responses respectively. 
+
+The optional WMSCapabilities1_0_0Format attribute is only used when clients issue requests using version 1.0.0 of the WMS standard. 
+
+This version restricts advertised GetFeatureInfo formats to the second part of the MIME type and thus cannot use the same configuration setting. 
+
+If this attribute is not specified, the response format will not be advertised to clients using version 1.0.0 of the WMS standard.
+
 The following example configuration file shows the extended single map mode configuration format:
 
 ```xml
@@ -730,12 +760,30 @@ mapDataLayerCount="50" mapDataLayerCacheSize="262144" symbolTextViewExpansion="1
 
 #### 4.4.4.2.	Multi-Map Mode
 
-In multi-map mode the Super Map plug-in operates similarly to the Historical Map plug-in but offers additional functionality. In addition to serving a single MapLink map containing historical information, the Super map plug-in in this mode is capable of taking multiple separate MapLink maps that may or may not contain history and present them as a single set of layers with the combined history of all the maps.
+In multi-map mode the Super Map plug-in operates similarly to the Historical Map plug-in but offers additional functionality. 
+
+In addition to serving a single MapLink map containing historical information, the Super map plug-in in this mode is capable of taking multiple separate MapLink maps that may or may not contain history and present them as a single set of layers with the combined history of all the maps.
+
 In this mode both the Spatial Data parameter and the configuration file would be fully qualified paths to xml files. The format of the Spatial Data configuration file is described by the schema at the following location:
+
 http://www.envitia.com/schemas/maplinkwms/supermapplugin/datasource/1.0/SuperMapDataSource.xsd
-The element type used to contain all of the source layers defines how the MapLink maps will be advertised by the WMS. Currently the only supported element type is HistoricalMap, which indicates all data source child elements should be advertised as a single set of unified layers. It is an error to list more than one HistoricalMap element within the same Spatial Data configuration file.
-Within this element is a list of the MapLink maps to use as data sources. If a map has historical information it should be listed using the HistoricalMapMultiVersion element, with the archiveDirectory attribute set to the location of the archive directory of the map. Unlike the Historical Map plug-in, this directory does not have to be in the same folder as the .map file. If the map does not have historical information it should be listed using the HistoricalMapVersion element with the timestamp attribute set to the time that the MapLink map represents.
-Regardless of which element is used to identify the MapLink map location, the id attribute should be set to a unique value. This identifier is used to match the data sources listed within the Spatial Data configuration file to the WMS layer configurations within the data source's configuration file.
+
+The element type used to contain all of the source layers defines how the MapLink maps will be advertised by the WMS. 
+
+Currently the only supported element type is HistoricalMap, which indicates all data source child elements should be advertised as a single set of unified layers. 
+
+It is an error to list more than one HistoricalMap element within the same Spatial Data configuration file.
+
+Within this element is a list of the MapLink maps to use as data sources. 
+
+If a map has historical information it should be listed using the HistoricalMapMultiVersion element, with the archiveDirectory attribute set to the location of the archive directory of the map. 
+
+Unlike the Historical Map plug-in, this directory does not have to be in the same folder as the .map file. If the map does not have historical information it should be listed using the HistoricalMapVersion element with the timestamp attribute set to the time that the MapLink map represents.
+
+Regardless of which element is used to identify the MapLink map location, the id attribute should be set to a unique value. 
+
+This identifier is used to match the data sources listed within the Spatial Data configuration file to the WMS layer configurations within the data source's configuration file.
+
 The following example demonstrates a Spatial Data configuration file that includes MapLink maps with and without historical information:
 
 ```xml
@@ -752,14 +800,22 @@ The following example demonstrates a Spatial Data configuration file that includ
 </SuperMapDataSource>
 ```
 
-In multi-map mode the WMS data source configuration file uses the SuperMultiMapConfiguration element as its root node. This element has a list of SuperMapConfiguration child elements that define the WMS layer configurations for each of the data sources defined within the Spatial Data configuration file. The contents of each SuperMapConfiguration element is the same as if the data source was being used in single map mode, with the following exceptions:
-•	The additional id attribute must be set to the same value as used in the attribute of the same name for the data source.
-•	The mapDataLayerCount, mapDataLayerCacheSize, symbolTextViewExpansion and dynamicRendererStore attributes are no longer valid at this level. These should be specified on the SuperMultiMapConfiguration element.
-•	Any additional GetFeatureInfo response formats defined in the GetFeatureInfoResponseList at this level are ignored. These should be listed as a child of the SuperMultiMapConfiguration element.
+In multi-map mode the WMS data source configuration file uses the SuperMultiMapConfiguration element as its root node. 
+
+This element has a list of SuperMapConfiguration child elements that define the WMS layer configurations for each of the data sources defined within the Spatial Data configuration file. 
+
+The contents of each SuperMapConfiguration element is the same as if the data source was being used in single map mode, with the following exceptions:
+
+	•	The additional id attribute must be set to the same value as used in the attribute of the same name for the data source.
+	•	The mapDataLayerCount, mapDataLayerCacheSize, symbolTextViewExpansion and dynamicRendererStore attributes are no longer valid at this level. These should be specified on the SuperMultiMapConfiguration element.
+	•	Any additional GetFeatureInfo response formats defined in the GetFeatureInfoResponseList at this level are ignored. These should be listed as a child of the SuperMultiMapConfiguration element.
+
 Additionally, the following restrictions apply when using multiple MapLink maps within a single WMS data source through the HistoricalMap Spatial Data configuration element:
-•	Each SuperMapConfiguration object must define the same set of WMS layers. Any layers that are not present in all SuperMapConfiguration objects will not be advertised from the WMS. Note that these layers do not have to have the same ImplementedFeature list.
-•	The bounding boxes of a WMS layer should be consistent across all definitions of that layer.
-•	The value of the queryable attribute of a WMS layer should be consistent across all definitions of that layer.
+
+	•	Each SuperMapConfiguration object must define the same set of WMS layers. Any layers that are not present in all SuperMapConfiguration objects will not be advertised from the WMS. Note that these layers do not have to have the same ImplementedFeature list.
+	•	The bounding boxes of a WMS layer should be consistent across all definitions of that layer.
+	•	The value of the queryable attribute of a WMS layer should be consistent across all definitions of that layer.
+	
 The following example demonstrates the corresponding configuration for the above Spatial Data example configuration:
 
 ```xml
@@ -829,21 +885,28 @@ Please see the document ‘MapLink CADRG WMS Plug-In User Guide.
 ## 4.5.	Common Problems
 
 •	When making requests an exception is returned. This normally indicates that a configuration error has been made or a GetMap request string is invalid. It is recommended that the user reads the content of the ServiceException element to amend the problem. 
-•	After deployment, a service exception is shown when using the service stating that the WMS cannot find or access the MapLink WMS configuration file. This is usually caused by either the configuration file not being where the WMS is configured to expect it or that it doesn't have sufficient permission to access it. 
-Please remember when deploying to non-Windows platforms that the case of the configuration file path is important.
+
+•	After deployment, a service exception is shown when using the service stating that the WMS cannot find or access the MapLink WMS configuration file. This is usually caused by either the configuration file not being where the WMS is configured to expect it or that it doesn't have sufficient permission to access it.  Please remember when deploying to non-Windows platforms that the case of the configuration file path is important.
+
 •	After deployment, a service exception is shown when using the service stating that the WMS is not licensed, yet the appropriate licence has been installed correctly. This can sometimes be caused by another Envitia process, usually the Licence Key Administrator, locking out the WMS from check whether a licence is installed. Shut down other Envitia applications, restart the web server and try again.
+
 •	After deployment, a service exception is shown when using the service stating that it failed to load the standard MapLink configuration. This is usually caused by "Std_Config_Path" setting, documented in section 5.3.8, having been incorrectly configured.
+
 •	After deployment, a service exception is shown when using the service stating that it failed to load a plug-in library. This may be cause by one of the following:
-o	The plug-in was not found by the runtime. Ensure that it is accessible to the runtime either via the working path or PATH environment variable on Windows. 
-On non-windows platforms, ensure that the case of the plug-in name contained in the configuration file matches that of the filename.
-o	On Windows only, the filename of the DLL was not suffixed correctly to match the WMS service. For instance if running in 64-bit, the name of the plug-in that appears in the configuration file will be appended with "64.dll". 64-bit debug will append "64d.dll".
+
+	o	The plug-in was not found by the runtime. Ensure that it is accessible to the runtime either via the working path or PATH environment variable on Windows. 
+	
+	On non-windows platforms, ensure that the case of the plug-in name contained in the configuration file matches that of the filename.
+	
+	o	On Windows only, the filename of the DLL was not suffixed correctly to match the WMS service. For instance if running in 64-bit, the name of the plug-in that appears in the configuration file will be appended with "64.dll". 64-bit debug will append "64d.dll".
+
 •	The deployment of the service was successful and the Capabilities can be retrieved, but when attempting to use the service in a WMS client nothing is displayed.
+
 The most common cause of this error is that the GetMap address that appears in the service Capabilities does not match the address that the service is deployed on. Refer to section 5.3.5 for details of how to configure the address that appear.
 When using one of the Envitia supplied service plug-ins, this issue may be cause by the geographic area configured to be advertised for a data source not containing any data.
-•	The service works when accessed from the server it is deployed upon, but not from another machine on the same network.
-This issue is mainly beyond the scope of this document, but two common causes are that the server's firewall is blocking access to the web server's port and the second is that a loopback address has been used when configuring the Capabilities of the server (E.G. "localhost" or "127.0.0.1") when completing section 
 
-### 5.3.5 of the service's configuration file.
+•	The service works when accessed from the server it is deployed upon, but not from another machine on the same network. This issue is mainly beyond the scope of this document, but two common causes are that the server's firewall is blocking access to the web server's port and the second is that a loopback address has been used when configuring the Capabilities of the server (E.G. "localhost" or "127.0.0.1") when completing section 5.3.5 of the service's configuration file.
+
 •	When using a TSLWMSDataLayer with any WMS data source a situation can occur where tiles are constantly loaded and unloaded which causes a flickering effect. This issue is not at the server end, but arises because the layer's tile cache does not have enough memory to store all of the requested tiles. To resolve this issue the user should increase the size of the tile cache using the cacheSize() method on the data layer.
 
 
