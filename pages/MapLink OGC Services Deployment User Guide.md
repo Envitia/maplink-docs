@@ -50,31 +50,48 @@ Figure 1 - How the OGC Services SDK is used.
 
 ## 2.2.	Using the OGC Services SDK Directly
 
-An Envitia OGC service instance can be constructed via the TSLOGCService  class’ static create method, passing in the name of the OGC Service, E.G. “MapLinkWMS” for the MapLink WMS. The service name should not contain any suffixes, such as 'd' to imply debug or '64' to imply constructing a 64-bit service. 
+An Envitia OGC service instance can be constructed via the TSLOGCService  class’ static create method, passing in the name of the OGC Service, E.G. “MapLinkWMS” for the MapLink WMS. The service name should not contain any suffixes, such as 'd' to imply debug or '64' to imply constructing a 64-bit service.
+
 Assuming that a service instance is returned, the next step is to configure the service by passing in the location to a service specific configuration file to the loadConfiguration method. The format of the configuration file is described later in this document for each of the OGC Service offered.
+
 Once the service has been constructed and configured, it is ready to use. Requests can be made via the processGetRequest or processPostRequest methods, which will return an instance of the TSLOGCMIMEResponse class. Not all service types support both HTTP GET and POST requests - the WMS for instance only supports HTTP GET. The call to the service should include the address that the request was made via and the contents of the request.
+
 The response object principally holds the raw service response data, but also the following information:
+
 •	The ‘Multipurpose Internet Mail Extensions’ (MIME) type of the response. The MIME type denotes how a client should interpret the raw data and its value is dependent upon the service type, the request made and the success/failure of request.
+
 •	The encoding of the response, although this may be NULL if it is not applicable. Certain response formats may not be fully described by their MIME type, so this provides additional information.
+
 •	The cacheability of the response. This provide a hint as to the duration of validity of the response. Error messages often should not be cached, whereas normal responses can often be cached both locally and remotely to reduce server traffic and workload.
+
 •	HTTP code. Some of the newer OGC services require that when an error message is returned the HTTP code of the response should be set to reflect the type of error.
+
 
 ## 2.3.	Available APIs
 
 Currently the OGC Services SDK is available in the following APIs:
-•	A C++ API – All other APIs utilise this API, but it can be used directly by users. Provided through the MapLinkOGCServices64 library.
-•	A .NET wrapper API – Provided through the Envitia.MapLink.OGCServices64 assembly
-•	A Java API – Provided through the MapLinkOGCServices64 JAR library
+
+	•	A C++ API – All other APIs utilise this API, but it can be used directly by users. Provided through the MapLinkOGCServices64 library.
+	
+	•	A .NET wrapper API – Provided through the Envitia.MapLink.OGCServices64 assembly
+	
+	•	A Java API – Provided through the MapLinkOGCServices64 JAR library
+
 All three APIs are provided in 64-bit debug and 64-bit release forms, with the normal MapLink suffixes used to differentiate between them. The release forms should be used for a final system while the debug form is intended to allow users to create their own plug-ins to a particular OGC Service.
 
 ## 2.4.	Licencing
 
 For Deployment you must use do the following:
-•	Use Release DLLs.
-•	Obtain a ‘MapLink WMS (Deployment)’ Licence from Envitia .
+
+	•	Use Release DLLs.
+	
+	•	Obtain a ‘MapLink WMS (Deployment)’ Licence from Envitia.
+
 For Development you must do the following:
-•	Use the Debug DLLs.  (Note as of MapLink 11.1 only release DLLs are available and should be used for development as well)
-•	Obtain the necessary Development licences from Envitia (‘MapLink Pro Developer’s Toolkit’ and ‘MapLink WMS SDK’ as a minimum).
+
+	•	Use the Debug DLLs.  (Note as of MapLink 11.1 only release DLLs are available and should be used for development as well)
+	
+	•	Obtain the necessary Development licences from Envitia (‘MapLink Pro Developer’s Toolkit’ and ‘MapLink WMS SDK’ as a minimum).
 
 
 # 3.	DEPLOYING MAPLINK OGC SERVICES ON A JAVA WEB SERVER
@@ -82,42 +99,56 @@ For Development you must do the following:
 ## 3.1.	Introduction
 
 To provide access from Java compatible Web Servers, a Java Wrapper library is supplied with the MapLink OGC Services SDK which uses the Java Native Interface to access the OGC Services SDK’s C++ libraries. Additionally a pre-built Java Servlet is supplied which handles communication with the JNI wrapper and serves HTTP GET requests made to it.
+
 This section outlines how to deploy this example Servlet to the Tomcat web server, although the steps should be fairly similar when using other Java based web servers
 
 ## 3.2.	Configuring the Native Library path
 
 The OGC Services SDK requires access to the appropriate MapLink bin directory in order to access the native C++ libraries and any WMS plug-ins. When MapLink is installed on Windows base machines, the PATH environment variable is modified to add the bin64 directory from the MapLink installation. 
+
 If the bin directory referenced is not the one being targeted or the PATH environment variable has been edited to remove MapLink, then this section should be followed. Otherwise it can be ignored.
+
 Non Windows platforms will also need to follow these instructions, but the lib64 directory is referenced.
 
 ### 3.2.1.	Apache Tomcat
 
 The instructions under this immediate heading are only applicable when Tomcat is not deployed as a service/daemon.
-•	Navigate to the following directory 
-•	$CATALINA_HOME/bin
-•	For Windows platforms
-•	Create a file named
-setenv.bat
-•	Its contents should be in the form
-set MY_BIN_DIR=c:\Program files\Envitia\MapLink Pro\X.Y\bin64
-set PATH=%PATH%;%MY_BIN_DIR%;%MY_BIN_DIR%\plugins
-•	For other platforms
-•	Create a file named
-setenv.sh 
-•	Its contents should be in the form
-#!/bin/sh
-MAPL_HOME=</path/to/maplink>
-export MAPL_HOME
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$MAPL_HOME/lib64: $MAPL_HOME/lib/plugins"
-export LD_LIBRARY_PATH
-•	When the server starts it will pick up the created file automatically and run it
-•	Tomcat will need to be restarted for this change to take effect.
+	
+	•	Navigate to the following directory
+	
+	•	$CATALINA_HOME/bin
+	
+	•	For Windows platforms
+	
+	•	Create a file named setenv.bat
+	
+	•	Its contents should be in the form
+		set MY_BIN_DIR=c:\Program files\Envitia\MapLink Pro\X.Y\bin64
+		set PATH=%PATH%;%MY_BIN_DIR%;%MY_BIN_DIR%\plugins
+		
+For other platforms:
+
+	•	Create a file named setenv.sh 
+	
+	•	Its contents should be in the form
+		#!/bin/sh
+		MAPL_HOME=</path/to/maplink>
+		export MAPL_HOME
+		LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$MAPL_HOME/lib64: $MAPL_HOME/lib/plugins"
+		export LD_LIBRARY_PATH
+		
+	•	When the server starts it will pick up the created file automatically and run it
+	
+	•	Tomcat will need to be restarted for this change to take effect.
 
 ### 3.2.2.	Apache Tomcat Running As A Windows Service
 
 •	Start the "Configure Tomcat" shortcut found under the Tomcat group in the Start Menu.
+
 •	Under the "Startup" tab of the application that starts, change the working path setting to point at the appropriate bin directory.
+
 •	Ensure you click the Apply button after making this change. It would appear that the change does not always get registered if you don't.
+
 •	Tomcat will need to be restarted for this change to take effect.
 
 ## 3.3.	Installing the shared MapLinkOGCServices library
