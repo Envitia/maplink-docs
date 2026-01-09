@@ -933,10 +933,15 @@ docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps --name maplink-wms 
 ```
 
 Where: 
+
 •	/home/user/wms/maps is the root of your maps folder.
+
 •	8022 is the port where the container gets mapped on your Docker host.
+
 To check that the WMS is running correctly, visit the following URL:
-http://host:8022/MapLinkOGCServices/OGC?SERVICE=WMS&Request=GetCapabilities
+
+	http://host:8022/MapLinkOGCServices/OGC?SERVICE=WMS&Request=GetCapabilities
+
 Replace the host with your linux host name/ip.
 
 ### 4.6.4.	Stopping The Container
@@ -969,42 +974,54 @@ docker run -p 8022:8080 -v /home/user/wms/maps:/opt/wms/maps -v /home/user/wms/b
 ```
 Where:
 
-/home/user/wms/maps - Is the root of your maps folder.
-/home/user/wms/baseconfig - Contains the base configuration file called baseconfig.ini
+•	/home/user/wms/maps - Is the root of your maps folder.
+
+•	/home/user/wms/baseconfig - Contains the base configuration file called baseconfig.ini
 
 ### 4.6.6.	Mount Points
 
-/opt/wms/maps	You must mount this folder as this is the location where the container will search for maps
-/opt/wms/config
-	If you mount this folder you will see the generated WMS configuration file
-/opt/wms/baseconfig
-	This folder stores the base configuration file
+/opt/wms/maps :	You must mount this folder as this is the location where the container will search for maps
+
+/opt/wms/config : If you mount this folder you will see the generated WMS configuration file
+
+/opt/wms/baseconfig : This folder stores the base configuration file
 
 ### 4.6.7.	Generating WMS Config XMLs
 
 Ensure that you have xsltproc installed. E.G.: 
-  apt-get install xsltproc
+	
+	  apt-get install xsltproc
+  
 Make sure that the MapLink environment variables are set and the bin folder is added to the path.
-source mapl_init.bash
-export PATH=$MAPL_HOME/bin/x86_64:$PATH
+
+	source mapl_init.bash
+	export PATH=$MAPL_HOME/bin/x86_64:$PATH
+
 Use the following scripts to generate XMLs for the map files you wish to add to your WMS as data sources.
+
 Once generated, copy the map files and the corresponding XML files into your “/home/user/wms/maps” folder.
 
 ### 4.6.7.1.	Generating WMS Configuration For A Single Map
 
 Use the following command:
-genwmsconf.sh ./maps/NaturalEarthBasic/NaturalEarthBasic.map
+
+	genwmsconf.sh ./maps/NaturalEarthBasic/NaturalEarthBasic.map
 
 #### 4.6.7.2.	Generating WMS Configuration XMLs For A Directory of Maps
 
 Navigate to the directory of maps that you want to generate config files for and execute the following command:
-genwmsdir.sh ./maps/
+
+	genwmsdir.sh ./maps/
+	
 
 # 5.	THE MAPLINK WPS SERVICE
 
 ## 5.1.	Web Processing Service Introduction
 
-The Web Processing Service (WPS) can provide a set of "processes" that receive zero or more inputs and return one or more outputs. The WPS standard describes a process as "any algorithm, calculation or model that operates on spatially referenced data," although its interface is not limited to geospatial operations.
+The Web Processing Service (WPS) can provide a set of "processes" that receive zero or more inputs and return one or more outputs. 
+
+The WPS standard describes a process as "any algorithm, calculation or model that operates on spatially referenced data," although its interface is not limited to geospatial operations.
+
 The MapLink WPS Plug-In SDK can be used to create user plug-ins. For more information on this SDK please consult the MapLink Developer's Guide.
 
 ## 5.2.	The Structure of the MapLink WPS
@@ -1012,57 +1029,100 @@ The MapLink WPS Plug-In SDK can be used to create user plug-ins. For more inform
 ### 5.2.1.	Introduction
 
 The WPS itself supports version 1.0.0 of the standard, currently the only published version. It is intended that when further versions are released, the MapLink WPS will be extended to support them.
-Each WPS plugin can provide one or more WPS processes 
+
+Each WPS plugin can provide one or more WPS processes.
+
 On start-up the WPS service will read its configuration file and determine what WPS plugins it needs to load.
 
 ## 5.3.	Configuring a MapLink WPS
 
 ### 5.3.1.	MapLink WPS Configuration File
 
-The MapLink WPS configuration file defines what data sources (‘processes’) it should serve up and how. This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
+The MapLink WPS configuration file defines what data sources (‘processes’) it should serve up and how. 
+
+This configuration file also defines much of the service Capabilities as well as certain MapLink specific settings. 
+
 The format of the configuration file is that of an XML file the schema of which is available at the following URL:
+
 	http://www.envitia.com/schemas/maplinkwps/1.0/MaplinkWPS.xsd
 
 ### 5.3.2.	The DataSources element
 
 In the WPS Service configuration file is a ‘DataSources’ xml element which contains a number of ‘DataSource’ xml elements.  
+
 Each ‘DataSource’ xml element:
-•	Represents a WPS plugin.
-•	Has a ‘Plugin’ xml element - this defines the DLL name of the data source plugin to load. This is the name of the DLL, without the configuration-specific suffix.
-•	Has a ‘DataPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up
-•	Has a ‘ConfigPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up, this parameter tends to be used to define the configuration file
+
+	•	Represents a WPS plugin.
+	
+	•	Has a ‘Plugin’ xml element - this defines the DLL name of the data source plugin to load. This is the name of the DLL, without the configuration-specific suffix.
+	
+	•	Has a ‘DataPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up
+	
+	•	Has a ‘ConfigPath’ xml element - this is an extra parameter that can be passed into the Data Source plugin at start up, this parameter tends to be used to define the configuration file
 
 ### 5.3.3.	The DataStore element
 
-This optional element defines the data store of the service. This allows for WPS requests to ask the WPS service to store the result, so it can be picked up later. 
+This optional element defines the data store of the service. 
+
+This allows for WPS requests to ask the WPS service to store the result, so it can be picked up later. 
+
 Note: it is optional for a WPS plugin to support data store usage.  This is defined in the implementation of the WPS plugin itself.
-The DataStore element is defined in the schema as abstract with currently only one derivate supported; ‘FileStore’. This type of store will use a file system directory to store asynchronous responses and referenced outputs, which is provided via the "Directory" attribute. The File Store can optionally be configured with a purge strategy which indicates how older items should be removed. If a purge strategy is not configured, then the directory can grow large over time and will need to be manually purged.
+
+The DataStore element is defined in the schema as abstract with currently only one derivate supported; ‘FileStore’. 
+
+This type of store will use a file system directory to store asynchronous responses and referenced outputs, which is provided via the "Directory" attribute. 
+
+The File Store can optionally be configured with a purge strategy which indicates how older items should be removed. If a purge strategy is not configured, then the directory can grow large over time and will need to be manually purged.
 
 ### 5.3.4.	The Options element
 
 The Options element is used to configure various MapLink settings, although currently there is only one offered by the MapLink WPS. It is expected that the configurable options will be expanded upon in patches and future releases.
-Each Option sub-element must be provided with the "name" attribute to indicate what is being configured and therefore the type of content to be expected inside the element. The "name" attribute is an XML union of an enumeration and the string type. The enumeration defines the current build-in names, with "StandardConfigPath" with being the only current value to configure the location of the MapLink configuration directory, whilst the string allows future additions and undocumented values.
+
+Each Option sub-element must be provided with the "name" attribute to indicate what is being configured and therefore the type of content to be expected inside the element. 
+
+The "name" attribute is an XML union of an enumeration and the string type. The enumeration defines the current build-in names, with "StandardConfigPath" with being the only current value to configure the location of the MapLink configuration directory, whilst the string allows future additions and undocumented values.
 
 ### 5.3.5.	The DefaultLanguage and LanguageSpecificMetadata elements
 
-The WPS standard is one of the first OGC standards to offer the service Capabilities in more than one language, specifically the parts that are for consumption by a user rather than the client software. The MapLink WPS offers this functionality in the service capabilities and other service responses.
-A LanguageSpecificMetadata element is used to define the parts of the Capabilities document for a specific language, including the ServiceIndentification, ServiceProvider, OperationsMetadata and WSDL elements. When the Capabilities of the service are requested for that language, what appears in the LanguageSpecificMetadata will be included in exactly the same way as it appears in the configuration file. To support multiple languages, simply include a LanguageSpecificMetadata element for each of them.
+The WPS standard is one of the first OGC standards to offer the service Capabilities in more than one language, specifically the parts that are for consumption by a user rather than the client software. 
+
+The MapLink WPS offers this functionality in the service capabilities and other service responses.
+
+A LanguageSpecificMetadata element is used to define the parts of the Capabilities document for a specific language, including the ServiceIndentification, ServiceProvider, OperationsMetadata and WSDL elements. 
+
+When the Capabilities of the service are requested for that language, what appears in the LanguageSpecificMetadata will be included in exactly the same way as it appears in the configuration file. 
+
+To support multiple languages, simply include a LanguageSpecificMetadata element for each of them.
+
 The service must also be told which of the supported languages it should treat as the default, for when a request does not specify which language it would like the response in. The language type that appears in the DefaultLanugage element must reference one of the languages used in an included LanguageSpecificMetadata element.
 
 #### 5.3.5.1.	The OperationsMetadata element
 
-The OperationsMetadata element is used to describe the Operations that the service supports. This is of importance to the MapLink WMS as it also describes the addresses that these services are available at. These addresses can either be full, qualified, or, like offered in the MapLink WMS, use the DYNAMIC keyword. The DYNAMIC keyword will be replaced in the Capabilities returned during a "GetCapabilities" request with the address that the request was made to.
+The OperationsMetadata element is used to describe the Operations that the service supports. 
+
+This is of importance to the MapLink WMS as it also describes the addresses that these services are available at. 
+
+These addresses can either be full, qualified, or, like offered in the MapLink WMS, use the DYNAMIC keyword. 
+
+The DYNAMIC keyword will be replaced in the Capabilities returned during a "GetCapabilities" request with the address that the request was made to.
 
 ### 5.3.6.	Example
 
 The following example demonstrates a configuration file which has the following settings:
-•	It deploys two data sources; one that uses "MyPlugin" and the other uses "MyOtherPlugin". Both take a TXT file for their data and an INI file for their configuration.
-•	It is configured to offer a file based data store, that uses c:\temp\WPSStore to store asynchronous and referenced resources, and perform a purge job everyday which will remove items which were created at least 2 days ago. 
-•	A single option is defined, which specifies MapLink's standard configuration path.
-•	"en-GB", which is the abbreviation of British English, is defined as the default language.
-•	LanguageSpecificMetadata is included for the default language, "en-GB", and for "en-US" is the abbreviation of US English.
-•	Both defined LanguageSpecificMetadata elements include the same Service Identification and Service Provider sub elements.
-•	Both defined LanguageSpecificMetadata elements include OperationsMetadata sub element which describe the service's end-points using the DYNAMIC keyword.
+
+	•	It deploys two data sources; one that uses "MyPlugin" and the other uses "MyOtherPlugin". Both take a TXT file for their data and an INI file for their configuration.
+	
+	•	It is configured to offer a file based data store, that uses c:\temp\WPSStore to store asynchronous and referenced resources, and perform a purge job everyday which will remove items which were created at least 2 days ago. 
+	
+	•	A single option is defined, which specifies MapLink's standard configuration path.
+	
+	•	"en-GB", which is the abbreviation of British English, is defined as the default language.
+	
+	•	LanguageSpecificMetadata is included for the default language, "en-GB", and for "en-US" is the abbreviation of US English.
+	
+	•	Both defined LanguageSpecificMetadata elements include the same Service Identification and Service Provider sub elements.
+	
+	•	Both defined LanguageSpecificMetadata elements include OperationsMetadata sub element which describe the service's end-points using the DYNAMIC keyword.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1228,9 +1288,13 @@ The following example demonstrates a configuration file which has the following 
 ### 5.4.1.	Deployment
 
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
+
 •	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
+
 •	Set the ‘Plugin’ element to ‘RouterWPSPlugin’
+
 •	Set the ‘ConfigPath’ element to point to the RouterWPSplugin.ini file (a copy of which is located in the config/ogcservices folder).
+
 •	Leave the DataPath xml element empty as it is not used.
 
 Sample:
@@ -1246,7 +1310,9 @@ Sample:
 ```
 
 Check through the RouterWPSplugin.ini file.  The configuration file’s comments will instruct on what the various values mean.  Take note that the following entries will require attention:
+
 •	The ‘transformsDatFile’ value at the top of the configuration file.
+
 •	Each ‘Network’ setup must be scrutinised.
 
 ### 5.4.2.	Describe Process
@@ -1273,12 +1339,18 @@ POST data:
 ```
 
 The response to this request will provide:
-•	A list of network definitions available
-•	A list of available Route Algorithms (short or quick)
-•	A list of available Cost Algorithms (simple, heuristic etc.)
-•	A list of available Vehicle Types
-•	Details of the start the end locations
-•	A list of available outputs (GML and Directions)
+	
+	•	A list of network definitions available
+	
+	•	A list of available Route Algorithms (short or quick)
+	
+	•	A list of available Cost Algorithms (simple, heuristic etc.)
+	
+	•	A list of available Vehicle Types
+	
+	•	Details of the start the end locations
+	
+	•	A list of available outputs (GML and Directions)
 
 ### 5.4.3.	Execute
 
@@ -1294,66 +1366,102 @@ See Section 7.1.1.
 #### 5.4.3.1.	Available Data Input Parameters
 
 network (Network Identifier)
-•	This specifies which network map to plan a route against.
-•	The available networks are defined in the ‘RouterWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Network’ sections.
+
+	•	This specifies which network map to plan a route against.
+	
+	•	The available networks are defined in the ‘RouterWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘identifier’ value within any of the ‘Network’ sections.
 
 routeAlgorithm (Route Algorithm)
-•	This specifies whether the quickest or shortest route should be built.
-•	The available options for this are determined by implementation, these cannot be added to without development.
-•	The shortest option will only make choices based on distance.
-•	The quickest option will make choices based on the speed the vehicle type can travel on each of the different road types.
-•	The vehicle’s speed for each road type is defined in the ‘RouterWPSplugin.ini’ file, in the appropriate ‘Vehicle’ section.
+
+	•	This specifies whether the quickest or shortest route should be built.
+	
+	•	The available options for this are determined by implementation, these cannot be added to without development.
+	
+	•	The shortest option will only make choices based on distance.
+	
+	•	The quickest option will make choices based on the speed the vehicle type can travel on each of the different road types.
+	
+	•	The vehicle’s speed for each road type is defined in the ‘RouterWPSplugin.ini’ file, in the appropriate ‘Vehicle’ section.
 
 costAlgorithm (Cost Algorithm)
-•	This specifies the type of algorithm to use while building the route.
-•	The available options for this are determined by implementation, these cannot be added to without development.
-•	Each algorithm uses different methodology to try and speed up large route calculations
-•	A simple description of each algorithm:
-o	Simple – uses the Network SDK’s fundamental route crawling algorithm to build the route
-o	Heuristic – uses a bounding box around the start and end locations to limit the smaller roads used
-o	Multiple Heuristic – uses a series of bounding boxes around the start and end points each will limit certain types of roads used.
+
+	•	This specifies the type of algorithm to use while building the route.
+	
+	•	The available options for this are determined by implementation, these cannot be added to without development.
+	
+	•	Each algorithm uses different methodology to try and speed up large route calculations
+	
+	•	A simple description of each algorithm:
+	
+		o	Simple – uses the Network SDK’s fundamental route crawling algorithm to build the route
+		
+		o	Heuristic – uses a bounding box around the start and end locations to limit the smaller roads used
+		
+		o	Multiple Heuristic – uses a series of bounding boxes around the start and end points each will limit certain types of roads used.
 
 vehicleType (Vehicle Type)
-•	This specifies the type of vehicle to plan a route for
-•	The available vehicle types are defined in the ‘RouterWPSplugin.ini’ file.
-•	The value for this parameter must match the configuration file’s ‘vehicleType’ value within any of the ‘Vehicle’ sections.
+
+	•	This specifies the type of vehicle to plan a route for
+	
+	•	The available vehicle types are defined in the ‘RouterWPSplugin.ini’ file.
+	
+	•	The value for this parameter must match the configuration file’s ‘vehicleType’ value within any of the ‘Vehicle’ sections.
 
 start_lon/start_lat Start Location
-•	This specifies the start location of the route to calculate
-•	The coordinate system these points must be in are WGS84 (lat/lon)
-•	The actual start point of the route will be the nearest point found on the Network Map to this start location
+
+	•	This specifies the start location of the route to calculate
+	
+	•	The coordinate system these points must be in are WGS84 (lat/lon)
+	
+	•	The actual start point of the route will be the nearest point found on the Network Map to this start location
 
 end_lon/end_lat Start Location
-•	This specifies the end location of the route to calculate
-•	The coordinate system these points must be in are WGS84 (lat/lon)
-•	The actual end point of the route will be the nearest point found on the Network Map to this end location
+
+	•	This specifies the end location of the route to calculate
+	
+	•	The coordinate system these points must be in are WGS84 (lat/lon)
+	
+	•	The actual end point of the route will be the nearest point found on the Network Map to this end location
 
 #### 5.4.3.2.	Response Document/ Raw Data Parameters
 
 There are two available output formats:
-•	gml
-•	directions
+
+	•	gml
+	
+	•	directions
+
 Note: A response document can return both of these formats if needed.
+
 Note: The Raw Data output can only return one of the two available formats.
 
 GML
-•	This is a GML string of the calculated route.
-•	The coordinates system for each point will be in WGS84 (lat/lon)
+
+	•	This is a GML string of the calculated route.
+	
+	•	The coordinates system for each point will be in WGS84 (lat/lon)
 
 Directions
-•	This is a list of string instructions the user needs to follow
-•	The distance in brackets specifies the distance required for the next instruction
+	
+	•	This is a list of string instructions the user needs to follow
+	
+	•	The distance in brackets specifies the distance required for the next instruction
 
 ## 5.5.	WPS View Shed Plugin
 
 ### 5.5.1.	Deployment
 
 Before the deployment of a WPS Plugin can take place it is assumed all WPS deployment steps have already taken place.
-•	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
-•	Set the ‘Plugin’ element to ‘ViewShedWPSPlugin’
-•	Set the ‘ConfigPath’ element to point to the ViewShedWPSplugin.ini file (a copy of which is located in the config/ogcservices folder).
-•	Leave the DataPath xml element empty as it is not used.
+
+	•	Add a new ‘DataSource’ xml element to the MapLink WPS Configuration File. 
+	
+	•	Set the ‘Plugin’ element to ‘ViewShedWPSPlugin’
+	
+	•	Set the ‘ConfigPath’ element to point to the ViewShedWPSplugin.ini file (a copy of which is located in the config/ogcservices folder).
+	
+	•	Leave the DataPath xml element empty as it is not used.
 
 Sample:
 
@@ -1393,13 +1501,19 @@ POST data:
 ```
 
 Available Options
+
 In the sample above the ‘ViewShedWPS’ value represents the standard Single View Shed service. The available options for services are:
-•	ViewShedWPS
-•	MultiViewShedWPS
-•	RouteViewShedWPS
-•	RouteBreakdownWPS
+	
+	•	ViewShedWPS
+	
+	•	MultiViewShedWPS
+	
+	•	RouteViewShedWPS
+	
+	•	RouteBreakdownWPS
 
 Response Description
+
 The response to this request will provide details of the parameters and outputs each service provides.
 
 ### 5.5.3.	Single View Shed Execute
@@ -1411,6 +1525,7 @@ http://localhost:8080/MapLinkOGCServices/OGC?&service=WPS&request=Execute&versio
 ```
 
 Sample POST Call
+
 See Section 7.1.2.
 
 #### 5.5.3.1.	Available Data Input Parameters
