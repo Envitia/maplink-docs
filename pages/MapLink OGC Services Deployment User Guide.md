@@ -58,13 +58,13 @@ Once the service has been constructed and configured, it is ready to use. Reques
 
 The response object principally holds the raw service response data, but also the following information:
 
-•	The ‘Multipurpose Internet Mail Extensions’ (MIME) type of the response. The MIME type denotes how a client should interpret the raw data and its value is dependent upon the service type, the request made and the success/failure of request.
-
-•	The encoding of the response, although this may be NULL if it is not applicable. Certain response formats may not be fully described by their MIME type, so this provides additional information.
-
-•	The cacheability of the response. This provide a hint as to the duration of validity of the response. Error messages often should not be cached, whereas normal responses can often be cached both locally and remotely to reduce server traffic and workload.
-
-•	HTTP code. Some of the newer OGC services require that when an error message is returned the HTTP code of the response should be set to reflect the type of error.
+	•	The ‘Multipurpose Internet Mail Extensions’ (MIME) type of the response. The MIME type denotes how a client should interpret the raw data and its value is dependent upon the service type, the request made and the success/failure of request.
+	
+	•	The encoding of the response, although this may be NULL if it is not applicable. Certain response formats may not be fully described by their MIME type, so this provides additional information.
+	
+	•	The cacheability of the response. This provide a hint as to the duration of validity of the response. Error messages often should not be cached, whereas normal responses can often be cached both locally and remotely to reduce server traffic and workload.
+	
+	•	HTTP code. Some of the newer OGC services require that when an error message is returned the HTTP code of the response should be set to reflect the type of error.
 
 
 ## 2.3.	Available APIs
@@ -153,18 +153,31 @@ For other platforms:
 
 ## 3.3.	Installing the shared MapLinkOGCServices library
 
-To allow multiple OGC Services or multiple service instances to be deployed on a single Web Server, a MapLink library, MapLinkOGCServices, must be added to the servers common class path directory. As this jar file loads the appropriate native C++ library, there are 2 different versions that could be used (pre MapLink 11.1):
-•	MapLinkOGCServices64.jar - 64-bit Release JAR
-•	MapLinkOGCServices64d.jar - 64-bit Release JAR
+To allow multiple OGC Services or multiple service instances to be deployed on a single Web Server, a MapLink library, MapLinkOGCServices, must be added to the servers common class path directory. 
+
+As this jar file loads the appropriate native C++ library, there are 2 different versions that could be used (pre MapLink 11.1):
+
+	•	MapLinkOGCServices64.jar - 64-bit Release JAR
+	
+	•	MapLinkOGCServices64d.jar - 64-bit Release JAR
+
 For Deployment you must use do the following:
-•	Use a Release JAR file.
-•	Obtain a ‘MapLink WMS (Deployment)’ Licence from Envitia .
+
+	•	Use a Release JAR file.
+	
+	•	Obtain a ‘MapLink WMS (Deployment)’ Licence from Envitia.
+	
 For Development you must do the following:
-•	Use a Debug JAR file.
-•	Obtain the necessary Development licences from Envitia (‘MapLink Pro Developer’s Toolkit’ and ‘MapLink WMS SDK’ as a minimum).
+
+	•	Use a Debug JAR file.
+	
+	•	Obtain the necessary Development licences from Envitia (‘MapLink Pro Developer’s Toolkit’ and ‘MapLink WMS SDK’ as a minimum).
+	
 It is also important to note that the 64-bit JARs should only be used with a 64-bit Tomcat/Java Runtime Environment (JRE) installation.
+
 The JAR files can usually be located:
-<MAPLINK_INSTALL_DIR>\java\MapLinkOGC\
+
+	<MAPLINK_INSTALL_DIR>\java\MapLinkOGC\
 
 ### 3.3.1.	Linux Specific
 
@@ -182,9 +195,15 @@ Tomcat will need to be restarted for this change to take effect.
 
 ## 3.4.	Configuring a deployment
 
-Each deployment of a MapLink OGC Service, such as the MapLink WMS, requires a configuration file to load such settings as the plug-ins, spatial data and data source configuration files used. The contents of this configuration file are service specific and are described in later sections of this document.
-By default the supplied Java Servlet is configured for use with the MapLink WMS and with the location of a configuration file expected to be at ‘./MapLinkWMSConfiguration.ini’. If a different service type, multiple instances of the same service type or if this location is not suitable for a particular server configuration, the settings contained in the war file will need to be changed.
+Each deployment of a MapLink OGC Service, such as the MapLink WMS, requires a configuration file to load such settings as the plug-ins, spatial data and data source configuration files used. 
+
+The contents of this configuration file are service specific and are described in later sections of this document.
+By default the supplied Java Servlet is configured for use with the MapLink WMS and with the location of a configuration file expected to be at ‘./MapLinkWMSConfiguration.ini’. 
+
+If a different service type, multiple instances of the same service type or if this location is not suitable for a particular server configuration, the settings contained in the war file will need to be changed.
+
 Example configuration files can be found in MAPLINK_INSTALL_DIR\config\ogcservices. The file paths within these configs will need to be edited, to reflect the location of the MapLink installation.
+
 The supplied Java Servlet, called MapLinkOGCServices.war, is normally located:
 
 ```
@@ -192,24 +211,29 @@ MAPLINK_INSTALL_DIR\java\MapLinkOGC\
 ```
 
 The following instructions should be followed to edit the servlet's settings:
-•	Using a zip utility (such as PKZip, WinZip, 7zip or WinRAR) unzip the war file to disk, ensuring that the contained folder structure is maintained. It may be necessary to change the extension of the war file to .zip for it to be recognised.
-•	Under the WEB-INF directory of the unzipped files, edit the web.xml file using a text editor.
-•	Roughly halfway through the file there should appear the following snippet:
 
+	•	Using a zip utility (such as PKZip, WinZip, 7zip or WinRAR) unzip the war file to disk, ensuring that the contained folder structure is maintained. It may be necessary to change the extension of the war file to .zip for it to be recognised.
+	
+	•	Under the WEB-INF directory of the unzipped files, edit the web.xml file using a text editor.
+	
+	•	Roughly halfway through the file there should appear the following snippet:
+	
 ```xml
-    <init-param>
-      <param-name>ServicePlugin</param-name>
-      <param-value>MapLinkWMS</param-value>
-    </init-param>
-    <init-param>
-      <param-name>ServiceConfigurationFile</param-name>
-      <param-value>./mapLinkwmsconfiguration.ini</param-value>
-    </init-param>
+	<init-param>
+	  <param-name>ServicePlugin</param-name>
+	  <param-value>MapLinkWMS</param-value>
+	</init-param>
+	<init-param>
+	  <param-name>ServiceConfigurationFile</param-name>
+	  <param-value>./mapLinkwmsconfiguration.ini</param-value>
+	</init-param>
 ```
-
-•	The MapLinkWMS string may be edited to target a different service type. 
-•	The string './mapLinkwmsconfiguration.ini' may be edited to point at a different service configuration file. See 4.4 Configuring a Deployment.
-•	The files unzipped earlier will need to be either re-added to the war file or zipped into a new archive. The folder structure must be maintained in the archive and the extension may need to be reverted to .war.
+	
+	•	The MapLinkWMS string may be edited to target a different service type. 
+	
+	•	The string './mapLinkwmsconfiguration.ini' may be edited to point at a different service configuration file. See 4.4 Configuring a Deployment.
+	
+	•	The files unzipped earlier will need to be either re-added to the war file or zipped into a new archive. The folder structure must be maintained in the archive and the extension may need to be reverted to .war.
 
 ## 3.5.	Deploying the OGC Services Servlet
 
@@ -218,8 +242,11 @@ This section discusses how to deploy the Servlet on the Web Server and specifica
 ### 3.5.1.	Apache Tomcat
 
 •	Log on to the ‘Tomcat Web Application Manager’, usually accessible from the following URL http://127.0.0.1:8080/manager/html. It may be necessary to setup a Tomcat user that has sufficient privileges to access to the Tomcat Manager first.
+
 •	Under the heading ‘Deploy’ and sub-heading ‘WAR file to deploy’, click on the ‘Browse’ button and upload the WMS war file
+
 •	Click ‘Deploy’
+
 •	To deploy a second WMS, then simply create a copy of the war file with a different filename and follow the above instructions.
 
 ## 3.6.	Testing the Deployment
@@ -239,36 +266,55 @@ http://.../MapLinkOGCServices/OGC?service=WMS&request=GetCapabilities
 ## 3.7.	Common Problems
 
 Here is a list of some of the common problems that affect deployments to Java and how to resolve them. This list does not include issues that relate to deploying a particular service type which will be covered in later sections.
+
 •	When accessing the Servlet's URL you receive a 404 error stating that the Servlet is not available. This is likely to be caused by the shared MapLinkOGCServices library not being found. Return to section 3.3 and check that the instructions have been followed correctly. 
-•	When accessing the Servlet's URL you receive a 500 error stating that the Servlet's init() for servlet MapLinkOGCServices threw an exception. This is usually due to the required C++ DLLs not being located by the runtime. 
-Return to section 3.2 and check that the instructions have been followed correctly.
-This error can also arise when there is a mismatch between the architecture of the JRE being used and the Envitia libraries being loaded. The 64-bit Envitia libraries can only be loaded by a 64-bit JRE.
+
+•	When accessing the Servlet's URL you receive a 500 error stating that the Servlet's init() for servlet MapLinkOGCServices threw an exception. This is usually due to the required C++ DLLs not being located by the runtime.  Return to section 3.2 and check that the instructions have been followed correctly.  This error can also arise when there is a mismatch between the architecture of the JRE being used and the Envitia libraries being loaded. The 64-bit Envitia libraries can only be loaded by a 64-bit JRE.
+	
 •	For Unix/Linux platforms, Tomcat will use the JRE located in the system path by default. To use a different JRE (for example if the default JRE is 32bit), set the JRE_HOME environmental variable before starting the service. E.G. from the tomcat bin directory running ‘JRE_HOME=/path/to/64bit_jre ./startup.sh’ will start Tomcat using the JRE installed in /path/to/64bit_jre.
+
 •	For Unix/Linux platforms, and errors stating that ‘GLIBCXX_3.4.11 not found’ or similar messages. Check the X11 Release Notes and ensure that the correct gcc runtime dependencies have been installed.
+
 •	Plugins cannot be loaded. The plugins have been moved to a plugins directory in the bin64 folder.
+
 •	Evaluation Version on Linux requires a node locked licence. Please ask support@envitia.com for help or check the supplied documentation.
+
 •	Linux Checklist:
-The following needs to be deployed on Linux:
-Directories:
-o	config
-o	lib64
-The java file:
-o	MapLinkOGCServices64.jar
-The WAR file (see 3.3):
-o	MapLinkOGCServices.war
-Java/tomcat must be told where to find the MapLink shared libraries and Java files. How this is done will vary between a manual start of tomcat and a service/daemon. Please see section 3.2
-The following environment variable must be set to point to the base MapLink deployment or installation directory (the directory that contains the config and lib/lib64 directory):
-MAPL_HOME
-Check the following environment variables (update if necessary to point to the MapLink directory lib64 and the plugin directories contained within):
-PATH
-LD_LIBRARY_PATH
-The following needs to be edited (found in MapLinkOGCServices.war):
-•	web.xml
-Please see section 3.4 for more information. Specifically the ‘param-value’ for ‘ServiceConfigurationFile’ must be updated to point to a configuration file.
-It is advised that an absolute path is used to point to the configuration file.
-You are reminded that the paths and filenames are case sensitive.
-The ‘ServiceConfigurationFile’ specifies the WMS plugin to use for a Map and the Map’s configuration file. 
-Newer versions of MapLink Studio will create a WMS config.xml for a map. For maps generated using an older version of MapLink Studio you can use the BMCCreator.exe on Windows.
+
+	The following needs to be deployed on Linux:
+	
+	Directories:
+	o	config
+	o	lib64
+	
+	The java file:
+	o	MapLinkOGCServices64.jar
+	
+	The WAR file (see 3.3):
+	o	MapLinkOGCServices.war
+	
+	Java/tomcat must be told where to find the MapLink shared libraries and Java files. How this is done will vary between a manual start of tomcat and a service/daemon. Please see section 3.2
+	
+	The following environment variable must be set to point to the base MapLink deployment or installation directory (the directory that contains the config and lib/lib64 directory):
+	MAPL_HOME
+	
+	Check the following environment variables (update if necessary to point to the MapLink directory lib64 and the plugin directories contained within):
+	PATH
+	LD_LIBRARY_PATH
+	
+	The following needs to be edited (found in MapLinkOGCServices.war):
+	•	web.xml
+	
+	Please see section 3.4 for more information. Specifically the ‘param-value’ for ‘ServiceConfigurationFile’ must be updated to point to a configuration file.
+	
+	It is advised that an absolute path is used to point to the configuration file.
+	
+	You are reminded that the paths and filenames are case sensitive.
+	
+	The ‘ServiceConfigurationFile’ specifies the WMS plugin to use for a Map and the Map’s configuration file. 
+	
+	Newer versions of MapLink Studio will create a WMS config.xml for a map. For maps generated using an older version of MapLink Studio you can use the BMCCreator.exe on Windows.
+	
 •	The file that the ‘ServiceConfigurationFile’ entry in the web.xml needs to be configured for each map (see sections 5.3 and 5.3.9). For Linux the ‘Server_Data_Sources_Index’ must be correctly setup with the plugin names and map locations specifically for Linux (paths will be different and the plugin names may be slightly different).
 
 For example the following is a valid entry for the SuperMap plugin on Linux:
