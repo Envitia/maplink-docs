@@ -1,5 +1,13 @@
 ---
 releases-11: 
+ -  version: 11.2.6
+    date: March 19 2026
+    summary: 3D Earth SDK and WMS Server updates (on Windows only).
+    release-notes: 11.2/11.2.6
+ -  version: 11.2.5
+    date: January 16 2026
+    summary: Global wrapping bug fix.
+    release-notes: 11.2/11.2.5
  -  version: 11.2.4
     date: December 12 2025
     summary: Bug fixes.
