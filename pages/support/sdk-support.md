@@ -33,12 +33,12 @@ All supported MapLink Pro runtime SDKs are listed.
 | Database Layer | **Archived** | | | | | | |
 | Direct Import | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
 | Dynamic Data Objects (DDO) | **Deprecated** Superseded by Tracks | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| Earth | Supported | 11.2.7 | 10.2 | | Yes | | |
+| Earth | Supported | 11.2.7 | 11.2.7 | | Yes | | |
 | ECW Data Layer | **Archived** | | | | | | |
 | Editor | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
 | Entity Store | **Archived** | | | | | | |
 | ER Mapper | **Archived** | | | | | | |
-| GeoPackage | Supported | 11.2.7 | | 11.2.7 | Yes | Yes | Yes |
+| GeoPackage | Supported | 11.2.7 | | 10.2 | Yes | Yes | Yes |
 | GML Interop | Supported | 11.2.7 | 11.2.7 | | Yes | | |
 | Impact Assessment | **Archived** | | | | | | |
 | Interaction Modes | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
@@ -46,7 +46,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | MapLink OWS | Supported | 11.2.7 | | | Yes | | |
 | Network | Supported | 11.2.7 | | | Yes | | |
 | OGC Filter SDK | **Archived** | | | | | | |
-| OGC Framework | Supported | 10.2 | 10.2 | 10.2 | Yes | Yes | Yes |
+| OGC Framework | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
 | OpenGL Drawing Surface | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
 | OpenGL Track Helper | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
 | OWS Context | Supported | 11.2.7 | | 10.2 | Yes | | |
@@ -70,15 +70,15 @@ These components provide capabilities to distribute geospatial information over 
 
 | Component | Status | Windows | Linux | C++ API |
 | ----- | ----- | ----- | ----- | ----- |
-| Web Map Service (WMS) Server (tomcat) | Supported | 11.2.7 | 10.2 | |
-| WMS Plugin API | Supported | 11.2.7 | 10.2 | Yes |
+| Web Map Service (WMS) Server (tomcat) | Supported | 11.2.7 | 11.2.7 | |
+| WMS Plugin API | Supported | 11.2.7 | 11.2.7 | Yes |
 | WMS Server (IIS) | **Archived** | | | |
-| WMS Server (docker) | Supported | | 10.2 | |
+| WMS Server (docker) | Supported | | 11.2.7 | |
 | WMS Basic Map Config SDK | **Archived** | | | |
-| WMS Basic Map Plugin | Supported | 11.2.7 | 10.2 | |
+| WMS Basic Map Plugin | Supported | 11.2.7 | 11.2.7 | |
 | WMS CADRG Map Plugin | **Archived** | | | |
 | WMS Historical Map Plugin | **Archived** | | | |
-| WMS Super Map Plugin | Supported | 11.2.7 | 10.2 | |
+| WMS Super Map Plugin | Supported | 11.2.7 | 11.2.7 | |
 | Web Processing Service (WPS) Server (tomcat) | **Deprecated** | 10.2 | | |
 | WPS Plugin API | **Deprecated** | 10.2 | 10.2 | Yes |
 | WPS Viewshed Plugin | **Deprecated** | 10.2 | | |
