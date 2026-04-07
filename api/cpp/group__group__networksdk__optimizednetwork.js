@@ -1,26 +1,6 @@
 var group__group__networksdk__optimizednetwork =
 [
     [ "TSLOptimizedNetwork", "class_t_s_l_optimized_network.html", [
-      [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html", [
-        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a002e4a5f7e9899474275b2483592a56a", null ],
-        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#abab8619f7dd5538d4d3dfdd271dae7d6", null ],
-        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#aa07c89f287e2fe97f6817420722efb89", null ],
-        [ "~const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a41ec664252ac5439baba316ff30b36d9", null ],
-        [ "operator!=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4820d274d3b11e6f8abb0e2d6f78b845", null ],
-        [ "operator*", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a7fd378fb631dc7fbbe6942dd03e07a69", null ],
-        [ "operator+", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a34aa6b81ef01d609104c94f94de4a2bc", null ],
-        [ "operator++", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4940bb5709bc771af9ce38674a7b2c15", null ],
-        [ "operator++", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a3509f7c41ecbded441778f021e5f995b", null ],
-        [ "operator+=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a37beb2fc2ebfd8c84d4062538aae5064", null ],
-        [ "operator-", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a45a0f2abe1bf68409cf76941f53b0b7f", null ],
-        [ "operator-", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4e60114c0ebd322130cadf2db161794a", null ],
-        [ "operator--", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a84fa1e6a591a8854f041d9934f399683", null ],
-        [ "operator--", "class_t_s_l_optimized_network_1_1const__link__iterator.html#ae4042b35d9f38a716daff5189a683ebf", null ],
-        [ "operator-=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#aa7cb9ce6395deadae242916662dbd1c4", null ],
-        [ "operator=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a2753578f2a0e627182dafbe5c3d5d8f9", null ],
-        [ "operator==", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a66eb50a99d439e7b5d409177d2370117", null ],
-        [ "TSLOptimizedNetwork", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a97d964379e32fed3cde1241c309466ae", null ]
-      ] ],
       [ "const_node_iterator", "class_t_s_l_optimized_network_1_1const__node__iterator.html", [
         [ "const_node_iterator", "class_t_s_l_optimized_network_1_1const__node__iterator.html#a92f7559e454f2f6a3b5253ec8b7ec298", null ],
         [ "const_node_iterator", "class_t_s_l_optimized_network_1_1const__node__iterator.html#a6f8d410dea35f9dcd09de514c8935c1c", null ],
@@ -40,6 +20,26 @@ var group__group__networksdk__optimizednetwork =
         [ "operator=", "class_t_s_l_optimized_network_1_1const__node__iterator.html#a99842269d60968eeec1156d024f1cd3b", null ],
         [ "operator==", "class_t_s_l_optimized_network_1_1const__node__iterator.html#ad736a640c4c2920a99ad9060830f29d5", null ],
         [ "TSLOptimizedNetwork", "class_t_s_l_optimized_network_1_1const__node__iterator.html#a97d964379e32fed3cde1241c309466ae", null ]
+      ] ],
+      [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html", [
+        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a002e4a5f7e9899474275b2483592a56a", null ],
+        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#abab8619f7dd5538d4d3dfdd271dae7d6", null ],
+        [ "const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#aa07c89f287e2fe97f6817420722efb89", null ],
+        [ "~const_link_iterator", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a41ec664252ac5439baba316ff30b36d9", null ],
+        [ "operator!=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4820d274d3b11e6f8abb0e2d6f78b845", null ],
+        [ "operator*", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a7fd378fb631dc7fbbe6942dd03e07a69", null ],
+        [ "operator+", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a34aa6b81ef01d609104c94f94de4a2bc", null ],
+        [ "operator++", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4940bb5709bc771af9ce38674a7b2c15", null ],
+        [ "operator++", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a3509f7c41ecbded441778f021e5f995b", null ],
+        [ "operator+=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a37beb2fc2ebfd8c84d4062538aae5064", null ],
+        [ "operator-", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a45a0f2abe1bf68409cf76941f53b0b7f", null ],
+        [ "operator-", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a4e60114c0ebd322130cadf2db161794a", null ],
+        [ "operator--", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a84fa1e6a591a8854f041d9934f399683", null ],
+        [ "operator--", "class_t_s_l_optimized_network_1_1const__link__iterator.html#ae4042b35d9f38a716daff5189a683ebf", null ],
+        [ "operator-=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#aa7cb9ce6395deadae242916662dbd1c4", null ],
+        [ "operator=", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a2753578f2a0e627182dafbe5c3d5d8f9", null ],
+        [ "operator==", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a66eb50a99d439e7b5d409177d2370117", null ],
+        [ "TSLOptimizedNetwork", "class_t_s_l_optimized_network_1_1const__link__iterator.html#a97d964379e32fed3cde1241c309466ae", null ]
       ] ],
       [ "const_turn_iterator", "class_t_s_l_optimized_network_1_1const__turn__iterator.html", [
         [ "const_turn_iterator", "class_t_s_l_optimized_network_1_1const__turn__iterator.html#abf85bf5c437773d8a64f4bca350338f1", null ],

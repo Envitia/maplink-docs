@@ -2,7 +2,7 @@ var searchData=
 [
   ['garbagepercentage_0',['garbagePercentage',['../class_envitia_1_1_map_link_1_1_t_s_l_n_persistent_cache_data.html#a2557e328e8c98c204378347c9b2e8ba2',1,'Envitia::MapLink::TSLNPersistentCacheData']]],
   ['garstolatlong_1',['garsToLatLong',['../class_envitia_1_1_map_link_1_1_t_s_l_n_coordinate_converter.html#a93e4dff589ca03bd9079066f4002013e',1,'Envitia::MapLink::TSLNCoordinateConverter']]],
-  ['gateway_20wms_20wps_2',['MapLink Gateway (WMS &amp; WPS)',['../group__group__dotnet__ogcframework.html',1,'']]],
+  ['gateway_20wms_20wps_2',['MapLink Gateway (WMS &amp;amp; WPS)',['../group__group__dotnet__ogcframework.html',1,'']]],
   ['generate_3',['generate',['../class_envitia_1_1_map_link_1_1_t_s_l_n_arrow.html#aff2a52bb44bf722b97b641544c0ed791',1,'Envitia::MapLink::TSLNArrow']]],
   ['generateuserpermit_4',['generateUserPermit',['../class_envitia_1_1_map_link_1_1_s63_1_1_t_s_l_n_s63_user_permit_generator.html#a031993c475fd09e4885f719137409b84',1,'Envitia::MapLink::S63::TSLNS63UserPermitGenerator']]],
   ['geocentrictogeodetic_5',['geocentricToGeodetic',['../class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_drawing_surface.html#a67de964cbaa87501190dea324d406ca0',1,'Envitia::MapLink::ML3D::TSLN3DDrawingSurface::geocentricToGeodetic()'],['../class_envitia_1_1_map_link_1_1_m_l3_d_1_1_t_s_l_n3_d_rendering_interface.html#a925422aa32318a6dd3ac1da61422bbc0',1,'Envitia::MapLink::ML3D::TSLN3DRenderingInterface::geocentricToGeodetic()']]],
