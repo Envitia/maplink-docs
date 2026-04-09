@@ -241,17 +241,6 @@ var group__group__earth =
       [ "type", "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_polyline.html#a6ac98b3d7e99630352dfe908020bd737", null ]
     ] ],
     [ "envitia::maplink::earth::geometry::Style", "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style.html", [
-      [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html", [
-        [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a51c6d63297d3ee57eec9bc80e22147b7", null ],
-        [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#adc41309034fbacdfbdb6136d30871e0b", null ],
-        [ "~DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a5cccca1129ecf1fc8677d653d8414b15", null ],
-        [ "operator=", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#ab9de3be9dbe66a8d588c4adfe122b4ad", null ],
-        [ "operator==", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a5ba3faec0151c496fb339434cde659dd", null ],
-        [ "heightOffset", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a08f13c8a32ba7e718c7b520646045aa7", null ],
-        [ "mode", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#adc1415c042ba7829d9203ff684a914ca", null ],
-        [ "resolution", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a70003344cbd897610e930cf70a74d558", null ],
-        [ "technique", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a26650894556d1c0f7e0d04f54232fdd8", null ]
-      ] ],
       [ "EdgeStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html", [
         [ "EdgeStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html#a3fe60a2b4e6e2dc9bdad0875da836dc3", null ],
         [ "EdgeStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html#a086d05152fd6ee7f86cbd2a15f8c3612", null ],
@@ -265,15 +254,6 @@ var group__group__earth =
         [ "tessellationDistance", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html#a0e4d93eb63a18b2c93fe4b8f8aa06bec", null ],
         [ "width", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html#a97830031295ae25f499f1fc60d3b9927", null ],
         [ "widthUnits", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_edge_style.html#a3806378e61c0b5d512b823b9e1a47daa", null ]
-      ] ],
-      [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html", [
-        [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ad59b55222eebc0301e695a458d45e2bb", null ],
-        [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ac93b9bb82d85bc60039aa1769724d5d4", null ],
-        [ "~ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a8355660eceddba599d333877a02928ff", null ],
-        [ "operator=", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ab78c0b55af1b9381b9f38c2fa1c81f5e", null ],
-        [ "operator==", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a4e074c540b492cea6285920cb0297bea", null ],
-        [ "flatten", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a388e0b2be63af7f33af2a1e23a888df8", null ],
-        [ "height", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a9541366b8872c32de3b66e9383b8c574", null ]
       ] ],
       [ "FillStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_fill_style.html", [
         [ "FillStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_fill_style.html#ae28ce50881ebe2b202bb6a8b609f79b2", null ],
@@ -311,6 +291,26 @@ var group__group__earth =
         [ "horizontalAlignment", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_text_style.html#af857e9e4ae9be207a1ad6f4a8a74364d", null ],
         [ "size", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_text_style.html#ac47d570b065cdaf9989f692f3015d81a", null ],
         [ "verticalAlignment", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_text_style.html#a077ae6a12fc705dfb1acb22bb7a294ca", null ]
+      ] ],
+      [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html", [
+        [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a51c6d63297d3ee57eec9bc80e22147b7", null ],
+        [ "DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#adc41309034fbacdfbdb6136d30871e0b", null ],
+        [ "~DrapingStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a5cccca1129ecf1fc8677d653d8414b15", null ],
+        [ "operator=", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#ab9de3be9dbe66a8d588c4adfe122b4ad", null ],
+        [ "operator==", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a5ba3faec0151c496fb339434cde659dd", null ],
+        [ "heightOffset", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a08f13c8a32ba7e718c7b520646045aa7", null ],
+        [ "mode", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#adc1415c042ba7829d9203ff684a914ca", null ],
+        [ "resolution", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a70003344cbd897610e930cf70a74d558", null ],
+        [ "technique", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a26650894556d1c0f7e0d04f54232fdd8", null ]
+      ] ],
+      [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html", [
+        [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ad59b55222eebc0301e695a458d45e2bb", null ],
+        [ "ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ac93b9bb82d85bc60039aa1769724d5d4", null ],
+        [ "~ExtrusionStyle", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a8355660eceddba599d333877a02928ff", null ],
+        [ "operator=", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#ab78c0b55af1b9381b9f38c2fa1c81f5e", null ],
+        [ "operator==", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a4e074c540b492cea6285920cb0297bea", null ],
+        [ "flatten", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a388e0b2be63af7f33af2a1e23a888df8", null ],
+        [ "height", "structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a9541366b8872c32de3b66e9383b8c574", null ]
       ] ],
       [ "DrapeMode", "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style.html#aaa4cf5ccf4d926ede3a8b3f7eb5784ae", [
         [ "DrapeModeDisabled", "classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style.html#aaa4cf5ccf4d926ede3a8b3f7eb5784aeac68781b6a21fe8317b8177de76b00213", null ],

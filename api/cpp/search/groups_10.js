@@ -17,7 +17,7 @@ var searchData=
   ['maplink_20editor_20api_14',['MapLink Editor API',['../group__apigroup__maplink__editor__api.html',1,'']]],
   ['maplink_20editor_20application_20framework_15',['MapLink Editor Application Framework',['../group__apigroup__maplink__editor__application__framework.html',1,'']]],
   ['maplink_20entitystore_20api_16',['MapLink EntityStore API',['../group__group__entitystoresdk.html',1,'']]],
-  ['maplink_20gateway_20wms_20wps_17',['MapLink Gateway (WMS &amp; WPS)',['../group__group__ogc__gateway.html',1,'']]],
+  ['maplink_20gateway_20wms_20wps_17',['MapLink Gateway (WMS &amp;amp; WPS)',['../group__group__ogc__gateway.html',1,'']]],
   ['maplink_20gml_20api_18',['MapLink GML API',['../group__group__ogc__gml.html',1,'']]],
   ['maplink_20impact_20assessment_20api_19',['MapLink Impact Assessment API',['../group__group__impactassessmentapi.html',1,'']]],
   ['maplink_20kml_202d_20layer_20',['MapLink KML 2D Layer',['../group__apigroup__maplink__kml__2d__layer.html',1,'']]],

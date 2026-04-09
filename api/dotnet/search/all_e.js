@@ -104,7 +104,7 @@ var searchData=
   ['maplink_203d_20net_101',['MapLink.3D.NET',['../group__group__dotnet__maplink3d.html',1,'']]],
   ['maplink_20ddo_20net_102',['MapLink.DDO.NET',['../group__group__dotnet__ddo.html',1,'']]],
   ['maplink_20editor_20net_103',['MapLink.Editor.NET',['../group__group__dotnet__editor.html',1,'']]],
-  ['maplink_20gateway_20wms_20wps_104',['MapLink Gateway (WMS &amp; WPS)',['../group__group__dotnet__ogcframework.html',1,'']]],
+  ['maplink_20gateway_20wms_20wps_104',['MapLink Gateway (WMS &amp;amp; WPS)',['../group__group__dotnet__ogcframework.html',1,'']]],
   ['maplink_20heatmapdatalayer_20net_105',['MapLink.HeatMapDataLayer.NET',['../group__group__dotnet__heatmapdatalayer.html',1,'']]],
   ['maplink_20interactionmodes_203d_20net_106',['MapLink.InteractionModes.3D.NET',['../group__group__dotnet__maplinkimodes.html',1,'']]],
   ['maplink_20interactionmodes_20net_107',['MapLink.InteractionModes.NET',['../group__group__dotnet__interactionmodes.html',1,'']]],
