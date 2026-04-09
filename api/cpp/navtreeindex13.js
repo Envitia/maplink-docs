@@ -1,5 +1,17 @@
 var NAVTREEINDEX13 =
 {
+"class_t_s_l_d_x_accelerated_surface.html#abdef5678df82bb2b757d385f81b6c92c":[2,15,1,10,5],
+"class_t_s_l_d_x_accelerated_surface.html#ac06bbcc198b6e5ac0300881751d8f11c":[2,15,1,10,0],
+"class_t_s_l_data_handler.html":[2,0,4,13],
+"class_t_s_l_data_handler.html#a071a3f9e1d0b7b6f2d9d86d3869a3421":[2,0,4,13,1],
+"class_t_s_l_data_handler.html#a3918e2689043dbf16293fdf56d9a3285":[2,0,4,13,6],
+"class_t_s_l_data_handler.html#a3c000091408c8e5a22d91e998aa3b737":[2,0,4,13,8],
+"class_t_s_l_data_handler.html#a433a243d35cbcf910c8d257fbd1d6164":[2,0,4,13,0],
+"class_t_s_l_data_handler.html#a8bf5709a48fb0236194917d27079f406":[2,0,4,13,9],
+"class_t_s_l_data_handler.html#ab1c5f7eb6a1bcbed09d117a8ae816b4b":[2,0,4,13,5],
+"class_t_s_l_data_handler.html#abcc1a48a6e9191189de1b1b4921fb07e":[2,0,4,13,4],
+"class_t_s_l_data_handler.html#ac190a071248f23f7de312d9afed05a33":[2,0,4,13,3],
+"class_t_s_l_data_handler.html#ae15ca2c247769067ff5283123886b46c":[2,0,4,13,7],
 "class_t_s_l_data_handler.html#aeaec853ebbc4abe00983e74a1e6063c1":[2,0,4,13,2],
 "class_t_s_l_data_layer.html":[2,0,0,38],
 "class_t_s_l_data_layer.html#a01692e748c350a23675ad3d78807e684":[2,0,0,38,48],
@@ -237,17 +249,5 @@ var NAVTREEINDEX13 =
 "class_t_s_l_direct_import_data_set.html#ad7965f5f3fd058302ff1fcd2454b98ee":[2,0,2,3,17],
 "class_t_s_l_direct_import_data_set_multi_level_raster.html":[2,0,2,4],
 "class_t_s_l_direct_import_data_set_multi_level_raster.html#a166a0dbd667a2aee2405fcdc58d95183":[2,0,2,4,4],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#a1f9833667624f4c3204c00db23cc73b1":[2,0,2,4,3],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#a5f92caba6c6a8e1dec49b53112bd47e0":[2,0,2,4,6],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#a727c59ac045bce900066109dbf9720d9":[2,0,2,4,1],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#a9c7d831f9ff014c1ac3720b2d27f09c4":[2,0,2,4,2],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#afa0e3f2aa8183a5987721a2c2ef62eb8":[2,0,2,4,5],
-"class_t_s_l_direct_import_data_set_multi_level_raster.html#afce04f8a64e527a8830b40fca87896d8":[2,0,2,4,0],
-"class_t_s_l_direct_import_data_set_raster.html":[2,0,2,5],
-"class_t_s_l_direct_import_data_set_raster.html#ace8106b32d06c58701f0c1a2e13336bb":[2,0,2,5,1],
-"class_t_s_l_direct_import_data_set_raster.html#ae9652c17504a3f74f4b89575d263a1e6":[2,0,2,5,0],
-"class_t_s_l_direct_import_data_set_vector.html":[2,0,2,6],
-"class_t_s_l_direct_import_data_set_vector.html#a05718e61e4d9af48d910a1bb38851c5b":[2,0,2,6,1],
-"class_t_s_l_direct_import_data_set_vector.html#a920db5585acc269ad1aee8b1693f4bff":[2,0,2,6,0],
-"class_t_s_l_direct_import_driver.html":[2,0,2,7]
+"class_t_s_l_direct_import_data_set_multi_level_raster.html#a1f9833667624f4c3204c00db23cc73b1":[2,0,2,4,3]
 };
