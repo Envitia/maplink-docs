@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]],
-  ['developer_20guide_1',['Tracks SDK Developer Guide',['../trackmanagerdeveloperguide_page.html',1,'']]],
-  ['display_20manager_2',['Using the Track Display Manager',['../trackdisplaymanager_page.html',1,'trackmanagerdeveloperguide_page']]]
+  ['2_0',['2',['../group__apigroup__3d__common.html#autotoc_md140',1,'Example 2.'],['../deprecated.html#_deprecated000026',1,'Example 2.']]]
 ];

@@ -1,6 +1,6 @@
 var group__group__ogc =
 [
-    [ "MapLink Gateway (WMS & WPS)", "group__group__ogc__gateway.html", "group__group__ogc__gateway" ],
+    [ "MapLink Gateway (WMS &amp; WPS)", "group__group__ogc__gateway.html", "group__group__ogc__gateway" ],
     [ "MapLink GML API", "group__group__ogc__gml.html", "group__group__ogc__gml" ],
     [ "MapLink OGC Filter API", "group__group__ogc__filter.html", null ],
     [ "MapLink OWS API", "group__group__ogc__ows.html", "group__group__ogc__ows" ],

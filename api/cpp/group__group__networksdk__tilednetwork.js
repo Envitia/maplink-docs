@@ -36,20 +36,6 @@ var group__group__networksdk__tilednetwork =
       [ "node_count", "class_t_s_l_route_query.html#a3a7893d897960a5e5875465d9b38c84f", null ]
     ] ],
     [ "TSLTiledNetwork", "class_t_s_l_tiled_network.html", [
-      [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html", [
-        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#acd8ed346830ebffae2bbf7c48631fd1f", null ],
-        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#ad573915f6cdf380f49fc94ec338a1a9f", null ],
-        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#a58b0d91df05ab0850314674d404f97fa", null ],
-        [ "~link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#a8036f89af1b78f604a69cc26c263739b", null ],
-        [ "operator!=", "class_t_s_l_tiled_network_1_1link__iterator.html#a172e8e5df12625fcfde5b967a712e196", null ],
-        [ "operator*", "class_t_s_l_tiled_network_1_1link__iterator.html#aa2a753530e25b36028d8c1723c44d262", null ],
-        [ "operator++", "class_t_s_l_tiled_network_1_1link__iterator.html#a954145ec8cf240230e12e35395eca476", null ],
-        [ "operator++", "class_t_s_l_tiled_network_1_1link__iterator.html#ace5bfc1c48fa669de003a396c8c22e6e", null ],
-        [ "operator--", "class_t_s_l_tiled_network_1_1link__iterator.html#a85bd8497703f8bc5d3b23d94d103ee08", null ],
-        [ "operator--", "class_t_s_l_tiled_network_1_1link__iterator.html#a7d057abd53bf1ae498580b8449a5de30", null ],
-        [ "operator=", "class_t_s_l_tiled_network_1_1link__iterator.html#aafa162173f404404a2c41ffcb8706bae", null ],
-        [ "operator==", "class_t_s_l_tiled_network_1_1link__iterator.html#ac360772cbd0eaa4d6ecf3621a9199567", null ]
-      ] ],
       [ "node_iterator", "class_t_s_l_tiled_network_1_1node__iterator.html", [
         [ "node_iterator", "class_t_s_l_tiled_network_1_1node__iterator.html#a311003ed77e3fbe5bcd69cb6082964cb", null ],
         [ "node_iterator", "class_t_s_l_tiled_network_1_1node__iterator.html#a73198f336443c37b796184befc14b28f", null ],
@@ -63,6 +49,20 @@ var group__group__networksdk__tilednetwork =
         [ "operator--", "class_t_s_l_tiled_network_1_1node__iterator.html#a2030fcd4d2cf100c2952138a8285b97b", null ],
         [ "operator=", "class_t_s_l_tiled_network_1_1node__iterator.html#a4cf850ea40f772f8d35fe6476f87ca80", null ],
         [ "operator==", "class_t_s_l_tiled_network_1_1node__iterator.html#a5ee000a0e38d26f1897ad63576f45866", null ]
+      ] ],
+      [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html", [
+        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#acd8ed346830ebffae2bbf7c48631fd1f", null ],
+        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#ad573915f6cdf380f49fc94ec338a1a9f", null ],
+        [ "link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#a58b0d91df05ab0850314674d404f97fa", null ],
+        [ "~link_iterator", "class_t_s_l_tiled_network_1_1link__iterator.html#a8036f89af1b78f604a69cc26c263739b", null ],
+        [ "operator!=", "class_t_s_l_tiled_network_1_1link__iterator.html#a172e8e5df12625fcfde5b967a712e196", null ],
+        [ "operator*", "class_t_s_l_tiled_network_1_1link__iterator.html#aa2a753530e25b36028d8c1723c44d262", null ],
+        [ "operator++", "class_t_s_l_tiled_network_1_1link__iterator.html#a954145ec8cf240230e12e35395eca476", null ],
+        [ "operator++", "class_t_s_l_tiled_network_1_1link__iterator.html#ace5bfc1c48fa669de003a396c8c22e6e", null ],
+        [ "operator--", "class_t_s_l_tiled_network_1_1link__iterator.html#a85bd8497703f8bc5d3b23d94d103ee08", null ],
+        [ "operator--", "class_t_s_l_tiled_network_1_1link__iterator.html#a7d057abd53bf1ae498580b8449a5de30", null ],
+        [ "operator=", "class_t_s_l_tiled_network_1_1link__iterator.html#aafa162173f404404a2c41ffcb8706bae", null ],
+        [ "operator==", "class_t_s_l_tiled_network_1_1link__iterator.html#ac360772cbd0eaa4d6ecf3621a9199567", null ]
       ] ],
       [ "turn_iterator", "class_t_s_l_tiled_network_1_1turn__iterator.html", [
         [ "turn_iterator", "class_t_s_l_tiled_network_1_1turn__iterator.html#afc016af74266e67f93b02f316e6aabf7", null ],

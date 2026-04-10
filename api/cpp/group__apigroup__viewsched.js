@@ -157,11 +157,6 @@ var group__apigroup__viewsched =
       [ "inc", "class_t_s_l_terrain_v_s_location_filter.html#a879389dfc743697c5e77bbfed001c869", null ]
     ] ],
     [ "TSLTerrainVSOutput", "class_t_s_l_terrain_v_s_output.html", [
-      [ "dataItem", "struct_t_s_l_terrain_v_s_output_1_1data_item.html", [
-        [ "dataItem", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#ae031d0ca187c9d0ecc1cfd54f4e1fc63", null ],
-        [ "data", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#aa663f8cf8d2b745795f5fe1aea1ba796", null ],
-        [ "type", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#a78eeb759af275c400246038fe368827e", null ]
-      ] ],
       [ "dataUnion", "class_t_s_l_terrain_v_s_output.html#union_t_s_l_terrain_v_s_output_1_1data_union", [
         [ "b", "class_t_s_l_terrain_v_s_output.html#ac4a6e01344cb6f49254035c99abcf00b", null ],
         [ "d", "class_t_s_l_terrain_v_s_output.html#a968816e340706f0ca1ac499738db4a31", null ],
@@ -169,6 +164,11 @@ var group__apigroup__viewsched =
         [ "i", "class_t_s_l_terrain_v_s_output.html#a6f70ce5e34459b1b2ac7404a62efec4b", null ],
         [ "s", "class_t_s_l_terrain_v_s_output.html#ab5bca8179ed5fadd6d53e60952aa101c", null ],
         [ "v", "class_t_s_l_terrain_v_s_output.html#afb8eeecb094247a17ddc45241ade705c", null ]
+      ] ],
+      [ "dataItem", "struct_t_s_l_terrain_v_s_output_1_1data_item.html", [
+        [ "dataItem", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#ae031d0ca187c9d0ecc1cfd54f4e1fc63", null ],
+        [ "data", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#aa663f8cf8d2b745795f5fe1aea1ba796", null ],
+        [ "type", "struct_t_s_l_terrain_v_s_output_1_1data_item.html#a78eeb759af275c400246038fe368827e", null ]
       ] ],
       [ "dataType", "class_t_s_l_terrain_v_s_output.html#a2197b22cba3a0b405db104fc1d285e01", [
         [ "typeTSLTerrainVSVisibility", "class_t_s_l_terrain_v_s_output.html#a2197b22cba3a0b405db104fc1d285e01a8ab8fbec265bfb42b48cbbcaa1b2bb68", null ],
