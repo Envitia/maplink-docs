@@ -15,6 +15,43 @@
     {% include head-custom.html %}
   </head>
   <body>
+    <nav class="top-nav" aria-label="{{ site.data.nav.nav_title | default: 'Main navigation' }}">
+      <ul class="top-nav__list">
+        {% for item in site.data.nav.pages %}
+          {% if item.url contains '://' %}
+            {% assign item_is_external = true %}
+            {% assign item_href = item.url %}
+          {% else %}
+            {% assign item_is_external = false %}
+            {% assign item_href = item.url | relative_url %}
+          {% endif %}
+        <li class="top-nav__item">
+          <a
+            class="top-nav__link{% if page.url == item.url %} is-active{% endif %}"
+            href="{{ item_href }}"
+            {% if item_is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+          >
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+        <li class="top-nav__item top-nav__item--search">
+          <label class="top-nav__search-label" for="site-search-input">Search</label>
+          <div class="top-nav__search-wrap">
+            <input
+              id="site-search-input"
+              class="top-nav__search-input"
+              type="search"
+              placeholder="Search docs..."
+              autocomplete="off"
+              aria-label="Search site"
+              aria-controls="site-search-results"
+            />
+            <div id="site-search-results" class="top-nav__search-results" role="listbox" aria-label="Search results"></div>
+          </div>
+        </li>
+      </ul>
+    </nav>
     <div class="wrapper">
       <header>
         {% if site.logo %}
@@ -27,11 +64,6 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
-        <div class="btn-group">
-          {% for item in site.data.nav.pages %}
-          <a href="{{ item.url | relative_url }}"><img src="https://img.shields.io/badge/{{ item.title }}-{{ item.colour }}" /></a>
-          {% endfor %}
-        </div>
         <div class="btn-group">
           {% for item in site.data.nav.messages %}
           <a href="{{ item.url | relative_url }}"><img src="https://img.shields.io/badge/{{ item.title }}-{{ item.colour }}" /></a>
@@ -54,5 +86,6 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
   </body>
 </html>

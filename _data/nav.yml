@@ -4,20 +4,32 @@ pages:
   url: /
   colour: 84bd00
 
-- title: NEWS
-  url: https://www.envitia.com/insights/
-  colour: 84bd00
-
 - title: API DOCS
   url: /api/
   colour: 84bd00
 
-- title: SAMPLES
-  url: https://github.com/envitia
+- title: STUDIO DOCS
+  url: /studio/
+  colour: 84bd00
+
+- title: DOCS
+  url: /pages/docs/
   colour: 84bd00
 
 - title: SUPPORT
   url: /pages/support/
+  colour: 84bd00
+
+- title: LICENCES
+  url: /licences/
+  colour: 84bd00
+
+- title: NEWS
+  url: https://www.envitia.com/insights/
+  colour: 84bd00
+
+- title: SAMPLES
+  url: https://github.com/envitia
   colour: 84bd00
 
 - title: REQUEST A TRIAL
