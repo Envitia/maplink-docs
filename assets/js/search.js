@@ -1,20 +1,28 @@
 (function () {
   var lunrIndex = null;
   var pagesData = [];
+  var searchStatus = 'loading'; // 'loading' | 'ready' | 'failed'
   var baseUrl = (typeof siteBaseUrl !== 'undefined' ? siteBaseUrl : '').replace(/\/$/, '');
 
   fetch(baseUrl + '/search.json')
-    .then(function (res) { return res.json(); })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
     .then(function (data) {
       pagesData = data;
+      if (typeof lunr === 'undefined') throw new Error('lunr not available');
       lunrIndex = lunr(function () {
         this.field('title', { boost: 10 });
         this.field('content');
         this.ref('url');
         data.forEach(function (page) { this.add(page); }, this);
       });
+      searchStatus = 'ready';
     })
-    .catch(function () {});
+    .catch(function () {
+      searchStatus = 'failed';
+    });
 
   function initSearch(inputEl, resultsEl) {
     if (!inputEl || !resultsEl) return;
@@ -40,8 +48,21 @@
       resultsEl.innerHTML = '';
     }
 
+    function showStatus(msg) {
+      selectedIndex = -1;
+      resultsEl.classList.add('active');
+      resultsEl.innerHTML = '<p class="search-no-results">' + msg + '</p>';
+    }
+
     function runSearch(query) {
-      if (!lunrIndex) return;
+      if (searchStatus === 'loading') {
+        showStatus('Search index is loading&hellip;');
+        return;
+      }
+      if (searchStatus === 'failed' || !lunrIndex) {
+        showStatus('Search is temporarily unavailable.');
+        return;
+      }
       var results;
       try {
         results = lunrIndex.search(query + '*');
@@ -81,7 +102,6 @@
     inputEl.addEventListener('keydown', function (e) {
       if (!resultsEl.classList.contains('active')) return;
       var items = getItems();
-      if (!items.length) return;
 
       if (e.key === 'ArrowDown') {
         e.preventDefault();
@@ -96,6 +116,7 @@
           updateSelection();
         }
       } else if (e.key === 'Tab') {
+        if (!items.length) return;
         e.preventDefault();
         if (e.shiftKey) {
           selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
@@ -112,7 +133,7 @@
     });
 
     inputEl.addEventListener('focus', function () {
-      if (this.value.trim().length >= 2) resultsEl.classList.add('active');
+      if (this.value.trim().length >= 2) runSearch(this.value.trim());
     });
 
     document.addEventListener('keydown', function (e) {
@@ -124,15 +145,26 @@
     });
   }
 
-  initSearch(
-    document.getElementById('search-input'),
-    document.getElementById('search-results')
-  );
+  var desktopInput = document.getElementById('search-input');
+  var mobileInput = document.getElementById('search-input-mobile');
 
-  initSearch(
-    document.getElementById('search-input-mobile'),
-    document.getElementById('search-results-mobile')
-  );
+  initSearch(desktopInput, document.getElementById('search-results'));
+  initSearch(mobileInput, document.getElementById('search-results-mobile'));
+
+  // Press '/' to focus the search bar (standard docs site shortcut)
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== desktopInput && document.activeElement !== mobileInput) {
+      var tag = document.activeElement ? document.activeElement.tagName : '';
+      if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        if (desktopInput && desktopInput.offsetParent !== null) {
+          desktopInput.focus();
+        } else if (mobileInput) {
+          mobileInput.focus();
+        }
+      }
+    }
+  });
 
   function highlight(text, query) {
     if (!text) return '';
@@ -140,18 +172,6 @@
     var escaped = escapeHtml(decoded);
     var safe = escapeRegex(query);
     return escaped.replace(new RegExp('(' + safe + ')', 'gi'), '<em>$1</em>');
-  }
-
-  function cleanMarkdown(text) {
-    return text
-      .replace(/#{1,6}\s*/g, '')
-      .replace(/\*{1,2}([^*]*)\*{1,2}/g, '$1')
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-      .replace(/\{:[^}]*\}/g, '')
-      .replace(/`[^`]*`/g, '')
-      .replace(/^>\s*/gm, '')
-      .replace(/\s+/g, ' ')
-      .trim();
   }
 
   function decodeHtml(str) {

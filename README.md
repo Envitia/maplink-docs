@@ -33,7 +33,7 @@ MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be 
 - [Support Pages](./pages/support/)
 - [Licences](./licences)
 
-# Docs
+## Documentation
 <ul>
     {% for item in site.data.docs.docs %}
     <li>
