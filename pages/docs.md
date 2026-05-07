@@ -1,3 +1,7 @@
+---
+title: MapLink Pro Documentation
+---
+
 # MapLink Pro Documents
 
 
@@ -12,7 +16,7 @@ Our quick start guides help you through the process of getting started with MapL
 
 Development guides demonstrate how to implement MapLink Pro capabilities in your application or solution.
 
-- **[Developer's Guide](../pdf/MapLink%20Developer's%20Guide.pdf)**
+- **[Developer's Guide](./developers-guide)**
 - **[NEW - Wrap-around Maps](./features/wrap-around-maps)**
 - [S52 and S63 Development Guide](../pdf/MapLink%20S63%20&%20S52%20SDK%20Developers%20Guide.pdf)
 - [MapLink Pro for Android Developer's Guide](../pdf/MapLink%20Pro%20for%20Android%20Developer's%20Guide.pdf)

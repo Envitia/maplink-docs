@@ -10,7 +10,7 @@ pages:
     - title: Quick Start Guide
       url: /pages/quick-start-guide
     - title: Developer's Guide
-      url: /pdf/MapLink Developer's Guide.pdf
+      url: /pages/developers-guide
     - title: Wrap-around Maps
       url: /pages/features/wrap-around-maps
     - title: OGC Services Guide

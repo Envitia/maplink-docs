@@ -1,3 +1,7 @@
+---
+title: MapLink Pro Quick Start Guide
+---
+
 # MapLink Pro Quick Start Guide
 
 > **MapLink Pro 11 is now available.** This guide covers initial installation and setup for MapLink Pro. For the latest release notes, see the [Releases page](/pages/releases/).

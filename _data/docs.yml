@@ -4,7 +4,7 @@ docs:
   colour: 84bd00
 
 - title: MapLink Pro Developer's Guide
-  url: ./pdf/MapLink Developer's Guide.pdf
+  url: ./pages/developers-guide
   colour: 84bd00
 
 - title: MapLink Studio User Guide

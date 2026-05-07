@@ -1,3 +1,7 @@
+---
+title: Installing and Upgrading MapLink Pro
+---
+
 # Installing MapLink
 
 > **MapLink Pro 11: The next major release of MapLink Pro is now available. MapLink Pro 8.x has now entered support and maintenance end-of-life. [Please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/Lr7jN9TCC0).**
