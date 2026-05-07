@@ -5,13 +5,35 @@ layout: null
   {% assign first = true %}
   {% for page in site.pages %}
   {% if page.title and page.title != "" %}
+  {% assign sections = page.content | split: '<h2' %}
+
+  {% comment %} Page-level entry (intro content before first h2) {% endcomment %}
   {% unless first %},{% endunless %}
   {% assign first = false %}
   {
     "title": {{ page.title | jsonify }},
     "url": {{ page.url | relative_url | jsonify }},
-    "content": {{ page.content | strip_html | strip_newlines | jsonify }}
+    "content": {{ sections[0] | strip_html | strip_newlines | jsonify }}
   }
+
+  {% comment %} One entry per h2 section, linking to the anchor {% endcomment %}
+  {% for section in sections offset: 1 %}
+    {% assign id_parts = section | split: 'id="' %}
+    {% if id_parts.size > 1 %}
+      {% assign section_id = id_parts | last | split: '"' | first %}
+      {% assign heading_part = section | split: '</h2>' | first %}
+      {% assign heading_html = '<h2' | append: heading_part | append: '</h2>' %}
+      {% assign heading_text = heading_html | strip_html | strip %}
+      {% assign section_body = section | split: '</h2>' | last | strip_html | strip_newlines %}
+      ,{
+        "title": {{ heading_text | jsonify }},
+        "url": {{ page.url | relative_url | append: '#' | append: section_id | jsonify }},
+        "content": {{ section_body | jsonify }},
+        "page": {{ page.title | jsonify }}
+      }
+    {% endif %}
+  {% endfor %}
+
   {% endif %}
   {% endfor %}
 ]

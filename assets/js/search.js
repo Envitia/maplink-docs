@@ -81,12 +81,15 @@
         return;
       }
       var html = '';
-      results.slice(0, 8).forEach(function (result) {
+      results.slice(0, 10).forEach(function (result) {
         var page = pagesData.find(function (p) { return p.url === result.ref; });
         if (!page) return;
         var title = highlight(page.title, query);
         html += '<a class="search-result-item" href="' + page.url + '" tabindex="-1">';
         html += '<h4>' + title + '</h4>';
+        if (page.page) {
+          html += '<span class="search-result-page">' + escapeHtml(page.page) + '</span>';
+        }
         html += '</a>';
       });
       resultsEl.innerHTML = html;
