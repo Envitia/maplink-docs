@@ -8,7 +8,7 @@ pages:
   url: /pages/docs
   children:
     - title: Quick Start Guide
-      url: /pdf/MapLink Pro Quick Start Guide.pdf
+      url: /pages/quick-start-guide
     - title: Developer's Guide
       url: /pdf/MapLink Developer's Guide.pdf
     - title: Wrap-around Maps
