@@ -5,7 +5,7 @@
 
 Our quick start guides help you through the process of getting started with MapLink Pro.
 
-- **[MapLink Pro Quick Start Guide](../pdf/MapLink%20Pro%20Quick%20Start%20Guide.pdf)**
+- **[MapLink Pro Quick Start Guide](./quick-start-guide)**
 - See also: [Installing MapLink Pro](./support/install-and-upgrade.md)
 
 ## Development Guides
