@@ -41,7 +41,7 @@ Certain MapLink Pro components installed on Windows require a licence to be inst
 - MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
 - [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
 
-[Create a technical support ticket](https://support.envitia.com) if you run into any issues.
+[Create a technical support ticket](mailto:support@envitia.com) if you run into any issues.
 
 
 # Linux Development Machine
