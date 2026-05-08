@@ -1,17 +1,18 @@
+---
+title: Installing and Upgrading MapLink Pro
+---
+
 # Installing MapLink
 
-* toc
-{:toc}
-
-> **MapLink Pro 11: The next major release of MapLink Pro is now available. MapLink Pro 8.x has now entered support and maintenance end-of-life. [Please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/6ydUswfjEe).**
+> **MapLink Pro 11: The next major release of MapLink Pro is now available. MapLink Pro 8.x has now entered support and maintenance end-of-life. [Please contact us to discuss how to bring your systems up-to-date](https://forms.office.com/e/Lr7jN9TCC0).**
 
 There are structural differences between 11.1 and previous versions of MapLink Pro. This page explains how to upgrade your application to MapLink Pro 11.1 and above.
 
-# Windows Development Machine
-## Installation
+## Windows Development Machine
+### Installation
 Envitia MapLink Pro is typically installed on a Windows development machine using an installation executable supplied by Envitia.
 
-## Windows Environment Variables
+### Windows Environment Variables
 When MapLink Pro is installed on a Windows machine, an environment variable named *MAPL_PATH* is added to the system and it contains
 the location of the bin directory of the installation. The *MAPL_PATH* environment variable is
 then referenced from the *PATH* environment variable.
@@ -29,11 +30,11 @@ a system service, such as Microsoft's Internet Information Services (IIS), a reb
 be required.
 - Or, set the application's working directory to the desired MapLink Pro version's bin64 directory.
 
-## Windows Licensing
+### Windows Licensing
 Certain MapLink Pro components installed on Windows require a licence to be installed on the machine before they will work.
 [Please contact us for a trial licence](https://forms.office.com/e/Lr7jN9TCC0) if you do not yet have a licence.
 
-## Upgrading to MapLink 11.1 and above on Windows
+### Upgrading to MapLink 11.1 and above on Windows
 
 - MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro installation.**
 - You may encounter some build errors in your C++ application code if you are using C++ features that have been deprecated or removed from the C++ 17 standard. These tend to be concerned with C++ features that have been removed from the C++ standard, and tend to require fairly straight-forward code replacements.
@@ -44,12 +45,12 @@ Certain MapLink Pro components installed on Windows require a licence to be inst
 [Create a technical support ticket](mailto:support@envitia.com) if you run into any issues.
 
 
-# Linux Development Machine
+## Linux Development Machine
 
-## Installation
+### Installation
 Envitia MapLink Pro is typically installed on a Linux development machine using a compressed tarball file supplied by Envitia.
 
-## Linux Environment Variables
+### Linux Environment Variables
 A script named *mapl_init* (csh shell) and *mapl_init_bash* (bash shell) is included to initialise
 your environment, prior to building the samples. MapLink expects *LD_LIBRARY_PATH* and
 *MAPL_HOME* environment variables to be correctly setup when MapLink applications are run. The
@@ -62,16 +63,16 @@ built against them. However, the most recently installed version will be referen
 
 To ensure that your application runtime loads the desired MapLink Pro library versions, update the value of the *LD_LIBRARY_PATH* environment variable to point to the desired MapLink Pro version's *lib64* directory.
 
-## Upgrading to MapLink 11.1 and above on Linux
+### Upgrading to MapLink 11.1 and above on Linux
 
 - MapLink Pro's build dependencies, [including the compilers and frameworks used to build the product](./platform-support.md#maplink-111-compilers), have been updated to ensure security and reliability and to facilitate future development. You will need to update your environment and application accordingly. **Your application must be updated with the binaries included in the *redist64* folder of your MapLink Pro distribution package.**
 - MapLink Pro no longer includes 32-bit libraries. You will need to update your environment and application to a 64-bit architecture.
 - [Several older and rarely used SDKs have been archived](./sdk-support.md) and these are no longer available in the product. If you are using any of these libraries, please contact Envitia to discuss workarounds or other options.
 
-## Linux Licensing
+### Linux Licensing
 Although the UNIX/Linux/VxWorks runtime libraries are not locked, a valid licence is required to legally use them.
 
 Some SDKs are shipped in encrypted packages in the folder *OptionalComponents*. This folder contains a README.txt file which explains how to decrypt and extract the SDKs.
 
-# Deploying an Application with MapLink Pro
+## Deploying an Application with MapLink Pro
 [Deployment of a MapLink Pro-Based Application](./deployment-guide.md)

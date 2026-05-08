@@ -1,32 +1,67 @@
 nav_title: Navigation
+
 pages:
 - title: HOME
   url: /
-  colour: 84bd00
 
-- title: NEWS
-  url: https://www.envitia.com/insights/
-  colour: 84bd00
+- title: DOCS
+  url: /pages/docs
+  children:
+    - title: Quick Start Guide
+      url: /pages/quick-start-guide
+    - title: Developer's Guide
+      url: /pages/developers-guide
+    - title: Wrap-around Maps
+      url: /pages/features/wrap-around-maps
+    - title: OGC Services Guide
+      url: /pages/MapLink OGC Services Deployment User Guide
 
 - title: API DOCS
   url: /api/
-  colour: 84bd00
+  children:
+    - title: C++ API Reference
+      url: /api/cpp/
+    - title: .NET API Reference
+      url: /api/dotnet/
 
-- title: SAMPLES
-  url: https://github.com/envitia
-  colour: 84bd00
+- title: RELEASES
+  url: /pages/releases/
+  children:
+    - title: MapLink 11.2 (Latest)
+      url: /pages/releases/11.2/11.2.7
+    - title: All 11.x Releases
+      url: /pages/releases/#maplink-pro-11-releases
+    - title: All 10.x Releases
+      url: /pages/releases/#maplink-pro-10-releases
 
 - title: SUPPORT
   url: /pages/support/
-  colour: 84bd00
+  children:
+    - title: Install & Upgrade
+      url: /pages/support/install-and-upgrade
+    - title: Platform Support
+      url: /pages/support/platform-support
+    - title: SDK Support
+      url: /pages/support/sdk-support
+    - title: Deployment Guide
+      url: /pages/support/deployment-guide
+    - title: Geospatial Formats
+      url: /pages/support/geospatial-formats
+    - title: Windows Libraries
+      url: /pages/support/windows-libs
+    - title: Linux Libraries
+      url: /pages/support/linux-deployed-libs
+
+- title: SAMPLES
+  url: https://github.com/envitia
+
+- title: NEWS
+  url: https://www.envitia.com/insights/
 
 - title: REQUEST A TRIAL
   url: https://forms.office.com/e/Lr7jN9TCC0
-  colour: 1F2A44
-  
+  highlight: true
+
 messages:
 - title: MAPLINK 11 AVAILABLE NOW
-  url: /pages/support/
-  colour: red
-
-#https://jekyllrb.com/tutorials/navigation/
+  url: /pages/releases/11.2/11.2.7

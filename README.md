@@ -3,7 +3,7 @@
 
 <div class="row">
 <div class="column" markdown=1>
-Envitia’s software technology for mission system developers, enabling them to create high performance geospatial intelligence, situational awareness and map-based systems. Feature rich and proven in demanding operational systems, Envitia’s MapLink Pro provides system integrators and OEMs with the application control and flexibility they need while minimising delivery time and cost.
+Envitias software technology for mission system developers, enabling them to create high performance geospatial intelligence, situational awareness and map-based systems. Feature rich and proven in demanding operational systems, Envitia's MapLink Pro provides system integrators and OEMs with the application control and flexibility they need while minimising delivery time and cost.
 [Read more...](https://www.envitia.com/for-developers/maplink-pro/)
 
 </div>
@@ -15,10 +15,10 @@ Envitia’s software technology for mission system developers, enabling them to 
 <div class="row" markdown=1>
 
 
-# Getting Started
+## Getting Started
 ## Installation
 - [Get a trial version of MapLink Pro](https://forms.office.com/e/Lr7jN9TCC0).
-- Our [Quick Start Guide](./pdf/MapLink Pro Quick Start Guide.pdf) will see you through the process of getting started.
+- Our [Quick Start Guide](./pages/quick-start-guide) will see you through the process of getting started.
 
 ## Samples
 MapLink Pro comes installed with a variety of sample applications to get you started quickly.
@@ -33,7 +33,7 @@ MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be 
 - [Support Pages](./pages/support/)
 - [Licences](./licences)
 
-# Docs
+## Documentation
 <ul>
     {% for item in site.data.docs.docs %}
     <li>
@@ -46,3 +46,4 @@ MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be 
 
 
 </div>
+

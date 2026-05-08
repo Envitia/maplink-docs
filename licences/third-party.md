@@ -1,7 +1,5 @@
 # Third Party Licences
 
-* toc
-{:toc}
 
 This page references the licences for all third party libraries and data shipped with MapLink Pro.
 

@@ -2,7 +2,7 @@
 
 The MapLink Pro SDK is proprietary commercial software. Copyright (c) Envitia Ltd.
 
-# Restrictions
+## Restrictions
 
 MapLink Pro software shall not be installed without a valid licence from Envitia.
 You shall not distribute any file supplied with MapLink Pro without first obtaining the proper licence from Envitia.
@@ -10,7 +10,7 @@ You shall not distribute the header files with your application and you shall no
 
 Please contact [Envitia](https://www.envitia.com) or your supplier for further information.
 
-# Copyright Statements for Derivative Programs
+## Copyright Statements for Derivative Programs
 
 MapLink Pro uses additional software from various sources. MapLink Pro and these additional
 software portions are copyrighted to their respective owners. Any programs derived from
@@ -26,15 +26,15 @@ MapLink Pro-derived applications that use raster maps or raster images require t
 
 Additional copyright statements may be required for other third-party open source and proprietary components. Please see the [Third Party licences page](./third-party).
 
-# MapLink Pro SDK Licences
+## MapLink Pro SDK Licences
 
 - [MapLink Pro Windows Licence](./MapLink%20Pro%20Windows%20Licence.pdf)
 - [MapLink Pro Windows Evaluation Licence](MapLink%20Pro%20Windows%20Eval%20Licence.pdf)
 
-# Third Party Licences
+## Third Party Licences
 - [Third Party](./third-party)
 
-# maplink-docs Developer Site Licence
+## maplink-docs Developer Site Licence
 
 This developer site and the documentation herein is licensed under the [GNU Free Documentation License, Version 1.2](https://www.gnu.org/licenses/old-licenses/fdl-1.2-standalone.html).
 

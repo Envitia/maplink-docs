@@ -4,55 +4,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-{% seo %}
-    <link rel="shortcut icon" type="image/png" href="{{site.icon | relative_url}}">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    {% seo %}
+    <link rel="shortcut icon" type="image/png" href="{{ site.icon | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.time | relative_url }}">
+    <style>
+      body { margin: 0; padding-top: 64px; background: #fff; }
+      .site-nav { position: fixed; top: 0; left: 0; right: 0; height: 64px; background: #1f2a44; z-index: 1000; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     {% include head-custom.html %}
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        {% if site.logo %}
-        <a href="https://www.envitia.com/for-developers/maplink-pro/">
-          <img src="{{site.logo | relative_url}}" alt="Envitia MapLink Pro" height="100" width="100" />
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="site-nav" id="site-nav">
+      <div class="nav-container">
+
+        <a class="nav-logo" href="{{ "/" | relative_url }}">
+          {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="MapLink Pro" />
+          {% endif %}
+          <span class="nav-logo-text">{{ site.title | default: site.github.repository_name }}</span>
         </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li class="mobile-search-item">
+            <input type="text" id="search-input-mobile" placeholder="Search docs..." autocomplete="off" />
+            <div class="search-results-mobile" id="search-results-mobile"></div>
+          </li>
+          {% for item in site.data.nav.pages %}
+          <li class="{% if item.children %}has-dropdown{% endif %}{% if item.highlight %} nav-highlight{% endif %}">
+            <a href="{{ item.url | relative_url }}">
+              {{ item.title }}{% if item.children %} <span class="arrow">&#9660;</span>{% endif %}
+            </a>
+            {% if item.children %}
+            <ul class="dropdown">
+              {% for child in item.children %}
+              <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="nav-search">
+          <input type="text" id="search-input" placeholder="Search docs..." autocomplete="off" />
+          <div class="search-results" id="search-results"></div>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Version / announcement banner -->
+    {% if site.data.nav.messages %}
+    <div class="version-banner">
+      {% for msg in site.data.nav.messages %}
+      <span class="banner-dot"></span>
+      <a href="{{ msg.url | relative_url }}" class="banner-link">{{ msg.title }}</a>
+      {% endfor %}
+      <button class="banner-close" onclick="this.parentElement.style.display='none'" aria-label="Dismiss">&times;</button>
+    </div>
+    {% endif %}
+
+    <!-- Main content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+
+        <!-- Breadcrumb (populated by breadcrumb.js) -->
+        <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+
+        <!-- Last updated (add `updated: "Month DD, YYYY"` to page frontmatter to show) -->
+        {% if page.updated %}
+        <p class="last-updated">Last updated: <time>{{ page.updated }}</time></p>
         {% endif %}
 
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <!-- Two-column layout: page content + sticky TOC sidebar -->
+        <div class="page-layout">
+          <div class="page-content">
+            {{ content }}
+          </div>
+          <aside class="toc-sidebar" id="toc-sidebar">
+            <div class="toc-inner">
+              <p class="toc-heading">On this page</p>
+              <nav id="toc-nav"></nav>
+            </div>
+          </aside>
+        </div>
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        
-        <div class="btn-group">
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="Envitia MapLink Pro" height="55" />
+          {% endif %}
+          <p>© <a href="https://www.envitia.com">Envitia Ltd</a> {{ site.time | date: '%Y' }}</p>
+          <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small></p>
+        </div>
+        <div class="footer-nav">
           {% for item in site.data.nav.pages %}
-          <a href="{{ item.url | relative_url }}"><img src="https://img.shields.io/badge/{{ item.title }}-{{ item.colour }}" /></a>
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
           {% endfor %}
         </div>
-        <div class="btn-group">
-          {% for item in site.data.nav.messages %}
-          <a href="{{ item.url | relative_url }}"><img src="https://img.shields.io/badge/{{ item.title }}-{{ item.colour }}" /></a>
-          {% endfor %}
+        <div class="footer-right">
+          <button onclick="window.history.back()" class="footer-btn">&larr; Back</button>
+          <button onclick="window.history.forward()" class="footer-btn">Forward &rarr;</button>
         </div>
+      </div>
+    </footer>
 
-      </header>
-      <section>
-
-      {{ content }}
-
-      </section>
-      <footer>
-        <p>© <a href="https://www.envitia.com">Envitia Ltd</a> {{ site.time | date: '%Y' }}</p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-        <div class="btn-group">
-          <a onclick="window.history.back()"><img src="https://img.shields.io/badge/< Back-white" />
-          </a><a onclick="window.history.forward()"><img src="https://img.shields.io/badge/Forward >-white" /></a>
-        </div>
-      </footer>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>var siteBaseUrl = "{{ site.baseurl }}";</script>
+    <script src="{{ "/assets/js/lunr.min.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/nav.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/copy-code.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/breadcrumb.js" | relative_url }}"></script>
   </body>
 </html>
