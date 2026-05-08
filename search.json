@@ -1,0 +1,60 @@
+---
+layout: null
+---
+[
+  {% assign first = true %}
+  {% for page in site.pages %}
+  {% if page.title and page.title != "" %}
+  {% assign h2_sections = page.content | split: '<h2' %}
+
+  {% comment %} Page-level entry (intro content before first h2) {% endcomment %}
+  {% unless first %},{% endunless %}
+  {% assign first = false %}
+  {
+    "title": {{ page.title | jsonify }},
+    "url": {{ page.url | relative_url | jsonify }},
+    "content": {{ h2_sections[0] | strip_html | strip_newlines | jsonify }}
+  }
+
+  {% comment %} One entry per h2 section {% endcomment %}
+  {% for section in h2_sections offset: 1 %}
+    {% assign id_parts = section | split: 'id="' %}
+    {% if id_parts.size > 1 %}
+      {% assign section_id = id_parts | last | split: '"' | first %}
+      {% assign heading_part = section | split: '</h2>' | first %}
+      {% assign heading_html = '<h2' | append: heading_part | append: '</h2>' %}
+      {% assign heading_text = heading_html | strip_html | strip %}
+      {% assign section_raw = section | split: '</h2>' | last %}
+      {% assign section_body = section_raw | strip_html | strip_newlines %}
+      ,{
+        "title": {{ heading_text | jsonify }},
+        "url": {{ page.url | relative_url | append: '#' | append: section_id | jsonify }},
+        "content": {{ section_body | jsonify }},
+        "page": {{ page.title | jsonify }}
+      }
+
+      {% comment %} One entry per h3 subsection within this h2 {% endcomment %}
+      {% assign h3_sections = section_raw | split: '<h3' %}
+      {% for h3_section in h3_sections offset: 1 %}
+        {% assign h3_id_parts = h3_section | split: 'id="' %}
+        {% if h3_id_parts.size > 1 %}
+          {% assign h3_id = h3_id_parts | last | split: '"' | first %}
+          {% assign h3_heading_part = h3_section | split: '</h3>' | first %}
+          {% assign h3_heading_html = '<h3' | append: h3_heading_part | append: '</h3>' %}
+          {% assign h3_heading_text = h3_heading_html | strip_html | strip %}
+          {% assign h3_body = h3_section | split: '</h3>' | last | strip_html | strip_newlines %}
+          ,{
+            "title": {{ h3_heading_text | jsonify }},
+            "url": {{ page.url | relative_url | append: '#' | append: h3_id | jsonify }},
+            "content": {{ h3_body | jsonify }},
+            "page": {{ heading_text | jsonify }}
+          }
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+  {% endfor %}
+
+  {% endif %}
+  {% endfor %}
+]

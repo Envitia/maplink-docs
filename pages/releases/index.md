@@ -44,14 +44,14 @@ releases-10:
     release-notes: 10.2/10.2.9.42
 ---
 
-# MapLink Pro 11 Releases
+## MapLink Pro 11 Releases
 
 | Version | Release Date  | Summary | Release Notes |
 | --- | --- | --- | --- |
 {% for release in page.releases-11 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
 {% endfor %}
 
-# MapLink Pro 10 Releases
+## MapLink Pro 10 Releases
 
 | Version | Release Date  | Summary | Release Notes |
 | --- | --- | --- | --- |

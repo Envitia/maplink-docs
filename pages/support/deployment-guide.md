@@ -1,19 +1,21 @@
+---
+title: Deployment of a MapLink Pro-Based Application
+---
+
 # Deployment of a MapLink Pro-Based Application
 
-* toc
-{:toc}
 
-# Licences
+## Licences
 Please see the [Licences Page](../../licences/) for licence information and required copyright statements.
 
-# Directory Naming Conventions
+## Directory Naming Conventions
 MapLink expects that the following directory conventions are observed by an application installation:
 
 | **/bin64** | All MapLink Pro binaries and executables used by the application. Only the subset of all MapLink Pro binary files that are required by the application should be shipped |
 | **/config** | The MapLink Pro configuration files used by the application. Only the subset of all MapLink Pro configuration files that are required by the application should be shipped |
 | **/licences** | The LEADTOOLS.lic file should be deployed here, taken from [MAPLINKPROINSTALLDIR]/licences |
 
-# Configuration
+## Configuration
 
 MapLink Pro loads all of its necessary configuration files from the **/config** directory, usually through a call to
 ```TSLDrawingSurface::loadStandardConfig```. When deploying an application based upon MapLink Pro, a copy of this folder must be shipped along with the application.
@@ -40,7 +42,7 @@ The MapLink Pro config directory contains all the configuration files for MapLin
 deploy an application you do not need to deploy all the files. You only need to deploy the files
 your application requires. The following tables explain what the files are required for.
 
-## Standard Config Directories
+### Standard Config Directories
 
 These files and directories are normally required by a deployment:
 
@@ -61,7 +63,7 @@ These files and directories are normally required by a deployment:
 | tslunixbitmapfonts.dat | X11 bitmap font list | 
 | tslunixfonts.dat | X11 xft font list | 
 
-## Optional Directories
+### Optional Directories
 
 Only include the directories required by your application in your deployment:
 
@@ -78,7 +80,7 @@ Only include the directories required by your application in your deployment:
 | colourramps | Colour-ramps for terrain visualisations (Studio and Direct Import) |
 | renditions | Renditions for specific data products |
 
-## Optional Config Files
+### Optional Config Files
 
 Only include the files required by your application in your deployment:
 
@@ -124,7 +126,7 @@ Only include the files required by your application in your deployment:
 | TerrainViewer.ini | Terrain Viewer configuration file. | 
 | vpffield.ini | VPF Filter configuration file. | 
 
-## Error Message Files
+### Error Message Files
 
 The error message files are used to provide error information in addition to the error number.
 You only need to deploy the message files your application requires.
@@ -173,7 +175,7 @@ You only need to deploy the message files your application requires.
 | tsltransformerrors.msg | MapLink: Transforms (projections) |
 | tsltrasherrors.msg | MapLink: Raster Handling |
 
-# GDAL/OGR
+## GDAL/OGR
 
 MapLink Pro uses GDAL/OGR in the CoreSDK. The initialisation of GDAL/OGR occurs when any of the MapLink resource files are loaded.
 
@@ -195,19 +197,19 @@ Where:
   - The parent directory of the resource file being loaded.
 - *GDAL_VERSION_MAJOR.GDAL_VERSION_MINOR* = GDAL/OGR Major/Minor version
 
-# Windows Deployed Libraries
+## Windows Deployed Libraries
 
-See: [Windows Deployed Libraries](./windows-deployed-libs)
+See: [Windows Deployed Libraries](./windows-libs)
 
-# Linux Deployed Libraries
+## Linux Deployed Libraries
 
 See: [Linux Deployed Libraries](./linux-deployed-libs)
 
-# Common Deployment Problems
+## Common Deployment Problems
 
 If a problem persists, **[create a technical support ticket](mailto:support@envitia.com) (Requires an active maintenance & support contract)**
 
-## DLL/Shared Library Not Found
+### DLL/Shared Library Not Found
 On Windows use dependency walker to see what DLLs are loaded and if they can be found.
 .NET may require the use of a ResolveEventHandler.
 
@@ -220,6 +222,6 @@ should avoid setting the path in the environment variable and run the applicatio
 directory. If you do this then be careful that the application or GUI toolkit does not change the
 working directory.
 
-## MapLink Studio Automation
+### MapLink Studio Automation
 Only one version of the Automation interface can be registered at any one time.
 Please refer to Envitia support for further help.

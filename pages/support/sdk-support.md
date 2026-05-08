@@ -1,14 +1,16 @@
+---
+title: MapLink Pro SDK and Component Support
+---
+
 # MapLink Pro SDK & Component Support
 
-* toc
-{:toc}
 
 MapLink Pro includes many individual SDKs and supporting components. These are listed below.
 
 A deprecated SDK or feature will continue to be available in the product until the next major version. Where possible, a deprecation will be accompanied with a recommendation for an alternative solution.
 
 
-# Column Descriptions
+## Column Descriptions
 - **Status**: whether the component is supported, deprecated or archived.
 - **Windows**: the latest MapLink Pro version that provides support for the component on Windows.
 - **Linux**: the latest MapLink Pro version that provides support for the component on Linux.
@@ -17,7 +19,7 @@ A deprecated SDK or feature will continue to be available in the product until t
 - **.NET API**: whether the SDK has a .NET API.
 - **Java API**: whether the SDK has a Java API for Android solutions.
 
-# SDKs
+## SDKs
 All supported MapLink Pro runtime SDKs are listed.
 
 | SDK | Status | Windows | Linux | Android | C++ API | .NET API | Java API |
@@ -64,7 +66,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | Tracks | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
 | WMTS Data Layer | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | | |
 
-# Server Components
+## Server Components
 
 These components provide capabilities to distribute geospatial information over a network via OGC-compliant open standard interfaces.
 
@@ -83,7 +85,7 @@ These components provide capabilities to distribute geospatial information over 
 | WPS Plugin API | **Deprecated** | 10.2 | 10.2 | Yes |
 | WPS Viewshed Plugin | **Deprecated** | 10.2 | | |
 
-# Tools
+## Tools
 
 MapLink Tools support configuration and optimisation of MapLink runtimes.
 
@@ -103,7 +105,7 @@ MapLink Tools support configuration and optimisation of MapLink runtimes.
 
 > *Although MapLink Studio is supported on Windows only, the optimised MapLink maps it generates can be loaded by MapLink runtimes on all operating systems.
 
-# MapLink Studio Filters
+## MapLink Studio Filters
 
 MapLink Studio filters can be thought of as native geospatial format drivers that provide file parsing capabilities to MapLink Studio. Your solution requires the filters appropriate for your native geospatial formats, if you need to pre-process your geospatial data in MapLink Studio.
 
@@ -145,5 +147,5 @@ Because MapLink Studio is only currently supported on Windows, all filters are a
 | Shapefile | Supported | 11.2.7 |
 | VPF | Supported | 11.2.7 |
 
-# Note
+## Note
 > Any component that is listed as supported in MapLink 10.2 on Windows or Linux, but not MapLink 11.x, will be upgraded by an upcoming release.

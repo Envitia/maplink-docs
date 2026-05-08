@@ -1,3 +1,7 @@
+---
+title: MapLink Pro Windows Runtime Libraries
+---
+
 # MapLink Pro Windows Libraries
 
 This page describes which MapLink Pro libraries should be shipped when deploying an application based upon MapLink Pro.
