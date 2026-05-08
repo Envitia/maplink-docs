@@ -22,7 +22,8 @@ layout: null
     {% if id_parts.size > 1 %}
       {% assign section_id = id_parts | last | split: '"' | first %}
       {% assign heading_part = section | split: '</h2>' | first %}
-      {% assign heading_text = heading_part | strip_html | strip %}
+      {% assign heading_html = '<h2' | append: heading_part | append: '</h2>' %}
+      {% assign heading_text = heading_html | strip_html | strip %}
       {% assign section_raw = section | split: '</h2>' | last %}
       {% assign section_body = section_raw | strip_html | strip_newlines %}
       ,{
@@ -39,7 +40,8 @@ layout: null
         {% if h3_id_parts.size > 1 %}
           {% assign h3_id = h3_id_parts | last | split: '"' | first %}
           {% assign h3_heading_part = h3_section | split: '</h3>' | first %}
-          {% assign h3_heading_text = h3_heading_part | strip_html | strip %}
+          {% assign h3_heading_html = '<h3' | append: h3_heading_part | append: '</h3>' %}
+          {% assign h3_heading_text = h3_heading_html | strip_html | strip %}
           {% assign h3_body = h3_section | split: '</h3>' | last | strip_html | strip_newlines %}
           ,{
             "title": {{ h3_heading_text | jsonify }},
