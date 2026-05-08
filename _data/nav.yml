@@ -63,5 +63,5 @@ pages:
   highlight: true
 
 messages:
-- title: MAPLINK 11 AVAILABLE NOW
-  url: /pages/releases/11.2/11.2.7
+- title: The old support portal is deprecated. Please email our support team if you need to open a support ticket.
+  url: /pages/support/
