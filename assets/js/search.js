@@ -67,10 +67,29 @@
       try {
         results = lunrIndex.search(query + '*');
         if (!results.length) results = lunrIndex.search(query);
+        if (!results.length && query.length > 3) results = lunrIndex.search(query + '~1');
       } catch (e) {
-        results = [];
+        try { results = lunrIndex.search(query); } catch (e2) { results = []; }
       }
-      renderResults(results, query);
+      renderResults(deduplicateResults(results), query);
+    }
+
+    // If a child section (h3) matches, drop its parent h2 entry from results
+    // so the more-specific result wins and we don't show both.
+    function deduplicateResults(results) {
+      var childUrls = {};
+      results.forEach(function (r) {
+        var hash = r.ref.indexOf('#');
+        if (hash !== -1) {
+          var base = r.ref.slice(0, hash);
+          childUrls[base] = true;
+        }
+      });
+      return results.filter(function (r) {
+        // Keep page-level (no anchor) entries only when no child section matched
+        if (r.ref.indexOf('#') === -1) return !childUrls[r.ref];
+        return true;
+      });
     }
 
     function renderResults(results, query) {
@@ -85,10 +104,14 @@
         var page = pagesData.find(function (p) { return p.url === result.ref; });
         if (!page) return;
         var title = highlight(page.title, query);
+        var excerpt = getExcerpt(page.content, query);
         html += '<a class="search-result-item" href="' + page.url + '" tabindex="-1">';
         html += '<h4>' + title + '</h4>';
         if (page.page) {
           html += '<span class="search-result-page">' + escapeHtml(page.page) + '</span>';
+        }
+        if (excerpt) {
+          html += '<p class="search-result-excerpt">' + highlight(escapeHtml(excerpt), query) + '</p>';
         }
         html += '</a>';
       });
@@ -168,6 +191,23 @@
       }
     }
   });
+
+  function getExcerpt(content, query, maxLen) {
+    if (!content) return '';
+    maxLen = maxLen || 130;
+    var lower = content.toLowerCase();
+    var idx = lower.indexOf(query.toLowerCase());
+    var start, end;
+    if (idx === -1) {
+      start = 0;
+      end = Math.min(maxLen, content.length);
+    } else {
+      start = Math.max(0, idx - 45);
+      end = Math.min(content.length, idx + query.length + 85);
+    }
+    var text = content.slice(start, end).trim();
+    return (start > 0 ? '…' : '') + text + (end < content.length ? '…' : '');
+  }
 
   function highlight(text, query) {
     if (!text) return '';
