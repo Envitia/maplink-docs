@@ -207,7 +207,7 @@ See: [Linux Deployed Libraries](./linux-deployed-libs)
 
 ## Common Deployment Problems
 
-If a problem persists, **[create a technical support ticket](https://support.envitia.com) (Requires an active maintenance & support contract)**
+If a problem persists, **[create a technical support ticket](mailto:support@envitia.com) (Requires an active maintenance & support contract)**
 
 ### DLL/Shared Library Not Found
 On Windows use dependency walker to see what DLLs are loaded and if they can be found.

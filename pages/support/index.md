@@ -5,7 +5,7 @@ title: MapLink Pro Support
 # MapLink Pro Support
 
 
-**[Create a technical support ticket](https://support.envitia.com) (Requires an active maintenance & support contract)**
+**[Create a technical support ticket](mailto:support@envitia.com) (Requires an active maintenance & support contract)**
 
 Envitia offers maintenance & support contracts on their products. Envitia supports the two latest major versions of MapLink Pro, giving customers plenty of time to upgrade to the latest major version.
 
