@@ -121,7 +121,7 @@
     inputEl.addEventListener('input', function () {
       selectedIndex = -1;
       var query = this.value.trim();
-      if (!query || query.length < 2) { closeResults(); return; }
+      if (!query) { closeResults(); return; }
       runSearch(query);
     });
 
