@@ -192,21 +192,37 @@
     }
   });
 
+  function stripMarkdown(text) {
+    if (!text) return '';
+    return text
+      .replace(/!\[[^\]]*\]\([^)]*\)/g, '')        // images
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')      // [text](url) → text
+      .replace(/^#{1,6}\s+/gm, '')                  // ## headings
+      .replace(/(\*\*|__)(.*?)\1/g, '$2')           // **bold**
+      .replace(/(\*|_)(.*?)\1/g, '$2')              // *italic*
+      .replace(/`{1,3}[^`\n]*`{1,3}/g, '')         // `code`
+      .replace(/^\s*[-*+]\s+/gm, '')                // - list items
+      .replace(/^\s*\d+\.\s+/gm, '')                // 1. numbered lists
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
   function getExcerpt(content, query, maxLen) {
     if (!content) return '';
     maxLen = maxLen || 130;
-    var lower = content.toLowerCase();
+    var clean = stripMarkdown(content);
+    var lower = clean.toLowerCase();
     var idx = lower.indexOf(query.toLowerCase());
     var start, end;
     if (idx === -1) {
       start = 0;
-      end = Math.min(maxLen, content.length);
+      end = Math.min(maxLen, clean.length);
     } else {
       start = Math.max(0, idx - 45);
-      end = Math.min(content.length, idx + query.length + 85);
+      end = Math.min(clean.length, idx + query.length + 85);
     }
-    var text = content.slice(start, end).trim();
-    return (start > 0 ? '…' : '') + text + (end < content.length ? '…' : '');
+    var text = clean.slice(start, end).trim();
+    return (start > 0 ? '…' : '') + text + (end < clean.length ? '…' : '');
   }
 
   function highlight(text, query) {
