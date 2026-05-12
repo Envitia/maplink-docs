@@ -10,7 +10,29 @@ pages:
     - title: Quick Start Guide
       url: /pages/quick-start-guide
     - title: Developer's Guide
-      url: /pages/developers-guide
+      url: /pages/developers-guide/
+    - title: Introduction
+      url: /pages/developers-guide/introduction
+    - title: SDK Components
+      url: /pages/developers-guide/sdk-components
+    - title: Basic Applications
+      url: /pages/developers-guide/basic-applications
+    - title: Development Environment
+      url: /pages/developers-guide/development-environment
+    - title: Walkthroughs
+      url: /pages/developers-guide/walkthrough-1
+    - title: Geometry and Overlays
+      url: /pages/developers-guide/geometry-and-overlays
+    - title: OpenGL Drawing Surface
+      url: /pages/developers-guide/opengl-drawing-surface
+    - title: Terrain SDK
+      url: /pages/developers-guide/terrain-sdk
+    - title: Editor SDK
+      url: /pages/developers-guide/editor-sdk
+    - title: .NET SDKs
+      url: /pages/developers-guide/net-sdks
+    - title: Threading
+      url: /pages/developers-guide/threading
     - title: Wrap-around Maps
       url: /pages/features/wrap-around-maps
     - title: OGC Services Guide
