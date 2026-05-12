@@ -136,13 +136,13 @@ changed to this configuration.
 The first modification is to use the Release Runtime Library:
 
 ![Figure 1 Release Runtime Library
-Setting](/assets/images/developers-guide/media/image4.png)
+Setting](../../assets/images/developers-guide/media/image4.png)
 
 The second modification is to use the Release versions of the MapLink
 DLLs:
 
 ![Figure 2 Additional
-Dependencies](/assets/images/developers-guide/media/image5.png)
+Dependencies](../../assets/images/developers-guide/media/image5.png)
 
 The \"\_DEBUG\" preprocessor definition should be replaced with the
 \"NDEBUG\" one.

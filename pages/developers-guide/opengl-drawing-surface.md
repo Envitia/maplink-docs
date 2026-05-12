@@ -292,7 +292,7 @@ The source files for the sample have the following purposes:
 Visually, these items correspond to the following parts of the
 application:
 
-![](/assets/images/developers-guide/media/image26.png)
+![](../../assets/images/developers-guide/media/image26.png)
 
 ### Starting the Application - Choosing a Framebuffer Configuration
 
@@ -1126,7 +1126,7 @@ strict back-to-front rendering order is used, however for performance
 reasons MapLink may internally rearrange the order items are drawn in.
 This may sometimes lead to the following situation:
 
-![badtransparent.png](/assets/images/developers-guide/media/image27.png)
+![badtransparent.png](../../assets/images/developers-guide/media/image27.png)
 
 This image contains four rectangles in the following order:
 
@@ -1221,7 +1221,7 @@ Going back to the example at the beginning of this section, the same
 geometry drawn using the TSLOpenGLTransparencyHintFlushOpaque hint will
 be rendered in the expected order, giving this output:
 
-![goodtransparent.png](/assets/images/developers-guide/media/image28.png)
+![goodtransparent.png](../../assets/images/developers-guide/media/image28.png)
 
 For systems using OpenGL ES 2.0 or OpenGL 3.1 or earlier, entities using
 a patterned fill or line style count as transparent for the purposes of
@@ -1259,11 +1259,11 @@ The images shown on the next page illustrate the effect of increasing
 levels of multisampling on image quality:
 
 +---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](/assets/images/developers-guide/media/image29.tiff)                                                                                      | height="2.968503937007874in"}                                                                                      |
+| ![noaa.tif](../../assets/images/developers-guide/media/image29.tiff)                                                                                      | height="2.968503937007874in"}                                                                                      |
 |                                                                                                                     |                                                                                                                    |
 | No multisampling                                                                                                    | 2x multisampling                                                                                                   |
 +=====================================================================================================================+====================================================================================================================+
-| ![4xaa.tif](/assets/images/developers-guide/media/image31.tiff)                                                                                       | height="2.968503937007874in"}                                                                                      |
+| ![4xaa.tif](../../assets/images/developers-guide/media/image31.tiff)                                                                                       | height="2.968503937007874in"}                                                                                      |
 |                                                                                                                     |                                                                                                                    |
 | 4x multisampling                                                                                                    | 8x multisampling                                                                                                   |
 +---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
@@ -1302,11 +1302,11 @@ The images below demonstrate the effect of these settings on image
 quality:
 
 +------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](/assets/images/developers-guide/media/image29.tiff)                                                                                          |                                                                                                                          |
+| ![noaa.tif](../../assets/images/developers-guide/media/image29.tiff)                                                                                          |                                                                                                                          |
 |                                                                                                                        |                                                                                                                          |
 | No post-process anti-aliasing                                                                                          |                                                                                                                          |
 +========================================================================================================================+==========================================================================================================================+
-| ![fxaaweak.tif](/assets/images/developers-guide/media/image33.tiff)                                                                                          | height="2.811023622047244in"}                                                                                            |
+| ![fxaaweak.tif](../../assets/images/developers-guide/media/image33.tiff)                                                                                          | height="2.811023622047244in"}                                                                                            |
 |                                                                                                                        |                                                                                                                          |
 | Weak FXAA anti-aliasing                                                                                                | Strong FXAA anti-aliasing                                                                                                |
 +------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+

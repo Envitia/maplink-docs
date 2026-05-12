@@ -14,7 +14,7 @@ model (ignoring the User Geometry Entity). Each piece of geometry stores
 its coordinates in internal TMC units.
 
 ![Figure 3 Geometry
-Hierarchy](/assets/images/developers-guide/media/image6.png)
+Hierarchy](../../assets/images/developers-guide/media/image6.png)
 
 The MapLink concept for an instantiated piece of geometry is an Entity.
 In the 2D SDK, these are accessed through classes derived from
@@ -49,7 +49,7 @@ such as roads, rivers, railways, routes, cables and boundaries. A
 polyline must have at least two points, but other than that there are no
 limitations placed upon the coordinates.
 
-![](/assets/images/developers-guide/media/image7.png)
+![](../../assets/images/developers-guide/media/image7.png)
 
 Figure 4 Polyline
 
@@ -66,7 +66,7 @@ inners must not overlap any other inner, or the outer. MapLink 4.7 and
 later have additional functionality that removes single-point spikes.
 
 ![Figure 5
-Polygon](/assets/images/developers-guide/media/image8.png)
+Polygon](../../assets/images/developers-guide/media/image8.png)
 
 MapLink has one important difference from the OpenGIS specification,
 however. In MapLink, the coordinates of an inner or outer ring may touch
@@ -85,7 +85,7 @@ extent of the text primitive is held separately for each Drawing Surface
 that has a unique id.
 
 ![Figure 6
-Text](/assets/images/developers-guide/media/image9.png)
+Text](../../assets/images/developers-guide/media/image9.png)
 
 Text primitives in maps are held in a separate sub-layer within the map
 and are always drawn after the polygons and polylines. This is to
@@ -105,7 +105,7 @@ a symbol. Because of this, symbols also hold their extent separately for
 each uniquely identified Drawing Surface.
 
 ![Figure 7
-Symbols](/assets/images/developers-guide/media/image10.png)
+Symbols](../../assets/images/developers-guide/media/image10.png)
 
 There are two different types of symbols available in MapLink - vector
 and raster.
@@ -191,7 +191,7 @@ ellipses such as chords or sectors. TSLEllipse objects typically do not
 appear in map data and are unlikely to be produced by MapLink Studio.
 
 ![Figure 8
-Ellipse](/assets/images/developers-guide/media/image11.png)
+Ellipse](../../assets/images/developers-guide/media/image11.png)
 
 ### TSLArc
 
@@ -206,7 +206,7 @@ typically do not appear in map data and are unlikely to be produced by
 MapLink Studio.
 
 ![Figure 9
-Arc](/assets/images/developers-guide/media/image12.png)
+Arc](../../assets/images/developers-guide/media/image12.png)
 
 ### TSLRectangle
 
@@ -214,7 +214,7 @@ This type of geometric primitive is specified by two corners and a
 rotation angle. The TSLRectangle may be rotated about its centre.
 
 ![Figure 10
-Rectangle](/assets/images/developers-guide/media/image13.png)
+Rectangle](../../assets/images/developers-guide/media/image13.png)
 
 ### TSLEntitySet and other Collections
 
@@ -242,7 +242,7 @@ performs processing to ensure that the join looks aesthetically
 pleasing.
 
 ![Figure 11 Bordered
-Polygon](/assets/images/developers-guide/media/image14.png)
+Polygon](../../assets/images/developers-guide/media/image14.png)
 
 ### Geodetic Primitives
 
@@ -264,7 +264,7 @@ geodesics are given by Vincenty's formulae.
 The six geodetic primitives currently supported are shown below.
 
 ![Figure 12 Geodetic Entities
-Hierarchy](/assets/images/developers-guide/media/image15.png)
+Hierarchy](../../assets/images/developers-guide/media/image15.png)
 
 The control points are specified as TMC values, these are then converted
 to latitude and longitude internally when drawn.
@@ -300,11 +300,11 @@ be set with interpolationOptions.
 
 ![Figure 13 Two-point geodetic polyline,
 showing the geodesic path from Heathrow to Beijing. A Dynamic Arc
-map](/assets/images/developers-guide/media/image16.png)
+map](../../assets/images/developers-guide/media/image16.png)
 
 ![Figure 14 Single geodetic polyline with four
 points, travelling through Sydney, San Francisco, New York and
-London.](/assets/images/developers-guide/media/image17.png)
+London.](../../assets/images/developers-guide/media/image17.png)
 
 Geodetic polylines are created in a very similar way to standard
 polylines:
@@ -370,18 +370,18 @@ retrieved with interpolationDistance, and the interpolation method can
 be set with interpolationOptions.
 
 ![Figure 15 Four-point geodetic
-polygon](/assets/images/developers-guide/media/image18.png)
+polygon](../../assets/images/developers-guide/media/image18.png)
 
 ![Figure 16 Four-point geodetic polygon
 reprojected into an orthogonal
-projection](/assets/images/developers-guide/media/image19.png)
+projection](../../assets/images/developers-guide/media/image19.png)
 
 ![Figure 17 Four-point geodetic polygon, but
 on a gnomonic projection. In this projection, geodesics are straight
 lines, so the geodetic polygon looks like a standard polygon. The
 distortion in its shape is due to the centre of projection being off to
 one side of the
-geometry](/assets/images/developers-guide/media/image20.png)
+geometry](../../assets/images/developers-guide/media/image20.png)
 
 Geodetic polygons are created in a very similar way to standard
 polygons:
@@ -465,15 +465,15 @@ separate pieces. A geodetic ellipse can cover a pole.
 
 ![Figure 18 Geodetic ellipse centred on
 London; x-radius 1000km, y-radius 2000km, rotation
-45°.](/assets/images/developers-guide/media/image21.png)
+45°.](../../assets/images/developers-guide/media/image21.png)
 
 ![Figure 19 Geodetic ellipse centred on
 London; x- and y-radius
-1000km](/assets/images/developers-guide/media/image22.png)
+1000km](../../assets/images/developers-guide/media/image22.png)
 
 ![Figure 20 Geodetic ellipse centred on 85°S
 0°E; x-radius 1000km, y-radius 2000km, rotation
-60°.\]](/assets/images/developers-guide/media/image23.png)
+60°.\]](../../assets/images/developers-guide/media/image23.png)
 
 Geodetic ellipses are created in a similar way to standard ellipses,
 except for the radii:
@@ -538,7 +538,7 @@ interpolationOptions.
 
 ![Figure 21 Geodetic arc centred on London;
 x-radius 1000km, y-radius 2000km, rotation
-45°.](/assets/images/developers-guide/media/image24.png)
+45°.](../../assets/images/developers-guide/media/image24.png)
 
 Geodetic arcs are created in a similar way to standard arcs, except for
 the radii:

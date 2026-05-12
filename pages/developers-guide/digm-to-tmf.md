@@ -789,7 +789,7 @@ a 3D environment.
 
 ![Figure 27 3D Globe with US States Extruded
 as
-polygons.](/assets/images/developers-guide/media/image38.png)
+polygons.](../../assets/images/developers-guide/media/image38.png)
 
 ######## Library Usage and Configuration
 
@@ -1408,7 +1408,7 @@ thought of as Entities, derivatives of TSLEntity in the 2D and of
 TSL3DEntity in the 3D.
 
 ![Figure 28 3D Entity
-Hierarchy](/assets/images/developers-guide/media/image39.png)
+Hierarchy](../../assets/images/developers-guide/media/image39.png)
 
 In the 3D SDK all entities with the exception of user geometry have a
 number of properties including:
@@ -1455,7 +1455,7 @@ The order of point specification is anti-clockwise.
 
 ######### TSL3DTriangleFan and TSL3DTriangleStrip
 
-![](/assets/images/developers-guide/media/image41.png)
+![](../../assets/images/developers-guide/media/image41.png)
 
 These 3D geometric objects provide a quick way of creating multiple
 adjoining triangles that use the same rendering attributes. Both are
@@ -1471,7 +1471,7 @@ previous two points
 
 ######### TSL3DQuadStrip
 
-![](/assets/images/developers-guide/media/image41.png)
+![](../../assets/images/developers-guide/media/image41.png)
 
 This is the 4 point version of TSL3DTriangleStrip and is formed in much
 the same way; each pair of added points forms a quad with the previous

@@ -65,7 +65,7 @@ familiar with:
 
 - Operation request handler -- TSLNUserOperationRequest
 
-![](/assets/images/developers-guide/media/image36.png)
+![](../../assets/images/developers-guide/media/image36.png)
 
 ### Operation
 

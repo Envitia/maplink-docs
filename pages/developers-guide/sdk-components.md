@@ -10,7 +10,7 @@ which of the numerous MapLink Pro components will provide the best
 facilities for your solution.
 
 ![MapLink
-Image](/assets/images/developers-guide/media/image3.jpeg)
+Image](../../assets/images/developers-guide/media/image3.jpeg)
 
 ## MapLink Studio
 

@@ -278,7 +278,7 @@ styled_dted.vrt"
 The 'styled_dted.vrt' should be loaded into the Direct Import Data Layer
 as a single styled raster, producing an image such as:
 
-![](/assets/images/developers-guide/media/image35.png)
+![](../../assets/images/developers-guide/media/image35.png)
 
 ## Direct Import Drivers
 

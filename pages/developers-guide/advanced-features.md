@@ -1424,7 +1424,7 @@ stdDataLayer-\>notifyChanged( true );
 // draw\...
 
 ![And we get something like
-this:](/assets/images/developers-guide/media/image25.png)
+this:](../../assets/images/developers-guide/media/image25.png)
 
 ## Raster Display
 
