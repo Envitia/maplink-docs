@@ -396,4 +396,4 @@ Surface.
 
 ---
 
-[← Other SDKs](/pages/developers-guide/other-sdks) | [DIGM to TMF Conversion →](/pages/developers-guide/digm-to-tmf)
+[← Other SDKs](other-sdks) | [DIGM to TMF Conversion →](digm-to-tmf)

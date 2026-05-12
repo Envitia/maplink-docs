@@ -1933,4 +1933,4 @@ configured using TSLPropertyMinTextHeight and TSLPropertyMaxTextHeight.
 
 ---
 
-[← Walkthrough 2 - Modifying the Visible Area](/pages/developers-guide/walkthrough-2) | [Walkthrough 3 -- Adding a Simple Vector Overlay →](/pages/developers-guide/walkthrough-3)
+[← Walkthrough 2 - Modifying the Visible Area](walkthrough-2) | [Walkthrough 3 -- Adding a Simple Vector Overlay →](walkthrough-3)

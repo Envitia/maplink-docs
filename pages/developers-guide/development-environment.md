@@ -151,4 +151,4 @@ The \"\_DEBUG\" preprocessor definition should be replaced with the
 
 ---
 
-[← Unicode](/pages/developers-guide/unicode) | [Deployment of End User Application →](/pages/developers-guide/deployment)
+[← Unicode](unicode) | [Deployment of End User Application →](deployment)

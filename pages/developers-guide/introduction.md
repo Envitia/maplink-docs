@@ -88,4 +88,4 @@ space for drawing Map data and Overlay data with.
 
 ---
 
-[MapLink SDK Components and Concepts →](/pages/developers-guide/sdk-components)
+[MapLink SDK Components and Concepts →](sdk-components)

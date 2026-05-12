@@ -830,4 +830,4 @@ MapLink that utilise the ControlDesigner class.
 
 ---
 
-[← GML SDK](/pages/developers-guide/gml-sdk) | [MapLink Camera Manager →](/pages/developers-guide/camera-manager)
+[← GML SDK](gml-sdk) | [MapLink Camera Manager →](camera-manager)

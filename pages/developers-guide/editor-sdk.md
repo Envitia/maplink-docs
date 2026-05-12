@@ -580,4 +580,4 @@ operations.
 
 ---
 
-[← MapLink 3D Earth SDK](/pages/developers-guide/maplink-3d-earth-sdk) | [Geopackage SDK →](/pages/developers-guide/geopackage-sdk)
+[← MapLink 3D Earth SDK](maplink-3d-earth-sdk) | [Geopackage SDK →](geopackage-sdk)

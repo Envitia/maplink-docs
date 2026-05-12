@@ -298,4 +298,4 @@ based on the configuration of the MapLink Direct Import DLL.
 
 ---
 
-[← OpenGL Drawing Surface](/pages/developers-guide/opengl-drawing-surface) | [Tracks SDK →](/pages/developers-guide/tracks-sdk)
+[← OpenGL Drawing Surface](opengl-drawing-surface) | [Tracks SDK →](tracks-sdk)

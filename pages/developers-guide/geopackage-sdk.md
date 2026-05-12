@@ -51,4 +51,4 @@ equivalent GeoPackage SDK library
 
 ---
 
-[← Editor SDK](/pages/developers-guide/editor-sdk) | [OWSContext SDK →](/pages/developers-guide/owscontext-sdk)
+[← Editor SDK](editor-sdk) | [OWSContext SDK →](owscontext-sdk)

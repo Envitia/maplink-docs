@@ -16,4 +16,4 @@ the implementation.**
 
 ---
 
-[← Geopackage SDK](/pages/developers-guide/geopackage-sdk) | [MapLink OGC Services SDK →](/pages/developers-guide/ogc-services-sdk)
+[← Geopackage SDK](geopackage-sdk) | [MapLink OGC Services SDK →](ogc-services-sdk)

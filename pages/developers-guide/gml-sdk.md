@@ -467,4 +467,4 @@ and should be set on the exporter prior to the export call being made:
 
 ---
 
-[← Spatial SDK](/pages/developers-guide/spatial-sdk) | [.NET SDKs →](/pages/developers-guide/net-sdks)
+[← Spatial SDK](spatial-sdk) | [.NET SDKs →](net-sdks)

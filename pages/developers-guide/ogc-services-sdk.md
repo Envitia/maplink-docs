@@ -666,4 +666,4 @@ return true;
 
 ---
 
-[← OWSContext SDK](/pages/developers-guide/owscontext-sdk) | [Spatial SDK →](/pages/developers-guide/spatial-sdk)
+[← OWSContext SDK](owscontext-sdk) | [Spatial SDK →](spatial-sdk)

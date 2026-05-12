@@ -465,4 +465,4 @@ of drawing stalls to one (occurs after step 3).
 
 ---
 
-[← .NET SDKs](/pages/developers-guide/net-sdks) | [Floating Point →](/pages/developers-guide/floating-point)
+[← .NET SDKs](net-sdks) | [Floating Point →](floating-point)

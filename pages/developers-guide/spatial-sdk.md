@@ -201,4 +201,4 @@ The intended topics are:
 
 ---
 
-[← MapLink OGC Services SDK](/pages/developers-guide/ogc-services-sdk) | [GML SDK →](/pages/developers-guide/gml-sdk)
+[← MapLink OGC Services SDK](ogc-services-sdk) | [GML SDK →](gml-sdk)

@@ -247,4 +247,4 @@ Geometry instances.
 
 ---
 
-[← Terrain SDK](/pages/developers-guide/terrain-sdk) | [Editor SDK →](/pages/developers-guide/editor-sdk)
+[← Terrain SDK](terrain-sdk) | [Editor SDK →](editor-sdk)

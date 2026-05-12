@@ -18,4 +18,4 @@ In addition, the DirectX Accelerator SDK requires a specific setup
 
 ---
 
-[← MapLink Camera Manager](/pages/developers-guide/camera-manager) | [Other SDKs →](/pages/developers-guide/other-sdks)
+[← MapLink Camera Manager](camera-manager) | [Other SDKs →](other-sdks)

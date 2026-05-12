@@ -89,4 +89,4 @@ on Windows.
 
 ---
 
-[← Deployment of End User Application](/pages/developers-guide/deployment) | [Walkthrough 1 - Your First MapLink Application →](/pages/developers-guide/walkthrough-1)
+[← Deployment of End User Application](deployment) | [Walkthrough 1 - Your First MapLink Application →](walkthrough-1)

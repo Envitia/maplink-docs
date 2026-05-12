@@ -585,4 +585,4 @@ Congratulations! You can now create vector overlays!
 
 ---
 
-[← Geometry and Overlays](/pages/developers-guide/geometry-and-overlays) | [Advanced Features of the Core SDK →](/pages/developers-guide/advanced-features)
+[← Geometry and Overlays](geometry-and-overlays) | [Advanced Features of the Core SDK →](advanced-features)

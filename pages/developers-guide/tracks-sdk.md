@@ -74,4 +74,4 @@ See the API documentation for further details.
 
 ---
 
-[← Direct Import SDK](/pages/developers-guide/direct-import-sdk) | [Dynamic Overlays with the DDO SDK →](/pages/developers-guide/ddo-sdk)
+[← Direct Import SDK](direct-import-sdk) | [Dynamic Overlays with the DDO SDK →](ddo-sdk)

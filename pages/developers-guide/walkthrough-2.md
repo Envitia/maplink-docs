@@ -493,4 +493,4 @@ Finally, implement the handler as per Visual Studio.
 
 ---
 
-[← Walkthrough 1 - Your First MapLink Application](/pages/developers-guide/walkthrough-1) | [Geometry and Overlays →](/pages/developers-guide/geometry-and-overlays)
+[← Walkthrough 1 - Your First MapLink Application](walkthrough-1) | [Geometry and Overlays →](geometry-and-overlays)

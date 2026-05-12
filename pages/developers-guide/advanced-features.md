@@ -2094,4 +2094,4 @@ There are certain limitations with its use in conjunction with MapLink
 
 ---
 
-[← Walkthrough 3 -- Adding a Simple Vector Overlay](/pages/developers-guide/walkthrough-3) | [OpenGL Drawing Surface →](/pages/developers-guide/opengl-drawing-surface)
+[← Walkthrough 3 -- Adding a Simple Vector Overlay](walkthrough-3) | [OpenGL Drawing Surface →](opengl-drawing-surface)

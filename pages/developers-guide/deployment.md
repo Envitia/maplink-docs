@@ -115,4 +115,4 @@ mentioned, then that method may be ignored.
 
 ---
 
-[← MapLink and your Development Environment](/pages/developers-guide/development-environment) | [Samples →](/pages/developers-guide/samples)
+[← MapLink and your Development Environment](development-environment) | [Samples →](samples)

@@ -1410,4 +1410,4 @@ thread in order to keep the application responsive.
 
 ---
 
-[← Dynamic Overlays with the DDO SDK](/pages/developers-guide/ddo-sdk) | [MapLink 3D Earth SDK →](/pages/developers-guide/maplink-3d-earth-sdk)
+[← Dynamic Overlays with the DDO SDK](ddo-sdk) | [MapLink 3D Earth SDK →](maplink-3d-earth-sdk)

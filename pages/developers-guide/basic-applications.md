@@ -211,4 +211,4 @@ disabled.
 
 ---
 
-[← MapLink SDK Components and Concepts](/pages/developers-guide/sdk-components) | [Unicode →](/pages/developers-guide/unicode)
+[← MapLink SDK Components and Concepts](sdk-components) | [Unicode →](unicode)

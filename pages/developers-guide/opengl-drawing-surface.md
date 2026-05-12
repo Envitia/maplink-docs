@@ -2354,4 +2354,4 @@ unsigned long alphaColour = alphaBytes \| colour.pixel;
 
 ---
 
-[← Advanced Features of the Core SDK](/pages/developers-guide/advanced-features) | [Direct Import SDK →](/pages/developers-guide/direct-import-sdk)
+[← Advanced Features of the Core SDK](advanced-features) | [Direct Import SDK →](direct-import-sdk)

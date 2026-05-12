@@ -579,4 +579,4 @@ low-level handle in the state it was when returned from handleToDrawable
 
 ---
 
-[← Tracks SDK](/pages/developers-guide/tracks-sdk) | [Terrain SDK →](/pages/developers-guide/terrain-sdk)
+[← Tracks SDK](tracks-sdk) | [Terrain SDK →](terrain-sdk)

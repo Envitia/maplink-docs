@@ -343,4 +343,4 @@ are added to the 3D Drawing Surface to provide height information.
 
 ---
 
-[← Introduction](/pages/developers-guide/introduction) | [Basic MapLink Applications →](/pages/developers-guide/basic-applications)
+[← Introduction](introduction) | [Basic MapLink Applications →](basic-applications)

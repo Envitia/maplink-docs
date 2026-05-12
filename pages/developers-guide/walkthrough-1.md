@@ -493,4 +493,4 @@ areas that MapLink is not rendering into.
 
 ---
 
-[← Samples](/pages/developers-guide/samples) | [Walkthrough 2 - Modifying the Visible Area →](/pages/developers-guide/walkthrough-2)
+[← Samples](samples) | [Walkthrough 2 - Modifying the Visible Area →](walkthrough-2)

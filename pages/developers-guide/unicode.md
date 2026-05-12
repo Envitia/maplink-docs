@@ -277,4 +277,4 @@ MapLink Pro?**
 
 ---
 
-[← Basic MapLink Applications](/pages/developers-guide/basic-applications) | [MapLink and your Development Environment →](/pages/developers-guide/development-environment)
+[← Basic MapLink Applications](basic-applications) | [MapLink and your Development Environment →](development-environment)

@@ -33,4 +33,4 @@ The intended topics are:
 
 ---
 
-[← Floating Point](/pages/developers-guide/floating-point) | [Threading →](/pages/developers-guide/threading)
+[← Floating Point](floating-point) | [Threading →](threading)
