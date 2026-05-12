@@ -19,10 +19,7 @@ Envitia's software technology for mission system developers, enabling them to cr
 
 <div class="row" markdown=1>
 
-
-## Getting Started
-
-### Installation
+## Installation
 - [Get a trial version of MapLink Pro](https://forms.office.com/e/Lr7jN9TCC0).
 - Our [Quick Start Guide](./pages/quick-start-guide) will see you through the process of getting started.
 
