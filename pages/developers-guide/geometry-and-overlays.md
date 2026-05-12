@@ -13,7 +13,7 @@ below. This model can be directly mapped onto the OpenGIS simple feature
 model (ignoring the User Geometry Entity). Each piece of geometry stores
 its coordinates in internal TMC units.
 
-![[]{#_Toc308441508 .anchor}Figure 3 Geometry
+![Figure 3 Geometry
 Hierarchy](/assets/images/developers-guide/media/image6.png)
 
 The MapLink concept for an instantiated piece of geometry is an Entity.
@@ -51,7 +51,7 @@ limitations placed upon the coordinates.
 
 ![](/assets/images/developers-guide/media/image7.png)
 
-[]{#_Toc308441509 .anchor}Figure 4 Polyline
+Figure 4 Polyline
 
 ### TSLPolygon
 
@@ -65,7 +65,7 @@ consecutive duplicate points, and the edges may touch but not cross. The
 inners must not overlap any other inner, or the outer. MapLink 4.7 and
 later have additional functionality that removes single-point spikes.
 
-![[]{#_Toc308441510 .anchor}Figure 5
+![Figure 5
 Polygon](/assets/images/developers-guide/media/image8.png)
 
 MapLink has one important difference from the OpenGIS specification,
@@ -84,7 +84,7 @@ scaling have a large effect on the rendering of the piece of text, the
 extent of the text primitive is held separately for each Drawing Surface
 that has a unique id.
 
-![[]{#_Toc308441511 .anchor}Figure 6
+![Figure 6
 Text](/assets/images/developers-guide/media/image9.png)
 
 Text primitives in maps are held in a separate sub-layer within the map
@@ -104,7 +104,7 @@ attributes attached to the Entity can significantly affect the extent of
 a symbol. Because of this, symbols also hold their extent separately for
 each uniquely identified Drawing Surface.
 
-![[]{#_Toc308441512 .anchor}Figure 7
+![Figure 7
 Symbols](/assets/images/developers-guide/media/image10.png)
 
 There are two different types of symbols available in MapLink - vector
@@ -190,7 +190,7 @@ rotation is applied. MapLink currently has no facilities for partial
 ellipses such as chords or sectors. TSLEllipse objects typically do not
 appear in map data and are unlikely to be produced by MapLink Studio.
 
-![[]{#_Toc308441513 .anchor}Figure 8
+![Figure 8
 Ellipse](/assets/images/developers-guide/media/image11.png)
 
 ### TSLArc
@@ -205,7 +205,7 @@ the arc is anti-clockwise from start angle to end angle. TSLArc objects
 typically do not appear in map data and are unlikely to be produced by
 MapLink Studio.
 
-![[]{#_Toc308441514 .anchor}Figure 9
+![Figure 9
 Arc](/assets/images/developers-guide/media/image12.png)
 
 ### TSLRectangle
@@ -213,7 +213,7 @@ Arc](/assets/images/developers-guide/media/image12.png)
 This type of geometric primitive is specified by two corners and a
 rotation angle. The TSLRectangle may be rotated about its centre.
 
-![[]{#_Toc308441515 .anchor}Figure 10
+![Figure 10
 Rectangle](/assets/images/developers-guide/media/image13.png)
 
 ### TSLEntitySet and other Collections
@@ -241,7 +241,7 @@ externally to the polygon. Where these border polygons meet, MapLink
 performs processing to ensure that the join looks aesthetically
 pleasing.
 
-![[]{#_Toc308441516 .anchor}Figure 11 Bordered
+![Figure 11 Bordered
 Polygon](/assets/images/developers-guide/media/image14.png)
 
 ### Geodetic Primitives
@@ -263,7 +263,7 @@ geodesics are given by Vincenty's formulae.
 
 The six geodetic primitives currently supported are shown below.
 
-![[]{#_Toc308441517 .anchor}Figure 12 Geodetic Entities
+![Figure 12 Geodetic Entities
 Hierarchy](/assets/images/developers-guide/media/image15.png)
 
 The control points are specified as TMC values, these are then converted
@@ -298,11 +298,11 @@ The post distance used for interpolating, in km, can be set and
 retrieved with interpolationDistance, and the interpolation method can
 be set with interpolationOptions.
 
-![[]{#_Toc308441518 .anchor}Figure 13 Two-point geodetic polyline,
+![Figure 13 Two-point geodetic polyline,
 showing the geodesic path from Heathrow to Beijing. A Dynamic Arc
 map](/assets/images/developers-guide/media/image16.png)
 
-![[]{#_Toc308441519 .anchor}Figure 14 Single geodetic polyline with four
+![Figure 14 Single geodetic polyline with four
 points, travelling through Sydney, San Francisco, New York and
 London.](/assets/images/developers-guide/media/image17.png)
 
@@ -369,14 +369,14 @@ The post distance used for interpolating, in km, can be set and
 retrieved with interpolationDistance, and the interpolation method can
 be set with interpolationOptions.
 
-![[]{#_Toc308441520 .anchor}Figure 15 Four-point geodetic
+![Figure 15 Four-point geodetic
 polygon](/assets/images/developers-guide/media/image18.png)
 
-![[]{#_Toc308441521 .anchor}Figure 16 Four-point geodetic polygon
+![Figure 16 Four-point geodetic polygon
 reprojected into an orthogonal
 projection](/assets/images/developers-guide/media/image19.png)
 
-![[]{#_Toc308441522 .anchor}Figure 17 Four-point geodetic polygon, but
+![Figure 17 Four-point geodetic polygon, but
 on a gnomonic projection. In this projection, geodesics are straight
 lines, so the geodetic polygon looks like a standard polygon. The
 distortion in its shape is due to the centre of projection being off to
@@ -463,15 +463,15 @@ interpolationOptions.
 If a geodetic ellipse crosses the dateline, it will be rendered as
 separate pieces. A geodetic ellipse can cover a pole.
 
-![[]{#_Toc308441523 .anchor}Figure 18 Geodetic ellipse centred on
+![Figure 18 Geodetic ellipse centred on
 London; x-radius 1000km, y-radius 2000km, rotation
 45°.](/assets/images/developers-guide/media/image21.png)
 
-![[]{#_Toc308441524 .anchor}Figure 19 Geodetic ellipse centred on
+![Figure 19 Geodetic ellipse centred on
 London; x- and y-radius
 1000km](/assets/images/developers-guide/media/image22.png)
 
-![[]{#_Toc308441525 .anchor}Figure 20 Geodetic ellipse centred on 85°S
+![Figure 20 Geodetic ellipse centred on 85°S
 0°E; x-radius 1000km, y-radius 2000km, rotation
 60°.\]](/assets/images/developers-guide/media/image23.png)
 
@@ -536,7 +536,7 @@ interpolation step angle, in radians, can be set using
 interpolationAngleDelta, and the interpolation method can be set with
 interpolationOptions.
 
-![[]{#_Toc308441526 .anchor}Figure 21 Geodetic arc centred on London;
+![Figure 21 Geodetic arc centred on London;
 x-radius 1000km, y-radius 2000km, rotation
 45°.](/assets/images/developers-guide/media/image24.png)
 

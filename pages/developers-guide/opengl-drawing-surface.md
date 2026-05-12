@@ -1887,11 +1887,11 @@ storage strategies. The background colour of each item denotes the
 resource group it belongs to, with items having the same background
 colour being in the same group.
 
-[]{#_Toc512947480 .anchor}Figure 22 - Per Tile Storage Strategy
+Figure 22 - Per Tile Storage Strategy
 
-[]{#_Toc512947481 .anchor}Figure 23 - Per Entity Set Storage Strategy
+Figure 23 - Per Entity Set Storage Strategy
 
-[]{#_Toc512947482 .anchor}Figure 24 - Per Entity Storage Strategy
+Figure 24 - Per Entity Storage Strategy
 
 If an application had two types of vector geometry in a
 TSLStandardDataLayer, one that was rarely modified and one that was

@@ -787,7 +787,7 @@ exploring. Built to extend and strengthen the MapLink family of tools,
 the 3D SDK offers all of the advantages of the other components, but in
 a 3D environment.
 
-![[]{#_Toc308441528 .anchor}Figure 27 3D Globe with US States Extruded
+![Figure 27 3D Globe with US States Extruded
 as
 polygons.](/assets/images/developers-guide/media/image38.png)
 
@@ -1407,7 +1407,7 @@ the use of geometry Entities. All geometric objects in MapLink can be
 thought of as Entities, derivatives of TSLEntity in the 2D and of
 TSL3DEntity in the 3D.
 
-![[]{#_Toc512947487 .anchor}Figure 28 3D Entity
+![Figure 28 3D Entity
 Hierarchy](/assets/images/developers-guide/media/image39.png)
 
 In the 3D SDK all entities with the exception of user geometry have a

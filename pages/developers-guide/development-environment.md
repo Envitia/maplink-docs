@@ -135,13 +135,13 @@ changed to this configuration.
 
 The first modification is to use the Release Runtime Library:
 
-![[]{#_Toc308441506 .anchor}Figure 1 Release Runtime Library
+![Figure 1 Release Runtime Library
 Setting](/assets/images/developers-guide/media/image4.png)
 
 The second modification is to use the Release versions of the MapLink
 DLLs:
 
-![[]{#_Toc308441507 .anchor}Figure 2 Additional
+![Figure 2 Additional
 Dependencies](/assets/images/developers-guide/media/image5.png)
 
 The \"\_DEBUG\" preprocessor definition should be replaced with the

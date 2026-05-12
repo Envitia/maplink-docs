@@ -132,7 +132,7 @@ Intermediate resolution layers
 
 Bottom Layer -- Highest Resolution
 
-[]{#_Toc308441527 .anchor}Figure 25 Terrain Pyramid
+Figure 25 Terrain Pyramid
 
 The Terrain SDK must be given enough information to determine the
 optimal level to use. Whenever the extent of the area of terrain data
