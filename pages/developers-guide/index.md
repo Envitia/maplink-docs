@@ -1,4 +1,4 @@
-﻿---
+---
 title: "MapLink Pro Developer's Guide"
 permalink: /pages/developers-guide/
 ---
@@ -13,7 +13,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## Getting Started
 
-| | |
+| Topic | Description |
 |---|---|
 | [Introduction](introduction) | Overview, glossary, and training options |
 | [MapLink SDK Components and Concepts](sdk-components) | The full SDK family - Core, OpenGL, Tracks, Terrain, 3D Earth, Editor, and more |
@@ -21,7 +21,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## Development Setup
 
-| | |
+| Topic | Description |
 |---|---|
 | [MapLink and your Development Environment](development-environment) | Visual Studio configuration, library naming, headers, Unicode support |
 | [Deployment of End User Application](deployment) | Runtime DLLs, config files, and distribution requirements |
@@ -29,7 +29,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## Walkthroughs
 
-| | |
+| Topic | Description |
 |---|---|
 | [Walkthrough 1 - Your First MapLink Application](walkthrough-1) | MFC SDI app that loads and displays a MapLink map |
 | [Walkthrough 2 - Modifying the Visible Area](walkthrough-2) | Zoom, pan, grab, and mouse wheel interaction |
@@ -37,7 +37,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## Core SDK
 
-| | |
+| Topic | Description |
 |---|---|
 | [Geometry and Overlays](geometry-and-overlays) | Entities, polylines, polygons, symbols, text, ellipses, and collections |
 | [More Features of the Core SDK](advanced-features) | Feature rendering, coordinate systems, data layers, and surface options |
@@ -45,7 +45,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## SDK Reference
 
-| | |
+| Topic | Description |
 |---|---|
 | [OpenGL Drawing Surface](opengl-drawing-surface) | Hardware-accelerated rendering as a drop-in replacement for GDI/X11 surfaces |
 | [Direct Import SDK](direct-import-sdk) | Runtime ingestion of geospatial formats without pre-processing |
@@ -63,7 +63,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 
 ## Advanced Topics
 
-| | |
+| Topic | Description |
 |---|---|
 | [Floating Point](floating-point) | Floating-point configuration requirements |
 | [Other SDKs](other-sdks) | Additional SDK coverage |
