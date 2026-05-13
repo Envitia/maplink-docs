@@ -10,17 +10,13 @@ The Dynamic Data Object (DDO) SDK allows developers to create fully dynamic over
 
 As of version 11.1, MapLink is no longer supplied with Debug or 32-bit libraries. Therefore, your application's build should link against the Release Mode libraries in all configurations.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **MapLinkDDO64.lib**                                                                                                                                                                           |
-|                                                                                                                                                                                                |
-| Release mode, DLL version.                                                                                                                                                                     |
-|                                                                                                                                                                                                |
-| Uses Multithreaded DLL C++ run-time library.                                                                                                                                                   |
-|                                                                                                                                                                                                |
-| Requires TTLDLL preprocessor directive.                                                                                                                                                        |
-|                                                                                                                                                                                                |
-| Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
-+================================================================================================================================================================================================+
+
+<div class="callout" markdown="1">
+
+**MapLinkDDO64.lib** Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
+
+</div>
+
 
 ## When to use Dynamic Data Objects
 

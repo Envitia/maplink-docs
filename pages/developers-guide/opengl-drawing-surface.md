@@ -10,19 +10,13 @@ The OpenGL drawing surface allows an application to take advantage of hardware a
 
 **As of version 11.1, MapLink is no longer supplied with Debug or 32-bit libraries.** Therefore, your application's build should link against the Release Mode libraries in all configurations.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **MapLinkOpenGLSurface64.lib**                                                                                                                                                                 |
-|                                                                                                                                                                                                |
-| Release mode, DLL version.                                                                                                                                                                     |
-|                                                                                                                                                                                                |
-| Uses Multithreaded DLL C++ run-time library.                                                                                                                                                   |
-|                                                                                                                                                                                                |
-| Must also link the MapLink CoreSDK library MapLink64.lib                                                                                                                                       |
-|                                                                                                                                                                                                |
-| Requires TTLDLL preprocessor directive.                                                                                                                                                        |
-|                                                                                                                                                                                                |
-| Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+<div class="callout" markdown="1">
+
+**MapLinkOpenGLSurface64.lib** Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink64.lib Requires TTLDLL preprocessor directive. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying. |
+
+</div>
+
 
 ## Hardware Requirements
 
@@ -32,19 +26,13 @@ Note: **Integrated motherboard chipsets, such as Intel Integrated Graphics, shou
 
 The table below lists any additional extensions that will be used by the surface depending on the OpenGL version it is running on. Recommended extensions are not required for the surface to operate but may have a negative impact on performance or functionality if not present.
 
-+----------------+--------------------------------------------------+-----------------------------+
-| OpenGL Version | Required Extensions                              | Recommended Extensions      |
-+================+==================================================+=============================+
-| 2.1            | EXT_framebuffer_object or ARB_framebuffer_object | NV_primitive_restart^1^     |
-|                |                                                  |                             |
-|                |                                                  | ARB_texture_multisample^2^  |
-+----------------+--------------------------------------------------+-----------------------------+
-| 3.2            | None                                             | EXT_direct_state_access^1^  |
-+----------------+--------------------------------------------------+-----------------------------+
-| ES 2.0         | None                                             | OES_standard_derivatives^3^ |
-|                |                                                  |                             |
-|                |                                                  | OES_element_index_uint^4^   |
-+----------------+--------------------------------------------------+-----------------------------+
+
+| OpenGL Version | Required Extensions                              | Recommended Extensions                                |
+| -------------- | ------------------------------------------------ | ----------------------------------------------------- |
+| 2.1            | EXT_framebuffer_object or ARB_framebuffer_object | NV_primitive_restart^1^ ARB_texture_multisample^2^    |
+| 3.2            | None                                             | EXT_direct_state_access^1^                            |
+| ES 2.0         | None                                             | OES_standard_derivatives^3^ OES_element_index_uint^4^ |
+
 
 1.  These extensions allow for improved performance if present but do not affect the functionality offered by the drawing surface.
 
@@ -76,17 +64,13 @@ The OpenGL surface is accessed through a variety of window system interface clas
 
 The interface classes for the OpenGL surface are named based on the interface they use as follows:
 
-+------------------+--------------------------------------------------+
-| Windowing System | Applicable OpenGL Surface Classes                |
-+==================+==================================================+
-| Windows          | TSLWGLSurface                                    |
-+------------------+--------------------------------------------------+
-| X11              | TSLGLXSurface                                    |
-+------------------+--------------------------------------------------+
-| Embedded/Mobile  | TSLEGLSurface                                    |
-|                  |                                                  |
-|                  | TSLNativeEGLSurface^1^                           |
-+------------------+--------------------------------------------------+
+
+| Windowing System | Applicable OpenGL Surface Classes    |
+| ---------------- | ------------------------------------ |
+| Windows          | TSLWGLSurface                        |
+| X11              | TSLGLXSurface                        |
+| Embedded/Mobile  | TSLEGLSurface TSLNativeEGLSurface^1^ |
+
 
 1.  This class may not be present on all platforms - see the Release Notes for your platform for more information.
 
@@ -862,15 +846,11 @@ The specific levels of multisampling available depend on the graphics hardware i
 
 The images shown on the next page illustrate the effect of increasing levels of multisampling on image quality:
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff) | ![2xaa.tif](../../assets/images/developers-guide/media/image28.tiff) |
-|                                                                                                                                                    |                                                                                                                                                  |
-| No multisampling                                                                                                                                   | 2x multisampling                                                                                                                                 |
-+====================================================================================================================================================+==================================================================================================================================================+
-| ![4xaa.tif](../../assets/images/developers-guide/media/image29.tiff)   | ![8xaa.tif](../../assets/images/developers-guide/media/image30.tiff) |
-|                                                                                                                                                    |                                                                                                                                                  |
-| 4x multisampling                                                                                                                                   | 8x multisampling                                                                                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff) | ![2xaa.tif](../../assets/images/developers-guide/media/image28.tiff) | No multisampling   | 2x multisampling |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| ![4xaa.tif](../../assets/images/developers-guide/media/image29.tiff)   | ![8xaa.tif](../../assets/images/developers-guide/media/image30.tiff) | 4x multisampling | 8x multisampling |
+
 
 The decision on whether to use multisampling must be made at the time the drawing surface is created - it cannot be enabled or disabled on an existing drawing surface.
 
@@ -886,15 +866,11 @@ Post-processing anti-aliasing has two available settings - FXAAStrong and FXAAWe
 
 The images below demonstrate the effect of these settings on image quality:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff)     |                                                                                                                                                        |
-|                                                                                                                                                      |                                                                                                                                                        |
-| No post-process anti-aliasing                                                                                                                        |                                                                                                                                                        |
-+======================================================================================================================================================+========================================================================================================================================================+
-| ![fxaaweak.tif](../../assets/images/developers-guide/media/image31.tiff) | ![fxaastrong.tif](../../assets/images/developers-guide/media/image32.tiff) |
-|                                                                                                                                                      |                                                                                                                                                        |
-| Weak FXAA anti-aliasing                                                                                                                              | Strong FXAA anti-aliasing                                                                                                                              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff)     | No post-process anti-aliasing                                                                      | |                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| ![fxaaweak.tif](../../assets/images/developers-guide/media/image31.tiff) | ![fxaastrong.tif](../../assets/images/developers-guide/media/image32.tiff) Weak FXAA anti-aliasing | | Strong FXAA anti-aliasing |
+
 
 When configuring feature rendering for maps and overlaps that is intended to be used with the post-process anti-aliasing strong setting it is generally better to avoid using any single pixel wide features entirely. Instead configure these features to be two pixels wide and possibly use a slightly lighter colour if the feature may be in areas of high contrast (e.g. black lines against pale backgrounds). The anti-aliasing effect softens the lines so that the extra width is not as pronounced and often provides better quality than using the weak setting with single pixel thick features due to the reduced aliasing.
 

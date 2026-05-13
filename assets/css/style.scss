@@ -623,6 +623,24 @@ hr {
 }
 
 /* ============================================================
+   CALLOUT BOXES (converted from Word single-cell tables)
+   ============================================================ */
+.callout {
+  background: #f0f5e8;
+  border-left: 4px solid var(--green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 0.93rem;
+
+  p { margin: 6px 0; }
+  p:first-child { margin-top: 0; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--dark); }
+  code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 3px; }
+}
+
+/* ============================================================
    PAGE NAVIGATION (prev / next)
    ============================================================ */
 .page-nav {

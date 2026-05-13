@@ -18,51 +18,25 @@ Developers new to MapLink may wish to read the sections that deal with the basic
 
 Currently MapLink supports .NET wrappers for the following SDKs with the library name and namespace listed:
 
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| SDK                        | Library Name                                  | Namespace                               |
-+============================+===============================================+=========================================+
-| Core SDK                   | Envitia.MapLink64.dll                         | Envitia.MapLink                         |
-|                            |                                               |                                         |
-|                            | Envitia.MapLinkEx64.dll                       |                                         |
-|                            |                                               |                                         |
-|                            | Envitia.MapLink.NativeHelpers.dll             |                                         |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| OpenGL Drawing Surface SDK | Envitia.MapLink.OpenGLSurface64.dll           | Envitia.MapLink.OpenGLSurface           |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| OpenGL Track Helper SDK    | Envitia.MapLink.OpenGLTrackHelper64.dll       |                                         |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Direct Import SDK          | Envitia.MapLink.DirectImport64.dll            | Envitia.MapLink.DirectImport            |
-|                            |                                               |                                         |
-|                            | ttldirectimport.net64.dll                     |                                         |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Interaction Modes SDK      | Envitia.MapLink.InteractionModes64.dll        | Envitia.MapLink.InteractionModes        |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Dynamic Data Object SDK    | Envitia.MapLink.DDO64.dll                     | Envitia.MapLink.DDO                     |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Editor SDK                 | Envitia.MapLink.Editor64.dll                  | Envitia.MapLink.Editor                  |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Spatial Editor SDK         | Envitia.MapLink.Spatial64.dll                 | Envitia.MapLink.Spatial                 |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Terrain SDK                | Envitia.MapLink.Terrain64.dll                 | Envitia.Maplink.Terrain                 |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| GeoPackage SDK             | Envitia.MapLink.GeoPackage64.dll              | Envitia.MapLink.GeoPackage              |
-|                            |                                               |                                         |
-|                            | ttlgeopackage.net64.dll                       |                                         |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| 3D SDK                     | Envitia.MapLink.ML3D64.dll                    | Envitia.MapLink.ML3D                    |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| 3D Interaction Modes SDK   | Envitia.MapLink.InteractionModes.ML3D64.dll   | Envitia.MapLink.InteractionModes.ML3D   |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| OGC Services SDK           | Envitia.MapLink.OGCServices64.dll             | Envitia.MapLink.OGCServices             |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| Rendering Attribute Panel  | Envitia.MapLink.RenderingAttributePanel64.dll | Envitia.MapLink.RenderingAttributePanel |
-|                            |                                               |                                         |
-|                            | ttlrenderingattributepanel.net64.dll          |                                         |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
-| S52/S63 SDKs               | Envitia.MapLink.S5264.dll                     | Envitia.MapLink.S52                     |
-|                            |                                               |                                         |
-|                            | Envitia.MapLink.S6364.dll                     | Envitia.MapLink.S63                     |
-+----------------------------+-----------------------------------------------+-----------------------------------------+
+
+| SDK                        | Library Name                                                                       | Namespace                               |
+| -------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------- |
+| Core SDK                   | Envitia.MapLink64.dll Envitia.MapLinkEx64.dll Envitia.MapLink.NativeHelpers.dll    | Envitia.MapLink                         |
+| OpenGL Drawing Surface SDK | Envitia.MapLink.OpenGLSurface64.dll                                                | Envitia.MapLink.OpenGLSurface           |
+| OpenGL Track Helper SDK    | Envitia.MapLink.OpenGLTrackHelper64.dll                                            |                                         |
+| Direct Import SDK          | Envitia.MapLink.DirectImport64.dll ttldirectimport.net64.dll                       | Envitia.MapLink.DirectImport            |
+| Interaction Modes SDK      | Envitia.MapLink.InteractionModes64.dll                                             | Envitia.MapLink.InteractionModes        |
+| Dynamic Data Object SDK    | Envitia.MapLink.DDO64.dll                                                          | Envitia.MapLink.DDO                     |
+| Editor SDK                 | Envitia.MapLink.Editor64.dll                                                       | Envitia.MapLink.Editor                  |
+| Spatial Editor SDK         | Envitia.MapLink.Spatial64.dll                                                      | Envitia.MapLink.Spatial                 |
+| Terrain SDK                | Envitia.MapLink.Terrain64.dll                                                      | Envitia.Maplink.Terrain                 |
+| GeoPackage SDK             | Envitia.MapLink.GeoPackage64.dll ttlgeopackage.net64.dll                           | Envitia.MapLink.GeoPackage              |
+| 3D SDK                     | Envitia.MapLink.ML3D64.dll                                                         | Envitia.MapLink.ML3D                    |
+| 3D Interaction Modes SDK   | Envitia.MapLink.InteractionModes.ML3D64.dll                                        | Envitia.MapLink.InteractionModes.ML3D   |
+| OGC Services SDK           | Envitia.MapLink.OGCServices64.dll                                                  | Envitia.MapLink.OGCServices             |
+| Rendering Attribute Panel  | Envitia.MapLink.RenderingAttributePanel64.dll ttlrenderingattributepanel.net64.dll | Envitia.MapLink.RenderingAttributePanel |
+| S52/S63 SDKs               | Envitia.MapLink.S5264.dll Envitia.MapLink.S6364.dll                                | Envitia.MapLink.S52 Envitia.MapLink.S63 |
+
 
 All other libraries are dependent on the Core SDK wrappers, Envitia.MapLink, while the Spatial Editor wrappers are also dependent on the Editor wrappers.
 

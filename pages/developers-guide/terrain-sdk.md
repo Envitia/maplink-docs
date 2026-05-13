@@ -10,19 +10,13 @@ The Terrain SDK is available for any mapping application that requires the addit
 
 As of version 11.1, MapLink is no longer supplied with Debug or 32-bit libraries. Therefore, your application's build should link against the Release Mode libraries in all configurations.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **TTLTerrain64.lib**                                                                                                                                                                           |
-|                                                                                                                                                                                                |
-| Release mode, DLL version.                                                                                                                                                                     |
-|                                                                                                                                                                                                |
-| Uses Multithreaded DLL C++ run-time library.                                                                                                                                                   |
-|                                                                                                                                                                                                |
-| Must also link the MapLink CoreSDK library MapLink.lib/MapLink64.lib                                                                                                                           |
-|                                                                                                                                                                                                |
-| Requires TTLDLL preprocessor directive.                                                                                                                                                        |
-|                                                                                                                                                                                                |
-| Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+<div class="callout" markdown="1">
+
+**TTLTerrain64.lib** Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink.lib/MapLink64.lib Requires TTLDLL preprocessor directive. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
+
+</div>
+
 
 ## Where to Begin?
 
@@ -239,29 +233,20 @@ In each case, the data is returned in one or more TSLTerrainDataItem objects. Fo
 
 You may have noticed that one of the optional parameters to the query functions is a "filter". This is used to define which fields to populate. The data returned by each filter is defined in the table below:
 
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Field           | > Filter                       | > Description                                                                                                                             |
-+=================+================================+===========================================================================================================================================+
-| m_x             | > TSLTerrainData_Min           | > MU X position of queried data                                                                                                           |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_y             | > TSLTerrainData_Min           | > MU Y position of queried data                                                                                                           |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_z             | > TSLTerrainData_Min           | > Height/Depth of requested position in metres                                                                                            |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_isNull        | > TSLTerrainData_Min           | > Flag that is set to true if no data existed at the requested position. If set to false, the m_z member contains valid data              |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_nearestX      | > TSLTerrainData_Nearest       | > Contains the MU x position of the nearest actual point within the terrain database                                                      |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_nearestY      | > TSLTerrainData_Nearest       | > Contains the MU y position of the nearest actual point within the terrain database                                                      |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_nearestZ      | > TSLTerrainData_Nearest       | > Contains the height value for the point in the database at m_nearestX, m_nearestY. This field is only valid if m_nearestIsNull is false |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_nearestIsNull | > TSLTerrainData_Nearest       | > If true, m_nearestZ is not valid otherwise it is valid                                                                                  |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_xResolution   | > TSLTerrainData_HorizontalRes | > Defines the spacing of columns in the grid. The value is in MU.                                                                         |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| m_yResolution   | > TSLTerrainData_HorizontalRes | > Defines the spacing of rows in the grid. The value is in MU.                                                                            |
-+-----------------+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+| Field           | Filter                       | Description                                                                                                                             |
+| --------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| m_x             | TSLTerrainData_Min           | MU X position of queried data                                                                                                           |
+| m_y             | TSLTerrainData_Min           | MU Y position of queried data                                                                                                           |
+| m_z             | TSLTerrainData_Min           | Height/Depth of requested position in metres                                                                                            |
+| m_isNull        | TSLTerrainData_Min           | Flag that is set to true if no data existed at the requested position. If set to false, the m_z member contains valid data              |
+| m_nearestX      | TSLTerrainData_Nearest       | Contains the MU x position of the nearest actual point within the terrain database                                                      |
+| m_nearestY      | TSLTerrainData_Nearest       | Contains the MU y position of the nearest actual point within the terrain database                                                      |
+| m_nearestZ      | TSLTerrainData_Nearest       | Contains the height value for the point in the database at m_nearestX, m_nearestY. This field is only valid if m_nearestIsNull is false |
+| m_nearestIsNull | TSLTerrainData_Nearest       | If true, m_nearestZ is not valid otherwise it is valid                                                                                  |
+| m_xResolution   | TSLTerrainData_HorizontalRes | Defines the spacing of columns in the grid. The value is in MU.                                                                         |
+| m_yResolution   | TSLTerrainData_HorizontalRes | Defines the spacing of rows in the grid. The value is in MU.                                                                            |
+
 
 Some of the fields in TSLTerrainDataItem are unused in the current implementation of the Terrain SDK. Only the fields in the table above are currently used.
 
@@ -273,15 +258,12 @@ The simple answer is for the situation when a point is requested outside the ext
 
 Available values for the interpolation parameter are:
 
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| > TSLTerrainInterpolate_NONE    | A nearest neighbour algorithm is used that returns the height of the point nearest the requested point. Very fast but less accurate. |
-+=================================+======================================================================================================================================+
-| > TSLTerrainInterpolate_LINEAR  | Bilinear interpolation is used to calculate height value. More accurate but slightly slower.                                         |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| > TSLTerrainInterpolate_MIN,    | The lowest/highest neighbouring value is used. Very fast but rarely used due to their inaccuracy.                                    |
-| >                               |                                                                                                                                      |
-| > TSLTerrainInterpolate_MAX     |                                                                                                                                      |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+| TSLTerrainInterpolate_NONE                           | A nearest neighbour algorithm is used that returns the height of the point nearest the requested point. Very fast but less accurate. |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| TSLTerrainInterpolate_LINEAR                         | Bilinear interpolation is used to calculate height value. More accurate but slightly slower.                                         |
+| TSLTerrainInterpolate_MIN, TSLTerrainInterpolate_MAX | The lowest/highest neighbouring value is used. Very fast but rarely used due to their inaccuracy.                                    |
+
 
 Whichever interpolation value is used, the filter parameter can be used to determine the position and height value of the nearest point to the requested location. This can be useful when for reasons of accuracy; only actual values stored within the database are to be used in an application. This is illustrated in the code below:
 
@@ -510,29 +492,16 @@ When generating contours as polygons there is no algorithm choice to make.
 
 Contours generated from the TSLTerrainContour class are passed to the application via one of the TSLTerrainContourCallbacks virtual methods. Which callback is invoked is dependent on which type of contour (see section [17.8.2](#types-of-contours)) was requested according to the following table:
 
-+--------------------------------------------+-----------------------------------------------------------------+
-| > Callback                                 | > Used by                                                       |
-+============================================+=================================================================+
-| > TSLTerrainContourCallbacks::progress     | > All                                                           |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawLine     | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeSimple                               |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeCONREC                               |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawPolygon  | > TSLTerrainContour::drawContourPolygon                         |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawPolyline | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeStandard                             |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawText     | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeStandard                             |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawTIN      | > TSLTerrainContour::drawTIN                                    |
-+--------------------------------------------+-----------------------------------------------------------------+
+
+| Callback                                 | Used by                                                                                                                       |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| TSLTerrainContourCallbacks::progress     | All                                                                                                                           |
+| TSLTerrainContourCallbacks::drawLine     | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeSimple TSLTerrainContourLineTypeCONREC |
+| TSLTerrainContourCallbacks::drawPolygon  | TSLTerrainContour::drawContourPolygon                                                                                         |
+| TSLTerrainContourCallbacks::drawPolyline | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeStandard                               |
+| TSLTerrainContourCallbacks::drawText     | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeStandard                               |
+| TSLTerrainContourCallbacks::drawTIN      | TSLTerrainContour::drawTIN                                                                                                    |
+
 
 You should override each of the callbacks that will be used for your selected method of contour generation. The TSLTerrainContourCallbacks class provides default implementations of all the callbacks so that you only need to implement the ones that you are interested in.
 

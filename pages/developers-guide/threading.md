@@ -666,97 +666,56 @@ The list of data formats supported by MapLink Pro Studio or runtime SDKs is cons
 
 #### Vector Datasets
 
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > **Data Format**                            | > **Studio Import** | > **Direct Import SDK** | > **Other Runtime Import** | > **Runtime Export** |
-+==============================================+:===================:+:=======================:+:==========================:+:====================:+
-| > DAFIF                                      | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > DFAD                                       | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > DXF                                        | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > Envitia ASCII                              | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > File Geodatabase (FileGDB)                 | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > GDF3                                       | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > GeoPackage                                 | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > GML2/GML3                                  | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > Jeppesen                                   | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > KML Simple Features 2D                     | > ✔                 | > ✔                     | > ✔                        |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > MIF/MID                                    | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > NITF/NSIF                                  | > ✔                 | > ✔                     | > ✔                        |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OpenStreetMap                              | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OS MasterMap                               | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OS NTF                                     | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OS VectorMap Local                         | > ✔                 | > ✔                     | > ✔                        |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OS VectorMap District                      | > ✔                 | > ✔                     | > ✔                        |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > OS Boundary Line 2000                      | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > S-57 (Unencrypted ENC & AML)               | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > S-57 Encrypted (S-63)                      |                     |                         | > ✔                        |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > ShapeFiles                                 | > ✔                 | > ✔                     | > ✔                        | > ✔                  |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > US Census TIGER/Line                       | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > VPF (DNC, VMAP, WVS etc.)                  | > ✔                 |                         |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > Other Vector (e.g. TAB, Spatialite/SQLite) | > ✔                 | > ✔                     |                            |                      |
-+----------------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
+| Data Format                                | Studio Import | Direct Import SDK | Other Runtime Import | Runtime Export |
+| ------------------------------------------ | ------------- | ----------------- | -------------------- | -------------- |
+| DAFIF                                      | ✔             |                   |                      |                |
+| DFAD                                       | ✔             |                   |                      |                |
+| DXF                                        | ✔   | ✔   |     |     |
+| Envitia ASCII                              | ✔   |     |     |     |
+| File Geodatabase (FileGDB)                 | ✔   | ✔   |     |     |
+| GDF3                                       | ✔   |     |     |     |
+| GeoPackage                                 | ✔   | ✔   |     |     |
+| GML2/GML3                                  | ✔   | ✔   | ✔   | ✔   |
+| Jeppesen                                   | ✔   |     |     |     |
+| KML Simple Features 2D                     | ✔   | ✔   | ✔   |     |
+| MIF/MID                                    | ✔   | ✔   | ✔   | ✔   |
+| NITF/NSIF                                  | ✔   | ✔   | ✔   |     |
+| OpenStreetMap                              | ✔   | ✔   |     |     |
+| OS MasterMap                               | ✔   | ✔   | ✔   | ✔   |
+| OS NTF                                     | ✔   | ✔   | ✔   | ✔   |
+| OS VectorMap Local                         | ✔   | ✔   | ✔   |     |
+| OS VectorMap District                      | ✔   | ✔   | ✔   |     |
+| OS Boundary Line 2000                      | ✔   | ✔   |     |     |
+| S-57 (Unencrypted ENC & AML)               | ✔   | ✔   | ✔   | ✔   |
+| S-57 Encrypted (S-63)                      |     |     | ✔   |     |
+| ShapeFiles                                 | ✔   | ✔   | ✔   | ✔   |
+| US Census TIGER/Line                       | ✔   | ✔   |     |     |
+| VPF (DNC, VMAP, WVS etc.)                  | ✔   |     |     |     |
+| Other Vector (e.g. TAB, Spatialite/SQLite) | ✔   | ✔   |     |     |
+
 
 #### Raster Datasets
 
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > **Data Format**                   | > **Studio Import** | > **Direct Import SDK** | > **Other Runtime Import** | > **Runtime Export** |
-+=====================================+:===================:+:=======================:+:==========================:+:====================:+
-| > ADRG                              | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > ARCS Chart (Unencrypted)          | ✔                   |                         |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > ASRP                              | ✔                   | ✔                       |                            | ✔                    |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > BSB Nautical Chart Format         | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > CADRG/CIB                         | ✔                   | ✔                       | ✔                          | ✔                    |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > CRP                               | ✔                   |                         |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > ECRG                              | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > ECW                               | ✔                   |                         |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > GeoPackage                        | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > Geospatial PDF                    | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > GeoTIFF                           | ✔                   | ✔                       | ✔                          |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > JPEG                              | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > JPEG2000                          | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > MrSID                             | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > NITF/NSIF                         | ✔                   | ✔                       | ✔                          |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > USRP                              | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
-| > Other Raster (e.g. IMG, PNG etc.) | ✔                   | ✔                       |                            |                      |
-+-------------------------------------+---------------------+-------------------------+----------------------------+----------------------+
+| Data Format                       | Studio Import | Direct Import SDK | Other Runtime Import | Runtime Export |
+| --------------------------------- | ------------- | ----------------- | -------------------- | -------------- |
+| ADRG                              | ✔             | ✔                 |                      |                |
+| ARCS Chart (Unencrypted)          | ✔             |                   |                      |                |
+| ASRP                              | ✔   | ✔   |     | ✔   |
+| BSB Nautical Chart Format         | ✔   | ✔   |     |     |
+| CADRG/CIB                         | ✔   | ✔   | ✔   | ✔   |
+| CRP                               | ✔   |     |     |     |
+| ECRG                              | ✔   | ✔   |     |     |
+| ECW                               | ✔   |     |     |     |
+| GeoPackage                        | ✔   | ✔   |     |     |
+| Geospatial PDF                    | ✔   | ✔   |     |     |
+| GeoTIFF                           | ✔   | ✔   | ✔   |     |
+| JPEG                              | ✔   | ✔   |     |     |
+| JPEG2000                          | ✔   | ✔   |     |     |
+| MrSID                             | ✔   | ✔   |     |     |
+| NITF/NSIF                         | ✔   | ✔   | ✔   |     |
+| USRP                              | ✔   | ✔   |     |     |
+| Other Raster (e.g. IMG, PNG etc.) | ✔   | ✔   |     |     |
+
 
 #### Deprecated SDKs
 
@@ -768,23 +727,17 @@ The list of data formats supported by MapLink Pro Studio or runtime SDKs is cons
 
 The 3D SDK incorporates the advantages of 3D terrain data with existing MapLink maps to create a fully immersive environment for reviewing and exploring. Built to extend and strengthen the MapLink family of tools, the 3D SDK offers all of the advantages of the other components, but in a 3D environment.
 
-![Figure 24 3D Globe with US States Extruded as polygons.](../../assets/images/developers-guide/media/image35.png){alt="A computer screen shot of a map Description automatically generated" width="5.7070253718285215in" height="3.3389282589676292in"}
+![Figure 24 3D Globe with US States Extruded as polygons.](../../assets/images/developers-guide/media/image35.png)
 
 #### Library Usage and Configuration
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| MapLink3D64.lib                                                                                                                                                                                |
-|                                                                                                                                                                                                |
-| Release mode, DLL version.                                                                                                                                                                     |
-|                                                                                                                                                                                                |
-| Uses Multithreaded DLL C++ run-time library.                                                                                                                                                   |
-|                                                                                                                                                                                                |
-| Requires TTLDLL preprocessor directive.                                                                                                                                                        |
-|                                                                                                                                                                                                |
-| Your application must also link the MapLink CoreSDK library MapLink64.lib and the OpenGL library opengl32.lib.                                                                                 |
-|                                                                                                                                                                                                |
-| Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+<div class="callout" markdown="1">
+
+MapLink3D64.lib Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Your application must also link the MapLink CoreSDK library MapLink64.lib and the OpenGL library opengl32.lib. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing, where X.Y is the version of MapLink you are deploying. |
+
+</div>
+
 
 #### Migrating from 2D to 3D
 
@@ -1200,7 +1153,7 @@ In the same way that a TSLStandardDataLayer contains instances of TSLEntity deri
 
 A further 2D Core SDK concept that has been continued in the 3D SDK is the use of geometry Entities. All geometric objects in MapLink can be thought of as Entities, derivatives of TSLEntity in the 2D and of TSL3DEntity in the 3D.
 
-![Figure 25 3D Entity Hierarchy](../../assets/images/developers-guide/media/image36.png){alt="A diagram of a company Description automatically generated" width="7.771306867891513in" height="2.2644870953630796in"}
+![Figure 25 3D Entity Hierarchy](../../assets/images/developers-guide/media/image36.png)
 
 In the 3D SDK all entities with the exception of user geometry have a number of properties including:
 
@@ -1662,29 +1615,16 @@ When generating contours as polygons there is no algorithm choice to make.
 
 Contours generated from the TSLTerrainContour class are passed to the application via one of the TSLTerrainContourCallbacks virtual methods. Which callback is invoked is dependent on which type of contour (see section [17.8.2](#types-of-contours)) was requested according to the following table:
 
-+--------------------------------------------+-----------------------------------------------------------------+
-| > Callback                                 | > Used by                                                       |
-+============================================+=================================================================+
-| > TSLTerrainContourCallbacks::progress     | > All                                                           |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawLine     | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeSimple                               |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeCONREC                               |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawPolygon  | > TSLTerrainContour::drawContourPolygon                         |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawPolyline | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeStandard                             |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawText     | > TSLTerrainContour::drawContourLine using the following types: |
-|                                            | >                                                               |
-|                                            | > TSLTerrainContourLineTypeStandard                             |
-+--------------------------------------------+-----------------------------------------------------------------+
-| > TSLTerrainContourCallbacks::drawTIN      | > TSLTerrainContour::drawTIN                                    |
-+--------------------------------------------+-----------------------------------------------------------------+
+
+| Callback                                 | Used by                                                                                                                       |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| TSLTerrainContourCallbacks::progress     | All                                                                                                                           |
+| TSLTerrainContourCallbacks::drawLine     | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeSimple TSLTerrainContourLineTypeCONREC |
+| TSLTerrainContourCallbacks::drawPolygon  | TSLTerrainContour::drawContourPolygon                                                                                         |
+| TSLTerrainContourCallbacks::drawPolyline | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeStandard                               |
+| TSLTerrainContourCallbacks::drawText     | TSLTerrainContour::drawContourLine using the following types: TSLTerrainContourLineTypeStandard                               |
+| TSLTerrainContourCallbacks::drawTIN      | TSLTerrainContour::drawTIN                                                                                                    |
+
 
 You should override each of the callbacks that will be used for your selected method of contour generation. The TSLTerrainContourCallbacks class provides default implementations of all the callbacks so that you only need to implement the ones that you are interested in.
 

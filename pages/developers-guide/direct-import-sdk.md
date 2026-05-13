@@ -16,19 +16,13 @@ This includes the ability to export a feature rendering configuration from MapLi
 
 **As of version 11.1, MapLink is no longer supplied with Debug or 32-bit libraries.** Therefore, your application's build should link against the Release Mode libraries in all configurations.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **MapLinkDirectImport64.lib**                                                                                                                                                                  |
-|                                                                                                                                                                                                |
-| Release mode, DLL version.                                                                                                                                                                     |
-|                                                                                                                                                                                                |
-| Uses Multithreaded DLL C++ run-time library.                                                                                                                                                   |
-|                                                                                                                                                                                                |
-| Must also link the MapLink CoreSDK library MapLink.lib/MapLink64.lib                                                                                                                           |
-|                                                                                                                                                                                                |
-| Requires TTLDLL preprocessor directive.                                                                                                                                                        |
-|                                                                                                                                                                                                |
-| Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+<div class="callout" markdown="1">
+
+**MapLinkDirectImport64.lib** Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink.lib/MapLink64.lib Requires TTLDLL preprocessor directive. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying. |
+
+</div>
+
 
 ## Supported Data Formats
 
