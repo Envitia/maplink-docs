@@ -21,32 +21,48 @@ Envitia's software technology for mission system developers, enabling them to cr
 
 
 
-## Installation
-- [Get a trial version of MapLink Pro](https://forms.office.com/e/Lr7jN9TCC0).
-- Our [Quick Start Guide](./pages/quick-start-guide) will see you through the process of getting started.
+## Get Started
+
+<div class="btn-row">
+  <a href="https://forms.office.com/e/Lr7jN9TCC0" class="btn-sm btn-cta btn-external" target="_blank">Request a trial</a>
+  <a href="./pages/quick-start-guide" class="btn-sm">Quick Start Guide</a>
+</div>
 
 ## Samples
+
 MapLink Pro comes installed with a variety of sample applications to get you started quickly.
-You can also view our sample code and tips in our [GitHub repos](https://github.com/envitia).
+
+<div class="btn-row">
+  <a href="https://github.com/envitia" class="btn-sm btn-external" target="_blank">Sample code on GitHub</a>
+</div>
 
 ## Platform Requirements
-MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be used on Windows and Linux.
+
+MapLink Pro supports Windows and Linux and provides APIs for C++ and .NET.
+
+<div class="btn-row">
+  <a href="./api/cpp/" class="btn-sm">C++ API Reference</a>
+  <a href="./api/dotnet/" class="btn-sm">.NET API Reference</a>
+  <a href="./pages/support/platform-support" class="btn-sm">Supported Platforms</a>
+</div>
 
 ## Resources
-- [Envitia MapLink Pro API Documentation](./api/)
-- [MapLink Studio Documentation](./studio/)
-- [Support Pages](./pages/support/)
-- [Licences](./licences)
+
+<div class="btn-row">
+  <a href="./api/" class="btn-sm">API Documentation</a>
+  <a href="./studio/" class="btn-sm">MapLink Studio Docs</a>
+  <a href="./pages/support/" class="btn-sm">Support</a>
+  <a href="./licences" class="btn-sm">Licences</a>
+</div>
 
 ## Documentation
-<ul>
-    {% for item in site.data.docs.docs %}
-    <li>
-    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    </li>
-    {% endfor %}
-    <li><a href="./pages/docs">All docs...</a></li>
-</ul>
+
+<div class="btn-row">
+  {% for item in site.data.docs.docs %}
+  <a href="{{ item.url | relative_url }}" class="btn-sm">{{ item.title }}</a>
+  {% endfor %}
+  <a href="./pages/docs" class="btn-sm">All docs</a>
+</div>
 
 
 

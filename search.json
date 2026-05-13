@@ -13,7 +13,7 @@ layout: null
   {
     "title": {{ page.title | jsonify }},
     "url": {{ page.url | relative_url | jsonify }},
-    "content": {{ h2_sections[0] | strip_html | strip_newlines | truncate: 400, "" | jsonify }}
+    "content": {{ h2_sections[0] | strip_html | strip_newlines | truncate: 600, "" | jsonify }}
   }
 
   {% comment %} One entry per h2 section {% endcomment %}
@@ -25,7 +25,7 @@ layout: null
       {% assign heading_html = '<h2' | append: heading_part | append: '</h2>' %}
       {% assign heading_text = heading_html | strip_html | strip %}
       {% assign section_raw = section | split: '</h2>' | last %}
-      {% assign section_body = section_raw | strip_html | strip_newlines | truncate: 500, "" %}
+      {% assign section_body = section_raw | strip_html | strip_newlines | truncate: 3000, "" %}
       ,{
         "title": {{ heading_text | jsonify }},
         "url": {{ page.url | relative_url | append: '#' | append: section_id | jsonify }},
@@ -42,13 +42,36 @@ layout: null
           {% assign h3_heading_part = h3_section | split: '</h3>' | first %}
           {% assign h3_heading_html = '<h3' | append: h3_heading_part | append: '</h3>' %}
           {% assign h3_heading_text = h3_heading_html | strip_html | strip %}
-          {% assign h3_body = h3_section | split: '</h3>' | last | strip_html | strip_newlines | truncate: 400, "" %}
+          {% assign h3_body_raw = h3_section | split: '</h3>' | last %}
+          {% assign h3_body = h3_body_raw | strip_html | strip_newlines | truncate: 2000, "" %}
           ,{
             "title": {{ h3_heading_text | jsonify }},
             "url": {{ page.url | relative_url | append: '#' | append: h3_id | jsonify }},
             "content": {{ h3_body | jsonify }},
-            "page": {{ heading_text | jsonify }}
+            "page": {{ heading_text | jsonify }},
+            "section": {{ page.title | jsonify }}
           }
+
+          {% comment %} One entry per h4 subsection within this h3 {% endcomment %}
+          {% assign h4_sections = h3_body_raw | split: '<h4' %}
+          {% for h4_section in h4_sections offset: 1 %}
+            {% assign h4_id_parts = h4_section | split: 'id="' %}
+            {% if h4_id_parts.size > 1 %}
+              {% assign h4_id = h4_id_parts | last | split: '"' | first %}
+              {% assign h4_heading_part = h4_section | split: '</h4>' | first %}
+              {% assign h4_heading_html = '<h4' | append: h4_heading_part | append: '</h4>' %}
+              {% assign h4_heading_text = h4_heading_html | strip_html | strip %}
+              {% assign h4_body = h4_section | split: '</h4>' | last | strip_html | strip_newlines | truncate: 1500, "" %}
+              ,{
+                "title": {{ h4_heading_text | jsonify }},
+                "url": {{ page.url | relative_url | append: '#' | append: h4_id | jsonify }},
+                "content": {{ h4_body | jsonify }},
+                "page": {{ h3_heading_text | jsonify }},
+                "section": {{ page.title | jsonify }}
+              }
+            {% endif %}
+          {% endfor %}
+
         {% endif %}
       {% endfor %}
 
