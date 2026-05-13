@@ -60,7 +60,6 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 | [Spatial SDK](spatial-sdk) | Spatial operations and map update island management |
 | [GML SDK](gml-sdk) | Reading and writing GML application schemas and instance data |
 | [.NET SDKs](net-sdks) | C# and VB.NET wrappers with walkthroughs |
-| [MapLink Camera Manager](camera-manager) | Camera management for 3D and accelerated surfaces |
 
 ## Advanced Topics
 
@@ -69,4 +68,3 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 | [Floating Point](floating-point) | Floating-point configuration requirements |
 | [Other SDKs](other-sdks) | Additional SDK coverage |
 | [Threading](threading) | Thread safety rules, known issues, and threading options |
-| [DIGM to TMF Conversion](digm-to-tmf) | Converting DIGM data to TMF format |
