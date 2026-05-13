@@ -73,8 +73,20 @@ def fix_line(line, in_code_block):
     # Fix heading levels based on ENV class
     m = ANY_HEADING_RE.match(line)
     if m:
-        level = int(m.group(3))
+        level = min(int(m.group(3)), 4)
         text = clean_heading_text(m.group(2))
+        return '#' * level + ' ' + text + '\n'
+
+    # Drop empty headings (blank Word heading styles pandoc emits as "###### ")
+    if re.match(r'^#{1,}\s*$', line):
+        return ''
+
+    # Cap plain headings (no ENV class) at h4 — pandoc can generate h5-h9
+    # from deeply nested Word styles which are invalid HTML beyond h6
+    plain_m = re.match(r'^(#{4,})\s+(.+)', line)
+    if plain_m:
+        level = min(len(plain_m.group(1)), 4)
+        text = clean_heading_text(plain_m.group(2))
         return '#' * level + ' ' + text + '\n'
 
     # Fix image paths and remove size attributes
