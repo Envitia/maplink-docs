@@ -7,6 +7,16 @@ icon: "/img/MapLink Pro 11 Logo Circle No Shadow FX New V1.1.png"
 show_downloads: false
 google_analytics:
 remote_theme: pages-themes/minimal@v0.2.0
+kramdown:
+  typographic_symbols:
+    mdash: '--'
+    ndash: '-'
+    hellip: '...'
+    laquo: '<<'
+    raquo: '>>'
+    laquo_space: '<< '
+    raquo_space: ' >>'
+
 plugins:
 - jekyll-remote-theme
 - jekyll-sitemap

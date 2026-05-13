@@ -22,7 +22,7 @@ library (MapLinkOpenGLSurface64.lib).
 
 <table class="doc-table">
   <tbody>
-    <tr><td><strong>MapLinkOpenGLSurface64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink64.lib Requires TTLDLL preprocessor directive. Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLinkOpenGLSurface64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink64d.lib Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Development machines only.</strong></td></tr>
+    <tr><td><strong>MapLinkOpenGLSurface64.lib</strong><br>Release mode, DLL version.<br>Uses Multithreaded DLL C++ run-time library.<br>Must also link the MapLink CoreSDK library MapLink64.lib<br>Requires TTLDLL preprocessor directive.<br>Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLinkOpenGLSurface64d.lib</strong><br>Debug mode, DLL version.<br>Uses Debug Multithreaded DLL C++ run-time library.<br>Must also link the MapLink CoreSDK library MapLink64d.lib<br>Requires TTLDLL preprocessor directive.<br>No redistributable run-time available. <strong>KEYED: Development machines only.</strong></td></tr>
   </tbody>
 </table>
 
@@ -58,11 +58,74 @@ negative impact on performance or functionality if not present.
 | ES 2.0       | None                      | OES_standard_derivatives^3^ |
 |              |                           |                             |
 |              |                           | OES_element_index_uint^4^   |
-<table class="doc-table">
-  <tbody>
-    <tr><td>.  These exten not affect .  Without thi to buffered .  If this ext pixels) may .  If this ext polygons or polygons or not display # Where to Beg he first quest our applicatio his question, <em>The availabil pplication int ardware will l he TSLNTSurfac </em>Any custom re pplication con ill be more di pplication tha verhead of mer utweigh any pe cceleration. <em>Any requireme ardware.</em><em> Ope utputs from th ill produce sl hese differenc hen performing ystems. </em>Developer fam omplete graphi ecessary to im y the MapLink ## Graphics Dr hen using the p-to-date grap ave missing fe rawing surface ewest graphics iagnosing prob ## Which Class he OpenGL surf nterface class etween MapLink nd interface b he interface c nterface they</td><td>ions allow for improved per he functionality offered by extension multisample anti or transparent layers. nsion is not present very l have noticeable aliasing. nsion is not present the su polylines with a maximum of polylines with more than th correctly. This is a hardwa n? on to ask is whether the Op . There are several points ncluding: ty of hardware acceleration nded to run primarily on vi kely not gain any benefit u or TSLMotifSurface. dering the application will ains a large amount of GDI ficult to integrate the Ope the TSLNTSurface or TSLMot ing the output of the two s formance improvements gaine ts on identical rendering o GL does not require impleme same set of rendering comm ghtly different output when s are not usually visible t a binary comparison between liarity with OpenGL**. The s engine; therefore, some k lement any custom drawing r endering API (TSLRenderingI vers penGL drawing surface, it i ics drivers for your hardwa tures, poorer performance a to malfunction or render in drivers for your hardware s ems. Should be Used? ce is accessed through a va s, similar to how TSLNTSurf and Windows-based systems a tween MapLink and X11-based asses for the OpenGL surfac se as follows:</td><td>ormance if present but do the drawing surface. aliasing cannot be applied rge pieces of text (\> 150 face is limited to rendering 65536 coordinates. Any s number of coordinates will e limitation. nGL surface is suitable for o consider when answering on the target devices.<strong> An tual machines or very old ing the OpenGL surface over perform.</strong> If the r Xlib rendering code it GL surface into the fSurface. Additionally, the parate rendering APIs may from using hardware tput on different tations to produce identical nds, so the same application run on different hardware. the eye but will show up the output of different rawing surface is not a owledge of OpenGL is quired beyond that offered terface and geometry). vitally important to use e. Old graphics drivers can d bugs that can cause the orrectly. Upgrading to the ould always be first step in iety of window system ce provides an interface d TSLMotifSurface provides systems. are named based on the</td></tr>
-  </tbody>
-</table>
++--------------+---------------------------+-----------------------------+
+
+1.  These extensions allow for improved performance if present but do
+    not affect the functionality offered by the drawing surface.
+
+2.  Without this extension multisample anti-aliasing cannot be applied
+    to buffered or transparent layers.
+
+3.  If this extension is not present very large pieces of text (\> 150
+    pixels) may have noticeable aliasing.
+
+4.  If this extension is not present the surface is limited to rendering
+    polygons or polylines with a maximum of 65536 coordinates. Any
+    polygons or polylines with more than this number of coordinates will
+    not display correctly. This is a hardware limitation.
+
+## Where to Begin?
+
+The first question to ask is whether the OpenGL surface is suitable for
+your application. There are several points to consider when answering
+this question, including:
+
+**The availability of hardware acceleration on the target devices.** An
+application intended to run primarily on virtual machines or very old
+hardware will likely not gain any benefit using the OpenGL surface over
+the TSLNTSurface or TSLMotifSurface.
+
+**Any custom rendering the application will perform.** If the
+application contains a large amount of GDI or Xlib rendering code it
+will be more difficult to integrate the OpenGL surface into the
+application than the TSLNTSurface or TSLMotifSurface. Additionally, the
+overhead of merging the output of the two separate rendering APIs may
+outweigh any performance improvements gained from using hardware
+acceleration.
+
+**Any requirements on identical rendering output on different
+hardware.** OpenGL does not require implementations to produce identical
+outputs from the same set of rendering commands, so the same application
+will produce slightly different output when run on different hardware.
+These differences are not usually visible to the eye but will show up
+when performing a binary comparison between the output of different
+systems.
+
+**Developer familiarity with OpenGL**. The drawing surface is not a
+complete graphics engine; therefore, some knowledge of OpenGL is
+necessary to implement any custom drawing required beyond that offered
+by the MapLink rendering API (TSLRenderingInterface and geometry).
+
+### Graphics Drivers
+
+When using the OpenGL drawing surface, it is vitally important to use
+up-to-date graphics drivers for your hardware. Old graphics drivers can
+have missing features, poorer performance and bugs that can cause the
+drawing surface to malfunction or render incorrectly. Upgrading to the
+newest graphics drivers for your hardware should always be first step in
+diagnosing problems.
+
+### Which Class Should be Used?
+
+The OpenGL surface is accessed through a variety of window system
+interface classes, similar to how TSLNTSurface provides an interface
+between MapLink and Windows-based systems and TSLMotifSurface provides
+and interface between MapLink and X11-based systems.
+
+The interface classes for the OpenGL surface are named based on the
+interface they use as follows:
+
++------------------+--------------------------------------------------+
 | Windowing System | Applicable OpenGL Surface Classes                |
 <table class="doc-table">
   <tbody>
@@ -72,7 +135,7 @@ negative impact on performance or functionality if not present.
 | X11              | TSLGLXSurface                                    |
 <table class="doc-table">
   <tbody>
-    <tr><td>Embedded/Mobile</td><td>TSLEGLSurface TSLNativeEGLSurface^1^</td></tr>
+    <tr><td>Embedded/Mobile</td><td>TSLEGLSurface<br>TSLNativeEGLSurface^1^</td></tr>
   </tbody>
 </table>
 
