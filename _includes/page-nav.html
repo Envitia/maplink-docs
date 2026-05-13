@@ -1,0 +1,42 @@
+{% assign current_path = page.url | remove_trailing_slashes %}
+{% assign devguide = site.data.devguide_order %}
+{% assign prev_page = nil %}
+{% assign next_page = nil %}
+{% assign found = false %}
+
+{% for entry in devguide %}
+  {% assign entry_path = entry.url | remove_trailing_slashes %}
+  {% if found and next_page == nil %}
+    {% assign next_page = entry %}
+  {% endif %}
+  {% if entry_path == current_path %}
+    {% assign found = true %}
+  {% endif %}
+  {% unless found %}
+    {% assign prev_page = entry %}
+  {% endunless %}
+{% endfor %}
+
+{% if prev_page or next_page %}
+<nav class="page-nav" aria-label="Page navigation">
+  <div class="page-nav-inner">
+    {% if prev_page %}
+    <a href="{{ prev_page.url | relative_url }}" class="page-nav-card page-nav-prev">
+      <span class="page-nav-label">← Previous</span>
+      <span class="page-nav-title">{{ prev_page.title }}</span>
+    </a>
+    {% else %}
+    <div class="page-nav-card page-nav-empty"></div>
+    {% endif %}
+
+    {% if next_page %}
+    <a href="{{ next_page.url | relative_url }}" class="page-nav-card page-nav-next">
+      <span class="page-nav-label">Next →</span>
+      <span class="page-nav-title">{{ next_page.title }}</span>
+    </a>
+    {% else %}
+    <div class="page-nav-card page-nav-empty"></div>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}
