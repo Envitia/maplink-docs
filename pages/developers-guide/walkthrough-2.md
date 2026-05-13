@@ -4,23 +4,13 @@ title: "Walkthrough 2 - Modifying the Visible Area"
 
 # Walkthrough 2 - Modifying the Visible Area
 
-
-Congratulations! You have now created your first MapLink application. As
-applications go though, it's not the most useful since you are
-restricted to looking at the whole of the map area. The next step is to
-add some user interaction and thus look at any area of the map.
+Congratulations! You have now created your first MapLink application. As applications go though, it's not the most useful since you are restricted to looking at the whole of the map area. The next step is to add some user interaction and thus look at any area of the map.
 
 ## Defining and Implementing an Interaction Model
 
-Firstly you must decide on your interaction model. This is the
-combination of menu selections and mouse actions. With the sample
-applications, Envitia supplies the source code for a pre-built
-interaction model. This varies according to the specific application
-since some have more complex requirements such as editing. These usually
-require switching modes via menu selections or toolbar buttons.
+Firstly you must decide on your interaction model. This is the combination of menu selections and mouse actions. With the sample applications, Envitia supplies the source code for a pre-built interaction model. This varies according to the specific application since some have more complex requirements such as editing. These usually require switching modes via menu selections or toolbar buttons.
 
-For the purposes of this example, we will now implement the following
-interaction model, which does not require any additional menu items.
+For the purposes of this example, we will now implement the following interaction model, which does not require any additional menu items.
 
 - Left button click: Pan to clicked point and zoom in by 25%
 
@@ -30,45 +20,23 @@ interaction model, which does not require any additional menu items.
 
 - Right button drag: Grab and move the current view with the mouse
 
-We shall define a click as a button press/release cycle where the cursor
-does not move more than 3 pixels between press/release. A drag is a
-press/move/release action where the movement is more than 3 pixels.
+We shall define a click as a button press/release cycle where the cursor does not move more than 3 pixels between press/release. A drag is a press/move/release action where the movement is more than 3 pixels.
 
-As an extension, we will also add some handling for the mouse wheel,
-should one be installed. You should generally be careful not to create
-an interaction mechanism that is totally dependent upon the mouse wheel
-since the user may not have such hardware. There are also various driver
-issues regarding wheel support that are discussed later.
+As an extension, we will also add some handling for the mouse wheel, should one be installed. You should generally be careful not to create an interaction mechanism that is totally dependent upon the mouse wheel since the user may not have such hardware. There are also various driver issues regarding wheel support that are discussed later.
 
 - Wheel spin: Zoom in and out
 
-- Wheel press (or middle button click with 3 button mouse): Pan to
-  clicked point
+- Wheel press (or middle button click with 3 button mouse): Pan to clicked point
 
-For deployed applications, it is recommended that the
-TSLInteractionModes are used. These examples are merely to show how
-custom interactions could be used and to promote understanding of what
-goes on "under the bonnet" of MapLink.
+For deployed applications, it is recommended that the TSLInteractionModes are used. These examples are merely to show how custom interactions could be used and to promote understanding of what goes on "under the bonnet" of MapLink.
 
 ### Adding Simple Zoom/Pan Handlers
 
-These handlers should be added to the View since each Drawing Surface is
-independent even if attached to the same Data Layers. Note that all the
-view manipulation methods on the TSLDrawingSurface return true if they
-were successful and false if unsuccessful. A failure usually indicates
-that the Coordinate Space limits were reached. It is usually more
-efficient to inhibit the automatic redraw in these methods and control
-the redraw by invalidating the window. This is especially true when
-applying echo styles, for example with zoom to rectangle.
+These handlers should be added to the View since each Drawing Surface is independent even if attached to the same Data Layers. Note that all the view manipulation methods on the TSLDrawingSurface return true if they were successful and false if unsuccessful. A failure usually indicates that the Coordinate Space limits were reached. It is usually more efficient to inhibit the automatic redraw in these methods and control the redraw by invalidating the window. This is especially true when applying echo styles, for example with zoom to rectangle.
 
-> Use Properties, Messages to add handlers to the View for the
-> WM_LBUTTONUP and WM_RBUTTONUP events.
+> Use Properties, Messages to add handlers to the View for the WM_LBUTTONUP and WM_RBUTTONUP events.
 >
-> In the OnLButtonUp method, check that a Drawing Surface has been
-> created and if so convert the mouse position to a User Unit position.
-> This position should be used as a parameter to the
-> TSLDrawingSurface::pan method. If both pan and zoom were successful,
-> then invalidate the window rectangle to force a redraw.
+> In the OnLButtonUp method, check that a Drawing Surface has been created and if so convert the mouse position to a User Unit position. This position should be used as a parameter to the TSLDrawingSurface::pan method. If both pan and zoom were successful, then invalidate the window rectangle to force a redraw.
 
 void CHelloGlobeView::OnLButtonUp(UINT nFlags, CPoint point)
 
@@ -102,8 +70,7 @@ CView::OnLButtonUp(nFlags, point);
 
 }
 
-> In the OnRButtonUp method, check that a Drawing Surface has been
-> created and if so, simply zoom out.
+> In the OnRButtonUp method, check that a Drawing Surface has been created and if so, simply zoom out.
 
 void CHelloGlobeView::OnRButtonUp(UINT nFlags, CPoint point)
 
@@ -125,22 +92,9 @@ CView::OnRButtonUp(nFlags, point);
 
 ### Zoom to Rectangle
 
-For this interaction we need to remember the position that the user
-first pressed the left button, and when they release it compare the
-press and release positions. If they are more than 3 pixels apart then
-we can assume that they have dragged a rectangle, convert the press and
-release mouse positions to User Units and ask the TSLDrawingSurface to
-display that area. Of course, the aspect ratio of the selected rectangle
-may not match the aspect ratio of the window. To cope with such
-situations, the TSLDrawingSurface::resize method has a parameter to
-indicate that MapLink should adjust the specified rectangle to match the
-window aspect ratio. If the aspect ratios are mismatched, then MapLink
-will attempt to ensure that the entirety of the specified rectangle is
-displayed.
+For this interaction we need to remember the position that the user first pressed the left button, and when they release it compare the press and release positions. If they are more than 3 pixels apart then we can assume that they have dragged a rectangle, convert the press and release mouse positions to User Units and ask the TSLDrawingSurface to display that area. Of course, the aspect ratio of the selected rectangle may not match the aspect ratio of the window. To cope with such situations, the TSLDrawingSurface::resize method has a parameter to indicate that MapLink should adjust the specified rectangle to match the window aspect ratio. If the aspect ratios are mismatched, then MapLink will attempt to ensure that the entirety of the specified rectangle is displayed.
 
-> Add a member variable to hold the pressed mouse location: CPoint
-> m_lmb. Use Properties, Messages to add a handler to the View for the
-> WM_LBUTTONDOWN event.
+> Add a member variable to hold the pressed mouse location: CPoint m_lmb. Use Properties, Messages to add a handler to the View for the WM_LBUTTONDOWN event.
 >
 > In the OnLButtonDown method, store the mouse position.
 
@@ -154,8 +108,7 @@ CView::OnLButtonDown(nFlags, point);
 
 }
 
-> Modify the OnLButtonUp method after the Drawing Surface has been
-> validated.
+> Modify the OnLButtonUp method after the Drawing Surface has been validated.
 
 if ( abs( point.x - m_lmb.x ) \<= 3 && abs( point.y - m_lmb.y ) \<= 3 )
 
@@ -205,28 +158,13 @@ InvalidateRect( 0, FALSE ) ;
 
 }
 
-The TSLViewMode classes supplied with the MapLink SDK samples have a
-fully functional "Zoom to Rectangle" mode, including echo of the
-rubber-band rectangle. For the purposes of this simple introduction, we
-shall ignore the echo rectangle. For information about the echo modes,
-please see the "mfc" sample, or alternatively use the MapLink Wizard to
-create a skeleton application and use the standard TSLInteractionMode
-classes.
+The TSLViewMode classes supplied with the MapLink SDK samples have a fully functional "Zoom to Rectangle" mode, including echo of the rubber-band rectangle. For the purposes of this simple introduction, we shall ignore the echo rectangle. For information about the echo modes, please see the "mfc" sample.
 
 ### Grab Pan
 
-For this interaction we need to remember the position that the user
-first pressed the right button and when the mouse moves, compare the
-mouse position with the press. If they are more than 3 pixels apart then
-we can assume that they have dragged the cursor and pan the map
-appropriately. This will also need a slight modification to the right
-button release handler to inhibit the zoom out if a grab has occurred.
+For this interaction we need to remember the position that the user first pressed the right button and when the mouse moves, compare the mouse position with the press. If they are more than 3 pixels apart then we can assume that they have dragged the cursor and pan the map appropriately. This will also need a slight modification to the right button release handler to inhibit the zoom out if a grab has occurred.
 
-Add a member variable to hold the pressed mouse location: CPoint m_rmb
-and also to hold the last grabbed position: CPoint m_lastGrabPoint. This
-variable will be used to calculate delta offsets for the pan. We also
-need flags to indicate whether a grab has occurred and whether one
-should be checked for: bool m_grabbed, m_checkForGrab.
+Add a member variable to hold the pressed mouse location: CPoint m_rmb and also to hold the last grabbed position: CPoint m_lastGrabPoint. This variable will be used to calculate delta offsets for the pan. We also need flags to indicate whether a grab has occurred and whether one should be checked for: bool m_grabbed, m_checkForGrab.
 
 In the View constructor, initialise the boolean variables
 
@@ -238,11 +176,7 @@ CHelloGlobeView::CHelloGlobeView()
 
 }
 
-> Use Properties, Messages to add a handler to the View for the
-> WM_RBUTTONDOWN event. In the OnRButtonDown method, store the mouse
-> position and clear the m_grabbed flag and set the m_checkForGrab flag.
-> These will be checked in the WM_MOUSEMOVE handler and the WM_RBUTTONUP
-> handler.
+> Use Properties, Messages to add a handler to the View for the WM_RBUTTONDOWN event. In the OnRButtonDown method, store the mouse position and clear the m_grabbed flag and set the m_checkForGrab flag. These will be checked in the WM_MOUSEMOVE handler and the WM_RBUTTONUP handler.
 
 void CHelloGlobeView::OnRButtonDown(UINT nFlags, CPoint point)
 
@@ -258,9 +192,7 @@ CView::OnRButtonDown(nFlags, point);
 
 }
 
-The OnRButtonUp method now needs modifying to ensure that the zoom out
-only occurs if no grab was active and the grab related flags should be
-cleared down.
+The OnRButtonUp method now needs modifying to ensure that the zoom out only occurs if no grab was active and the grab related flags should be cleared down.
 
 void CHelloGlobeView::OnRButtonUp(UINT nFlags, CPoint point)
 
@@ -282,14 +214,9 @@ CView::OnRButtonUp(nFlags, point);
 
 }
 
-The next step is to create a mouse move handler and determine whether
-any grab is active. If so, then the new display centre needs to be
-calculated and passed to MapLink. As before, the TSLDrawingSurface::pan
-method will return true on success and false on failure. A successful
-pan should invalidate the window rectangle.
+The next step is to create a mouse move handler and determine whether any grab is active. If so, then the new display centre needs to be calculated and passed to MapLink. As before, the TSLDrawingSurface::pan method will return true on success and false on failure. A successful pan should invalidate the window rectangle.
 
-Use Properties, Messages to add a handler to the View for the
-WM_MOUSEMOVE event
+Use Properties, Messages to add a handler to the View for the WM_MOUSEMOVE event
 
 void CHelloGlobeView::OnMouseMove(UINT nFlags, CPoint point)
 
@@ -357,64 +284,35 @@ CView::OnMouseMove(nFlags, point);
 
 }
 
-## Mouse Wheel 
+## Mouse Wheel
 
-Many modern PC systems will have a wheel mouse available, where a wheel
-has replaced the middle button. This can spin and also be pressed to act
-as a button.
+Many modern PC systems will have a wheel mouse available, where a wheel has replaced the middle button. This can spin and also be pressed to act as a button.
 
 ### Wheel Support Issues
 
-There are many issues surrounding wheel mouse support, particularly
-since there are many different drivers. Some drivers provide special
-functionality that overrides any application specific handling and
-replaces it with generic scrolling support. This is commonly termed
-'Universal Scrolling' or 'IntelliPoint Wheel Support'.
+There are many issues surrounding wheel mouse support, particularly since there are many different drivers. Some drivers provide special functionality that overrides any application specific handling and replaces it with generic scrolling support. This is commonly termed 'Universal Scrolling' or 'IntelliPoint Wheel Support'.
 
-Many MapLink applications, such as the MapLink Viewer and MapLink Studio
-provide specialist wheel handling to give control over the zoom factor.
-You can easily see if your mouse driver is overriding the application
-wheel support by trying the wheel in the MapLink Viewer. If this scrolls
-vertically instead of zooming in and out then your driver is ignoring
-any application specific behaviour. Some drivers can only turn this
-override off globally, whilst others allow it to be disabled for
-individual programs.
+Many MapLink applications, such as the MapLink Viewer and MapLink Studio provide specialist wheel handling to give control over the zoom factor. You can easily see if your mouse driver is overriding the application wheel support by trying the wheel in the MapLink Viewer. If this scrolls vertically instead of zooming in and out then your driver is ignoring any application specific behaviour. Some drivers can only turn this override off globally, whilst others allow it to be disabled for individual programs.
 
-To control the generic scrolling, please review your mouse driver help,
-but you could try the following:
+To control the generic scrolling, please review your mouse driver help, but you could try the following:
 
 - Invoke the Control Panel, Mouse dialog.
 
 - Select the Wheel tab.
 
-- With some drivers, there may be a 'Universal Scrolling' check box
-  here. Uncheck this box to remove the generic support and thereby
-  enable application specific behaviour.
+- With some drivers, there may be a 'Universal Scrolling' check box here. Uncheck this box to remove the generic support and thereby enable application specific behaviour.
 
-- Other drivers may have an 'Advanced' button to press. Be careful here
-  since some drivers have two buttons labelled 'Advanced' on the same
-  panel! Try both.
+- Other drivers may have an 'Advanced' button to press. Be careful here since some drivers have two buttons labelled 'Advanced' on the same panel! Try both.
 
-- The Advanced Wheel Support dialog may allow you to disable
-  IntelliPoint wheel support or Universal Scrolling. You may be able to
-  choose a specific program executable should you wish to maintain the
-  generic support for non-wheel enabled programs.
+- The Advanced Wheel Support dialog may allow you to disable IntelliPoint wheel support or Universal Scrolling. You may be able to choose a specific program executable should you wish to maintain the generic support for non-wheel enabled programs.
 
-If you have a mouse wheel but no access to the controls described above
-then you may need to install a new mouse driver. Your mouse driver may
-also have specific configuration control over what happens when you
-press the wheel. Again, please see your mouse driver help for further
-information.
+If you have a mouse wheel but no access to the controls described above then you may need to install a new mouse driver. Your mouse driver may also have specific configuration control over what happens when you press the wheel. Again, please see your mouse driver help for further information.
 
 ### Wheel Controlled Zoom and Pan
 
-Assuming you have disabled generic wheel support for your application,
-you can add in support for zoom and pan operations using the mouse
-wheel. Firstly we will add wheel zoom support.
+Assuming you have disabled generic wheel support for your application, you can add in support for zoom and pan operations using the mouse wheel. Firstly we will add wheel zoom support.
 
-> Use Properties, Messages to add a handler to the View for the
-> WM_MOUSEWHEEL message. In the OnMouseWheel method, it either zooms in
-> or out dependent upon the wheel direction.
+> Use Properties, Messages to add a handler to the View for the WM_MOUSEWHEEL message. In the OnMouseWheel method, it either zooms in or out dependent upon the wheel direction.
 
 BOOL CHelloGlobeView::OnMouseWheel(UINT nFlags,short zDelta,CPoint pt)
 
@@ -436,8 +334,7 @@ return CView::OnMouseWheel(nFlags, zDelta, pt);
 
 }
 
-In Visual Studio .NET 2003 or 2005, you can use Properties, Messages to
-add a handler to the View for the WM_MBUTTONUP event.
+Use Properties, Messages to add a handler to the View for the WM_MBUTTONUP event.
 
 void CHelloGlobeView::OnMButtonUp(UINT nFlags, CPoint point)
 
@@ -461,36 +358,3 @@ CView::OnMButtonUp(nFlags, point);
 
 }
 
-Adding wheel pan support in Microsoft Visual Studio 6 is a little more
-complex, since Class Wizard does not know about the WM_MBUTTONUP Windows
-message. You are therefore forced to add event handlers manually.
-
-> In the message map section at the top of the View .cpp file, add in a
-> handler for the event, just before the END_MESSAGE_MAP() macro.
-
-BEGIN_MESSAGE_MAP(CHelloGlobeView, CView)
-
-// Class Wizard has added lots of handlers here
-
-// Add this just before the END_MESSAGE_MAP
-
-ON_WM_MBUTTONUP
-
-END_MESSAGE_MAP()
-
-In the message map section in the View .h file, add in a similar
-declaration
-
-// Add this just before the DECLARE_MESSAGE_MAP
-
-afx_msg void OnMButtonUp(UINT nFlags, CPoint point);
-
-DECLARE_MESSAGE_MAP()
-
-Finally, implement the handler as per Visual Studio.
-
-
-
----
-
-[← Walkthrough 1 - Your First MapLink Application](walkthrough-1) | [Geometry and Overlays →](geometry-and-overlays)
