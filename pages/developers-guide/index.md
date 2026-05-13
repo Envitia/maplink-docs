@@ -1,11 +1,11 @@
----
+﻿---
 title: "MapLink Pro Developer's Guide"
 permalink: /pages/developers-guide/
 ---
 
 # MapLink Pro Developer's Guide
 
-This guide covers all MapLink Pro SDKs — describing their facilities, how to integrate them, and how to get the most from them. It applies to Windows C++ and .NET development unless otherwise noted.
+This guide covers all MapLink Pro SDKs - describing their facilities, how to integrate them, and how to get the most from them. It applies to Windows C++ and .NET development unless otherwise noted.
 
 <a href="/pdf/MapLink Developer's Guide.pdf" class="btn" target="_blank">Download PDF</a>
 
@@ -16,7 +16,7 @@ This guide covers all MapLink Pro SDKs — describing their facilities, how to i
 | | |
 |---|---|
 | [Introduction](introduction) | Overview, glossary, and training options |
-| [MapLink SDK Components and Concepts](sdk-components) | The full SDK family — Core, OpenGL, Tracks, Terrain, 3D Earth, Editor, and more |
+| [MapLink SDK Components and Concepts](sdk-components) | The full SDK family - Core, OpenGL, Tracks, Terrain, 3D Earth, Editor, and more |
 | [Basic MapLink Applications](basic-applications) | Application architecture, Document/View model, error handling, interaction modes |
 
 ## Development Setup
@@ -31,9 +31,9 @@ This guide covers all MapLink Pro SDKs — describing their facilities, how to i
 
 | | |
 |---|---|
-| [Walkthrough 1 — Your First MapLink Application](walkthrough-1) | MFC SDI app that loads and displays a MapLink map |
-| [Walkthrough 2 — Modifying the Visible Area](walkthrough-2) | Zoom, pan, grab, and mouse wheel interaction |
-| [Walkthrough 3 — Adding a Simple Vector Overlay](walkthrough-3) | Creating and displaying vector geometry on a map |
+| [Walkthrough 1 - Your First MapLink Application](walkthrough-1) | MFC SDI app that loads and displays a MapLink map |
+| [Walkthrough 2 - Modifying the Visible Area](walkthrough-2) | Zoom, pan, grab, and mouse wheel interaction |
+| [Walkthrough 3 - Adding a Simple Vector Overlay](walkthrough-3) | Creating and displaying vector geometry on a map |
 
 ## Core SDK
 
