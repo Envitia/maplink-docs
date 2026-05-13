@@ -1,4 +1,4 @@
----
+﻿---
 title: "OpenGL Drawing Surface"
 ---
 
@@ -1258,15 +1258,7 @@ hardware in the system.
 The images shown on the next page illustrate the effect of increasing
 levels of multisampling on image quality:
 
-+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](../../assets/images/developers-guide/media/image29.tiff)                                                                                      | height="2.968503937007874in"}                                                                                      |
-|                                                                                                                     |                                                                                                                    |
-| No multisampling                                                                                                    | 2x multisampling                                                                                                   |
-+=====================================================================================================================+====================================================================================================================+
-| ![4xaa.tif](../../assets/images/developers-guide/media/image31.tiff)                                                                                       | height="2.968503937007874in"}                                                                                      |
-|                                                                                                                     |                                                                                                                    |
-| 4x multisampling                                                                                                    | 8x multisampling                                                                                                   |
-+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+![No multisampling / 2x / 4x / 8x multisampling comparison](../../assets/images/developers-guide/media/no_2x_4x_8x_multisampling.png)
 
 The decision on whether to use multisampling must be made at the time
 the drawing surface is created - it cannot be enabled or disabled on an
@@ -1301,15 +1293,9 @@ setting does.
 The images below demonstrate the effect of these settings on image
 quality:
 
-+------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| ![noaa.tif](../../assets/images/developers-guide/media/image29.tiff)                                                                                          |                                                                                                                          |
-|                                                                                                                        |                                                                                                                          |
-| No post-process anti-aliasing                                                                                          |                                                                                                                          |
-+========================================================================================================================+==========================================================================================================================+
-| ![fxaaweak.tif](../../assets/images/developers-guide/media/image33.tiff)                                                                                          | height="2.811023622047244in"}                                                                                            |
-|                                                                                                                        |                                                                                                                          |
-| Weak FXAA anti-aliasing                                                                                                | Strong FXAA anti-aliasing                                                                                                |
-+------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+![No post-process anti-aliasing](../../assets/images/developers-guide/media/No_post_process_anti_aliasing.png)
+
+![Weak and Strong FXAA anti-aliasing comparison](../../assets/images/developers-guide/media/Weak_and_Strong_FXAA_Anti_Aliasing.png)
 
 When configuring feature rendering for maps and overlaps that is
 intended to be used with the post-process anti-aliasing strong setting
@@ -1887,11 +1873,17 @@ storage strategies. The background colour of each item denotes the
 resource group it belongs to, with items having the same background
 colour being in the same group.
 
-Figure 22 - Per Tile Storage Strategy
+![Figure 22 - Per Tile Storage Strategy](../../assets/images/developers-guide/media/Figure22_Per_Tile_Storage_Strategy.png)
 
-Figure 23 - Per Entity Set Storage Strategy
+*Figure 22 - Per Tile Storage Strategy*
 
-Figure 24 - Per Entity Storage Strategy
+![Figure 23 - Per Entity Set Storage Strategy](../../assets/images/developers-guide/media/Figure23_Per_Entity_Set_Storage_Strategy.png)
+
+*Figure 23 - Per Entity Set Storage Strategy*
+
+![Figure 24 - Per Entity Storage Strategy](../../assets/images/developers-guide/media/Figure24_Per_Entity_Storage_Strategy.png)
+
+*Figure 24 - Per Entity Storage Strategy*
 
 If an application had two types of vector geometry in a
 TSLStandardDataLayer, one that was rarely modified and one that was

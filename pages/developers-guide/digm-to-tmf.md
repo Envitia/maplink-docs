@@ -1,4 +1,4 @@
----
+﻿---
 title: "DIGM to TMF Conversion"
 ---
 
@@ -179,9 +179,9 @@ The principles outlined in the 'Developers Guide for MapLink' are
 applicable for use with MapLink on an X11 platform. This section covers
 the differences between Windows and X11 runtime programming.
 
-####### Programming for X11
+###### Programming for X11
 
-######## TSLMotifSurface
+###### TSLMotifSurface
 
 The primary programming difference between Windows and X11 is the
 Drawing Surface class that you use. For X11 you will use:
@@ -234,12 +234,12 @@ When creating an application for X11, regardless of GUI toolkit, the
 principles behind the 'Walkthrough 1 -- Your First MapLink Application'
 are just as valid. Some samples are included with the CD to help you.
 
-######### Actions on close of Display
+###### Actions on close of Display
 
 You should call TSLDrawingSurface::cleanup() before you close the
 Display.
 
-######## Using GUI Toolkits with MapLink
+###### Using GUI Toolkits with MapLink
 
 MapLink does not depend on any particular GUI toolkit to work. MapLink
 relies only on Xlib.
@@ -250,7 +250,7 @@ such as Motif, FOX (http://www.fox-toolkit.org/) or Qt
 
 We now ship samples for Qt 4.7 and Qt 5.15.
 
-######### Using Qt4.X
+###### Using Qt4.X
 
 If you have difficulty integrating MapLink with Qt please contact
 support.
@@ -379,7 +379,7 @@ The paintEvent in the Custom Widget should look something like this:
 >
 > }
 
-######### Using Qt 5.1 or later
+###### Using Qt 5.1 or later
 
 Add a method to the Custom Widget as follows:
 
@@ -437,14 +437,14 @@ later.
 
 #endif
 
-######### Drawing on top of MapLink using Qt
+###### Drawing on top of MapLink using Qt
 
 In order to use Qt to draw on top of MapLink rendering, you will need to
 draw the map data into a QtPixmap and blit the QtPixmap to the screen.
 The code to disable the Qt double buffering and background clearing is
 probably no-longer required depending on what you are trying to achieve.
 
-####### Text Drawing
+###### Text Drawing
 
 The X11 drawing code now uses Pango to draw text so that we can support
 Unicode. On most platforms Pango uses Xft and hence XRender.
@@ -458,7 +458,7 @@ On 'Solaris 10 SPARC' the version of Pango we are using is the latest
 one that we were able to compile using the development environment
 available on the platform.
 
-####### Dynamic Data Object SDK
+###### Dynamic Data Object SDK
 
 Dynamic Data Object (DDO) SDK allows developers to create fully dynamic
 overlays within a MapLink application (see Developers Guide).
@@ -495,7 +495,7 @@ The TSLRenderingInterface also provides access to the Visual, Colormap
 and Screen. This will make it easier to create pixmaps and images in a
 custom data layer or via a DDO.
 
-####### Raster support
+###### Raster support
 
 All MapLink X11 targets support the display of Raster Maps locally or
 remotely. The X-Server depth to use (via the Visual) will be dependent
@@ -512,7 +512,7 @@ refer to the MapLink Studio help).
 Rasters which contain an alpha channel will only be displayed correctly
 when using X servers that support XRender 0.6 or later.
 
-####### Holed Polygons
+###### Holed Polygons
 
 Vector Maps can be generated from MapLink Studio with holed polygons or
 without holes by using key-holing.
@@ -528,7 +528,7 @@ construction.
 Note: VxWorks target Envitia uses for testing does not support drawing
 of holed polygons.
 
-####### APP-6A and 2525B Symbology
+###### APP-6A and 2525B Symbology
 
 MapLink provides the capability to display many APP6A and 2525B symbols
 through two classes (TSLAPP6AHelper & TSLAPP6ASymbol).
@@ -544,7 +544,7 @@ symbols. Any application using APP-6A or 2525B icons should load this
 symbols file. It is acceptable simply to load it using 'setupSymbols'
 after calling 'loadStandardConfig'. See the Windows APP-6A sample.
 
-####### Stroked Linestyles
+###### Stroked Linestyles
 
 Stroked linestyles are implemented by an extension shared library
 (ttlclsstrk.so/sl/o). The shared library is written specifically for the
@@ -636,7 +636,7 @@ Please note the following:
 - Custom linestyles will have an impact on drawing performance. The more
   complex a linestyle the larger the impact on performance.
 
-####### X11 Error Handlers
+###### X11 Error Handlers
 
 If you define Error handlers by calling XSetErrorHandler, then you need
 to call any error handlers already defined (XSetErrorHandler returns the
@@ -661,7 +661,7 @@ The list of data formats supported by MapLink Pro Studio or runtime SDKs
 is constantly being expanded. The following sections describe some of
 the formats currently supported at the time of writing.
 
-####### Vector Datasets
+###### Vector Datasets
 
 +------------------------+------------+------------+------------+-------------+
 | > **Data Format**      | > **Studio | > **Direct | > **Other  | > **Runtime |
@@ -726,7 +726,7 @@ the formats currently supported at the time of writing.
 | > Spatialite/SQLite)   |            |            |            |             |
 +------------------------+------------+------------+------------+-------------+
 
-####### Raster Datasets
+###### Raster Datasets
 
 +------------------------+------------+------------+------------+-------------+
 | > **Data Format**      | > **Studio | > **Direct | > **Other  | > **Runtime |
@@ -773,7 +773,7 @@ the formats currently supported at the time of writing.
 
 ###### Deprecated SDKs
 
-####### 3D SDK
+###### 3D SDK
 
 **Envitia provide an integration to osgEarth, including display of
 symbology and draping of all MapLink Pro layers.**
@@ -791,7 +791,7 @@ a 3D environment.
 as
 polygons.](../../assets/images/developers-guide/media/image38.png)
 
-######## Library Usage and Configuration
+###### Library Usage and Configuration
 
 As with many of the MapLink SDKs, the 3D SDK comes in 2 different
 flavours. It should be noted that the library to be linked with should
@@ -828,7 +828,7 @@ SDK library (MapLink3D64.lib) and one or more OpenGL libraries.
 | MapLink you are deploying.   |                                |
 +------------------------------+--------------------------------+
 
-######## Migrating from 2D to 3D
+###### Migrating from 2D to 3D
 
 The MapLink 3D SDK is designed to be completely compatible with the 2D
 Core SDK and this makes migration very easy. It holds true to many of
@@ -849,7 +849,7 @@ layers, along with any necessary 2D data layers, should be attached to a
 derivative of the 3D drawing surface base class TSL3DDrawingSurface,
 such as TSL3DWinGLSurface for Windows.
 
-######## The 3D Coordinate Space
+###### The 3D Coordinate Space
 
 All positions in the MapLink 3D world are specified in geodetic
 coordinates; latitude, longitude and altitude above the surface of the
@@ -873,7 +873,7 @@ The TSL3DHelper class provides several helper functions to manipulate a
 TSL3DBoundingBox object, such as the ability to rotate, scale and
 translate them.
 
-######## Threading
+###### Threading
 
 The 3D Drawing Surface uses a background thread for rendering of the 2D
 layers.
@@ -882,13 +882,13 @@ As such you should review the contents of section [0](#threading-1), in
 particular sections [29.5.4](#data-layers-1), [29.5.6](#tslpathlist) and
 [29.9](#d-sdk-accelerator-sdk).
 
-######## Walkthrough 5 -- Your First 3D Application
+###### Walkthrough 5 -- Your First 3D Application
 
 If you are familiar with the walkthroughs for the Core SDK then this
 tutorial might seem basic and could be run through quickly concentrating
 on the information that appears inside the boxes.
 
-######### Skeleton Application
+###### Skeleton Application
 
 **Please note that the Wizards are not available for Visual Studio 2015,
 see section [3.2](#maplink-pro-visual-studio-wizards).**
@@ -898,7 +898,7 @@ executable. It can be either an SDI or MDI application, although MDI is
 not recommended. The example code here will be based upon an SDI
 application.
 
-######### Configure Project Properties
+###### Configure Project Properties
 
 Once created, build your skeleton application to ensure it compiles and
 links. You then need to set up the Project Properties according to the
@@ -933,7 +933,7 @@ In this example, just add it into stdafx.h to keep things simple.
 
 **Note**: X.Y is the version of MapLink you are using.
 
-######### Initialisation and Clean Up
+###### Initialisation and Clean Up
 
 The configuration files for MapLink are usually only loaded once per
 execution run using static methods of TSLDrawingSurface. In an MFC
@@ -1011,7 +1011,7 @@ If you are using the DLL versions of the MapLink libraries, please note
 the discussion of memory leaks in section
 [5.1.2](#visual-studio-warnings-and-errors).
 
-######### Managing the Document
+###### Managing the Document
 
 In terms of the Document/View architecture, the Document contains one or
 more MapLink Data Layers. This is where using the 3D SDK differs greatly
@@ -1097,7 +1097,7 @@ m_mapDataLayer = new TSLMapDataLayer() ;
 >
 > }
 
-######### Managing the View
+###### Managing the View
 
 In terms of the Document/View architecture, the View contains an
 instance of a TSL3DDrawingSurface derived object -- TSL3DWinGLSurface on
@@ -1188,7 +1188,7 @@ m_drawingSurface = NULL ;
 
 }
 
-######### Binding Layers and Drawing Surfaces
+###### Binding Layers and Drawing Surfaces
 
 Once both Document and View are ready available, you need to attach the
 Data Layers to the Drawing Surface so that MapLink can display it.
@@ -1248,7 +1248,7 @@ m_drawingSurface-\>camera()-\>lookAt( 50.0, -5.0, 0.0, false ) ;
 Note that MapLink automatically takes care of Data Layer and Drawing
 Surface separation when either is destroyed.
 
-######### Handling Resize Events
+###### Handling Resize Events
 
 Since MapLink is passive, the application needs to handle relevant
 events and pass the information onto MapLink. Most applications will
@@ -1285,7 +1285,7 @@ the option of providing a flag to indicate an anchor point that the
 resizing takes place around. This is because the TSL3DCamera takes care
 of this control and is discussed in section 12.8.
 
-######### Handling Paint Events
+###### Handling Paint Events
 
 In the OnDraw method of the View, query the required redraw area and
 pass it to the Drawing Surface, asking MapLink to clear the background
@@ -1348,7 +1348,7 @@ view-\>Invalidate() ;
 
 Now build the program, run it and load one of the sample maps.
 
-######### Reducing Flicker and Improving Performance
+###### Reducing Flicker and Improving Performance
 
 So far, the application is not making use of MapLink performance
 optimisations and the display will appear to flicker when it is redrawn.
@@ -1385,7 +1385,7 @@ is drawing to the entire window. If MapLink were drawing to only part of
 the window then it may be necessary for the application to erase the
 areas that MapLink is not rendering into.
 
-######### 3D Standard Data Layers
+###### 3D Standard Data Layers
 
 The TSL3DStandardDataLayer class is a Data Layer, just like the other
 derivatives of TSLDataLayer that have been discussed in this developer
@@ -1400,7 +1400,7 @@ TSLEntity derived objects and the TSLObjectDataLayer contains instances
 of TSLDynamicDataObject derived objects, the TSL3DStandardDataLayer
 contains instances of TSL3DEntity derived objects.
 
-######## 3D Entities
+###### 3D Entities
 
 A further 2D Core SDK concept that has been continued in the 3D SDK is
 the use of geometry Entities. All geometric objects in MapLink can be
@@ -1420,7 +1420,7 @@ number of properties including:
 - One or more TSL3DCoord objects that define the position and in most
   cases the orientation and size of the entity.
 
-######### TSL3DEntity
+###### TSL3DEntity
 
 This is the base class for all 3D geometric primitives and gives access
 to the methods and properties common to all its derivatives. These
@@ -1429,7 +1429,7 @@ bounding box, the centre of the object and the distance this entity is
 from a specific point. Other operations perform movement and scaling
 functions and equality comparisons.
 
-######### TSL3DModel
+###### TSL3DModel
 
 This class defines a common interface to 3D models that can be loaded
 via plug-ins. The model to draw is determined by setting the
@@ -1440,7 +1440,7 @@ Multiple Levels of Detail can be set for a model to allow for
 progressively lower polygon-count models to be used when the model is
 further away from the camera.
 
-######### TSL3DTriangle and TSL3DQuad
+###### TSL3DTriangle and TSL3DQuad
 
 Both of these shapes are basically restricted types of polygon; they are
 limited to having 3 or 4 point and may not have inners. They can be
@@ -1453,7 +1453,7 @@ plane.
 
 The order of point specification is anti-clockwise.
 
-######### TSL3DTriangleFan and TSL3DTriangleStrip
+###### TSL3DTriangleFan and TSL3DTriangleStrip
 
 ![](../../assets/images/developers-guide/media/image41.png)
 
@@ -1469,16 +1469,16 @@ first three points of the strip also define a 3D triangle. Each
 subsequent point defines a triangle made up of the new point and the
 previous two points
 
-######### TSL3DQuadStrip
+###### TSL3DQuadStrip
 
-![](../../assets/images/developers-guide/media/image41.png)
+![](../../assets/images/developers-guide/media/TSL3DPolyline.png)
 
 This is the 4 point version of TSL3DTriangleStrip and is formed in much
 the same way; each pair of added points forms a quad with the previous
 pair. Each contained 3D quad must be non-complex. All points of each
 contained 3D quad must lie in a plane.
 
-######### TSL3DPolyline
+###### TSL3DPolyline
 
 This is the 3D version of TSLPolyline which always has length and may or
 may not have area depending upon whether the polyline is closed. If a
@@ -1492,7 +1492,7 @@ A polyline must have at least two points, although a closed polyline
 should logically have at least three, but other than that there are no
 limitations placed upon the coordinates.
 
-######### TSL3DPolygon
+###### TSL3DPolygon
 
 A TSL3DPolygon is a closed, filled, planar feature with three or more
 constituent points. It always has a perimeter length property and an
@@ -1511,7 +1511,7 @@ applicable limitations are listed in the Release Notes.
 For draped polygons to work TSLCoordinateSystem::loadCoordinateSystems()
 must be called before the 3D SDK is used.
 
-######### Extruded 2D Primitives
+###### Extruded 2D Primitives
 
 These extruded shapes, TSLExtuded2DPolygon, TSLExtruded2DPolyline and
 TSLExtruded2DRectangle consist of a MapLink 2D shape that has been given
@@ -1521,7 +1521,7 @@ without destroying the extruded shape. These shapes have identical
 properties to their 2D counterparts, most of which are accessible by
 first querying this object for its 2D object.
 
-######### TSL3DEntitySet
+###### TSL3DEntitySet
 
 This is a collection of other 3D Entities, but is also an entity itself
 so can contain other Entity Sets and thus be hierarchical. It has no
@@ -1530,7 +1530,7 @@ union of its children's. Like the 2D version of this object, the
 TSL3DEntitySet differs from the OpenGIS specification of an entity
 collection by allowing different types of entity to be contained.
 
-######### 3D User Geometry
+###### 3D User Geometry
 
 This is the 3D version of user geometry.
 
@@ -1541,7 +1541,7 @@ parts, the entity (an instance of TSL3DUserGeometryEntity, managed by
 MapLink) and the client (an instance derived from
 TSL3DClientUserGeometryEntity, managed by the user).
 
-######### TSL3DUserGeometryEntity 
+###### TSL3DUserGeometryEntity 
 
 This is the 3D version of TSLUserGeometryEntity.
 
@@ -1581,7 +1581,7 @@ entity-\>destroy();
 
 delete client; // don't need this if takesOwnership is true
 
-######### TSL3DClientUserGeometryEntity
+###### TSL3DClientUserGeometryEntity
 
 This is the 3D version of TSLClientUserGeometryEntity.
 
@@ -1752,7 +1752,7 @@ return SQUARE_USER_GEOMETRY_ID;
 
 };
 
-######### Loading and saving 3D user geometry
+###### Loading and saving 3D user geometry
 
 The process is almost identical to that of 2D user geometry.
 
@@ -1818,7 +1818,7 @@ return NULL;
 
 }
 
-######## 3D Custom Data Layers
+###### 3D Custom Data Layers
 
 It is possible to introduce your own custom drawn data to the MapLink 3D
 drawing surface using the TSL3DCustomDataLayer class. To accomplish this
@@ -1832,7 +1832,7 @@ through which a number of useful functions such as querying if a point
 or bounding box falls within the viewing volume and coordinate
 conversion functions can be performed.
 
-######## Using the Camera
+###### Using the Camera
 
 The TSL3DCamera class provides the ability to manipulate the users' view
 of the drawing surface. It has three main properties: its position,
@@ -1847,7 +1847,7 @@ appear horizontal in the field of view. This altitude should be set to a
 value at which the horizon has a meaningful definition (e.g. 1000
 metres).
 
-######## Integration with Other OpenGL Applications
+###### Integration with Other OpenGL Applications
 
 It is sometimes desirable to use MapLink in conjunction with user
 interface toolkits or other libraries that perform their own OpenGL
@@ -1862,7 +1862,7 @@ More information can be found in the API documentation for each
 platform\'s drawing surface (TSLWinGLSurface for Windows,
 TSL3DX11GLSurface for X11 systems).
 
-######## Creating a 3D Model Plug-in
+###### Creating a 3D Model Plug-in
 
 MapLink provides an example plug-in named ttl3DS which is capable of
 loading files produced by 3D Studio Max. The source code to this plug-in
@@ -1880,7 +1880,7 @@ complete description of the format of this file can be found in the
 tslmodels.dat file provided in the config directory of your MapLink
 installation.
 
-######### The Structure of a Plug-in
+###### The Structure of a Plug-in
 
 All plug-ins must be compiled as DLL/shared objects, and must declare a
 class that inherits from TSL3DCustomModel. An instance of this class
@@ -1909,7 +1909,7 @@ When a model is no longer required the deleteModel() method will be
 invoked, with the object returned from the relevant getModel() call
 passed in as the parameter for cleanup by the plug-in.
 
-######### Drawing a Model
+###### Drawing a Model
 
 A plug-in cannot make any assumptions about the state of the rendering
 engine when drawing, and should always reset any state changes it makes
@@ -1947,7 +1947,7 @@ glTexSubImage2D() for OpenGL. If the requested texture size differs from
 the actual size of the texture it will be resized to satisfy the
 request. For more information see the API class documentation.
 
-####### Contouring 
+###### Contouring 
 
 The Terrain SDK also allows for the generation of contour lines or
 polygons from the same height information used in a terrain database.
@@ -1955,7 +1955,7 @@ The format that the generated contour information is displayed in is
 controlled entirely by the application via the use of rendering
 callbacks.
 
-######## Providing Data for Contouring
+###### Providing Data for Contouring
 
 The data to contour is expected in the form of a
 TSLTerrainContourVertexList of TSLTerrainContourVertex objects. Each
@@ -2074,7 +2074,7 @@ TSLTerrainContour object should be informed of the change via the
 notifyChanged() method in order to ensure that the updated data is used
 for future contouring operations.
 
-######## Types of Contours
+###### Types of Contours
 
 Contour information can be generated either as polygons or lines. When
 generating contours as lines there are three different algorithms that
@@ -2091,7 +2091,7 @@ substantially faster.
 When generating contours as polygons there is no algorithm choice to
 make.
 
-########  Drawing the Contours
+######  Drawing the Contours
 
 Contours generated from the TSLTerrainContour class are passed to the
 application via one of the TSLTerrainContourCallbacks virtual methods.
@@ -2239,7 +2239,7 @@ of your application.
 >
 > }
 
-######## Drawing the Contour Labels
+###### Drawing the Contour Labels
 
 When drawing contour lines using TSLTerrainContourLineTypeStandard there
 is the option to draw labels for the generated contour lines. This is
@@ -2362,7 +2362,7 @@ follows:
 >
 > viewedUUX2, viewedUUY2, false, false );
 
-######## Performance Notes
+###### Performance Notes
 
 Calculating contours can take a considerable amount of time when given
 large amounts of data to work on. As the result of a draw operation will
@@ -2375,25 +2375,25 @@ the same points on each draw in the application.
 
 ###### Removed SDKs
 
-####### MapLink Application Framework SDK
+###### MapLink Application Framework SDK
 
-####### Impact assessment SDK
+###### Impact assessment SDK
 
-####### WFS Client
+###### WFS Client
 
-####### Network SDK
+###### Network SDK
 
-####### Database Interference SDK
+###### Database Interference SDK
 
-####### Time SDK
+###### Time SDK
 
-####### Satellite Propagator SDK
+###### Satellite Propagator SDK
 
-####### Entity Store SDK
+###### Entity Store SDK
 
-####### Accelerator SDK
+###### Accelerator SDK
 
-####### Database Data Layer SDK
+###### Database Data Layer SDK
 
 [^1]: Please contact support if this is an issue so that we can gauge
     the importance of supporting Unicode in the 3D Text primitive.

@@ -62,8 +62,7 @@ returns a reference to the flight path object. The path can then be
 defined by passing it a set of waypoints. Spline interpolation is used
 to create the actual path based on the supplied waypoints.
 
-![Figure 26 MapLink Camera Manager
-classes.](../../assets/images/developers-guide/media/image37.emf)
+![Figure 26 MapLink Camera Manager Classes](../../assets/images/developers-guide/media/Figure26_Maplink_Camera_Manager_Classes.png)
 
 ### TSLFlightPath
 
