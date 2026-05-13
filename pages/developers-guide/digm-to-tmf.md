@@ -41,7 +41,7 @@ If no mapping is specified, then the fill style is used unchanged.
 > void addFillMapping(long gmsFStyle, long tmsFillStyle);
 
 Add a mapping between symbols with specified style index and stamps
-(model instances) of the given name -- if a model instance of
+(model instances) of the given name - if a model instance of
 'stampName' is found, this is mapped to a TSLSymbol of the specified
 index. If no mapping exists, the model instance is silently ignored.
 
@@ -73,7 +73,7 @@ A typical setup for the Capture Tool is
 ## Complex polygon handling
 
 By default, MapLink will attempt to decomplexify complex polygons
-automatically and silently -- simplify self-intersections and remove
+automatically and silently - simplify self-intersections and remove
 spikes.  Arrows are handled specially to avoid removal of spikes.  If
 any decomplexification fails, then an error may be placed on the error
 stack.  See \<MapLink\>\\config\\tsllandlinkdigmconverrors.msg and
@@ -231,7 +231,7 @@ All the above methods are specific to X11 (not all the default
 parameters are shown).
 
 When creating an application for X11, regardless of GUI toolkit, the
-principles behind the 'Walkthrough 1 -- Your First MapLink Application'
+principles behind the 'Walkthrough 1 - Your First MapLink Application'
 are just as valid. Some samples are included with the CD to help you.
 
 ###### Actions on close of Display
@@ -882,7 +882,7 @@ As such you should review the contents of section [0](#threading-1), in
 particular sections [29.5.4](#data-layers-1), [29.5.6](#tslpathlist) and
 [29.9](#d-sdk-accelerator-sdk).
 
-###### Walkthrough 5 -- Your First 3D Application
+###### Walkthrough 5 - Your First 3D Application
 
 If you are familiar with the walkthroughs for the Core SDK then this
 tutorial might seem basic and could be run through quickly concentrating
@@ -1100,7 +1100,7 @@ m_mapDataLayer = new TSLMapDataLayer() ;
 ###### Managing the View
 
 In terms of the Document/View architecture, the View contains an
-instance of a TSL3DDrawingSurface derived object -- TSL3DWinGLSurface on
+instance of a TSL3DDrawingSurface derived object - TSL3DWinGLSurface on
 Windows platforms, TSL3DX11GLSurface on X11 platforms. This is the only
 significant platform-specific difference. In an MFC application, this is
 usually instantiated in the OnInitialUpdate method since the associated
@@ -1471,7 +1471,7 @@ previous two points
 
 ###### TSL3DQuadStrip
 
-![](../../assets/images/developers-guide/media/TSL3DPolyline.png)
+![](../../assets/images/developers-guide/media/TSL3DQuadstrip.png)
 
 This is the 4 point version of TSL3DTriangleStrip and is formed in much
 the same way; each pair of added points forms a quad with the previous
@@ -2059,7 +2059,7 @@ number of attributes.
 >
 > // Give our vertex list to the contour object so we can then perform
 >
-> // contouring -- the contour object assumes ownership of the vertex
+> // contouring - the contour object assumes ownership of the vertex
 >
 > // list
 >

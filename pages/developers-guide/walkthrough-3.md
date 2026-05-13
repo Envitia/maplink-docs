@@ -1,8 +1,8 @@
----
-title: "Walkthrough 3 -- Adding a Simple Vector Overlay"
+﻿---
+title: "Walkthrough 3 - Adding a Simple Vector Overlay"
 ---
 
-# Walkthrough 3 -- Adding a Simple Vector Overlay
+# Walkthrough 3 - Adding a Simple Vector Overlay
 
 
 In this section, you will take the application that has been developed
@@ -259,7 +259,7 @@ else if ( abs( . . . . /\* Rest of method the same \*/ ) )
 ## Creating the Text Overlay
 
 Build the application and ensure that the create methods are being
-triggered when the Control -- Left Mouse Button combination is used.
+triggered when the Control - Left Mouse Button combination is used.
 
 Now we will create some text at the button click location and if
 successful return true. The success return status will force the View to
@@ -441,7 +441,7 @@ coordinates that should be used.
 
 The example below uses the Drawing Surface conversion routines to
 determine the current zoom factor and then creates a Polyline at a
-specific size for the current map -- i.e. the Polyline is drawn in
+specific size for the current map - i.e. the Polyline is drawn in
 real-world units. It also uses the Thickness Units Rendering Attribute
 to specify the thickness of the line in real-world units. Zooming in or
 out will make the Polygon appear larger or smaller and change the

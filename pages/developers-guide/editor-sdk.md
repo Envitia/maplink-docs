@@ -1,4 +1,4 @@
----
+﻿---
 title: "Editor SDK"
 ---
 
@@ -52,18 +52,18 @@ familiar with:
 
 - The primary application interface goes through two principle classes:
 
-- Editor manager -- TSLEditor for instructions from the application to
+- Editor manager - TSLEditor for instructions from the application to
   MapLink
 
-- Editor request handler -- TSLEditorRequest for requests from MapLink
+- Editor request handler - TSLEditorRequest for requests from MapLink
   to the application.
 
 - Custom Operations allow an application to evolve and expand the
   functionality of the SDK using two further main classes
 
-- User operation -- TSLNUserOperation
+- User operation - TSLNUserOperation
 
-- Operation request handler -- TSLNUserOperationRequest
+- Operation request handler - TSLNUserOperationRequest
 
 ![](../../assets/images/developers-guide/media/image36.png)
 
@@ -73,18 +73,18 @@ In the Editor SDK, an operation encapsulates all functionality required
 to implement a user interaction. There are four main styles of
 operation:
 
-1.  One-shot style -- e.g. "Delete all selected entities"
+1.  One-shot style - e.g. "Delete all selected entities"
 
-2.  Creation style -- e.g. "Allow me to draw a polygon". These
+2.  Creation style - e.g. "Allow me to draw a polygon". These
     operations will automatically clear the select list when triggered
     and are expected to add the created object to the select list.
 
-3.  Manipulation style -- e.g. "Allow me move points of selected
+3.  Manipulation style - e.g. "Allow me move points of selected
     entities". These operations will automatically deactivate and
     current operations and are expected to manipulate the select list or
     the entities referenced by it.
 
-4.  Attribute style -- e.g. "Set the fill colour of a selected polygons
+4.  Attribute style - e.g. "Set the fill colour of a selected polygons
     to red". These operations are expected to be transitory and perform
     simple, non-destructive changes to the entities on the select list.
     They leave any existing operation as active. If they are invoked
@@ -167,17 +167,17 @@ user interaction. For instance:
   this might be through status bar messages, but this may not be
   appropriate.
 
-- Handling of user entry -- dialogs and text. Some operations may need a
+- Handling of user entry - dialogs and text. Some operations may need a
   user to enter some text or make a choice from a number of options. How
   should this happen?
 
 - Highlighting and selection of entities. What style of highlighting and
   selection is required? The Editor SDK provides two different standard
-  ways -- one CAD-style, the other more like a traditional Windows
+  ways - one CAD-style, the other more like a traditional Windows
   drawing application. Both can be adapted for rendering styles and
   colours without any code.
 
-- Inter-relationship with view handling -- zoom/pan/grab etc -- This is
+- Inter-relationship with view handling - zoom/pan/grab etc - This is
   especially important when using Context Menus. The standard
   Interaction Modes can be used for a simple integrated solution.
 
@@ -190,7 +190,7 @@ user interaction. For instance:
   a limited set of rendering styles and colours for a particular domain,
   or does it need full user control over styling?
 
-- Advanced point handling -- point/object snapping, constraints etc
+- Advanced point handling - point/object snapping, constraints etc
 
 ## Configuration
 
@@ -273,7 +273,7 @@ information to, or request information from the user. This covers:
 
 - Choose from a set of options
 
-- Event feedback -- redraw, cursor movement
+- Event feedback - redraw, cursor movement
 
 - Cursor style changes
 
@@ -288,7 +288,7 @@ m_editor-\>activate("polygon");
 An application can pass in an object as user data for an operation. The
 operation's class documentation will note where this is necessary and
 the type that is required. Any user data is stored by the current
-operation and may be queried -- although some operations don't permit
+operation and may be queried - although some operations don't permit
 this.
 
 TSLRenderingAttributes ra ; // Now configure rendering attributes
@@ -329,7 +329,7 @@ Create a new class and derive it from TSLEditorRequest. In its
 constructor, pass the instance of the feedback dialog and override the
 following methods:
 
-- TSLEditorRequest::displayPrompt -- Use the parameter to set the text
+- TSLEditorRequest::displayPrompt - Use the parameter to set the text
   for the prompt label in the feedback dialog.
 
 - TSLEditorRequest::displayError - Show a message box containing the
@@ -348,7 +348,7 @@ Call attach on the TSLEditor instance, passing the drawingsurface.
 
 Call dataChanged on the TSLEditor instance, to attach to the edit layer.
 
-Add all standard operation to the editor -- TSLAllOperations.add( editor
+Add all standard operation to the editor - TSLAllOperations.add( editor
 ).
 
 Call reset to on the TSLEditor to start the default operation.
@@ -360,7 +360,7 @@ define the initial rendering attributes.
 ### Capturing and processing user interactions
 
 Create a new derivative of the TSLViewMode class for interacting with
-the Editor -- TSLViewModeEditor. In the new view mode, override Button
+the Editor - TSLViewModeEditor. In the new view mode, override Button
 and Mouse methods and pass the events on to the TSLEditor::locator
 method.
 
@@ -394,7 +394,7 @@ generated sample application. Do the same steps as described in Sections
 
 In the same class that has provided the 'TSLInteractionModeRequest'
 overrides for the standard Interaction Modes, also derive from
-TSLInteractionModeEditorRequest -- typically the View. This provides a
+TSLInteractionModeEditorRequest - typically the View. This provides a
 single point of interface.
 
 Provide overrides for displayError, displayPrompt and onSelectionChanged
@@ -431,73 +431,73 @@ events or application queries.
 
 User operations can be one of several types:
 
-- Simple -- add additional functionality on to an existing operation.
+- Simple - add additional functionality on to an existing operation.
   e.g. Add extra data to newly created primitives;
 
 - Duplicate newly created primitive in external data store;
 
 - Perform additional validation;
 
-- Aliased -- create variants of existing operations. Allows original to
+- Aliased - create variants of existing operations. Allows original to
   be kept too;
 
-- Custom -- brand new operations, unrelated to existing operations.
+- Custom - brand new operations, unrelated to existing operations.
   Could be similar, but with different interactions.
 
 ### Custom User Operation Event Handlers
 
 User operations will be called by the TSLEditor in response to user or
 application triggered events. They typically return the ID of a message
-that should be displayed as a prompt -- specifically when a state
+that should be displayed as a prompt - specifically when a state
 machine driving the interaction may have changed. Return 0 to leave the
 prompt unchanged.
 
 Overridable methods include:
 
-- **activate** -- Called when operation is activated, passed the input
+- **activate** - Called when operation is activated, passed the input
   data.
 
-- **activatePossible** -- Called to check whether it's possible to
+- **activatePossible** - Called to check whether it's possible to
   activate this operation. E.G. The delete operation can only be
   activated when there is something on the select list.
 
-- **backup** -- Called to step back one step in the interaction. E.G. Go
+- **backup** - Called to step back one step in the interaction. E.G. Go
   back one point when drawing a polygon.
 
-- **backupPossible** -- Called to check whether it is possible to go
+- **backupPossible** - Called to check whether it is possible to go
   back!
 
-- **constraintChanged** -- Called when vertical/horizontal/equal/unequal
-  constraint changes -- This can affect echo.
+- **constraintChanged** - Called when vertical/horizontal/equal/unequal
+  constraint changes - This can affect echo.
 
-- **deactivate** -- Called when the operation is deactivated, usually
+- **deactivate** - Called when the operation is deactivated, usually
   when another is made active.
 
-- **dialogEntered** -- Called when the user responds to a dialog entry
+- **dialogEntered** - Called when the user responds to a dialog entry
   request.
 
-- **done** -- Called when the user indicates completion - usually by a
+- **done** - Called when the user indicates completion - usually by a
   right mouse button press.
 
-- **locator** -- Called when mouse event is passed to the editor.
+- **locator** - Called when mouse event is passed to the editor.
 
-- **reactivate** -- Called to re-activate the already active operation,
+- **reactivate** - Called to re-activate the already active operation,
   possibly with new activation data or to reset it back to its initial
   state.
 
-- **requestHandler** -- Called upon initialisation to attach operation
+- **requestHandler** - Called upon initialisation to attach operation
   to handler.
 
-- **resetUndoBuffer** -- Called to indicate that the any undo buffer
+- **resetUndoBuffer** - Called to indicate that the any undo buffer
   should be cleared as another operation has since been invoked and undo
   data no longer required.
 
-- **textEntered** -- Called when user responds to text entry request via
+- **textEntered** - Called when user responds to text entry request via
   handler.
 
-- **undo** -- Called when user asks to undo previous action.
+- **undo** - Called when user asks to undo previous action.
 
-- **undoPossible** -- Called to see whether it's possible to undo last
+- **undoPossible** - Called to see whether it's possible to undo last
   action.
 
 ### Custom Operation Support
@@ -527,7 +527,7 @@ Many custom operations require echo of some description. These would be
 set by an operation calling 'setDynamicEcho' and/or 'setFixedEcho' where
 relevant on the interaction. Note that most dynamic echo styles will
 automatically update position based on the mouse move and current
-constraints -- an operation does not need to update the echo itself in
+constraints - an operation does not need to update the echo itself in
 response to the mouse move event.
 
 There are several types available, each in different styles:
@@ -544,7 +544,7 @@ There are several types available, each in different styles:
 
 - Corners;
 
-- Spatial calculations -- ray, parallel;
+- Spatial calculations - ray, parallel;
 
 - Constraints automatically applied where relevant;
 
@@ -574,7 +574,7 @@ operations.
 
 - Windows highlighting, selection and movement modes;
 
-- Custom highlighting -- Total control over highlighting.
+- Custom highlighting - Total control over highlighting.
 
 
 

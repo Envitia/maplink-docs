@@ -1,4 +1,4 @@
----
+﻿---
 title: "MapLink Camera Manager"
 ---
 
@@ -117,11 +117,11 @@ TSLWayPoint contains the following public attributes:
 - speed: The speed of the camera through this waypoint (metres/second).
 
 - lookAtAzimuthOffset: This specifies the (horizontal) offset (degrees)
-  of the view vector -- it is only used if the value of lookAtMode has
+  of the view vector - it is only used if the value of lookAtMode has
   been set to TSLCameraModeLookAtRelative.
 
 - lookAtElevationOffset: This specifies the (vertical) offset (degrees)
-  of the view vector -- it is only used if the value of lookAtMode has
+  of the view vector - it is only used if the value of lookAtMode has
   been set to TSLCameraModeLookAtRelative.
 
 - lookAtMode: This specifies how the camera view vector is to be

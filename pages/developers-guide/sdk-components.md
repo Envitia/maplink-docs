@@ -1,4 +1,4 @@
----
+﻿---
 title: "MapLink SDK Components and Concepts"
 ---
 
@@ -196,7 +196,7 @@ and 3D drawing surfaces. Abstracted functionality includes general layer
 management principles, support for 2D layers, and other similar
 operations.
 
-In 2D, manipulations to the map are performed directly on the map --
+In 2D, manipulations to the map are performed directly on the map -
 rotation, panning, zooming, etc. In 3D, the canonical implementation is
 not to manipulate the scene, but instead to alter the viewpoint onto the
 scene via a camera construct, representing the viewer position and
@@ -329,11 +329,11 @@ Section [2.9](#maplink-3d-earth-sdk).
 
 The 3D SDK extends the capabilities of the Core SDK by allowing users to
 be immersed in rich geospatial models. The architecture of the 3D SDK is
-very flexible and parallels that of the existing 2D Core SDK -- thus
+very flexible and parallels that of the existing 2D Core SDK - thus
 maximising reuse of current MapLink experience. Standard MapLink
 concepts such as Drawing Surfaces, Data Layers, Terrain Databases and
 Entities are extended into the 3D space. 2D or 3D Data Layers may be
-used interchangeably across 2D or 3D Drawing Surfaces -- 2D layers may
+used interchangeably across 2D or 3D Drawing Surfaces - 2D layers may
 be draped over height fields when displayed on 3D Drawing Surfaces,
 whilst 3D layers are displayed in plan view on 2D Drawing Surfaces. The
 Data Layer concept has been extended to allow Terrain Data Layers which

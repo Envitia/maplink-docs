@@ -1,4 +1,4 @@
----
+﻿---
 title: "Dynamic Overlays with the DDO SDK"
 ---
 
@@ -238,7 +238,7 @@ TMC Units, the following methods may be used:
 - The fixedPixSize method can be used to query whether the Display
   Object is fixed size in Device Units.
 
-## Walkthrough 4 -- Adding Simple Dynamic Objects
+## Walkthrough 4 - Adding Simple Dynamic Objects
 
 This section guides you through adding a simple Dynamic Object Layer to
 the MapLink application that has been developed in the earlier
@@ -366,7 +366,7 @@ return sts ;
 
 ### Creating a Custom Dynamic Data Object
 
-Two custom classes are required -- one derived from TSLDynamicDataObject
+Two custom classes are required - one derived from TSLDynamicDataObject
 to supply the interface to the application data and one derived from
 TSLDisplayObject to provide the visualisation.
 
@@ -426,7 +426,7 @@ instantiateDo method.
 >
 > In the source file for MyDO, provide initial definitions for the
 > constructor, and destructor and a simple implementation for the draw
-> method -- draw a red circle 50 pixels high.
+> method - draw a red circle 50 pixels high.
 >
 > MyDO::MyDO(void)
 >
@@ -474,7 +474,7 @@ if ( m_objDataLayer )
 
 {
 
-// Get the solitary DDO -- could iterate over DDO list
+// Get the solitary DDO - could iterate over DDO list
 
 TSLDynamicDataObject \* ddo = m_objDataLayer-\>getDDO( 0 ) ;
 
@@ -548,7 +548,7 @@ by the application using the TSLDrawingSurface::id method.
 Some classes of application have a common dynamic overlay displayed on
 top of multiple maps. These maps may be in different coordinate systems.
 For example, tracks may be displayed on a Mercator or Dynamic Arc
-overview map and on a zoomed-in detailed map -- usually in an
+overview map and on a zoomed-in detailed map - usually in an
 appropriate projection for the location such as the local UTM zone.
 
 The Dynamic Data Object SDK allows you to set the position and extent of
@@ -573,7 +573,7 @@ queried during rendering using the Rendering Interface handleToDrawable
 method. The application can then make low-level calls to create the
 visualisation. Note that the application must be careful to leave the
 low-level handle in the state it was when returned from handleToDrawable
--- for example, using the Win32 saveDC and restoreDC methods.
+- for example, using the Win32 saveDC and restoreDC methods.
 
 
 

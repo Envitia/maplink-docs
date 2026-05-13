@@ -1,4 +1,4 @@
----
+﻿---
 title: "Geometry and Overlays"
 ---
 
@@ -23,7 +23,7 @@ TSLEntityBase class provides a common point of derivation for both 2D
 and 3D geometry.
 
 Note that there is a distinction in MapLink between Geometry and
-Rendering. The Geometry defines the topography of an object -- where it
+Rendering. The Geometry defines the topography of an object - where it
 is in the world. The Rendering defines the visualisation of that object.
 The Geometry is always an inherent part of the Entity, whereas the
 Rendering may be stored on the Entity, or separately on a Drawing
@@ -110,7 +110,7 @@ Symbols](../../assets/images/developers-guide/media/image10.png)
 There are two different types of symbols available in MapLink - vector
 and raster.
 
-Vector symbols are scalable and are held in individual TMF files -- a
+Vector symbols are scalable and are held in individual TMF files - a
 proprietary MapLink format. They can be created using the Symbol Studio
 editor available in the MapLink bin directory. Since MapLink 4.5, vector
 symbols can display text, which may be dynamic (see the section
@@ -1299,11 +1299,11 @@ Arcs. They are:
 
 - TSLRenderingAttributeEdgeColour: This value must be an index from the
   tslcolours.dat file, the currently loaded map palette or a 24-bit
-  colour (see TSLColourHelper API Documentation). The default is --1,
+  colour (see TSLColourHelper API Documentation). The default is -1,
   which inhibits display of the Entity.
 
 - TSLRenderingAttributeEdgeStyle: This value must be an index from the
-  tsllinestyles.dat file. The default is --1, which inhibits display of
+  tsllinestyles.dat file. The default is -1, which inhibits display of
   the Entity.
 
 - TSLRenderingAttributeEdgeThicknessUnits: This value must be one of the
@@ -1318,36 +1318,36 @@ Arcs. They are:
   unit thickness in order to maintain a coherent display. If an attempt
   is made to set a smaller thickness, or a variable thickness line
   produces a smaller value, then the minimum is used. The default is
-  --1, which inhibits display of the Entity.
+  -1, which inhibits display of the Entity.
 
 #### Area Rendering Attributes
 
 These are available on two-dimensional Entities such as Polygons,
 Ellipses and Rectangles. The rendering for the edges of areas are
-different from those used for lines -- this is because there may be both
+different from those used for lines - this is because there may be both
 lines and area features assigned the same feature code. The current area
 rendering attributes are:
 
 - TSLRenderingAttributeFillColour: This value must be an index from the
   tslcolours.dat file, the currently loaded map palette or a 24-bit
-  colour (see TSLColourHelper API Documentation). The default is --1,
+  colour (see TSLColourHelper API Documentation). The default is -1,
   which inhibits display of the fill potentially leaving just the edge
   of the Entity.
 
 - TSLRenderingAttributeFillStyle: This value must be an index from the
-  tslfillstyles.dat file. The default is --1, which inhibits display of
+  tslfillstyles.dat file. The default is -1, which inhibits display of
   the fill potentially leaving just the edge of the Entity.
 
 - TSLRenderingAttributeExteriorEdgeColour: This value must be an index
   from the tslcolours.dat file, the currently loaded map palette or a 24
   bit colour (see TSLColourHelper API Documentation). Note that this
   also applies to the edges of any holes in a polygon. The default is
-  --1, which inhibits display of the edge potentially leaving just the
+  -1, which inhibits display of the edge potentially leaving just the
   fill of the Entity.
 
 - TSLRenderingAttributeExteriorEdgeStyle: This value must be an index
   from the tslinestyles.dat file. Note that this also applies to the
-  edges of any holes in a polygon. The default is --1, which inhibits
+  edges of any holes in a polygon. The default is -1, which inhibits
   display of the edge potentially leaving just the fill of the Entity.
 
 - TSLRenderingAttributeExteriorEdgeThicknessUnits: This value must be
@@ -1364,7 +1364,7 @@ rendering attributes are:
   thickness in order to maintain a coherent display. If an attempt is
   made to set a smaller thickness, or a variable thickness line produces
   a smaller value, then the minimum is used. Note that this also applies
-  to the edges of any holes in a polygon. The default is --1, which
+  to the edges of any holes in a polygon. The default is -1, which
   inhibits display of the edge potentially leaving just the fill of the
   Entity.
 
@@ -1380,7 +1380,7 @@ rendering attributes are:
   the tslcolours.dat file, the currently loaded map palette or a 24 bit
   colour (see TSLColourHelper API Documentation). It defines the colour
   of the internal or external border of a TSLBorderedPolygon. The
-  default is --1, which inhibits display of the border and hence it is
+  default is -1, which inhibits display of the border and hence it is
   displayed as a normal TSLPolygon.
 
 #### Text Rendering Attributes
@@ -1389,11 +1389,11 @@ These are available on Text Entities. They are:
 
 - TSLRenderingAttributeTextColour: This value must be an index from the
   tslcolours.dat file, the currently loaded map palette or a 24 bit
-  colour (see TSLColourHelper API Documentation). The default is --1,
+  colour (see TSLColourHelper API Documentation). The default is -1,
   which inhibits display of the Entity.
 
 - TSLRenderingAttributeTextFont: This value must be an index from the
-  tslfonts.dat file. The default is --1, which inhibits display of the
+  tslfonts.dat file. The default is -1, which inhibits display of the
   text. Note that the contents of the tslfonts.dat file are operating
   system dependant and so may not give an exact match if displayed on
   different machines.
@@ -1501,17 +1501,17 @@ The default value is TSLTextBackgroundModeNone.
   24-bit colour (see TSLColourHelper API Documentation). When using
   rectangle backgrounds, this attribute defines the fill colour. When
   using halo backgrounds, this attribute defines the outline colour. The
-  default is --1, which inhibits display of the background.
+  default is -1, which inhibits display of the background.
 
 - TSLRenderingAttributeTextBackgroundStyle: Value is index from
   tslfillstyles.dat file. This attribute is ignored for halo backgrounds
   but defines the fill style for rectangle backgrounds. The default is
-  --1, which inhibits display of the background fill.
+  -1, which inhibits display of the background fill.
 
 - TSLRenderingAttributeTextBackgroundEdgeColour: This value must be an
   index from the tslcolours.dat file, the currently loaded map palette
   or a 24-bit colour (see TSLColourHelper API Documentation). The
-  default is --1, which inhibits display of any background rectangle
+  default is -1, which inhibits display of any background rectangle
   edge.
 
 - TSLRenderingAttributeTextFixedHeight: Deprecated, use
@@ -1578,11 +1578,11 @@ These are available on Symbol Entities. They are:
 
 - TSLRenderingAttributeSymbolColour: This value must be an index from
   the tslcolours.dat file, the currently loaded map palette or a 24-bit
-  colour (see TSLColourHelper API Documentation). The default is --1,
+  colour (see TSLColourHelper API Documentation). The default is -1,
   which inhibits display of the Entity.
 
 - TSLRenderingAttributeSymbolStyle: This value must be an index from the
-  tslsymbols.dat file. The default is --1, which inhibits display of the
+  tslsymbols.dat file. The default is -1, which inhibits display of the
   symbol. Note that the icon symbols defined in the standard
   tslsymbols.dat file cannot currently be displayed on X11 based
   systems.
@@ -1627,7 +1627,7 @@ These are available on Symbol Entities. They are:
   should be rotatable. For example, a lighthouse symbol should remain
   vertical, whereas a flow arrow must be rotated to indicate the
   direction of flow. If your application is using the symbols in an
-  unusual way -- for example using a (non-rotatable) "airport" symbol to
+  unusual way - for example using a (non-rotatable) "airport" symbol to
   represent a moving "aircraft" track, then you may wish to override the
   standard settings.
 
@@ -1818,7 +1818,7 @@ determine their index, is to look in the MapLink Studio Feature Book.
 - Each index-based property in the Feature Properties Dialog shows a
   sample of the current rendering, a description and the index for that
   style. You may need to make the Feature Properties Dialog wider to see
-  the index -- especially for some of the complex line styles which can
+  the index - especially for some of the complex line styles which can
   have very long descriptions.
 
 - Using the Feature Properties Dialog, browse the available styles to
@@ -1837,7 +1837,7 @@ determine their index, is to look in the MapLink Studio Feature Book.
 
 Many of the default values inhibit display of the Entity until
 explicitly set by the user. To enable display of the various Entity
-types, the following rendering attributes must be set -- either through
+types, the following rendering attributes must be set - either through
 Entity Based Rendering or through Feature Based Rendering:
 
 - TSLPolyline and TSLArc: Requires style, colour and thickness to be
@@ -1867,7 +1867,7 @@ non-appearance and it can be difficult to track down. Here is a list of
 the most common reasons:
 
 - The Entity was never actually created. This can occur if invalid
-  arguments are passed to the create method call -- such as an empty
+  arguments are passed to the create method call - such as an empty
   string being passed to createText or a self-intersecting coordinate
   set being passed to createPolygon. Check the return value from the
   create call and look at the contents of the error stack to see what
@@ -1899,7 +1899,7 @@ the most common reasons:
   in MapLink Studio.
 
 - Would the Rendering Attributes give a visible representation anyway?
-  Some of the line styles and fill styles give no rendition -- such as
+  Some of the line styles and fill styles give no rendition - such as
   hollow, highly translucent or very sparse bitmap fill styles.
 
 - Is the Entity in a TSLEntitySet that is associated with a Data Layer?
@@ -1933,4 +1933,4 @@ configured using TSLPropertyMinTextHeight and TSLPropertyMaxTextHeight.
 
 ---
 
-[← Walkthrough 2 - Modifying the Visible Area](walkthrough-2) | [Walkthrough 3 -- Adding a Simple Vector Overlay →](walkthrough-3)
+[← Walkthrough 2 - Modifying the Visible Area](walkthrough-2) | [Walkthrough 3 - Adding a Simple Vector Overlay →](walkthrough-3)

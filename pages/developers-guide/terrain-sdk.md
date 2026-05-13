@@ -1,4 +1,4 @@
----
+﻿---
 title: "Terrain SDK"
 ---
 
@@ -96,7 +96,7 @@ function returns coordinates in Map Units (see
 box for the terrain database.
 
 The function, TSLTerrainDatabase::open takes an optional second
-parameter -- a pointer to a TSLPathList. If specified, the Terrain SDK
+parameter - a pointer to a TSLPathList. If specified, the Terrain SDK
 looks for the file using the path list. See the online documentation on
 TSLPathList for further information.
 
@@ -126,11 +126,11 @@ resolution depending on the type of query. For example, a query covering
 the whole world will use a low-resolution layer whereas a query covering
 a small area will use a higher resolution layer.
 
-Top Layer -- Lowest Resolution
+Top Layer - Lowest Resolution
 
 Intermediate resolution layers
 
-Bottom Layer -- Highest Resolution
+Bottom Layer - Highest Resolution
 
 Figure 25 Terrain Pyramid
 
@@ -191,7 +191,7 @@ if ( cs )
 if ( stricmp( cs-\>name(), "Default Coordinate System" ) != 0 )\
 {
 
-// Not the default coordinate system -- display an error
+// Not the default coordinate system - display an error
 
 }
 
@@ -262,7 +262,7 @@ TSLTerrain_OK )
 
 Once a terrain database has been opened, querying the data is simple.
 There are three methods provided which allow the database to be queried.
-The choice of query function you use is dependent on your application --
+The choice of query function you use is dependent on your application -
 choose the function that is most convenient. Each of the query functions
 returns whether the query was successful or not. Possible return values
 for the query functions are:
@@ -328,7 +328,7 @@ populate the fields that define the requested position and the
 height/depth. It is important to note that even if the query function
 returns TSLTerrain_OK, the height value may not be valid. This is
 because some databases may contain 'holes' in their data coverage. This
-is indicated by the TSLTerrainDataItem::m_isNull flag being set -- see
+is indicated by the TSLTerrainDataItem::m_isNull flag being set - see
 the table below.
 
 You may have noticed that one of the optional parameters to the query
@@ -474,7 +474,7 @@ will allow the Terrain SDK to optimise the speed of the request at the
 expense of some of the accuracy.
 
 Beware when using the highestRes parameter when covering a large area of
-the terrain database -- the query could take a substantial amount of
+the terrain database - the query could take a substantial amount of
 time.
 
 To query a single point from the database using the highest resolution
@@ -536,9 +536,9 @@ pointless querying more points from the terrain database than can be
 displayed by the resolution of the screen. The Terrain SDK takes
 advantage of this and adjusts the pyramid level accordingly.
 
-This is surprisingly simple to setup within a MapLink application -- all
+This is surprisingly simple to setup within a MapLink application - all
 you need to do is tell the Terrain SDK whenever the map extent changes
--- i.e. on a zoom operation or when the map window size changes. Note
+- i.e. on a zoom operation or when the map window size changes. Note
 that it is not necessary to tell the Terrain SDK when the map is panned
 as this does not change the extent of the map.
 
@@ -698,7 +698,7 @@ number of attributes.
 >
 > // Give our vertex list to the contour object so we can then perform
 >
-> // contouring -- the contour object assumes ownership of the vertex
+> // contouring - the contour object assumes ownership of the vertex
 >
 > // list
 >
@@ -1054,16 +1054,16 @@ geographical extent.
 
 The following implementations are provided:
 
-- TSLTerrainVSInputArray -- This basic implementation can expose
+- TSLTerrainVSInputArray - This basic implementation can expose
   application-provided data to the viewshed algorithm.
 
-- TSLTerrainVSInputTerrainDatabase -- This is a more advanced input
+- TSLTerrainVSInputTerrainDatabase - This is a more advanced input
   object, which exposes a MapLink terrain database (TSLTerrainDatabase)
   to the viewshed algorithm. In a similar manner to the terrain data
   queries, this object will select an appropriate level of detail from
   the database for the desired output size/extent.
 
-- TSLTerrainVSInputEarthCurvature -- This class wraps an existing input
+- TSLTerrainVSInputEarthCurvature - This class wraps an existing input
   object and applies height corrections to compensate for earth
   curvature. Curvature corrections can be based on a visual or radar
   line of sight.
@@ -1088,7 +1088,7 @@ input/filter/compositor/output objects as needed.
 
 The following viewshed algorithms have been provided:
 
-- TSLTerrainVSAlgorithmRFVS -- An algorithm object, based on the RFVS
+- TSLTerrainVSAlgorithmRFVS - An algorithm object, based on the RFVS
   \[Frankil and Ray 1994\] algorithm.
 
   The following parameters may be used when calculating a viewshed:
@@ -1117,10 +1117,10 @@ passed to the compositor, along with:
 
 The following compositor object implementations are provided:
 
-- TSLTerrainVSCompositorVisibility -- A basic compositor which will
+- TSLTerrainVSCompositorVisibility - A basic compositor which will
   store the visibility of each point in the output object.
 
-- TSLTerrainVSCompositorCumulative -- A basic compositor which will
+- TSLTerrainVSCompositorCumulative - A basic compositor which will
   store the visibility of each point in the output object. This
   compositor can be used to accumulate the output of multiple viewshed
   calculations, in order to determine which areas can/cannot be seen
@@ -1131,7 +1131,7 @@ the provided compositor objects.
 
 The following output object implementations are provided:
 
-- TSLTerrainVSOutputArray -- A basic output object which will store data
+- TSLTerrainVSOutputArray - A basic output object which will store data
   in a 2-dimensional array.
 
 The provided implementations are designed so that any compositor can be

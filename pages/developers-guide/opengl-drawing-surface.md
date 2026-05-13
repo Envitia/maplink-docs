@@ -948,11 +948,11 @@ TSLCoord objectTMCPosition = calculateObjectPosition();
 
 Matrix modelViewMat(surface-\>modelViewMatrix());
 
-modelViewMat.translate(objectTMCPosition.x() --
+modelViewMat.translate(objectTMCPosition.x() -
 
 surface-\>coordinateCentreX(),
 
-objectTMCPosition.y() --
+objectTMCPosition.y() -
 
 surface-\>coordinateCentreY());
 
@@ -1987,7 +1987,7 @@ section from the MapLink Studio user guide before creating their map.
 Vector maps intended for use with the TSLStaticMapDataLayer (see section
 [13.6](#additional-data-layers-for-the-opengl-surface)) should be
 created with the vector processing option enabled as described in the
-'Platform Specific Tips -- Embedded, Mobile and OpenGL' section of the
+'Platform Specific Tips - Embedded, Mobile and OpenGL' section of the
 MapLink Studio user guide. Doing so removes the need for the data layer
 to perform the same processing when loading new data for display which
 substantially improves application responsiveness when zooming and
@@ -1995,7 +1995,7 @@ panning the map.
 
 Raster maps should generally always be created with one or more of the
 compressed raster options enabled as described in the 'Platform Specific
-Tips -- Embedded, Mobile and OpenGL' section of the MapLink Studio user
+Tips - Embedded, Mobile and OpenGL' section of the MapLink Studio user
 guide. The specific formats to use depends on the capabilities of the
 target hardware that will be used to display the map.
 

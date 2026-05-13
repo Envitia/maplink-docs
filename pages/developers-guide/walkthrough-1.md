@@ -1,4 +1,4 @@
----
+﻿---
 title: "Walkthrough 1 - Your First MapLink Application"
 ---
 
@@ -269,7 +269,7 @@ CDocument::DeleteContents();
 ## Managing the View
 
 In terms of the Document/View architecture, the View contains an
-instance of a TSLDrawingSurface derived object -- TSLNTSurface on
+instance of a TSLDrawingSurface derived object - TSLNTSurface on
 Windows platforms, TSLMotifSurface (for historical reasons this surface
 has Motif in its name however the drawing surface only uses X11 client
 libraries such as Xft, XRender and Xlib) on X11 platforms. This is the

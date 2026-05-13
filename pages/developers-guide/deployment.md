@@ -1,4 +1,4 @@
----
+﻿---
 title: "Deployment of End User Application"
 ---
 
@@ -69,7 +69,7 @@ mentioned, then that method may be ignored.
   TSL3DDrawingSurface::setupModels - Pass the location of the
   tslmodels.dat file that the config directory contains.
 
-  TSLUtilityFunctions::setMapLinkHome -- set the directory that contains
+  TSLUtilityFunctions::setMapLinkHome - set the directory that contains
   the MapLink config **directory.**
   -----------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ mentioned, then that method may be ignored.
   TSLN3DDrawingSurface::setupModels - Pass the location of the
   tslmodels.dat file that the config directory contains.
 
-  TSLNUtilityFunctions::setMapLinkHome -- set the directory that contains
+  TSLNUtilityFunctions::setMapLinkHome - set the directory that contains
   the MapLink config **directory.**
   -----------------------------------------------------------------------
 

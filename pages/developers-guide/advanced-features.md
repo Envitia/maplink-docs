@@ -1,4 +1,4 @@
----
+﻿---
 title: "Advanced Features of the Core SDK"
 ---
 
@@ -119,7 +119,7 @@ Decluttering is the temporary hiding of features. The features still
 exist in the map or Data Layer but are not drawn. Applications often use
 decluttering, under user control, to help prevent information overload.
 It is applied on the TSLDrawingSurface, thus allowing the same Data
-Layer to be displayed differently on two different surfaces -- e.g. in
+Layer to be displayed differently on two different surfaces - e.g. in
 an overview pane and the main window.
 
 A Drawing Surface contains a list of decluttering settings for each Data
@@ -238,7 +238,7 @@ ds-\>setDeclutterStatus("Rasters",TSLDeclutterStatusOff);
 ## Searching Your Data
 
 There are several ways of searching and querying your data through the
-MapLink SDK -- the most appropriate one depends upon what information
+MapLink SDK - the most appropriate one depends upon what information
 you require and how complex your criterion for selection is.
 
 ### Finding the Entity under the Cursor
@@ -264,7 +264,7 @@ found is appropriate.
 - When searching a Map Data Layer, the currently displayed Detail Layer
   will be used for the query.
 
-- Data Layers and Entity Sets are searched in reverse rendering order --
+- Data Layers and Entity Sets are searched in reverse rendering order -
   i.e. Top-most first.
 
 - The search will only descend the Entity Set hierarchy as far as the
@@ -305,7 +305,7 @@ The first method in each pair takes an optional Feature Name. If this is
 specified, only those Features are considered.
 
 The second method in each pair takes an instance of a user defined
-Selector object -- derived from the TSLSelector class. The Selector
+Selector object - derived from the TSLSelector class. The Selector
 object is called for every Entity that is considered and allows user
 control over exactly which Entities are chosen.
 
@@ -322,7 +322,7 @@ found are appropriate.
 - Any Entity with the TSLRenderingAttributeSelectable attribute set to
   false will be ignored in the search.
 
-- Entity Sets are searched in reverse rendering order -- i.e. Top-most
+- Entity Sets are searched in reverse rendering order - i.e. Top-most
   first.
 
 - The search will only descend the Entity Set hierarchy as far as the
@@ -541,7 +541,7 @@ m_mapDataLayer-\>cacheSize( sizeInKiloBytes ) ;
 The cache may be further configured using the cacheFlushLimit which is
 the number of tiles that the Data Layer attempts to keep in memory when
 it overflows. Note that when a tile is added to the cache, its size is
-assumed to be the same as the disk size -- except for compressed raster
+assumed to be the same as the disk size - except for compressed raster
 images which are expanded on loading. If a tile has been saved from
 MapLink Studio using the Enterprise Compression or Optimised for Size
 options, then there will be some level of expansion in memory and you
@@ -565,7 +565,7 @@ files. These configuration files must be read at the start of a MapLink
 application as described in Section [8.3](#api-types). There are 5 basic
 files. This section describes the contents and format of the current
 versions. When loaded, these files are used across the MapLink
-application -- only one version of each configuration file may be loaded
+application - only one version of each configuration file may be loaded
 at any one time. You should note that MapLink is consistently in
 development so if you choose to modify the standard files then you may
 not be able to take advantage of any future enhancements.
@@ -576,7 +576,7 @@ The colours file, usually called tslcolours.dat, holds the definition of
 the colour palette and associated RGB values. The format is quite simple
 and is identical to the palette file written out alongside a map by
 MapLink Studio. The first few lines of a colours file are shown below.
-Each line is commented in red -- although the comments should not appear
+Each line is commented in red - although the comments should not appear
 in the actual file.
 
 TSLCL 105 // File ident and format version number
@@ -895,7 +895,7 @@ rectangles and ellipses. The format is similar to the line styles file.
 
 There are several different types of fill style, some more complex than
 others. The example below contains one of each currently supported type;
-these are explained later. Each line is commented in red -- although the
+these are explained later. Each line is commented in red - although the
 comments should not appear in the actual file.
 
 TSLFS 106 // File ident and format version number
@@ -1037,7 +1037,7 @@ There are several different types of fill style ...
 - Type 1: Patterned: Next two fields are width and height of the bitmap
   grid that follows. Each entry in the grid represents a pixel in the
   pattern. A 1 means that the pixel will be drawn in the current fill
-  colour, a 0 means that the pixel will not be drawn -- i.e. these
+  colour, a 0 means that the pixel will not be drawn - i.e. these
   pixels are transparent. MapLink has no concept of an opaque patterned
   fill.
 
@@ -1095,7 +1095,7 @@ There are several different types of fill style ...
 Note that ROP brushes are highly dependent for the effect on the
 underlying graphics engine implementation and some degree of
 experimentation may be necessary. Different graphics devices will
-interpret these in different ways -- notably printers.
+interpret these in different ways - notably printers.
 
 ### Symbols
 
@@ -1571,7 +1571,7 @@ The steps for importing data are as follows
 
 - Create an instance of TSLInteropManager and pass the import set to the
   postImportProcess method. This method reconstructs any TMF complex
-  primitives that have been encoded in the data -- such as Bordered
+  primitives that have been encoded in the data - such as Bordered
   Polygons.
 
 - The call to postImportProcess will merge the contents of the import
@@ -1593,7 +1593,7 @@ The steps for exporting data are as follows
 
 - Create an instance of TSLInteropManager and pass the Standard Data
   Layer to the preExportProcess method. This method deconstructs any TMF
-  complex primitives that exist in the Data Layer -- such as Bordered
+  complex primitives that exist in the Data Layer - such as Bordered
   Polygons.
 
 - The call to preExportProcess will create an instance of a
@@ -2094,4 +2094,4 @@ There are certain limitations with its use in conjunction with MapLink
 
 ---
 
-[← Walkthrough 3 -- Adding a Simple Vector Overlay](walkthrough-3) | [OpenGL Drawing Surface →](opengl-drawing-surface)
+[← Walkthrough 3 - Adding a Simple Vector Overlay](walkthrough-3) | [OpenGL Drawing Surface →](opengl-drawing-surface)
