@@ -1,15 +1,16 @@
-{% assign current_path = page.url | remove_trailing_slashes %}
 {% assign devguide = site.data.devguide_order %}
 {% assign prev_page = nil %}
 {% assign next_page = nil %}
 {% assign found = false %}
 
 {% for entry in devguide %}
-  {% assign entry_path = entry.url | remove_trailing_slashes %}
   {% if found and next_page == nil %}
     {% assign next_page = entry %}
   {% endif %}
-  {% if entry_path == current_path %}
+  {% assign entry_url = entry.url %}
+  {% assign page_url = page.url | remove: '/' | remove: '.html' %}
+  {% assign entry_clean = entry_url | remove: '/' %}
+  {% if page_url == entry_clean %}
     {% assign found = true %}
   {% endif %}
   {% unless found %}
