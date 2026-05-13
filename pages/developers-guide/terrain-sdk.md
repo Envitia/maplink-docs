@@ -387,95 +387,97 @@ The data to contour is expected in the form of a TSLTerrainContourVertexList of 
 
 Each vertex can store one or more pieces of height information, named 'attributes', for the point it represents. Each of these attributes can be used to model different information about the point that the vertex represents. For example, the first attribute might be height information for the terrain at that point, a second attribute might be a recorded temperature value at that point and a third attribute might be a humidity value. Contour information can be generated separately for each of these attributes. Each vertex within the list must have the same number of attributes.
 
-> This example shows loading of height information from a terrain database and storing the data in a TSLTerrainContourVertexList ready for the generation of contour lines.
->
-> // Process the terrain data into a terrain database
->
-> if( m_terrainDB.open( terrainDBFile.c_str() ) != TSLTerrain_OK )
->
-> return false;
->
-> // Query the extent of the terrain data
->
-> long x1, y1, x2, y2;
->
-> if( m_terrainDB.queryExtent( x1, y1, x2, y2 ) != TSLTerrain_OK )
->
-> return false;
->
-> // Inform the terrain database of the size of our drawing surface
->
-> // so it can determine a good resolution for the data
->
-> long duMinX, duMaxX, duMinY, duMaxY;
->
-> m_drawingSurface-\>getDUExtent( &duMinX, &duMinY, &duMaxX, &duMaxY );
->
-> m_terrainDB.displayExtent( duMaxX - duMinX, duMaxY - duMinY,
->
-> x1, y1, x2, y2 );
->
-> // Read the data from the terrain database
->
-> TSLTerrainDataItem \*dataItems =
->
-> new TSLTerrainDataItem\[ m_terrainGridWidth \* m_terrainGridHeight \];
->
-> if( m_terrainDB.queryArea( x1, y1, x2, y2, m_terrainGridWidth,
->
-> m_terrainGridHeight,
->
-> dataItems ) != TSLTerrain_OK )
->
-> {
->
-> return false;
->
-> }
->
-> // Convert the terrain database to contour vertices so we can give
->
-> // them to the contour object
->
-> TSLTerrainContourVertexList \*vertices =
->
-> new TSLTerrainContourVertexList();
->
-> for( int i = 0; i \< m_terrainGridHeight; ++i )
->
-> {
->
-> for( int j = 0; j \< m_terrainGridWidth; j++ )
->
-> {
->
-> vertices-\>addVertex(dataItems\[(i \* m_terrainGridWidth ) + j\].m_x,
->
-> dataItems\[(i \* m_terrainGridWidth ) + j\].m_y,
->
-> 1,
->
-> &dataItems\[(i \* m_terrainGridWidth) + j\].m_z);
->
-> }
->
-> }
->
-> // Height information is now stored in the vertex list so the data
->
-> // from the terrain database is no longer required
->
-> delete\[\] dataItems;
->
-> TSLTerrainContour contour = new TSLTerrainContour();
->
-> // Give our vertex list to the contour object so we can then perform
->
-> // contouring - the contour object assumes ownership of the vertex
->
-> // list
->
-> contour-\>setVertices( vertices );
+This example shows loading of height information from a terrain database and storing the data in a TSLTerrainContourVertexList ready for the generation of contour lines.
+
+```cpp
+// Process the terrain data into a terrain database
+
+if( m_terrainDB.open( terrainDBFile.c_str() ) != TSLTerrain_OK )
+
+return false;
+
+// Query the extent of the terrain data
+
+long x1, y1, x2, y2;
+
+if( m_terrainDB.queryExtent( x1, y1, x2, y2 ) != TSLTerrain_OK )
+
+return false;
+
+// Inform the terrain database of the size of our drawing surface
+
+// so it can determine a good resolution for the data
+
+long duMinX, duMaxX, duMinY, duMaxY;
+
+m_drawingSurface->getDUExtent( &duMinX, &duMinY, &duMaxX, &duMaxY );
+
+m_terrainDB.displayExtent( duMaxX - duMinX, duMaxY - duMinY,
+
+x1, y1, x2, y2 );
+
+// Read the data from the terrain database
+
+TSLTerrainDataItem *dataItems =
+
+new TSLTerrainDataItem[ m_terrainGridWidth * m_terrainGridHeight ];
+
+if( m_terrainDB.queryArea( x1, y1, x2, y2, m_terrainGridWidth,
+
+m_terrainGridHeight,
+
+dataItems ) != TSLTerrain_OK )
+
+{
+
+return false;
+
+}
+
+// Convert the terrain database to contour vertices so we can give
+
+// them to the contour object
+
+TSLTerrainContourVertexList *vertices =
+
+new TSLTerrainContourVertexList();
+
+for( int i = 0; i < m_terrainGridHeight; ++i )
+
+{
+
+for( int j = 0; j < m_terrainGridWidth; j++ )
+
+{
+
+vertices->addVertex(dataItems[(i * m_terrainGridWidth ) + j].m_x,
+
+dataItems[(i * m_terrainGridWidth ) + j].m_y,
+
+1,
+
+&dataItems[(i * m_terrainGridWidth) + j].m_z);
+
+}
+
+}
+
+// Height information is now stored in the vertex list so the data
+
+// from the terrain database is no longer required
+
+delete[] dataItems;
+
+TSLTerrainContour contour = new TSLTerrainContour();
+
+// Give our vertex list to the contour object so we can then perform
+
+// contouring - the contour object assumes ownership of the vertex
+
+// list
+
+contour->setVertices( vertices );
+```
 
 Although the contour object assumes ownership of the vertex list, the data contained within the list can still be modified by the application without having to generate a new vertex list and setting it on the contour object. This avoids having to do large copies when you wish to modify the data used for contouring. If this is done, the TSLTerrainContour object should be informed of the change via the notifyChanged() method in order to ensure that the updated data is used for future contouring operations.
 
@@ -504,105 +506,107 @@ You should override each of the callbacks that will be used for your selected me
 
 The callbacks will be invoked numerous times before the original draw call returns. In order to prevent excessive redrawing your application should wait until the draw call has returned before updating the display of your application.
 
-> This example shows an implementation of the
->
-> TSLTerrainContourCallbacks::drawPolyline() callback in which the generated contour lines are added to a TSLStandardDataLayer to be drawn to the screen after contour generation has finished.
->
-> void TerrainContouringView::drawPolyline (TSLTerrainContourVertexList\* vertices, double attribute)
->
-> {
->
-> // The coordinates of the vertices given to us are in the coordinate
->
-> // system of the terrain data, which may not be the same as that of
->
-> // the map we have loaded. Therefore it may be necessary to
->
-> // convert the coordinates so the contour lines appear in the correct
->
-> // place on the map.
->
-> TSLCoordinateSystem \*terrainCS =
->
-> m_terrainDatabase-\>queryCoordinateSystem();
->
-> const TSLCoordinateSystem \*mapCS =
->
-> m_mapDataLayer-\>queryCoordinateSystem();
->
-> bool needToConvert = false;
->
-> if( terrainCS-\>id() != mapCS-\>id() \|\|
->
-> terrainCS-\>getTMCperMU() != mapCS-\>getTMCperMU() )
->
-> needToConvert = true;
->
-> TSLCoordSet \*coords = new TSLCoordSet();
->
-> // Process the list of vertices given to us into a polyline so we can
->
-> // display it on the map in a standard data layer
->
-> for( int i = 0; i \< vertices-\>numberOfVertices(); ++i )
->
-> {
->
-> TSLTerrainContourVertex &vertex = vertices-\>at(i);
->
-> TSLTMC tmcX = 0, tmcY = 0;
->
-> if( !needToConvert )
->
-> {
->
-> // The terrain database and map coordinate systems are the same
->
-> terrainCS-\>MUToTMC( vertex.x(), vertex.y(), &tmcX, &tmcY );
->
-> }
->
-> else
->
-> {
->
-> // Convert between the terrain database and map coordinate systems
->
-> double lat = 0.0, lon = 0.0;
->
-> terrainCS-\>MUToLatLong( vertex.x(), vertex.y(), &lat, &lon );
->
-> mapCS-\>latLongToTMC( lat, lon, &tmcX, &tmcY );
->
-> }
->
-> coords-\>add( tmcX, tmcY );
->
-> }
->
-> TSLEntitySet \*es = m_contourLayer-\>entitySet();
->
-> TSLPolyline \*line = es-\>createPolyline( 0, coords, true );
->
-> if( line )
->
-> {
->
-> line-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
->
-> // Determine line colour based on the height of the contour
->
-> long colour = ( 255 / m_maxTerrainHeight ) \* attribute;
->
-> line-\>setRendering( TSLRenderingAttributeEdgeColour,
->
-> TSLDrawingSurface::getIDOfNearestColour( colour, 0, 255 - colour) );
->
-> line-\>setRendering( TSLRenderingAttributeEdgeThickness, 1 ) ;
->
-> }
->
-> }
+This example shows an implementation of the
+
+```cpp
+TSLTerrainContourCallbacks::drawPolyline() callback in which the generated contour lines are added to a TSLStandardDataLayer to be drawn to the screen after contour generation has finished.
+
+void TerrainContouringView::drawPolyline (TSLTerrainContourVertexList* vertices, double attribute)
+
+{
+
+// The coordinates of the vertices given to us are in the coordinate
+
+// system of the terrain data, which may not be the same as that of
+
+// the map we have loaded. Therefore it may be necessary to
+
+// convert the coordinates so the contour lines appear in the correct
+
+// place on the map.
+
+TSLCoordinateSystem *terrainCS =
+
+m_terrainDatabase->queryCoordinateSystem();
+
+const TSLCoordinateSystem *mapCS =
+
+m_mapDataLayer->queryCoordinateSystem();
+
+bool needToConvert = false;
+
+if( terrainCS->id() != mapCS->id() ||
+
+terrainCS->getTMCperMU() != mapCS->getTMCperMU() )
+
+needToConvert = true;
+
+TSLCoordSet *coords = new TSLCoordSet();
+
+// Process the list of vertices given to us into a polyline so we can
+
+// display it on the map in a standard data layer
+
+for( int i = 0; i < vertices->numberOfVertices(); ++i )
+
+{
+
+TSLTerrainContourVertex &vertex = vertices->at(i);
+
+TSLTMC tmcX = 0, tmcY = 0;
+
+if( !needToConvert )
+
+{
+
+// The terrain database and map coordinate systems are the same
+
+terrainCS->MUToTMC( vertex.x(), vertex.y(), &tmcX, &tmcY );
+
+}
+
+else
+
+{
+
+// Convert between the terrain database and map coordinate systems
+
+double lat = 0.0, lon = 0.0;
+
+terrainCS->MUToLatLong( vertex.x(), vertex.y(), &lat, &lon );
+
+mapCS->latLongToTMC( lat, lon, &tmcX, &tmcY );
+
+}
+
+coords->add( tmcX, tmcY );
+
+}
+
+TSLEntitySet *es = m_contourLayer->entitySet();
+
+TSLPolyline *line = es->createPolyline( 0, coords, true );
+
+if( line )
+
+{
+
+line->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+
+// Determine line colour based on the height of the contour
+
+long colour = ( 255 / m_maxTerrainHeight ) * attribute;
+
+line->setRendering( TSLRenderingAttributeEdgeColour,
+
+TSLDrawingSurface::getIDOfNearestColour( colour, 0, 255 - colour) );
+
+line->setRendering( TSLRenderingAttributeEdgeThickness, 1 ) ;
+
+}
+
+}
+```
 
 ### Drawing the Contour Labels
 
@@ -612,99 +616,101 @@ When using text labels with the alignment value set to TSLVerticalAlignmentMiddl
 
 One way of doing this is to create a dummy text object of the longest expected length and use this to determine the size to pass in as follows:
 
-> TSLText \*textObj = m_contourLayer-\>entitySet()-\>createText( 0, 0, 0,
->
-> maxLengthLabel.str().c_str(), 100 );
->
-> // It is necessary to set up the following attributes on the text object
->
-> // for updateEntityExtent() to work
->
-> textObj-\>setRendering( TSLRenderingAttributeTextSizeFactor,
->
-> m_textSizeFactor );
->
-> textObj-\>setRendering( TSLRenderingAttributeTextSizeFactorUnits,
->
-> TSLDimensionUnitsMapUnits );
->
-> textObj-\>setRendering( TSLRenderingAttributeTextFont, 2 );
->
-> // Set an entity ID on the temporary text object so we can remove it
->
-> // once we're done
->
-> textObj-\>entityID( INT_MAX );
->
-> m_contourLayer-\>notifyChanged();
->
-> // Store the currently viewed area of the map. In order to calculate the
->
-> // extent of the text object we need to change the viewed area so that
->
-> // our temporary text object would be visible
->
-> double viewedUUX1, viewedUUY1, viewedUUX2, viewedUUY2;
->
-> m_drawingSurface-\>getUUExtent( &viewedUUX1, &viewedUUY1,
->
-> &viewedUUX2, &viewedUUY2 );
->
-> double newUUX1, newUUY1, newUUX2, newUUY2;
->
-> long newSizeArea = 2 \* m_textSizeFactor;
->
-> m_drawingSurface-\>MUToUU( -newSizeArea, -newSizeArea,
->
-> &newUUX1, &newUUY1 );
->
-> m_drawingSurface-\>MUToUU( newSizeArea, newSizeArea,
->
-> &newUUX2, &newUUY2 );
->
-> m_drawingSurface-\>resize( newUUX1, newUUY1,
->
-> newUUX2, newUUY2, false, true );
->
-> // Now calculate the size of our text object
->
-> m_drawingSurface-\>updateEntityExtent( textObj );
->
-> TSLEnvelope env = textObj-\>envelope( m_drawingSurface-\>id() );
->
-> unsigned long envWidth = env.width();
->
-> // Now we have the width of the text object in TMCs we need to convert this to the terrain database units
->
-> double lat1, lon1, lat2, lon2, x1, y1, x2, y2;
->
-> m_drawingSurface-\>TMCToLatLong( env.bottomLeft().x(),
->
-> env.bottomLeft().y(), &lat1, &lon1 );
->
-> m_drawingSurface-\>TMCToLatLong( env.topRight().x(),
->
-> env.topRight().y(), &lat2, &lon2 );
->
-> m_terrainDB.latLongToMU( lat1, lon1, &x1, &y1 );
->
-> m_terrainDB.latLongToMU( lat2, lon2, &x2, &y2 );
->
-> // This is the width of the text labels in the terrain database units
->
-> // with some additional space either side
->
-> width = ( x2 - x1 ) \* 1.5;
->
-> // Now we have the width we no longer need our text object
->
-> m_contourLayer-\>removeEntity( INT_MAX );
->
-> // Finally, reset the viewied area of the map back to what it was originally
->
-> m_drawingSurface-\>resize( viewedUUX1, viewedUUY1,
->
-> viewedUUX2, viewedUUY2, false, false );
+```cpp
+TSLText *textObj = m_contourLayer->entitySet()->createText( 0, 0, 0,
+
+maxLengthLabel.str().c_str(), 100 );
+
+// It is necessary to set up the following attributes on the text object
+
+// for updateEntityExtent() to work
+
+textObj->setRendering( TSLRenderingAttributeTextSizeFactor,
+
+m_textSizeFactor );
+
+textObj->setRendering( TSLRenderingAttributeTextSizeFactorUnits,
+
+TSLDimensionUnitsMapUnits );
+
+textObj->setRendering( TSLRenderingAttributeTextFont, 2 );
+
+// Set an entity ID on the temporary text object so we can remove it
+
+// once we're done
+
+textObj->entityID( INT_MAX );
+
+m_contourLayer->notifyChanged();
+
+// Store the currently viewed area of the map. In order to calculate the
+
+// extent of the text object we need to change the viewed area so that
+
+// our temporary text object would be visible
+
+double viewedUUX1, viewedUUY1, viewedUUX2, viewedUUY2;
+
+m_drawingSurface->getUUExtent( &viewedUUX1, &viewedUUY1,
+
+&viewedUUX2, &viewedUUY2 );
+
+double newUUX1, newUUY1, newUUX2, newUUY2;
+
+long newSizeArea = 2 * m_textSizeFactor;
+
+m_drawingSurface->MUToUU( -newSizeArea, -newSizeArea,
+
+&newUUX1, &newUUY1 );
+
+m_drawingSurface->MUToUU( newSizeArea, newSizeArea,
+
+&newUUX2, &newUUY2 );
+
+m_drawingSurface->resize( newUUX1, newUUY1,
+
+newUUX2, newUUY2, false, true );
+
+// Now calculate the size of our text object
+
+m_drawingSurface->updateEntityExtent( textObj );
+
+TSLEnvelope env = textObj->envelope( m_drawingSurface->id() );
+
+unsigned long envWidth = env.width();
+
+// Now we have the width of the text object in TMCs we need to convert this to the terrain database units
+
+double lat1, lon1, lat2, lon2, x1, y1, x2, y2;
+
+m_drawingSurface->TMCToLatLong( env.bottomLeft().x(),
+
+env.bottomLeft().y(), &lat1, &lon1 );
+
+m_drawingSurface->TMCToLatLong( env.topRight().x(),
+
+env.topRight().y(), &lat2, &lon2 );
+
+m_terrainDB.latLongToMU( lat1, lon1, &x1, &y1 );
+
+m_terrainDB.latLongToMU( lat2, lon2, &x2, &y2 );
+
+// This is the width of the text labels in the terrain database units
+
+// with some additional space either side
+
+width = ( x2 - x1 ) * 1.5;
+
+// Now we have the width we no longer need our text object
+
+m_contourLayer->removeEntity( INT_MAX );
+
+// Finally, reset the viewied area of the map back to what it was originally
+
+m_drawingSurface->resize( viewedUUX1, viewedUUY1,
+
+viewedUUX2, viewedUUY2, false, false );
+```
 
 ### Performance Notes
 

@@ -72,37 +72,39 @@ Unlike most MapLink SDKs, when creating a custom WMS plug-in, the only library t
 
 As mentioned in the previous section, all WMS plug-ins must implement and export the createDataSource function for use by the MapLink WMS. An example of this is shown below.
 
-> #include "tslwmsplugindllspec.h"
->
-> #include "mydatasource.h"
->
-> extern "C"
->
-> {
->
-> TSLWMSPluginDataSource\* createDataSource( const char\* spatialData,
->
-> const char\* dataSourceConfig )
->
-> {
->
-> try
->
-> {
->
-> return new MyDataSource(spatialData, dataSourceConfig);
->
-> }
->
-> catch (\...)
->
-> {
->
-> return NULL;
->
-> }
->
-> }
+```cpp
+#include "tslwmsplugindllspec.h"
+
+#include "mydatasource.h"
+
+extern "C"
+
+{
+
+TSLWMSPluginDataSource* createDataSource( const char* spatialData,
+
+const char* dataSourceConfig )
+
+{
+
+try
+
+{
+
+return new MyDataSource(spatialData, dataSourceConfig);
+
+}
+
+catch (...)
+
+{
+
+return NULL;
+
+}
+
+}
+```
 
 }
 
@@ -116,95 +118,99 @@ For raster 'GetMap' requests, the response object should be cast up to the platf
 
 In the following example a pseudo implementation of these functions is provided.
 
-> TSLWMSAvailableLayer \* MyDataSource::getLayers (TSLWMSRegister \*wmsRegister,
->
-> const TSLWMSRequest\* r)
->
-> {
->
-> if ( !m_isConfigurationValid )
->
-> {
->
-> TSLWMSExceptionReport \* report = new TSLWMSExceptionReport();
->
-> TSLWMSCustomException \* exception = new
->
-> TSLWMSCustomException("MyDataSource not configured correctly");
->
-> report-\>addException(exception);
->
-> report-\>throwException();
->
-> }
->
-> TSLWMSAvailableLayer \* rootMapLayer = new TSLWMSAvailableLayer();
->
-> //TODO: Build up layer tree
->
-> return rootMapLayer;
->
-> }
+```cpp
+TSLWMSAvailableLayer * MyDataSource::getLayers (TSLWMSRegister *wmsRegister,
+
+const TSLWMSRequest* r)
+
+{
+
+if ( !m_isConfigurationValid )
+
+{
+
+TSLWMSExceptionReport * report = new TSLWMSExceptionReport();
+
+TSLWMSCustomException * exception = new
+
+TSLWMSCustomException("MyDataSource not configured correctly");
+
+report->addException(exception);
+
+report->throwException();
+
+}
+
+TSLWMSAvailableLayer * rootMapLayer = new TSLWMSAvailableLayer();
+
+//TODO: Build up layer tree
+
+return rootMapLayer;
+
+}
+```
 
 bool MyDataSource::getMap (TSLWMSGetMapResponse \*response,
 
 const TSLWMSGetMapRequest \*request)
 
-> {
->
-> if ( !m_isConfigurationValid )
->
-> { //TODO: Throw exception report }
->
-> #ifdef WINNT
->
-> TSLWMSGetMapRasterResponseNT \* res =
->
-> TSLWMSGetMapRasterResponseNT::isRasterResponseNT(response);
->
-> #else
->
-> TSLWMSGetMapRasterResponseX11 \* res =
->
-> TSLWMSGetMapRasterResponseX11::isRasterResponseX11(response);
->
-> #endif
->
-> if ( !res )
->
-> {
->
-> //TODO: Throw exception report
->
-> return false;
->
-> }
->
-> #ifdef WINNT
->
-> //TODO: Draw to response using either res-\>getHDC()
->
-> //or res-\>getDrawingSurface()
->
-> #else
->
-> //The implementation uses the DISPLAY environment variable for the
->
-> //connection information.
->
-> //Supported Visuals: True Color 24,16 and 8 bit depth, 8 bit Psuedo
->
-> //Color.
->
-> //TODO: Draw to response using res-\>getDrawable/Display/Screen/
->
-> //Colourmap/Visual() or res-\>getDrawingSurface()
->
-> #endif
->
-> return true;
->
-> }
+```cpp
+{
+
+if ( !m_isConfigurationValid )
+
+{ //TODO: Throw exception report }
+
+#ifdef WINNT
+
+TSLWMSGetMapRasterResponseNT * res =
+
+TSLWMSGetMapRasterResponseNT::isRasterResponseNT(response);
+
+#else
+
+TSLWMSGetMapRasterResponseX11 * res =
+
+TSLWMSGetMapRasterResponseX11::isRasterResponseX11(response);
+
+#endif
+
+if ( !res )
+
+{
+
+//TODO: Throw exception report
+
+return false;
+
+}
+
+#ifdef WINNT
+
+//TODO: Draw to response using either res->getHDC()
+
+//or res->getDrawingSurface()
+
+#else
+
+//The implementation uses the DISPLAY environment variable for the
+
+//connection information.
+
+//Supported Visuals: True Color 24,16 and 8 bit depth, 8 bit Psuedo
+
+//Color.
+
+//TODO: Draw to response using res->getDrawable/Display/Screen/
+
+//Colourmap/Visual() or res->getDrawingSurface()
+
+#endif
+
+return true;
+
+}
+```
 
 ### 'GetFeatureInfo' Usage
 
@@ -266,89 +272,93 @@ A WPS Plugin provides one or more Plugin Data Sources back to the WPS service wh
 
 The createDataSource function can return a single Data Source.
 
-> #include "tslwpsplugindllspec.h"
->
-> #include "mydatasource.h"
->
-> extern "C"
->
-> {
->
-> TSLWPSPluginDataSource\* createDataSource( const char\* dataLocation,
->
-> const char\* configurationLocation)
->
-> {
->
-> try
->
-> {
->
-> return new MyDataSource(dataLocation, configurationLocation);
->
-> }
->
-> catch (\...)
->
-> {
->
-> return NULL;
->
-> }
->
-> }
+```cpp
+#include "tslwpsplugindllspec.h"
+
+#include "mydatasource.h"
+
+extern "C"
+
+{
+
+TSLWPSPluginDataSource* createDataSource( const char* dataLocation,
+
+const char* configurationLocation)
+
+{
+
+try
+
+{
+
+return new MyDataSource(dataLocation, configurationLocation);
+
+}
+
+catch (...)
+
+{
+
+return NULL;
+
+}
+
+}
+```
 
 }
 
 The createAllDataSources function can pass back several Data Sources.
 
-> #include "tslwpsplugindllspec.h"
->
-> #include "mydatasourcea.h"
->
-> #include "mydatasourceb.h"
->
-> #include "mydatasourcec.h"
->
-> #include "mydatasourced.h"
->
-> extern "C"
->
-> {
->
-> bool createAllDataSource( const char\* dataLocation,
->
-> const char\* configurationLocation,
->
-> TSLWPSDataSourceSet\* dataSources )
->
-> {
->
-> try
->
-> {
->
-> dataSources-\>add( new MyDataSourceA(dataLocation, configurationLocation) );
->
-> dataSources-\>add( new MyDataSourceB(dataLocation, configurationLocation) );
->
-> dataSources-\>add( new MyDataSourceC(dataLocation, configurationLocation) );
->
-> dataSources-\>add( new MyDataSourceD(dataLocation, configurationLocation) );
->
-> }
->
-> catch (\...)
->
-> {
->
-> return false;
->
-> }
->
-> retrun true;
->
-> }
+```cpp
+#include "tslwpsplugindllspec.h"
+
+#include "mydatasourcea.h"
+
+#include "mydatasourceb.h"
+
+#include "mydatasourcec.h"
+
+#include "mydatasourced.h"
+
+extern "C"
+
+{
+
+bool createAllDataSource( const char* dataLocation,
+
+const char* configurationLocation,
+
+TSLWPSDataSourceSet* dataSources )
+
+{
+
+try
+
+{
+
+dataSources->add( new MyDataSourceA(dataLocation, configurationLocation) );
+
+dataSources->add( new MyDataSourceB(dataLocation, configurationLocation) );
+
+dataSources->add( new MyDataSourceC(dataLocation, configurationLocation) );
+
+dataSources->add( new MyDataSourceD(dataLocation, configurationLocation) );
+
+}
+
+catch (...)
+
+{
+
+return false;
+
+}
+
+retrun true;
+
+}
+```
 
 }
 
@@ -376,9 +386,11 @@ TSLWPSProcessDescriptionType\* SampleWPSDataSource:: describeProcess
 
 {
 
-> if ( !m_isConfigurationValid )
->
-> {
+if ( !m_isConfigurationValid )
+
+```cpp
+{
+```
 
 TSLOWSExceptionReport\* er = new TSLOWSExceptionReport(1, 0, 0);
 
@@ -390,49 +402,55 @@ ex-\>destroy();
 
 er-\>throwException();
 
-> }
+```cpp
+}
+```
 
 TSLWPSProcessDescriptionType\* desc = new TSLWPSProcessDescriptionType("1.0.0");
 
 desc-\>identifier().value("SampleProcess");
 
-> //TODO: Add inputs and output descriptions
->
-> return desc;
+```cpp
+//TODO: Add inputs and output descriptions
 
+return desc;
+```
+
+```cpp
 }
 
-TSLWPSExecuteResponse\* SampleWPSDataSource::executeProcess
-
+TSLWPSExecuteResponse* SampleWPSDataSource::executeProcess
+```
 (const TSLWPSExecuteRequest \*request,
 
 TSLWPSStoreHelper\* storeHelper,
 
 TSLWPSProgressSink\* progressSink)
 
+```cpp
 {
 
 //TODO: Interrogate request for input values
 
-TSLWPSProcessDescriptionType \* desc = describeProcess(request-\>language());
+TSLWPSProcessDescriptionType * desc = describeProcess(request->language());
 
 TSLTimeType now;
 
-\_time64(&now);
+_time64(&now);
 
-TSLWPSStatusType\* sts = new TSLWPSStatusType(now, "Succeeded");
+TSLWPSStatusType* sts = new TSLWPSStatusType(now, "Succeeded");
 
-desc-\>identifier().value("SampleWPSDataSource");
+desc->identifier().value("SampleWPSDataSource");
 
-TSLWPSExecuteResponse \* res = new TSLWPSExecuteResponse(\*desc, \*sts);
+TSLWPSExecuteResponse * res = new TSLWPSExecuteResponse(*desc, *sts);
 
-desc-\>destroy();
+desc->destroy();
 
-sts-\>destroy();
+sts->destroy();
 
 //TODO: Add outputs
 
 return true;
 
 }
-
+```

@@ -44,15 +44,17 @@ CHelloGlobeDoc::CHelloGlobeDoc()
 
 : m_mapDataLayer( NULL ), m_stdDataLayer( NULL )
 
+```cpp
 {
 
 }
-
+```
 The overlay layer should only be created after a map has been successfully loaded and should be destroyed when the map layer is destroyed.
 
 > In the Document OnOpenDocument method, instantiate a TSLStandardDataLayer if the map is successful:
 
-if ( !m_mapDataLayer-\>loadData( lpszPathName ) )
+```cpp
+if ( !m_mapDataLayer->loadData( lpszPathName ) )
 
 {
 
@@ -63,33 +65,35 @@ return FALSE ;
 }
 
 m_stdDataLayer = new TSLStandardDataLayer() ; // This line added
-
+```
 > In the Document DeleteContents method, add the following code to delete the overlay layer:
 
+```cpp
 if ( m_stdDataLayer )
 
 {
 
-m_stdDataLayer-\>destroy() ;
+m_stdDataLayer->destroy() ;
 
 m_stdDataLayer = NULL ;
 
 }
-
+```
 > Modify the Document addToSurface method to add the extra layer:
 
-if ( !m_mapDataLayer \|\| !m_stdDataLayer \|\| !drawingSurface )
+```cpp
+if ( !m_mapDataLayer || !m_stdDataLayer || !drawingSurface )
 
 return false ;
 
-bool sts = drawingSurface-\>addDataLayer( m_mapDataLayer, "map" ) ;
+bool sts = drawingSurface->addDataLayer( m_mapDataLayer, "map" ) ;
 
 if ( sts )
 
-sts = drawingSurface-\>addDataLayer( m_stdDataLayer, "overlay" ) ;
+sts = drawingSurface->addDataLayer( m_stdDataLayer, "overlay" ) ;
 
 return sts ;
-
+```
 ## Adding the Overlay Menu and Handlers
 
 This menu will allow the user to select which type of Entity will be created on a button press.
@@ -114,6 +118,7 @@ Now we need to add COMMAND handlers to update the chosen overlay type on a user 
 
 > Use Class Wizard to add COMMAND handlers for the overlay menu items to the Document and in each handler set the m_overlayType variable. You could use a range command handler and only have one method, but for simplicity we have added one per menu item. You should also add UPDATE_COMMAND_UI handlers to provide some feedback to the user about which overlay type is selected. The handlers for Polygons are shown below. Add them for each of the menu entries
 
+```cpp
 void CHelloGlobeDoc::OnOverlaysPolygon()
 
 {
@@ -122,14 +127,14 @@ m_overlayType = ID_OVERLAYS_POLYGON ;
 
 }
 
-void CHelloGlobeDoc::OnUpdateOverlaysPolygon(CCmdUI \*pCmdUI)
+void CHelloGlobeDoc::OnUpdateOverlaysPolygon(CCmdUI *pCmdUI)
 
 {
 
-pCmdUI-\>SetCheck( pCmdUI-\>m_nID == m_overlayType ) ;
+pCmdUI->SetCheck( pCmdUI->m_nID == m_overlayType ) ;
 
 }
-
+```
 Try building your application. At this point you should have the user interface working, but no primitive creation happening. Check that the m_overlayType variable is set correctly when you select each menu item or toolbar button and that the menu items are ticked correctly.
 
 ## Adding the Overlay Creation Interface
@@ -140,7 +145,8 @@ Add a public method to the Document, called createOverlay. This should return a 
 
 Create other, private methods, which provide the implementation for creating each overlay type. These will have the same signature as createOverlay and should be called from it according to the current value of m_overlayType. The code fragment below shows the implementation of createOverlay and a dummy implementation of the text method.
 
-bool CHelloGlobeDoc::createOverlay(long x,long y,TSLDrawingSurface \*ds)
+```cpp
+bool CHelloGlobeDoc::createOverlay(long x,long y,TSLDrawingSurface *ds)
 
 {
 
@@ -164,18 +170,19 @@ return false ;
 
 }
 
-bool CHelloGlobeDoc::createText(long x,long y,TSLDrawingSurface\*ds)
+bool CHelloGlobeDoc::createText(long x,long y,TSLDrawingSurface*ds)
 
 {
 
 return false ;
 
 }
-
+```
 ## Triggering the Overlay Creation
 
 In the View class LButtonUp handler, we should call the createOverlay method if the Control button is pressed.
 
+```cpp
 void CHelloGlobeView::OnLButtonUp(UINT nFlags, CPoint point)
 
 {
@@ -187,19 +194,20 @@ if ( m_drawingSurface )
 if ( nFlags & MK_CONTROL )
 
 {
-
+```
 TSLTMC x, y ;
 
 m_drawingSurface-\>DUToTMC( point.x, point.y, &x, &y ) ;
 
-if ( GetDocument()-\>createOverlay( x, y, m_drawingSurface ) )
+```cpp
+if ( GetDocument()->createOverlay( x, y, m_drawingSurface ) )
 
 InvalidateRect( 0, FALSE ) ;
 
 }
 
-else if ( abs( . . . . /\* Rest of method the same \*/ ) )
-
+else if ( abs( . . . . /* Rest of method the same */ ) )
+```
 ## Creating the Text Overlay
 
 Build the application and ensure that the create methods are being triggered when the Control - Left Mouse Button combination is used.
@@ -212,6 +220,7 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 TSLText \* txt = es-\>createText( 0, x, y, "Hello World" ) ;
 
+```cpp
 if ( !txt )
 
 return false ; // Return failure if text could not be created
@@ -220,22 +229,22 @@ TSLStyleID black = TSLDrawingSurface::getIDOfNearestColour( 0, 0, 0 ) ;
 
 // Set the rendering of the text to be black, Arial, 25 pixels high
 
-txt-\>setRendering( TSLRenderingAttributeTextFont, 1 ) ;
+txt->setRendering( TSLRenderingAttributeTextFont, 1 ) ;
 
-txt-\>setRendering( TSLRenderingAttributeTextColour, black ) ;
+txt->setRendering( TSLRenderingAttributeTextColour, black ) ;
 
-txt-\>setRendering( TSLRenderingAttributeTextSizeFactor, 25.0 ) ;
+txt->setRendering( TSLRenderingAttributeTextSizeFactor, 25.0 ) ;
 
-txt-\>setRendering( TSLRenderingAttributeTextSizeFactorUnits,
+txt->setRendering( TSLRenderingAttributeTextSizeFactorUnits,
 
 TSLDimensionUnitsPixels ) ;
 
 // Tell the layer that its contents have changed
 
-m_stdDataLayer-\>notifyChanged( true ) ;
+m_stdDataLayer->notifyChanged( true ) ;
 
 return true ;
-
+```
 The key points of this code are
 
 - The Text Entity is created in the Entity Set of the overlay Standard Data Layer. If the static TSLText::create method was used, then the Text Entity would not be attached to any Drawing Surface and hence would never be displayed.
@@ -260,6 +269,7 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 TSLSymbol \* symbol = es-\>createSymbol( 0, x, y ) ;
 
+```cpp
 if ( !symbol )
 
 return false ;
@@ -270,22 +280,22 @@ return false ;
 
 TSLStyleID green= TSLDrawingSurface::getIDOfNearestColour( 0, 255, 0 ) ;
 
-symbol-\>setRendering( TSLRenderingAttributeSymbolStyle, 14 ) ;
+symbol->setRendering( TSLRenderingAttributeSymbolStyle, 14 ) ;
 
-symbol-\>setRendering( TSLRenderingAttributeSymbolColour, red ) ;
+symbol->setRendering( TSLRenderingAttributeSymbolColour, red ) ;
 
-symbol-\>setRendering( TSLRenderingAttributeSymbolSizeFactor,1000.0);
+symbol->setRendering( TSLRenderingAttributeSymbolSizeFactor,1000.0);
 
-symbol-\>setRendering( TSLRenderingAttributeSymbolSizeFactorUnits,
+symbol->setRendering( TSLRenderingAttributeSymbolSizeFactorUnits,
 
 TSLDimensionUnitsMapUnits ) ;
 
 // Tell the layer that its contents have changed
 
-m_stdDataLayer-\>notifyChanged( true ) ;
+m_stdDataLayer->notifyChanged( true ) ;
 
 return true ;
-
+```
 Many different symbols are supplied with MapLink. Use the method described in section [10.6.12](#determining-styles-and-font-indices) to determine an appropriate index.
 
 ## Creating the Polygon Overlay
@@ -310,21 +320,22 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 TSLCoordSet \* coords = new TSLCoordSet() ;
 
+```cpp
 if ( !coords )
 
 return false ;
 
-double tmcPerDU = ds-\>TMCperDU() ;
+double tmcPerDU = ds->TMCperDU() ;
 
-coords-\>add( x - 25 \* tmcPerDU, y - 25 \* tmcPerDU ) ;
+coords->add( x - 25 * tmcPerDU, y - 25 * tmcPerDU ) ;
 
-coords-\>add( x + 25 \* tmcPerDU, y - 25 \* tmcPerDU ) ;
+coords->add( x + 25 * tmcPerDU, y - 25 * tmcPerDU ) ;
 
-coords-\>add( x, y + 25 \* tmcPerDU ) ;
+coords->add( x, y + 25 * tmcPerDU ) ;
 
 // Hand ownership of the coordset to the polygon
 
-TSLPolygon \* poly = es-\>createPolygon( 0, coords, true ) ;
+TSLPolygon * poly = es->createPolygon( 0, coords, true ) ;
 
 if ( !poly )
 
@@ -334,22 +345,22 @@ TSLStyleID yellow = TSLDrawingSurface::getIDOfNearestColour( 255, 255, 0 );
 
 TSLStyleID black = TSLDrawingSurface::getIDOfNearestColour( 0, 0, 0 ) ;
 
-poly-\>setRendering( TSLRenderingAttributeFillStyle, 1 ) ;
+poly->setRendering( TSLRenderingAttributeFillStyle, 1 ) ;
 
-poly-\>setRendering( TSLRenderingAttributeFillColour, yellow ) ;
+poly->setRendering( TSLRenderingAttributeFillColour, yellow ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+poly->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeColour, black ) ;
+poly->setRendering( TSLRenderingAttributeEdgeColour, black ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeThickness, 1.0 ) ;
+poly->setRendering( TSLRenderingAttributeEdgeThickness, 1.0 ) ;
 
 // Tell the layer that its contents have changed
 
-m_stdDataLayer-\>notifyChanged( true ) ;
+m_stdDataLayer->notifyChanged( true ) ;
 
 return true ;
-
+```
 ## Creating the Polyline Overlay
 
 Polylines use the same mechanism as Polygons to specify the list of coordinates that should be used.
@@ -366,23 +377,24 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 TSLCoordSet \* coords = new TSLCoordSet() ;
 
+```cpp
 if ( !coords )
 
 return false ;
 
 // Make a triangle, 1km either side of the specified position
 
-double tmcPerMU = ds-\>TMCperMU() ;
+double tmcPerMU = ds->TMCperMU() ;
 
-coords-\>add( x - 1000 \* tmcPerMU, y + 1000 \* tmcPerMU ) ;
+coords->add( x - 1000 * tmcPerMU, y + 1000 * tmcPerMU ) ;
 
-coords-\>add( x, y - 1000 \* tmcPerMU ) ;
+coords->add( x, y - 1000 * tmcPerMU ) ;
 
-coords-\>add( x + 1000 \* tmcPerMU, y + 1000 \* tmcPerMU ) ;
+coords->add( x + 1000 * tmcPerMU, y + 1000 * tmcPerMU ) ;
 
 // Hand ownership of the coordset to the polygon
 
-TSLPolyline \* poly = es-\>createPolyline( 0, coords, true ) ;
+TSLPolyline * poly = es->createPolyline( 0, coords, true ) ;
 
 if ( !poly )
 
@@ -400,22 +412,22 @@ return false ;
 
 TSLStyleID yellow = TSLDrawingSurface::getIDOfNearestColour(255, 255, 0) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeStyle, 48 ) ;
+poly->setRendering( TSLRenderingAttributeEdgeStyle, 48 ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeColour, yellow ) ;
+poly->setRendering( TSLRenderingAttributeEdgeColour, yellow ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeThickness, 20.0 ) ;
+poly->setRendering( TSLRenderingAttributeEdgeThickness, 20.0 ) ;
 
-poly-\>setRendering( TSLRenderingAttributeEdgeThicknessUnits,
+poly->setRendering( TSLRenderingAttributeEdgeThicknessUnits,
 
 TSLDimensionUnitsMapUnits) ;
 
 // Tell the layer that its contents have changed
 
-m_stdDataLayer-\>notifyChanged( true ) ;
+m_stdDataLayer->notifyChanged( true ) ;
 
 return true ;
-
+```
 ## Creating the Feature Based Symbol Overlay
 
 The previous examples have used Entity Based Rendering, in which every Entity has its own definition of Rendering Attributes. As discussed in Section [10.6.10](#feature-based-rendering), MapLink also has the capability to specify the Rendering Attributes of a Feature type on the Data Layer or Drawing Surface and on the individual Entity specify which Feature the Entity represents.
@@ -464,6 +476,7 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 TSLSymbol \* symbol = es-\>createSymbol( 123, x, y ) ;
 
+```cpp
 if ( !symbol )
 
 return false ;
@@ -474,9 +487,9 @@ return false ;
 
 // Tell the layer that its contents have changed
 
-m_stdDataLayer-\>notifyChanged( true ) ;
+m_stdDataLayer->notifyChanged( true ) ;
 
 return true ;
-
+```
 Congratulations! You can now create vector overlays!
 

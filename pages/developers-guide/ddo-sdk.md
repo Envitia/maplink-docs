@@ -218,73 +218,79 @@ Two custom classes are required - one derived from TSLDynamicDataObject to suppl
 
 Create a new class, MyDDO which derives from TSLDynamicDataObject and override the instantiateDO method. Include the header file in the Document source file.
 
-> class MyDDO : public TSLDynamicDataObject
->
-> {
->
-> public:
->
-> MyDDO(void);
->
-> virtual \~MyDDO(void);
->
-> virtual TSLDisplayObject \* instantiateDO(TSLDisplayType key, int dsID=0) const ;
+```cpp
+class MyDDO : public TSLDynamicDataObject
+
+{
+
+public:
+
+MyDDO(void);
+
+virtual ~MyDDO(void);
+
+virtual TSLDisplayObject * instantiateDO(TSLDisplayType key, int dsID=0) const ;
+```
 
 };
 
 Create a new class, MyDO which derives from TSLDisplayObject and override the draw method. Include the header file in the MyDDO source file.
 
-> class MyDO : public TSLDisplayObject
->
-> {
->
-> public:
->
-> MyDO(void);
->
-> virtual \~MyDO(void);
->
-> virtual bool draw(TSLRenderingInterface \*ri, TSLEnvelope \*extent);
->
-> }
+```cpp
+class MyDO : public TSLDisplayObject
+
+{
+
+public:
+
+MyDO(void);
+
+virtual ~MyDO(void);
+
+virtual bool draw(TSLRenderingInterface *ri, TSLEnvelope *extent);
+
+}
+```
 
 In the source file for MyDDO, provide initial empty definitions for the constructor, and destructor and a simple implementation for the instantiateDo method.
 
-> MyDDO::MyDDO(void) { }
->
-> MyDDO::\~MyDDO(void) { }
->
-> TSLDisplayObject \* MyDDO::instantiateDO(TSLDisplayType key,int dsID) const
->
-> {
->
-> return new MyDO() ;
->
-> }
->
-> In the source file for MyDO, provide initial definitions for the constructor, and destructor and a simple implementation for the draw method - draw a red circle 50 pixels high.
->
-> MyDO::MyDO(void)
->
-> { // Without this, the symbol disappears when the centre goes off screen
->
-> setPixSize( -25, -25, 25, 25 ) ;
->
-> }
->
-> MyDO::\~MyDO(void) { }
->
-> bool MyDO::draw( TSLRenderingInterface \*ri, TSLEnvelope \*extent )
->
-> { // 1023 = filled circle with cross, 181=red in standard config files
->
-> ri-\>setupSymbolAttributes( 1023, 181, 50, TSLDimensionUnitsPixels );
->
-> ri-\>drawSymbol( position() ) ;
->
-> return true ;
->
-> }
+```cpp
+MyDDO::MyDDO(void) { }
+
+MyDDO::~MyDDO(void) { }
+
+TSLDisplayObject * MyDDO::instantiateDO(TSLDisplayType key,int dsID) const
+
+{
+
+return new MyDO() ;
+
+}
+
+In the source file for MyDO, provide initial definitions for the constructor, and destructor and a simple implementation for the draw method - draw a red circle 50 pixels high.
+
+MyDO::MyDO(void)
+
+{ // Without this, the symbol disappears when the centre goes off screen
+
+setPixSize( -25, -25, 25, 25 ) ;
+
+}
+
+MyDO::~MyDO(void) { }
+
+bool MyDO::draw( TSLRenderingInterface *ri, TSLEnvelope *extent )
+
+{ // 1023 = filled circle with cross, 181=red in standard config files
+
+ri->setupSymbolAttributes( 1023, 181, 50, TSLDimensionUnitsPixels );
+
+ri->drawSymbol( position() ) ;
+
+return true ;
+
+}
+```
 
 ### Moving the Dynamic Data Object
 
@@ -363,4 +369,12 @@ If the Display Object position is updated in sympathy with the Drawing Surface c
 ### Rendering using Xlib or Win32
 
 For high performance, the low-level handle to the Drawable or HDC can be queried during rendering using the Rendering Interface handleToDrawable method. The application can then make low-level calls to create the visualisation. Note that the application must be careful to leave the low-level handle in the state it was when returned from handleToDrawable - for example, using the Win32 saveDC and restoreDC methods.
+
+[^6]: This isn't strictly true! For backwards compatibility, there is a base class implementation of the 'instantiateDO' method. However, in practise, this should always be implemented by a derived class. If you forget to provide this in a new class, then a run-time error, DDO_INSTANTIATEDO_NOT_OVERRIDDEN, will be placed onto the error stack.
+
+[^7]: An issue with the Rational Rose documentation generator means that the const modifier is not shown in the MapLink API documentation.
+
+[^8]: This is mainly used by the obsolete clone method. The clone and unclone methods are for backwards compatibility only and do not need to be overridden.
+
+
 

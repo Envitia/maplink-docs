@@ -73,7 +73,7 @@ A feature property definition maps to the fields of the TSLFieldDefinition class
 
 - The name value corresponds to the enclosing GML tags of the feature property.
 
-- The type value corresponds to the GML SF-0 supported type of which the field is defined as. The following table lists how the schema type supported by SF-0 is mapping to a [TSLVariantType](mk:@MSITStore:C:\Temp\MapLinkAPI.chm::/rosefiles/cat421218fc015a/cat37a038e10247/class3ec0b8f703ca.htm) value
+- The type value corresponds to the GML SF-0 supported type of which the field is defined as. The following table lists how the schema type supported by SF-0 is mapping to a TSLVariantType value
 
 | Schema Type                                      | TSLVariantType value      |
 | ------------------------------------------------ | ------------------------- |
@@ -199,4 +199,9 @@ The following options are also available when exporting instance data and should
 - The swapXandY option sets whether the GML coordinates exported should be treated as Y, X rather than X, Y.
 
 - The propertyMapping and propertyMappingSet methods allow the settings of a mapping that will be used by subsequent exports. These mappings work in the reverse of how the ingest process uses them, thus the entity's properties are used to create the exported feature's properties. How these mappings alter the ingest process is described in section [24.4.1](#schema-based-instance-data-ingest-and-storage).
+
+[^9]: This section of the documentation, covering the use of the MapLink GML SDK, assumes a reasonable understanding of both GML and the GML SF-0 profile. For further information on these topics please refer to the OGC website (<http://www.opengeospatial.org/>)
+
+[^10]: All xsd:dates and xsd:dateTimes are converted to UTC time
+
 

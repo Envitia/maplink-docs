@@ -70,7 +70,9 @@ For the purposes of this walk through we will only import the Core MapLink .NET 
 
 The first thing you'll need to do is add namespace declarations to the project's main form for all the newly added MapLink assemblies. This will mean that subsequent references to MapLink classes won't need to be prefixed with the namespaces that contain them. The namespaces for each of the MapLink assemblies are listed in section [25.1](#library-usage-and-configuration-12), e.g.
 
-> using Envitia.MapLink;
+```csharp
+using Envitia.MapLink;
+```
 
 The configuration files for MapLink are usually only loaded once per execution run using static methods of TSLNDrawingSurface. In a C# application this can be done in a number of places, but the easiest is in the main form's constructor. The simplest way to go about this is to tell MapLink to load all standard configuration files from a particular directory. If no directory is specified, then MapLink will assume that a full MapLink installation has taken place and will attempt to load from there.
 
@@ -78,35 +80,37 @@ In the method constructor of the applications main form add a call to TSLNDrawin
 
 You should be careful to check for, and report errors at this stage by using the methods supplied on the TSLNErrorStack utility class.
 
-> public Form1()
->
-> {
->
-> TSLNErrorStack.clear() ;
->
-> String configDirPath = null; //Replace if deployed
->
-> TSLNDrawingSurface.loadStandardConfig(configDirPath);
->
-> String msg =
->
-> TSLNErrorStack.errorString("Initialisation errors :\\n",
->
-> TSLNErrorCategory.TSLNErrorCategoryError \|
->
-> TSLNErrorCategory.TSLNErrorCategoryFatal) ;
->
-> if ( msg != null )
->
-> {
->
-> MessageBox.Show(this, msg) ;
->
-> Environment.Exit(-1);
->
-> }
->
-> InitializeComponent();
+public Form1()
+
+```cpp
+{
+
+TSLNErrorStack.clear() ;
+
+String configDirPath = null; //Replace if deployed
+
+TSLNDrawingSurface.loadStandardConfig(configDirPath);
+
+String msg =
+
+TSLNErrorStack.errorString("Initialisation errors :\n",
+
+TSLNErrorCategory.TSLNErrorCategoryError |
+
+TSLNErrorCategory.TSLNErrorCategoryFatal) ;
+
+if ( msg != null )
+
+{
+
+MessageBox.Show(this, msg) ;
+
+Environment.Exit(-1);
+
+}
+
+InitializeComponent();
+```
 
 }
 
@@ -116,23 +120,25 @@ Once MapLink has been initialised, it needs to be cleaned up when the applicatio
 
 The tidy up of MapLink should occur after the form's components have been disposed of but before the form itself is disposed of.
 
-> protected override void Dispose(bool disposing)
->
-> {
->
-> if (disposing && (components != null))
->
-> {
->
-> components.Dispose();
->
-> }
->
-> TSLNDrawingSurface.cleanup();
->
-> base.Dispose(disposing);
->
-> }
+```cpp
+protected override void Dispose(bool disposing)
+
+{
+
+if (disposing && (components != null))
+
+{
+
+components.Dispose();
+
+}
+
+TSLNDrawingSurface.cleanup();
+
+base.Dispose(disposing);
+
+}
+```
 
 ### The Drawing Surface and Map Data Layer
 
@@ -158,7 +164,9 @@ Next we'll declare the variables required and setup the drawing surface:
 
 - In the load event handler construct the TSLNDrawingSurface, passing in the form's 'Handle' member variable and the second argument as false to indicate that the handle is a window handle. For example:
 
-> m_drawingSurface = new TSLNDrawingSurface(this.Handle, false);
+```cpp
+m_drawingSurface = new TSLNDrawingSurface(this.Handle, false);
+```
 
 Finally we'll hook up the menu event handlers to allow the map to load and the program to exit.
 
@@ -172,43 +180,45 @@ Finally we'll hook up the menu event handlers to allow the map to load and the p
 
 For example:
 
-> private void openToolStripMenuItem_Click(object sender, EventArgs e)
->
-> {
->
-> if (openFileDialog1.ShowDialog() != DialogResult.OK)
->
-> return;
->
-> m_mapDataLayer = new TSLNMapDataLayer();
->
-> if (!m_mapDataLayer.loadData(openFileDialog1.FileName))
->
-> {
->
-> String error = TSLNErrorStack.errorString("Errors:",
->
-> TSLNErrorCategory.TSLNErrorCategoryAll);
->
-> m_mapDataLayer = null;
->
-> if (error != null)
->
-> {
->
-> MessageBox.Show(this, "Error", error, MessageBoxButtons.OK);
->
-> return;
->
-> }
->
-> }
->
-> m_drawingSurface.addDataLayer(m_mapDataLayer, "map");
->
-> m_drawingSurface.reset(true);
->
-> }
+private void openToolStripMenuItem_Click(object sender, EventArgs e)
+
+```cpp
+{
+
+if (openFileDialog1.ShowDialog() != DialogResult.OK)
+
+return;
+
+m_mapDataLayer = new TSLNMapDataLayer();
+
+if (!m_mapDataLayer.loadData(openFileDialog1.FileName))
+
+{
+
+String error = TSLNErrorStack.errorString("Errors:",
+
+TSLNErrorCategory.TSLNErrorCategoryAll);
+
+m_mapDataLayer = null;
+
+if (error != null)
+
+{
+
+MessageBox.Show(this, "Error", error, MessageBoxButtons.OK);
+
+return;
+
+}
+
+}
+
+m_drawingSurface.addDataLayer(m_mapDataLayer, "map");
+
+m_drawingSurface.reset(true);
+
+}
+```
 
 - Lastly when the File Exit menu button is clicked call the form's Close method.
 
@@ -226,45 +236,49 @@ To add Paint and Resize event handlers to your form, the steps are the same as o
 
 In the Paint event handler, first check that the drawing surface has been constructed and if so request a redraw via the drawDU method, e.g.
 
-> private void OnPaint(object sender, PaintEventArgs e)
->
-> {
->
-> if ( m_drawingSurface == null )
->
-> return;
->
-> m_drawingSurface.drawDU(e.ClipRectangle.Left, e.ClipRectangle.Top,
->
-> e.ClipRectangle.Right,
->
-> e.ClipRectangle.Bottom,true);
+private void OnPaint(object sender, PaintEventArgs e)
+
+```cpp
+{
+
+if ( m_drawingSurface == null )
+
+return;
+
+m_drawingSurface.drawDU(e.ClipRectangle.Left, e.ClipRectangle.Top,
+
+e.ClipRectangle.Right,
+
+e.ClipRectangle.Bottom,true);
+```
 
 }
 
 In the Resize event hander, once again first check that the drawing surface has been constructed and if so, request a resize via the wndResize method. The second to last argument is whether a redraw should occur, which is required as .NET will only redraw if the control gets larger. The final argument to the wndResize method dictates how the existing view should relate to the new view, e.g.
 
-> private void OnResize(object sender, EventArgs e)
->
-> {
->
-> if (m_drawingSurface == null)
->
-> return;
->
-> m_drawingSurface.wndResize(ClientRectangle.Left,
->
-> ClientRectangle.Top,
->
-> ClientRectangle.Right,
->
-> ClientRectangle.Bottom,
->
-> true,
->
-> TSLNResizeActionEnum.TSLNResizeActionMaintainCentre);
->
-> }
+private void OnResize(object sender, EventArgs e)
+
+```cpp
+{
+
+if (m_drawingSurface == null)
+
+return;
+
+m_drawingSurface.wndResize(ClientRectangle.Left,
+
+ClientRectangle.Top,
+
+ClientRectangle.Right,
+
+ClientRectangle.Bottom,
+
+true,
+
+TSLNResizeActionEnum.TSLNResizeActionMaintainCentre);
+
+}
+```
 
 Finally, we need to handle the initial resize of the main window. For some reason a Resize event is not sent by the .NET framework when the form is initially sized. So we'll have to tell the drawing surface its initial size. Simple copy the wndResize statement into your Load event handler after the drawing surface has been constructed.
 
@@ -276,15 +290,17 @@ One of the problems with the setup used in the walkthrough is that the menu stri
 
 To add double buffering to the form in C#, users will need to override the form/panel's OnPaintBackground and not call the base implementation. This will be in addition to calling setOption on the drawing surface as described in section [8.10](#reducing-flicker-and-improving-performance), e.g.
 
-> protected override void OnPaintBackground( PaintEventArgs pevent)
->
-> {
->
-> // do nothing\...
->
-> // we don't want the background to flash over the map
->
-> }
+```cpp
+protected override void OnPaintBackground( PaintEventArgs pevent)
+
+{
+
+// do nothing...
+
+// we don't want the background to flash over the map
+
+}
+```
 
 NOTE: Override the OnPaintBackground method can cause havoc when viewing the UI object via the Visual Studio designer. For an example of how to work around this problem refer to the sample C# programs supplied with MapLink that utilise the ControlDesigner class.
 
@@ -324,33 +340,37 @@ Add a constructor to the application's main form and add a call to TSLNDrawingSu
 
 You should be careful to check for, and report errors at this stage by using the methods supplied on the TSLNErrorStack utility class.
 
-> Public Sub New()
->
-> TSLNErrorStack.clear()
->
-> Dim configDirPath As String = Nothing 'Replace if deployed
->
-> TSLNDrawingSurface.loadStandardConfig(configDirPath)
->
-> Dim msg As String = TSLNErrorStack.errorString(
+```vb
+Public Sub New()
+
+TSLNErrorStack.clear()
+
+Dim configDirPath As String = Nothing 'Replace if deployed
+
+TSLNDrawingSurface.loadStandardConfig(configDirPath)
+
+Dim msg As String = TSLNErrorStack.errorString(
+```
 
 "Initialisation Errors : \\n",
 
-> TSLNErrorCategory.TSLNErrorCategoryError Or
->
-> TSLNErrorCategory.TSLNErrorCategoryFatal)
->
-> If (Not msg Is Nothing) Then
->
-> MessageBox.Show(Me, msg)
->
-> Environment.Exit(-1)
->
-> End If
->
-> ' This call is required by the Windows Form Designer.
->
-> InitializeComponent()
+TSLNErrorCategory.TSLNErrorCategoryError Or
+
+TSLNErrorCategory.TSLNErrorCategoryFatal)
+
+If (Not msg Is Nothing) Then
+
+MessageBox.Show(Me, msg)
+
+Environment.Exit(-1)
+
+```cpp
+End If
+
+' This call is required by the Windows Form Designer.
+
+InitializeComponent()
+```
 
 End Sub
 
@@ -358,27 +378,29 @@ When your application is deployed, make configDirPath variable point to the loca
 
 Once MapLink has been initialised, it needs to be cleaned up when the application exits, otherwise Visual Studio will report numerous "leaks" which are in fact memory currently in use when the application exits. This should be done in the Dispose method of the main form.
 
-> The tidy up of MapLink should occur after the form's components have been disposed of but before the form itself is disposed of.
->
-> Protected Overrides Sub Dispose(ByVal disposing As Boolean)
->
-> Try
->
-> If disposing AndAlso components IsNot Nothing Then
->
-> components.Dispose()
->
-> End If
->
-> Finally
->
-> TSLNDrawingSurface.cleanup() 'MapLink Code
->
-> MyBase.Dispose(disposing)
->
-> End Try
->
-> End Sub
+The tidy up of MapLink should occur after the form's components have been disposed of but before the form itself is disposed of.
+
+```vb
+Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+
+Try
+
+If disposing AndAlso components IsNot Nothing Then
+
+components.Dispose()
+
+End If
+
+Finally
+
+TSLNDrawingSurface.cleanup() 'MapLink Code
+
+MyBase.Dispose(disposing)
+
+End Try
+
+End Sub
+```
 
 ### The Drawing Surface and Map Data Layer
 
@@ -418,39 +440,41 @@ Finally, we'll hook up the menu event handlers to allow the map to load and the 
 
 For example:
 
-> Private Sub OpenToolStripMenuItem_Click(\...
->
-> If (OpenFileDialog1.ShowDialog() \<\> DialogResult.OK) Then
->
-> Return
->
-> End If
->
-> m_mapDataLayer = New TSLNMapDataLayer()
->
-> If (Not m_mapDataLayer.loadData(OpenFileDialog1.FileName)) Then
->
-> Dim errorStr As String = TSLNErrorStack.errorString("Errors:",
->
-> TSLNErrorCategory.TSLNErrorCategoryAll)
->
-> m_mapDataLayer = Nothing
->
-> If (Not errorStr Is Nothing) Then
->
-> MessageBox.Show(Me, "Error", errorStr, MessageBoxButtons.OK)
->
-> Return
->
-> End If
->
-> End If
->
-> m_drawingSurface.addDataLayer(m_mapDataLayer, "map")
->
-> m_drawingSurface.reset(True)
->
-> End Sub
+```vb
+Private Sub OpenToolStripMenuItem_Click(...
+
+If (OpenFileDialog1.ShowDialog() <> DialogResult.OK) Then
+
+Return
+
+End If
+
+m_mapDataLayer = New TSLNMapDataLayer()
+
+If (Not m_mapDataLayer.loadData(OpenFileDialog1.FileName)) Then
+
+Dim errorStr As String = TSLNErrorStack.errorString("Errors:",
+
+TSLNErrorCategory.TSLNErrorCategoryAll)
+
+m_mapDataLayer = Nothing
+
+If (Not errorStr Is Nothing) Then
+
+MessageBox.Show(Me, "Error", errorStr, MessageBoxButtons.OK)
+
+Return
+
+End If
+
+End If
+
+m_drawingSurface.addDataLayer(m_mapDataLayer, "map")
+
+m_drawingSurface.reset(True)
+
+End Sub
+```
 
 - Lastly when the File Exit menu button is clicked call the form's Close method.
 
@@ -468,49 +492,55 @@ To add Paint and Resize event handlers to your form, the steps are the same as o
 
 To the Paint event handler, first check that the drawing surface has been constructed and if so, request a redraw via the drawDU method, e.g.:
 
-> Private Sub Form1_Paint(\...
->
-> If (m_drawingSurface Is Nothing) Then
->
-> Return
->
-> End If
->
-> m_drawingSurface.drawDU(e.ClipRectangle.Left,
->
-> e.ClipRectangle.Top,
->
-> e.ClipRectangle.Right,
->
-> e.ClipRectangle.Bottom,
->
-> **True**)
->
-> End Sub
+```vb
+Private Sub Form1_Paint(...
+
+If (m_drawingSurface Is Nothing) Then
+
+Return
+
+End If
+
+m_drawingSurface.drawDU(e.ClipRectangle.Left,
+
+e.ClipRectangle.Top,
+
+e.ClipRectangle.Right,
+
+e.ClipRectangle.Bottom,
+
+**True**)
+
+End Sub
+```
 
 To the Resize event hander, once again first check that the drawing surface has been constructed and if so, request a resize via the wndResize method. The second to last argument is whether a redraw should occur, which is required as .NET will only redraw if the control gets larger. The final argument to the wndResize method dictates how the existing view should relate to the new view, e.g.:
 
-> Private Sub Form1_Resize(\...
->
-> If (m_drawingSurface Is Nothing) Then
->
-> Return
->
-> End If
->
-> m_drawingSurface.wndResize(ClientRectangle.Left,
->
-> ClientRectangle.Top,
->
-> ClientRectangle.Right,
->
-> ClientRectangle.Bottom,
->
-> True,
+```vb
+Private Sub Form1_Resize(...
+
+If (m_drawingSurface Is Nothing) Then
+
+Return
+
+End If
+
+m_drawingSurface.wndResize(ClientRectangle.Left,
+
+ClientRectangle.Top,
+
+ClientRectangle.Right,
+
+ClientRectangle.Bottom,
+
+True,
+```
 
 TSLNResizeActionEnum.TSLNResizeActionMaintainCentre)
 
-> End Sub
+```vb
+End Sub
+```
 
 Finally, we need to handle the initial resize of the main window. For some reason a Resize event is not sent by the .NET framework when the form is initially sized. So we'll have to tell the drawing surface its initial size. Simple copy the wndResize statement into your Load event handler after the drawing surface has been constructed.
 

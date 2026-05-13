@@ -188,3 +188,17 @@ You should not update layer or MapLink Studio configuration files are these cont
 
 <http://www.utf8everywhere.org/>
 
+[^1]: Please contact support if this is an issue so that we can gauge the importance of supporting Unicode in the 3D Text primitive.
+
+[^2]: 7-bit ASCII is a subset of UTF-8
+
+[^3]: The methods will be removed in a future release of MapLink. If you use these methods please let us know why so that we can assess the impact of removal.
+
+[^4]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
+
+[^5]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
+
+
+
+
+

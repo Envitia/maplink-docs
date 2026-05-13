@@ -676,43 +676,45 @@ TSLProfileHelper::lookupProfile("gridUtm10kmThickness",&utm10kmT, 1 );
 
 TSLProfileHelper::lookupProfile("gridUtm100kmThickness",&utm100kmT, 2);
 
-> m_mgrsGridLayer-\>setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeColour,
->
-> utm1kmC);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeStyle,
->
-> utm1kmS);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeThickness,
->
-> (double)utm1kmT);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm10km", 0, TSLRenderingAttributeEdgeColour,
->
-> utm10kmC);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm10km", 0, TSLRenderingAttributeEdgeStyle,
->
-> utm10kmS);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm01km", 0, TSLRenderingAttributeEdgeThickness,
->
-> (double)utm10kmT);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeColour,
->
-> utm100kmC);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeStyle,
->
-> utm100kmS);
->
-> m_mgrsGridLayer-\>setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeThickness,
->
-> (double)utm100kmT);
->
-> To initialise the MGRS grid text styles:
+```cpp
+m_mgrsGridLayer->setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeColour,
+
+utm1kmC);
+
+m_mgrsGridLayer->setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeStyle,
+
+utm1kmS);
+
+m_mgrsGridLayer->setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeThickness,
+
+(double)utm1kmT);
+
+m_mgrsGridLayer->setFeatureRendering("utm10km", 0, TSLRenderingAttributeEdgeColour,
+
+utm10kmC);
+
+m_mgrsGridLayer->setFeatureRendering("utm10km", 0, TSLRenderingAttributeEdgeStyle,
+
+utm10kmS);
+
+m_mgrsGridLayer->setFeatureRendering("utm01km", 0, TSLRenderingAttributeEdgeThickness,
+
+(double)utm10kmT);
+
+m_mgrsGridLayer->setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeColour,
+
+utm100kmC);
+
+m_mgrsGridLayer->setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeStyle,
+
+utm100kmS);
+
+m_mgrsGridLayer->setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeThickness,
+
+(double)utm100kmT);
+
+To initialise the MGRS grid text styles:
+```
 
 initialiseLabel(m_mgrsGridLayer, "mgrsLabel );
 
@@ -988,7 +990,9 @@ The default value is TSLTextBackgroundModeNone.
 
 Many of these attributes are interdependent.
 
-> The size of the font used to render the text is calculated using the following pseudo-code:
+```cpp
+The size of the font used to render the text is calculated using the following pseudo-code:
+```
 
 if ( obsolete fixed size flag is true )
 
@@ -1056,7 +1060,9 @@ The TSLSymbolRotation enum allows you to specify that the symbol will be rotatab
 
 - TSLRenderingAttributeSymbolFontCharacter: Symbols may be characters from a font. The font is referenced via an entry in the tslsymbols.dat file. For such symbol styles, this rendering attribute defines the character from the font to be displayed.
 
-> The size of the symbol used to render the text is calculated using the following pseudo-code:
+```cpp
+The size of the symbol used to render the text is calculated using the following pseudo-code:
+```
 
 if ( obsolete fixed size flag is true )
 

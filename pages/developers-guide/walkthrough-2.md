@@ -38,6 +38,7 @@ These handlers should be added to the View since each Drawing Surface is indepen
 >
 > In the OnLButtonUp method, check that a Drawing Surface has been created and if so convert the mouse position to a User Unit position. This position should be used as a parameter to the TSLDrawingSurface::pan method. If both pan and zoom were successful, then invalidate the window rectangle to force a redraw.
 
+```cpp
 void CHelloGlobeView::OnLButtonUp(UINT nFlags, CPoint point)
 
 {
@@ -48,15 +49,15 @@ if ( m_drawingSurface )
 
 double uux, uuy ;
 
-if (m_drawingSurface-\>DUToUU( point.x, point.y, &uux, &uuy ) )
+if (m_drawingSurface->DUToUU( point.x, point.y, &uux, &uuy ) )
 
 {
 
-if ( m_drawingSurface-\>pan( uux, uuy, false ) )
+if ( m_drawingSurface->pan( uux, uuy, false ) )
 
 {
 
-if ( m_drawingSurface-\>zoom( 25, true, false ) )
+if ( m_drawingSurface->zoom( 25, true, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -69,9 +70,10 @@ InvalidateRect( 0, FALSE ) ;
 CView::OnLButtonUp(nFlags, point);
 
 }
-
+```
 > In the OnRButtonUp method, check that a Drawing Surface has been created and if so, simply zoom out.
 
+```cpp
 void CHelloGlobeView::OnRButtonUp(UINT nFlags, CPoint point)
 
 {
@@ -80,7 +82,7 @@ if ( m_drawingSurface )
 
 {
 
-if ( m_drawingSurface-\>zoom( 25, false, false ) )
+if ( m_drawingSurface->zoom( 25, false, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -89,7 +91,7 @@ InvalidateRect( 0, FALSE ) ;
 CView::OnRButtonUp(nFlags, point);
 
 }
-
+```
 ### Zoom to Rectangle
 
 For this interaction we need to remember the position that the user first pressed the left button, and when they release it compare the press and release positions. If they are more than 3 pixels apart then we can assume that they have dragged a rectangle, convert the press and release mouse positions to User Units and ask the TSLDrawingSurface to display that area. Of course, the aspect ratio of the selected rectangle may not match the aspect ratio of the window. To cope with such situations, the TSLDrawingSurface::resize method has a parameter to indicate that MapLink should adjust the specified rectangle to match the window aspect ratio. If the aspect ratios are mismatched, then MapLink will attempt to ensure that the entirety of the specified rectangle is displayed.
@@ -98,6 +100,7 @@ For this interaction we need to remember the position that the user first presse
 >
 > In the OnLButtonDown method, store the mouse position.
 
+```cpp
 void CHelloGlobeView::OnLButtonDown(UINT nFlags, CPoint point)
 
 {
@@ -107,10 +110,11 @@ m_lmb = point ;
 CView::OnLButtonDown(nFlags, point);
 
 }
-
+```
 > Modify the OnLButtonUp method after the Drawing Surface has been validated.
 
-if ( abs( point.x - m_lmb.x ) \<= 3 && abs( point.y - m_lmb.y ) \<= 3 )
+```cpp
+if ( abs( point.x - m_lmb.x ) <= 3 && abs( point.y - m_lmb.y ) <= 3 )
 
 {
 
@@ -118,15 +122,15 @@ if ( abs( point.x - m_lmb.x ) \<= 3 && abs( point.y - m_lmb.y ) \<= 3 )
 
 double x, y ;
 
-if ( m_drawingSurface-\>DUToUU( point.x, point.y, &x, &y ) )
+if ( m_drawingSurface->DUToUU( point.x, point.y, &x, &y ) )
 
 {
 
-if ( m_drawingSurface-\>pan( x, y, false ) )
+if ( m_drawingSurface->pan( x, y, false ) )
 
 {
 
-if ( m_drawingSurface-\>zoom( 25, true, false ) )
+if ( m_drawingSurface->zoom( 25, true, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -144,20 +148,20 @@ else
 
 double x1, y1, x2, y2 ;
 
-if ( m_drawingSurface-\>DUToUU( point.x, point.y, &x1, &y1 )
+if ( m_drawingSurface->DUToUU( point.x, point.y, &x1, &y1 )
 
-&& m_drawingSurface-\>DUToUU( m_lmb.x, m_lmb.y, &x2, &y2 ) )
+&& m_drawingSurface->DUToUU( m_lmb.x, m_lmb.y, &x2, &y2 ) )
 
 {
 
-if ( m_drawingSurface-\>resize( x1, y1, x2, y2, false, true ) )
+if ( m_drawingSurface->resize( x1, y1, x2, y2, false, true ) )
 
 InvalidateRect( 0, FALSE ) ;
 
 }
 
 }
-
+```
 The TSLViewMode classes supplied with the MapLink SDK samples have a fully functional "Zoom to Rectangle" mode, including echo of the rubber-band rectangle. For the purposes of this simple introduction, we shall ignore the echo rectangle. For information about the echo modes, please see the "mfc" sample.
 
 ### Grab Pan
@@ -172,12 +176,14 @@ CHelloGlobeView::CHelloGlobeView()
 
 : m_drawingSurface(NULL), m_grabbed(false), m_checkForGrab(false)
 
+```cpp
 {
 
 }
-
+```
 > Use Properties, Messages to add a handler to the View for the WM_RBUTTONDOWN event. In the OnRButtonDown method, store the mouse position and clear the m_grabbed flag and set the m_checkForGrab flag. These will be checked in the WM_MOUSEMOVE handler and the WM_RBUTTONUP handler.
 
+```cpp
 void CHelloGlobeView::OnRButtonDown(UINT nFlags, CPoint point)
 
 {
@@ -191,9 +197,10 @@ m_checkForGrab = true ;
 CView::OnRButtonDown(nFlags, point);
 
 }
-
+```
 The OnRButtonUp method now needs modifying to ensure that the zoom out only occurs if no grab was active and the grab related flags should be cleared down.
 
+```cpp
 void CHelloGlobeView::OnRButtonUp(UINT nFlags, CPoint point)
 
 {
@@ -202,7 +209,7 @@ if ( m_drawingSurface && !m_grabbed )
 
 {
 
-if ( m_drawingSurface-\>zoom( 25, false, false ) )
+if ( m_drawingSurface->zoom( 25, false, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -213,21 +220,23 @@ m_grabbed = m_checkForGrab = false ;
 CView::OnRButtonUp(nFlags, point);
 
 }
-
+```
 The next step is to create a mouse move handler and determine whether any grab is active. If so, then the new display centre needs to be calculated and passed to MapLink. As before, the TSLDrawingSurface::pan method will return true on success and false on failure. A successful pan should invalidate the window rectangle.
 
 Use Properties, Messages to add a handler to the View for the WM_MOUSEMOVE event
 
+```cpp
 void CHelloGlobeView::OnMouseMove(UINT nFlags, CPoint point)
 
 {
 
 if ( m_checkForGrab
-
+```
 && ( m_grabbed \|\| abs( point.x - m_rmb.x ) \> 3
 
 \|\| abs( point.y - m_rmb.y ) \> 3 ) )
 
+```cpp
 {
 
 // Calculate offset between the last point and the new point
@@ -246,19 +255,19 @@ m_grabbed = true ;
 
 // No DUPerUU() function so we will take the long way round.
 
-double uu_per_du = m_drawingSurface-\>TMCperDU()
+double uu_per_du = m_drawingSurface->TMCperDU()
 
-/ m_drawingSurface-\>TMCperUU() ;
+/ m_drawingSurface->TMCperUU() ;
 
-double uu_offset_x = du_offset_x \* uu_per_du ;
+double uu_offset_x = du_offset_x * uu_per_du ;
 
-double uu_offset_y = du_offset_y \* uu_per_du ;
+double uu_offset_y = du_offset_y * uu_per_du ;
 
 // Get the current centre point of the Drawing Surface
 
 double x, y, x1, y1, x2, y2 ;
 
-m_drawingSurface-\>getUUExtent( &x1, &y1, &x2, &y2 ) ;
+m_drawingSurface->getUUExtent( &x1, &y1, &x2, &y2 ) ;
 
 x = ( x1 + x2 ) / 2 ;
 
@@ -274,7 +283,7 @@ y += uu_offset_y ;
 
 // Request redraw only if pan is successful
 
-if ( m_drawingSurface-\>pan( x, y, false ) )
+if ( m_drawingSurface->pan( x, y, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -283,7 +292,7 @@ InvalidateRect( 0, FALSE ) ;
 CView::OnMouseMove(nFlags, point);
 
 }
-
+```
 ## Mouse Wheel
 
 Many modern PC systems will have a wheel mouse available, where a wheel has replaced the middle button. This can spin and also be pressed to act as a button.
@@ -314,6 +323,7 @@ Assuming you have disabled generic wheel support for your application, you can a
 
 > Use Properties, Messages to add a handler to the View for the WM_MOUSEWHEEL message. In the OnMouseWheel method, it either zooms in or out dependent upon the wheel direction.
 
+```cpp
 BOOL CHelloGlobeView::OnMouseWheel(UINT nFlags,short zDelta,CPoint pt)
 
 {
@@ -322,7 +332,7 @@ BOOL CHelloGlobeView::OnMouseWheel(UINT nFlags,short zDelta,CPoint pt)
 
 if ( m_drawingSurface
 
-&& m_drawingSurface-\>zoom( 30.0, zDelta \> 0, false ) )
+&& m_drawingSurface->zoom( 30.0, zDelta > 0, false ) )
 
 {
 
@@ -333,9 +343,10 @@ InvalidateRect( NULL, FALSE );
 return CView::OnMouseWheel(nFlags, zDelta, pt);
 
 }
-
+```
 Use Properties, Messages to add a handler to the View for the WM_MBUTTONUP event.
 
+```cpp
 void CHelloGlobeView::OnMButtonUp(UINT nFlags, CPoint point)
 
 {
@@ -344,11 +355,11 @@ double x, y ;
 
 if ( m_drawingSurface
 
-&& m_drawingSurface-\>DUToUU( point.x, point.y, &x, &y ) )
+&& m_drawingSurface->DUToUU( point.x, point.y, &x, &y ) )
 
 {
 
-if ( m_drawingSurface-\>pan( x, y, false ) )
+if ( m_drawingSurface->pan( x, y, false ) )
 
 InvalidateRect( 0, FALSE ) ;
 
@@ -357,4 +368,4 @@ InvalidateRect( 0, FALSE ) ;
 CView::OnMButtonUp(nFlags, point);
 
 }
-
+```

@@ -124,6 +124,7 @@ In the private section of the Document, declare a pointer to a TSLMapDataLayer o
 
 Use Properties, Overrides to create an OnOpenDocument handler and in this method, instantiate a Data Layer and load the map file ensuring that you check for errors.
 
+```cpp
 BOOL CHelloGlobeDoc::OnOpenDocument(LPCTSTR lpszPathName)
 
 {
@@ -134,7 +135,7 @@ return FALSE;
 
 m_mapDataLayer = new TSLMapDataLayer() ;
 
-if ( !m_mapDataLayer-\>loadData( lpszPathName ) )
+if ( !m_mapDataLayer->loadData( lpszPathName ) )
 
 {
 
@@ -142,13 +143,13 @@ TSLSimpleString msg( "" );
 
 bool anyErrors = TSLThreadedErrorStack::errorString( msg,
 
-"Cannot load map : \\n" ) ;
+"Cannot load map : \n" ) ;
 
 if ( anyErrors )
 
 AfxMessageBox( msg, MB_OK ) ;
 
-m_mapDataLayer-\>destroy() ;
+m_mapDataLayer->destroy() ;
 
 m_mapDataLayer = NULL ;
 
@@ -159,11 +160,12 @@ return FALSE ;
 return TRUE;
 
 }
-
+```
 Of course, you should also destroy the Data Layer once it is finished with.
 
 Use Properties, Overrides to override the DeleteContents method and in here, destroy the Map Data Layer
 
+```cpp
 void CHelloGlobeDoc::DeleteContents()
 
 {
@@ -172,7 +174,7 @@ if ( m_mapDataLayer )
 
 {
 
-m_mapDataLayer-\>destroy() ;
+m_mapDataLayer->destroy() ;
 
 m_mapDataLayer = NULL ;
 
@@ -181,7 +183,7 @@ m_mapDataLayer = NULL ;
 CDocument::DeleteContents();
 
 }
-
+```
 ## Managing the View
 
 In terms of the Document/View architecture, the View contains an instance of a TSLDrawingSurface derived object - TSLNTSurface on Windows platforms, TSLMotifSurface (for historical reasons this surface has Motif in its name however the drawing surface only uses X11 client libraries such as Xft, XRender and Xlib) on X11 platforms. This is the only significant platform specific difference. In an MFC application, this is usually instantiated in the OnInitialUpdate method since the associated window doesn't exist in the OnCreate event or in the View constructor.
@@ -190,6 +192,7 @@ In the private section of the View, declare a pointer to a TSLNTSurface object. 
 
 Use Properties, Overrides to create an OnInitialUpdate handler and in this method, check to see if a Drawing Surface exists and create one if necessary. You should also tell MapLink about the default size of the window. In the destructor of the View, delete the Drawing Surface if it exists.
 
+```cpp
 void CHelloGlobeView::OnInitialUpdate()
 
 {
@@ -206,7 +209,7 @@ RECT cr ;
 
 GetClientRect( &cr ) ;
 
-m_drawingSurface-\>wndResize( cr.left, cr.top,
+m_drawingSurface->wndResize( cr.left, cr.top,
 
 cr.right, cr.bottom, false ) ;
 
@@ -214,22 +217,23 @@ cr.right, cr.bottom, false ) ;
 
 }
 
-CHelloGlobeView::\~CHelloGlobeView()
+CHelloGlobeView::~CHelloGlobeView()
 
 {
 
 if ( m_drawingSurface )
 
 {
-
+```
 delete m_drawingSurface ;
 
 m_drawingSurface = NULL ;
 
+```cpp
 }
 
 }
-
+```
 ## Binding Layers and Drawing Surfaces
 
 Once both Document and View are ready and available, you need to attach the Data Layers to the Drawing Surface so that MapLink can display it.
@@ -240,24 +244,26 @@ The addToSurface method should be called in the OnInitialUpdate method of the Vi
 
 Create a public addToSurface method in the Document that takes a TSLDrawingSurface pointer as a parameter. In this, add the Document's Data Layer to the specified Drawing Surface.
 
-bool CHelloGlobeDoc::addToSurface(TSLDrawingSurface \*drawingSurface)
+```cpp
+bool CHelloGlobeDoc::addToSurface(TSLDrawingSurface *drawingSurface)
 
 {
 
-if ( !m_mapDataLayer \|\| !drawingSurface )
+if ( !m_mapDataLayer || !drawingSurface )
 
 return false ;
 
-return drawingSurface-\>addDataLayer( m_mapDataLayer, "map" ) ;
+return drawingSurface->addDataLayer( m_mapDataLayer, "map" ) ;
 
 }
-
+```
 Call this method in the View's OnInitialUpdate method, after the Drawing Surface has been created. At this point, it is also appropriate to define the initial visible map area. Here we call the reset method to display the entire map.
 
-if ( GetDocument()-\>addToSurface( m_drawingSurface ) )
+```cpp
+if ( GetDocument()->addToSurface( m_drawingSurface ) )
 
-m_drawingSurface-\>reset( false ) ;
-
+m_drawingSurface->reset( false ) ;
+```
 Note that MapLink automatically takes care of Data Layer and Drawing Surface separation when either is destroyed.
 
 ## Handling Resize Events
@@ -268,6 +274,7 @@ After handling a resize event, Windows or X will usually post a paint message so
 
 Use Properties, Messages to create a WM_SIZE handler on the View class since it is not there by default. In this method, check to see if a Drawing Surface exists and if so, pass the new corners of the window to the Drawing Surface using the wndResize method. This example will also inhibit an automatic redraw and ask MapLink to maintain the aspect ratio locking the top left corner of the visible map area.
 
+```cpp
 void CHelloGlobeView::OnSize(UINT nType, int cx, int cy)
 
 {
@@ -278,21 +285,22 @@ if ( m_drawingSurface )
 
 {
 
-m_drawingSurface-\>wndResize( 0, 0, cx, cy, false,
+m_drawingSurface->wndResize( 0, 0, cx, cy, false,
 
 TSLResizeActionMaintainTopLeft );
 
 }
 
 }
-
+```
 ## Handling Paint Events
 
 A paint event can be triggered for many reasons, some of which will only want to redraw part of the window. Under these circumstances, Windows will set up a Clip Box to define the part that needs redrawing. To improve performance, it is best to only redraw that part. It is most efficient to pass the required Device Unit extent to the Drawing Surface.
 
 In the OnDraw method of the View, query the required redraw area and pass it to the Drawing Surface, asking MapLink to clear the background first.
 
-void CHelloGlobeView::OnDraw(CDC\* pDC)
+```cpp
+void CHelloGlobeView::OnDraw(CDC* pDC)
 
 {
 
@@ -302,18 +310,18 @@ if ( m_drawingSurface )
 
 RECT rect ;
 
-if ( pDC-\>GetClipBox( &rect ) == NULLREGION )
+if ( pDC->GetClipBox( &rect ) == NULLREGION )
 
 GetClientRect( &rect ) ;
 
-m_drawingSurface-\>drawDU( rect.left, rect.bottom,
+m_drawingSurface->drawDU( rect.left, rect.bottom,
 
 rect.right, rect.top, true ) ;
 
 }
 
 }
-
+```
 Now build the program, run it and load one of the sample maps.
 
 ## Reducing Flicker and Improving Performance
@@ -330,13 +338,14 @@ To solve the second issue, you should inhibit Windows from clearing the window.
 
 > Use Properties, Messages to add a View handler for the WM_ERASEBKGND message. Return TRUE from this method to indicate to windows that the application will erase the background.
 
-BOOL CHelloGlobeView::OnEraseBkgnd(CDC\* pDC)
+```cpp
+BOOL CHelloGlobeView::OnEraseBkgnd(CDC* pDC)
 
 {
 
 return TRUE ;
 
 }
-
+```
 The inhibition of the WM_ERASEBKGND message is appropriate since MapLink is drawing to the entire window. If MapLink were drawing to only part of the window then it may be necessary for the application to erase the areas that MapLink is not rendering into.
 

@@ -10,12 +10,13 @@ Introducing multi-threading complicates matters as MapLink is not completely thr
 
 You should review the whole of this section if you are going to use MapLink in multiple threads.
 
+```cpp
 If you are using MapLink for drawing in multiple threads, then you may need to use the following methods:
 
 - TSLUtilityFunctions::getThreadedOptions
 
 - TSLUtilityFunctions::setThreadedOptions
-
+```
 The following classes have been updated to provide additional functions which do not store results in static data:
 
 - TSLCoordinateConverter
@@ -146,10 +147,11 @@ Note: Delayed loading of resources is not thread-safe.
 
 ## Drawing Surface Rendering
 
+```cpp
 While in general the drawing is thread safe you should avoid sharing layers between threads (see [28.8](#data-layers-1)).
 
 If you wish to share the TSLStandardDataLayer (see [28.9](#standard-data-layer-1)) between threads then you need to call TSLUtilityFunctions::setThreadedOptions to set the bit represented by TSLThreadedOptionsRenderingSupport.
-
+```
 ## Coordinate System Resource Loading
 
 The loading of the Coordinate System information (TSLCoordianteSystem::loadCoordinateSystems) is not thread safe and therefore the coordinate systems should be loaded before the application uses MapLink in a threaded manner. A map loads and creates a coordinate system local to the layer so it is not strictly necessary to load all the Coordinate Systems unless you need to convert between different projections.
@@ -252,10 +254,11 @@ If you update a layer's content the changes will not be reflected upon the displ
 
 ### 3D Drawing Surface Rendering
 
+```cpp
 While in general the drawing is thread safe you should avoid sharing layers between threads (see [28.8](#data-layers-1)).
 
 If you wish to share the TSL3DStandardDataLayer between threads, you must call TSLUtilityFunctions::setThreadedOptions to set the bit represented by TSLThreadedOptionsRenderingSupport. In addition, you must add the layer to all drawing surfaces before you start any drawing and you should not edit the layer once drawing has occurred.
-
+```
 Ideally you should not share the TSL3DStandardDataLayer between threads principally because we store data upon the entities which is drawing surface specific and the locking will affect the performance of the drawing.
 
 ## X11 Threading
@@ -337,142 +340,158 @@ If you have difficulty integrating MapLink with Qt please contact support.
 
 Add a method to the Custom Widget as follows:
 
-> virtual QPaintEngine \*paintEngine() const
->
-> {
->
-> return 0;
->
-> }
+```cpp
+virtual QPaintEngine *paintEngine() const
+
+{
+
+return 0;
+
+}
+```
 
 This stops Qt drawing into the Widget itself.
 
 In the Custom Widget constructor add the following:
 
-> // This is required for Qt4 to stop the back ground being drawn
->
-> // and Qt Double buffering. You also need to override
->
-> // paintEngine().
->
-> //
->
-> // Ref:
->
-> // <http://lists.trolltech.com/qt-interest/2006-02/thread00004-0.html>
->
-> //
->
-> setAttribute( Qt::WA_NoBackground, true);
->
-> setAttribute( Qt::WA_NoSystemBackground, true);
->
-> // Possible issue with this for Qt4.1.0 and newer versions.
->
-> //
->
-> // See:
->
-> // <http://www.trolltech.com/developer/task-tracker/index_html?id=106922&method=entry>
->
-> // <http://lists.trolltech.com/qt-interest/2006-05/thread00316-0.html>
->
-> //
->
-> // Talk to Trolltech support about getting a fix if this proves to
->
-> // be a problem
->
-> //
->
-> // NOTE: I am not seeing this problem, probably because I'm doing
->
-> // things slightly differently from the example.
->
-> setAttribute( Qt::WA_PaintOnScreen, true);
->
-> setAutoFillBackground(false); //should be true for Qt4.1 and 4.0
+```cpp
+// This is required for Qt4 to stop the back ground being drawn
+
+// and Qt Double buffering. You also need to override
+
+// paintEngine().
+
+//
+
+// Ref:
+
+// <http://lists.trolltech.com/qt-interest/2006-02/thread00004-0.html>
+
+//
+
+setAttribute( Qt::WA_NoBackground, true);
+
+setAttribute( Qt::WA_NoSystemBackground, true);
+
+// Possible issue with this for Qt4.1.0 and newer versions.
+
+//
+
+// See:
+
+// <http://www.trolltech.com/developer/task-tracker/index_html?id=106922&method=entry>
+
+// <http://lists.trolltech.com/qt-interest/2006-05/thread00316-0.html>
+
+//
+
+// Talk to Trolltech support about getting a fix if this proves to
+
+// be a problem
+
+//
+
+// NOTE: I am not seeing this problem, probably because I'm doing
+
+// things slightly differently from the example.
+
+setAttribute( Qt::WA_PaintOnScreen, true);
+
+setAutoFillBackground(false); //should be true for Qt4.1 and 4.0
+```
 
 For Qt4.1 and newer you will need to add the following:
 
-> setAttribute(Qt::WA_OpaquePaintEvent);
+```cpp
+setAttribute(Qt::WA_OpaquePaintEvent);
+```
 
 When you construct the MapLink Drawing Surface use the winId or handle method as follows:
 
-> // Attaching to the window is much more efficent.
+```cpp
+// Attaching to the window is much more efficent.
+```
 
 #ifdef WINNT
 
-> HWND hWnd = (HWND) winId();
->
-> m_drawingSurface = new TSLNTSurface( hWnd, false );
+```cpp
+HWND hWnd = (HWND) winId();
 
+m_drawingSurface = new TSLNTSurface( hWnd, false );
+```
+
+```cpp
 #else
 
-QX11Info x11info = this-\>x11Info();
+QX11Info x11info = this->x11Info();
 
-Display \*display = x11info.display();
+Display *display = x11info.display();
 
 int screenNum = x11info.screen();
 
-Visual \*visual = (Visual \*)x11info.visual();
+Visual *visual = (Visual *)x11info.visual();
 
 Qt::HANDLE colourmap = x11info.colormap();
 
 Qt::HANDLE drawable = handle();
 
-Screen \*screen = ScreenOfDisplay(display, screenNum);
+Screen *screen = ScreenOfDisplay(display, screenNum);
 
 m_drawingSurface = new TSLMotifSurface( display, screen, colourmap,
 
 drawable, 0, visual);
 
 #endif
-
+```
 The paintEvent in the Custom Widget should look something like this:
 
-> void MapLinkWidget::paintEvent ( QPaintEvent \*rect )
->
-> {
->
-> if (m_drawingSurface == NULL)
->
-> create();
->
-> if (m_initialUpdate)
->
-> resizeCanvas();
->
-> const QRect &r = rect-\>rect();
->
-> long x1 = r.x() ;
->
-> long y2 = r.y() ;
->
-> long x2 = r.x() + r.width() ;
->
-> long y1 = r.y() + r.height() ;
->
-> m_drawingSurface-\>drawDU( x1, y1, x2, y2, true, true ) ;
->
-> }
+```cpp
+void MapLinkWidget::paintEvent ( QPaintEvent *rect )
+
+{
+
+if (m_drawingSurface == NULL)
+
+create();
+
+if (m_initialUpdate)
+
+resizeCanvas();
+
+const QRect &r = rect->rect();
+
+long x1 = r.x() ;
+
+long y2 = r.y() ;
+
+long x2 = r.x() + r.width() ;
+
+long y1 = r.y() + r.height() ;
+
+m_drawingSurface->drawDU( x1, y1, x2, y2, true, true ) ;
+
+}
+```
 
 #### Using Qt 5.1 or later
 
 Add a method to the Custom Widget as follows:
 
-> virtual QPaintEngine \*paintEngine() const
->
-> {
->
-> return NULL;
->
-> }
+```cpp
+virtual QPaintEngine *paintEngine() const
+
+{
+
+return NULL;
+
+}
+```
 
 This stops Qt drawing into the Widget itself.
 
 In the Custom Widget constructor add the following:
 
+```cpp
 setAttribute( Qt::WA_OpaquePaintEvent );
 
 setAttribute( Qt::WA_PaintOnScreen );
@@ -480,18 +499,19 @@ setAttribute( Qt::WA_PaintOnScreen );
 setAttribute( Qt::WA_NativeWindow );
 
 setAutoFillBackground( false );
-
+```
 When you construct the MapLink Drawing Surface use the winId method as follows:
 
+```cpp
 #ifdef WIN32
 
 m_surface = new TSLNTSurface( (HWND)winId(), false );
 
-#elif QT_VERSION \>= 0x50100
+#elif QT_VERSION >= 0x50100
 
 // Qt 5.1 or newer
 
-Display \*display = QX11Info::display();
+Display *display = QX11Info::display();
 
 WId wid = winId();
 
@@ -510,7 +530,7 @@ attribs.visual );
 // for the widget. It is recommended that you upgrade to Qt 5.1 or later.
 
 #endif
-
+```
 #### Drawing on top of MapLink using Qt
 
 In order to use Qt to draw on top of MapLink rendering, you will need to draw the map data into a QtPixmap and blit the QtPixmap to the screen. The code to disable the Qt double buffering and background clearing is probably no-longer required depending on what you are trying to achieve.
@@ -533,25 +553,27 @@ When you create a TSLDisplayObject derived class you have two options when imple
 
 2.  Draw using X11 drawing methods (non-portable, optimal).
 
-> Obtaining the Display and Drawable can be achieved as follows:
->
-> bool AircraftDO::draw(TSLRenderingInterface \*d_surface,
->
-> TSLEnvelope \*d_extent )
->
-> {
->
-> long ldisplay;
->
-> Drawable drawable = (Drawable)
->
-> (d_surface-\>handleToDrawable( &ldisplay ));
->
-> Display\* display = (Display\*)ldisplay;
->
-> // ......
->
-> }
+Obtaining the Display and Drawable can be achieved as follows:
+
+```cpp
+bool AircraftDO::draw(TSLRenderingInterface *d_surface,
+
+TSLEnvelope *d_extent )
+
+{
+
+long ldisplay;
+
+Drawable drawable = (Drawable)
+
+(d_surface->handleToDrawable( &ldisplay ));
+
+Display* display = (Display*)ldisplay;
+
+// ......
+
+}
+```
 
 The TSLRenderingInterface also provides access to the Visual, Colormap and Screen. This will make it easier to create pixmaps and images in a custom data layer or via a DDO.
 
@@ -815,11 +837,12 @@ TSLDrawingSurface::loadStandardConfig( configDirPath ) ;
 
 TSLCoordinateSystem::loadCoordinateSystems( transformsFile );
 
+```cpp
 TSLSimpleString msg( "" );
 
 bool anyErrors = TSLThreadedErrorStack::errorString( msg,
 
-"Initialisation Errors : \\n" ) ;
+"Initialisation Errors : \n" ) ;
 
 if ( anyErrors )
 
@@ -830,20 +853,24 @@ AfxMessageBox( msg, MB_OK ) ;
 exit( 0 ) ;
 
 }
-
+```
 When your application is deployed, make configDirPath variable point to the location of your applications copy of the MapLink config directory. The transformsFile will need to be handled in a similar manner.
 
 Once MapLink has been initialised, it needs to be cleaned up when the application exits, otherwise Visual Studio will report numerous "leaks" which are in fact memory currently in use when the application exits. This should be done in the ExitInstance method of the App class. You will need to use the class Properties Overrides to add this method since the MFC Application Wizard doesn't add it by default. Alternatively, in Single Document applications, it may be called in the destructor of the View or Document class.
 
 Use Properties, Overrides to create an ExitInstance method on the App object. In this method, call MapLink to cleanup the configuration file load.
 
-> int CHelloGlobe::ExitInstance()
->
-> {
+```cpp
+int CHelloGlobe::ExitInstance()
+
+{
+```
 
 TSLDrawingSurface::cleanup( ) ;
 
-> return CWinApp::ExitInstance();
+```cpp
+return CWinApp::ExitInstance();
+```
 
 }
 
@@ -857,73 +884,81 @@ In the private section of the Document, declare a bool and a pointer to a TSLMap
 
 CHelloGlobeDoc::CHelloGlobeDoc () : m_newMap( false )
 
+```cpp
 {
 
 m_mapDataLayer = new TSLMapDataLayer() ;
 
 }
+```
+```cpp
+CHelloGlobeDoc::~CHelloGlobeDoc ()
 
-> CHelloGlobeDoc::\~CHelloGlobeDoc ()
->
-> {
->
-> if ( m_mapDataLayer )
->
-> {
->
-> m_mapDataLayer-\>destroy() ;
->
-> m_mapDataLayer = NULL ;
+{
 
+if ( m_mapDataLayer )
+
+{
+
+m_mapDataLayer->destroy() ;
+
+m_mapDataLayer = NULL ;
+```
+
+```cpp
 }
 
 }
+```
+Use Properties, Overrides to create an OnOpenDocument handler and in this method, set you bool flag to true and store the filename in a member variable. Create a private method loadMap that takes no parameters and returns void
 
-> Use Properties, Overrides to create an OnOpenDocument handler and in this method, set you bool flag to true and store the filename in a member variable. Create a private method loadMap that takes no parameters and returns void
->
-> BOOL MapLink3DSimpleDoc::OnOpenDocument(LPCTSTR lpszPathName)
->
-> {
->
-> if (!CDocument::OnOpenDocument(lpszPathName)) return FALSE;
->
-> m_newMap = true ;
->
-> m_mapName = lpszPathName ;
->
-> return TRUE;
+```cpp
+BOOL MapLink3DSimpleDoc::OnOpenDocument(LPCTSTR lpszPathName)
+
+{
+
+if (!CDocument::OnOpenDocument(lpszPathName)) return FALSE;
+
+m_newMap = true ;
+
+m_mapName = lpszPathName ;
+
+return TRUE;
+```
 
 }
 
-> void MapLink3DSimpleDoc::loadMap()
->
-> {
->
-> if (!m_newMap) return ;
->
-> m_mapDataLayer-\>removeData() ;
->
-> TSLThreadedErrorStack::clear() ;
->
-> // Load map and then display any errors that have occurred
->
-> m_mapDataLayer-\>loadData( m_mapName.c_str() ) ;
->
-> TSLSimpleString msg( "" );
->
-> bool anyErrors = TSLThreadedErrorStack::errorString( msg,
->
-> "Cannot load map\\n" ) ;
->
-> if ( msg )
->
-> AfxMessageBox( msg, MB_ICONERROR ) ;
->
-> else
->
-> m_mapDataLayer-\>notifyChanged() ;
->
-> }
+```cpp
+void MapLink3DSimpleDoc::loadMap()
+
+{
+
+if (!m_newMap) return ;
+
+m_mapDataLayer->removeData() ;
+
+TSLThreadedErrorStack::clear() ;
+
+// Load map and then display any errors that have occurred
+
+m_mapDataLayer->loadData( m_mapName.c_str() ) ;
+
+TSLSimpleString msg( "" );
+
+bool anyErrors = TSLThreadedErrorStack::errorString( msg,
+
+"Cannot load map\n" ) ;
+
+if ( msg )
+
+AfxMessageBox( msg, MB_ICONERROR ) ;
+
+else
+
+m_mapDataLayer->notifyChanged() ;
+
+}
+```
 
 #### Managing the View
 
@@ -933,6 +968,7 @@ In the private section of the View, declare a pointer to a TSL3DWinGLSurface obj
 
 Use Properties, Overrides to create an OnInitialUpdate handler and in this method, check to see if a Drawing Surface exists and create one if necessary. You can optionally also set a sky, wire frame and solid colours as well as drape a picture over the earth, as is done below. You will need a private member variable of type CString, called m_backdrop to allow you to do this. You should also tell MapLink about the default size of the window.
 
+```cpp
 void CHelloGlobeView::OnInitialUpdate()
 
 {
@@ -943,66 +979,67 @@ if ( !m_drawingSurface )
 
 {
 
-> CRect rect ;
+CRect rect ;
 
 GetClientRect( &rect ) ;
 
-> // Create the drawing surface
+// Create the drawing surface
 
 m_drawingSurface = new TSL3DWinGLSurface ( m_hWnd, false );
 
-> // Give the 'sky' a colour!
->
-> static const TSLStyleID skyColourIndex( 4 );
->
-> m_drawingSurface-\>setBackgroundColour( skyColourIndex );
->
-> static int const wireframeColourIndex( 181 );
->
-> static int const solidColourIndex( 60 );
->
-> m_backdrop = TSLUtilityFunctions::getMapLinkHome();
->
-> m_backdrop += "/config/earth.png";
->
-> // Set the bitmap to display over the terrain plus colours
->
-> // for solid-backdrop and wireframe rendering.
->
-> m_drawingSurface-\>setTerrainRendering( wireframeColourIndex,
->
-> solidColourIndex, m_backdrop );
->
-> // Notify surface what size the window is
+// Give the 'sky' a colour!
 
-m_drawingSurface-\>wndResize(0, 0, rect.Width(), rect.Height());
+static const TSLStyleID skyColourIndex( 4 );
+
+m_drawingSurface->setBackgroundColour( skyColourIndex );
+
+static int const wireframeColourIndex( 181 );
+
+static int const solidColourIndex( 60 );
+
+m_backdrop = TSLUtilityFunctions::getMapLinkHome();
+
+m_backdrop += "/config/earth.png";
+
+// Set the bitmap to display over the terrain plus colours
+
+// for solid-backdrop and wireframe rendering.
+
+m_drawingSurface->setTerrainRendering( wireframeColourIndex,
+
+solidColourIndex, m_backdrop );
+
+// Notify surface what size the window is
+
+m_drawingSurface->wndResize(0, 0, rect.Width(), rect.Height());
 
 // The following line is discussed in 12.5.9
 
-m_drawingSurface-\>setRenderingCallback(renderingCallback, this);
+m_drawingSurface->setRenderingCallback(renderingCallback, this);
 
 }
 
 }
-
+```
 In the destructor of the View, destroy the Drawing Surface if it exists.
 
 CHelloGlobeView::\~CHelloGlobeView()
 
+```cpp
 {
 
 if ( m_drawingSurface )
 
 {
 
-m_drawingSurface-\>destroy() ;
+m_drawingSurface->destroy() ;
 
 m_drawingSurface = NULL ;
 
 }
 
 }
-
+```
 #### Binding Layers and Drawing Surfaces
 
 Once both Document and View are ready available, you need to attach the Data Layers to the Drawing Surface so that MapLink can display it.
@@ -1013,31 +1050,35 @@ The addToSurface method should be called in the OnInitialUpdate method of the Vi
 
 Create a public addToSurface method in the Document that takes a TSLDrawingSurface pointer as a parameter. In this, add the Document's Data Layer to the specified Drawing Surface.
 
-bool CHelloGlobeDoc::addToSurface(TSL3DWinGLSurface \*drawingSurface)
+```cpp
+bool CHelloGlobeDoc::addToSurface(TSL3DWinGLSurface *drawingSurface)
 
 {
 
-if ( !m_mapDataLayer \|\| !drawingSurface )
+if ( !m_mapDataLayer || !drawingSurface )
 
 return false ;
 
 loadMap(); // load the map.
 
-return drawingSurface-\>addDataLayer( m_mapDataLayer, "map" ) ;
+return drawingSurface->addDataLayer( m_mapDataLayer, "map" ) ;
 
 }
-
+```
 Call this method in the View's OnInitialUpdate method, after the Drawing Surface has been created. At this point, it is also appropriate to define the initial visible area. Here we call the reset method of the TSL3DCamera, before providing a position for the camera and the direction in which it is pointing. The workings of TSL3DCamera are discussed in 12.8.
 
-if ( GetDocument()-\>addToSurface( m_drawingSurface ) )
+```cpp
+if ( GetDocument()->addToSurface( m_drawingSurface ) )
 
 {
 
-m_drawingSurface-\>camera()-\>reset();
+m_drawingSurface->camera()->reset();
+```
+```cpp
+m_drawingSurface->camera()->moveTo( 50.0, 0.0, 10000000.0,
 
-> m_drawingSurface-\>camera()-\>moveTo( 50.0, 0.0, 10000000.0,
->
-> TSL3DCameraMoveActionNone ) ;
+TSL3DCameraMoveActionNone ) ;
+```
 
 m_drawingSurface-\>camera()-\>lookAt( 50.0, -5.0, 0.0, false ) ;
 
@@ -1053,6 +1094,7 @@ After handling a resize event, Windows or X will usually post a paint message so
 
 Use Properties, Messages to create a WM_SIZE handler on the View class since it is not there by default. In this method, check to see if a Drawing Surface exists and if so, pass the new corners of the window to the Drawing Surface using the wndResize method. This example will also inhibit an automatic redraw and ask MapLink to maintain the aspect ratio locking the top left corner of the visible map area.
 
+```cpp
 void CHelloGlobeView::OnSize(UINT nType, int cx, int cy)
 
 {
@@ -1063,19 +1105,20 @@ if ( m_drawingSurface )
 
 {
 
-m_drawingSurface-\>wndResize( 0, 0, cx, cy, false );
+m_drawingSurface->wndResize( 0, 0, cx, cy, false );
 
 }
 
 }
-
+```
 Handling resize events differs from the 2D to the 3D as we are not given the option of providing a flag to indicate an anchor point that the resizing takes place around. This is because the TSL3DCamera takes care of this control and is discussed in section 12.8.
 
 #### Handling Paint Events
 
 In the OnDraw method of the View, query the required redraw area and pass it to the Drawing Surface, asking MapLink to clear the background first.
 
-void CHelloGlobeView::OnDraw(CDC\* pDC)
+```cpp
+void CHelloGlobeView::OnDraw(CDC* pDC)
 
 {
 
@@ -1085,18 +1128,18 @@ if ( m_drawingSurface )
 
 RECT rect ;
 
-if ( pDC-\>GetClipBox( &rect ) == NULLREGION )
+if ( pDC->GetClipBox( &rect ) == NULLREGION )
 
 GetClientRect( &rect ) ;
 
-m_drawingSurface-\>drawDU( rect.left, rect.bottom,
+m_drawingSurface->drawDU( rect.left, rect.bottom,
 
 rect.right, rect.top, true ) ;
 
 }
 
 }
-
+```
 A paint event can be triggered for many reasons, some of which will only want to redraw part of the window. Under these circumstances, Windows will set up a Clip Box to define the part that needs redrawing. To improve performance it is best to only redraw that part. It is most efficient to pass the required Device Unit extent to the Drawing Surface.
 
 To create a 3D application you must also provide a TSL3DRenderingCallback triggered when draped data is ready to be rendered. This is a static method that returns a void and takes a void\*.
@@ -1107,20 +1150,21 @@ void Simple3DInteractionView::renderingCallback(void \* arg,
 
 int pendingTextures )
 
+```cpp
 {
 
-Simple3DInteractionView \* view = (Simple3DInteractionView \*)arg ;
+Simple3DInteractionView * view = (Simple3DInteractionView *)arg ;
 
-if ( view-\>m_hWnd )
+if ( view->m_hWnd )
 
 {
 
-view-\>Invalidate() ;
+view->Invalidate() ;
 
 }
 
 }
-
+```
 Now build the program, run it and load one of the sample maps.
 
 #### Reducing Flicker and Improving Performance
@@ -1133,14 +1177,15 @@ To solve the second issue, you should inhibit Windows from clearing the window.
 
 Use Properties, Messages to add a View handler for the WM_ERASEBKGND message. Return TRUE from this method to indicate to windows that the application will erase the background.
 
-BOOL CHelloGlobeView::OnEraseBkgnd(CDC\* pDC)
+```cpp
+BOOL CHelloGlobeView::OnEraseBkgnd(CDC* pDC)
 
 {
 
 return TRUE ;
 
 }
-
+```
 The inhibition of the WM_ERASEBKGND message is appropriate since MapLink is drawing to the entire window. If MapLink were drawing to only part of the window then it may be necessary for the application to erase the areas that MapLink is not rendering into.
 
 #### 3D Standard Data Layers
@@ -1239,12 +1284,13 @@ TSL3DClientUserGeometryEntity\* client = new \...;
 
 TSL3DUserGeometryEntity\* entity = stdLayer-\>entitySet()-\>
 
+```cpp
 create3DUserGeometry(client, false);
 
 if (!entity)
 
-\... // handle error
-
+... // handle error
+```
 \...
 
 entity-\>destroy();
@@ -1297,14 +1343,16 @@ SquareClient(TSL3DCoord centre)
 
 , m_radius(sqrt(2000000.0\*2000000.0 + 2000000.0\*2000000.0))
 
+```cpp
 {
 
 }
 
 // Destructor
-
+```
 virtual \~SquareClient()
 
+```cpp
 {
 
 }
@@ -1316,9 +1364,10 @@ virtual double boundingSphereRadius () const
 return m_radius;
 
 }
-
+```
 virtual const TSL3DCoord& centre () const
 
+```cpp
 {
 
 return m_centre;
@@ -1328,15 +1377,16 @@ return m_centre;
 // render an orange square
 
 virtual bool draw (int uniqueSurfaceID,
-
+```
 TSL3DRenderingInterface\* renderingInterface)
 
+```cpp
 {
 
 glPushAttrib( GL_ALL_ATTRIB_BITS );
 
 glPushClientAttrib( GL_CLIENT_ALL_ATTRIB_BITS );
-
+```
 GLfloat coords\[\] = { -100000.0f, -100000.0f, 0.0f,
 
 100000.0f, -100000.0f, 0.0f,
@@ -1345,6 +1395,7 @@ GLfloat coords\[\] = { -100000.0f, -100000.0f, 0.0f,
 
 100000.0f, 100000.0f, 0.0f };
 
+```cpp
 glColor4f( 1.0f, 0.5f, 0.0f, 1.0f );
 
 glDisable( GL_TEXTURE_2D );
@@ -1357,7 +1408,7 @@ glDisableClientState( GL_TEXTURE_COORD_ARRAY );
 
 glDisableClientState( GL_INDEX_ARRAY );
 
-glVertexPointer( 3, GL_FLOAT, 3 \* sizeof( GLfloat ), coords );
+glVertexPointer( 3, GL_FLOAT, 3 * sizeof( GLfloat ), coords );
 
 glDrawArrays( GL_TRIANGLE_STRIP, 0, 4 );
 
@@ -1374,15 +1425,16 @@ return true;
 virtual int save (TSLofstream& stream)
 
 {
-
+```
 \...
 
+```cpp
 return SQUARE_USER_GEOMETRY_ID;
 
 }
 
 };
-
+```
 #### Loading and saving 3D user geometry
 
 The process is almost identical to that of 2D user geometry.
@@ -1411,11 +1463,12 @@ int userGeometryID,
 
 bool& assumeOwnership)
 
+```cpp
 {
 
 // whether returned entities will be freed by MapLink:
 
-assumeOwnership = \...;
+assumeOwnership = ...;
 
 switch (userGeometryID)
 
@@ -1423,18 +1476,19 @@ switch (userGeometryID)
 
 case SQUARE_USER_GEOMETRY_ID:
 
-\... // stream in client and return it
+... // stream in client and return it
 
-\... // etc
-
+... // etc
+```
 default:
 
+```cpp
 return NULL;
 
 }
 
 }
-
+```
 #### 3D Custom Data Layers
 
 It is possible to introduce your own custom drawn data to the MapLink 3D drawing surface using the TSL3DCustomDataLayer class. To accomplish this you must add an instance of this class to your drawing surface and attach to it your own derivative of the abstract class TSL3DClientCustomDataLayer.
@@ -1463,15 +1517,17 @@ Model plug-ins are loaded at runtime as models that use them are drawn, and are 
 
 All plug-ins must be compiled as DLL/shared objects, and must declare a class that inherits from TSL3DCustomModel. An instance of this class will be created for each unique model defined in tslmodels.dat that uses this plug-in. In addition to this the DLL/shared object must export the following "C" methods:
 
-> extern "C" \_\_declspec(dllexport)
->
-> void\* getModel( int index,
->
-> const char\* filename,
->
-> const char\* pluginString );
->
-> extern "C" \_\_declspec(dllexport) void deleteModel( void\* model );
+extern "C" \_\_declspec(dllexport)
+
+void\* getModel( int index,
+
+```cpp
+const char* filename,
+
+const char* pluginString );
+
+extern "C" __declspec(dllexport) void deleteModel( void* model );
+```
 
 When a model is required the getModel() method will be invoked with the index from tslmodels.dat of the model, the full path to the model file and the plug-in specific configuration string. This method will only be invoked once for each model, and should return an instance of your derived TSL3DCustomModel class that is responsible for drawing this model.
 
@@ -1481,23 +1537,25 @@ When a model is no longer required the deleteModel() method will be invoked, wit
 
 A plug-in cannot make any assumptions about the state of the rendering engine when drawing, and should always reset any state changes it makes back to what they were originally before the draw() method returns.
 
-> Storing and resetting rendering state information in OpenGL.
->
-> bool N3DSModel::draw(int drawingSurfaceId, double distanceToEye,
->
-> int lodToDraw)
->
-> {
->
-> glPushAttrib( GL_ALL_ATTRIB_BITS );
->
-> // Change any required states and draw the model
->
-> glPopAttrib();
->
-> return true;
->
-> }
+Storing and resetting rendering state information in OpenGL.
+
+```cpp
+bool N3DSModel::draw(int drawingSurfaceId, double distanceToEye,
+
+int lodToDraw)
+
+{
+
+glPushAttrib( GL_ALL_ATTRIB_BITS );
+
+// Change any required states and draw the model
+
+glPopAttrib();
+
+return true;
+
+}
+```
 
 The model itself should be drawn around 0,0,0 and will be translated to the correct position by the 3D SDK. Since the draw() method will be invoked frequently for models that are visible in the application the plug-in should make use of optimisation techniques such as display lists to ensure that the drawing takes as little time as possible.
 
@@ -1513,95 +1571,97 @@ The data to contour is expected in the form of a TSLTerrainContourVertexList of 
 
 Each vertex can store one or more pieces of height information, named 'attributes', for the point it represents. Each of these attributes can be used to model different information about the point that the vertex represents. For example, the first attribute might be height information for the terrain at that point, a second attribute might be a recorded temperature value at that point and a third attribute might be a humidity value. Contour information can be generated separately for each of these attributes. Each vertex within the list must have the same number of attributes.
 
-> This example shows loading of height information from a terrain database and storing the data in a TSLTerrainContourVertexList ready for the generation of contour lines.
->
-> // Process the terrain data into a terrain database
->
-> if( m_terrainDB.open( terrainDBFile.c_str() ) != TSLTerrain_OK )
->
-> return false;
->
-> // Query the extent of the terrain data
->
-> long x1, y1, x2, y2;
->
-> if( m_terrainDB.queryExtent( x1, y1, x2, y2 ) != TSLTerrain_OK )
->
-> return false;
->
-> // Inform the terrain database of the size of our drawing surface
->
-> // so it can determine a good resolution for the data
->
-> long duMinX, duMaxX, duMinY, duMaxY;
->
-> m_drawingSurface-\>getDUExtent( &duMinX, &duMinY, &duMaxX, &duMaxY );
->
-> m_terrainDB.displayExtent( duMaxX - duMinX, duMaxY - duMinY,
->
-> x1, y1, x2, y2 );
->
-> // Read the data from the terrain database
->
-> TSLTerrainDataItem \*dataItems =
->
-> new TSLTerrainDataItem\[ m_terrainGridWidth \* m_terrainGridHeight \];
->
-> if( m_terrainDB.queryArea( x1, y1, x2, y2, m_terrainGridWidth,
->
-> m_terrainGridHeight,
->
-> dataItems ) != TSLTerrain_OK )
->
-> {
->
-> return false;
->
-> }
->
-> // Convert the terrain database to contour vertices so we can give
->
-> // them to the contour object
->
-> TSLTerrainContourVertexList \*vertices =
->
-> new TSLTerrainContourVertexList();
->
-> for( int i = 0; i \< m_terrainGridHeight; ++i )
->
-> {
->
-> for( int j = 0; j \< m_terrainGridWidth; j++ )
->
-> {
->
-> vertices-\>addVertex(dataItems\[(i \* m_terrainGridWidth ) + j\].m_x,
->
-> dataItems\[(i \* m_terrainGridWidth ) + j\].m_y,
->
-> 1,
->
-> &dataItems\[(i \* m_terrainGridWidth) + j\].m_z);
->
-> }
->
-> }
->
-> // Height information is now stored in the vertex list so the data
->
-> // from the terrain database is no longer required
->
-> delete\[\] dataItems;
->
-> TSLTerrainContour contour = new TSLTerrainContour();
->
-> // Give our vertex list to the contour object so we can then perform
->
-> // contouring - the contour object assumes ownership of the vertex
->
-> // list
->
-> contour-\>setVertices( vertices );
+This example shows loading of height information from a terrain database and storing the data in a TSLTerrainContourVertexList ready for the generation of contour lines.
+
+```cpp
+// Process the terrain data into a terrain database
+
+if( m_terrainDB.open( terrainDBFile.c_str() ) != TSLTerrain_OK )
+
+return false;
+
+// Query the extent of the terrain data
+
+long x1, y1, x2, y2;
+
+if( m_terrainDB.queryExtent( x1, y1, x2, y2 ) != TSLTerrain_OK )
+
+return false;
+
+// Inform the terrain database of the size of our drawing surface
+
+// so it can determine a good resolution for the data
+
+long duMinX, duMaxX, duMinY, duMaxY;
+
+m_drawingSurface->getDUExtent( &duMinX, &duMinY, &duMaxX, &duMaxY );
+
+m_terrainDB.displayExtent( duMaxX - duMinX, duMaxY - duMinY,
+
+x1, y1, x2, y2 );
+
+// Read the data from the terrain database
+
+TSLTerrainDataItem *dataItems =
+
+new TSLTerrainDataItem[ m_terrainGridWidth * m_terrainGridHeight ];
+
+if( m_terrainDB.queryArea( x1, y1, x2, y2, m_terrainGridWidth,
+
+m_terrainGridHeight,
+
+dataItems ) != TSLTerrain_OK )
+
+{
+
+return false;
+
+}
+
+// Convert the terrain database to contour vertices so we can give
+
+// them to the contour object
+
+TSLTerrainContourVertexList *vertices =
+
+new TSLTerrainContourVertexList();
+
+for( int i = 0; i < m_terrainGridHeight; ++i )
+
+{
+
+for( int j = 0; j < m_terrainGridWidth; j++ )
+
+{
+
+vertices->addVertex(dataItems[(i * m_terrainGridWidth ) + j].m_x,
+
+dataItems[(i * m_terrainGridWidth ) + j].m_y,
+
+1,
+
+&dataItems[(i * m_terrainGridWidth) + j].m_z);
+
+}
+
+}
+
+// Height information is now stored in the vertex list so the data
+
+// from the terrain database is no longer required
+
+delete[] dataItems;
+
+TSLTerrainContour contour = new TSLTerrainContour();
+
+// Give our vertex list to the contour object so we can then perform
+
+// contouring - the contour object assumes ownership of the vertex
+
+// list
+
+contour->setVertices( vertices );
+```
 
 Although the contour object assumes ownership of the vertex list, the data contained within the list can still be modified by the application without having to generate a new vertex list and setting it on the contour object. This avoids having to do large copies when you wish to modify the data used for contouring. If this is done, the TSLTerrainContour object should be informed of the change via the notifyChanged() method in order to ensure that the updated data is used for future contouring operations.
 
@@ -1630,105 +1690,107 @@ You should override each of the callbacks that will be used for your selected me
 
 The callbacks will be invoked numerous times before the original draw call returns. In order to prevent excessive redrawing your application should wait until the draw call has returned before updating the display of your application.
 
-> This example shows an implementation of the
->
-> TSLTerrainContourCallbacks::drawPolyline() callback in which the generated contour lines are added to a TSLStandardDataLayer to be drawn to the screen after contour generation has finished.
->
-> void TerrainContouringView::drawPolyline (TSLTerrainContourVertexList\* vertices, double attribute)
->
-> {
->
-> // The coordinates of the vertices given to us are in the coordinate
->
-> // system of the terrain data, which may not be the same as that of
->
-> // the map we have loaded. Therefore it may be necessary to
->
-> // convert the coordinates so the contour lines appear in the correct
->
-> // place on the map.
->
-> TSLCoordinateSystem \*terrainCS =
->
-> m_terrainDatabase-\>queryCoordinateSystem();
->
-> const TSLCoordinateSystem \*mapCS =
->
-> m_mapDataLayer-\>queryCoordinateSystem();
->
-> bool needToConvert = false;
->
-> if( terrainCS-\>id() != mapCS-\>id() \|\|
->
-> terrainCS-\>getTMCperMU() != mapCS-\>getTMCperMU() )
->
-> needToConvert = true;
->
-> TSLCoordSet \*coords = new TSLCoordSet();
->
-> // Process the list of vertices given to us into a polyline so we can
->
-> // display it on the map in a standard data layer
->
-> for( int i = 0; i \< vertices-\>numberOfVertices(); ++i )
->
-> {
->
-> TSLTerrainContourVertex &vertex = vertices-\>at(i);
->
-> TSLTMC tmcX = 0, tmcY = 0;
->
-> if( !needToConvert )
->
-> {
->
-> // The terrain database and map coordinate systems are the same
->
-> terrainCS-\>MUToTMC( vertex.x(), vertex.y(), &tmcX, &tmcY );
->
-> }
->
-> else
->
-> {
->
-> // Convert between the terrain database and map coordinate systems
->
-> double lat = 0.0, lon = 0.0;
->
-> terrainCS-\>MUToLatLong( vertex.x(), vertex.y(), &lat, &lon );
->
-> mapCS-\>latLongToTMC( lat, lon, &tmcX, &tmcY );
->
-> }
->
-> coords-\>add( tmcX, tmcY );
->
-> }
->
-> TSLEntitySet \*es = m_contourLayer-\>entitySet();
->
-> TSLPolyline \*line = es-\>createPolyline( 0, coords, true );
->
-> if( line )
->
-> {
->
-> line-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
->
-> // Determine line colour based on the height of the contour
->
-> long colour = ( 255 / m_maxTerrainHeight ) \* attribute;
->
-> line-\>setRendering( TSLRenderingAttributeEdgeColour,
->
-> TSLDrawingSurface::getIDOfNearestColour( colour, 0, 255 - colour) );
->
-> line-\>setRendering( TSLRenderingAttributeEdgeThickness, 1 ) ;
->
-> }
->
-> }
+This example shows an implementation of the
+
+```cpp
+TSLTerrainContourCallbacks::drawPolyline() callback in which the generated contour lines are added to a TSLStandardDataLayer to be drawn to the screen after contour generation has finished.
+
+void TerrainContouringView::drawPolyline (TSLTerrainContourVertexList* vertices, double attribute)
+
+{
+
+// The coordinates of the vertices given to us are in the coordinate
+
+// system of the terrain data, which may not be the same as that of
+
+// the map we have loaded. Therefore it may be necessary to
+
+// convert the coordinates so the contour lines appear in the correct
+
+// place on the map.
+
+TSLCoordinateSystem *terrainCS =
+
+m_terrainDatabase->queryCoordinateSystem();
+
+const TSLCoordinateSystem *mapCS =
+
+m_mapDataLayer->queryCoordinateSystem();
+
+bool needToConvert = false;
+
+if( terrainCS->id() != mapCS->id() ||
+
+terrainCS->getTMCperMU() != mapCS->getTMCperMU() )
+
+needToConvert = true;
+
+TSLCoordSet *coords = new TSLCoordSet();
+
+// Process the list of vertices given to us into a polyline so we can
+
+// display it on the map in a standard data layer
+
+for( int i = 0; i < vertices->numberOfVertices(); ++i )
+
+{
+
+TSLTerrainContourVertex &vertex = vertices->at(i);
+
+TSLTMC tmcX = 0, tmcY = 0;
+
+if( !needToConvert )
+
+{
+
+// The terrain database and map coordinate systems are the same
+
+terrainCS->MUToTMC( vertex.x(), vertex.y(), &tmcX, &tmcY );
+
+}
+
+else
+
+{
+
+// Convert between the terrain database and map coordinate systems
+
+double lat = 0.0, lon = 0.0;
+
+terrainCS->MUToLatLong( vertex.x(), vertex.y(), &lat, &lon );
+
+mapCS->latLongToTMC( lat, lon, &tmcX, &tmcY );
+
+}
+
+coords->add( tmcX, tmcY );
+
+}
+
+TSLEntitySet *es = m_contourLayer->entitySet();
+
+TSLPolyline *line = es->createPolyline( 0, coords, true );
+
+if( line )
+
+{
+
+line->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+
+// Determine line colour based on the height of the contour
+
+long colour = ( 255 / m_maxTerrainHeight ) * attribute;
+
+line->setRendering( TSLRenderingAttributeEdgeColour,
+
+TSLDrawingSurface::getIDOfNearestColour( colour, 0, 255 - colour) );
+
+line->setRendering( TSLRenderingAttributeEdgeThickness, 1 ) ;
+
+}
+
+}
+```
 
 #### Drawing the Contour Labels
 
@@ -1738,121 +1800,102 @@ When using text labels with the alignment value set to TSLVerticalAlignmentMiddl
 
 One way of doing this is to create a dummy text object of the longest expected length and use this to determine the size to pass in as follows:
 
-> TSLText \*textObj = m_contourLayer-\>entitySet()-\>createText( 0, 0, 0,
->
-> maxLengthLabel.str().c_str(), 100 );
->
-> // It is necessary to set up the following attributes on the text object
->
-> // for updateEntityExtent() to work
->
-> textObj-\>setRendering( TSLRenderingAttributeTextSizeFactor,
->
-> m_textSizeFactor );
->
-> textObj-\>setRendering( TSLRenderingAttributeTextSizeFactorUnits,
->
-> TSLDimensionUnitsMapUnits );
->
-> textObj-\>setRendering( TSLRenderingAttributeTextFont, 2 );
->
-> // Set an entity ID on the temporary text object so we can remove it
->
-> // once we're done
->
-> textObj-\>entityID( INT_MAX );
->
-> m_contourLayer-\>notifyChanged();
->
-> // Store the currently viewed area of the map. In order to calculate the
->
-> // extent of the text object we need to change the viewed area so that
->
-> // our temporary text object would be visible
->
-> double viewedUUX1, viewedUUY1, viewedUUX2, viewedUUY2;
->
-> m_drawingSurface-\>getUUExtent( &viewedUUX1, &viewedUUY1,
->
-> &viewedUUX2, &viewedUUY2 );
->
-> double newUUX1, newUUY1, newUUX2, newUUY2;
->
-> long newSizeArea = 2 \* m_textSizeFactor;
->
-> m_drawingSurface-\>MUToUU( -newSizeArea, -newSizeArea,
->
-> &newUUX1, &newUUY1 );
->
-> m_drawingSurface-\>MUToUU( newSizeArea, newSizeArea,
->
-> &newUUX2, &newUUY2 );
->
-> m_drawingSurface-\>resize( newUUX1, newUUY1,
->
-> newUUX2, newUUY2, false, true );
->
-> // Now calculate the size of our text object
->
-> m_drawingSurface-\>updateEntityExtent( textObj );
->
-> TSLEnvelope env = textObj-\>envelope( m_drawingSurface-\>id() );
->
-> unsigned long envWidth = env.width();
->
-> // Now we have the width of the text object in TMCs we need to convert this to the terrain database units
->
-> double lat1, lon1, lat2, lon2, x1, y1, x2, y2;
->
-> m_drawingSurface-\>TMCToLatLong( env.bottomLeft().x(),
->
-> env.bottomLeft().y(), &lat1, &lon1 );
->
-> m_drawingSurface-\>TMCToLatLong( env.topRight().x(),
->
-> env.topRight().y(), &lat2, &lon2 );
->
-> m_terrainDB.latLongToMU( lat1, lon1, &x1, &y1 );
->
-> m_terrainDB.latLongToMU( lat2, lon2, &x2, &y2 );
->
-> // This is the width of the text labels in the terrain database units
->
-> // with some additional space either side
->
-> width = ( x2 - x1 ) \* 1.5;
->
-> // Now we have the width we no longer need our text object
->
-> m_contourLayer-\>removeEntity( INT_MAX );
->
-> // Finally, reset the viewied area of the map back to what it was originally
->
-> m_drawingSurface-\>resize( viewedUUX1, viewedUUY1,
->
-> viewedUUX2, viewedUUY2, false, false );
+```cpp
+TSLText *textObj = m_contourLayer->entitySet()->createText( 0, 0, 0,
+
+maxLengthLabel.str().c_str(), 100 );
+
+// It is necessary to set up the following attributes on the text object
+
+// for updateEntityExtent() to work
+
+textObj->setRendering( TSLRenderingAttributeTextSizeFactor,
+
+m_textSizeFactor );
+
+textObj->setRendering( TSLRenderingAttributeTextSizeFactorUnits,
+
+TSLDimensionUnitsMapUnits );
+
+textObj->setRendering( TSLRenderingAttributeTextFont, 2 );
+
+// Set an entity ID on the temporary text object so we can remove it
+
+// once we're done
+
+textObj->entityID( INT_MAX );
+
+m_contourLayer->notifyChanged();
+
+// Store the currently viewed area of the map. In order to calculate the
+
+// extent of the text object we need to change the viewed area so that
+
+// our temporary text object would be visible
+
+double viewedUUX1, viewedUUY1, viewedUUX2, viewedUUY2;
+
+m_drawingSurface->getUUExtent( &viewedUUX1, &viewedUUY1,
+
+&viewedUUX2, &viewedUUY2 );
+
+double newUUX1, newUUY1, newUUX2, newUUY2;
+
+long newSizeArea = 2 * m_textSizeFactor;
+
+m_drawingSurface->MUToUU( -newSizeArea, -newSizeArea,
+
+&newUUX1, &newUUY1 );
+
+m_drawingSurface->MUToUU( newSizeArea, newSizeArea,
+
+&newUUX2, &newUUY2 );
+
+m_drawingSurface->resize( newUUX1, newUUY1,
+
+newUUX2, newUUY2, false, true );
+
+// Now calculate the size of our text object
+
+m_drawingSurface->updateEntityExtent( textObj );
+
+TSLEnvelope env = textObj->envelope( m_drawingSurface->id() );
+
+unsigned long envWidth = env.width();
+
+// Now we have the width of the text object in TMCs we need to convert this to the terrain database units
+
+double lat1, lon1, lat2, lon2, x1, y1, x2, y2;
+
+m_drawingSurface->TMCToLatLong( env.bottomLeft().x(),
+
+env.bottomLeft().y(), &lat1, &lon1 );
+
+m_drawingSurface->TMCToLatLong( env.topRight().x(),
+
+env.topRight().y(), &lat2, &lon2 );
+
+m_terrainDB.latLongToMU( lat1, lon1, &x1, &y1 );
+
+m_terrainDB.latLongToMU( lat2, lon2, &x2, &y2 );
+
+// This is the width of the text labels in the terrain database units
+
+// with some additional space either side
+
+width = ( x2 - x1 ) * 1.5;
+
+// Now we have the width we no longer need our text object
+
+m_contourLayer->removeEntity( INT_MAX );
+
+// Finally, reset the viewied area of the map back to what it was originally
+
+m_drawingSurface->resize( viewedUUX1, viewedUUY1,
+
+viewedUUX2, viewedUUY2, false, false );
+```
 
 #### Performance Notes
 
 Calculating contours can take a considerable amount of time when given large amounts of data to work on. As the result of a draw operation will not change if the data remains the same, it is more sensible to store the results of the contouring operation in a form that allows for fast rendering. The example in section [17.8.3](#drawing-the-contours) does this by creating geometry objects for each contouring line and storing them in a TSLStandardDataLayer. This prevents needless recalculation of the same points on each draw in the application.
-
-[^1]: Please contact support if this is an issue so that we can gauge the importance of supporting Unicode in the 3D Text primitive.
-
-[^2]: 7-bit ASCII is a subset of UTF-8
-
-[^3]: The methods will be removed in a future release of MapLink. If you use these methods please let us know why so that we can assess the impact of removal.
-
-[^4]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
-
-[^5]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
-
-[^6]: This isn't strictly true! For backwards compatibility, there is a base class implementation of the 'instantiateDO' method. However, in practise, this should always be implemented by a derived class. If you forget to provide this in a new class, then a run-time error, DDO_INSTANTIATEDO_NOT_OVERRIDDEN, will be placed onto the error stack.
-
-[^7]: An issue with the Rational Rose documentation generator means that the const modifier is not shown in the MapLink API documentation.
-
-[^8]: This is mainly used by the obsolete clone method. The clone and unclone methods are for backwards compatibility only and do not need to be overridden.
-
-[^9]: This section of the documentation, covering the use of the MapLink GML SDK, assumes a reasonable understanding of both GML and the GML SF-0 profile. For further information on these topics please refer to the OGC website (<http://www.opengeospatial.org/>)
-
-[^10]: All xsd:dates and xsd:dateTimes are converted to UTC time
-

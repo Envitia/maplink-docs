@@ -52,49 +52,51 @@ This case is handled by the other two versions of mergeIslands. The difference b
 
 The following code example illustrates this process.
 
-> // Load the map and initialise the seamless layer reference handler
->
-> TSLMapDataLayer \*mapLayer = new TSLMapDataLayer();
->
-> mapLayer-\>loadData( pathToMap );
->
-> TSLSeamlessLayerConfig \*config = new TSLSeamlessLayerConfig();
->
-> config-\>initialiseFromConfig( pathToConfig );
->
-> TSLSLMEntityRefHandlerFile \*refHandler = new TSLSLMEntityRefHandlerFile( \*config );
->
-> TSLStandardDataLayer \*initialUpdate = new TSLStandardDataLayer();
->
-> // Import the initial update data
->
-> TSLUtilityFunctions::importData( initialUpdate, ... );
->
-> // Create the initial islands
->
-> TSLIslandSet \*islandSet = new TSLIslandSet();
->
-> TSLIsland::createIslands(initialUpdate, \*islandSet );
->
-> // Place departed entities into the same island as their replacement
->
-> // features
->
-> TSLIsland::sortDepartedFeatures( mapLayer, \*refHandler, \*islandSet );
->
-> TSLStandardDataLayer \*couLayer = new TSLStandardDataLayer();
->
-> // Import the COU data
->
-> TSLUtilityFunctions::importData(couLayer, ... );
->
-> // Merge the COU with the initial islands
->
-> TSLIslandMergeSet \*mergedIslands = new TSLIslandMergeSet();
->
-> TSLIsland::mergeIslands( \*islandSet, couLayer, pathToMap,
->
-> \*refHandler, \*mergedIslands );
+```cpp
+// Load the map and initialise the seamless layer reference handler
+
+TSLMapDataLayer *mapLayer = new TSLMapDataLayer();
+
+mapLayer->loadData( pathToMap );
+
+TSLSeamlessLayerConfig *config = new TSLSeamlessLayerConfig();
+
+config->initialiseFromConfig( pathToConfig );
+
+TSLSLMEntityRefHandlerFile *refHandler = new TSLSLMEntityRefHandlerFile( *config );
+
+TSLStandardDataLayer *initialUpdate = new TSLStandardDataLayer();
+
+// Import the initial update data
+
+TSLUtilityFunctions::importData( initialUpdate, ... );
+
+// Create the initial islands
+
+TSLIslandSet *islandSet = new TSLIslandSet();
+
+TSLIsland::createIslands(initialUpdate, *islandSet );
+
+// Place departed entities into the same island as their replacement
+
+// features
+
+TSLIsland::sortDepartedFeatures( mapLayer, *refHandler, *islandSet );
+
+TSLStandardDataLayer *couLayer = new TSLStandardDataLayer();
+
+// Import the COU data
+
+TSLUtilityFunctions::importData(couLayer, ... );
+
+// Merge the COU with the initial islands
+
+TSLIslandMergeSet *mergedIslands = new TSLIslandMergeSet();
+
+TSLIsland::mergeIslands( *islandSet, couLayer, pathToMap,
+
+*refHandler, *mergedIslands );
+```
 
 ## Additional Editor Operations
 
