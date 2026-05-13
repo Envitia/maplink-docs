@@ -52,25 +52,16 @@ The 'Source Info' details are mapped in the following way to each geometric feat
 
 - The sourceType value corresponds to the type of GML geometry permitted. The following table lists the supported abstract GML geometry types and their corresponding values in the TSLGeometryType enumeration.
 
-  ---------------------------------------------------------
-  GML Type                   TSLGeometryType value
-  -------------------------- ------------------------------
-  Point                      TSLGeometryTypeSymbol
-
-  Curve                      TSLGeometryTypePolyline
-
-  Surface                    TSLGeometryTypePolygon
-
-  Geometry                   TSLGeometryTypeEntity
-
-  MultiPoint                 TSLGeometryTypeMultiPoint
-
-  MultiCurve                 TSLGeometryTypeMultiPolyline
-
-  MultiSurface               TSLGeometryTypeMultiPolygon
-
-  MultiGeometry              TSLGeometryTypeEntitySet
-  ---------------------------------------------------------
+| GML Type      | TSLGeometryType value        |
+| ------------- | ---------------------------- |
+| Point         | TSLGeometryTypeSymbol        |
+| Curve         | TSLGeometryTypePolyline      |
+| Surface       | TSLGeometryTypePolygon       |
+| Geometry      | TSLGeometryTypeEntity        |
+| MultiPoint    | TSLGeometryTypeMultiPoint    |
+| MultiCurve    | TSLGeometryTypeMultiPolyline |
+| MultiSurface  | TSLGeometryTypeMultiPolygon  |
+| MultiGeometry | TSLGeometryTypeEntitySet     |
 
 - The minOccurs and maxOccurs values correspond to the multiplicity of the property. Only positive values are valid, except for -1 for maxOccurs which is used to denote there being no upper limit.
 
@@ -84,29 +75,18 @@ A feature property definition maps to the fields of the TSLFieldDefinition class
 
 - The type value corresponds to the GML SF-0 supported type of which the field is defined as. The following table lists how the schema type supported by SF-0 is mapping to a [TSLVariantType](mk:@MSITStore:C:\Temp\MapLinkAPI.chm::/rosefiles/cat421218fc015a/cat37a038e10247/class3ec0b8f703ca.htm) value
 
-  ------------------------------------------------------------------------------
-  Schema Type                                        TSLVariantType value
-  -------------------------------------------------- ---------------------------
-  xsd:integer                                        TSLVariantTypeLong
-
-  xsd:double                                         TSLVariantTypeDouble
-
-  xsd:string                                         TSLVariantTypeStr
-
-  xsd:date and xsd:dateTime[^10]                     TSLVariantTypeDateTime
-
-  xsd:boolean                                        TSLVariantTypeBool
-
-  Extensions of xsd:base64Binary and xsd:hexBinary   TSLVariantTypeBinary
-
-  xsd:anyURI                                         TSLVariantTypeURI
-
-  xsd:ReferenceType                                  TSLVariantTypeReference
-
-  Restrictions of gml:CodeType                       TSLVariantTypeCode
-
-  Restrictions of gml:MeasureType                    TSLVariantTypeMeasurement
-  ------------------------------------------------------------------------------
+| Schema Type                                      | TSLVariantType value      |
+| ------------------------------------------------ | ------------------------- |
+| xsd:integer                                      | TSLVariantTypeLong        |
+| xsd:double                                       | TSLVariantTypeDouble      |
+| xsd:string                                       | TSLVariantTypeStr         |
+| xsd:date and xsd:dateTime[^10]                   | TSLVariantTypeDateTime    |
+| xsd:boolean                                      | TSLVariantTypeBool        |
+| Extensions of xsd:base64Binary and xsd:hexBinary | TSLVariantTypeBinary      |
+| xsd:anyURI                                       | TSLVariantTypeURI         |
+| xsd:ReferenceType                                | TSLVariantTypeReference   |
+| Restrictions of gml:CodeType                     | TSLVariantTypeCode        |
+| Restrictions of gml:MeasureType                  | TSLVariantTypeMeasurement |
 
 - The minOccurs and maxOccurs values correspond to the multiplicity of the property. Only positive values are valid, except for -1 for maxOccurs which is used to denote there being no upper limit.
 

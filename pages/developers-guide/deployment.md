@@ -20,61 +20,35 @@ Therefore as the MapLink libraries will not know the new location of this direct
 
 ## C++
 
-  ----------------------------------------------------------------------------------------------------------------------------------
-  **Method**
-  ----------------------------------------------------------------------------------------------------------------------------------
-  TSLDrawingSurface::loadStandardConfig
-
-  TSLDrawingSurface::setupColours - Pass the location of the tslcolours.dat file that the config directory contains.
-
-  TSLDrawingSurface::setupFillStyles - Pass the location of the tslfillstyles.dat file that the config directory contains.
-
-  TSLDrawingSurface::setupFonts - Pass the location of the tslfonts.dat file that the config directory contains.
-
-  TSLDrawingSurface::setupLineStyles - Pass the location of the tsllinestyles.dat file that the config directory contains.
-
-  TSLDrawingSurface::setupSymbols - Pass the location of the tslsymbols.dat file that the config directory contains.
-
-  TSLCoordinateSystem::loadCoordinateSystems - Pass the location of the tsltransforms.dat file that the config directory contains.
-
-  TSLAPP6AHelper::TSLAPP6AHelper
-
-  TSLAPP6AHelper::setDefaultConfigPath
-
-  TSL3DDrawingSurface::loadStandardConfig
-
-  TSL3DDrawingSurface::setupModels - Pass the location of the tslmodels.dat file that the config directory contains.
-
-  TSLUtilityFunctions::setMapLinkHome - set the directory that contains the MapLink config **directory.**
-  ----------------------------------------------------------------------------------------------------------------------------------
+| **Method**                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------- |
+| TSLDrawingSurface::loadStandardConfig                                                                                            |
+| TSLDrawingSurface::setupColours - Pass the location of the tslcolours.dat file that the config directory contains.               |
+| TSLDrawingSurface::setupFillStyles - Pass the location of the tslfillstyles.dat file that the config directory contains.         |
+| TSLDrawingSurface::setupFonts - Pass the location of the tslfonts.dat file that the config directory contains.                   |
+| TSLDrawingSurface::setupLineStyles - Pass the location of the tsllinestyles.dat file that the config directory contains.         |
+| TSLDrawingSurface::setupSymbols - Pass the location of the tslsymbols.dat file that the config directory contains.               |
+| TSLCoordinateSystem::loadCoordinateSystems - Pass the location of the tsltransforms.dat file that the config directory contains. |
+| TSLAPP6AHelper::TSLAPP6AHelper                                                                                                   |
+| TSLAPP6AHelper::setDefaultConfigPath                                                                                             |
+| TSL3DDrawingSurface::loadStandardConfig                                                                                          |
+| TSL3DDrawingSurface::setupModels - Pass the location of the tslmodels.dat file that the config directory contains.               |
+| TSLUtilityFunctions::setMapLinkHome - set the directory that contains the MapLink config **directory.**                          |
 
 ## .NET
 
-  -----------------------------------------------------------------------------------------------------------------------------------
-  Method
-  -----------------------------------------------------------------------------------------------------------------------------------
-  TSLNDrawingSurface::loadStandardConfig
-
-  TSLNDrawingSurface::setupColours - Pass the location of the tslcolours.dat file that the config directory contains.
-
-  TSLNDrawingSurface::setupFillStyles - Pass the location of the tslfillstyles.dat file that the config directory contains.
-
-  TSLNDrawingSurface::setupFonts - Pass the location of the tslfonts.dat file that the config directory contains.
-
-  TSLNDrawingSurface::setupLineStyles - Pass the location of the tsllinestyles.dat file that the config directory contains.
-
-  TSLNDrawingSurface::setupSymbols - Pass the location of the tslsymbols.dat file that the config directory contains.
-
-  TSLNCoordinateSystem::loadCoordinateSystems - Pass the location of the tsltransforms.dat file that the config directory contains.
-
-  TSLNAPP6AHelper::TSLAPP6AHelper
-
-  TSLNAPP6AHelper::setDefaultConfigPath
-
-  TSLN3DDrawingSurface::loadStandardConfig
-
-  TSLN3DDrawingSurface::setupModels - Pass the location of the tslmodels.dat file that the config directory contains.
-
-  TSLNUtilityFunctions::setMapLinkHome - set the directory that contains the MapLink config **directory.**
-  -----------------------------------------------------------------------------------------------------------------------------------
+| Method                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------- |
+| TSLNDrawingSurface::loadStandardConfig                                                                                            |
+| TSLNDrawingSurface::setupColours - Pass the location of the tslcolours.dat file that the config directory contains.               |
+| TSLNDrawingSurface::setupFillStyles - Pass the location of the tslfillstyles.dat file that the config directory contains.         |
+| TSLNDrawingSurface::setupFonts - Pass the location of the tslfonts.dat file that the config directory contains.                   |
+| TSLNDrawingSurface::setupLineStyles - Pass the location of the tsllinestyles.dat file that the config directory contains.         |
+| TSLNDrawingSurface::setupSymbols - Pass the location of the tslsymbols.dat file that the config directory contains.               |
+| TSLNCoordinateSystem::loadCoordinateSystems - Pass the location of the tsltransforms.dat file that the config directory contains. |
+| TSLNAPP6AHelper::TSLAPP6AHelper                                                                                                   |
+| TSLNAPP6AHelper::setDefaultConfigPath                                                                                             |
+| TSLN3DDrawingSurface::loadStandardConfig                                                                                          |
+| TSLN3DDrawingSurface::setupModels - Pass the location of the tslmodels.dat file that the config directory contains.               |
+| TSLNUtilityFunctions::setMapLinkHome - set the directory that contains the MapLink config **directory.**                          |
 

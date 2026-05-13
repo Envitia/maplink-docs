@@ -44,51 +44,31 @@ The types are defined in tslplatformtypes.h and tslatomic.h.
 
 The general types used are as follows:
 
-  -------------------------------------------------------------------------
-  General API Type     Meaning
-  -------------------- ----------------------------------------------------
-  TSLTMC               TMC value.
-
-  TSLFeatureID         Feature ID
-
-  TSLVersion           Version related
-
-  TSLPropertyValue     Property value.
-
-  TSLStyleID           Linestyle ID, fill, text, colour etc.
-
-  TSLDeviceUnits       Pixels or surface specific device units
-
-  TSLFileLength        64-bit signed integer to store a file length in.
-
-  TSLFilePosition      64-bit signed integer to store a file position in.
-
-  TSLFileOffset        64-bit signed integer to store a file offset in.
-
-  TSLTimeType          64-bit time value.
-  -------------------------------------------------------------------------
+| General API Type | Meaning                                            |
+| ---------------- | -------------------------------------------------- |
+| TSLTMC           | TMC value.                                         |
+| TSLFeatureID     | Feature ID                                         |
+| TSLVersion       | Version related                                    |
+| TSLPropertyValue | Property value.                                    |
+| TSLStyleID       | Linestyle ID, fill, text, colour etc.              |
+| TSLDeviceUnits   | Pixels or surface specific device units            |
+| TSLFileLength    | 64-bit signed integer to store a file length in.   |
+| TSLFilePosition  | 64-bit signed integer to store a file position in. |
+| TSLFileOffset    | 64-bit signed integer to store a file offset in.   |
+| TSLTimeType      | 64-bit time value.                                 |
 
 The types used to return OS specific drawing handles are as follows:
 
-  -------------------------------------------------------------------------------------
-  OS Specific API Type   Meaning
-  ---------------------- --------------------------------------------------------------
-  TSLDeviceContext       Windows 'HDC'.
-
-  TSLWindowHandle        Windows 'HWND'.
-
-  TSLBitmapHandle        Windows 'HBITMAP', X11 specific structure (defined below).
-
-  TSLDrawableHandle      X11 'Drawable'.
-
-  TSLVisualHandle        X11 'Visual \*'.
-
-  TSLColourmapHandle     X11 'Colormap'.
-
-  TSLScreenHandle        X11 'Screen \*'.
-
-  TSLDisplayHandle       X11 'Display \*'.
-  -------------------------------------------------------------------------------------
+| OS Specific API Type | Meaning                                                    |
+| -------------------- | ---------------------------------------------------------- |
+| TSLDeviceContext     | Windows 'HDC'.                                             |
+| TSLWindowHandle      | Windows 'HWND'.                                            |
+| TSLBitmapHandle      | Windows 'HBITMAP', X11 specific structure (defined below). |
+| TSLDrawableHandle    | X11 'Drawable'.                                            |
+| TSLVisualHandle      | X11 'Visual \*'.                                           |
+| TSLColourmapHandle   | X11 'Colormap'.                                            |
+| TSLScreenHandle      | X11 'Screen \*'.                                           |
+| TSLDisplayHandle     | X11 'Display \*'.                                          |
 
 For example; If you pass a specific OS type to a method or you are querying a method which returns an OS specific type as defined above you may need to cast the result or argument to the type expected.
 

@@ -175,13 +175,10 @@ TSLTerrain_OK )
 
 Once a terrain database has been opened, querying the data is simple. There are three methods provided which allow the database to be queried. The choice of query function you use is dependent on your application - choose the function that is most convenient. Each of the query functions returns whether the query was successful or not. Possible return values for the query functions are:
 
-  ---------------------------------------------------------------------------------------
-  TSLTerrain_OK           The query was successful.
-  ----------------------- ---------------------------------------------------------------
-  TSLTerrain_NoData       There was no data in the database for the requested position.
-
-  TSLTerrain\_???         Any other error conditions
-  ---------------------------------------------------------------------------------------
+| TSLTerrain_OK     | The query was successful.                                     |
+| ----------------- | ------------------------------------------------------------- |
+| TSLTerrain_NoData | There was no data in the database for the requested position. |
+| TSLTerrain\_???   | Any other error conditions                                    |
 
 To query a line of 10 points from the database:
 

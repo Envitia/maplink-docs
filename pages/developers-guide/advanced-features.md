@@ -843,17 +843,12 @@ if ( !symbolHelper-\>valid() )
 
 You can also choose to use either a filled set of symbols or unfilled set of symbols by loading the corresponding configuration file:
 
-  -----------------------------------------------------------------------------------
-  TSLAPP6AHelper configuration file                   Description
-  --------------------------------------------------- -------------------------------
-  \<MAPLINK_HOME\>\\config\\app6aConfig.csv           APP-6A, frames are filled
-
-  \<MAPLINK_HOME\>\\config\\app6aUnfilledConfig.csv   APP-6A, frames are not filled
-
-  \<MAPLINK_HOME\>\\config\\2525bConfig.csv           2525B, frames are filled
-
-  \<MAPLINK_HOME\>\\config\\2525bUnfilledConfig.csv   2525B, frames are not filled
-  -----------------------------------------------------------------------------------
+| TSLAPP6AHelper configuration file                 | Description                   |
+| ------------------------------------------------- | ----------------------------- |
+| \<MAPLINK_HOME\>\\config\\app6aConfig.csv         | APP-6A, frames are filled     |
+| \<MAPLINK_HOME\>\\config\\app6aUnfilledConfig.csv | APP-6A, frames are not filled |
+| \<MAPLINK_HOME\>\\config\\2525bConfig.csv         | 2525B, frames are filled      |
+| \<MAPLINK_HOME\>\\config\\2525bUnfilledConfig.csv | 2525B, frames are not filled  |
 
 The default constructor to TSLAPP6AHelper will load from:
 

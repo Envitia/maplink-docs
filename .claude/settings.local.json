@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR<=6240 && /^#/' script/devguide_raw.md)",
+      "Bash(awk 'NR<=7055 && /^#/' script/devguide_raw.md)",
+      "Bash(awk 'NR<=8701 && /^#/' script/devguide_raw.md)",
+      "Bash(awk 'NR<=11688 && /^#/' script/devguide_raw.md)"
+    ]
+  }
+}
