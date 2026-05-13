@@ -19,27 +19,11 @@ application. For example, if you are using the Release mode, DLL version
 of the Core SDK (MapLink.lib/MapLink64.lib) then you must also use the
 equivalent Editor SDK library (MapLinkEDT.lib/MapLinkEDT64.lib).
 
-+----------------------------------+-----------------------------------+
-| **MapLinkEDT.lib or              | **MapLinkEDTd.lib or              |
-| MapLinkEDT64.lib**               | MapLinkED64dT.lib**               |
-|                                  |                                   |
-| Release mode, DLL version.       | Debug mode, DLL version.          |
-|                                  |                                   |
-| Uses Multithreaded DLL C++       | Uses Debug Multithreaded DLL C++  |
-| run-time library.                | run-time library.                 |
-|                                  |                                   |
-| Requires TTLDLL preprocessor     | Requires TTLDLL preprocessor      |
-| directive.                       | directive.                        |
-|                                  |                                   |
-| Must also link the MapLink       | Must also link the MapLink        |
-| CoreSDK library MapLink.lib      | CoreSDK library MapLinkd.lib      |
-|                                  |                                   |
-| Refer to the document \"MapLink  | No redistributable run-time       |
-| Pro: Deployment of End User      | available.                        |
-| Applications\" for a list of     |                                   |
-| run-time dependencies when       | **KEYED : Development machines    |
-| redistributing.                  | only.**                           |
-+----------------------------------+-----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkEDT.lib or MapLinkEDT64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink CoreSDK library MapLink.lib Refer to the document \"MapLink Pro: Deployment of End User Applications\" for a list of run-time dependencies when redistributing.</td><td><strong>MapLinkEDTd.lib or MapLinkED64dT.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink CoreSDK library MapLinkd.lib No redistributable run-time available. <strong>KEYED : Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 ## Concepts
 

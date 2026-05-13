@@ -14,30 +14,11 @@ example, if you are using the Release mode, DLL version of the Core SDK
 (MapLink.lib/MapLink64.lib) then you must also use the equivalent GML
 SDK library (MapLinkGML.lib/MapLinkGML.lib).
 
-+----------------------------------+-----------------------------------+
-| **MapLinkGML.lib or              | **MapLinkGMLd.lib or              |
-| MapLinkGML64.lib**               | MapLinkGML64d.lib**               |
-|                                  |                                   |
-| Release mode, DLL version.       | Debug mode, DLL version.          |
-|                                  |                                   |
-| Uses Multithreaded DLL C++       | Uses Debug Multithreaded DLL C++  |
-| run-time library.                | run-time library.                 |
-|                                  |                                   |
-| Requires TTLDLL preprocessor     | Requires TTLDLL preprocessor      |
-| directive.                       | directive.                        |
-|                                  |                                   |
-| Must also link the MapLink Core  | Must also link the MapLink Core   |
-| SDK library MapLink.lib          | SDK library MapLinkd.lib          |
-|                                  |                                   |
-| Refer to the document \"MapLink  | No redistributable run-time       |
-| Pro X.Y: Deployment of End User  | available.                        |
-| Applications\" for a list of     |                                   |
-| run-time dependencies when       |                                   |
-| redistributing.                  |                                   |
-|                                  |                                   |
-| Where X.Y is the version of      |                                   |
-| MapLink you are deploying.       |                                   |
-+----------------------------------+-----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkGML.lib or MapLinkGML64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink Core SDK library MapLink.lib Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLinkGMLd.lib or MapLinkGML64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink Core SDK library MapLinkd.lib No redistributable run-time available.</td></tr>
+  </tbody>
+</table>
 
 The MapLink GML SDK is runtime locked meaning that before it may be used
 on any machine it must be unlocked programmatically. This is achieved
@@ -119,25 +100,21 @@ geometric feature property:
   geometry types and their corresponding values in the TSLGeometryType
   enumeration.
 
-  ---------------------------------------------------------
-  GML Type                   TSLGeometryType value
-  -------------------------- ------------------------------
-  Point                      TSLGeometryTypeSymbol
-
-  Curve                      TSLGeometryTypePolyline
-
-  Surface                    TSLGeometryTypePolygon
-
-  Geometry                   TSLGeometryTypeEntity
-
-  MultiPoint                 TSLGeometryTypeMultiPoint
-
-  MultiCurve                 TSLGeometryTypeMultiPolyline
-
-  MultiSurface               TSLGeometryTypeMultiPolygon
-
-  MultiGeometry              TSLGeometryTypeEntitySet
-  ---------------------------------------------------------
+<table class="doc-table">
+  <thead>
+    <tr><th>GML Type</th><th>TSLGeometryType value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Point</td><td>TSLGeometryTypeSymbol</td></tr>
+    <tr><td>Curve</td><td>TSLGeometryTypePolyline</td></tr>
+    <tr><td>Surface</td><td>TSLGeometryTypePolygon</td></tr>
+    <tr><td>Geometry</td><td>TSLGeometryTypeEntity</td></tr>
+    <tr><td>MultiPoint</td><td>TSLGeometryTypeMultiPoint</td></tr>
+    <tr><td>MultiCurve</td><td>TSLGeometryTypeMultiPolyline</td></tr>
+    <tr><td>MultiSurface</td><td>TSLGeometryTypeMultiPolygon</td></tr>
+    <tr><td>MultiGeometry</td><td>TSLGeometryTypeEntitySet</td></tr>
+  </tbody>
+</table>
 
 - The minOccurs and maxOccurs values correspond to the multiplicity of
   the property. Only positive values are valid, except for -1 for
@@ -164,31 +141,25 @@ TSLFieldDefinition class in the following ways:
   [TSLVariantType](mk:@MSITStore:C:\Temp\MapLinkAPI.chm::/rosefiles/cat421218fc015a/cat37a038e10247/class3ec0b8f703ca.htm)
   value
 
-  ----------------------------------------------------------
-  Schema Type                    TSLVariantType value
-  ------------------------------ ---------------------------
-  xsd:integer                    TSLVariantTypeLong
-
-  xsd:double                     TSLVariantTypeDouble
-
-  xsd:string                     TSLVariantTypeStr
-
-  xsd:date and xsd:dateTime[^10] TSLVariantTypeDateTime
-
-  xsd:boolean                    TSLVariantTypeBool
-
-  Extensions of xsd:base64Binary TSLVariantTypeBinary
-  and xsd:hexBinary              
-
-  xsd:anyURI                     TSLVariantTypeURI
-
-  xsd:ReferenceType              TSLVariantTypeReference
-
-  Restrictions of gml:CodeType   TSLVariantTypeCode
-
-  Restrictions of                TSLVariantTypeMeasurement
-  gml:MeasureType                
-  ----------------------------------------------------------
+<table class="doc-table">
+  <thead>
+    <tr><th>Schema Type</th><th>TSLVariantType value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>xsd:integer</td><td>TSLVariantTypeLong</td></tr>
+    <tr><td>xsd:double</td><td>TSLVariantTypeDouble</td></tr>
+    <tr><td>xsd:string</td><td>TSLVariantTypeStr</td></tr>
+    <tr><td>xsd:date and xsd:dateTime[^10]</td><td>TSLVariantTypeDateTime</td></tr>
+    <tr><td>xsd:boolean</td><td>TSLVariantTypeBool</td></tr>
+    <tr><td>Extensions of xsd:base64Binary</td><td>TSLVariantTypeBinary</td></tr>
+    <tr><td>and xsd:hexBinary</td><td></td></tr>
+    <tr><td>xsd:anyURI</td><td>TSLVariantTypeURI</td></tr>
+    <tr><td>xsd:ReferenceType</td><td>TSLVariantTypeReference</td></tr>
+    <tr><td>Restrictions of gml:CodeType</td><td>TSLVariantTypeCode</td></tr>
+    <tr><td>Restrictions of</td><td>TSLVariantTypeMeasurement</td></tr>
+    <tr><td>gml:MeasureType</td><td></td></tr>
+  </tbody>
+</table>
 
 - The minOccurs and maxOccurs values correspond to the multiplicity of
   the property. Only positive values are valid, except for -1 for

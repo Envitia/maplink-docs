@@ -7,7 +7,7 @@ permalink: /pages/developers-guide/
 
 This guide covers all MapLink Pro SDKs - describing their facilities, how to integrate them, and how to get the most from them. It applies to Windows C++ and .NET development unless otherwise noted.
 
-<a href="/pdf/MapLink Developer's Guide.pdf" class="btn" target="_blank">Download PDF</a>
+<a href="{{ "/pdf/MapLink Developer's Guide.pdf" | relative_url }}" class="btn" target="_blank">Download PDF</a>
 
 ---
 

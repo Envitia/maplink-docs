@@ -35,24 +35,11 @@ The table below describes the pre-processor directives and link options
 that should be set in the Project Properties for using the MapLink OGC
 Service C++ API. For X11 targets, refer to the product Release Notes.
 
-+----------------------------------+-----------------------------------+
-| **MapLinkOGCServices.lib or      | **MapLinkOGCServicesd.lib or      |
-| MapLinkOGCServices64.lib**       | MapLinkOGCServices64d.lib**       |
-|                                  |                                   |
-| Release mode, DLL version.       | Debug mode, DLL version.          |
-|                                  |                                   |
-| Uses Multithreaded DLL C++       | Uses Debug Multithreaded DLL C++  |
-| run-time library.                | run-time library.                 |
-|                                  |                                   |
-| Requires TTLDLL preprocessor     | Requires TTLDLL preprocessor      |
-| directive.                       | directive.                        |
-|                                  |                                   |
-| No redistributable run-time      | No redistributable run-time       |
-| available.                       | available.                        |
-|                                  |                                   |
-| **KEYED: Deployment machines     | **KEYED: Development machines     |
-| only.**                          | only.**                           |
-+----------------------------------+-----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkOGCServices.lib or MapLinkOGCServices64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Deployment machines only.</strong></td><td><strong>MapLinkOGCServicesd.lib or MapLinkOGCServices64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 ## The MapLink WMS
 
@@ -126,24 +113,11 @@ below describes the pre-processor directives and link options that
 should be set in the Project Properties for using the MapLink WMS SDK.
 For X11 targets, refer to the product Release Notes.
 
-+----------------------------------+-----------------------------------+
-| **MapLinkWMS.lib or              | **MapLinkWMSd.lib or              |
-| MapLinkWMS64.lib**               | MapLinkWMS64d.lib**               |
-|                                  |                                   |
-| Release mode, DLL version.       | Debug mode, DLL version.          |
-|                                  |                                   |
-| Uses Multithreaded DLL C++       | Uses Debug Multithreaded DLL C++  |
-| run-time library.                | run-time library.                 |
-|                                  |                                   |
-| Requires TTLDLL preprocessor     | Requires TTLDLL preprocessor      |
-| directive.                       | directive.                        |
-|                                  |                                   |
-| No redistributable run-time      | No redistributable run-time       |
-| available.                       | available.                        |
-|                                  |                                   |
-| **KEYED: Deployment machines     | **KEYED: Development machines     |
-| only.**                          | only.**                           |
-+----------------------------------+-----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkWMS.lib or MapLinkWMS64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Deployment machines only.</strong></td><td><strong>MapLinkWMSd.lib or MapLinkWMS64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 ### Plug-In Writing
 
@@ -375,30 +349,11 @@ When creating a custom WPS plug-in the table below describes the
 pre-processor directives and link options that should be set in the
 Project Properties for using the MapLink WPS SDK.
 
-+-----------------------------------+-------------------------------------+
-| **MapLinkWPS.lib or               | **MapLinkWPSd.lib or                |
-| MapLinkWPS64.lib** Release mode,  | MapLinkWPS64d.lib**                 |
-| DLL version.                      |                                     |
-|                                   | Debug mode, DLL version.            |
-| Uses Multithreaded DLL C++        |                                     |
-| run-time library.                 | Uses Debug Multithreaded DLL C++    |
-|                                   | run-time library.                   |
-| Requires TTLDLL preprocessor      |                                     |
-| directive.                        | Requires TTLDLL preprocessor        |
-|                                   | directive.                          |
-| No redistributable run-time       |                                     |
-| available.                        | No redistributable run-time         |
-|                                   | available.                          |
-| Your application must also link:  |                                     |
-|                                   | Your application must also link:    |
-| - MapLink.lib/MapLink64.lib       |                                     |
-|                                   | - MapLinkd.lib/MapLink64d.lib       |
-| - MapLinkwps.lib/MapLinkwps64.lib |                                     |
-|                                   | - MapLinkwpsd.lib/MapLinkwps64d.lib |
-| - MapLinkows.lib                  |                                     |
-|   /MapLinkows64.lib               | - MapLinkowsd.lib                   |
-|                                   |   /MapLinkows64d.lib                |
-+-----------------------------------+-------------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkWPS.lib or MapLinkWPS64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. Your application must also link: - MapLink.lib/MapLink64.lib - MapLinkwps.lib/MapLinkwps64.lib - MapLinkows.lib /MapLinkows64.lib</td><td><strong>MapLinkWPSd.lib or MapLinkWPS64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. Your application must also link: - MapLinkd.lib/MapLink64d.lib - MapLinkwpsd.lib/MapLinkwps64d.lib - MapLinkowsd.lib /MapLinkows64d.lib</td></tr>
+  </tbody>
+</table>
 
 ### Configuration
 

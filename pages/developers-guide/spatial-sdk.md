@@ -20,30 +20,11 @@ application. For example, if you are using the Release mode, DLL version
 of the Core SDK (MapLink.lib/MapLink64.lib) then you must also use the
 equivalent Spatial SDK library (LandLink.lib/LandLink64.lib).
 
-+----------------------------------+-----------------------------------+
-| **LandLink.lib or                | **LandLinkd.lib or                |
-| LandLink64.lib**                 | LandLink64d.lib**                 |
-|                                  |                                   |
-| Release mode, DLL version.       | Debug mode, DLL version.          |
-|                                  |                                   |
-| Uses Multithreaded DLL C++       | Uses Debug Multithreaded DLL C++  |
-| run-time library.                | run-time library.                 |
-|                                  |                                   |
-| Requires TTLDLL preprocessor     | Requires TTLDLL preprocessor      |
-| directive.                       | directive.                        |
-|                                  |                                   |
-| Must also link the MapLink       | Must also link the MapLink        |
-| CoreSDK library MapLink.lib      | CoreSDK library MapLinkd.lib      |
-|                                  |                                   |
-| Refer to the document \"MapLink  | No redistributable run-time       |
-| Pro X.Y: Deployment of End User  | available.                        |
-| Applications\" for a list of     |                                   |
-| run-time dependencies when       | **KEYED : Development machines    |
-| redistributing.                  | only.**                           |
-|                                  |                                   |
-| Where X.Y is the version of      |                                   |
-| MapLink you are deploying.       |                                   |
-+----------------------------------+-----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>LandLink.lib or LandLink64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink CoreSDK library MapLink.lib Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>LandLinkd.lib or LandLink64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Must also link the MapLink CoreSDK library MapLinkd.lib No redistributable run-time available. <strong>KEYED : Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 ## Islands
 

@@ -73,53 +73,41 @@ The types are defined in tslplatformtypes.h and tslatomic.h.
 
 The general types used are as follows:
 
-  ----------------------------------------------------------------------
-  General API Type     Meaning
-  -------------------- -------------------------------------------------
-  TSLTMC               TMC value.
-
-  TSLFeatureID         Feature ID
-
-  TSLVersion           Version related
-
-  TSLPropertyValue     Property value.
-
-  TSLStyleID           Linestyle ID, fill, text, colour etc.
-
-  TSLDeviceUnits       Pixels or surface specific device units
-
-  TSLFileLength        64-bit signed integer to store a file length in.
-
-  TSLFilePosition      64-bit signed integer to store a file position
-                       in.
-
-  TSLFileOffset        64-bit signed integer to store a file offset in.
-
-  TSLTimeType          64-bit time value.
-  ----------------------------------------------------------------------
+<table class="doc-table">
+  <thead>
+    <tr><th>General API Type</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>TSLTMC</td><td>TMC value.</td></tr>
+    <tr><td>TSLFeatureID</td><td>Feature ID</td></tr>
+    <tr><td>TSLVersion</td><td>Version related</td></tr>
+    <tr><td>TSLPropertyValue</td><td>Property value.</td></tr>
+    <tr><td>TSLStyleID</td><td>Linestyle ID, fill, text, colour etc.</td></tr>
+    <tr><td>TSLDeviceUnits</td><td>Pixels or surface specific device units</td></tr>
+    <tr><td>TSLFileLength</td><td>64-bit signed integer to store a file length in.</td></tr>
+    <tr><td>TSLFilePosition</td><td>64-bit signed integer to store a file position in.</td></tr>
+    <tr><td>TSLFileOffset</td><td>64-bit signed integer to store a file offset in.</td></tr>
+    <tr><td>TSLTimeType</td><td>64-bit time value.</td></tr>
+  </tbody>
+</table>
 
 The types used to return OS specific drawing handles are as follows:
 
-  ----------------------------------------------------------------------
-  OS Specific API Type Meaning
-  -------------------- -------------------------------------------------
-  TSLDeviceContext     Windows \'HDC\'.
-
-  TSLWindowHandle      Windows \'HWND\'.
-
-  TSLBitmapHandle      Windows \'HBITMAP\', X11 specific structure
-                       (defined below).
-
-  TSLDrawableHandle    X11 \'Drawable\'.
-
-  TSLVisualHandle      X11 \'Visual \*\'.
-
-  TSLColourmapHandle   X11 \'Colormap\'.
-
-  TSLScreenHandle      X11 \'Screen \*\'.
-
-  TSLDisplayHandle     X11 \'Display \*\'.
-  ----------------------------------------------------------------------
+<table class="doc-table">
+  <thead>
+    <tr><th>OS Specific API Type</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>TSLDeviceContext</td><td>Windows \'HDC\'.</td></tr>
+    <tr><td>TSLWindowHandle</td><td>Windows \'HWND\'.</td></tr>
+    <tr><td>TSLBitmapHandle</td><td>Windows \'HBITMAP\', X11 specific structure (defined below).</td></tr>
+    <tr><td>TSLDrawableHandle</td><td>X11 \'Drawable\'.</td></tr>
+    <tr><td>TSLVisualHandle</td><td>X11 \'Visual \*\'.</td></tr>
+    <tr><td>TSLColourmapHandle</td><td>X11 \'Colormap\'.</td></tr>
+    <tr><td>TSLScreenHandle</td><td>X11 \'Screen \*\'.</td></tr>
+    <tr><td>TSLDisplayHandle</td><td>X11 \'Display \*\'.</td></tr>
+  </tbody>
+</table>
 
 For example; If you pass a specific OS type to a method or you are
 querying a method which returns an OS specific type as defined above you

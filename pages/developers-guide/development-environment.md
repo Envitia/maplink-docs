@@ -17,25 +17,11 @@ Note that these settings apply when using Visual Studio 2015 SP3 only.
 If using a different version of Visual Studio, please see section
 [5.2](#using-other-versions-of-visual-studio-with-maplink).
 
-+--------------------------------+--------------------------------+
-| **MapLink64.dll**              | **MapLink64d.dll**             |
-|                                |                                |
-| Release mode, DLL version.     | Debug mode, DLL version.       |
-|                                |                                |
-| Uses Multithreaded DLL C++     | Uses Debug Multithreaded DLL   |
-| run-time library.              | C++ run-time library.          |
-|                                |                                |
-| Requires TTLDLL preprocessor   | Requires TTLDLL preprocessor   |
-| directive.                     | directive.                     |
-|                                |                                |
-| Refer to the document "MapLink | No redistributable run-time    |
-| Pro X.Y: Deployment of End     | available.                     |
-| User Applications\" for a list |                                |
-| of run-time dependencies when  | **KEYED: Development machines  |
-| redistributing. Where X.Y is   | only**.                        |
-| the version of MapLink you are |                                |
-| deploying.                     |                                |
-+--------------------------------+--------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLink64.dll</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Refer to the document "MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLink64d.dll</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Development machines only</strong>.</td></tr>
+  </tbody>
+</table>
 
 You must ensure that your own code settings match, especially in the use
 of the C++ run-time library and only link debug applications with debug
@@ -57,14 +43,15 @@ indicates debug). The '**64**' indicates that the library is 64-bit,
 which used to be a necessary distinction before we removed support for
 32-bit.
 
-  ----------------------------------------------------------------------------
-  Build            DLL Name             Lib Name             Directory
-  Configuration                                              
-  ---------------- -------------------- -------------------- -----------------
-  64-bit Release   DLLName**64**.DLL    DLLName**64**.LIB    bin64, lib64
-
-  64-bit Debug     DLLName**64D**.DLL   DLLName**64D**.LIB   bin64, lib64
-  ----------------------------------------------------------------------------
+<table class="doc-table">
+  <thead>
+    <tr><th>Build Configuration</th><th>DLL Name</th><th>Lib Name</th><th>Directory</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>64-bit Release</td><td>DLLName<strong>64</strong>.DLL</td><td>DLLName<strong>64</strong>.LIB</td><td>bin64, lib64</td></tr>
+    <tr><td>64-bit Debug</td><td>DLLName<strong>64D</strong>.DLL</td><td>DLLName<strong>64D</strong>.LIB</td><td>bin64, lib64</td></tr>
+  </tbody>
+</table>
 
 ### Visual Studio Warnings and Errors
 

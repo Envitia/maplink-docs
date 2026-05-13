@@ -15,27 +15,11 @@ to application specific rules.
 
 ## Library Usage and Configuration
 
-+-----------------------------------+----------------------------------+
-| **MapLinkDDO.lib or               | **MapLinkDDOd.lib or             |
-| MapLinkDDO64.lib**                | MapLinkDDO64d.lib**              |
-|                                   |                                  |
-| Release mode, DLL version.        | Debug mode, DLL version.         |
-|                                   |                                  |
-| Uses Multithreaded DLL C++        | Uses Debug Multithreaded DLL C++ |
-| run-time library.                 | run-time library.                |
-|                                   |                                  |
-| Requires TTLDLL preprocessor      | Requires TTLDLL preprocessor     |
-| directive.                        | directive.                       |
-|                                   |                                  |
-| Refer to the document \"MapLink   | No redistributable run-time      |
-| Pro X.Y: Deployment of End User   | available.                       |
-| Applications\" for a list of      |                                  |
-| run-time dependencies when        | **KEYED: Development machines    |
-| redistributing.                   | only.**                          |
-|                                   |                                  |
-| Where X.Y is the version of       |                                  |
-| MapLink you are deploying.        |                                  |
-+-----------------------------------+----------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkDDO.lib or MapLinkDDO64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLinkDDOd.lib or MapLinkDDO64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED: Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 As with the MapLink Core SDK, the Dynamic Data Object SDK comes in 2
 different flavours. It should be noted that the library to be linked

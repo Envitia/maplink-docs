@@ -30,30 +30,11 @@ version of the Core SDK (MapLink.lib) then you must use the equivalent
 Direct Import SDK library (MapLinkDirectImport.lib or
 MapLinkDirectImport64.lib).
 
-+---------------------------------+------------------------------------+
-| **MapLinkDirectImport.lib or    | **MapLinkDirectImportd.lib or      |
-| MapLinkDirectImport64.lib**     | MapLinkDirectImport64d.lib**       |
-|                                 |                                    |
-| Release mode, DLL version.      | Debug mode, DLL version.           |
-|                                 |                                    |
-| Uses Multithreaded DLL C++      | Uses Debug Multithreaded DLL C++   |
-| run-time library.               | run-time library.                  |
-|                                 |                                    |
-| Must also link the MapLink      | Must also link the MapLink CoreSDK |
-| CoreSDK library                 | library                            |
-| MapLink.lib/MapLink64.lib       | MapLinkd.lib/MapLink64d.lib        |
-|                                 |                                    |
-| Requires TTLDLL preprocessor    | Requires TTLDLL preprocessor       |
-| directive.                      | directive.                         |
-|                                 |                                    |
-| Refer to the document \"MapLink | No redistributable run-time        |
-| Pro X.Y: Deployment of End User | available.                         |
-| Applications\" for a list of    |                                    |
-| run-time dependencies when      | **KEYED : Development machines     |
-| redistributing. Where X.Y is    | only.**                            |
-| the version of MapLink you are  |                                    |
-| deploying.                      |                                    |
-+---------------------------------+------------------------------------+
+<table class="doc-table">
+  <tbody>
+    <tr><td><strong>MapLinkDirectImport.lib or MapLinkDirectImport64.lib</strong> Release mode, DLL version. Uses Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLink.lib/MapLink64.lib Requires TTLDLL preprocessor directive. Refer to the document \"MapLink Pro X.Y: Deployment of End User Applications\" for a list of run-time dependencies when redistributing. Where X.Y is the version of MapLink you are deploying.</td><td><strong>MapLinkDirectImportd.lib or MapLinkDirectImport64d.lib</strong> Debug mode, DLL version. Uses Debug Multithreaded DLL C++ run-time library. Must also link the MapLink CoreSDK library MapLinkd.lib/MapLink64d.lib Requires TTLDLL preprocessor directive. No redistributable run-time available. <strong>KEYED : Development machines only.</strong></td></tr>
+  </tbody>
+</table>
 
 ## Supported Data Formats
 
