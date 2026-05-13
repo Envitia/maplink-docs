@@ -292,7 +292,7 @@ The source files for the sample have the following purposes:
 Visually, these items correspond to the following parts of the
 application:
 
-![](../../assets/images/developers-guide/media/image26.png)
+![](../../assets/images/developers-guide/media/OpenGL_annotations.png)
 
 ### Starting the Application - Choosing a Framebuffer Configuration
 
