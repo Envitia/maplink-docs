@@ -1230,7 +1230,7 @@ For a TSL3DTriangleFan, the first point defines the common centre point of the f
 
 #### TSL3DQuadStrip
 
-![](../../assets/images/developers-guide/media/image38.emf)
+![](../../assets/images/developers-guide/media/TSL3DQuadstrip.png)
 
 This is the 4 point version of TSL3DTriangleStrip and is formed in much the same way; each pair of added points forms a quad with the previous pair. Each contained 3D quad must be non-complex. All points of each contained 3D quad must lie in a plane.
 

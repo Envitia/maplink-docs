@@ -46,6 +46,8 @@ A single plug-in could potentially be used to serve the same spatial data in two
 
 A good example of the use of a plug-in is the BasicMapPlugin supplied with the MapLink WMS. For spatial data it takes MapLink Maps, creating a different data source for each map.
 
+![](../../assets/images/developers-guide/media/spatial_data.png)
+
 The above diagram shows a set of example relationships between plug-ins, their spatial data and the data sources they provide.
 
 ### Configuration
