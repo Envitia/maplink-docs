@@ -195,7 +195,7 @@
     inputEl.addEventListener('input', function () {
       selectedIndex = -1;
       var query = this.value.trim();
-      if (query.length < 2) { closeResults(); return; }
+      if (query.length < 1) { closeResults(); return; }
       debouncedSearch(query);
     });
 
@@ -226,7 +226,7 @@
     });
 
     inputEl.addEventListener('focus', function () {
-      if (this.value.trim().length >= 2) runSearch(this.value.trim());
+      if (this.value.trim().length >= 1) runSearch(this.value.trim());
     });
 
     document.addEventListener('keydown', function (e) {
