@@ -34,17 +34,19 @@ Simple vector overlays are usually stored in a TSLStandardDataLayer. This will n
 
 > In the Document class definition, add a declaration of the Standard Data Layer just after the Map Data Layer:
 
-TSLMapDataLayer \* m_mapDataLayer ;
+```cpp
+TSLMapDataLayer * m_mapDataLayer ;
 
-TSLStandardDataLayer \* m_stdDataLayer ; // This line added
+TSLStandardDataLayer * m_stdDataLayer ; // This line added
+```
 
 The new class variable should be initialised to NULL in the Document constructor.
 
+```cpp
 CHelloGlobeDoc::CHelloGlobeDoc()
 
 : m_mapDataLayer( NULL ), m_stdDataLayer( NULL )
 
-```cpp
 {
 
 }
@@ -106,6 +108,7 @@ We need somewhere to store the current overlay type selection. For MDI applicati
 
 > In the Document class definition, add a declaration for a static integer to hold the currently selected primitive and initialise it appropriately in the Document .cpp file
 
+```cpp
 // This line added in the Document class header, private section
 
 static int m_overlayType ; // This line added in class header
@@ -113,6 +116,7 @@ static int m_overlayType ; // This line added in class header
 // This line added in the Document .cpp file
 
 int CHelloGlobeDoc::m_overlayType = ID_OVERLAYS_TEXT ;
+```
 
 Now we need to add COMMAND handlers to update the chosen overlay type on a user selection.
 
@@ -194,12 +198,11 @@ if ( m_drawingSurface )
 if ( nFlags & MK_CONTROL )
 
 {
-```
+
 TSLTMC x, y ;
 
-m_drawingSurface-\>DUToTMC( point.x, point.y, &x, &y ) ;
+m_drawingSurface->DUToTMC( point.x, point.y, &x, &y ) ;
 
-```cpp
 if ( GetDocument()->createOverlay( x, y, m_drawingSurface ) )
 
 InvalidateRect( 0, FALSE ) ;
@@ -216,11 +219,11 @@ Now we will create some text at the button click location and if successful retu
 
 Replace the dummy implementation of createText with the following:
 
-TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
-
-TSLText \* txt = es-\>createText( 0, x, y, "Hello World" ) ;
-
 ```cpp
+TSLEntitySet * es = m_stdDataLayer->EntitySet() ;
+
+TSLText * txt = es->createText( 0, x, y, "Hello World" ) ;
+
 if ( !txt )
 
 return false ; // Return failure if text could not be created
@@ -265,11 +268,11 @@ The example Symbol that we shall create will be sized in Map Units. This means t
 
 Replace the dummy implementation of createSymbol with the following:
 
-TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
-
-TSLSymbol \* symbol = es-\>createSymbol( 0, x, y ) ;
-
 ```cpp
+TSLEntitySet * es = m_stdDataLayer->EntitySet() ;
+
+TSLSymbol * symbol = es->createSymbol( 0, x, y ) ;
+
 if ( !symbol )
 
 return false ;
@@ -306,7 +309,8 @@ The example below uses the Drawing Surface conversion routines to determine the 
 
 Replace the dummy implementation of createPolygon with the following:
 
-TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
+```cpp
+TSLEntitySet * es = m_stdDataLayer->EntitySet() ;
 
 // Create a coordinate list forming a triangle around the position
 
@@ -318,9 +322,8 @@ TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
 
 // is always completely scalable
 
-TSLCoordSet \* coords = new TSLCoordSet() ;
+TSLCoordSet * coords = new TSLCoordSet() ;
 
-```cpp
 if ( !coords )
 
 return false ;
@@ -369,15 +372,15 @@ The example below uses the Drawing Surface conversion routines to determine the 
 
 Replace the dummy implementation of createPolygon with the following:
 
-TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
+```cpp
+TSLEntitySet * es = m_stdDataLayer->EntitySet() ;
 
 // Create a coordinate list forming a triangle around the position
 
 // Use the Drawing Surface to calculate the coordinates
 
-TSLCoordSet \* coords = new TSLCoordSet() ;
+TSLCoordSet * coords = new TSLCoordSet() ;
 
-```cpp
 if ( !coords )
 
 return false ;
@@ -438,45 +441,47 @@ After the Standard Data Layer has been constructed, define some Feature Renderin
 
 In the Document OnOpenDocument method, add the following code:
 
+```cpp
 TSLStyleID black = TSLDrawingSurface::getIDOfNearestColour( 0, 0, 0 ) ;
 
 // Make up a feature name and numeric ID
 
-m_stdDataLayer-\>addFeatureRendering( "Airport", 123 ) ;
+m_stdDataLayer->addFeatureRendering( "Airport", 123 ) ;
 
 // Associate some rendering with the new feature, use ID for
 
 // efficiency
 
-m_stdDataLayer-\>setFeatureRendering( 0, 123,
+m_stdDataLayer->setFeatureRendering( 0, 123,
 
 TSLRenderingAttributeSymbolStyle, 6003 ) ;
 
-m_stdDataLayer-\>setFeatureRendering( 0, 123,
+m_stdDataLayer->setFeatureRendering( 0, 123,
 
 TSLRenderingAttributeSymbolColour, black ) ;
 
-m_stdDataLayer-\>setFeatureRendering( 0, 123,
+m_stdDataLayer->setFeatureRendering( 0, 123,
 
 TSLRenderingAttributeSymbolSizeFactor, 40.0 ) ;
 
-m_stdDataLayer-\>setFeatureRendering( 0, 123,
+m_stdDataLayer->setFeatureRendering( 0, 123,
 
 TSLRenderingAttributeSymbolSizeFactorUnits,
 
 TSLDimensionUnitsPixels);
+```
 
 Next, we implement the createFeature method to create the symbol referencing the Feature ID that we have just created.
 
 > Replace the dummy implementation of createFeature with the following:
 
-TSLEntitySet \* es = m_stdDataLayer-\>EntitySet() ;
+```cpp
+TSLEntitySet * es = m_stdDataLayer->EntitySet() ;
 
 // 123 is the numeric feature code we assigned on the Data Layer
 
-TSLSymbol \* symbol = es-\>createSymbol( 123, x, y ) ;
+TSLSymbol * symbol = es->createSymbol( 123, x, y ) ;
 
-```cpp
 if ( !symbol )
 
 return false ;

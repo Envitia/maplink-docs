@@ -80,33 +80,35 @@ In the method InitInstance method of the App object, add a call to TSLDrawingSur
 
 You should be careful to check for, and report errors at this stage by using the methods supplied on the TSLThreadedErrorStack utility class.
 
-> // Initialise MapLink configuration files.
->
-> const char \* configDirPath = 0 ; // Replace if deployed
->
-> TSLThreadedErrorStack::clear() ;
->
-> TSLDrawingSurface::loadStandardConfig( configDirPath ) ;
->
-> // CHeck to see if an errors occured.
->
-> TSLSimpleString msg( "" );
->
-> bool anyErrors =
->
->         TSLThreadedErrorStack::errorString( msg,
->
-> "Initialisation Errors : \\n" ) ;
->
-> if ( anyErrors )
->
-> {
->
-> AfxMessageBox( (LPCTSTR)TSLUTF8Decoder(msg), MB_OK ) ;
->
-> exit( 0 ) ;
->
-> }
+```cpp
+// Initialise MapLink configuration files.
+
+const char * configDirPath = 0 ; // Replace if deployed
+
+TSLThreadedErrorStack::clear() ;
+
+TSLDrawingSurface::loadStandardConfig( configDirPath ) ;
+
+// CHeck to see if an errors occured.
+
+TSLSimpleString msg( "" );
+
+bool anyErrors =
+
+        TSLThreadedErrorStack::errorString( msg,
+
+"Initialisation Errors : \n" ) ;
+
+if ( anyErrors )
+
+{
+
+AfxMessageBox( (LPCTSTR)TSLUTF8Decoder(msg), MB_OK ) ;
+
+exit( 0 ) ;
+
+}
+```
 
 When your application is deployed, make configDirPath variable point to the location of your applications copy of the MapLink config directory.
 
@@ -114,7 +116,9 @@ Once MapLink has been initialised, it needs to be cleaned up when the applicatio
 
 Use Properties, Overrides to create an ExitInstance method on the App object. In this method, call MapLink to cleanup the configuration file load.
 
+```cpp
 TSLDrawingSurface::cleanup( ) ;
+```
 
 ## Managing the Document
 
@@ -224,12 +228,11 @@ CHelloGlobeView::~CHelloGlobeView()
 if ( m_drawingSurface )
 
 {
-```
+
 delete m_drawingSurface ;
 
 m_drawingSurface = NULL ;
 
-```cpp
 }
 
 }
@@ -332,7 +335,9 @@ To solve the first issue, a single method call should be added when the Drawing 
 
 In the OnInitialUpdate method of the View, add the following call immediately after the creation of the Drawing Surface.
 
-m_drawingSurface-\>setOption( TSLOptionDoubleBuffered, true ) ;
+```cpp
+m_drawingSurface->setOption( TSLOptionDoubleBuffered, true ) ;
+```
 
 To solve the second issue, you should inhibit Windows from clearing the window.
 

@@ -52,13 +52,17 @@ For backwards compatibility the findByName() method will return the original Sny
 
 The method TSLCoordianteSystem::findByEPSG() may not work as expected, for example;
 
-const TSLCoordinateSystem \*coordSystem = TSLCoordianteSystem::findByEPSG(27700);
+```cpp
+const TSLCoordinateSystem *coordSystem = TSLCoordianteSystem::findByEPSG(27700);
+```
 
 Returns the OSGB coordinate system using the Snyder Transverse Mercator formula. For the new formula you need to do the following:
 
-const TSLCoordinateSystem \*coordSystems\[2\];
+```cpp
+const TSLCoordinateSystem *coordSystems[2];
 
 int numberFound = TSLCoordianteSystem::findByEPSG(27700, coordSystems, 2);
+```
 
 You would need to check the numberFound variable and then validate the name of each returned TSLCoordinateSystem to see if it was the Snyder or JHS version. You could use the MapLink IDs as these are unique.
 
@@ -118,7 +122,9 @@ On a TSLMapDataLayer, the Feature Class List is automatically populated when a m
 
 MapLink uses the numeric Feature ID of an Entity to look up the required status before rendering the Entity. The status may be set to TSLDeclutterStatusOn, TSLDeclutterStatusOff or TSLDeclutterStatusAuto. To set the status use:
 
-m_drawingSurface-\>setDeclutterStatus( "feature", status, layer )
+```cpp
+m_drawingSurface->setDeclutterStatus( "feature", status, layer )
+```
 
 The layer argument is optional. If specified, it targets the decluttering at a specified Data Layer. Otherwise, the feature will be decluttered on all data layers in the drawing surface through the Drawing Surface's global decluttering list. Decluttering a specific data layer is sometimes desirable since a Drawing Surface may contain multiple data layers containing the same features, and the application may wish to only declutter the feature from a single data layer.
 
@@ -136,7 +142,9 @@ When raster images are loaded into MapLink Studio, they may be assigned a Featur
 
 Thus, to declutter all rasters in all data layers in a drawing surface with the default Feature Name, use the following call:
 
-ds-\>setDeclutterStatus("Rasters",TSLDeclutterStatusOff);
+```cpp
+ds->setDeclutterStatus("Rasters",TSLDeclutterStatusOff);
+```
 
 ## Searching Your Data
 
@@ -238,15 +246,19 @@ MapLink has several features to address these issues, through the use of bufferi
 
 To configure a Drawing Surface as buffered add the following code to your application, usually just after the Drawing Surface has been created.
 
-m_drawingSurface-\>setOption( TSLOptionDoubleBuffered, true ) ;
+```cpp
+m_drawingSurface->setOption( TSLOptionDoubleBuffered, true ) ;
+```
 
 Back buffering is sufficient where only a single Data Layer is being displayed or in situations where the contents of all attached Data Layers change at the same time. In many applications, there are multiple Data Layers with a set of fairly static underlays and at least one dynamic or editable overlay. For these applications, MapLink has secondary buffering. This is associated with a group of Data Layers that are attached to the same Drawing Surface. In this type of buffering, all Data Layers in the group are drawn into a separate off-screen buffer before being copied to the back buffer or screen. Any non-buffered Data Layers are then drawn. If no buffered Data Layers have changed, then the existing secondary buffer is copied without being redrawn.
 
 To configure a Data Layer to be part of the buffered group for a particular Drawing Surface, add the following code to your application, usually just after the Data Layer has been added to the Drawing Surface.
 
-m_drawingSurface-\>setDataLayerProps( "layername",
+```cpp
+m_drawingSurface->setDataLayerProps( "layername",
 
 TSLPropertyBuffered, 1 ) ;
+```
 
 In MFC based applications that use buffering, you should handle the WM_ERASEBGRD event in order to stop Windows clearing the window itself and thus introducing flicker. Typically, just override the OnEraseBackground method in the applications View object and return True. This is appropriate when MapLink is rendering to the entire window. In situations where MapLink is only drawing to part of the window then the application should clear the parts of the window that MapLink does not render.
 
@@ -256,13 +268,17 @@ Some drawing surfaces offer a more advanced version of data layer buffering call
 
 Tiled buffering can be enabled by adding the following code to your application, usually just after the Drawing Surface has been created:
 
-m_drawingSurface-\>setOption( TSLOptionTileBufferedLayers, true ) ;
+```cpp
+m_drawingSurface->setOption( TSLOptionTileBufferedLayers, true ) ;
+```
 
 As the buffered tiles are generated asynchronously, the application will be notified when new tiles are available through the TSLDrawingSurfaceDrawCallback.
 
 When zooming using tiled buffering, MapLink will not block the application waiting for the buffered tiles to be redrawn. This means that buffered layers will not be drawn until the tiles for the new viewing resolution are ready. Since this is often undesirable, Progressive Zooming can optionally be enabled using the following code:
 
-m_drawingSurface-\>setOption( TSLOptionProgressiveTileZoom, true ) ;
+```cpp
+m_drawingSurface->setOption( TSLOptionProgressiveTileZoom, true ) ;
+```
 
 This option instructs the drawing surface to use previously created tiles to fill in for tiles at the new zoom scale that are not currently ready for drawing, meaning that buffered layers will still be visible when zooming.
 
@@ -278,7 +294,9 @@ Within MapLink Studio, there is much emphasis on efficient tiling and layering o
 
 To help mitigate the performance hit of tile swapping, the MapLink Core SDK has facilities to configure an in-memory cache of recently used tiles. To avoid swamping low-spec machines, the default cache configuration is fairly low at 32Mb. This can be set on each Map Data Layer or Raster Data Layer using the following method:
 
-m_mapDataLayer-\>cacheSize( sizeInKiloBytes ) ;
+```cpp
+m_mapDataLayer->cacheSize( sizeInKiloBytes ) ;
+```
 
 The cache may be further configured using the cacheFlushLimit which is the number of tiles that the Data Layer attempts to keep in memory when it overflows. Note that when a tile is added to the cache, its size is assumed to be the same as the disk size - except for compressed raster images which are expanded on loading. If a tile has been saved from MapLink Studio using the Enterprise Compression or Optimised for Size options, then there will be some level of expansion in memory and you should account for this when setting your cache size.
 
@@ -296,6 +314,7 @@ Many Rendering Attributes define an integer index into configuration files. Thes
 
 The colours file, usually called tslcolours.dat, holds the definition of the colour palette and associated RGB values. The format is quite simple and is identical to the palette file written out alongside a map by MapLink Studio. The first few lines of a colours file are shown below. Each line is commented in red - although the comments should not appear in the actual file.
 
+```
 TSLCL 105 // File ident and format version number
 
 ColourCubePalette // Name of palette, for MapLink Studio
@@ -304,7 +323,8 @@ ColourCubePalette // Name of palette, for MapLink Studio
 
 1;184;134;11;Dark Goldenrod // Index;Red;Green;Blue;Name in FeatureBook
 
-2;189;183;107;Dark Khaki // Next colour \... and so on 203 times
+2;189;183;107;Dark Khaki // Next colour ... and so on 203 times
+```
 
 By default, maps generated from MapLink Studio have an associated palette file. This palette file will be loaded by the MapLink SDK when the map is loaded. This means that the global palette may change. For this reason, it is recommended that all maps to be loaded into an application are constructed using the same palette.
 
@@ -324,6 +344,7 @@ The line styles file, usually called tsllinestyles.dat, holds the definition of 
 
 There are several different types of line style, some more complex than others. The example below contains one of each currently supported type; these are explained later.
 
+```
 TSLES 108 // File ident and format version number
 
 ; // Field separator on subsequent lines
@@ -348,9 +369,10 @@ S;This is a section heading // Section name for subsequent styles
 
 6;standard;Dash 8;6;3;1;0;1;4 8 8 8 8
 
-9;multi;Narrow road, light casing;2;\[1,(153,153,153),3\];\[1,(-1,-1,-1),1\]
+9;multi;Narrow road, light casing;2;[1,(153,153,153),3];[1,(-1,-1,-1),1]
 
-10615;ttlclsstrk;Waterfall;GeoSym0615;C\[(100,100,200),1\]D\[0,0\]D\[10,0\]
+10615;ttlclsstrk;Waterfall;GeoSym0615;C[(100,100,200),1]D[0,0]D[10,0]
+```
 
 - Versions 107 and newer versions of the file must be saved in the UTF-8 code page without a BOM (Byte Order Mark).
 
@@ -521,6 +543,7 @@ The fill styles file, usually called tslfillstyles.dat, holds the definition of 
 
 There are several different types of fill style, some more complex than others. The example below contains one of each currently supported type; these are explained later. Each line is commented in red - although the comments should not appear in the actual file.
 
+```
 TSLFS 106 // File ident and format version number
 
 ; // Field separator on subsequent lines
@@ -540,6 +563,7 @@ S;This is a section heading // Section name for subsequent styles
 3;standard;Wide cross-hatching;2;6;0;0
 
 4;standard;Wide diagonal cross-hatching;2;7;0;0
+```
 
 5;standard;Wide left diagonal hatching;2;8;0;0
 
@@ -831,15 +855,17 @@ MapLink supports most APP-6A and 2525B symbology using the TSLAPP6ASymbol and TS
 
 To choose between APP-6A or 2525B symbols, you need to load the appropriate configuration file thus:
 
+```cpp
 string config( TSLUtilityFunctions::getMapLinkHome() );
 
 config.append( "/config/app6aConfig.csv" ); // the default config file
 
-TSLAPP6AHelper \*symbolHelper = new TSLAPP6AHelper( config.c_str() );
+TSLAPP6AHelper *symbolHelper = new TSLAPP6AHelper( config.c_str() );
 
-if ( !symbolHelper-\>valid() )
+if ( !symbolHelper->valid() )
 
-\... // error
+... // error
+```
 
 You can also choose to use either a filled set of symbols or unfilled set of symbols by loading the corresponding configuration file:
 
@@ -858,13 +884,14 @@ You can choose to either obtain symbols as bitmaps (GDI and X11 only) or as a ve
 
 The vector representation is the only valid option for the OpenGL drawing surface.
 
-const char fighterId\[\] = "1.x.2.1.1.2";
+```cpp
+const char fighterId[] = "1.x.2.1.1.2";
 
 TSLAPP6ASymbol theSymbol;
 
-if ( !symbolHelper-\>getSymbolFromID( fighterId, theSymbol ) )
+if ( !symbolHelper->getSymbolFromID( fighterId, theSymbol ) )
 
-\... // error
+... // error
 
 theSymbol.hostility( TSLAPP6ASymbol::HostilityHostile );
 
@@ -878,19 +905,20 @@ theSymbol.x( 400000000 ); // TMCs
 
 theSymbol.y( 0 );
 
-TSLEntitySet\* es = symbolHelper-\>getSymbolAsEntitySet( &theSymbol );
+TSLEntitySet* es = symbolHelper->getSymbolAsEntitySet( &theSymbol );
 
 if ( !es )
 
-\... // error
+... // error
 
-// TSLStandardDataLayer\* stdDataLayer;
+// TSLStandardDataLayer* stdDataLayer;
 
-stdDataLayer-\>entitySet()-\>insert( es ); // takes ownership of new set
+stdDataLayer->entitySet()->insert( es ); // takes ownership of new set
 
-stdDataLayer-\>notifyChanged( true );
+stdDataLayer->notifyChanged( true );
 
-// draw\...
+// draw...
+```
 
 ![And we get something like this:](../../assets/images/developers-guide/media/image230.png)
 
@@ -1038,93 +1066,52 @@ The keys and fields are returned as TSLSimpleStrings. So, if the contents of th
 
 The following code snippet retrieves the Name attribute data (i.e. the actual name of the river, e.g. Amazon) and sets it into the entity name property:
 
+```cpp
 // Entity Set off of StandardDataLayer containing imported shp file rivers.shp
-
-if (TSLEntitySet\* set = TSLEntitySet::isEntitySet( m_stdDataLayer-\>entitySet() )
-
+if (TSLEntitySet* set = TSLEntitySet::isEntitySet( m_stdDataLayer->entitySet() )
 {
-
-int setSize = set-\>size();
-
-for( int i(0); i \< setSize; ++i )
-
+int setSize = set->size();
+for( int i(0); i < setSize; ++i )
 {
-
 // Get each entity in the set
-
 // Ideally the entity type should be checked for Entity Set
-
 // and recursed if found
-
 // In this code sample I know all entities are TSLPolylines
-
-if ( TSLEntity\* entity = (\*set)\[i\] )
-
+if ( TSLEntity* entity = (*set)[i] )
 {
-
 // Retrieve the TSLDataSet from the entity
-
-const TSLDataSet\* dataSet = entity-\>dataSet();
-
+const TSLDataSet* dataSet = entity->dataSet();
 if( dataSet )
-
 {
-
 // Iterate through the available fields
-
-// In the rivers.shp file there are four fields, RIVER\_, RIVER_ID,
-
+// In the rivers.shp file there are four fields, RIVER_, RIVER_ID,
 // NAME & SYSTEM
-
-int dsetNumFields = dataSet-\>numAvailableFields();
-
-for( int j(0); j \< dsetNumFields; ++j )
-
+int dsetNumFields = dataSet->numAvailableFields();
+for( int j(0); j < dsetNumFields; ++j )
 {
-
 TSLSimpleString fieldName;
-
-dataSet-\>getAvailableField( j, fieldName );
-
+dataSet->getAvailableField( j, fieldName );
 // In this code sample we are interested in the NAME field
-
 if ( fieldName == "NAME" )
-
 {
-
 // Extract the data from the field
-
 // In this case the name of the river as a string
-
-const TSLVariant \*variant = dataSet-\>getData( fieldName.c_str() );
-
+const TSLVariant *variant = dataSet->getData( fieldName.c_str() );
 if( variant )
-
 {
-
-int len = variant-\>getValueAsString( 0, 0, 0 ) ;
-
-char \* buf = new char\[ len + 1 \] ;
-
-variant-\>getValueAsString( buf, len ) ;
-
+int len = variant->getValueAsString( 0, 0, 0 ) ;
+char * buf = new char[ len + 1 ] ;
+variant->getValueAsString( buf, len ) ;
 // Do something with the data
-
-entity-\>name( buf );
-
+entity->name( buf );
 }
-
 }
-
 }
-
 }
-
 }
-
 }
-
 }
+```
 
 ## Layer History Management
 
@@ -1132,65 +1119,38 @@ The core MapLink SDK allows data layers to maintain a version history. Currently
 
 The following shows the typical steps required in order to create and maintain a map layer with history information (error handling is omitted for brevity):
 
-TSLSeamlessLayerManager\* slm = \...;
-
-slm-\>enablePublishing( true, dir ); // Publishing must be enabled
-
-slm-\>initialiseExistingLayerForIngest( mapPath, layerName );
-
-TSLStandardDataLayer\* layer = \...;
-
+```cpp
+TSLSeamlessLayerManager* slm = ...;
+slm->enablePublishing( true, dir ); // Publishing must be enabled
+slm->initialiseExistingLayerForIngest( mapPath, layerName );
+TSLStandardDataLayer* layer = ...;
 // Load the map data into 'layer'
-
-TSLUtilityFunctions::importData( layer, \... );
-
+TSLUtilityFunctions::importData( layer, ... );
 // Import the layer into the seamless layer manager
-
-slm-\>ingestData( layer );
-
+slm->ingestData( layer );
 // Finish the import process
-
-slm-\>finalise();
-
+slm->finalise();
 TSLTimeType timestamp;
-
-\_time64( &timestamp ); // The timestamp to attach to this version
-
+_time64( &timestamp ); // The timestamp to attach to this version
 // Query the map's history
-
-TSLVersionHistorySet const\* history = map-\>versionHistory();
-
+TSLVersionHistorySet const* history = map->versionHistory();
 // Get the version number that will be used when the next archive
-
 // is created.
-
-TSLHistoryVersion version = history-\>getCurrentArchiveVersion();
-
+TSLHistoryVersion version = history->getCurrentArchiveVersion();
 // We store the archives in a hierarchical tree based on the
-
-// version number e.g. \<rootArchiveDir\>\\1\\, \<rootArchiveDir\>\\2\\,
-
-// \<rootArchiveDir\>\\3\\, etc. where \<rootArchiveDir\> is the root
-
+// version number e.g. <rootArchiveDir>\1\, <rootArchiveDir>\2\,
+// <rootArchiveDir>\3\, etc. where <rootArchiveDir> is the root
 // directory that contains the archives for the layer e.g.
-
-// 'c:\\MyMap\\archives\\LayerA\'.
-
-char buffer\[16\] = { '\\0' };
-
+// 'c:\MyMap\archives\LayerA'.
+char buffer[16] = { '\0' };
 sprintf( buffer, "%d", version );
-
 string archiveDir = rootArchiveDir;
-
 archiveDir += buffer;
-
 // The manager will automatically increment the archive version
-
 // number that is to be used for the next archive
-
-slm-\>publishAndArchive( archiveDir.c_str(), timestamp );
-
-slm-\>enablePublishing( false ); // Finished publishing
+slm->publishAndArchive( archiveDir.c_str(), timestamp );
+slm->enablePublishing( false ); // Finished publishing
+```
 
 ## Filter Data Layers
 
@@ -1218,97 +1178,53 @@ The loaded data can be saved to file in a standard format by querying the Displa
 
 The following is an example of using this layer:
 
-    // Load tsltransforms.dat this only needs to be done once at application
-
+```cpp
+    // Load tsltransforms.dat this only needs to be done once at application
 // startup.
-
-    TSLCoordinateSystem::loadCoordinateSystems();
-
-    // Create a Filter Data Layer which uses the GeoTIFF Filter
-
-    m_filterDataLayer = new TSLRasterFilterDataLayer(TSLFilterTypeGeoTIFF,
-
+    TSLCoordinateSystem::loadCoordinateSystems();
+    // Create a Filter Data Layer which uses the GeoTIFF Filter
+    m_filterDataLayer = new TSLRasterFilterDataLayer(TSLFilterTypeGeoTIFF,
 "GeoTIFFFilter");
-
-    // Raster processing options these are the same as you find in MapLink Studio 
-
-    m_filterDataLayer-\>rasterSplitThreshold( 256 );
-
-    m_filterDataLayer-\>rasterPyramidOptions(TSLRasterInterpolationBilinear, false,
-
- TSLRasterTypePNG, 2); 
-
-    // Tell the layer how many threads you want to use when re-projecting the
-
+    // Raster processing options these are the same as you find in MapLink Studio 
+    m_filterDataLayer->rasterSplitThreshold( 256 );
+    m_filterDataLayer->rasterPyramidOptions(TSLRasterInterpolationBilinear, false,
+ TSLRasterTypePNG, 2); 
+    // Tell the layer how many threads you want to use when re-projecting the
 // raster.
-
-    m_filterDataLayer-\>setRasterThreadingOptions(0, 0);
-
-    // You can reduce the resultant image to 8 bit with 256 colours by
-
+    m_filterDataLayer->setRasterThreadingOptions(0, 0);
+    // You can reduce the resultant image to 8 bit with 256 colours by
 // uncommenting this line
-
-    //m_filterDataLayer-\>rasterOptions(24, 256);
-
-    // Set the Output coordinate transform
-
-    // This matches the Natural Earth World map that is shipped with MapLink.
-
-    const TSLCoordinateSystem \*dynArcCS = 
-
-TSLCoordinateSystem::findByName( "Dynamic ARC Grid" );
-
-    TSLCoordinateSystem \*outputCS = dynArcCS-\>clone( 1000 );
-
-    outputCS-\>setTMCperMU( 50.0 );
-
-    m_filterDataLayer-\>setCoordinateSystem( outputCS );
-
-   
-
-    // Load the data.
-
-    m_filterDataLayer-\>loadData(pathToGeoTiff.c_str());
-
-    // Query the first display item - note there could be more than one.
-
-    TSLFilterDataLayerDisplayItem \*displayItem =
-
-m_filterDataLayer-\>getDisplayItemAt( 0 );
-
-    // You should set any additional processing options at this stage.
-
-    //
-
-    // This could be what the input coordinate system is or the geo-location.
-
-    // In the case of the GeoTIFF filter this is not necessary.
-
-    //
-
-    // rasterItem-\>setInputCoordinateSystem( inputCS );
-
-    // rasterItem-\>setGeolocation( 0.0, 0.0, 700000.0, 1300000.0 );
-
-    // Process the layer\... if you do not call this the layer will be processed on
-
-    // first draw.
-
-    m_filterDataLayer-\>process();
-
-    // Save the processed data so we can load it rather than re-process.
-
-    //   - you need to know if it is vector or raster on reload so that you can
-
-    //     create either a TSLStandardDataLayer or TSLRasterDataLayer
-
-    displayItem-\>saveDataLayer(locationToSaveProcessedDataTo.c_str(),
-
-TSL_MAPLINK_DEFAULT_VERSION, TSLRasterTypePNG, 2);
-
-    // Add the layer to a drawing surface
-
-    m_surface-\>addDataLayer( m_filterDataLayer, "filterlayer");
+    //m_filterDataLayer->rasterOptions(24, 256);
+    // Set the Output coordinate transform
+    // This matches the Natural Earth World map that is shipped with MapLink.
+    const TSLCoordinateSystem *dynArcCS = 
+TSLCoordinateSystem::findByName( "Dynamic ARC Grid" );
+    TSLCoordinateSystem *outputCS = dynArcCS->clone( 1000 );
+    outputCS->setTMCperMU( 50.0 );
+    m_filterDataLayer->setCoordinateSystem( outputCS );
+    // Load the data.
+    m_filterDataLayer->loadData(pathToGeoTiff.c_str());
+    // Query the first display item - note there could be more than one.
+    TSLFilterDataLayerDisplayItem *displayItem =
+m_filterDataLayer->getDisplayItemAt( 0 );
+    // You should set any additional processing options at this stage.
+    //
+    // This could be what the input coordinate system is or the geo-location.
+    // In the case of the GeoTIFF filter this is not necessary.
+    //
+    // rasterItem->setInputCoordinateSystem( inputCS );
+    // rasterItem->setGeolocation( 0.0, 0.0, 700000.0, 1300000.0 );
+    // Process the layer... if you do not call this the layer will be processed on
+    // first draw.
+    m_filterDataLayer->process();
+    // Save the processed data so we can load it rather than re-process.
+    //   - you need to know if it is vector or raster on reload so that you can
+    //     create either a TSLStandardDataLayer or TSLRasterDataLayer
+    displayItem->saveDataLayer(locationToSaveProcessedDataTo.c_str(),
+TSL_MAPLINK_DEFAULT_VERSION, TSLRasterTypePNG, 2);
+    // Add the layer to a drawing surface
+    m_surface->addDataLayer( m_filterDataLayer, "filterlayer");
+```
 
 The processing of large amounts of raster data can take some time, it is therefore recommended that the processing takes place in a background thread. If you take this approach do not add the layer to a drawing surface until after the processing has been completed. The layer must be owned by the thread which owns the drawing surface.
 
@@ -1327,4 +1243,5 @@ The layer also supports the use of layer dimensions and styles along with all th
 A good starting point when developing using the WMS Data Layer is to refer to the WMSClientSample supplied with MapLink. It demonstrates how to use the WMS in a thread safe manner and permits the setting of WMS dimension and style settings.
 
 There are certain limitations with its use in conjunction with MapLink 3D drawing surfaces due to the coordinate system support.
+
 

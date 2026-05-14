@@ -172,11 +172,11 @@ Add a member variable to hold the pressed mouse location: CPoint m_rmb and also 
 
 In the View constructor, initialise the boolean variables
 
+```cpp
 CHelloGlobeView::CHelloGlobeView()
 
 : m_drawingSurface(NULL), m_grabbed(false), m_checkForGrab(false)
 
-```cpp
 {
 
 }
@@ -231,12 +231,11 @@ void CHelloGlobeView::OnMouseMove(UINT nFlags, CPoint point)
 {
 
 if ( m_checkForGrab
-```
-&& ( m_grabbed \|\| abs( point.x - m_rmb.x ) \> 3
 
-\|\| abs( point.y - m_rmb.y ) \> 3 ) )
+&& ( m_grabbed || abs( point.x - m_rmb.x ) > 3
 
-```cpp
+|| abs( point.y - m_rmb.y ) > 3 ) )
+
 {
 
 // Calculate offset between the last point and the new point

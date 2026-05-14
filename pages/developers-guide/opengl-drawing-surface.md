@@ -216,101 +216,61 @@ The constructor of the Application class tells MapLink to load its configuration
 
 The next step is the creation of the drawing surface. Qt will call MapLinkWidget::initialiseGL inside **maplinkwidget.cpp** to ask the widget to perform any initial setup. The MapLink drawing surface doesn't interface with Qt directly, it uses the underlying window handles from the operating system in order to allow it to be used with different application toolkits. Therefore, a small amount of platform specific code is needed in order extract these handles from Qt:
 
+```cpp
 // Platform Specific Setup.
-
 #ifdef X11_BUILD
-
-\# if QT_VERSION \< 0x50100
-
+# if QT_VERSION < 0x50100
 // Extract the X11 information - QX11Info was removed in Qt5
-
-QPlatformNativeInterface \*native =
-
-> QGuiApplication::platformNativeInterface();
-
-Display \*display = static_cast\<Display\*\>( native-\>nativeResourceForWindow(
-
-> "display", NULL ) );
-
-Screen \*screen = DefaultScreenOfDisplay(display);
-
+QPlatformNativeInterface *native =
+QGuiApplication::platformNativeInterface();
+Display *display = static_cast<Display*>( native->nativeResourceForWindow(
+"display", NULL ) );
+Screen *screen = DefaultScreenOfDisplay(display);
 #else
-
 // Qt 5.1 introduced a different version of QX11Info for accessing widget native
-
 // handles
-
 int screenNum = DefaultScreen( QX11Info::display() );
-
-Screen \*screen = ScreenOfDisplay( QX11Info::display(), screenNum );
-
+Screen *screen = ScreenOfDisplay( QX11Info::display(), screenNum );
 #endif
-
 // pass to the application as we will need for the Drawing Surface
-
-m_application-\>drawingInfo(display, screen);
-
+m_application->drawingInfo(display, screen);
 #else
-
 // The MapLink OpenGL drawing surface needs to know the window handle to
-
 // attach to - query this from Qt
-
 WId hWnd = winId();
-
 // Pass the handle to the application so it can be used by the drawing
-
 // surface
-
-m_application-\>drawingInfo( hWnd );
-
+m_application->drawingInfo( hWnd );
 #endif
+```
 
 These window handles are passed to the Application class for it to use when creating the drawing surface. The widget then calls Application::create in **application.cpp** to create the MapLink drawing surface and attach it to the window handles it just queried.
 
 Creating the drawing surface requires another small amount of platform specific code - the exact type of drawing surface used depends on the platform the sample is being run on:
 
+```cpp
 // Tell the drawing surface whether it will need to perform buffer swaps,
-
 // or whether it is handled externally. See the constructor of
-
 // MapLinkWidget.
-
 TSLOpenGLSurfaceCreationParameters creationOptions;
-
 creationOptions.swapBuffersManually( ML_QT_BUFFER_SWAP );
-
 #ifdef X11_BUILD
-
 // Get the active OpenGL context to attach the drawing surface to
-
 GLXContext context = glXGetCurrentContext();
-
 GLXDrawable drawable = glXGetCurrentDrawable();
-
 // Create the Accelerated Surface object
-
 m_drawingSurface = new TSLGLXSurface( m_display, m_screen, drawable,
-
 context, creationOptions );
-
 #else
-
 HGLRC context = wglGetCurrentContext();
-
 m_drawingSurface = new TSLWGLSurface( (HWND)m_window, false, context,
-
 creationOptions );
-
 #endif
-
-if( !m_drawingSurface-\>context() )
-
+if( !m_drawingSurface->context() )
 {
-
 // Error handling code
-
 }
+```
 
 In both cases the application queries the active OpenGL context created by Qt and instantiates a MapLink drawing surface, telling it to attach itself to this context.
 
@@ -320,55 +280,38 @@ Once the drawing surface is created, we check to make sure that the context meth
 
 Next, the application creates a data layer to load a map created by MapLink Studio into and adds this to the drawing surface so that its contents will be drawn when the drawing surface renders.
 
+```cpp
 // Add a map data layer to the drawing surface
-
 m_mapDataLayer = new TSLMapDataLayer();
-
 // Set a cache size of 256Mb on the map layer to avoid reloading tiles
-
 // from disk too frequently
-
-m_mapDataLayer-\>cacheSize( 256 \* 1024 );
-
-m_drawingSurface-\>addDataLayer( m_mapDataLayer, m_mapLayerName );
+m_mapDataLayer->cacheSize( 256 * 1024 );
+m_drawingSurface->addDataLayer( m_mapDataLayer, m_mapLayerName );
+```
 
 At this stage the data layer is still empty, so nothing will be drawn yet.
 
 The final step is the creation of the MapLink interaction mode manager and interaction modes.
 
+```cpp
 // Now create and initialse the mode manager and modes
-
 m_modeManager = new TSLInteractionModeManagerGeneric( this,
-
 m_drawingSurface );
-
 // Add the three interaction mode types to the manager - the zoom mode is
-
 // the default
-
-m_modeManager-\>addMode( new TSLInteractionModeZoom( ID_TOOLS_ZOOM ),
-
+m_modeManager->addMode( new TSLInteractionModeZoom( ID_TOOLS_ZOOM ),
 true ) ;
-
-m_modeManager-\>addMode( new TSLInteractionModePan( ID_TOOLS_PAN ),
-
+m_modeManager->addMode( new TSLInteractionModePan( ID_TOOLS_PAN ),
 false ) ;
-
-m_modeManager-\>addMode( new TSLInteractionModeGrab( ID_TOOLS_GRAB ),
-
+m_modeManager->addMode( new TSLInteractionModeGrab( ID_TOOLS_GRAB ),
 false ) ;
-
 // Display any errors that have occurred
-
-const char \*errorMsg = TSLErrorStack::errorString();
-
+const char *errorMsg = TSLErrorStack::errorString();
 if( errorMsg )
-
 {
-
 // Error handling code
-
 }
+```
 
 The interaction modes are a set of premade event handlers that implement some common methods of manipulating the view of a drawing surface based on user input. In this case we set the manager up to have zoom to rectangle, pan to point and grab and drag modes. The zoom to rectangle mode is set to be the default active interaction mode.
 
@@ -378,31 +321,21 @@ Although attached to the widget, the drawing surface is still not in a valid sta
 
 After MapLinkWidget::initializeGL has finished, Qt will immediately call MapLinkWidget::resizeGL in **maplinkwidget.cpp**. This call is forwarded to Application::resize in **application.cpp**, which updates both the drawing surface and the interaction mode manager with the size of the window they are drawing to.
 
+```cpp
 if( m_drawingSurface )
-
 {
-
 // Inform the drawing surface of the new window size,
-
 // attempting to keep the top left corner the same.
-
 // Do not ask for an automatic redraw since we will get a call to
-
 // redraw() to do so
-
-m_drawingSurface-\>wndResize( 0, 0, width, height, false,
-
+m_drawingSurface->wndResize( 0, 0, width, height, false,
 TSLResizeActionMaintainTopLeft ) ;
-
 }
-
 if( m_modeManager )
-
 {
-
-m_modeManager-\>onSize( width, height ) ;
-
+m_modeManager->onSize( width, height ) ;
 }
+```
 
 Now that the drawing surface knows the window size, it is fully initialised and ready for drawing.
 
@@ -412,25 +345,18 @@ This same event sequence is used to handle changes to the window size while the 
 
 When the sample's window needs to be redrawn, Qt will call MapLinkWidget::paintGL in **maplinkwidget.cpp**. This in turn calls Application::redraw in **application.cpp** to make the drawing surface draw all of the data layers inside it.
 
+```cpp
 if( m_drawingSurface )
-
 {
-
 // Draw the map to the widget
-
-m_drawingSurface-\>drawDU( 0, 0, m_widgetWidth, m_widgetHeight, true );
-
+m_drawingSurface->drawDU( 0, 0, m_widgetWidth, m_widgetHeight, true );
 // Don't forget to draw any echo rectangle that may be active.
-
 if ( m_modeManager )
-
 {
-
-m_modeManager-\>onDraw( 0, 0, m_widgetWidth, m_widgetHeight );
-
+m_modeManager->onDraw( 0, 0, m_widgetWidth, m_widgetHeight );
 }
-
 }
+```
 
 There is one data layer in the drawing surface - the TSLMapDataLayer we added inside the Application::create method. Currently this has no map loaded, so drawing will just clear the widget to the default background colour, which is white.
 
@@ -448,45 +374,32 @@ The widget does three things when loading a map:
 
 The task of actually loading the data into the TSLMapDataLayer is done inside Application::loadMap in **application.cpp**.
 
-if( !m_mapDataLayer-\>loadData( mapFilename.c_str() ) )
-
+```cpp
+if( !m_mapDataLayer->loadData( mapFilename.c_str() ) )
 {
-
 QMessageBox::critical( m_parentWidget, "Failed to load map",
-
 mapFilename.c_str() );
-
 return false;
-
 }
-
 if( m_modeManager )
-
 {
-
 // Loading a map invalidates any stored views in mode manager - this
-
 // sample doesn't create any
-
-m_modeManager-\>resetViews();
-
+m_modeManager->resetViews();
 }
+```
 
 Changing the drawing surface view to cover the extent of the newly loaded map is done inside Application::resetView.
 
+```cpp
 if( m_drawingSurface )
-
 {
-
 // Reset the drawing surface rotation as well
-
 m_surfaceRotation = 0.0;
-
-m_drawingSurface-\>rotate( m_surfaceRotation );
-
-m_drawingSurface-\>reset( false );
-
+m_drawingSurface->rotate( m_surfaceRotation );
+m_drawingSurface->reset( false );
 }
+```
 
 The sample explicitly asks the drawing surface not to perform an immediate redraw as this is handled by MapLinkWidget. Any rotation that has been applied to the drawing surface by the sample is also removed.
 
@@ -502,53 +415,32 @@ When the sample is started, the zoom to rectangle mode is the default interactio
 
 The Application instructs the interaction mode manager to change the interaction mode using the unique identifiers assigned to each the interaction modes when they were initially added to the interaction mode manager when it was created.
 
+```cpp
 void Application::activatePanMode()
-
 {
-
 // Activate the pan interaction mode
-
 if( m_modeManager )
-
 {
-
-m_modeManager-\>setCurrentMode( ID_TOOLS_PAN ) ;
-
+m_modeManager->setCurrentMode( ID_TOOLS_PAN ) ;
 }
-
 }
-
 void Application::activateZoomMode()
-
 {
-
 // Activate the zoom interaction mode
-
 if( m_modeManager )
-
 {
-
-m_modeManager-\>setCurrentMode( ID_TOOLS_ZOOM ) ;
-
+m_modeManager->setCurrentMode( ID_TOOLS_ZOOM ) ;
 }
-
 }
-
 void Application::activateGrabMode()
-
 {
-
 // Activate the grab interaction mode
-
 if( m_modeManager )
-
 {
-
-m_modeManager-\>setCurrentMode( ID_TOOLS_GRAB ) ;
-
+m_modeManager->setCurrentMode( ID_TOOLS_GRAB ) ;
 }
-
 }
+```
 
 ## Additional Data Layers for the OpenGL Surface
 
@@ -576,33 +468,22 @@ Separate from the coordinate system used for coordinate transformations in the d
 
 The OpenGL drawing surface defines this rendering coordinate space to be the TMC extent of the area being rendered, without any drawing surface rotation or dynamic arc scaling included, centred on 0,0 (centre of the screen). The TMC extent that this equates to from the active TSLCoordinateSystem can be determined if required as follows, although it is generally not needed:
 
-TSLDrawingSurface \*surface = \...
-
+```cpp
+TSLDrawingSurface *surface = ...
 TSLEnvelope renderExtent;
-
-surface-\>getTMCExtent(renderExtent);
-
-if(surface-\>getOption(TSLOptionDynamicArcSupportEnabled))
-
+surface->getTMCExtent(renderExtent);
+if(surface->getOption(TSLOptionDynamicArcSupportEnabled))
 {
-
 // Dynamic arc is enabled, remove any scaling effect applied
-
 // to the envelope
-
 double tmcPerDUX = 0.0, tmcPerDUY = 0.0;
-
-surface-\>TMCperDU(tmcPerDUX, tmcPerDUY);
-
+surface->TMCperDU(tmcPerDUX, tmcPerDUY);
 renderExtent.scale(tmcPerDUY / tmcPerDUX, 1.0);
-
 }
-
 // renderExtent now contains the TMC extent of the surface's drawing
-
 // coordinate system in the active TSLCoordinateSystem of the drawing
-
 // surface
+```
 
 As mentioned above, this extent is centred on 0,0 when mapped to the drawing surface's rendering coordinate system (i.e., the bottom left of the envelope is equal to -width()/2, -height/2 and the top right of the envelope is equal to width()/2. height()/2). The bottom left and top right of this envelope map to the bottom left and top right of the screen - therefore 0,0 in the rendering coordinate system always maps to the centre of the screen.
 
@@ -616,69 +497,40 @@ The combination of these items allows for the construction of a modelview matrix
 
 Putting this all together, the code for positioning an object centred item for drawing inside a TSLCustomDataLayer might look like the following:
 
-bool MyCustomLayer::drawLayer(TSLRenderingInterface \*renderingInterface, const TSLEnvelope\* extent, TSLCustomDataLayerHandler& layerHandler)
-
+```cpp
+bool MyCustomLayer::drawLayer(TSLRenderingInterface *renderingInterface, const TSLEnvelope* extent, TSLCustomDataLayerHandler& layerHandler)
 {
-
-TSLOpenGLSurface \*surface = reinterpret_cast\<TSLOpenGLSurface\*\>(
-
+TSLOpenGLSurface *surface = reinterpret_cast<TSLOpenGLSurface*>(
 layerHandler.drawingSurface());
-
 // This contains the TMC location of the centre of the object
-
 // in the drawing surface's active coordinate system
-
 TSLCoord objectTMCPosition = calculateObjectPosition();
-
 // Determine the modelview matrix to position the object
-
 // in the right place relative to the current drawing.
-
-Matrix modelViewMat(surface-\>modelViewMatrix());
-
+Matrix modelViewMat(surface->modelViewMatrix());
 modelViewMat.translate(objectTMCPosition.x() --
-
-surface-\>coordinateCentreX(),
-
+surface->coordinateCentreX(),
 objectTMCPosition.y() --
-
-surface-\>coordinateCentreY());
-
+surface->coordinateCentreY());
 if(removeDynamicArcScaling)
-
 {
-
 // This will remove the effect of dynamic arc (if active)
-
 // from any subsequent transformations.
-
 double tmcPerDUX = 0.0, tmcPerDUY = 0.0;
-
-surface-\>TMCperDU(tmcPerDUX, tmcPerDUY);
-
+surface->TMCperDU(tmcPerDUX, tmcPerDUY);
 modelViewMat.scale(tmcPerDUX / tmcPerDUY, 1.0);
-
 }
-
 // Upload the matrices to OpenGL
-
-surface-\>stateTracker()-\>useProgram(m_program);
-
+surface->stateTracker()->useProgram(m_program);
 glUniformMatrix4fv( m_modelViewUniform, 1, GL_FALSE,
-
 modelViewMat.matrix());
-
 glUniformMatrix4fv( m_projectionUniform, 1, GL_FALSE,
-
-surface-\>projectionMatrix());
-
+surface->projectionMatrix());
 // Now draw the object
-
-\...
-
+...
 return true;
-
 }
+```
 
 ### Interspersing Custom Rendering with MapLink Rendering
 
@@ -686,87 +538,54 @@ The OpenGL drawing surface will internally change the order or defer drawing for
 
 In the simple case where all of the application rendering in the data layer occurs after all MapLink rendering, the application can use the flushPendingDraws method on TSLOpenGLSurface to ensure all MapLink draw commands have been sent to the GPU command stream before beginning application rendering. This might look as follows:
 
-bool MyCustomLayer::drawLayer(TSLRenderingInterface \*renderingInterface, const TSLEnvelope\* extent, TSLCustomDataLayerHandler& layerHandler)
-
+```cpp
+bool MyCustomLayer::drawLayer(TSLRenderingInterface *renderingInterface, const TSLEnvelope* extent, TSLCustomDataLayerHandler& layerHandler)
 {
-
-TSLOpenGLSurface \*surface = reinterpret_cast\<TSLOpenGLSurface\*\>(
-
+TSLOpenGLSurface *surface = reinterpret_cast<TSLOpenGLSurface*>(
 layerHandler.drawingSurface());
-
 // This function performs rendering through the rendering interface
-
 doMapLinkDrawing(renderingInterface);
-
 // Ensure all MapLink rendering is done before we continue
-
-surface-\>flushPendingDraws();
-
+surface->flushPendingDraws();
 // Custom application rendering in this case does not use the
-
 // depth buffer
-
-surface-\>stateTracker()-\>disableDepthTest();
-
+surface->stateTracker()->disableDepthTest();
 // Custom application rendering occurs in here
-
 doMyCustomRendering();
-
-surface-\>stateTracker()-\>enableDepthTest();
-
+surface->stateTracker()->enableDepthTest();
 return true;
-
 }
+```
 
 If the custom rendering is mixed in with MapLink rendering, then it can often be beneficial to make use of the depth buffer to ensure ordering in the same way that the drawing surface does. To assist in this the TSLOpenGLSurface provides the acquireDepthSlice method which can be used to reserve one or more depth buffer values for custom rendering use. The value returned is the depth in OpenGL's normalised device coordinate space, which since the OpenGL drawing surface uses an orthographic 2D projection and so has no perspective division is also OpenGL's clip space. The value can therefore be assigned directly to either gl_FragDepth in the application's fragment shader or to gl_Position.z in the application's vertex shader.
 
 In the following examples depthValue is the value obtained from calling acquireDepthSlice:
 
+```
 // Vertex shader example - this method can be used on OpenGL ES 2.0 systems
-
 // where gl_FragDepth is not available
-
 #version 150 core
-
 uniform float depthValue;
-
 uniform mat4 modelViewMatrix;
-
 uniform mat4 projectionMatrix;
-
 in vec2 vertexPosition;
-
 void main()
-
 {
-
-gl_Position = (projectionMatrix \* modelViewMatrix) \* vec4( vertexPosition,
-
+gl_Position = (projectionMatrix * modelViewMatrix) * vec4( vertexPosition,
 0.0, 1.0 );
-
 gl_Position.z = depthValue;
-
 }
-
 // Fragment shader example
-
 #version 150 core
-
 uniform vec4 colour;
-
 uniform float depthValue;
-
 out vec4 pixelColour;
-
 void main()
-
 {
-
 gl_FragDepth = depthValue;
-
 pixelColour = colour;
-
 }
+```
 
 When using the depth buffer in this fashion it is not necessary to call flushPendingDraws in order to ensure correct ordering. Depth buffer values obtained in this fashion only apply to the current data layer being drawn as the depth buffer will be cleared when drawing each data layer.
 
@@ -928,141 +747,80 @@ The second type of off-screen rendering affects how the OpenGL context must be c
 
 The OpenGL drawing surface respects any framebuffer object (FBO) bound at the point that it starts drawing and will redirect its output to the buffers bound to this FBO. Therefore making the drawing surface render to a texture or renderbuffer is as simple as binding the desired FBO before calling drawDU or drawUU on the drawing surface. The code to create this FBO would look as follows:
 
+```cpp
 // m_surface is a TSLOpenGLSurface that is attached to a window as
-
 // normal for on-screen rendering.
-
 // Creates the framebuffer object and attachments to use for offscreen
-
 // rendering
-
 bool createFBO()
-
 {
-
 TSLDeviceUnits surfaceX1 = 0, surfaceY1 = 0,
-
 surfaceX2 = 0, surfaceY2 = 0;
-
-m_surface-\>getDUExtent( &surfaceX1, &surfaceY1,
-
+m_surface->getDUExtent( &surfaceX1, &surfaceY1,
 &surfaceX2, &surfaceY2 );
-
 glGenFramebuffers( 1, &m_fbo );
-
 glGenTextures( 1, &m_texture );
-
 glGenRenderbuffers( 1, &m_depthBuffer );
-
 // Initialise the colour texture and depth render buffer to
-
 // match the drawing surface's size
-
-m_surface-\>stateTracker()-\>bindTexture( GL_TEXTURE0, GL_TEXTURE_2D,
-
+m_surface->stateTracker()->bindTexture( GL_TEXTURE0, GL_TEXTURE_2D,
 m_texture );
-
 glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
-
 glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
-
 glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
-
 glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
-
 glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA8, surfaceX2-surfaceX1,
-
 surfaceY2-surfaceY1, 0, GL_RGBA, GL_UNSIGNED_BYTE,
-
 NULL );
-
 glBindRenderbuffer( GL_RENDERBUFFER, m_depthBuffer );
-
 glRenderbufferStorage( GL_RENDERBUFFER, GL_DEPTH_COMPONENT24,
-
 surfaceX2-surfaceX1, surfaceY2-surfaceY1 );
-
 // Make the fbo the active render target
-
-m_surface-\>stateTracker()-\>bindFramebuffer( GL_FRAMEBUFFER, m_fbo );
-
+m_surface->stateTracker()->bindFramebuffer( GL_FRAMEBUFFER, m_fbo );
 glFramebufferTexture2D( GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
-
 GL_TEXTURE_2D, m_texture, 0 );
-
 glFramebufferRenderbuffer( GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
-
 GL_RENDERBUFFER, m_depthBuffer );
-
 // Make sure we created the fbo correctly
-
 GLenum status = glCheckFramebufferStatus( GL_FRAMEBUFFER );
-
 switch( status )
-
 {
-
 case GL_FRAMEBUFFER_COMPLETE:
-
-m_surface-\>stateTracker()-\>bindFramebuffer( GL_FRAMEBUFFER, 0 );
-
+m_surface->stateTracker()->bindFramebuffer( GL_FRAMEBUFFER, 0 );
 // Everything worked - we are done
-
 return true;
-
 default:
-
 // An error occurred - the created objects should be deleted here
-
-\...
-
+...
 return false;
-
 }
-
 }
+```
 
 To make the drawing surface draw to the texture the applications draw function might look as follows:
 
+```cpp
 // m_surface is a TSLOpenGLSurface that is attached to a window as
-
 // normal for on-screen rendering.
-
 //
-
 // m_fbo is the framebuffer object already created
-
 void draw( int width, int height, bool drawOffscreen )
-
 {
-
 if( drawOffscreen )
-
 {
-
-m_surface-\>stateTracker()-\>bindFramebuffer( GL_FRAMEBUFFER, m_fbo );
-
+m_surface->stateTracker()->bindFramebuffer( GL_FRAMEBUFFER, m_fbo );
 // Drawing will go to the buffers attached to the FBO - in this
-
 // case the texture created earlier.
-
-m_surface-\>drawDU( 0, 0, width, height, true );
-
+m_surface->drawDU( 0, 0, width, height, true );
 }
-
 else
-
 {
-
-m_surface-\>stateTracker()-\>bindFramebuffer( GL_FRAMEBUFFER, 0 );
-
+m_surface->stateTracker()->bindFramebuffer( GL_FRAMEBUFFER, 0 );
 // Drawing will go to the window the surface is attached to
-
-m_surface-\>drawDU( 0, 0, width, height, true );
-
+m_surface->drawDU( 0, 0, width, height, true );
 }
-
 }
+```
 
 After the draw completes the texture will then contain the output from the drawing surface.
 
@@ -1070,157 +828,89 @@ After the draw completes the texture will then contain the output from the drawi
 
 GLX allows an OpenGL context to be created from a GLXPbuffer instead of a Window XID. These are created through glXCreatePbuffer which returns the GLXDrawable needed to create the OpenGL context, which the drawing surface can then be attached to. When using GLXPbuffers the application must create the OpenGL context itself. An example of this is below:
 
-int configAttribs\[\] = { GLX_DOUBLEBUFFER, False,
-
+```cpp
+int configAttribs[] = { GLX_DOUBLEBUFFER, False,
 GLX_DEPTH_SIZE, 16,
-
 GLX_DRAWABLE_TYPE, GLX_PBUFFER_BIT,
-
 GLX_RENDER_TYPE, GLX_RGBA_BIT,
-
 GLX_CONFIG_CAVEAT, GLX_NONE,
-
 None };
-
 int numConfigMatches = 0;
-
-GLXFBConfig \*configs = glXChooseFBConfig( m_display, m_screenNum,
-
+GLXFBConfig *configs = glXChooseFBConfig( m_display, m_screenNum,
 configAttribs,
-
 &numConfigMatches );
-
-if( !configs \|\| numConfigMatches == 0 )
-
+if( !configs || numConfigMatches == 0 )
 {
-
 // Error - no valid framebuffer configurations
-
-\...
-
+...
 }
-
-int bufferAttribs\[\] = { GLX_PBUFFER_WIDTH, width,
-
+int bufferAttribs[] = { GLX_PBUFFER_WIDTH, width,
 GLX_PBUFFER_HEIGHT, height,
-
 None };
-
-GLXPbuffer glxDrawable = glXCreatePbuffer( m_display, configs\[0\],
-
+GLXPbuffer glxDrawable = glXCreatePbuffer( m_display, configs[0],
 bufferAttribs );
-
 // This code assumes support for GLX_ARB_create_context
-
-int contextAttribs\[\] = { GLX_CONTEXT_MAJOR_VERSION_ARB, 3,
-
+int contextAttribs[] = { GLX_CONTEXT_MAJOR_VERSION_ARB, 3,
 GLX_CONTEXT_MINOR_VERSION_ARB, 2,
-
 GLX_CONTEXT_PROFILE_MASK_ARB,
-
 GLX_CONTEXT_CORE_PROFILE_BIT_ARB
-
 GLX_RENDER_TYPE, GLX_RGBA_TYPE,
-
 None };
-
-GLXContext context = glXCreateContextAttribs( m_display, configs\[0\], None,
-
+GLXContext context = glXCreateContextAttribs( m_display, configs[0], None,
 True, contextAttribs);
-
 if( !glXMakeContextCurrent( m_display, glxDrawable, glxDrawable,
-
 context ) )
-
 {
-
 // Error - cannot activate context
-
-\...
-
+...
 }
-
 // Attach the drawing surface to the OpenGL context
-
 TSLOpenGLSurfaceCreationParameters creationOptions;
-
 creationOptions.useVSync( false );
-
 creationOptions.swapBuffersManually( true );
-
-TSLGLXSurface \*surface = new TSLGLXSurface( m_display, m_screen,
-
+TSLGLXSurface *surface = new TSLGLXSurface( m_display, m_screen,
 glxDrawable, context,
-
 creationOptions );
-
 XFree( configs );
+```
 
 ### Windowless Drawing Through EGL with the TSLEGLSurface
 
 Windowless rendering with EGL is very similar to GLX - an OpenGL context can be created from an EGLSurface tied to a Pbuffer instead of an EGLNativeWindowType. When using EGL Pbuffers the application must create the OpenGL context itself. An example of this is below:
 
-EGLint configAttribs\[\] = { EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
-
+```cpp
+EGLint configAttribs[] = { EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
 EGL_COLOR_BUFFER_TYPE, EGL_RGB_BUFFER,,
-
 EGL_SURFACE_TYPE, EGL_PBUFFER_BIT,
-
 EGL_DEPTH_SIZE, 16,
-
 EGL_SAMPLES, 0,
-
 EGL_NONE };
-
 EGLint numConfigMatches = 0;
-
 EGLConfig config;
-
 if( !eglChooseConfig( m_display, configAttribs, &config, 1,
-
-&numConfigMatches ) \|\| numConfigMatches == 0 )
-
+&numConfigMatches ) || numConfigMatches == 0 )
 {
-
 // Error - no valid framebuffer configurations
-
-\...
-
+...
 }
-
-EGLint bufferAttribs\[\] = { EGL_WIDTH, width,
-
+EGLint bufferAttribs[] = { EGL_WIDTH, width,
 EGL_HEIGHT, height,
-
 EGL_NONE };
-
 EGLsurface eglSurface = eglCreatePbufferSurface( m_display, config
-
 bufferAttribs );
-
-EGLint contextAttribs\[\] = { EGL_CONTEXT_CLIENT_VERSION, 2,
-
+EGLint contextAttribs[] = { EGL_CONTEXT_CLIENT_VERSION, 2,
 EGL_NONE };
-
 EGLContext context = eglCreateContext ( m_display, config, EGL_NO_CONTEXT,
-
 contextAttribs );
-
 if( !eglMakeCurrent( m_display, eglSurface, eglSurface, context ) )
-
 {
-
 // Error - cannot activate context
-
-\...
-
+...
 }
-
 // Attach the drawing surface to the OpenGL context
-
-TSLEGLSurface \*surface = new TSLEGLSurface();
-
-surface-\>attach();
+TSLEGLSurface *surface = new TSLEGLSurface();
+surface->attach();
+```
 
 ### Windowless Drawing on Windows with the TSLWGLSurface
 
@@ -1320,7 +1010,9 @@ Raster maps should generally always be created with one or more of the compresse
 
 When assessing the complexity of a vector map it can be useful to put the drawing surface into wireframe mode. This can provide a quick visual method of determining if a particular map layer is unnecessarily detailed for the scale it is displayed at. This can be done by inserting the following line of code before calling drawDU:
 
+```cpp
 glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+```
 
 As a general rule, areas that appear as mostly solid colour in wireframe mode when viewing a detail layer at its highest zoom level are unnecessarily detailed and could be simplified without affecting the appearance of the detail layer.
 
@@ -1366,91 +1058,55 @@ On X11 systems the visual used to create the window that the drawing surface is 
 
 In practice, this means that an application's original drawing surface creation that looks like this:
 
+```cpp
 // **On Windows**
-
-TSLNTSurface \*surface = new TSLNTSurface(m_hWnd, false);
-
-surface-\>setOption(TSLOptionDoubleBuffered, true);
-
-surface-\>wndResize(0, 0, width, height, false);
-
-\... // Non-drawing surface application initialisation
-
+TSLNTSurface *surface = new TSLNTSurface(m_hWnd, false);
+surface->setOption(TSLOptionDoubleBuffered, true);
+surface->wndResize(0, 0, width, height, false);
+... // Non-drawing surface application initialisation
 // **On X11**
-
 // Find the visual to use when creating the window
-
-Visual \*visual = applicationVisualChooser();
-
+Visual *visual = applicationVisualChooser();
 // Creates the X window using the chosen visual
-
 Window window = createWindow(visual);
-
-TSLMotifSurface \*surface = new TSLMotifSurface(display, screen,
-
+TSLMotifSurface *surface = new TSLMotifSurface(display, screen,
 colourmap, window, 0,
-
 visual);
-
-surface-\>setOption(TSLOptionDoubleBuffered, true);
-
-surface-\>wndResize(0, 0, width, height, false);
-
-\... // Non-drawing surface application initialisation
+surface->setOption(TSLOptionDoubleBuffered, true);
+surface->wndResize(0, 0, width, height, false);
+... // Non-drawing surface application initialisation
+```
 
 Would be replaced with the following:
 
+```cpp
 // **On Windows**
-
 TSLOpenGLSurfaceCreationParameters creationOptions;
-
-TSLWGLSurface \*surface = new TSLWGLSurface(m_hWnd, false,
-
+TSLWGLSurface *surface = new TSLWGLSurface(m_hWnd, false,
 creationOptions);
-
-m_drawingSurface-\>wndResize(0, 0, width, height);
-
-\... // Non-drawing surface application initialisation
-
+m_drawingSurface->wndResize(0, 0, width, height);
+... // Non-drawing surface application initialisation
 // **On X11**
-
 // Find the visual to use when creating the window
-
 TSLOpenGLSurfaceCreationParameters creationOptions;
-
 int visualID = TSLGLXSurface::preferredVisualID(display, screen,
-
 creationOptions);
-
 XVisualInfo visualTemplate;
-
 visualTemplate.screen = screenNum;
-
 visualTemplate.visualid = visualID;
-
 int numVisualMatches = 0;
-
-XVisualInfo \*visualData = XGetVisualInfo(display, VisualIDMask \| VisualScreenMask,
-
+XVisualInfo *visualData = XGetVisualInfo(display, VisualIDMask | VisualScreenMask,
 &visualTemplate,
-
 &numVisualMatches);
-
 // Creates the X window using the chosen visual
-
-Window window = createWindow(visualData-\>visual);
-
-TSLGLXSurface \*surface = new TSLGLXSurface(display, screen, window,
-
-visualData-\>visual,
-
+Window window = createWindow(visualData->visual);
+TSLGLXSurface *surface = new TSLGLXSurface(display, screen, window,
+visualData->visual,
 creationOptions);
-
-m_drawingSurface-\>wndResize(0, 0, width, height);
-
+m_drawingSurface->wndResize(0, 0, width, height);
 XFree(visualData);
-
-\... // Non-drawing surface application initialisation
+... // Non-drawing surface application initialisation
+```
 
 ### Interaction Modes
 
@@ -1490,29 +1146,20 @@ When drawing a non-native layer on X11 systems, the drawing surface creates a pi
 
 Application drawing to the pixmap should correctly set the alpha channel in order for the results to be visible. If using the base Xlib drawing functions that do not directly allow the specification of the alpha component, this can be done through direct manipulation of the pixel value on True Colour visuals like so:
 
+```cpp
 XVisualInfo visualTemplate;
-
 visualTemplate.visualid = XVisualIDFromVisual( visual );
-
 int numMatches = 0;
-
-XVisualInfo \*visualInfo = XGetVisualInfo( display, VisualIDMask,
-
+XVisualInfo *visualInfo = XGetVisualInfo( display, VisualIDMask,
 &visualTemplate, &numMatches );
-
-unsigned long alphaBytes = std::numeric_limits\<unsigned long\>::max();
-
-alphaBytes \^= (visualInfo-\>red_mask \| visualInfo-\>green_mask \|
-
-visualInfo-\>blue_mask);
-
+unsigned long alphaBytes = std::numeric_limits<unsigned long>::max();
+alphaBytes ^= (visualInfo->red_mask | visualInfo->green_mask |
+visualInfo->blue_mask);
 XFree( visualInfo );
-
 // Determine normal pixel value as normal through either XAllocColor
-
 // or calculation based on the visual's colour masks
+XColor colour = ...
+unsigned long alphaColour = alphaBytes | colour.pixel;
+```
 
-XColor colour = \...
-
-unsigned long alphaColour = alphaBytes \| colour.pixel;
 

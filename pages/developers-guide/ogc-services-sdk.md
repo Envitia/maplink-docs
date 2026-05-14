@@ -380,54 +380,47 @@ If the process advertised that it supports asynchronous requests and the request
 
 The following example code demonstrates the skeleton code for implementing a data source's plug-in.
 
-TSLWPSProcessDescriptionType\* SampleWPSDataSource:: describeProcess
+```cpp
+TSLWPSProcessDescriptionType* SampleWPSDataSource:: describeProcess
 
-(const char\* language)
+(const char* language)
 
 {
 
 if ( !m_isConfigurationValid )
 
-```cpp
 {
-```
 
-TSLOWSExceptionReport\* er = new TSLOWSExceptionReport(1, 0, 0);
+TSLOWSExceptionReport* er = new TSLOWSExceptionReport(1, 0, 0);
 
-TSLOWSException\* ex = new TSLOWSException("NoApplicableCode", "SampleWPSDataSource has not configured correctly");
+TSLOWSException* ex = new TSLOWSException("NoApplicableCode", "SampleWPSDataSource has not configured correctly");
 
-er-\>addException(\*ex);
+er->addException(*ex);
 
-ex-\>destroy();
+ex->destroy();
 
-er-\>throwException();
+er->throwException();
 
-```cpp
 }
-```
 
-TSLWPSProcessDescriptionType\* desc = new TSLWPSProcessDescriptionType("1.0.0");
+TSLWPSProcessDescriptionType* desc = new TSLWPSProcessDescriptionType("1.0.0");
 
-desc-\>identifier().value("SampleProcess");
+desc->identifier().value("SampleProcess");
 
-```cpp
 //TODO: Add inputs and output descriptions
 
 return desc;
-```
 
-```cpp
 }
 
 TSLWPSExecuteResponse* SampleWPSDataSource::executeProcess
-```
-(const TSLWPSExecuteRequest \*request,
 
-TSLWPSStoreHelper\* storeHelper,
+(const TSLWPSExecuteRequest *request,
 
-TSLWPSProgressSink\* progressSink)
+TSLWPSStoreHelper* storeHelper,
 
-```cpp
+TSLWPSProgressSink* progressSink)
+
 {
 
 //TODO: Interrogate request for input values

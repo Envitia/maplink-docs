@@ -6,8 +6,6 @@ title: "Unicode"
 
 MapLink Pro supports Unicode on all supported platforms. This means that you can display multiple languages on a map or layer using MapLink Pro. The data is stored within MapLink as UTF-8.
 
-1.  
-
 ## Unicode SDK Support
 
 ### C++ SDKs

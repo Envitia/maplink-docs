@@ -162,41 +162,43 @@ Interpolation can be turned on and off with the interpolation method. The post d
 
 Geodetic polylines are created in a very similar way to standard polylines:
 
-TSLStandardDataLayer\* stdLayer = \...;
+```cpp
+TSLStandardDataLayer* stdLayer = ...;
 
-TSLDataLayer\* mapLayer = \...;
+TSLDataLayer* mapLayer = ...;
 
-TSLCoordSet\* cs = new TSLCoordSet;
+TSLCoordSet* cs = new TSLCoordSet;
 
 TSLTMC x, y;
 
-if ( !mapLayer-\>latLongToTMC(51.4775, -0.461389, &x, &y) )
+if ( !mapLayer->latLongToTMC(51.4775, -0.461389, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-if ( !mapLayer-\>latLongToTMC(40.08, 116.584444, &x, &y) )
+if ( !mapLayer->latLongToTMC(40.08, 116.584444, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-TSLGeodeticPolyline\* polyline = stdLayer-\>entitySet()-\>
+TSLGeodeticPolyline* polyline = stdLayer->entitySet()->
 
 createGeodeticPolyline( 0, cs, true ) ;
 
 if ( !polyline )
 
-\... // handle error
+... // handle error
 
-polyline-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+polyline->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
 
-polyline-\>setRendering( TSLRenderingAttributeEdgeColour,
+polyline->setRendering( TSLRenderingAttributeEdgeColour,
 
 TSLComposeRGB(255,0,255) ) ;
 
-polyline-\>setRendering( TSLRenderingAttributeEdgeThickness, 6 ) ;
+polyline->setRendering( TSLRenderingAttributeEdgeThickness, 6 ) ;
+```
 
 Geodetic polylines can also be created directly with TSLGeodeticPolyline::create.
 
@@ -220,59 +222,61 @@ Interpolation can be turned on and off with the interpolation method. The post d
 
 Geodetic polygons are created in a very similar way to standard polygons:
 
-TSLStandardDataLayer\* stdLayer = \...;
+```cpp
+TSLStandardDataLayer* stdLayer = ...;
 
-TSLDataLayer\* mapLayer = \...;
+TSLDataLayer* mapLayer = ...;
 
-TSLCoordSet\* cs = new TSLCoordSet;
+TSLCoordSet* cs = new TSLCoordSet;
 
 TSLTMC x, y;
 
-if ( !mapLayer-\>latLongToTMC(20.0, 10.0, &x, &y) )
+if ( !mapLayer->latLongToTMC(20.0, 10.0, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-if ( !mapLayer-\>latLongToTMC(40.0, 0.0, &x, &y) )
+if ( !mapLayer->latLongToTMC(40.0, 0.0, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-if ( !mapLayer-\>latLongToTMC(30.0, -20.0, &x, &y) )
+if ( !mapLayer->latLongToTMC(30.0, -20.0, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-if ( !mapLayer-\>latLongToTMC(70.0, 20.0, &x, &y) )
+if ( !mapLayer->latLongToTMC(70.0, 20.0, &x, &y) )
 
-\... // handle error
+... // handle error
 
-cs-\>add(x, y);
+cs->add(x, y);
 
-TSLGeodeticPolygon\* polygon = stdLayer-\>entitySet()-\>
+TSLGeodeticPolygon* polygon = stdLayer->entitySet()->
 
 createGeodeticPolygon( 0, cs, true ) ;
 
 if (!polygon)
 
-\... // handle error
+... // handle error
 
-polygon-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+polygon->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
 
-polygon-\>setRendering( TSLRenderingAttributeEdgeColour,
+polygon->setRendering( TSLRenderingAttributeEdgeColour,
 
 TSLComposeRGB(255,0,255) ) ;
 
-polygon-\>setRendering( TSLRenderingAttributeEdgeThickness, 2 ) ;
+polygon->setRendering( TSLRenderingAttributeEdgeThickness, 2 ) ;
 
-polygon-\>setRendering( TSLRenderingAttributeFillStyle, 502 ) ;
+polygon->setRendering( TSLRenderingAttributeFillStyle, 502 ) ;
 
-polygon-\>setRendering( TSLRenderingAttributeFillColour,
+polygon->setRendering( TSLRenderingAttributeFillColour,
 
-TSLComposeRGB(255,128,255) ) ;\]
+TSLComposeRGB(255,128,255) ) ;
+```
 
 Geodetic polygons can also be created directly with TSLGeodeticPolygon::create.
 
@@ -294,17 +298,18 @@ If a geodetic ellipse crosses the dateline, it will be rendered as separate piec
 
 Geodetic ellipses are created in a similar way to standard ellipses, except for the radii:
 
-TSLStandardDataLayer\* stdLayer = \...;
+```cpp
+TSLStandardDataLayer* stdLayer = ...;
 
-TSLDataLayer\* mapLayer = \...;
+TSLDataLayer* mapLayer = ...;
 
 TSLTMC x, y;
 
-if ( !mapLayer-\>latLongToTMC(51.5, 0.05, &x, &y) )
+if ( !mapLayer->latLongToTMC(51.5, 0.05, &x, &y) )
 
-\... // handle error
+... // handle error
 
-TSLGeodeticEllipse\* ellipse = stdLayer-\>entitySet()-\>
+TSLGeodeticEllipse* ellipse = stdLayer->entitySet()->
 
 createGeodeticEllipse( 0, x, y,
 
@@ -312,21 +317,22 @@ createGeodeticEllipse( 0, x, y,
 
 if (!ellipse)
 
-\... // handle error
+... // handle error
 
-ellipse-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+ellipse->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
 
-ellipse-\>setRendering( TSLRenderingAttributeEdgeColour,
+ellipse->setRendering( TSLRenderingAttributeEdgeColour,
 
 TSLComposeRGB(255,0,255) ) ;
 
-ellipse-\>setRendering( TSLRenderingAttributeEdgeThickness, 2 ) ;
+ellipse->setRendering( TSLRenderingAttributeEdgeThickness, 2 ) ;
 
-ellipse-\>setRendering( TSLRenderingAttributeFillStyle, 502 ) ;
+ellipse->setRendering( TSLRenderingAttributeFillStyle, 502 ) ;
 
-ellipse-\>setRendering( TSLRenderingAttributeFillColour,
+ellipse->setRendering( TSLRenderingAttributeFillColour,
 
 TSLComposeRGB(255,128,255) ) ;
+```
 
 Geodetic ellipses can also be created directly with TSLGeodeticEllipse::create.
 
@@ -342,33 +348,35 @@ Geodetic arcs also provide control over their interpolation. The interpolation s
 
 Geodetic arcs are created in a similar way to standard arcs, except for the radii:
 
-TSLStandardDataLayer\* stdLayer = \...;
+```cpp
+TSLStandardDataLayer* stdLayer = ...;
 
-TSLDataLayer\* mapLayer = \...;
+TSLDataLayer* mapLayer = ...;
 
 TSLTMC x, y;
 
-if ( !mapLayer-\>latLongToTMC(51.5, 0.05, &x, &y) )
+if ( !mapLayer->latLongToTMC(51.5, 0.05, &x, &y) )
 
-\... // handle error
+... // handle error
 
-TSLGeodeticArc\* arc = stdLayer-\>entitySet()-\>
+TSLGeodeticArc* arc = stdLayer->entitySet()->
 
-createGeodeticArc( 0, M_PI/2, 2\*M_PI, x, y,
+createGeodeticArc( 0, M_PI/2, 2*M_PI, x, y,
 
 1000000.0, 2000000.0, M_PI/4.0 );
 
 if (!arc)
 
-\... // handle error
+... // handle error
 
-arc-\>setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
+arc->setRendering( TSLRenderingAttributeEdgeStyle, 1 ) ;
 
-arc-\>setRendering( TSLRenderingAttributeEdgeColour,
+arc->setRendering( TSLRenderingAttributeEdgeColour,
 
 TSLComposeRGB(255,0,255) ) ;
 
-arc-\>setRendering( TSLRenderingAttributeEdgeThickness, 4 ) ;
+arc->setRendering( TSLRenderingAttributeEdgeThickness, 4 ) ;
+```
 
 Geodetic arcs can also be created directly with TSLGeodeticArc::create.
 
@@ -392,23 +400,25 @@ create, createUserGeometry, setClientUserGeometryEntity and load callback functi
 
 Creating and destroying user geometry:
 
-TSLStandardDataLayer\* stdLayer = \...;
+```cpp
+TSLStandardDataLayer* stdLayer = ...;
 
-TSLClientUserGeometryEntity\* client = new \...;
+TSLClientUserGeometryEntity* client = new ...;
 
-TSLUserGeometryEntity\* entity = stdLayer-\>entitySet()-\>
+TSLUserGeometryEntity* entity = stdLayer->entitySet()->
 
 createUserGeometry(client, false);
 
 if (!entity)
 
-\... // handle error
+... // handle error
 
-\...
+...
 
-entity-\>destroy();
+entity->destroy();
 
 delete client; // don't need this if ownsClient is true
+```
 
 ### TSLClientUserGeometryEntity
 
@@ -418,6 +428,7 @@ At a minimum, the user must override the virtual draw method.
 
 Here is an example partial implementation of a user geometry client:
 
+```cpp
 class RectangleClient : public TSLClientUserGeometryEntity
 
 {
@@ -440,7 +451,7 @@ m_extent.corners( left, bottom, right, top ); // bounding box
 
 // Destructor
 
-virtual \~RectangleClient()
+virtual ~RectangleClient()
 
 {
 
@@ -450,7 +461,7 @@ virtual \~RectangleClient()
 
 virtual bool draw(int uniqueSurfaceID,
 
-TSLRenderingInterface\* renderingInterface,
+TSLRenderingInterface* renderingInterface,
 
 const TSLEnvelope& extent, TSLRenderLevel renderLevel,
 
@@ -462,25 +473,25 @@ const int blue = TSLDrawingSurface::getIDOfNearestColour(0,0,255);
 
 // Construct a rectangle
 
-TSLCoord coords\[4\]; // bottom left, top left, top right, bottom right
+TSLCoord coords[4]; // bottom left, top left, top right, bottom right
 
-coords\[0\] = m_extent.bottomLeft();
+coords[0] = m_extent.bottomLeft();
 
-coords\[1\] = TSLCoord( m_extent.bottomLeft().x(), m_extent.topRight().y() );
+coords[1] = TSLCoord( m_extent.bottomLeft().x(), m_extent.topRight().y() );
 
-coords\[2\] = m_extent.topRight();
+coords[2] = m_extent.topRight();
 
-coords\[3\] = TSLCoord( m_extent.topRight().x(), m_extent.bottomLeft().y() );
+coords[3] = TSLCoord( m_extent.topRight().x(), m_extent.bottomLeft().y() );
 
 // Set up rendering attributes - translucent rectangle
 
-renderingInterface-\>setupEdgeAttributes( -1, 0, 0.0 );
+renderingInterface->setupEdgeAttributes( -1, 0, 0.0 );
 
-renderingInterface-\>setupAreaAttributes( 503, blue );
+renderingInterface->setupAreaAttributes( 503, blue );
 
 // Attempt to draw rectangle, return false if fails
 
-return renderingInterface-\>drawPolygon(coords, \_countof(coords));
+return renderingInterface->drawPolygon(coords, _countof(coords));
 
 }
 
@@ -492,7 +503,7 @@ virtual int save(TSLofstream& stream)
 
 // Stream out data
 
-\...
+...
 
 return RECTANGLE_USER_GEOMETRY_ID; // unique ID of the user geometry type
 
@@ -509,6 +520,7 @@ return m_extent;
 }
 
 };
+```
 
 ### Loading and saving user geometry
 
@@ -522,13 +534,16 @@ To register a load callback function, a pointer to it must be passed to TSLUserG
 
 Setting a load callback function:
 
+```cpp
 TSLUserGeometryEntity::
 
 registerUserGeometryClientLoadCallback(loadUserGeometryCallback);
+```
 
 Here is a skeleton load callback function:
 
-static TSLClientUserGeometryEntity\* loadUserGeometryCallback(
+```cpp
+static TSLClientUserGeometryEntity* loadUserGeometryCallback(
 
 TSLifstream& stream,
 
@@ -540,7 +555,7 @@ bool& assumeOwnership)
 
 // whether returned entities will be freed by MapLink:
 
-assumeOwnership = \...;
+assumeOwnership = ...;
 
 switch (userGeometryID)
 
@@ -548,9 +563,9 @@ switch (userGeometryID)
 
 case RECTANGLE_USER_GEOMETRY_ID:
 
-\... // stream in client and return it
+... // stream in client and return it
 
-\... // etc
+... // etc
 
 default:
 
@@ -559,6 +574,7 @@ return NULL;
 }
 
 }
+```
 
 ## Data Layers
 
@@ -640,12 +656,15 @@ A lat/long grid is displayed when any of the "lon6Degree", "lonDegree", "lonMinu
 
 > To create an MGRS Grid Data Layer:
 
+```cpp
 m_mgrsGridLayer = new TSLMGRSGridDataLayer ;
 
-m_mgrsGridLayer-\>setMapDataLayer(m_mapDataLayer);
+m_mgrsGridLayer->setMapDataLayer(m_mapDataLayer);
+```
 
 > To initialise the MGRS grid line styles:
 
+```cpp
 long utm1kmC, utm1kmS, utm1kmT ;
 
 long utm10kmC, utm10kmS, utm10kmT ;
@@ -676,7 +695,6 @@ TSLProfileHelper::lookupProfile("gridUtm10kmThickness",&utm10kmT, 1 );
 
 TSLProfileHelper::lookupProfile("gridUtm100kmThickness",&utm100kmT, 2);
 
-```cpp
 m_mgrsGridLayer->setFeatureRendering("utm1km", 0, TSLRenderingAttributeEdgeColour,
 
 utm1kmC);
@@ -712,13 +730,15 @@ utm100kmS);
 m_mgrsGridLayer->setFeatureRendering("utm100km", 0, TSLRenderingAttributeEdgeThickness,
 
 (double)utm100kmT);
-
-To initialise the MGRS grid text styles:
 ```
 
-initialiseLabel(m_mgrsGridLayer, "mgrsLabel );
+To initialise the MGRS grid text styles:
 
-initialiseLabel(m_mgrsGridLayer, "gridLineLabel );
+```cpp
+initialiseLabel(m_mgrsGridLayer, "mgrsLabel");
+
+initialiseLabel(m_mgrsGridLayer, "gridLineLabel");
+```
 
 > Where the method initialiseLabel sets the following attributes for the text:
 
@@ -754,19 +774,25 @@ Similarly, the UTM grid lines and labels may be initialised if they are required
 
 > Add the TSLMGRSGridDataLayer to the surface and set its visibility.
 
-surface-\>addDataLayer( m_mgrsGridLayer, m_mgrsGridLayerName ) ;
+```cpp
+surface->addDataLayer( m_mgrsGridLayer, m_mgrsGridLayerName ) ;
 
-surface-\>setDataLayerProps( m_mgrsGridLayerName, TSLPropertyVisible,
+surface->setDataLayerProps( m_mgrsGridLayerName, TSLPropertyVisible,
 
 m_mgrsGridLayerVisible ) ;
+```
 
 > To set the "single zone" mode:
 
-m_mgrsGridLayer-\>setZone(zone, band);
+```cpp
+m_mgrsGridLayer->setZone(zone, band);
+```
 
 > and back to "automatic" mode:
 
-m_mgrsGridLayer-\>setZone(-1, 0);
+```cpp
+m_mgrsGridLayer->setZone(-1, 0);
+```
 
 ### The TSLLatLongGridDataLayer
 
@@ -782,13 +808,17 @@ The TSLLatLongGridDataLayer displays a latitude / longitude grid like that which
 
 > To create the TSLLatLongGridDataLayer:
 
+```cpp
 m_latLonGridLayer = new TSLLatLongGridDataLayer ;
 
-m_latLonGridLayer-\>setMapDataLayer(m_mapDataLayer);
+m_latLonGridLayer->setMapDataLayer(m_mapDataLayer);
+```
 
 > To enable ticks on the grid lines showing divisions:
 
-m_latLonGridLayer-\>ticks(true);
+```cpp
+m_latLonGridLayer->ticks(true);
+```
 
 ### The TSLGARSGridDataLayer
 
@@ -990,10 +1020,9 @@ The default value is TSLTextBackgroundModeNone.
 
 Many of these attributes are interdependent.
 
-```cpp
 The size of the font used to render the text is calculated using the following pseudo-code:
-```
 
+```
 if ( obsolete fixed size flag is true )
 
 {
@@ -1016,23 +1045,24 @@ sizeInPixels = size factor
 
 case map units :
 
-sizeInPixels = (size factor \* tmcPerMU) / tmcPerDU
+sizeInPixels = (size factor * tmcPerMU) / tmcPerDU
 
 case scale factor :
 
-sizeInPixels = (Entity size \* size factor ) / tmcPerDU
+sizeInPixels = (Entity size * size factor ) / tmcPerDU
 
 }
 
 }
 
-if ( sizeInPixels \< minHeight )
+if ( sizeInPixels < minHeight )
 
 sizeInPixels = minHeight ;
 
-else if ( sizeInPixels \> maxHeight )
+else if ( sizeInPixels > maxHeight )
 
 sizeInPixels = maxHeight ;
+```
 
 ### Symbol Rendering Attributes
 
@@ -1060,10 +1090,9 @@ The TSLSymbolRotation enum allows you to specify that the symbol will be rotatab
 
 - TSLRenderingAttributeSymbolFontCharacter: Symbols may be characters from a font. The font is referenced via an entry in the tslsymbols.dat file. For such symbol styles, this rendering attribute defines the character from the font to be displayed.
 
-```cpp
 The size of the symbol used to render the text is calculated using the following pseudo-code:
-```
 
+```
 if ( obsolete fixed size flag is true )
 
 {
@@ -1086,23 +1115,24 @@ sizeInPixels = size factor
 
 case map units :
 
-sizeInPixels = (size factor \* tmcPerMU) / tmcPerDU
+sizeInPixels = (size factor * tmcPerMU) / tmcPerDU
 
 case scale factor :
 
-sizeInPixels = (Entity size \* size factor ) / tmcPerDU
+sizeInPixels = (Entity size * size factor ) / tmcPerDU
 
 }
 
 }
 
-if ( sizeInPixels \< minHeight )
+if ( sizeInPixels < minHeight )
 
 sizeInPixels = minHeight ;
 
-else if ( sizeInPixels \> maxHeight )
+else if ( sizeInPixels > maxHeight )
 
 sizeInPixels = maxHeight ;
+```
 
 ### Raster Icon Symbols
 

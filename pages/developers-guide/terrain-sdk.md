@@ -30,16 +30,17 @@ The design of the Terrain SDK means that it is very simple to use. The process r
 
 Add the following to your application to create an instance of the Terrain SDK main class and load some data into it:
 
-TSLTerrainDatabase\* terrainDB = new TSLTerrainDatabase;
+```cpp
+TSLTerrainDatabase* terrainDB = new TSLTerrainDatabase;
 
-if ( terrainDB-\>open( "terraindb.tdb" ) != TSLTerrain_OK )\
+if ( terrainDB->open( "terraindb.tdb" ) != TSLTerrain_OK )
 {
 
 // Handle file open error
 
 }
 
-else\
+else
 {
 
 // Terrain database is open and ready to query. Start by getting
@@ -48,9 +49,10 @@ else\
 
 double x1, y1, x2, y2;
 
-terrainDB-\>queryExtent( x1, y1, x2, y2 );
+terrainDB->queryExtent( x1, y1, x2, y2 );
 
 }
+```
 
 Once you have performed these two steps, you are ready to start querying the data.
 
@@ -86,9 +88,10 @@ All functions within the Terrain SDK that take coordinates as a parameter expect
 
 The Terrain SDK provides functions to allow the coordinate system to be queried as well as allowing conversion between MU and latitude/longitude. If you want to check if the currently loaded terrain database is in a coordinate system that your application can handle, then add the following code after the call to open the terrain database.
 
-Add this code after the call to terrainDB-\>open() to ensure the loaded terrain database is using the default coordinate system:
+Add this code after the call to terrainDB->open() to ensure the loaded terrain database is using the default coordinate system:
 
-TSLCoordinateSystem\* cs = terrainDB-\>queryCoordinateSystem();
+```cpp
+TSLCoordinateSystem* cs = terrainDB->queryCoordinateSystem();
 
 // In most cases cs will not be NULL but older versions of the
 
@@ -106,7 +109,7 @@ if ( cs )
 
 // system so we can assume the Map Units are in Latitude/Longitude
 
-if ( stricmp( cs-\>name(), "Default Coordinate System" ) != 0 )\
+if ( stricmp( cs->name(), "Default Coordinate System" ) != 0 )
 {
 
 // Not the default coordinate system - display an error
@@ -114,12 +117,14 @@ if ( stricmp( cs-\>name(), "Default Coordinate System" ) != 0 )\
 }
 
 }
+```
 
 The TSLCoordinateSystem object returned by TSLTerrainDatabase::queryCoordinateSystem can be used to convert from MU to Latitude/Longitude and vice versa. In addition, the same methods have been provided in the API interface to TSLTerrainDatabase. The TSLTerrainDatabase methods are functionally identical to the TSLCoordinateSystem methods and are provided purely for convenience.
 
 The first method for transforming coordinates uses TSLCoordinateSystem:
 
-TSLCoordinateSystem\* cs = terrainDB-\>queryCoordinateSystem();
+```cpp
+TSLCoordinateSystem* cs = terrainDB->queryCoordinateSystem();
 
 if ( cs )
 
@@ -129,14 +134,14 @@ double muOutX, muOutY;
 
 double latOut, lonOut;
 
-if ( cs-\>latLongToMU( latIn, lonIn, &muOutX, &muOutY ) )\
+if ( cs->latLongToMU( latIn, lonIn, &muOutX, &muOutY ) )
 {
 
 // Conversion successful
 
 }
 
-if ( cs-\>MUToLatLong( muInX, muInY, &latOut, &lonOut ) )
+if ( cs->MUToLatLong( muInX, muInY, &latOut, &lonOut ) )
 
 {
 
@@ -145,14 +150,16 @@ if ( cs-\>MUToLatLong( muInX, muInY, &latOut, &lonOut ) )
 }
 
 }
+```
 
 > The second method for transforming coordinates is more convenient:
 
+```cpp
 double muOutX, muOutY;
 
 double latOut, lonOut;
 
-if ( terrainDB-\>latLongToMU( latIn, lonIn, &muOutX, &muOutY ) ==
+if ( terrainDB->latLongToMU( latIn, lonIn, &muOutX, &muOutY ) ==
 
 TSLTerrain_OK )
 
@@ -162,14 +169,15 @@ TSLTerrain_OK )
 
 }
 
-if ( terrainDB-\>MUToLatLong( muInX, muInY, &latOut, &lonOut ) ==
+if ( terrainDB->MUToLatLong( muInX, muInY, &latOut, &lonOut ) ==
 
 TSLTerrain_OK )
 
-{\
+{
 // Conversion successful
 
 }
+```
 
 ## How Do I Access the Data?
 
@@ -182,9 +190,10 @@ Once a terrain database has been opened, querying the data is simple. There are 
 
 To query a line of 10 points from the database:
 
-TSLTerrainDataItem dataItem\[10\];
+```cpp
+TSLTerrainDataItem dataItem[10];
 
-if ( terrainDB-\>queryLine( muXstart, muYstart, muXend, muYend,
+if ( terrainDB->queryLine( muXstart, muYstart, muXend, muYend,
 
 10, dataItem ) == TSLTerrain_OK )
 
@@ -195,12 +204,14 @@ if ( terrainDB-\>queryLine( muXstart, muYstart, muXend, muYend,
 // stored in the dataItem array
 
 }
+```
 
 To query a single point from the database:
 
+```cpp
 TSLTerrainDataItem dataItem;
 
-if ( terrainDB-\>query( muX, muY, &dataItem ) == TSLTerrain_OK )
+if ( terrainDB->query( muX, muY, &dataItem ) == TSLTerrain_OK )
 
 {
 
@@ -209,12 +220,14 @@ if ( terrainDB-\>query( muX, muY, &dataItem ) == TSLTerrain_OK )
 // stored in dataItem
 
 }
+```
 
 To query a 10 x 5 grid from the database:
 
-TSLTerrainDataItem dataItem\[10\*5\];
+```cpp
+TSLTerrainDataItem dataItem[10*5];
 
-if ( terrainDB-\>queryArea( muBlX, muBlY, muTrX, muTrY,
+if ( terrainDB->queryArea( muBlX, muBlY, muTrX, muTrY,
 
 10, 5, dataItem ) == TSLTerrain_OK )
 
@@ -225,6 +238,7 @@ if ( terrainDB-\>queryArea( muBlX, muBlY, muTrX, muTrY,
 // stored in the dataItem array. The data is stored row-by-row
 
 }
+```
 
 In each case, the data is returned in one or more TSLTerrainDataItem objects. For efficiency, by default the query functions will only populate the fields that define the requested position and the height/depth. It is important to note that even if the query function returns TSLTerrain_OK, the height value may not be valid. This is because some databases may contain 'holes' in their data coverage. This is indicated by the TSLTerrainDataItem::m_isNull flag being set - see the table below.
 
@@ -266,9 +280,10 @@ Whichever interpolation value is used, the filter parameter can be used to deter
 
 To query a single point from the database getting all available associated information:
 
+```cpp
 TSLTerrainDataItem dataItem;
 
-if ( terrainDB-\>query( muX, muY, &dataItem, TSLTerrainData_All )
+if ( terrainDB->query( muX, muY, &dataItem, TSLTerrainData_All )
 
 == TSLTerrain_OK )
 
@@ -279,6 +294,7 @@ if ( terrainDB-\>query( muX, muY, &dataItem, TSLTerrainData_All )
 // stored in dataItem
 
 }
+```
 
 ## How Accurate is My Data? (Querying Different Levels)
 
@@ -290,9 +306,10 @@ Beware when using the highestRes parameter when covering a large area of the ter
 
 To query a single point from the database using the highest resolution layer available. Note the "true" parameter to the query function that informs the Terrain SDK that we want the highest resolution data.
 
+```cpp
 TSLTerrainDataItem dataItem;
 
-if (terrainDB-\>query(muX, muY, &dataItem, TSLTerrainData_Min, true)
+if (terrainDB->query(muX, muY, &dataItem, TSLTerrainData_Min, true)
 
 == TSLTerrain_OK )
 
@@ -301,16 +318,18 @@ if (terrainDB-\>query(muX, muY, &dataItem, TSLTerrainData_Min, true)
 // Query successful. Highest resolution data obtained
 
 }
+```
 
 > To query a single point from the database getting all available associated information:
 
+```cpp
 TSLTerrainDataItem dataItem;
 
 // Use bilinear interpolation for a more accurate result
 
-if ( terrainDB-\>query( muX, muY, &dataItem,
+if ( terrainDB->query( muX, muY, &dataItem,
 
-TSLTerrainData_Min \| TSLTerrainData_Nearest, false,
+TSLTerrainData_Min | TSLTerrainData_Nearest, false,
 
 TSLTerrainInterpolate_LINEAR ) == TSLTerrain_OK )
 
@@ -327,6 +346,7 @@ TSLTerrainInterpolate_LINEAR ) == TSLTerrain_OK )
 // and height/depth of the nearest stored data in the database
 
 }
+```
 
 Onto the other question: "How does the Terrain SDK know which layer in the pyramid to use?" The simple answer is: you have to tell it! The mechanism for telling the Terrain SDK what resolution of data you want has been designed to tie-in with a MapLink application that displays map data. A quick explanation is required:
 
@@ -336,7 +356,8 @@ This is surprisingly simple to setup within a MapLink application - all you need
 
 In the handler for the MapLink map zoom command, notify the Terrain SDK of the new extent.
 
-if ( m_drawingSurface-\>zoom( 25, true, false ) )
+```cpp
+if ( m_drawingSurface->zoom( 25, true, false ) )
 
 {
 
@@ -358,12 +379,12 @@ GetClientRect( rc );
 
 double muX1, muY1, muX2, muY2;
 
-if ( m_drawingSurface-\>getMUExtent( &muX1, &muY1, &muX2, &muY2 ) )\
+if ( m_drawingSurface->getMUExtent( &muX1, &muY1, &muX2, &muY2 ) )
 {
 
 // We have enough information now
 
-terrainDB-\>displayExtent( rc.Width(), rc.Height(), muX1, muY1,
+terrainDB->displayExtent( rc.Width(), rc.Height(), muX1, muY1,
 
 muX2, muY2 );
 
@@ -376,6 +397,7 @@ muX2, muY2 );
 InvalidateRect( 0, FALSE ) ;
 
 }
+```
 
 ## Contouring
 
@@ -802,13 +824,14 @@ Most applications should implement their own compositor object. This allows the 
 
 ### Single Point-to-point Line of Sight
 
+```cpp
 // Set up the input object, using the current display size, and extent
 
 // The provided extent/display size will determine which level of detail
 
 // is used within the terrain database.
 
-TSLTerrainVSInputTerrainDatabase\* input =
+TSLTerrainVSInputTerrainDatabase* input =
 
 new TSLTerrainVSInputTerrainDatabase(&m_terrainDatabase,
 
@@ -874,7 +897,8 @@ LOSBlockedX, LOSBlockedY, LOSBlockedZ)
 
 // Release our references
 
-input-\>dec();
+input->dec();
+```
 
 ### Area Viewshed Using Provided Classes
 
@@ -882,6 +906,7 @@ The following example performs a single viewshed calculation using application-p
 
 Note: As this example uses the generic compositor/output objects it is not the fastest method of performing a viewshed, nor the recommended approach for most applications. This approach should mainly be used when performance is not critical and the results do not need to be displayed immediately.
 
+```cpp
 // Create an input object array, at the specified size/extent.
 
 // Data should be populated from the application-specific source.
@@ -890,7 +915,7 @@ Note: As this example uses the generic compositor/output objects it is not the f
 
 // The provided coordinate system is EPSG:4326 (A valid coordinate system must // be provided for viewshed calculations)
 
-TSLTerrainVSInputArray\* input = new TSLTerrainVSInputArray(
+TSLTerrainVSInputArray* input = new TSLTerrainVSInputArray(
 
 100, 100,
 
@@ -912,15 +937,15 @@ defaultVal.type = TSLTerrainVSOutput::typeTSLTerrainVSVisibility;
 
 defaultVal.data.v = TSLTerrainVSVisibility::TSLTerrainVSNoData;
 
-TSLTerrainVSOutputArray\* output = new TSLTerrainVSOutputArray(
+TSLTerrainVSOutputArray* output = new TSLTerrainVSOutputArray(
 
-input-\>width(), input-\>height(),
+input->width(), input->height(),
 
-input-\>queryExtent(), defaultVal);
+input->queryExtent(), defaultVal);
 
 // Create a compositor object.
 
-TSLTerrainVSCompositorVisibility\* compositor =
+TSLTerrainVSCompositorVisibility* compositor =
 
 new TSLTerrainVSCompositorVisibility(output);
 
@@ -948,11 +973,12 @@ maximumRadius, endHeightOffset, endRelativeToGround);
 
 // Release our references
 
-input-\>dec();
+input->dec();
 
-compositor-\>dec();
+compositor->dec();
 
-output-\>dec();
+output->dec();
+```
 
 ### Performance Considerations
 

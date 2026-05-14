@@ -10,13 +10,12 @@ Introducing multi-threading complicates matters as MapLink is not completely thr
 
 You should review the whole of this section if you are going to use MapLink in multiple threads.
 
-```cpp
 If you are using MapLink for drawing in multiple threads, then you may need to use the following methods:
 
 - TSLUtilityFunctions::getThreadedOptions
 
 - TSLUtilityFunctions::setThreadedOptions
-```
+
 The following classes have been updated to provide additional functions which do not store results in static data:
 
 - TSLCoordinateConverter
@@ -147,11 +146,10 @@ Note: Delayed loading of resources is not thread-safe.
 
 ## Drawing Surface Rendering
 
-```cpp
 While in general the drawing is thread safe you should avoid sharing layers between threads (see [28.8](#data-layers-1)).
 
 If you wish to share the TSLStandardDataLayer (see [28.9](#standard-data-layer-1)) between threads then you need to call TSLUtilityFunctions::setThreadedOptions to set the bit represented by TSLThreadedOptionsRenderingSupport.
-```
+
 ## Coordinate System Resource Loading
 
 The loading of the Coordinate System information (TSLCoordianteSystem::loadCoordinateSystems) is not thread safe and therefore the coordinate systems should be loaded before the application uses MapLink in a threaded manner. A map loads and creates a coordinate system local to the layer so it is not strictly necessary to load all the Coordinate Systems unless you need to convert between different projections.
@@ -254,11 +252,10 @@ If you update a layer's content the changes will not be reflected upon the displ
 
 ### 3D Drawing Surface Rendering
 
-```cpp
 While in general the drawing is thread safe you should avoid sharing layers between threads (see [28.8](#data-layers-1)).
 
 If you wish to share the TSL3DStandardDataLayer between threads, you must call TSLUtilityFunctions::setThreadedOptions to set the bit represented by TSLThreadedOptionsRenderingSupport. In addition, you must add the layer to all drawing surfaces before you start any drawing and you should not edit the layer once drawing has occurred.
-```
+
 Ideally you should not share the TSL3DStandardDataLayer between threads principally because we store data upon the entities which is drawing surface specific and the locking will affect the performance of the drawing.
 
 ## X11 Threading
@@ -823,11 +820,12 @@ In the InitInstance method of the App object, add a call to TSLDrawingSurface::l
 
 You should be careful to check for, and report errors at this stage by using the methods supplied on the TSLThreadedErrorStack utility class.
 
-const char \* configDirPath = NULL ; // Replace if deployed
+```cpp
+const char * configDirPath = NULL ; // Replace if deployed
 
 // Full path and filename to the file tsltransforms.dat
 
-const char \* transformsFile = NULL; // Replace if deployed
+const char * transformsFile = NULL; // Replace if deployed
 
 TSLThreadedErrorStack::clear() ;
 
@@ -837,7 +835,6 @@ TSLDrawingSurface::loadStandardConfig( configDirPath ) ;
 
 TSLCoordinateSystem::loadCoordinateSystems( transformsFile );
 
-```cpp
 TSLSimpleString msg( "" );
 
 bool anyErrors = TSLThreadedErrorStack::errorString( msg,
@@ -864,15 +861,13 @@ Use Properties, Overrides to create an ExitInstance method on the App object. In
 int CHelloGlobe::ExitInstance()
 
 {
-```
 
 TSLDrawingSurface::cleanup( ) ;
 
-```cpp
 return CWinApp::ExitInstance();
-```
 
 }
+```
 
 If you are using the DLL versions of the MapLink libraries, please note the discussion of memory leaks in section [**Error! Reference source not found.**](#_Ref33430722).
 
@@ -882,9 +877,9 @@ In terms of the Document/View architecture, the Document contains one or more Ma
 
 In the private section of the Document, declare a bool and a pointer to a TSLMapDataLayer object. The bool should be constructed to false, and the object should be constructed in the document constructor and then destroyed in the destructor:
 
+```cpp
 CHelloGlobeDoc::CHelloGlobeDoc () : m_newMap( false )
 
-```cpp
 {
 
 m_mapDataLayer = new TSLMapDataLayer() ;
@@ -903,9 +898,7 @@ if ( m_mapDataLayer )
 m_mapDataLayer->destroy() ;
 
 m_mapDataLayer = NULL ;
-```
 
-```cpp
 }
 
 }
@@ -924,9 +917,9 @@ m_newMap = true ;
 m_mapName = lpszPathName ;
 
 return TRUE;
-```
 
 }
+```
 
 ```cpp
 void MapLink3DSimpleDoc::loadMap()
@@ -1023,9 +1016,9 @@ m_drawingSurface->setRenderingCallback(renderingCallback, this);
 ```
 In the destructor of the View, destroy the Drawing Surface if it exists.
 
-CHelloGlobeView::\~CHelloGlobeView()
-
 ```cpp
+CHelloGlobeView::~CHelloGlobeView()
+
 {
 
 if ( m_drawingSurface )
@@ -1073,16 +1066,15 @@ if ( GetDocument()->addToSurface( m_drawingSurface ) )
 {
 
 m_drawingSurface->camera()->reset();
-```
-```cpp
+
 m_drawingSurface->camera()->moveTo( 50.0, 0.0, 10000000.0,
 
 TSL3DCameraMoveActionNone ) ;
-```
 
-m_drawingSurface-\>camera()-\>lookAt( 50.0, -5.0, 0.0, false ) ;
+m_drawingSurface->camera()->lookAt( 50.0, -5.0, 0.0, false ) ;
 
 }
+```
 
 Note that MapLink automatically takes care of Data Layer and Drawing Surface separation when either is destroyed.
 
@@ -1146,11 +1138,11 @@ To create a 3D application you must also provide a TSL3DRenderingCallback trigge
 
 Create a new static method in the View with the following implementation:
 
-void Simple3DInteractionView::renderingCallback(void \* arg,
+```cpp
+void Simple3DInteractionView::renderingCallback(void * arg,
 
 int pendingTextures )
 
-```cpp
 {
 
 Simple3DInteractionView * view = (Simple3DInteractionView *)arg ;
@@ -1278,24 +1270,25 @@ create, create3DUserGeometry, setClientUserGeometryEntity and load callback func
 
 Creating and destroying user geometry:
 
-TSL3DStandardDataLayer\* stdLayer = \...;
-
-TSL3DClientUserGeometryEntity\* client = new \...;
-
-TSL3DUserGeometryEntity\* entity = stdLayer-\>entitySet()-\>
-
 ```cpp
+TSL3DStandardDataLayer* stdLayer = ...;
+
+TSL3DClientUserGeometryEntity* client = new ...;
+
+TSL3DUserGeometryEntity* entity = stdLayer->entitySet()->
+
 create3DUserGeometry(client, false);
 
 if (!entity)
 
 ... // handle error
-```
-\...
 
-entity-\>destroy();
+...
+
+entity->destroy();
 
 delete client; // don't need this if takesOwnership is true
+```
 
 #### TSL3DClientUserGeometryEntity
 
@@ -1323,6 +1316,7 @@ MapLink internally tracks the OpenGL state in order to avoid redundant state cha
 
 Here is an example partial implementation of a user geometry client:
 
+```cpp
 class SquareClient : public TSL3DClientUserGeometryEntity
 
 {
@@ -1341,18 +1335,16 @@ SquareClient(TSL3DCoord centre)
 
 : m_centre(centre)
 
-, m_radius(sqrt(2000000.0\*2000000.0 + 2000000.0\*2000000.0))
+, m_radius(sqrt(2000000.0*2000000.0 + 2000000.0*2000000.0))
 
-```cpp
 {
 
 }
 
 // Destructor
-```
-virtual \~SquareClient()
 
-```cpp
+virtual ~SquareClient()
+
 {
 
 }
@@ -1364,10 +1356,9 @@ virtual double boundingSphereRadius () const
 return m_radius;
 
 }
-```
+
 virtual const TSL3DCoord& centre () const
 
-```cpp
 {
 
 return m_centre;
@@ -1377,17 +1368,16 @@ return m_centre;
 // render an orange square
 
 virtual bool draw (int uniqueSurfaceID,
-```
-TSL3DRenderingInterface\* renderingInterface)
 
-```cpp
+TSL3DRenderingInterface* renderingInterface)
+
 {
 
 glPushAttrib( GL_ALL_ATTRIB_BITS );
 
 glPushClientAttrib( GL_CLIENT_ALL_ATTRIB_BITS );
-```
-GLfloat coords\[\] = { -100000.0f, -100000.0f, 0.0f,
+
+GLfloat coords[] = { -100000.0f, -100000.0f, 0.0f,
 
 100000.0f, -100000.0f, 0.0f,
 
@@ -1395,7 +1385,6 @@ GLfloat coords\[\] = { -100000.0f, -100000.0f, 0.0f,
 
 100000.0f, 100000.0f, 0.0f };
 
-```cpp
 glColor4f( 1.0f, 0.5f, 0.0f, 1.0f );
 
 glDisable( GL_TEXTURE_2D );
@@ -1425,10 +1414,9 @@ return true;
 virtual int save (TSLofstream& stream)
 
 {
-```
-\...
 
-```cpp
+...
+
 return SQUARE_USER_GEOMETRY_ID;
 
 }
@@ -1449,13 +1437,16 @@ To register a load callback function, a pointer to it must be passed to TSL3DUse
 
 Setting a load callback function:
 
+```cpp
 TSL3DUserGeometryEntity::
 
 registerUserGeometryClientLoadCallback(loadUserGeometryCallback);
+```
 
 Here is a skeleton load callback function:
 
-static TSL3DClientUserGeometryEntity\* loadUserGeometryCallback(
+```cpp
+static TSL3DClientUserGeometryEntity* loadUserGeometryCallback(
 
 TSLifstream& stream,
 
@@ -1463,7 +1454,6 @@ int userGeometryID,
 
 bool& assumeOwnership)
 
-```cpp
 {
 
 // whether returned entities will be freed by MapLink:
@@ -1479,10 +1469,9 @@ case SQUARE_USER_GEOMETRY_ID:
 ... // stream in client and return it
 
 ... // etc
-```
+
 default:
 
-```cpp
 return NULL;
 
 }
@@ -1517,11 +1506,11 @@ Model plug-ins are loaded at runtime as models that use them are drawn, and are 
 
 All plug-ins must be compiled as DLL/shared objects, and must declare a class that inherits from TSL3DCustomModel. An instance of this class will be created for each unique model defined in tslmodels.dat that uses this plug-in. In addition to this the DLL/shared object must export the following "C" methods:
 
-extern "C" \_\_declspec(dllexport)
-
-void\* getModel( int index,
-
 ```cpp
+extern "C" __declspec(dllexport)
+
+void* getModel( int index,
+
 const char* filename,
 
 const char* pluginString );

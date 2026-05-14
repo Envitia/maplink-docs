@@ -80,9 +80,9 @@ In the method constructor of the applications main form add a call to TSLNDrawin
 
 You should be careful to check for, and report errors at this stage by using the methods supplied on the TSLNErrorStack utility class.
 
+```cpp
 public Form1()
 
-```cpp
 {
 
 TSLNErrorStack.clear() ;
@@ -110,9 +110,9 @@ Environment.Exit(-1);
 }
 
 InitializeComponent();
-```
 
 }
+```
 
 When your application is deployed, make configDirPath variable point to the location of your applications copy of the MapLink config directory.
 
@@ -180,9 +180,9 @@ Finally we'll hook up the menu event handlers to allow the map to load and the p
 
 For example:
 
+```cpp
 private void openToolStripMenuItem_Click(object sender, EventArgs e)
 
-```cpp
 {
 
 if (openFileDialog1.ShowDialog() != DialogResult.OK)
@@ -236,9 +236,9 @@ To add Paint and Resize event handlers to your form, the steps are the same as o
 
 In the Paint event handler, first check that the drawing surface has been constructed and if so request a redraw via the drawDU method, e.g.
 
+```cpp
 private void OnPaint(object sender, PaintEventArgs e)
 
-```cpp
 {
 
 if ( m_drawingSurface == null )
@@ -250,15 +250,15 @@ m_drawingSurface.drawDU(e.ClipRectangle.Left, e.ClipRectangle.Top,
 e.ClipRectangle.Right,
 
 e.ClipRectangle.Bottom,true);
-```
 
 }
+```
 
 In the Resize event hander, once again first check that the drawing surface has been constructed and if so, request a resize via the wndResize method. The second to last argument is whether a redraw should occur, which is required as .NET will only redraw if the control gets larger. The final argument to the wndResize method dictates how the existing view should relate to the new view, e.g.
 
+```cpp
 private void OnResize(object sender, EventArgs e)
 
-```cpp
 {
 
 if (m_drawingSurface == null)
@@ -350,7 +350,6 @@ Dim configDirPath As String = Nothing 'Replace if deployed
 TSLNDrawingSurface.loadStandardConfig(configDirPath)
 
 Dim msg As String = TSLNErrorStack.errorString(
-```
 
 "Initialisation Errors : \\n",
 
@@ -364,15 +363,14 @@ MessageBox.Show(Me, msg)
 
 Environment.Exit(-1)
 
-```cpp
 End If
 
 ' This call is required by the Windows Form Designer.
 
 InitializeComponent()
-```
 
 End Sub
+```
 
 When your application is deployed, make configDirPath variable point to the location of your applications copy of the MapLink config directory.
 
@@ -534,11 +532,9 @@ ClientRectangle.Right,
 ClientRectangle.Bottom,
 
 True,
-```
 
 TSLNResizeActionEnum.TSLNResizeActionMaintainCentre)
 
-```vb
 End Sub
 ```
 
@@ -552,6 +548,7 @@ One of the problems with the setup used in the walkthrough is that the menu stri
 
 To add double buffering to the form in VB, users will need to override the form/panel's OnPaintBackground and not call the base implementation. This will be in addition to calling setOption on the drawing surface as described in section [8.10](#reducing-flicker-and-improving-performance), e.g.:
 
+```vb
 Protected Overrides Sub OnPaintBackground(ByVal pevent As PaintEventArgs)
 
 ' do nothing\...
@@ -559,6 +556,7 @@ Protected Overrides Sub OnPaintBackground(ByVal pevent As PaintEventArgs)
 ' we don't want the background to flash over the map
 
 End Sub
+```
 
 NOTE: Override the OnPaintBackground method can cause havoc when viewing the UI object via the Visual Studio designer. For an example of how to work around this problem refer to the sample C# programs supplied with MapLink that utilise the ControlDesigner class.
 

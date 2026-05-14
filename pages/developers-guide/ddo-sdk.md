@@ -132,14 +132,17 @@ The Object Data Layer will be used to manage the Dynamic Data Object and will ne
 
 In the Document class definition, add a declaration of the Object Data Layer just after the Standard Data Layer:
 
-TSLMapDataLayer \* m_mapDataLayer ;
+```cpp
+TSLMapDataLayer * m_mapDataLayer ;
 
-TSLStandardDataLayer \* m_stdDataLayer ;
+TSLStandardDataLayer * m_stdDataLayer ;
 
-TSLObjectDataLayer \* m_objDataLayer ; // This line added
+TSLObjectDataLayer * m_objDataLayer ; // This line added
+```
 
 The new class variable should be initialised to 0 in the Document constructor.
 
+```cpp
 CHelloGlobeDoc::CHelloGlobeDoc()
 
 : m_mapDataLayer( NULL ),
@@ -151,12 +154,14 @@ m_objDataLayer( NULL )
 {
 
 }
+```
 
 The layer should only be created after a map has been successfully loaded and should be destroyed when the map layer is destroyed.
 
 > In the Document OnOpenDocument method, instantiate a TSLObjectDataLayer if the map is successful:
 
-if ( !m_mapDataLayer-\>loadData( lpszPathName ) )
+```cpp
+if ( !m_mapDataLayer->loadData( lpszPathName ) )
 
 {
 
@@ -169,24 +174,28 @@ return FALSE ;
 m_stdDataLayer = new TSLStandardDataLayer() ;
 
 m_objDataLayer = new TSLObjectDataLayer() ;
+```
 
 > In the Document DeleteContents method, add the following code to delete the overlay layer:
 
+```cpp
 if ( m_objDataLayer )
 
 {
 
-m_objDataLayer-\>destroy() ;
+m_objDataLayer->destroy() ;
 
 m_objDataLayer = NULL ;
 
 }
+```
 
 > Modify the Document addToSurface method as below to add the extra layer and to make the map layer buffered:
 
-if ( !m_mapDataLayer \|\| !m_stdDataLayer
+```cpp
+if ( !m_mapDataLayer || !m_stdDataLayer
 
-\|\| !m_objDatalayer \|\| !drawingSurface )
+|| !m_objDatalayer || !drawingSurface )
 
 {
 
@@ -194,23 +203,24 @@ return false ;
 
 }
 
-bool sts = drawingSurface-\>addDataLayer( m_mapDataLayer, "map" ) ;
+bool sts = drawingSurface->addDataLayer( m_mapDataLayer, "map" ) ;
 
 if ( sts )
 
 {
 
-drawingSurface-\>setDataLayerProps("map",TSLPropertyBuffered,true);
+drawingSurface->setDataLayerProps("map",TSLPropertyBuffered,true);
 
-sts = drawingSurface-\>addDataLayer( m_stdDataLayer, "overlay" ) ;
+sts = drawingSurface->addDataLayer( m_stdDataLayer, "overlay" ) ;
 
 }
 
 if ( sts )
 
-sts = drawingSurface-\>addDataLayer( m_objDataLayer, "dynamic" ) ;
+sts = drawingSurface->addDataLayer( m_objDataLayer, "dynamic" ) ;
 
 return sts ;
+```
 
 ### Creating a Custom Dynamic Data Object
 
@@ -230,9 +240,10 @@ MyDDO(void);
 virtual ~MyDDO(void);
 
 virtual TSLDisplayObject * instantiateDO(TSLDisplayType key, int dsID=0) const ;
-```
 
 };
+```
+
 
 Create a new class, MyDO which derives from TSLDisplayObject and override the draw method. Include the header file in the MyDDO source file.
 
@@ -266,9 +277,11 @@ TSLDisplayObject * MyDDO::instantiateDO(TSLDisplayType key,int dsID) const
 return new MyDO() ;
 
 }
+```
 
 In the source file for MyDO, provide initial definitions for the constructor, and destructor and a simple implementation for the draw method - draw a red circle 50 pixels high.
 
+```cpp
 MyDO::MyDO(void)
 
 { // Without this, the symbol disappears when the centre goes off screen
@@ -298,6 +311,7 @@ If you compile and run the application, then load the sample World map, you will
 
 In the Document class definition, add a new public method updateDDOPosition, with the following definition:
 
+```cpp
 bool CHelloGlobeDoc::updateDDOPosition( long x, long y )
 
 {
@@ -308,15 +322,15 @@ if ( m_objDataLayer )
 
 // Get the solitary DDO - could iterate over DDO list
 
-TSLDynamicDataObject \* ddo = m_objDataLayer-\>getDDO( 0 ) ;
+TSLDynamicDataObject * ddo = m_objDataLayer->getDDO( 0 ) ;
 
 if ( ddo )
 
 {
 
-ddo-\>move( x, y, true ) ; // true means also updates DO
+ddo->move( x, y, true ) ; // true means also updates DO
 
-m_objDataLayer-\>notifyChanged() ; // Invalidates buffer
+m_objDataLayer->notifyChanged() ; // Invalidates buffer
 
 UpdateAllViews( 0 ) ; // Update views displaying doc
 
@@ -329,22 +343,25 @@ return true ;
 return false ;
 
 }
+```
 
 In the View class, modify the OnMouseMove handler to call this new method that should make the DDO track the mouse cursor. In the handler, declare a boolean variable 'moved' at the top of the function and initialize it to false. If the call to 'pan' is successful, then set this variable to 'true' as well as invalidating the view rectangle. Add the following code before the call to CView::OnMouseMove
 
+```cpp
 if ( m_drawingSurface && !moved )
 
 {
 
-CHelloGlobeDoc \* doc = GetDocument() ;
+CHelloGlobeDoc * doc = GetDocument() ;
 
 TSLTMC x, y ;
 
-if ( m_drawingSurface-\>DUToTMC( point.x, point.y, &x, &y ) )
+if ( m_drawingSurface->DUToTMC( point.x, point.y, &x, &y ) )
 
-doc-\>updateDDOPosition( x, y ) ;
+doc->updateDDOPosition( x, y ) ;
 
 }
+```
 
 Now compile and run your application. Load a map and you should see the DDO track the mouse across the window. If you have a multiple document application, create a new window on the document and note that both views are updated.
 

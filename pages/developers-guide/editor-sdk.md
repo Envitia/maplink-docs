@@ -176,13 +176,17 @@ The TSLEditorRequest class allows the application to control its own user interf
 
 Operations are activated by name, which is defined in the operation's class documentation. Please refer to the MapLink API documentation. Typically, the names is all lower case.
 
-m_editor-\>activate("polygon");
+```cpp
+m_editor->activate("polygon");
+```
 
 An application can pass in an object as user data for an operation. The operation's class documentation will note where this is necessary and the type that is required. Any user data is stored by the current operation and may be queried - although some operations don't permit this.
 
+```cpp
 TSLRenderingAttributes ra ; // Now configure rendering attributes
 
-editor-\>activate("renderingattributes", &ra);
+editor->activate("renderingattributes", &ra);
+```
 
 ## Integrating the Editor SDK from First Principles
 
@@ -254,7 +258,9 @@ Where the standard Interaction Modes are created and added to the mode manager, 
 
 Add a toolbar button to activate the editor mode, alongside the 'pan', 'zoom' modes. Add 'polygon' and 'delete' toolbar buttons and in event handlers for those, call activate on the TSLEditor instance that can be retrieved from the edit interaction mode, passing the appropriate operation name:
 
-> m_editMode-\>editor()-\>activate( "polygon", 0 ) ;
+```cpp
+m_editMode->editor()->activate( "polygon", 0 ) ;
+```
 
 ## Custom User Operations
 
