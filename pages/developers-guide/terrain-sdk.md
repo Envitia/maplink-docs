@@ -76,6 +76,8 @@ Intermediate resolution layers
 
 Bottom Layer - Highest Resolution
 
+![Figure 23 Terrain Pyramid](../../assets/images/developers-guide/media/figure_terrain_pyramid.png)
+
 *Figure 23 Terrain Pyramid*
 
 The Terrain SDK must be given enough information to determine the optimal level to use. Whenever the extent of the area of terrain data you are interested in changes, you must tell the Terrain SDK of the new extent. The Terrain SDK will then reconfigure itself for the new extent. If the area of interest changes but the extent remains the same (i.e. during a pan operation) then it is not necessary to notify the Terrain SDK.

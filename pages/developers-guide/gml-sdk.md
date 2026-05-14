@@ -20,7 +20,7 @@ The MapLink GML SDK is runtime locked meaning that before it may be used on any 
 
 ## Supported Capabilities
 
-The MapLink GML SDK offers the ability to read and write GML Application Schemas and corresponding instance data that either conforms to the 'Geography Markup Language (GML) Simple Features Profile' level 0 (SF-0) or GML of an equivalent complexity, that conforms to GML version 3.1.1.[^9]
+The MapLink GML SDK offers the ability to read and write GML Application Schemas and corresponding instance data that either conforms to the 'Geography Markup Language (GML) Simple Features Profile' level 0 (SF-0) or GML of an equivalent complexity, that conforms to GML version 3.1.1.
 
 Non-SF-0 compliant instance data should use the 'FeatureCollection' top level collection element.
 
@@ -80,7 +80,7 @@ A feature property definition maps to the fields of the TSLFieldDefinition class
 | xsd:integer                                      | TSLVariantTypeLong        |
 | xsd:double                                       | TSLVariantTypeDouble      |
 | xsd:string                                       | TSLVariantTypeStr         |
-| xsd:date and xsd:dateTime[^10]                   | TSLVariantTypeDateTime    |
+| xsd:date and xsd:dateTime                        | TSLVariantTypeDateTime    |
 | xsd:boolean                                      | TSLVariantTypeBool        |
 | Extensions of xsd:base64Binary and xsd:hexBinary | TSLVariantTypeBinary      |
 | xsd:anyURI                                       | TSLVariantTypeURI         |
@@ -200,8 +200,5 @@ The following options are also available when exporting instance data and should
 
 - The propertyMapping and propertyMappingSet methods allow the settings of a mapping that will be used by subsequent exports. These mappings work in the reverse of how the ingest process uses them, thus the entity's properties are used to create the exported feature's properties. How these mappings alter the ingest process is described in section [24.4.1](#schema-based-instance-data-ingest-and-storage).
 
-[^9]: This section of the documentation, covering the use of the MapLink GML SDK, assumes a reasonable understanding of both GML and the GML SF-0 profile. For further information on these topics please refer to the OGC website (<http://www.opengeospatial.org/>)
-
-[^10]: All xsd:dates and xsd:dateTimes are converted to UTC time
 
 

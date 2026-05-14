@@ -38,7 +38,7 @@ The following Geometry Text primitives are currently supported by MapLink:
 
 - TSL3DText / TSLN3DText
 
-TSL3DText/TSLN3DText[^1] only supports a subset of 7-bit ASCII.
+TSL3DText/TSLN3DText only supports a subset of 7-bit ASCII.
 
 TSLText and TSLGeodeticText will display text in multiple languages. The text may contain more than one language and the languages displayed may be left to right and right to left.
 
@@ -92,7 +92,7 @@ The maximum length supported by MapLink is 4096 characters. This applies to both
 
 The MapLink Pro backward compatibility (versions prior to MapLink 8.0) has been partially broken with the introduction of Unicode support in the way 8-bit characters are handled.
 
-Prior to support of Unicode users may have relied upon 8-bit character strings being passed through the MapLink Pro API without change. Now this is only true for 7-bit ASCII[^2] and 8-bit UTF-8 encoded strings.
+Prior to support of Unicode users may have relied upon 8-bit character strings being passed through the MapLink Pro API without change. Now this is only true for 7-bit ASCII and 8-bit UTF-8 encoded strings.
 
 You will not be affected by these changes if:
 
@@ -126,13 +126,13 @@ If the text is **not** UTF-8
 
 Convert to UTF-8 using the System Code Page
 
-In most cases this should be completely transparent to the application. If you experience problems with text not being correctly converted, you can override the Code Page used for the application using the following unsupported[^3] methods:
+In most cases this should be completely transparent to the application. If you experience problems with text not being correctly converted, you can override the Code Page used for the application using the following unsupported methods:
 
-- void TSLifstream::legacySetEncodingOverride(TSLTextEncoding encoding[^4]);
+- void TSLifstream::legacySetEncodingOverride(TSLTextEncoding encoding);
 
 - TSLTextEncoding TSLifstream::legacyGetEncodingOverride();
 
-- void TSLofstream::legacySetEncodingOverride(TSLTextEncoding encoding[^5]);
+- void TSLofstream::legacySetEncodingOverride(TSLTextEncoding encoding);
 
 - TSLTextEncoding TSLofstream::legacyGetEncodingOverride();
 
@@ -186,15 +186,6 @@ You should not update layer or MapLink Studio configuration files are these cont
 
 <http://www.utf8everywhere.org/>
 
-[^1]: Please contact support if this is an issue so that we can gauge the importance of supporting Unicode in the 3D Text primitive.
-
-[^2]: 7-bit ASCII is a subset of UTF-8
-
-[^3]: The methods will be removed in a future release of MapLink. If you use these methods please let us know why so that we can assess the impact of removal.
-
-[^4]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
-
-[^5]: Only a limited set of Code Pages are listed in this enum. Please contact <support@envitia.com> if you need to use a Code Page not listed.
 
 
 

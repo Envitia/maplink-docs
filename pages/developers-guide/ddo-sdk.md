@@ -62,11 +62,11 @@ When the Object Data Layer is drawn onto a Drawing Surface, the list of Display 
 
 ## Custom Dynamic Data Objects
 
-TSLDynamicDataObject is an abstract class[^6] and must be derived from to be of use in an application. The key things to take note of are that the destructor of the derived class should be virtual and that the instantiateDO method should be implemented. The signature of this method is:
+TSLDynamicDataObject is an abstract class and must be derived from to be of use in an application. The key things to take note of are that the destructor of the derived class should be virtual and that the instantiateDO method should be implemented. The signature of this method is:
 
 TSLDisplayObject\* instantiateDO(TSLDisplayType key, int dsID = 0) const ;
 
-Note that this is a 'const' method[^7]. A common mistake is to miss off the const modifier resulting in the derived method never being triggered and a run-time error generated. The key parameter is now obsolete and may be safely ignored. The dsID is the identifier of the Drawing Surface as specified with the TSLDrawingSurface::id method. It is supplied so that decisions can be made about the specific Drawing Surface that the Display Object is being instantiated for.
+Note that this is a 'const' method. A common mistake is to miss off the const modifier resulting in the derived method never being triggered and a run-time error generated. The key parameter is now obsolete and may be safely ignored. The dsID is the identifier of the Drawing Surface as specified with the TSLDrawingSurface::id method. It is supplied so that decisions can be made about the specific Drawing Surface that the Display Object is being instantiated for.
 
 For simple applications, the only thing required is to maintain the position and extent of the Dynamic Data Object using the various position, move, translate and setExtent methods. In such applications, it is recommended that any updateDOextent parameters are set to true.
 
@@ -80,7 +80,7 @@ The derived class may contain any application specific information required and 
 
 ## Custom Display Objects
 
-TSLDisplayObject is an abstract class and must be derived from to be of use in an application. The key things to take note of are that the destructor of the derived class should be virtual and that the draw method should be implemented. It is recommended, but not required, that a copy constructor is also implemented[^8]. The signature of the draw method is:
+TSLDisplayObject is an abstract class and must be derived from to be of use in an application. The key things to take note of are that the destructor of the derived class should be virtual and that the draw method should be implemented. It is recommended, but not required, that a copy constructor is also implemented. The signature of the draw method is:
 
 bool draw(TSLRenderingInterface \*ri, TSLEnvelope \*extent);
 
@@ -118,13 +118,15 @@ The example is based on MFC and the C++ SDK, but the same steps apply on X11 tar
 
 You need to set up the project settings according to the version of the MapLink libraries you wish to use. These are described in section [16.1](#library-usage-and-configuration-4) and must match those used for the Core MapLink SDK.
 
-Check/change the following settings in Project Properties:
+<div class="callout" markdown="1">
 
-[x64 configuration:]{.underline} check/change the following settings in Project Properties:
+**x64 configuration:** check/change the following settings in Project Properties:
 
 Under the Link,Input category, add MapLinkDDO64.lib as an object/library.
 
-Add #include "MapLinkDDO.h" to relevant files. In this example, just add it into stdafx.h to keep things simple.
+Add `#include "MapLinkDDO.h"` to relevant files. In this example, just add it into stdafx.h to keep things simple.
+
+</div>
 
 ### Adding a TSLObjectDataLayer
 
@@ -387,11 +389,6 @@ If the Display Object position is updated in sympathy with the Drawing Surface c
 
 For high performance, the low-level handle to the Drawable or HDC can be queried during rendering using the Rendering Interface handleToDrawable method. The application can then make low-level calls to create the visualisation. Note that the application must be careful to leave the low-level handle in the state it was when returned from handleToDrawable - for example, using the Win32 saveDC and restoreDC methods.
 
-[^6]: This isn't strictly true! For backwards compatibility, there is a base class implementation of the 'instantiateDO' method. However, in practise, this should always be implemented by a derived class. If you forget to provide this in a new class, then a run-time error, DDO_INSTANTIATEDO_NOT_OVERRIDDEN, will be placed onto the error stack.
-
-[^7]: An issue with the Rational Rose documentation generator means that the const modifier is not shown in the MapLink API documentation.
-
-[^8]: This is mainly used by the obsolete clone method. The clone and unclone methods are for backwards compatibility only and do not need to be overridden.
 
 
 
