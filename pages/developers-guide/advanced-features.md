@@ -545,59 +545,33 @@ There are several different types of fill style, some more complex than others. 
 
 ```
 TSLFS 106 // File ident and format version number
-
 ; // Field separator on subsequent lines
-
 #This is a comment
-
 I;10;499;fillstyles/anotherfillstylesfile.dat
-
 #Above is an include declaration to another file.
-
 S;This is a section heading // Section name for subsequent styles
-
 1;standard;Solid;4;0;0
-
 2;standard;Wide right diagonal hatching;2;5;0;0
-
 3;standard;Wide cross-hatching;2;6;0;0
-
 4;standard;Wide diagonal cross-hatching;2;7;0;0
-```
-
 5;standard;Wide left diagonal hatching;2;8;0;0
-
 6;standard;Wide horizontal hatching;2;9;0;0
-
 7;standard;Wide vertical hatching;2;10;0;0
-
 8;standard;Hollow;3;0;0
-
 9;standard;Narrow right diagonal hatching;1;8;8
-
 1;0;0;0;1;0;0;0
-
 0;0;0;1;0;0;0;1
-
 0;0;1;0;0;0;1;0
-
 0;1;0;0;0;1;0;0
-
 1;0;0;0;1;0;0;0
-
 0;0;0;1;0;0;0;1
-
 0;0;1;0;0;0;1;0
-
 0;1;0;0;0;1;0;0
-
 500;alpha;Translucent: alpha=32;32
-
 501;alpha;Translucent: alpha=64;64
-
 600;rop;ROP 1;1
-
 601;rop;ROP 2;2
+```
 
 - Version 105 and newer versions of the file must be saved in the UTF-8 code page without a BOM (Byte Order Mark).
 
@@ -697,35 +671,23 @@ Note that ROP brushes are highly dependent for the effect on the underlying grap
 
 The symbols file, usually called tslsymbols.dat, holds the definition of the visualisation for instances of TSLSymbol entities. The format is similar to the line styles file. The section names are used for display in MapLink Studio.
 
+```
 TSLSL 110 // File ident and format version number
-
 ; // Field separator on subsequent lines
-
 #This is a comment
-
 I;2;14000;symbols/anothersymbolsfile.dat
-
 S;Basic Shapes // Section name for subsequent symbols
-
 T;1;0;0;1;0;\\MapLink 4.0\\TMF\\Circle Filled.tmf
-
 S;UK Attractions (Icons) // Section name for subsequent symbols
-
 R;14001;16;16;\\Attractions\\DfT\\Agricultural Museum.ico
-
 S;MapLink 4.0 (Fixed Size) // Section name for subsequent symbols
-
 V;99000;0;0;0;1; Appears as SQUARE
-
 5;-3 -3; -3 3; 3 3; 3 -3; -3 -3;
-
 S;Raster Symbols // Section name for subsequent symbols
-
 C;110000;16;16;1;\\Rasters\\Oil Well.png
-
 S;Font Symbols // Section name for subsequent symbols
-
 F;120000;1
+```
 
 - Version 109 and newer versions of the file must be saved in the UTF-8 code page without a BOM (Byte Order Mark).
 
@@ -769,23 +731,17 @@ Type F: These are font symbols which use a single character from a font as the s
 
 The fonts file, usually called tslfonts.dat, holds the definition of the visualisation for instances of TSLText entities. The format is similar to the line styles file.
 
+```
 TSLFNT 107 // File ident and format version number
-
 ; // Field separator on subsequent lines
-
 #This is a comment
-
 I;3;55;symbols/anothersymbolsfile.dat
-
 #Above is an include declaration to another file.
-
 S;This is a section heading // Section name for subsequent styles
-
 1;0;Arial;100;0;0
-
 2;0;Arial Black;100;0;0
-
 56;1;TSLRom.thf
+```
 
 - Version 106 and newer versions of the file must be saved in the UTF-8 code page without a BOM (Byte Order Mark).
 
@@ -920,7 +876,9 @@ stdDataLayer->notifyChanged( true );
 // draw...
 ```
 
-![And we get something like this:](../../assets/images/developers-guide/media/image230.png)
+And we get something like this:
+
+![](../../assets/images/developers-guide/media/image230.png)
 
 ## Raster Display
 

@@ -154,43 +154,30 @@ The source files for the sample have the following purposes:
 
 Visually, these items correspond to the following parts of the application:
 
-![](../../assets/images/developers-guide/media/image24.png)
+![](../../assets/images/developers-guide/media/OpenGL.png)
 
 ### Starting the Application - Choosing a Framebuffer Configuration
 
 For convenience, the sample uses Qt to create the OpenGL context that will be used by the drawing surface. Before this context is created, we want to suggest to Qt that it uses a framebuffer configuration with certain parameters. This happens inside main in **main.cpp** with the following code:
 
+```cpp
 // Qt will be creating the OpenGL context for us. In order for the
-
 // drawing surface to work at its best we ask it to choose a
-
 // framebuffer configuration with a specific set of
-
 // parameters.
-
 QGLFormat f;
-
 // Request a 24-bit depth buffer. A 16-bit depth buffer will also work.
-
 f.setDepthBufferSize( 24 );
-
 // Request a double-buffered configuration to eliminate flickering when
-
 // moving around the map
-
 f.setDoubleBuffer( true );
-
 // Request 4x multisampling anti-aliasing if supported by the hardware
-
 f.setSamples( 4 );
-
 // Request an OpenGL 3.2 core profile context if supported by the hardware
-
 f.setVersion( 3, 2 );
-
 f.setProfile( QGLFormat::CoreProfile );
-
 QGLFormat::setDefaultFormat( f );
+```
 
 Once we have done this, the main window for the application can be created and displayed.
 
@@ -666,9 +653,7 @@ The specific levels of multisampling available depend on the graphics hardware i
 The images shown on the next page illustrate the effect of increasing levels of multisampling on image quality:
 
 
-| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff) | ![2xaa.tif](../../assets/images/developers-guide/media/image28.tiff) | No multisampling   | 2x multisampling |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| ![4xaa.tif](../../assets/images/developers-guide/media/image29.tiff)   | ![8xaa.tif](../../assets/images/developers-guide/media/image30.tiff) | 4x multisampling | 8x multisampling |
+![](../../assets/images/developers-guide/media/no_2x_4x_8x_multisampling.png)
 
 
 The decision on whether to use multisampling must be made at the time the drawing surface is created - it cannot be enabled or disabled on an existing drawing surface.
@@ -686,9 +671,7 @@ Post-processing anti-aliasing has two available settings - FXAAStrong and FXAAWe
 The images below demonstrate the effect of these settings on image quality:
 
 
-| ![noaa.tif](../../assets/images/developers-guide/media/image27.tiff)     | No post-process anti-aliasing                                                                      | |                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| ![fxaaweak.tif](../../assets/images/developers-guide/media/image31.tiff) | ![fxaastrong.tif](../../assets/images/developers-guide/media/image32.tiff) Weak FXAA anti-aliasing | | Strong FXAA anti-aliasing |
+![](../../assets/images/developers-guide/media/No_post_process_anti_aliasing.png)
 
 
 When configuring feature rendering for maps and overlaps that is intended to be used with the post-process anti-aliasing strong setting it is generally better to avoid using any single pixel wide features entirely. Instead configure these features to be two pixels wide and possibly use a slightly lighter colour if the feature may be in areas of high contrast (e.g. black lines against pale backgrounds). The anti-aliasing effect softens the lines so that the extra width is not as pronounced and often provides better quality than using the weak setting with single pixel thick features due to the reduced aliasing.
@@ -960,11 +943,17 @@ When using layers providing user-editable TSLEntities, such as the TSLStandardDa
 
 The diagrams below show a simple entity hierarchy using each of the storage strategies. The background colour of each item denotes the resource group it belongs to, with items having the same background colour being in the same group.
 
-Figure 20 - Per Tile Storage Strategy
+![Figure 20 - Per Tile Storage Strategy](../../assets/images/developers-guide/media/Figure22_Per_Tile_Storage_Strategy.png)
 
-Figure 21 - Per Entity Set Storage Strategy
+*Figure 20 - Per Tile Storage Strategy*
 
-Figure 22 - Per Entity Storage Strategy
+![Figure 21 - Per Entity Set Storage Strategy](../../assets/images/developers-guide/media/Figure23_Per_Entity_Set_Storage_Strategy.png)
+
+*Figure 21 - Per Entity Set Storage Strategy*
+
+![Figure 22 - Per Entity Storage Strategy](../../assets/images/developers-guide/media/Figure24_Per_Entity_Storage_Strategy.png)
+
+*Figure 22 - Per Entity Storage Strategy*
 
 If an application had two types of vector geometry in a TSLStandardDataLayer, one that was rarely modified and one that was frequently modified, these could be stored in two different TSLEntitySets on the TSLStandardDataLayer, with the layer's storage strategy set to TSLOpenGLPerEntitySetStrategy. This way, modifying the contents of one entity set would not invalidate the GPU resources of the other entity set leading to improved performance.
 

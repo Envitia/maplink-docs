@@ -10,6 +10,8 @@ MapLink is often used to display vector data, either in maps or overlays. The un
 
 ![Figure 1 Geometry Hierarchy](../../assets/images/developers-guide/media/image4.png)
 
+*Figure 1 Geometry Hierarchy*
+
 The MapLink concept for an instantiated piece of geometry is an Entity. In the 2D SDK, these are accessed through classes derived from TSLEntity. Each different type of geometry has its own class. The TSLEntityBase class provides a common point of derivation for both 2D and 3D geometry.
 
 Note that there is a distinction in MapLink between Geometry and Rendering. The Geometry defines the topography of an object - where it is in the world. The Rendering defines the visualisation of that object. The Geometry is always an inherent part of the Entity, whereas the Rendering may be stored on the Entity, or separately on a Drawing Surface or Data Layer. Rendering is discussed in further detail in section [10.6](#rendering-configuration).
@@ -26,13 +28,15 @@ This is a single dimensional line, which has length, but is assumed to have no a
 
 ![](../../assets/images/developers-guide/media/image50.png)
 
-Figure 2 Polyline
+*Figure 2 Polyline*
 
 ### TSLPolygon
 
 A polygon is a two-dimensional surface. It therefore has an area and a perimeter. The rendering of a polygon may include a hollow fill so only the edge may be visible. A polygon may have holes, which in MapLink terminology are called 'inners'. A valid polygon has some restrictions placed upon the geometry so that it conforms to OpenGIS definitions. The coordinates that define the outer or inners of a polygon must have no consecutive duplicate points, and the edges may touch but not cross. The inners must not overlap any other inner, or the outer. MapLink 4.7 and later have additional functionality that removes single-point spikes.
 
 ![Figure 3 Polygon](../../assets/images/developers-guide/media/image60.png)
+
+*Figure 3 Polygon*
 
 MapLink has one important difference from the OpenGIS specification, however. In MapLink, the coordinates of an inner or outer ring may touch along an edge, rather than at a point. This allows for some significant optimisations to be done through key-holing polygons so that they have only an outer ring. This gives increased performance on some platforms.
 
@@ -41,6 +45,8 @@ MapLink has one important difference from the OpenGIS specification, however. In
 The TSLText object consists of a single position coordinate and a text string. Each text primitive may have a horizontal or vertical alignment which dictates where the text is drawn relative to the specified position. Text may be rotated and sized. Since the font style and scaling have a large effect on the rendering of the piece of text, the extent of the text primitive is held separately for each Drawing Surface that has a unique id.
 
 ![Figure 4 Text](../../assets/images/developers-guide/media/image70.png)
+
+*Figure 4 Text*
 
 Text primitives in maps are held in a separate sub-layer within the map and are always drawn after the polygons and polylines. This is to prevent text close to tile edges being overwritten by the polygons that exist in the adjoining tile.
 
@@ -51,6 +57,8 @@ A single text object may be split over several lines, by including a carriage re
 Like TSLText objects, symbols are specified geometrically by a single coordinate. The zoom level of the Drawing Surface and the rendering attributes attached to the Entity can significantly affect the extent of a symbol. Because of this, symbols also hold their extent separately for each uniquely identified Drawing Surface.
 
 ![Figure 5 Symbols](../../assets/images/developers-guide/media/image80.png)
+
+*Figure 5 Symbols*
 
 There are two different types of symbols available in MapLink - vector and raster.
 
@@ -104,17 +112,23 @@ A TSLEllipse is a two-dimensional surface that has area and perimeter. It is def
 
 ![Figure 6 Ellipse](../../assets/images/developers-guide/media/image90.png)
 
+*Figure 6 Ellipse*
+
 ### TSLArc
 
 The TSLArc primitive is a one-dimensional curve, which is a portion of the circumference of an ellipse. It therefore has length but no area. It is specified geometrically by the centre of the ellipse, the x and y radial distances and the start and end angle of the sweep. The radial distances and angles are those before rotation is applied. An additional rotation attribute allows the source ellipse to be rotated. The sweep of the arc is anti-clockwise from start angle to end angle. TSLArc objects typically do not appear in map data and are unlikely to be produced by MapLink Studio.
 
 ![Figure 7 Arc](../../assets/images/developers-guide/media/image100.png)
 
+*Figure 7 Arc*
+
 ### TSLRectangle
 
 This type of geometric primitive is specified by two corners and a rotation angle. The TSLRectangle may be rotated about its centre.
 
 ![Figure 8 Rectangle](../../assets/images/developers-guide/media/image110.png)
+
+*Figure 8 Rectangle*
 
 ### TSLEntitySet and other Collections
 
@@ -130,6 +144,8 @@ This is a specialised primitive, often used in Land Registration applications. I
 
 ![Figure 9 Bordered Polygon](../../assets/images/developers-guide/media/image120.png)
 
+*Figure 9 Bordered Polygon*
+
 ### Geodetic Primitives
 
 A geodetic primitive is a primitive whose shape is defined by the projection of the map upon which it is drawn.
@@ -141,6 +157,8 @@ The shape of a geodetic primitive is defined by interpolating points along a geo
 The six geodetic primitives currently supported are shown below.
 
 ![Figure 10 Geodetic Entities Hierarchy](../../assets/images/developers-guide/media/image13.png)
+
+*Figure 10 Geodetic Entities Hierarchy*
 
 The control points are specified as TMC values, these are then converted to latitude and longitude internally when drawn.
 
@@ -158,7 +176,11 @@ Interpolation can be turned on and off with the interpolation method. The post d
 
 ![Figure 11 Two-point geodetic polyline, showing the geodesic path from Heathrow to Beijing. A Dynamic Arc map](../../assets/images/developers-guide/media/image14.png)
 
+*Figure 11 Two-point geodetic polyline, showing the geodesic path from Heathrow to Beijing. A Dynamic Arc map*
+
 ![Figure 12 Single geodetic polyline with four points, travelling through Sydney, San Francisco, New York and London.](../../assets/images/developers-guide/media/image15.png)
+
+*Figure 12 Single geodetic polyline with four points, travelling through Sydney, San Francisco, New York and London.*
 
 Geodetic polylines are created in a very similar way to standard polylines:
 
@@ -216,9 +238,15 @@ Interpolation can be turned on and off with the interpolation method. The post d
 
 ![Figure 13 Four-point geodetic polygon](../../assets/images/developers-guide/media/image16.png)
 
+*Figure 13 Four-point geodetic polygon*
+
 ![Figure 14 Four-point geodetic polygon reprojected into an orthogonal projection](../../assets/images/developers-guide/media/image17.png)
 
+*Figure 14 Four-point geodetic polygon reprojected into an orthogonal projection*
+
 ![Figure 15 Four-point geodetic polygon, but on a gnomonic projection. In this projection, geodesics are straight lines, so the geodetic polygon looks like a standard polygon. The distortion in its shape is due to the centre of projection being off to one side of the geometry](../../assets/images/developers-guide/media/image18.png)
+
+*Figure 15 Four-point geodetic polygon, but on a gnomonic projection. In this projection, geodesics are straight lines, so the geodetic polygon looks like a standard polygon. The distortion in its shape is due to the centre of projection being off to one side of the geometry*
 
 Geodetic polygons are created in a very similar way to standard polygons:
 
@@ -292,9 +320,15 @@ If a geodetic ellipse crosses the dateline, it will be rendered as separate piec
 
 ![Figure 16 Geodetic ellipse centred on London; x-radius 1000km, y-radius 2000km, rotation 45°.](../../assets/images/developers-guide/media/image19.png)
 
+*Figure 16 Geodetic ellipse centred on London; x-radius 1000km, y-radius 2000km, rotation 45°.*
+
 ![Figure 17 Geodetic ellipse centred on London; x- and y-radius 1000km](../../assets/images/developers-guide/media/image20.png)
 
+*Figure 17 Geodetic ellipse centred on London; x- and y-radius 1000km*
+
 ![Figure 18 Geodetic ellipse centred on 85°S 0°E; x-radius 1000km, y-radius 2000km, rotation 60°.](../../assets/images/developers-guide/media/image21.png)
+
+*Figure 18 Geodetic ellipse centred on 85°S 0°E; x-radius 1000km, y-radius 2000km, rotation 60°.*
 
 Geodetic ellipses are created in a similar way to standard ellipses, except for the radii:
 
@@ -345,6 +379,8 @@ Geodetic arcs are created the same way as standard arcs, except the x and y radi
 Geodetic arcs also provide control over their interpolation. The interpolation step angle, in radians, can be set using interpolationAngleDelta, and the interpolation method can be set with interpolationOptions.
 
 ![Figure 19 Geodetic arc centred on London; x-radius 1000km, y-radius 2000km, rotation 45°.](../../assets/images/developers-guide/media/image22.png)
+
+*Figure 19 Geodetic arc centred on London; x-radius 1000km, y-radius 2000km, rotation 45°.*
 
 Geodetic arcs are created in a similar way to standard arcs, except for the radii:
 

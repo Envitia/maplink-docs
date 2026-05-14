@@ -748,6 +748,8 @@ The 3D SDK incorporates the advantages of 3D terrain data with existing MapLink 
 
 ![Figure 24 3D Globe with US States Extruded as polygons.](../../assets/images/developers-guide/media/image35.png)
 
+*Figure 24 3D Globe with US States Extruded as polygons.*
+
 #### Library Usage and Configuration
 
 
@@ -1191,6 +1193,8 @@ In the same way that a TSLStandardDataLayer contains instances of TSLEntity deri
 A further 2D Core SDK concept that has been continued in the 3D SDK is the use of geometry Entities. All geometric objects in MapLink can be thought of as Entities, derivatives of TSLEntity in the 2D and of TSL3DEntity in the 3D.
 
 ![Figure 25 3D Entity Hierarchy](../../assets/images/developers-guide/media/image36.png)
+
+*Figure 25 3D Entity Hierarchy*
 
 In the 3D SDK all entities with the exception of user geometry have a number of properties including:
 
