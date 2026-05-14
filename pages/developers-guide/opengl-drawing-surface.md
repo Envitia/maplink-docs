@@ -945,15 +945,9 @@ The diagrams below show a simple entity hierarchy using each of the storage stra
 
 ![Figure 20 - Per Tile Storage Strategy](../../assets/images/developers-guide/media/Figure22_Per_Tile_Storage_Strategy.png)
 
-*Figure 20 - Per Tile Storage Strategy*
-
 ![Figure 21 - Per Entity Set Storage Strategy](../../assets/images/developers-guide/media/Figure23_Per_Entity_Set_Storage_Strategy.png)
 
-*Figure 21 - Per Entity Set Storage Strategy*
-
 ![Figure 22 - Per Entity Storage Strategy](../../assets/images/developers-guide/media/Figure24_Per_Entity_Storage_Strategy.png)
-
-*Figure 22 - Per Entity Storage Strategy*
 
 If an application had two types of vector geometry in a TSLStandardDataLayer, one that was rarely modified and one that was frequently modified, these could be stored in two different TSLEntitySets on the TSLStandardDataLayer, with the layer's storage strategy set to TSLOpenGLPerEntitySetStrategy. This way, modifying the contents of one entity set would not invalidate the GPU resources of the other entity set leading to improved performance.
 
