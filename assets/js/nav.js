@@ -84,6 +84,13 @@
       var mainNav = document.getElementById('main-nav');
       if (mainNav) mainNav.style.setProperty('margin-top', totalH + 'px', 'important');
 
+      // Move search box from titlearea into main-nav (matching .NET layout)
+      var searchBox = document.getElementById('MSearchBox');
+      if (searchBox && mainNav && !mainNav.contains(searchBox)) {
+        mainNav.appendChild(searchBox);
+        searchBox.style.cssText += ';float:right;margin:4px 12px 4px 0;';
+      }
+
       // Re-scroll to hash anchor now that heights are correct
       var hash = window.location.hash.slice(1);
       if (hash && docContent) {

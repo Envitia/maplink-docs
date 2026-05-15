@@ -82,8 +82,8 @@ address.footer {
 	box-sizing: border-box;
 }
 
-#titlearea tr:last-child,
-#MSearchBox {
+/* Hide the original search row in the titlearea table (JS moves #MSearchBox to #main-nav) */
+#titlearea tr:last-child {
 	display: none !important;
 }
 
