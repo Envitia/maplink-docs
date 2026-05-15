@@ -228,6 +228,10 @@ h2.groupheader {
 	display: none;
 }
 
+#titlearea tr:last-child {
+	display: none;
+}
+
 #MSearchField {
 	font-family: Poppins,sans-serif;
 }
