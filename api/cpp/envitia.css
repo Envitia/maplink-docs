@@ -223,7 +223,8 @@ h2.groupheader {
 	color: #84BD00;
 }
 
-#nav-tree .arrowhead {
+#nav-tree .arrowhead,
+#nav-sync {
 	display: none;
 }
 
