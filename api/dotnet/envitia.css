@@ -223,7 +223,7 @@ h2.groupheader {
 	color: #84BD00;
 }
 
-#nav-tree-contents > ul > li:first-child .arrowhead {
+#nav-tree .arrowhead {
 	display: none;
 }
 
