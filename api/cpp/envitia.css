@@ -62,6 +62,24 @@ address.footer {
 	background: none;
 	background-color: none;
 	font-family: Poppins,sans-serif;
+	overflow: visible !important;
+}
+
+/* Pull titlearea out of the narrow side-nav to match .NET full-width layout */
+#top {
+	position: fixed !important;
+	top: 64px !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100vw !important;
+	background: #fff;
+	z-index: 950;
+	border-bottom: 1px solid #C4CFE5;
+	box-sizing: border-box;
+}
+
+#titlearea {
+	max-width: 100% !important;
 }
 
 #nav-tree {
@@ -72,6 +90,15 @@ address.footer {
 	margin: 8px 0px 8px 8px;
 	padding: 0px 20px;
 	font-family: Poppins,sans-serif;
+	margin-top: 90px;
+}
+
+#doc-content {
+	padding-top: 90px !important;
+}
+
+#main-nav {
+	padding-top: 90px !important;
 }
 
 	#nav-tree .label {
@@ -225,10 +252,6 @@ h2.groupheader {
 
 #nav-tree .arrowhead,
 #nav-sync {
-	display: none;
-}
-
-#titlearea tr:last-child {
 	display: none;
 }
 
