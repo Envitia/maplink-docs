@@ -80,4 +80,13 @@ layout: null
 
   {% endif %}
   {% endfor %}
+
+  {% comment %} C++ and .NET API reference entries (pre-extracted from Doxygen HTML) {% endcomment %}
+  {% for entry in site.data.api_search %}
+  ,{
+    "title": {{ entry.title | jsonify }},
+    "url": {{ entry.url | relative_url | jsonify }},
+    "content": {{ entry.content | jsonify }}
+  }
+  {% endfor %}
 ]
