@@ -62,7 +62,6 @@ address.footer {
 	background: none;
 	background-color: none;
 	font-family: Poppins,sans-serif;
-	overflow: visible !important;
 }
 
 /* Pull titlearea to full-width to match .NET layout */
@@ -78,28 +77,25 @@ address.footer {
 	box-sizing: border-box;
 }
 
-#titlearea tr:last-child {
-	display: none;
+#titlearea tr:last-child,
+#MSearchBox {
+	display: none !important;
 }
 
-/* Push everything down to clear the fixed titlearea */
+/* Push nav-tree below the fixed titlearea (#projectrow = 56px per doxygen.css) */
 #nav-tree {
 	background: none;
 	background-color: white;
 	border: 3px solid #84BD00;
 	border-radius: 7px 7px 7px 7px;
-	margin: 8px 0px 8px 8px;
-	margin-top: 88px;
+	margin: 56px 0px 8px 8px;
 	padding: 0px 20px;
 	font-family: Poppins,sans-serif;
 }
 
+/* Push tabs row below site nav (64px) + titlearea (56px) */
 #main-nav {
-	margin-top: 88px;
-}
-
-#doc-content {
-	margin-top: 88px;
+	margin-top: 120px;
 }
 
 	#nav-tree .label {
@@ -318,7 +314,8 @@ span.mlabel {
 /* C++ uses page_layout=1: Doxygen JS controls body layout, so don't use
    body padding-top — push containers down with targeted CSS instead. */
 #side-nav { top: 64px !important; }
-#main-nav { margin-top: 64px !important; }
+/* 64px site nav + 56px Doxygen titlearea = 120px total fixed header */
+#main-nav { margin-top: 120px !important; }
 
 .site-nav {
 	position: fixed; top: 0; left: 0; width: 100%; height: 64px;

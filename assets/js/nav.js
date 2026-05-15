@@ -52,6 +52,35 @@
     }
   });
 
+  // ── C++ Doxygen layout fix ──────────────────────────────────────────────────
+  // navtree.js calculates heights using only the Doxygen titlearea (56px) and
+  // doesn't know about our injected 64px site nav. Correct heights after it runs.
+  if (typeof page_layout !== 'undefined' && page_layout === 1) {
+    var SITE_NAV_H   = 64;
+    var TITLEAREA_H  = 56; // #projectrow height per Doxygen CSS
+    var TOTAL_HDR_H  = SITE_NAV_H + TITLEAREA_H; // 120px
+
+    function fixCppDoxygenLayout() {
+      var navTree    = document.getElementById('nav-tree');
+      var sideNav    = document.getElementById('side-nav');
+      var docContent = document.getElementById('doc-content');
+      if (!navTree || !sideNav) return;
+      var ntH = navTree.offsetHeight;
+      var snH = sideNav.offsetHeight;
+      if (ntH > SITE_NAV_H) navTree.style.height   = (ntH - SITE_NAV_H) + 'px';
+      if (snH > SITE_NAV_H) sideNav.style.height   = (snH - SITE_NAV_H) + 'px';
+      if (docContent) {
+        var dcH = docContent.offsetHeight;
+        if (dcH > TOTAL_HDR_H) docContent.style.height = (dcH - TOTAL_HDR_H) + 'px';
+      }
+    }
+
+    // navtree.js uses $(document).ready() = DOMContentLoaded; window.load fires after.
+    window.addEventListener('load', function () { fixCppDoxygenLayout(); });
+    // On resize navtree.js fires first (attached earlier), our setTimeout runs after.
+    window.addEventListener('resize', function () { setTimeout(fixCppDoxygenLayout, 0); });
+  }
+
   // ── Sidebar navigation panel ────────────────────────────────────────────────
   if (!sidebarToggle || !sidebar) return;
 
