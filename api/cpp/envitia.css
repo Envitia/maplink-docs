@@ -64,6 +64,11 @@ address.footer {
 	font-family: Poppins,sans-serif;
 }
 
+/* Remove click-focus outlines (browser default blue ring) */
+:focus {
+	outline: none;
+}
+
 /* Constrain logo so it fits the 56px project row (same visual as .NET) */
 #projectlogo img {
 	max-height: 56px;
