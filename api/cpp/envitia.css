@@ -64,6 +64,12 @@ address.footer {
 	font-family: Poppins,sans-serif;
 }
 
+/* Constrain logo so it fits the 56px project row (same visual as .NET) */
+#projectlogo img {
+	max-height: 56px;
+	width: auto;
+}
+
 /* Pull titlearea to full-width to match .NET layout */
 #top {
 	position: fixed !important;

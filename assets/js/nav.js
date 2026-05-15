@@ -53,32 +53,55 @@
   });
 
   // ── C++ Doxygen layout fix ──────────────────────────────────────────────────
-  // navtree.js calculates heights using only the Doxygen titlearea (56px) and
-  // doesn't know about our injected 64px site nav. Correct heights after it runs.
-  if (typeof page_layout !== 'undefined' && page_layout === 1) {
-    var SITE_NAV_H   = 64;
-    var TITLEAREA_H  = 56; // #projectrow height per Doxygen CSS
-    var TOTAL_HDR_H  = SITE_NAV_H + TITLEAREA_H; // 120px
+  // navtree.js calculates heights from #top.height alone and doesn't know about
+  // our 64px site nav. Run after navtree.js (jQuery ready queue is ordered) to
+  // correct heights and re-scroll any hash anchor to its proper position.
+  if (typeof page_layout !== 'undefined' && page_layout === 1 && typeof $ === 'function') {
+    var SITE_NAV_H = 64;
 
     function fixCppDoxygenLayout() {
       var navTree    = document.getElementById('nav-tree');
       var sideNav    = document.getElementById('side-nav');
       var docContent = document.getElementById('doc-content');
-      if (!navTree || !sideNav) return;
+      var topEl      = document.getElementById('top');
+      if (!navTree || !sideNav || !topEl) return;
+
+      var topH   = topEl.offsetHeight;        // actual measured titlearea height
+      var totalH = SITE_NAV_H + topH;
+
+      // navtree.js over-allocated by SITE_NAV_H — subtract it back
       var ntH = navTree.offsetHeight;
       var snH = sideNav.offsetHeight;
-      if (ntH > SITE_NAV_H) navTree.style.height   = (ntH - SITE_NAV_H) + 'px';
-      if (snH > SITE_NAV_H) sideNav.style.height   = (snH - SITE_NAV_H) + 'px';
+      if (ntH > SITE_NAV_H) navTree.style.height  = (ntH - SITE_NAV_H) + 'px';
+      if (snH > SITE_NAV_H) sideNav.style.height  = (snH - SITE_NAV_H) + 'px';
       if (docContent) {
         var dcH = docContent.offsetHeight;
-        if (dcH > TOTAL_HDR_H) docContent.style.height = (dcH - TOTAL_HDR_H) + 'px';
+        if (dcH > totalH) docContent.style.height = (dcH - totalH) + 'px';
+      }
+
+      // Also set margins dynamically so they match the actual titlearea height
+      navTree.style.marginTop = topH + 'px';
+      var mainNav = document.getElementById('main-nav');
+      if (mainNav) mainNav.style.setProperty('margin-top', totalH + 'px', 'important');
+
+      // Re-scroll to hash anchor now that heights are correct
+      var hash = window.location.hash.slice(1);
+      if (hash && docContent) {
+        var target = document.getElementById(hash);
+        if (target) {
+          var $dc  = $(docContent);
+          var $tgt = $(target);
+          var pos  = $tgt.parent().is(':header') ? $tgt.parent().offset().top : $tgt.offset().top;
+          var newTop = pos + $dc.scrollTop() - $dc.offset().top;
+          if (newTop > 0) $dc.scrollTop(newTop);
+        }
       }
     }
 
-    // navtree.js uses $(document).ready() = DOMContentLoaded; window.load fires after.
-    window.addEventListener('load', function () { fixCppDoxygenLayout(); });
-    // On resize navtree.js fires first (attached earlier), our setTimeout runs after.
-    window.addEventListener('resize', function () { setTimeout(fixCppDoxygenLayout, 0); });
+    // jQuery processes ready callbacks in registration order. nav.js loads after
+    // navtree.js, so our callback runs right after navtree.js's at DOMContentLoaded.
+    $(document).ready(fixCppDoxygenLayout);
+    $(window).on('resize', function () { setTimeout(fixCppDoxygenLayout, 0); });
   }
 
   // ── Sidebar navigation panel ────────────────────────────────────────────────
