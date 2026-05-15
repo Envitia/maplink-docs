@@ -1,13 +1,13 @@
 # MapLink Pro API Documentation
 
-<a href="{{ "/api/cpp/" | relative_url }}" class="btn" target="_blank">
+<a href="{{ "/api/cpp/" | relative_url }}" class="btn">
   <span class="btn-label">
     <span class="btn-sublabel">Browse</span>
     C++ API Reference
   </span>
 </a>
 
-<a href="{{ "/api/dotnet/" | relative_url }}" class="btn" target="_blank">
+<a href="{{ "/api/dotnet/" | relative_url }}" class="btn">
   <span class="btn-label">
     <span class="btn-sublabel">Browse</span>
     .NET API Reference
