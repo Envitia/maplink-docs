@@ -62,16 +62,44 @@ address.footer {
 	background: none;
 	background-color: none;
 	font-family: Poppins,sans-serif;
+	overflow: visible !important;
 }
 
+/* Pull titlearea to full-width to match .NET layout */
+#top {
+	position: fixed !important;
+	top: 64px !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100vw !important;
+	background: #fff;
+	z-index: 950;
+	border-bottom: 1px solid #C4CFE5;
+	box-sizing: border-box;
+}
+
+#titlearea tr:last-child {
+	display: none;
+}
+
+/* Push everything down to clear the fixed titlearea */
 #nav-tree {
 	background: none;
 	background-color: white;
 	border: 3px solid #84BD00;
 	border-radius: 7px 7px 7px 7px;
 	margin: 8px 0px 8px 8px;
+	margin-top: 88px;
 	padding: 0px 20px;
 	font-family: Poppins,sans-serif;
+}
+
+#main-nav {
+	margin-top: 88px;
+}
+
+#doc-content {
+	margin-top: 88px;
 }
 
 	#nav-tree .label {
