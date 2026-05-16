@@ -91,6 +91,18 @@
         searchBox.style.cssText += ';float:right;margin:4px 12px 4px 0;';
       }
 
+      // Update project name header to "MapLink Pro C++"
+      var pn = document.getElementById('projectname');
+      if (pn) {
+        pn.innerHTML = 'MapLink Pro C++<span id="projectnumber">&#160;.</span>';
+      }
+
+      // Update first tab label from "MapLink Pro" to "MapLink Pro C++"
+      var firstTabSpan = document.querySelector('#navrow1 .tablist li:first-child a span');
+      if (firstTabSpan && firstTabSpan.textContent.indexOf('C++') === -1) {
+        firstTabSpan.textContent = 'MapLink Pro C++';
+      }
+
       // Re-scroll to hash anchor now that heights are correct
       var hash = window.location.hash.slice(1);
       if (hash && docContent) {
