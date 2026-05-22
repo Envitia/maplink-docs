@@ -52,6 +52,77 @@
     }
   });
 
+  // ── C++ Doxygen layout fix ──────────────────────────────────────────────────
+  // navtree.js calculates heights from #top.height alone and doesn't know about
+  // our 64px site nav. Run after navtree.js (jQuery ready queue is ordered) to
+  // correct heights and re-scroll any hash anchor to its proper position.
+  if (typeof page_layout !== 'undefined' && page_layout === 1 && typeof $ === 'function') {
+    var SITE_NAV_H = 64;
+
+    function fixCppDoxygenLayout() {
+      var navTree    = document.getElementById('nav-tree');
+      var sideNav    = document.getElementById('side-nav');
+      var docContent = document.getElementById('doc-content');
+      var topEl      = document.getElementById('top');
+      if (!navTree || !sideNav || !topEl) return;
+
+      var topH   = topEl.offsetHeight;        // actual measured titlearea height
+      var totalH = SITE_NAV_H + topH;
+
+      // navtree.js over-allocated by SITE_NAV_H — subtract it back
+      var ntH = navTree.offsetHeight;
+      var snH = sideNav.offsetHeight;
+      if (ntH > SITE_NAV_H) navTree.style.height  = (ntH - SITE_NAV_H) + 'px';
+      if (snH > SITE_NAV_H) sideNav.style.height  = (snH - SITE_NAV_H) + 'px';
+      if (docContent) {
+        var dcH = docContent.offsetHeight;
+        if (dcH > totalH) docContent.style.height = (dcH - totalH) + 'px';
+      }
+
+      // Also set margins dynamically so they match the actual titlearea height
+      navTree.style.marginTop = topH + 'px';
+      var mainNav = document.getElementById('main-nav');
+      if (mainNav) mainNav.style.setProperty('margin-top', totalH + 'px', 'important');
+
+      // Move search box from titlearea into main-nav (matching .NET layout)
+      var searchBox = document.getElementById('MSearchBox');
+      if (searchBox && mainNav && !mainNav.contains(searchBox)) {
+        mainNav.appendChild(searchBox);
+        searchBox.style.cssText += ';float:right;margin:4px 12px 4px 0;';
+      }
+
+      // Update project name header to "MapLink Pro C++"
+      var pn = document.getElementById('projectname');
+      if (pn) {
+        pn.innerHTML = 'MapLink Pro C++<span id="projectnumber">&#160;.</span>';
+      }
+
+      // Update first tab label from "MapLink Pro" to "MapLink Pro C++"
+      var firstTabSpan = document.querySelector('#navrow1 .tablist li:first-child a span');
+      if (firstTabSpan && firstTabSpan.textContent.indexOf('C++') === -1) {
+        firstTabSpan.textContent = 'MapLink Pro C++';
+      }
+
+      // Re-scroll to hash anchor now that heights are correct
+      var hash = window.location.hash.slice(1);
+      if (hash && docContent) {
+        var target = document.getElementById(hash);
+        if (target) {
+          var $dc  = $(docContent);
+          var $tgt = $(target);
+          var pos  = $tgt.parent().is(':header') ? $tgt.parent().offset().top : $tgt.offset().top;
+          var newTop = pos + $dc.scrollTop() - $dc.offset().top;
+          if (newTop > 0) $dc.scrollTop(newTop);
+        }
+      }
+    }
+
+    // jQuery processes ready callbacks in registration order. nav.js loads after
+    // navtree.js, so our callback runs right after navtree.js's at DOMContentLoaded.
+    $(document).ready(fixCppDoxygenLayout);
+    $(window).on('resize', function () { setTimeout(fixCppDoxygenLayout, 0); });
+  }
+
   // ── Sidebar navigation panel ────────────────────────────────────────────────
   if (!sidebarToggle || !sidebar) return;
 
