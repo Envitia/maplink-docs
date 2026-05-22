@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "MapLink Pro", "index.html", [
+  [ "MapLink Pro C++", "index.html", [
     [ "C++ API", "index.html#introduction_to_maplink", null ],
     [ "Resources", "index.html#other_resources", null ],
     [ "MapLink Pro C++ API", "topics.html", "topics" ]

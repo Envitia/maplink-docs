@@ -1,49 +1,100 @@
-# Envitia MapLink Pro
+# maplink-docs
 
+Documentation site for **Envitia MapLink Pro** — a geospatial SDK for building high-performance mapping and situational awareness applications.
 
-<div class="row">
-<div class="column" markdown=1>
-Envitias software technology for mission system developers, enabling them to create high performance geospatial intelligence, situational awareness and map-based systems. Feature rich and proven in demanding operational systems, Envitia's MapLink Pro provides system integrators and OEMs with the application control and flexibility they need while minimising delivery time and cost.
-[Read more...](https://www.envitia.com/for-developers/maplink-pro/)
+**Live site:** [envitia.github.io/maplink-docs](https://envitia.github.io/maplink-docs/)
 
-</div>
-<div class="column">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gDzkMZwUOow?si=5THKCqDyX_ZDglTm&amp;controls=0&amp;autoplay=1&amp;cc_load_policy=1&amp;mute=1&amp;loop=1&amp;playlist=gDzkMZwUOow" title="YouTube video player" frameborder="0" allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</div>
+---
 
-<div class="row" markdown=1>
+## What's in this repo
 
+This is a [Jekyll](https://jekyllrb.com/) site hosted on GitHub Pages. Content is written in Markdown and organised as follows:
 
-## Getting Started
-## Installation
-- [Get a trial version of MapLink Pro](https://forms.office.com/e/Lr7jN9TCC0).
-- Our [Quick Start Guide](./pages/quick-start-guide) will see you through the process of getting started.
+```
+maplink-docs/
+├── main.md                  # Website homepage (served at /)
+├── pages/
+│   ├── quick-start-guide.md # Installation and first steps
+│   ├── developers-guide.md  # In-depth developer reference
+│   ├── docs.md              # Docs index page
+│   ├── features/            # Feature-specific pages (e.g. wrap-around maps)
+│   ├── releases/            # Release notes per version
+│   ├── support/             # Support pages (install, platform, SDK, deployment)
+│   └── tutorials/           # Step-by-step tutorials
+├── api/
+│   ├── cpp/                 # C++ API reference (Doxygen-generated HTML)
+│   └── dotnet/              # .NET API reference
+├── studio/                  # MapLink Studio documentation
+├── licences/                # Third-party licence information
+├── _data/
+│   ├── nav.yml              # Site navigation structure
+│   ├── docs.yml             # Docs index card list
+│   └── thirdpartylicences.yml
+├── _layouts/                # Jekyll HTML layouts
+├── assets/ / css/ / img/    # Static assets
+├── pdf/                     # Downloadable PDFs
+└── _config.yml              # Jekyll site configuration
+```
 
-## Samples
-MapLink Pro comes installed with a variety of sample applications to get you started quickly.
-You can also view our sample code and tips in our [GitHub repos](https://github.com/envitia).
+---
 
-## Platform Requirements
-MapLink Pro has APIs for [C++](./api/cpp/) and [.Net](./api/dotnet/) and can be used on Windows and Linux.
+## Running locally
 
-## Resources
-- [Envitia MapLink Pro API Documentation](./api/)
-- [MapLink Studio Documentation](./studio/)
-- [Support Pages](./pages/support/)
-- [Licences](./licences)
+You need Ruby and Bundler installed.
 
-## Documentation
-<ul>
-    {% for item in site.data.docs.docs %}
-    <li>
-    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    </li>
-    {% endfor %}
-    <li><a href="./pages/docs">All docs...</a></li>
-</ul>
+```bash
+# Install dependencies
+bundle install
 
+# Serve with live reload
+bundle exec jekyll serve
 
+# Then open http://localhost:4000/maplink-docs/
+```
 
-</div>
+> The site uses the `github-pages` gem to match the GitHub Pages build environment.
 
+---
+
+## Editing content
+
+All documentation pages are Markdown files. Most have Jekyll front matter at the top:
+
+```yaml
+---
+title: Page Title
+---
+```
+
+- **Navigation** is controlled by [_data/nav.yml](_data/nav.yml)
+- **Docs index cards** are listed in [_data/docs.yml](_data/docs.yml)
+- **Homepage** is [main.md](main.md) (renders at `/`)
+
+### Adding a new page
+
+1. Create a `.md` file in the appropriate `pages/` subdirectory
+2. Add front matter (`title` at minimum)
+3. If it should appear in the nav, add an entry to `_data/nav.yml`
+
+---
+
+## Contributing
+
+1. Fork the repo and create a branch from `main`
+2. Make your changes (Markdown edits, new pages, nav updates)
+3. Test locally with `bundle exec jekyll serve`
+4. Open a pull request
+
+---
+
+## Platform support
+
+MapLink Pro has C++ and .NET APIs and runs on Windows and Linux. See the [Platform Support page](https://envitia.github.io/maplink-docs/pages/support/platform-support) for details.
+
+## Request a trial
+
+[Apply for a trial licence](https://forms.office.com/e/Lr7jN9TCC0)
+
+## Support
+
+For support queries, email the Envitia support team. See the [support pages](https://envitia.github.io/maplink-docs/pages/support/) for more information.
