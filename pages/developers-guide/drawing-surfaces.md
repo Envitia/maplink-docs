@@ -1,10 +1,30 @@
-# Drawing Surfaces
+---
+title: "Drawing Surfaces"
+---
 
 ## Purpose
+
+The MapLink Pro Drawing Surface is the component that draws your mapping information to a device. It is MapLink Pro's representation of the map display. With a drawing surface, you can:
+- add multiple data layers to your map display
+- add moving track objects
+- control the z-ordering of the data layers
+- configure display properties
+- draw to screen or a bitmap
+- and many other mappy things.
+
+\| [C++ API](../../api/cpp/class_t_s_l_drawing_surface_base) \| [.NET API](../../api/dotnet/class_envitia_1_1_map_link_1_1_t_s_l_n_drawing_surface_base) \|
+
+MapLink Pro provides several types of drawing surface; the one you use depends on your application architecture and design. The different types of drawing surface are summarised below.
 
 ## Windows Drawing Surfaces
 
 ## Linux Drawning Surfaces
+
+## OpenGL Drawing Surface
+
+The OpenGL drawing surface allows an application to take advantage of hardware acceleration to enable high performance visualisations on both desktop and mobile platforms. In many circumstances it can be used as a drop-in replacement for the GDI-based and X11-based drawing surfaces from the Core SDK.
+
+[More information...](./opengl-drawing-surface)
 
 ## Cross platform Drawing Surfaces
 
