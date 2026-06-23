@@ -47,6 +47,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 | [Geometry and Overlays](geometry-and-overlays) | Entities, polylines, polygons, symbols, text, ellipses, and collections |
 | [More Features of the Core SDK](advanced-features) | Feature rendering, coordinate systems, data layers, and surface options |
 | [Unicode](unicode) | Unicode support, fonts, geometry, filenames, and FAQ |
+| [Drawing Surfaces](drawing-surfaces) | Overview of drawing surface types |
 
 ## SDK Reference
 
