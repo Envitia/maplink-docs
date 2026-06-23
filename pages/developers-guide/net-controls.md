@@ -2,7 +2,7 @@
 
 ## Overview
 
-MapLink 11.3.1 onwards provide simple mechanisms for integrating MapLink visuals and interactions into your .NET applications.  There are several options available, and the underlying mechanism can be used to create controls for a host of frameworks.  The MapLink install currently provides controls for WPF and Avalonia (Windows only) applications.
+MapLink 11.3.1 onwards provide simple mechanisms for integrating MapLink visuals and interactions into your .NET applications.  There are several options available, and the underlying mechanism can be used to create controls for a host of frameworks.  The MapLink install currently provides controls for WPF and Avalonia (Windows only) applications.  Samples for the controls can be found in the installer and also in our GitHub samples repo.
 
 ## WPF Control
 
