@@ -6,7 +6,7 @@ MapLink 11.3.1 onwards provide simple mechanisms for integrating MapLink visuals
 
 ## WPF Control
 
-The WPF control provides an interactive MapLink visual "out of the box" with minimal set up.  It also provides mechanisms for more advanced interactions with the underlying drawing surface if required.  
+The WPF control provides an interactive MapLink display "out of the box" with minimal set up.  It natively supports pan and zoom controls.  It also provides mechanisms for more advanced interactions with the underlying drawing surface if required.  
 
 ### XAML API
 
@@ -26,13 +26,15 @@ Then add the following code snippets to your applications xaml file :
                                     />
 ```
 
+Where BaseMap is set to the location of the map you want to load.
+
 ### Programming API
 
 The control can be accessed programmatically via the MapControl handle.  It provides the following API:
 
 | Name | Signature | Description |
 |:-------- |:------- |:-------- |
-|LoadMap  |bool LoadMap(string mapPath) |Imperatively load a map layer|
+|LoadMap  |bool LoadMap(string mapPath) |Load a map layer|
 |Zoom |bool Zoom(int percentage, bool zoomIn) |Programmatic zoom|
 |Pan |bool Pan(double x, double y) |Pan to user-unit coordinate|
 |DUToUU |bool DUToUU(int deviceX, int deviceY, out double userX, out double userY) |Convert device → map coordinates|
