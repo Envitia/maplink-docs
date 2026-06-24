@@ -66,6 +66,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 | [Spatial SDK](spatial-sdk) | Spatial operations and map update island management |
 | [GML SDK](gml-sdk) | Reading and writing GML application schemas and instance data |
 | [.NET SDKs](net-sdks) | C# and VB.NET wrappers with walkthroughs |
+| [.NET Application Controls](net-controls) | Pre-made C# MapLink controls to drop into applications |
 
 ## Advanced Topics
 
