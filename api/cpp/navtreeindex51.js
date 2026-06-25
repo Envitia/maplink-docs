@@ -1,5 +1,6 @@
 var NAVTREEINDEX51 =
 {
+"class_t_s_l_way_point_set.html#a42318d05d3124526dc0174ace24b6975":[2,15,2,4,4],
 "class_t_s_l_way_point_set.html#a6a2398e0f58b8d6bd55636423fe08af5":[2,15,2,4,0],
 "class_t_s_l_way_point_set.html#a715dea438f7ebab0cf2cc72b6f0a30f8":[2,15,2,4,5],
 "class_t_s_l_way_point_set.html#a94fa063a3a7c8bf0ac1f44efb5861032":[2,15,2,4,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX51 =
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a50920efa8b4eb766b1833785fd445b46":[2,13,4,3],
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a59948fb3bc2a8197146428b0aa350439":[2,13,4,4],
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a6836374608c363170dfe600cf5a770ce":[2,13,4,9],
-"classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a72144055e1164ef747641bb654766682":[2,13,4,12],
-"classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a78871be58ba06118e0ca773bb3d46fbc":[2,13,4,14]
+"classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a72144055e1164ef747641bb654766682":[2,13,4,12]
 };

@@ -899,6 +899,7 @@ var group__apigroup__api =
       [ "attach", "class_t_s_l_drawing_surface_base.html#ad695674703054f6dde4f8f472160ca82", null ],
       [ "attach", "class_t_s_l_drawing_surface_base.html#ab367bb38ef5a8e3ce9df1b17fe665fbd", null ],
       [ "attach", "class_t_s_l_drawing_surface_base.html#ac268beaaf3462b6d6a1845bebb3fb113", null ],
+      [ "attach", "class_t_s_l_drawing_surface_base.html#a9200f009da11ed768cfef5441e28d5e4", null ],
       [ "bringInFrontof", "class_t_s_l_drawing_surface_base.html#a5fa764a7e039e56f2489a1f62d238701", null ],
       [ "bringToFront", "class_t_s_l_drawing_surface_base.html#aeccd258d58e99d15c4bcae1b4c1170f7", null ],
       [ "clearAllDeclutterData", "class_t_s_l_drawing_surface_base.html#a171387fcf2304549fffe4982562ca4c2", null ],
@@ -2410,7 +2411,8 @@ var group__apigroup__api =
       [ "TSLDrawingSurfaceTypeAcceleratorOpenGL", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601aaa03f2743708c51ba33faa0cc26c06bd", null ],
       [ "TSLDrawingSurfaceTypeAcceleratorDirectX", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601a1d3305170d49e38b4cfca4bd6ae10180", null ],
       [ "TSLDrawingSurfaceType3DOpenGL", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601a93bfba0f8ea5399957ce1aea660cd27d", null ],
-      [ "TSLDrawingSurfaceType3DEarth", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601a43ddd8d6e6047b75dfd62dfb944b3d91", null ]
+      [ "TSLDrawingSurfaceType3DEarth", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601a43ddd8d6e6047b75dfd62dfb944b3d91", null ],
+      [ "TSLDrawingSurfaceTypeSkia", "group__apigroup__api.html#gga76e1969f4b1b3d601f72cf5936520601abb6ef1fef9e7d2c12db5ba0ab342975f", null ]
     ] ],
     [ "TSLDynamicRendererAction", "group__apigroup__api.html#ga412e1da2d084f201477046ef45822ca8", [
       [ "TSLDynamicRendererActionNone", "group__apigroup__api.html#gga412e1da2d084f201477046ef45822ca8a29ee7a880634cd6922c1920671b7b30f", null ],
