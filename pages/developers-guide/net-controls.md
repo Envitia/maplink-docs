@@ -45,11 +45,6 @@ The control can be accessed programmatically via the MapControl handle.  It prov
 
 The control exposes a property named ```DrawingSurface``` that can be accessed via ```MapControl.DrawingSurface``` to provide access to the full API provided by ```TSLNSkiaDrawingSurface```.
 
-### Known Issues
-
-The WPF XAML editor will crash unless the MapLink dlls are copied into the applications output folder.  This is due to the designer creating a shadow cache of dlls and failing to find the native C++ libraries unless they are
-co-located with the C# dlls.
-
 
 
 ## Avalonia Control
