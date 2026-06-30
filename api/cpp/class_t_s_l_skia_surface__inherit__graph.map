@@ -1,0 +1,7 @@
+<map id="TSLSkiaSurface" name="TSLSkiaSurface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,147,122,169"/>
+<area shape="rect" id="Node000002" href="$class_t_s_l_drawing_surface.html" title=" " alt="" coords="17,76,132,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,112,77,147,72,147,72,112"/>
+<area shape="rect" id="Node000003" href="$class_t_s_l_drawing_surface_base.html" title=" " alt="" coords="5,5,144,28"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,41,77,76,72,76,72,41"/>
+</map>

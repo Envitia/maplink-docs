@@ -1,5 +1,6 @@
 var NAVTREEINDEX52 =
 {
+"classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a78871be58ba06118e0ca773bb3d46fbc":[2,13,4,14],
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a7fdbc87464d1ad73db8cf5813e1b50db":[2,13,4,15],
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#a88772fe7a195c734199dfc0c17fa602e":[2,13,4,16],
 "classenvitia_1_1maplink_1_1earth_1_1_geodetic_point.html#aa5e2d7b6602b8ff58e5511585bef398e":[2,13,4,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX52 =
 "classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a022cf944775dee3bb728fbaf7a0b5232":[2,13,20,2],
 "classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a06e606eafebaff92c661de7d7d5e8e7a":[2,13,20,19],
 "classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a22b5909a51939db9f21dedfaad4cfc84":[2,13,20,5],
-"classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a2d04a733430c835b11900d6cbdbda5f2":[2,13,20,22],
-"classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a2f4508d116879372437320ae137498e0":[2,13,20,14]
+"classenvitia_1_1maplink_1_1earth_1_1_vec3.html#a2d04a733430c835b11900d6cbdbda5f2":[2,13,20,22]
 };
