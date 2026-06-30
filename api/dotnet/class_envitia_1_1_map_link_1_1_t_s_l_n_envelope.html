@@ -23,63 +23,8 @@
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="envitia.css" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- site-nav-inject -->
-<nav class="site-nav" id="site-nav">
-  <div class="nav-container">
-    <a class="nav-logo" href="/maplink-docs/">
-      <img src="/maplink-docs/img/MapLink%20Pro%2011%20Logo%20New%20V1.1.png" alt="MapLink Pro" />
-      <span class="nav-logo-text">MapLink Pro</span>
-    </a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="/maplink-docs/">HOME</a></li>
-      <li class="has-dropdown">
-        <a href="/maplink-docs/pages/docs">DOCS <span class="arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="/maplink-docs/pages/quick-start-guide">Quick Start Guide</a></li>
-          <li><a href="/maplink-docs/pages/developers-guide/">Developer&#39;s Guide</a></li>
-          <li><a href="/maplink-docs/pages/features/wrap-around-maps">Wrap-around Maps</a></li>
-          <li><a href="/maplink-docs/pages/MapLink%20OGC%20Services%20Deployment%20User%20Guide">OGC Services Guide</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="/maplink-docs/api/">API DOCS <span class="arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="/maplink-docs/api/cpp/">C++ API Reference</a></li>
-          <li><a href="/maplink-docs/api/dotnet/">.NET API Reference</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="/maplink-docs/pages/releases/">RELEASES <span class="arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="/maplink-docs/pages/releases/11.2/11.2.7">MapLink 11.2 (Latest)</a></li>
-          <li><a href="/maplink-docs/pages/releases/#maplink-pro-11-releases">All 11.x Releases</a></li>
-          <li><a href="/maplink-docs/pages/releases/#maplink-pro-10-releases">All 10.x Releases</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="/maplink-docs/pages/support/">SUPPORT <span class="arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="/maplink-docs/pages/support/install-and-upgrade">Install &amp; Upgrade</a></li>
-          <li><a href="/maplink-docs/pages/support/platform-support">Platform Support</a></li>
-          <li><a href="/maplink-docs/pages/support/sdk-support">SDK Support</a></li>
-          <li><a href="/maplink-docs/pages/support/deployment-guide">Deployment Guide</a></li>
-          <li><a href="/maplink-docs/pages/support/geospatial-formats">Geospatial Formats</a></li>
-          <li><a href="/maplink-docs/pages/support/windows-libs">Windows Libraries</a></li>
-          <li><a href="/maplink-docs/pages/support/linux-deployed-libs">Linux Libraries</a></li>
-        </ul>
-      </li>
-      <li><a href="https://github.com/envitia">SAMPLES</a></li>
-      <li><a href="https://www.envitia.com/insights/">NEWS</a></li>
-      <li class="nav-highlight"><a href="https://forms.office.com/e/Lr7jN9TCC0">REQUEST A TRIAL</a></li>
-    </ul>
-  </div>
-</nav>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -198,6 +143,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:addab0bfa65369012259fee02633f650f" id="r_addab0bfa65369012259fee02633f650f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#addab0bfa65369012259fee02633f650f">translate</a> (int dx, int dy)</td></tr>
 <tr class="memitem:a708f087379a6329cf67ea256dfd4d1d4" id="r_a708f087379a6329cf67ea256dfd4d1d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a708f087379a6329cf67ea256dfd4d1d4">within</a> (<a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a>^ e)</td></tr>
 <tr class="memitem:a9c9ac3d0704f439105e02eb6a1752b99" id="r_a9c9ac3d0704f439105e02eb6a1752b99"><td class="memItemLeft">virtual String ^&#160;</td><td class="memItemRight"><a class="el" href="#a9c9ac3d0704f439105e02eb6a1752b99">ToString</a> () override</td></tr>
+<tr class="memitem:ac86a44d61b3269063e142a08ac040474" id="r_ac86a44d61b3269063e142a08ac040474"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac86a44d61b3269063e142a08ac040474">check</a> ()</td></tr>
+<tr class="memitem:a5145ebd1f0ff75ccd4d4a00d4d1279bb" id="r_a5145ebd1f0ff75ccd4d4a00d4d1279bb"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a5145ebd1f0ff75ccd4d4a00d4d1279bb">squareDistance</a> (<a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^ envelope, OUT bool% singular)</td></tr>
+<tr class="memitem:adaeca9f4c8aa51a56dbee82530a8f99f" id="r_adaeca9f4c8aa51a56dbee82530a8f99f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adaeca9f4c8aa51a56dbee82530a8f99f">operator TSLEnvelope</a> ()</td></tr>
+<tr class="memitem:ab83a1fe543d93dcdd0ca7ddae7d8bae1" id="r_ab83a1fe543d93dcdd0ca7ddae7d8bae1"><td class="memItemLeft"><a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^&#160;</td><td class="memItemRight"><a class="el" href="#ab83a1fe543d93dcdd0ca7ddae7d8bae1">operator=</a> (const TSLEnvelope &amp;env)</td></tr>
+<tr class="memitem:a7e44c4a3992cb727b521ec26812ba26b" id="r_a7e44c4a3992cb727b521ec26812ba26b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7e44c4a3992cb727b521ec26812ba26b">!TSLNEnvelope</a> ()</td></tr>
+<tr class="memitem:a401862408dcb66161afaf36492beff46" id="r_a401862408dcb66161afaf36492beff46"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a401862408dcb66161afaf36492beff46">unMarshalAlloc</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa38c48a7caee7b85ec3263c7ccf9c469" id="r_aa38c48a7caee7b85ec3263c7ccf9c469"><td class="memItemLeft">static <a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^&#160;</td><td class="memItemRight"><a class="el" href="#aa38c48a7caee7b85ec3263c7ccf9c469">reMarshal</a> (const TSLEnvelope *iptr)</td></tr>
+<tr class="memitem:ab56019c3d02acd7dcdd558b337efa792" id="r_ab56019c3d02acd7dcdd558b337efa792"><td class="memItemLeft">static <a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^&#160;</td><td class="memItemRight"><a class="el" href="#ab56019c3d02acd7dcdd558b337efa792">reMarshalFree</a> (void *ptr)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8c6c717fad219d964ed011a2fac3e498" id="r_a8c6c717fad219d964ed011a2fac3e498"><td class="memItemLeft"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coord.html">TSLNCoord</a> ^&#160;</td><td class="memItemRight"><a class="el" href="#a8c6c717fad219d964ed011a2fac3e498">m_bottomLeft</a></td></tr>
+<tr class="memitem:a7ad1f08b0b52cc8db4a40ab5d1181c6a" id="r_a7ad1f08b0b52cc8db4a40ab5d1181c6a"><td class="memItemLeft"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coord.html">TSLNCoord</a> ^&#160;</td><td class="memItemRight"><a class="el" href="#a7ad1f08b0b52cc8db4a40ab5d1181c6a">m_topRight</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -344,6 +305,23 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a7e44c4a3992cb727b521ec26812ba26b" name="a7e44c4a3992cb727b521ec26812ba26b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e44c4a3992cb727b521ec26812ba26b">&#9670;&#160;</a></span>!TSLNEnvelope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Envitia::MapLink::TSLNEnvelope::!TSLNEnvelope </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac90b61154e2ccb5eebc456165f6e76fb" name="ac90b61154e2ccb5eebc456165f6e76fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac90b61154e2ccb5eebc456165f6e76fb">&#9670;&#160;</a></span>Add() <span class="overload">[1/2]</span></h2>
@@ -394,6 +372,23 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>reference to newly updated value. </dd></dl>
+
+</div>
+</div>
+<a id="ac86a44d61b3269063e142a08ac040474" name="ac86a44d61b3269063e142a08ac040474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86a44d61b3269063e142a08ac040474">&#9670;&#160;</a></span>check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Envitia::MapLink::TSLNEnvelope::check </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -697,8 +692,42 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="adaeca9f4c8aa51a56dbee82530a8f99f" name="adaeca9f4c8aa51a56dbee82530a8f99f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaeca9f4c8aa51a56dbee82530a8f99f">&#9670;&#160;</a></span>operator TSLEnvelope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Envitia::MapLink::TSLNEnvelope::operator TSLEnvelope </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab83a1fe543d93dcdd0ca7ddae7d8bae1" name="ab83a1fe543d93dcdd0ca7ddae7d8bae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83a1fe543d93dcdd0ca7ddae7d8bae1">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^ Envitia::MapLink::TSLNEnvelope::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const TSLEnvelope &amp;</td>          <td class="paramname"><span class="paramname"><em>env</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac6c0ac1544556bb48d4bc4576e6472c8" name="ac6c0ac1544556bb48d4bc4576e6472c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6c0ac1544556bb48d4bc4576e6472c8">&#9670;&#160;</a></span>operator=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6c0ac1544556bb48d4bc4576e6472c8">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -747,6 +776,56 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if this envelope intersects the specified envelope, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="aa38c48a7caee7b85ec3263c7ccf9c469" name="aa38c48a7caee7b85ec3263c7ccf9c469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38c48a7caee7b85ec3263c7ccf9c469">&#9670;&#160;</a></span>reMarshal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^ Envitia::MapLink::TSLNEnvelope::reMarshal </td>
+          <td>(</td>
+          <td class="paramtype">const TSLEnvelope *</td>          <td class="paramname"><span class="paramname"><em>iptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab56019c3d02acd7dcdd558b337efa792" name="ab56019c3d02acd7dcdd558b337efa792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56019c3d02acd7dcdd558b337efa792">&#9670;&#160;</a></span>reMarshalFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^ Envitia::MapLink::TSLNEnvelope::reMarshalFree </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -880,8 +959,29 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a5145ebd1f0ff75ccd4d4a00d4d1279bb" name="a5145ebd1f0ff75ccd4d4a00d4d1279bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5145ebd1f0ff75ccd4d4a00d4d1279bb">&#9670;&#160;</a></span>squareDistance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Envitia::MapLink::TSLNEnvelope::squareDistance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8c91557231e675cb1f00259dd892ea91">TSLNEnvelope</a> ^</td>          <td class="paramname"><span class="paramname"><em>envelope</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OUT bool%</td>          <td class="paramname"><span class="paramname"><em>singular</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a178feecb3fdaf659fefb5c0c9e234bbb" name="a178feecb3fdaf659fefb5c0c9e234bbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178feecb3fdaf659fefb5c0c9e234bbb">&#9670;&#160;</a></span>squareDistance()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a178feecb3fdaf659fefb5c0c9e234bbb">&#9670;&#160;</a></span>squareDistance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -961,6 +1061,23 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a401862408dcb66161afaf36492beff46" name="a401862408dcb66161afaf36492beff46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401862408dcb66161afaf36492beff46">&#9670;&#160;</a></span>unMarshalAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Envitia::MapLink::TSLNEnvelope::unMarshalAlloc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a708f087379a6329cf67ea256dfd4d1d4" name="a708f087379a6329cf67ea256dfd4d1d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a708f087379a6329cf67ea256dfd4d1d4">&#9670;&#160;</a></span>within()</h2>
 
@@ -983,6 +1100,35 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if this envelope is totally within the specified envelope, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a8c6c717fad219d964ed011a2fac3e498" name="a8c6c717fad219d964ed011a2fac3e498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6c717fad219d964ed011a2fac3e498">&#9670;&#160;</a></span>m_bottomLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coord.html">TSLNCoord</a> ^ Envitia::MapLink::TSLNEnvelope::m_bottomLeft</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ad1f08b0b52cc8db4a40ab5d1181c6a" name="a7ad1f08b0b52cc8db4a40ab5d1181c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad1f08b0b52cc8db4a40ab5d1181c6a">&#9670;&#160;</a></span>m_topRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_envitia_1_1_map_link_1_1_t_s_l_n_coord.html">TSLNCoord</a> ^ Envitia::MapLink::TSLNEnvelope::m_topRight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1214,7 +1360,5 @@ Properties</h2></td></tr>
     <li class="footer"><a href="https://envitia.github.io/maplink-docs/">MapLink Pro .NET</a> .&nbsp;<a href="mailto:support@envitia.com">Contact Us</a>&nbsp;&copy; <span class="year"></span><a href="http://www.envitia.com">Envitia Ltd.</a></li>
   </ul>
 </div>
-<script>var siteBaseUrl = "/maplink-docs";</script>
-<script src="/maplink-docs/assets/js/nav.js"></script>
 </body>
 </html>

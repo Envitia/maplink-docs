@@ -1,5 +1,7 @@
 var NAVTREEINDEX57 =
 {
+"group__apigroup__geometry__api.html#ggaf340cf52251755aab2d1135e744722baa5012d5d216e1e94c3596c150c0fe685b":[2,0,4,62,0],
+"group__apigroup__geometry__api.html#ggaf340cf52251755aab2d1135e744722baa84c034797f1684bff553f191532ba97b":[2,0,4,62,2],
 "group__apigroup__geometry__api.html#ggaf340cf52251755aab2d1135e744722baadf922c9ab451789318fd0939a0670ee9":[2,0,4,62,5],
 "group__apigroup__geometry__api.html#ggaf340cf52251755aab2d1135e744722baaec683b2e1766c63f2b6c47284a337be0":[2,0,4,62,1],
 "group__apigroup__geometry__api.html#ggafb9feb04e04a749202b7e90c58beaf74a28497594b5453f191bf1b11b7145220b":[2,0,4,59,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "group__group__maf__clientlayoutnotifications.html":[2,15,6,1,0],
 "group__group__maf__components.html":[2,15,6,0],
 "group__group__maf__copypastenotifications.html":[2,15,6,1,1],
-"group__group__maf__drawingsurfacenotifications.html":[2,15,6,1,2],
-"group__group__maf__layernotifications.html":[2,15,6,1,3],
-"group__group__maf__miscellaneousnotifications.html":[2,15,6,1,4]
+"group__group__maf__drawingsurfacenotifications.html":[2,15,6,1,2]
 };

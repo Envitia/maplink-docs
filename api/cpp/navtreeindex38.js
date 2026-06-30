@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"class_t_s_l_satellite.html#a698f808346ee60a7f22cd0bfe4f0009d":[2,15,5,8,29],
 "class_t_s_l_satellite.html#a71426c4920dbb7bdaa721d3a4bb25618":[2,15,5,8,23],
 "class_t_s_l_satellite.html#a770917dd548b6d9a7fd6b9c658d0260a":[2,15,5,8,7],
 "class_t_s_l_satellite.html#a81a025b6457954700aca449f1ffc95ac":[2,15,5,8,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "class_t_s_l_static_map_data_layer.html#a5ac008bf0bcaa37797c68da667dc347c":[2,0,9,1,8],
 "class_t_s_l_static_map_data_layer.html#a5cf938cb4c157d8259911512b708c0e4":[2,0,9,1,28],
 "class_t_s_l_static_map_data_layer.html#a63197100c3838858a01722e733e98797":[2,0,9,1,31],
-"class_t_s_l_static_map_data_layer.html#a6547e34aed3609434a819a7d5eb4d4b3":[2,0,9,1,3],
-"class_t_s_l_static_map_data_layer.html#a67798f931eb6c0f9258014e121613409":[2,0,9,1,15]
+"class_t_s_l_static_map_data_layer.html#a6547e34aed3609434a819a7d5eb4d4b3":[2,0,9,1,3]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX50 =
 {
+"class_t_s_l_w_p_s_literal_data_type.html#acb3e078a353d5aa51a805a9d4e277bb0":[2,2,0,2,13,6],
 "class_t_s_l_w_p_s_literal_data_type.html#ad6805edb2b9f7b7b29f484cacba4c80b":[2,2,0,2,13,3],
 "class_t_s_l_w_p_s_literal_data_type.html#affeb4d9e09ddcd447c63e8900f2ee901":[2,2,0,2,13,2],
 "class_t_s_l_w_p_s_literal_input_type.html":[2,2,0,2,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX50 =
 "class_t_s_l_way_point_set.html#a0229cdc520675f04d773c31a5b9d4a00":[2,15,2,4,3],
 "class_t_s_l_way_point_set.html#a2581f60a18c37eb447960d058ccba709":[2,15,2,4,8],
 "class_t_s_l_way_point_set.html#a38756040647047e281951a8605785347":[2,15,2,4,6],
-"class_t_s_l_way_point_set.html#a3a8df846e64bb3d7c661f1f00ee9b938":[2,15,2,4,2],
-"class_t_s_l_way_point_set.html#a42318d05d3124526dc0174ace24b6975":[2,15,2,4,4]
+"class_t_s_l_way_point_set.html#a3a8df846e64bb3d7c661f1f00ee9b938":[2,15,2,4,2]
 };
