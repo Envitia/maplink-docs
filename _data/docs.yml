@@ -15,6 +15,10 @@ docs:
   url: ./pdf/MapLink Pro 11 White Paper V1.0.pdf
   colour: 84bd00
 
-- title: NEW - Wrap-around Maps
+- title: New! Cross-platform Drawing Surface and WPF and Avalonia UI integration
+  url: ./pages/features/cross-platform-surface
+  colour: 84bd00
+
+- title: Wrap-around Maps
   url: ./pages/features/wrap-around-maps
   colour: 84bd00
