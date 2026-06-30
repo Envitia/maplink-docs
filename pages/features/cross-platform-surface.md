@@ -34,7 +34,7 @@ The new core capability introduced in 11.3.1 is a Skia-backed drawing surface:
 The classes are added to the core:
 
 - `Envitia.MapLink.MapLink64` (.NET 10, currently Windows-only)  
-- `MapLink64` (C++)
+- `MapLink64` (C++, Windows and Linux)
 
 ### Cross-Platform Rendering Core
 
@@ -109,6 +109,8 @@ MapLink Pro 11.3.1 also introduces an **Avalonia UI drawing control**.
 
 The control is available from a new `Envitia.MapLink.TSLNSkiaDrawingSurfaceAvaloniaControl` .NET library included in the MapLink installation.
 
+> Please note that, until the Skia Drawing Surface .NET 10 API is cross-platform, the Avalonia UI control is Windows-only.
+
 ### Purpose
 
 - Enables MapLink rendering directly within Avalonia AXAML applications
@@ -140,6 +142,7 @@ We are working on various enhancements to the capability, including:
 - Custom data layer support
 
 Building upon these enhancements, we will be continuing the evolution to our **code-once / deploy-anywhere** roadmap ambition. The features we plan to explore and deliver include<sup>*</sup>:
+- Make the Skia drawing surface .NET library cross-platform.
 - Android, iOS, macOS and WebAssembly support.
 - Enhanced cross-platform 3D support.
 - Integrated support for more UI frameworks: MAUI, Qt, Blazor, Java UIs, Python UIs, etc
