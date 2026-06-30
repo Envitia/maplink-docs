@@ -14,10 +14,6 @@ MapLink Pro is a powerful geospatial SDK for building high-performance mapping a
 
 Please refer to the Release Notes for your platform before using MapLink Pro.
 
-### Windows 8.0/8.1 Installation
-
-Installing on Windows 8.0 will result in a minimal set of shortcuts on the Start Screen. Windows 8.1 does not permit installing shortcuts directly to the Start Screen — they are placed on the full Apps Screen instead. Pin any favourite shortcuts to the Start Screen manually.
-
 ---
 
 ## Windows Installation
