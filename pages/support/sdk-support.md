@@ -24,47 +24,47 @@ All supported MapLink Pro runtime SDKs are listed.
 
 | SDK | Status | Windows | Linux | Android | C++ API | .NET API | Java API |
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| **MapLink Pro Core** | **Supported** | **11.2.7** | **11.2.7** | **10.2** | **Yes** | **Yes** | **Yes** |
-| 3D | **Deprecated** Superseded by Earth | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| Accelerator | **Deprecated** Superseded by OpenGLDrawingSurface | 11.2.7 | | | Yes | | |
+| **MapLink Pro Core** | **Supported** | **11.3.1** | **11.3.1** | **10.2** | **Yes** | **Yes** | **Yes** |
+| 3D | **Deprecated** Superseded by Earth | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| Accelerator | **Deprecated** Superseded by OpenGLDrawingSurface | 11.3.1 | | | Yes | | |
 | Android Native Surface | Supported | | | 10.2 | Yes | | |
-| App11 | Supported | 11.2.7 | | | Yes | | |
+| App11 | Supported | 11.3.1 | | | Yes | | |
 | ASRP Exporter SDK | **Archived** | | | | | | |
 | CADRG Exporter SDK | Supported | 10.2 | | | Yes | | |
 | Database Interface SDK | **Archived** | | | | | | |
 | Database Layer | **Archived** | | | | | | |
-| Direct Import | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
-| Dynamic Data Objects (DDO) | **Deprecated** Superseded by Tracks | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| Earth | Supported | 11.2.7 | 11.2.7 | | Yes | | |
+| Direct Import | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
+| Dynamic Data Objects (DDO) | **Deprecated** Superseded by Tracks | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| Earth | Supported | 11.3.1 | 11.3.1 | | Yes | | |
 | ECW Data Layer | **Archived** | | | | | | |
-| Editor | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
+| Editor | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
 | Entity Store | **Archived** | | | | | | |
 | ER Mapper | **Archived** | | | | | | |
-| GeoPackage | Supported | 11.2.7 | | 10.2 | Yes | Yes | Yes |
-| GML Interop | Supported | 11.2.7 | 11.2.7 | | Yes | | |
+| GeoPackage | Supported | 11.3.1 | | 10.2 | Yes | Yes | Yes |
+| GML Interop | Supported | 11.3.1 | 11.3.1 | | Yes | | |
 | Impact Assessment | **Archived** | | | | | | |
-| Interaction Modes | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| KML 2D Layer | Supported | 11.2.7 | | | Yes | | |
-| MapLink OWS | Supported | 11.2.7 | | | Yes | | |
-| Network | Supported | 11.2.7 | | | Yes | | |
+| Interaction Modes | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| KML 2D Layer | Supported | 11.3.1 | | | Yes | | |
+| MapLink OWS | Supported | 11.3.1 | | | Yes | | |
+| Network | Supported | 11.3.1 | | | Yes | | |
 | OGC Filter SDK | **Archived** | | | | | | |
-| OGC Framework | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
-| OpenGL Drawing Surface | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| OpenGL Track Helper | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| OWS Context | Supported | 11.2.7 | | 10.2 | Yes | | |
+| OGC Framework | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
+| OpenGL Drawing Surface | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| OpenGL Track Helper | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| OWS Context | Supported | 11.3.1 | | 10.2 | Yes | | |
 | OSGEarth Bridge | **Deprecated** Use Earth SDK | 10.2 | | | Yes | | |
-| Rendering Attribute Panel | Supported | 11.2.7 | | | Yes | Yes | |
-| S-52 | Supported | 11.2.7 | 11.2.7 | | Yes | Yes | |
-| S-63 | Supported | 11.2.7 | | | Yes | | |
+| Rendering Attribute Panel | Supported | 11.3.1 | | | Yes | Yes | |
+| S-52 | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| S-63 | Supported | 11.3.1 | | | Yes | | |
 | Satellite Propagator | **Deprecated** | 10.2 | | | Yes | | |
 | Seamless Layer Manager | **Archived** | | | | | | |
 | Spatial | **Deprecated** Merged into Editor SDK | 10.2 | 10.2 | | Yes | Yes | |
-| Terrain | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
-| Terrain Viewshed | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
+| Terrain | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
+| Terrain Viewshed | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
 | Terrain Contouring | **Deprecated** Use gdal_contour | | | | Yes | | |
 | Time | **Deprecated** | 10.2 | | | Yes | | |
-| Tracks | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | Yes | Yes |
-| WMTS Data Layer | Supported | 11.2.7 | 11.2.7 | 10.2 | Yes | | |
+| Tracks | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
+| WMTS Data Layer | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | | |
 
 ## Server Components
 
@@ -72,15 +72,15 @@ These components provide capabilities to distribute geospatial information over 
 
 | Component | Status | Windows | Linux | C++ API |
 | ----- | ----- | ----- | ----- | ----- |
-| Web Map Service (WMS) Server (tomcat) | Supported | 11.2.7 | 11.2.7 | |
-| WMS Plugin API | Supported | 11.2.7 | 11.2.7 | Yes |
+| Web Map Service (WMS) Server (tomcat) | Supported | 11.3.1 | 11.3.1 | |
+| WMS Plugin API | Supported | 11.3.1 | 11.3.1 | Yes |
 | WMS Server (IIS) | **Archived** | | | |
-| WMS Server (docker) | Supported | | 11.2.7 | |
+| WMS Server (docker) | Supported | | 11.3.1 | |
 | WMS Basic Map Config SDK | **Archived** | | | |
-| WMS Basic Map Plugin | Supported | 11.2.7 | 11.2.7 | |
+| WMS Basic Map Plugin | Supported | 11.3.1 | 11.3.1 | |
 | WMS CADRG Map Plugin | **Archived** | | | |
 | WMS Historical Map Plugin | **Archived** | | | |
-| WMS Super Map Plugin | Supported | 11.2.7 | 11.2.7 | |
+| WMS Super Map Plugin | Supported | 11.3.1 | 11.3.1 | |
 | Web Processing Service (WPS) Server (tomcat) | **Deprecated** | 10.2 | | |
 | WPS Plugin API | **Deprecated** | 10.2 | 10.2 | Yes |
 | WPS Viewshed Plugin | **Deprecated** | 10.2 | | |
@@ -92,16 +92,16 @@ MapLink Tools support configuration and optimisation of MapLink runtimes.
 | Tool | Status | Windows | Linux | Android |
 | -- | -- | -- | -- | -- |
 | AML XML Generator | **Archived** | | | |
-| GL Data Optimiser | Supported | 11.2.7 | 11.2.7 | |
+| GL Data Optimiser | Supported | 11.3.1 | 11.3.1 | |
 | Imagery Masking Tool | Supported | 10.2 | | |
-| Image Studio | Supported | 11.2.7 | | |
-| **MapLink Studio** | Supported | 11.2.7* | | |
-| MapLink Studio Automation | Supported | 11.2.7 | | |
-| MapViewer | Supported | 11.2.7 | | |
+| Image Studio | Supported | 11.3.1 | | |
+| **MapLink Studio** | Supported | 11.3.1* | | |
+| MapLink Studio Automation | Supported | 11.3.1 | | |
+| MapViewer | Supported | 11.3.1 | | |
 | Print Template Studio | Supported | 10.2 | | |
 | Raster Compressor | Supported | | | 10.2 |
 | Rendition Editor | Supported | 10.2 | | |
-| Symbol Studio | Supported | 11.2.7 | | |
+| Symbol Studio | Supported | 11.3.1 | | |
 
 > *Although MapLink Studio is supported on Windows only, the optimised MapLink maps it generates can be loaded by MapLink runtimes on all operating systems.
 
@@ -113,39 +113,39 @@ Because MapLink Studio is only currently supported on Windows, all filters are a
 
 | Filter | Status | Windows |
 | -- | -- | -- |
-| ADRG | Supported | 11.2.7 |
-| ArcGrid | Supported | 11.2.7 |
-| ARCS | Supported | 11.2.7 - On request |
+| ADRG | Supported | 11.3.1 |
+| ArcGrid | Supported | 11.3.1 |
+| ARCS | Supported | 11.3.1 - On request |
 | Envtia ASCII | **Deprecated** | 10.2 |
-| ASCII DEM | Supported | 11.2.7 |
-| ASRP | Supported | 11.2.7 |
+| ASCII DEM | Supported | 11.3.1 |
+| ASRP | Supported | 11.3.1 |
 | OS Boundary Line | **Deprecated** | 10.2 |
-| CADRG | Supported | 11.2.7 |
-| CIB | Supported | 11.2.7 |
+| CADRG | Supported | 11.3.1 |
+| CIB | Supported | 11.3.1 |
 | CRP | **Deprecated** | 10.2 |
-| DAFIF | Supported | 11.2.7 |
-| DBDBV | Supported | 11.2.7 |
+| DAFIF | Supported | 11.3.1 |
+| DBDBV | Supported | 11.3.1 |
 | DFAD | **Deprecated** | 10.2 |
-| DTM/DTED | Supported | 11.2.7 |
-| DXF | Supported | 11.2.7 |
-| File GeoDatabase | Supported | 11.2.7 |
-| GDAL | Supported | 11.2.7 |
-| GeoPackage | Supported | 11.2.7 |
-| GeoTIFF | Supported | 11.2.7 |
-| GDF | Supported | 11.2.7 |
-| GML | Supported | 11.2.7 |
-| Jeppesen (ARINC) | Supported | 11.2.7 |
-| JPEG2000/GMLJP2 | Supported | 11.2.7 |
-| KML | Supported | 11.2.7 |
+| DTM/DTED | Supported | 11.3.1 |
+| DXF | Supported | 11.3.1 |
+| File GeoDatabase | Supported | 11.3.1 |
+| GDAL | Supported | 11.3.1 |
+| GeoPackage | Supported | 11.3.1 |
+| GeoTIFF | Supported | 11.3.1 |
+| GDF | Supported | 11.3.1 |
+| GML | Supported | 11.3.1 |
+| Jeppesen (ARINC) | Supported | 11.3.1 |
+| JPEG2000/GMLJP2 | Supported | 11.3.1 |
+| KML | Supported | 11.3.1 |
 | MIF (MapInfo) | **Deprecated** | 10.2 |
-| NITF | Supported | 11.2.7 |
-| NTF | Supported | 11.2.7 |
-| OGR | Supported | 11.2.7 |
-| OS Master Map | Supported | 11.2.7 |
-| Raster (generic) | Supported | 11.2.7 |
-| S-57 | Supported | 11.2.7 |
-| Shapefile | Supported | 11.2.7 |
-| VPF | Supported | 11.2.7 |
+| NITF | Supported | 11.3.1 |
+| NTF | Supported | 11.3.1 |
+| OGR | Supported | 11.3.1 |
+| OS Master Map | Supported | 11.3.1 |
+| Raster (generic) | Supported | 11.3.1 |
+| S-57 | Supported | 11.3.1 |
+| Shapefile | Supported | 11.3.1 |
+| VPF | Supported | 11.3.1 |
 
 ## Note
 > Any component that is listed as supported in MapLink 10.2 on Windows or Linux, but not MapLink 11.x, will be upgraded by an upcoming release.
