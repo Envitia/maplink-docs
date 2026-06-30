@@ -28,8 +28,8 @@ The introduction of a Skia-based rendering layer changes this model:
 
 The new core capability introduced in 11.3.1 is a Skia-backed drawing surface:
 
-- **.NET API:** `TSLNSkiaDrawingSurface`  
-- **C++ API:** `TSLSkiaSurface`  
+- [**.NET API:**](../../api/dotnet/class_envitia_1_1_map_link_1_1_t_s_l_n_skia_drawing_surface.html) `TSLNSkiaDrawingSurface`  
+- [**C++ API:**](../../api/cpp/class_t_s_l_skia_surface.html) `TSLSkiaSurface`  
 
 The classes are added to the core:
 
