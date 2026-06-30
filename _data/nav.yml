@@ -11,8 +11,8 @@ pages:
       url: /pages/quick-start-guide
     - title: Developer's Guide
       url: /pages/developers-guide/
-    - title: Wrap-around Maps
-      url: /pages/features/wrap-around-maps
+    - title: New Features
+      url: /pages/features/
     - title: OGC Services Guide
       url: /pages/MapLink OGC Services Deployment User Guide
 
@@ -27,8 +27,8 @@ pages:
 - title: RELEASES
   url: /pages/releases/
   children:
-    - title: MapLink 11.2 (Latest)
-      url: /pages/releases/11.2/11.2.7
+    - title: MapLink 11.3 (Latest)
+      url: /pages/releases/11.3/11.3.1
     - title: All 11.x Releases
       url: /pages/releases/#maplink-pro-11-releases
     - title: All 10.x Releases
@@ -63,5 +63,5 @@ pages:
   highlight: true
 
 messages:
-- title: The old support portal is deprecated. Please email our support team if you need to open a support ticket.
-  url: /pages/support/
+- title: New! MapLink Pro 11.3.1 includes early release of Cross-platform Drawing Surface and integrated WPF and Avalonia controls.
+  url: /pages/features/cross-platform-surface
