@@ -96,6 +96,17 @@ The control can be declared directly in XAML, similar to standard WPF controls:
     MinHeight="100"
     BaseMap ="C:\Program Files\Envitia\MapLink Pro\11.3\Maps\NaturalEarthBasic\NaturalEarthBasic.map" />
 ```
+### Architecture
+
+The control follows a familiar pattern used in Skia-based WPF integrations:
+- A WPF element hosts a bitmap-backed rendering surface
+- Rendering is triggered via UI lifecycle events
+- Skia draws into a surface which is then displayed in the WPF visual tree
+-The WPF Control provides access to the underlying drawing surface object, to support all the functionality you expect from MapLink Pro.
+
+### Platform Support
+
+- .NET 10 WPF (Windows only)
 
 ### Sample Application
 For sample code demonstrating the use of the WPF control, see [the maplink-samples/WPFControlSample](https://github.com/Envitia/maplink-samples/tree/main/WPFControlSample).
@@ -127,11 +138,43 @@ The control can be declared directly in AXAML, similar to standard controls:
     VerticalAlignment="Stretch"
     BaseMap="C:\Program Files\Envitia\MapLink Pro\11.3\Maps\NaturalEarthBasic\NaturalEarthBasic.map" />
 ```
+### Architecture
+
+The control follows the same pattern used in the WPF Control:
+- An Avalonia UI element hosts a bitmap-backed rendering surface
+- Rendering is triggered via UI lifecycle events
+- Skia draws into a surface which is then displayed in the Avalonia UI tree
+- The Avalonia UI Control provides access to the underlying drawing surface object, to support all the functionality you expect from MapLink Pro.
+
+### Benefits
+
+- Consistent rendering across platforms
+- Alignment with MapLink’s new Skia rendering surface
+- Reduced fragmentation between UI frameworks
+
+### Platform Support
+
+- .NET 10
+- Avalonia UI 11.3
+- Initially, Windows-only.
+- Designed for future cross-platform expansion. Cross-platform Avalonia UI control will follow.
 
 ### Sample Application
 
 For sample code demonstrating the use of the Avalonia control, see [the maplink-samples/AvaloniaControlSample](https://github.com/Envitia/maplink-samples/tree/main/AvaloniaControlSample).
 
+## Summary
+
+MapLink Pro 11.3.1 introduces foundational capabilities that reshape how applications are built and deployed:
+
+| Capability | Description |
+| --- | --- |
+| **TSLNSkiaDrawingSurface / TSLSkiaSurface** | Cross-platform Skia-based rendering surface for off-screen drawing |
+| **WPF Control** | Native XAML integration for Windows desktop apps |
+| **Avalonia Control** | Cross-platform UI integration (Windows initially) |
+| Rendering Model | Off-screen, platform-independent, pixel-buffer rendering |
+
+Together, these features mark the transition of MapLink Pro towards a **truly cross-platform geospatial rendering platform**.
 
 ## What's Next?
 
