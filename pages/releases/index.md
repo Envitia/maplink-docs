@@ -1,7 +1,7 @@
 ---
 releases-11: 
  -  version: 11.3.1
-    date: June 25 2026
+    date: June 30 2026
     summary: Early release of cross-platform drawing surface and .NET UI controls.
     release-notes: 11.3/11.3.1
  -  version: 11.2.7
