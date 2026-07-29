@@ -1,5 +1,9 @@
 ---
 releases-11: 
+ -  version: 11.3.2
+    date: July 29 2026
+    summary: Update of Tracks and DDO SDKs to work with the new cross-platform Skia Drawing Surface.
+    release-notes: 11.3/11.3.2
  -  version: 11.3.1
     date: June 30 2026
     summary: Early release of cross-platform drawing surface and .NET UI controls.
