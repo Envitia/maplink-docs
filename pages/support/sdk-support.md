@@ -37,7 +37,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | Dynamic Data Objects (DDO) | **Deprecated** Superseded by Tracks | 11.3.1 | 11.3.1 | | Yes | Yes | |
 | Earth | Supported | 11.3.1 | 11.3.1 | | Yes | | |
 | ECW Data Layer | **Archived** | | | | | | |
-| Editor | Supported | 11.3.1 | 11.3.1 | | Yes | Yes | |
+| Editor | Supported | 11.3.2 | 11.3.2 | | Yes | Yes [up to 11.2.7 only](../releases/11.3/11.3.2) | |
 | Entity Store | **Archived** | | | | | | |
 | ER Mapper | **Archived** | | | | | | |
 | GeoPackage | Supported | 11.3.1 | | 10.2 | Yes | Yes | Yes |
@@ -65,6 +65,9 @@ All supported MapLink Pro runtime SDKs are listed.
 | Time | **Deprecated** | 10.2 | | | Yes | | |
 | Tracks | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | Yes | Yes |
 | WMTS Data Layer | Supported | 11.3.1 | 11.3.1 | 10.2 | Yes | | |
+
+### Editor SDK
+> The Editor SDK 
 
 ## Server Components
 
