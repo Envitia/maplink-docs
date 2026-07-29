@@ -1,10 +1,10 @@
 ---
-title: "MapLink Pro 11.3.1: Cross-platform Drawing Surface"
+title: "MapLink Pro 11.3: Cross-platform Drawing Surface"
 ---
 
 ## Introducing Early Release of Skia-Based Drawing Surfaces and XAML Integration
 
-MapLink Pro 11.3.1 introduces a major step forward in the platform’s evolution towards supporting cross-platform, code-once-deploy-anywhere geospatial applications. This version of MapLink Pro delivers early releases of a new **Skia‑based 2D rendering foundation** and modern **.NET UI integrations for WPF and Avalonia**.
+MapLink Pro 11.3 introduces a major step forward in the platform’s evolution towards supporting cross-platform, code-once-deploy-anywhere geospatial applications. This version of MapLink Pro delivers early releases of a new **Skia‑based 2D rendering foundation** and modern **.NET UI integrations for WPF and Avalonia**.
 
 These enhancements address longstanding limitations in UI embedding and platform portability, and establish the groundwork for future MapLink Pro capabilities.
 
@@ -26,7 +26,7 @@ The introduction of a Skia-based rendering layer changes this model:
 
 ### Overview
 
-The new core capability introduced in 11.3.1 is a Skia-backed drawing surface:
+The new core capability introduced in 11.3 is a Skia-backed drawing surface:
 
 - [**.NET API:**](../../api/dotnet/class_envitia_1_1_map_link_1_1_t_s_l_n_skia_drawing_surface.html) `TSLNSkiaDrawingSurface`  
 - [**C++ API:**](../../api/cpp/class_t_s_l_skia_surface.html) `TSLSkiaSurface`  
@@ -76,7 +76,7 @@ For sample code demonstrating the use of the Skia Drawing Surface, see [the mapl
 
 `TSLNSkiaDrawingSurfaceWPFControl`
 
-To support modern .NET desktop applications, MapLink Pro 11.3.1 introduces a **WPF-native drawing control**.
+To support modern .NET desktop applications, MapLink Pro 11.3 introduces a **WPF-native drawing control**.
 
 The control is available from a new `Envitia.MapLink.TSLNSkiaDrawingSurfaceWPFControl` .NET library included in the MapLink installation.
 
@@ -116,7 +116,7 @@ For sample code demonstrating the use of the WPF control, see [the maplink-sampl
 
 `TSLNSkiaDrawingSurfaceWPFControl`
 
-MapLink Pro 11.3.1 also introduces an **Avalonia UI drawing control**.
+MapLink Pro 11.3 also introduces an **Avalonia UI drawing control**.
 
 The control is available from a new `Envitia.MapLink.TSLNSkiaDrawingSurfaceAvaloniaControl` .NET library included in the MapLink installation.
 
@@ -165,7 +165,7 @@ For sample code demonstrating the use of the Avalonia control, see [the maplink-
 
 ## Summary
 
-MapLink Pro 11.3.1 introduces foundational capabilities that reshape how applications are built and deployed:
+MapLink Pro 11.3 introduces foundational capabilities that reshape how applications are built and deployed:
 
 | Capability | Description |
 | --- | --- |
@@ -178,11 +178,7 @@ Together, these features mark the transition of MapLink Pro towards a **truly cr
 
 ## What's Next?
 
-> We invite comments on these early releases of both the Skia‑based 2D drawing surface and .NET UI integrations for WPF and Avalonia.
-
-We are working on various enhancements to the capability, including:
-- Support for the Tracks and DDO data layers
-- Custom data layer support
+> We invite comments on these early releases of both the Skia‑based 2D drawing surface and .NET UI integrations for WPF and Avalonia. [Click here to access the form...](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Tarn2n_djkKUNZEiKOD6g6laLmmuIftFqTcpdbbB1LdUMllZNjNUMFRJTjQ1TEEzMDk3Skc0SkwwSS4u)
 
 Building upon these enhancements, we will be continuing the evolution to our **code-once / deploy-anywhere** roadmap ambition. The features we plan to explore and deliver include<sup>*</sup>:
 - Make the Skia drawing surface .NET library cross-platform.
