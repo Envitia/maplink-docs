@@ -28,7 +28,7 @@ pages:
   url: /pages/releases/
   children:
     - title: MapLink 11.3 (Latest)
-      url: /pages/releases/11.3/11.3.1
+      url: /pages/releases/11.3/11.3.2
     - title: All 11.x Releases
       url: /pages/releases/#maplink-pro-11-releases
     - title: All 10.x Releases
@@ -63,5 +63,5 @@ pages:
   highlight: true
 
 messages:
-- title: New! MapLink Pro 11.3.1 includes early release of Cross-platform Drawing Surface and integrated WPF and Avalonia controls.
+- title: New! MapLink Pro 11.3 includes early release of Cross-platform Drawing Surface and integrated WPF and Avalonia controls.
   url: /pages/features/cross-platform-surface
