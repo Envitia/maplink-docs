@@ -1,0 +1,411 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "MapLink",
+      "version": "11.3.3"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "activemq-cpp",
+      "version": "3.9.5",
+      "purl": "pkg:generic/activemq-cpp@3.9.5"
+    },
+    {
+      "type": "library",
+      "name": "apr",
+      "version": "1.7.4",
+      "purl": "pkg:generic/apr@1.7.4"
+    },
+    {
+      "type": "library",
+      "name": "boost",
+      "version": "1.85.0",
+      "purl": "pkg:generic/boost@1.85.0"
+    },
+    {
+      "type": "library",
+      "name": "cairo",
+      "version": "1.18.0",
+      "purl": "pkg:generic/cairo@1.18.0"
+    },
+    {
+      "type": "library",
+      "name": "collada-dom",
+      "version": "2.5.0",
+      "purl": "pkg:generic/collada-dom@2.5.0"
+    },
+    {
+      "type": "library",
+      "name": "cryptopp",
+      "version": "8.9.0",
+      "purl": "pkg:generic/cryptopp@8.9.0"
+    },
+    {
+      "type": "library",
+      "name": "libcurl",
+      "version": "8.8.0",
+      "purl": "pkg:generic/libcurl@8.8.0"
+    },
+    {
+      "type": "library",
+      "name": "etcpack",
+      "version": "2.7.4",
+      "purl": "pkg:generic/etcpack@2.7.4"
+    },
+    {
+      "type": "library",
+      "name": "expat",
+      "version": "2.6.2",
+      "purl": "pkg:generic/expat@2.6.2"
+    },
+    {
+      "type": "library",
+      "name": "fontconfig",
+      "version": "2.14.2",
+      "purl": "pkg:generic/fontconfig@2.14.2"
+    },
+    {
+      "type": "library",
+      "name": "freeimage",
+      "version": "3.18.0",
+      "purl": "pkg:generic/freeimage@3.18.0"
+    },
+    {
+      "type": "library",
+      "name": "freetype",
+      "version": "2.13.2",
+      "purl": "pkg:generic/freetype@2.13.2"
+    },
+    {
+      "type": "library",
+      "name": "fribidi",
+      "version": "1.0.15",
+      "purl": "pkg:generic/fribidi@1.0.15"
+    },
+    {
+      "type": "library",
+      "name": "ftgl",
+      "version": "2.4.0",
+      "purl": "pkg:generic/ftgl@2.4.0"
+    },
+    {
+      "type": "library",
+      "name": "gdal",
+      "version": "3.9.0",
+      "purl": "pkg:generic/gdal@3.9.0"
+    },
+    {
+      "type": "library",
+      "name": "geographiclib",
+      "version": "2.4",
+      "purl": "pkg:generic/geographiclib@2.4"
+    },
+    {
+      "type": "library",
+      "name": "geos",
+      "version": "3.12.2",
+      "purl": "pkg:generic/geos@3.12.2"
+    },
+    {
+      "type": "library",
+      "name": "glew",
+      "version": "2.2.0",
+      "purl": "pkg:generic/glew@2.2.0"
+    },
+    {
+      "type": "library",
+      "name": "glib",
+      "version": "2.80.3",
+      "purl": "pkg:generic/glib@2.80.3"
+    },
+    {
+      "type": "library",
+      "name": "gmp",
+      "version": "6.3.0",
+      "purl": "pkg:generic/gmp@6.3.0"
+    },
+    {
+      "type": "library",
+      "name": "gnutls",
+      "version": "3.7.11",
+      "purl": "pkg:generic/gnutls@3.7.11"
+    },
+    {
+      "type": "library",
+      "name": "graphicsmagick",
+      "version": "1.3.43",
+      "purl": "pkg:generic/graphicsmagick@1.3.43"
+    },
+    {
+      "type": "library",
+      "name": "gts",
+      "version": "121130",
+      "purl": "pkg:generic/gts@121130"
+    },
+    {
+      "type": "library",
+      "name": "harfbuzz",
+      "version": "8.5.0",
+      "purl": "pkg:generic/harfbuzz@8.5.0"
+    },
+    {
+      "type": "library",
+      "name": "icu",
+      "version": "75.1",
+      "purl": "pkg:generic/icu@75.1"
+    },
+    {
+      "type": "library",
+      "name": "libjpeg",
+      "version": "9f",
+      "purl": "pkg:generic/libjpeg@9f"
+    },
+    {
+      "type": "library",
+      "name": "onetbb",
+      "version": "2021.12.0",
+      "purl": "pkg:generic/onetbb@2021.12.0"
+    },
+    {
+      "type": "library",
+      "name": "lcms",
+      "version": "2.16",
+      "purl": "pkg:generic/lcms@2.16"
+    },
+    {
+      "type": "library",
+      "name": "lib3ds",
+      "version": "1.3.0",
+      "purl": "pkg:generic/lib3ds@1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "libdom",
+      "version": "0.4.2",
+      "purl": "pkg:generic/libdom@0.4.2"
+    },
+    {
+      "type": "library",
+      "name": "libffi",
+      "version": "3.4.6",
+      "purl": "pkg:generic/libffi@3.4.6"
+    },
+    {
+      "type": "library",
+      "name": "libiconv",
+      "version": "1.17",
+      "purl": "pkg:generic/libiconv@1.17"
+    },
+    {
+      "type": "library",
+      "name": "libkml",
+      "version": "1.3.0",
+      "purl": "pkg:generic/libkml@1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "libparserutils",
+      "version": "0.2.5",
+      "purl": "pkg:generic/libparserutils@0.2.5"
+    },
+    {
+      "type": "library",
+      "name": "libspatialite",
+      "version": "5.1.0",
+      "purl": "pkg:generic/libspatialite@5.1.0"
+    },
+    {
+      "type": "library",
+      "name": "libsquish",
+      "version": "1.15",
+      "purl": "pkg:generic/libsquish@1.15"
+    },
+    {
+      "type": "library",
+      "name": "libsvgtiny",
+      "version": "0.1.8",
+      "purl": "pkg:generic/libsvgtiny@0.1.8"
+    },
+    {
+      "type": "library",
+      "name": "libtasn1",
+      "version": "4.19",
+      "purl": "pkg:generic/libtasn1@4.19"
+    },
+    {
+      "type": "library",
+      "name": "glu",
+      "version": "9.0.3",
+      "purl": "pkg:generic/glu@9.0.3",
+      "description": "libtess from Mesa/GLU"
+    },
+    {
+      "type": "library",
+      "name": "libwebsockets",
+      "version": "4.4.0",
+      "purl": "pkg:generic/libwebsockets@4.4.0"
+    },
+    {
+      "type": "library",
+      "name": "libxft",
+      "version": "2.3.8",
+      "purl": "pkg:generic/libxft@2.3.8"
+    },
+    {
+      "type": "library",
+      "name": "libxml2",
+      "version": "2.15.3",
+      "purl": "pkg:generic/libxml2@2.15.3"
+    },
+    {
+      "type": "library",
+      "name": "libpng",
+      "version": "1.6.58",
+      "purl": "pkg:generic/libpng@1.6.58"
+    },
+    {
+      "type": "library",
+      "name": "nettle",
+      "version": "3.8.1",
+      "purl": "pkg:generic/nettle@3.8.1"
+    },
+    {
+      "type": "library",
+      "name": "openjpeg",
+      "version": "2.5.2",
+      "purl": "pkg:generic/openjpeg@2.5.2"
+    },
+    {
+      "type": "library",
+      "name": "opennavsurf-bag",
+      "version": "1.6.3",
+      "purl": "pkg:generic/opennavsurf-bag@1.6.3"
+    },
+    {
+      "type": "library",
+      "name": "openscenegraph",
+      "version": "3.6.5",
+      "purl": "pkg:generic/openscenegraph@3.6.5"
+    },
+    {
+      "type": "library",
+      "name": "osgearth",
+      "version": "3.7.2",
+      "purl": "pkg:generic/osgearth@3.7.2"
+    },
+    {
+      "type": "library",
+      "name": "pango",
+      "version": "1.54.0",
+      "purl": "pkg:generic/pango@1.54.0"
+    },
+    {
+      "type": "library",
+      "name": "pcre2",
+      "version": "10.44",
+      "purl": "pkg:generic/pcre2@10.44"
+    },
+    {
+      "type": "library",
+      "name": "pixman",
+      "version": "0.43.4",
+      "purl": "pkg:generic/pixman@0.43.4"
+    },
+    {
+      "type": "library",
+      "name": "podofo",
+      "version": "0.10.3",
+      "purl": "pkg:generic/podofo@0.10.3"
+    },
+    {
+      "type": "library",
+      "name": "poppler",
+      "version": "24.06.1",
+      "purl": "pkg:generic/poppler@24.06.1"
+    },
+    {
+      "type": "library",
+      "name": "poppler-data",
+      "version": "0.4.12",
+      "purl": "pkg:generic/poppler-data@0.4.12"
+    },
+    {
+      "type": "library",
+      "name": "proj",
+      "version": "9.4.1",
+      "purl": "pkg:generic/proj@9.4.1"
+    },
+    {
+      "type": "library",
+      "name": "qt",
+      "version": "6.7.2",
+      "purl": "pkg:generic/qt@6.7.2"
+    },
+    {
+      "type": "library",
+      "name": "rapidjson",
+      "version": "1.1.0",
+      "purl": "pkg:generic/rapidjson@1.1.0"
+    },
+    {
+      "type": "library",
+      "name": "skia",
+      "version": "149",
+      "purl": "pkg:generic/skia@149"
+    },
+    {
+      "type": "library",
+      "name": "sqlite3",
+      "version": "3.53.4",
+      "purl": "pkg:generic/sqlite3@3.53.4"
+    },
+    {
+      "type": "library",
+      "name": "sqlite3x",
+      "version": "1.1.0",
+      "purl": "pkg:generic/sqlite3x@1.1.0"
+    },
+    {
+      "type": "library",
+      "name": "libtiff",
+      "version": "4.6.0",
+      "purl": "pkg:generic/libtiff@4.6.0"
+    },
+    {
+      "type": "library",
+      "name": "uriparser",
+      "version": "0.9.8",
+      "purl": "pkg:generic/uriparser@0.9.8"
+    },
+    {
+      "type": "library",
+      "name": "valgrind",
+      "version": "3.23.0",
+      "purl": "pkg:generic/valgrind@3.23.0"
+    },
+    {
+      "type": "library",
+      "name": "xalan-c",
+      "version": "1.12.0",
+      "purl": "pkg:generic/xalan-c@1.12.0"
+    },
+    {
+      "type": "library",
+      "name": "xerces-c",
+      "version": "3.2.5",
+      "purl": "pkg:generic/xerces-c@3.2.5"
+    },
+    {
+      "type": "library",
+      "name": "zlib",
+      "version": "1.3.2",
+      "purl": "pkg:generic/zlib@1.3.2"
+    }
+  ]
+}
