@@ -4,7 +4,7 @@ releases-11:
     date: August 21 2026
     summary: CVE remediations.
     release-notes: 11.3/11.3.3
-    sbom: 11.3/11.3.3/envitia-maplinkpro-11.3.3.cdx.json
+    sbom: 11.3/envitia-maplinkpro-11.3.3.cdx.json
  -  version: 11.3.2
     date: July 29 2026
     summary: Update of Tracks and DDO SDKs to work with the new cross-platform Skia Drawing Surface.
