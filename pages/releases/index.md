@@ -1,67 +1,84 @@
 ---
 releases-11: 
+ -  version: 11.3.3
+    date: August 21 2026
+    summary: CVE remediations.
+    release-notes: 11.3/11.3.3
+    sbom: 11.3/11.3.3/envitia-maplinkpro-11.3.3.cdx.json
  -  version: 11.3.2
     date: July 29 2026
     summary: Update of Tracks and DDO SDKs to work with the new cross-platform Skia Drawing Surface.
     release-notes: 11.3/11.3.2
+    sbom: no-sbom
  -  version: 11.3.1
     date: June 30 2026
     summary: Early release of cross-platform drawing surface and .NET UI controls.
     release-notes: 11.3/11.3.1
+    sbom: no-sbom
  -  version: 11.2.7
     date: March 27 2026
     summary: 3D Earth SDK and WMS Server updates (on Linux).
     release-notes: 11.2/11.2.7
+    sbom: no-sbom
  -  version: 11.2.6
     date: March 19 2026
     summary: 3D Earth SDK and WMS Server updates (on Windows only).
     release-notes: 11.2/11.2.6
+    sbom: no-sbom
  -  version: 11.2.5
     date: January 16 2026
     summary: Global wrapping bug fix.
     release-notes: 11.2/11.2.5
+    sbom: no-sbom
  -  version: 11.2.4
     date: December 12 2025
     summary: Bug fixes.
     release-notes: 11.2/11.2.4
+    sbom: no-sbom
  -  version: 11.2.3
     date: October 10 2025
     summary: Bug fixes.
     release-notes: 11.2/11.2.3
+    sbom: no-sbom
  -  version: 11.2.2
     date: August 22 2025
     summary: Bug fixes.
     release-notes: 11.2/11.2.2
+    sbom: no-sbom
  -  version: 11.2.1
     date: July 21 2025
     summary: Wrap-around maps.
     release-notes: 11.2/11.2.1 
+    sbom: no-sbom
  -  version: 11.1.2
     date: May 12 2025
     summary: Upgrade of Tracks, Network, DDO, Legacy 3D SDKs, merged Spatial (LandLink) into Editor SDK, upgrade DBDB filter.
     release-notes: 11.1/11.1.2
+    sbom: no-sbom
  -  version: 11.1.1
     date: February 20 2025
     summary: Full support for contemporary Windows & Linux OS, compilers and IDEs. Fully updated third-party dependencies. New developer site.
     release-notes: 11.1/11.1.1
+    sbom: no-sbom
 
 releases-10:
  -  version: 10.2.9.42
     date: November 11 2025
     summary: Linux 32-bit release only. Fixed a memory leak in SLD management.
     release-notes: 10.2/10.2.9.42
+    sbom: no-sbom
 ---
 
 ## MapLink Pro 11 Releases
 
-| Version | Release Date  | Summary | Release Notes |
-| --- | --- | --- | --- |
-{% for release in page.releases-11 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
+| Version | Release Date  | Summary | Release Notes | SBOM |
+| --- | --- | --- | --- | --- |
+{% for release in page.releases-11 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) | [SBOM]({{ release.sbom }}) |
 {% endfor %}
 
 ## MapLink Pro 10 Releases
 
-| Version | Release Date  | Summary | Release Notes |
-| --- | --- | --- | --- |
-{% for release in page.releases-10 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) |
+| Version | Release Date  | Summary | Release Notes | SBOM |
+| --- | --- | --- | --- | --- |
+{% for release in page.releases-10 %}| **{{ release.version }}** | {{ release.date }} | {{ release.summary }} | [Release Notes]({{ release.release-notes }}) | [SBOM]({{ release.sbom }}) |
 {% endfor %}
