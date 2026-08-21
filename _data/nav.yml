@@ -28,7 +28,7 @@ pages:
   url: /pages/releases/
   children:
     - title: MapLink 11.3 (Latest)
-      url: /pages/releases/11.3/11.3.2
+      url: /pages/releases/11.3/11.3.3
     - title: All 11.x Releases
       url: /pages/releases/#maplink-pro-11-releases
     - title: All 10.x Releases
