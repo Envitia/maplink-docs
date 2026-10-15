@@ -67,6 +67,7 @@ This guide covers all MapLink Pro SDKs - describing their facilities, how to int
 | [GML SDK](gml-sdk) | Reading and writing GML application schemas and instance data |
 | [.NET SDKs](net-sdks) | C# and VB.NET wrappers with walkthroughs |
 | [.NET Application Controls](net-controls) | Pre-made C# MapLink controls to drop into applications |
+| [Map Build SDK](map-build-sdk) | Programmatic creation of MapLink maps |
 
 ## Advanced Topics
 
