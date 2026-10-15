@@ -44,7 +44,3 @@ After `loadSymbols()` returns, the MS API has cached the location of all SVGs, b
 When calling `getSymbol()` the component SVGs will be loaded if they have not already and a symbol rendered.
 The caller is responsible for cleaning up the returned TSLSymbol object.
 Subsequent calls to `getSymbol()` with the same arguments will not re-render the symbol, but will provide new map objects that use the raster.
-
-## Known Limitations
-
-1. APP-6D support currently only includes icons which are part of MIL-STD 2525D.
