@@ -47,3 +47,9 @@ The deployment guides help you through the process of deploying your application
 <div class="btn-row">
   <a href="../pdf/MapLink Pro 11 White Paper V1.0.pdf" class="btn-sm btn-external" target="_blank">MapLink Pro 11 Data Sheet</a>
 </div>
+
+## Compliance
+
+<div class="btn-row">
+  <a href="../pdf/Envitia-Merchant-889-Representation-v.5-FORM.pdf" class="btn-sm btn-external" target="_blank">US Government National Defense Authorization Act (NDAA) Section 889 Representation Compliance Form - Envitia</a>
+</div>
