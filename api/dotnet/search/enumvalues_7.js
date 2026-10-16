@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wraparounddefault_0',['WrapAroundDefault',['../class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa2f91648ae2a577609ff408b9792c0c32',1,'Envitia::MapLink::TSLN2DDrawingSurface']]],
-  ['wraparounddisabled_1',['WrapAroundDisabled',['../class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aab8167d575ab31fe37592fa98db055581',1,'Envitia::MapLink::TSLN2DDrawingSurface']]],
-  ['wraparoundlongitudinal_2',['WrapAroundLongitudinal',['../class_envitia_1_1_map_link_1_1_t_s_l_n2_d_drawing_surface.html#a5613feabd363d4b0e55c8c87ac1f499aa0ebe054a65e1572db47692121a21cbd1',1,'Envitia::MapLink::TSLN2DDrawingSurface']]]
+  ['magenta_0',['Magenta',['../group__group__dotnet__maplink.html#gga313f912da1941f24f740dbcff13655c1ab91cc2c1416fcca942b61c7ac5b1a9ac',1,'Envitia::MapLink']]],
+  ['meteorologicalspace_1',['MeteorologicalSpace',['../group__group__dotnet__maplink.html#gga919cf47a4ecaf6ecc7dcc18550d1cc41a7455dc0e9a3563f0ddb5dabcb9515dfe',1,'Envitia::MapLink']]],
+  ['minewarfare_2',['MineWarfare',['../group__group__dotnet__maplink.html#gga919cf47a4ecaf6ecc7dcc18550d1cc41a823c77c50a895ba1323afb38960bd84d',1,'Envitia::MapLink']]]
 ];
