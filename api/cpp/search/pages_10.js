@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['macros_0',['MapLink API DLL Macros',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/13/s/SDK/CoreSDK/api/MapLink.h#autotoc_md39',1,'']]],
-  ['management_1',['History Management',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/13/s/SDK/CoreSDK/api/MapLink.h#autotoc_md42',1,'']]],
+  ['macros_0',['MapLink API DLL Macros',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/7/s/SDK/CoreSDK/api/MapLink.h#autotoc_md39',1,'']]],
+  ['management_1',['History Management',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/7/s/SDK/CoreSDK/api/MapLink.h#autotoc_md42',1,'']]],
   ['manager_2',['Using the Track Display Manager',['../trackdisplaymanager_page.html',1,'trackmanagerdeveloperguide_page']]],
   ['manager_20basics_3',['Track Display Manager Basics',['../trackdisplaymanager_page.html#trackdisplaymanager_basics',1,'']]],
   ['map_20chart_20types_20series_20code_4',['Map Chart Types Series Code',['../class_t_s_l_c_a_d_r_g_exporter.html#autotoc_md125',1,'Map/Chart Types (Series Code)'],['../class_t_s_l_r_d_t_e_d_exporter.html#autotoc_md135',1,'Map/Chart Types (Series Code)']]],
@@ -9,7 +9,7 @@ var searchData=
   ['map_20datalater_6',['Howto setup a Map DataLater',['../class_t_s_l_open_g_l_surface.html#realtime_reprojection_howto_setup_a_map_datalayer',1,'']]],
   ['map_20projection_3a_7',['Map Projection:',['../class_t_s_l_transform_traits.html#autotoc_md75',1,'']]],
   ['map_20requirements_8',['Map Requirements',['../class_t_s_l_c_a_d_r_g_exporter.html#autotoc_md120',1,'']]],
-  ['maplink_20api_20dll_20macros_9',['MapLink API DLL Macros',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/13/s/SDK/CoreSDK/api/MapLink.h#autotoc_md39',1,'']]],
+  ['maplink_20api_20dll_20macros_9',['MapLink API DLL Macros',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/7/s/SDK/CoreSDK/api/MapLink.h#autotoc_md39',1,'']]],
   ['maplink_20notes_3a_10',['MapLink Notes:',['../class_t_s_l_d_x_accelerated_surface.html#autotoc_md105',1,'MapLink Notes:'],['../class_t_s_l_w_g_l_accelerated_surface.html#autotoc_md109',1,'MapLink Notes:'],['../class_t_s_l_x11_g_l_accelerated_surface.html#autotoc_md114',1,'MapLink Notes:']]],
   ['maplink_20pro_11',['MapLink Pro',['../index.html',1,'']]],
   ['maplink_20pro_20supported_20file_20formats_12',['MapLink Pro Supported File Formats',['../fileformats_page.html',1,'']]],

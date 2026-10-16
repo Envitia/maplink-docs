@@ -26,5 +26,6 @@ var searchData=
   ['fieldspeed_23',['FieldSpeed',['../class_t_s_l_a_p_p6_a_properties.html#a4ae35815fecff6212132d88f2c5e1021a3cf8bb11fab441f755c484cedbc233ac',1,'TSLAPP6AProperties']]],
   ['fieldstaffcomments_24',['FieldStaffComments',['../class_t_s_l_a_p_p6_a_properties.html#a4ae35815fecff6212132d88f2c5e1021ae443d803e633c228a38b4fe0e25a28fc',1,'TSLAPP6AProperties']]],
   ['fieldtaskforce_25',['FieldTaskForce',['../class_t_s_l_a_p_p6_a_properties.html#a4ae35815fecff6212132d88f2c5e1021aa0d43afb200c01e39141fd63e1a39660',1,'TSLAPP6AProperties']]],
-  ['fieldunitsize_26',['FieldUnitSize',['../class_t_s_l_a_p_p6_a_properties.html#a4ae35815fecff6212132d88f2c5e1021a22665af6f2aa309b2ea0a1f890c19b9b',1,'TSLAPP6AProperties']]]
+  ['fieldunitsize_26',['FieldUnitSize',['../class_t_s_l_a_p_p6_a_properties.html#a4ae35815fecff6212132d88f2c5e1021a22665af6f2aa309b2ea0a1f890c19b9b',1,'TSLAPP6AProperties']]],
+  ['friend_27',['Friend',['../struct_t_s_l_sidc2525d.html#a8545e113e3c3689a00af6f9a470be747a930a91848917f92cf7e2f8d744fa4177',1,'TSLSidc2525d::Friend'],['../struct_t_s_l_sidc_app6d.html#a12db7d8bd4ee14095c2022aeea322de0a930a91848917f92cf7e2f8d744fa4177',1,'TSLSidcApp6d::Friend']]]
 ];
