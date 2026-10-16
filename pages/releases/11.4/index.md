@@ -5,7 +5,7 @@ releases:
  -  version: 11.4.1
     date: October 15 2026
     summary: Map Build SDK, Updated Military Symbology, Rocky 9.
-    sbom: ../no-sbom
+    sbom: envitia-maplinkpro-11.4.1.cdx.json
 ---
 
 # MapLink Pro 11.4 Releases

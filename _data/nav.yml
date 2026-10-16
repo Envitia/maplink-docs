@@ -27,10 +27,8 @@ pages:
 - title: RELEASES
   url: /pages/releases/
   children:
-    - title: MapLink 11.4 (Upcoming)
+    - title: MapLink 11.4 (Latest)
       url: /pages/releases/11.4/11.4.1
-    - title: MapLink 11.3 (Latest)
-      url: /pages/releases/11.3/11.3.3
     - title: All 11.x Releases
       url: /pages/releases/#maplink-pro-11-releases
     - title: All 10.x Releases
@@ -65,5 +63,5 @@ pages:
   highlight: true
 
 messages:
-- title: Coming soon! MapLink Pro 11.4 with new Map Build SDK and updated military symbology
+- title: New! MapLink Pro 11.4 with new Map Build SDK and updated military symbology
   url: /pages/releases/11.4/11.4.1
