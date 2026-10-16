@@ -157,6 +157,6 @@ Map Compiler - The current `.tdf` path can return exit code 0 in a non-assert bu
 
 Map Factory - `LOGFILE` and `CREATEOUTPUTMAP;MERGE;...` are **rejected** by the current parser. MapFactory has no terrain-database command at this time; use MapCompiler64 or `MapLinkProject::CreateTerrainDatabase` for `.tdf` output.
 
-Map Factory - The path to datafiles in the `.mlp` must be lowercase if run on Linux.
+Map Factory - The path to datafiles in the `.mlp` must be proper Linux paths and all lowercase if running on Linux.
 
 Map Factory - The output directory must exist on Linux.
