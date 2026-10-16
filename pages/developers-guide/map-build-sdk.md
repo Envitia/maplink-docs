@@ -79,7 +79,19 @@ MapCompiler64 [-c maplink-home] [-u user-config-file] project.mlp output.map
 MapCompiler64 [-c maplink-home] [-u user-config-file] project.mlp output.tdf
 ```
 
-`project.mlp` must already exist: this tool does not create projects or add data. `.map` builds a map using the current MapLink version; `.tdf` builds a terrain database. The output suffix check is case-sensitive. `-c` selects the MapLink home/config directory (otherwise the MAPL_HOME location is used), `-u` is a user configuration **file** path (otherwise the installation default is used), and `-h` displays help. Use an absolute map output path. For example: `MapCompiler64 -c /opt/maplink /data/atlas.mlp /data/atlas.map`.
+`project.mlp` must already exist: this tool does not create projects or add data. 
+
+`.map` builds a map using the current MapLink version; `.tdf` builds a terrain database. 
+
+The output suffix check is case-sensitive. 
+
+`-c` selects the MapLink home/config directory (otherwise the MAPL_HOME location is used), 
+
+`-u` is a user configuration **file** path (otherwise the installation default is used). 
+
+`-h` displays help. Use an absolute map output path. 
+
+For example: `MapCompiler64 -c /opt/maplink /data/atlas.mlp /data/atlas.map`.
 
 
 ## MapFactory64: run commands from a file
@@ -88,9 +100,21 @@ MapCompiler64 [-c maplink-home] [-u user-config-file] project.mlp output.tdf
 MapFactory64 [-c maplink-home] [-u user-config-file] FactoryCommands.mbc
 ```
 
-Options are the same as MapCompiler64. MapFactory parses the **entire** file before executing any commands, then runs commands in order and stops on a failure. Start with `OPEN` on an existing `.mlp` before modifying or compiling it.  This `.mlp` can be entirely empty.  It is possible to use the template project shipped with MapLink.
+Options are the same as MapCompiler64. MapFactory parses the **entire** file before executing any commands, then runs commands in order and stops on a failure. 
 
-The first line identifies the format, for example `TSLMAPLBATCHCOMMANDS 101` (`100` is also accepted). Each subsequent line has one **uppercase, case-sensitive** command; use `;` between the command and its arguments. Leading indentation is allowed, but spaces within arguments are significant. `#` begins a comment anywhere on a line; quoting or escaping `;` and `#` is not supported. Empty arguments (including trailing semicolons) are rejected. Prefer absolute paths: relative paths use the process working directory, not necessarily the command file's directory.
+The first line identifies the format, for example `TSLMAPLBATCHCOMMANDS 101` (`100` is also accepted). 
+
+Start with `OPEN` on an existing `.mlp` before modifying or compiling it.  This `.mlp` can be entirely empty.  It is possible to use the template project shipped with MapLink.
+
+Each subsequent line has one **uppercase, case-sensitive** command; use `;` between the command and its arguments. 
+
+Leading indentation is allowed, but spaces within arguments are significant. 
+
+`#` begins a comment anywhere on a line; quoting or escaping `;` and `#` is not supported. 
+
+Empty arguments (including trailing semicolons) are rejected. 
+
+Prefer absolute paths: relative paths use the process working directory, not necessarily the command file's directory.
 
 Example `FactoryCommands.mbc`:
 
