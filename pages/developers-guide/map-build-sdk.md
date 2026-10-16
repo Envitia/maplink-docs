@@ -1,4 +1,4 @@
-# Map Build SDK (C++)
+# Map Build SDK
 
 The Map Build SDK provides a cross-platform solution for building MapLink maps and terrain databases from existing projects and source datasets. We provide the following ways to add map generation to your workflows:
 - The C++ `envitia::MapLinkProject` API for direct integration into your solution.
