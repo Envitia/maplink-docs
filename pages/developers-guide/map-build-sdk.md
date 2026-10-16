@@ -27,7 +27,9 @@ On Linux ensure that LD_LIBRARY_PATH includes `<maplinkHome>/lib64` otherwise th
 
 ### Create and compile a map
 
-This example builds from an SHP-filter datafile. Pass an installed MapLink home directory, an existing shape input file, a project destination ending in `.mlp`, and an output destination ending in `.map`. `CreateMap` requires an **absolute** output path (and accepts `.map` or `.mpc`).
+This example adds a shapefile to an existing MapLink project then generates an output map.  It takes an installed MapLink home directory, an existing shape input file, a project destination ending in `.mlp`, and an output destination ending in `.map` as input parameters. 
+
+Note : `CreateMap` requires an **absolute** output path (and accepts `.map` or `.mpc`).
 
 ```cpp
 #include <tslmapbuildproject.h>
