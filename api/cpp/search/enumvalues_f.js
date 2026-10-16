@@ -26,10 +26,11 @@ var searchData=
   ['rastertypergb_23',['RasterTypeRGB',['../class_t_s_l_direct_import_raster.html#adf1a3c0484fe1f55205cc95f7b0b2204a934ae5f4c91e295723cc8e1243de5fc3',1,'TSLDirectImportRaster']]],
   ['rastertypeunknown_24',['RasterTypeUnknown',['../class_t_s_l_direct_import_raster.html#adf1a3c0484fe1f55205cc95f7b0b2204a8363a4602abea8f8a4e4751e7ad315d6',1,'TSLDirectImportRaster']]],
   ['read_25',['Read',['../class_t_s_l_raster_buffer.html#af64ce196ee976c1e4c4de75c3d7dbabfa1967e7ec9c91ff78a9c72f94a3017627',1,'TSLRasterBuffer']]],
-  ['remote_26',['Remote',['../class_t_s_l_o_w_c_content.html#a6141dfa80082d5090c698306cc51c82fae70a3f6fab810bfa85e1eba05ed1d90c',1,'TSLOWCContent']]],
-  ['rgb24_27',['RGB24',['../class_t_s_l_raster_buffer.html#a1fafd2ab8f125b29ddceb5a2aaa91f7ea9a8ef05ce3a00db080e3b3b9655e1a7d',1,'TSLRasterBuffer']]],
-  ['rgba32_28',['RGBA32',['../class_t_s_l_raster_buffer.html#a1fafd2ab8f125b29ddceb5a2aaa91f7ea2456bc8957a78483baba43294b8b02a3',1,'TSLRasterBuffer']]],
-  ['rhumbline_29',['RhumbLine',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry.html#a9f371f748a84095e9ce16e0995294e42a580ff7b621f1ddd42a8f82457e43461d',1,'envitia::maplink::earth::geometry::Geometry']]],
-  ['rotationnorthup_30',['RotationNorthUp',['../class_t_s_l_track_display_manager.html#a1266d9108596e0eca2732a6dcdfab835a86742f3a0f8ba96665d640222b8e3fc5',1,'TSLTrackDisplayManager']]],
-  ['rotationtrackup_31',['RotationTrackUp',['../class_t_s_l_track_display_manager.html#a1266d9108596e0eca2732a6dcdfab835af4f328820cc93f68bafedbc13c21da67',1,'TSLTrackDisplayManager']]]
+  ['reality_26',['Reality',['../struct_t_s_l_sidc2525d.html#abd24017475619981cb518d003518416fabea2233da8204de1c4ba92756f0c753b',1,'TSLSidc2525d::Reality'],['../struct_t_s_l_sidc_app6d.html#a412275912de6aed23c7a52daa20a2dbcabea2233da8204de1c4ba92756f0c753b',1,'TSLSidcApp6d::Reality']]],
+  ['remote_27',['Remote',['../class_t_s_l_o_w_c_content.html#a6141dfa80082d5090c698306cc51c82fae70a3f6fab810bfa85e1eba05ed1d90c',1,'TSLOWCContent']]],
+  ['rgb24_28',['RGB24',['../class_t_s_l_raster_buffer.html#a1fafd2ab8f125b29ddceb5a2aaa91f7ea9a8ef05ce3a00db080e3b3b9655e1a7d',1,'TSLRasterBuffer']]],
+  ['rgba32_29',['RGBA32',['../class_t_s_l_raster_buffer.html#a1fafd2ab8f125b29ddceb5a2aaa91f7ea2456bc8957a78483baba43294b8b02a3',1,'TSLRasterBuffer']]],
+  ['rhumbline_30',['RhumbLine',['../classenvitia_1_1maplink_1_1earth_1_1geometry_1_1_geometry.html#a9f371f748a84095e9ce16e0995294e42a580ff7b621f1ddd42a8f82457e43461d',1,'envitia::maplink::earth::geometry::Geometry']]],
+  ['rotationnorthup_31',['RotationNorthUp',['../class_t_s_l_track_display_manager.html#a1266d9108596e0eca2732a6dcdfab835a86742f3a0f8ba96665d640222b8e3fc5',1,'TSLTrackDisplayManager']]],
+  ['rotationtrackup_32',['RotationTrackUp',['../class_t_s_l_track_display_manager.html#a1266d9108596e0eca2732a6dcdfab835af4f328820cc93f68bafedbc13c21da67',1,'TSLTrackDisplayManager']]]
 ];

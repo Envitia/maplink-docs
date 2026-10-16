@@ -24,7 +24,13 @@ var searchData=
   ['horizontallystriped_5ftoprightstart_21',['HorizontallyStriped_TopRightStart',['../class_envitia_1_1_map_link_1_1_t_s_l_n_w_m_s_data_layer.html#a8f1bb9a6826bfd64d231cab72e89065dafaf684823624377a7cf7268a2d199174',1,'Envitia::MapLink::TSLNWMSDataLayer']]],
   ['horizontalmm_22',['horizontalMM',['../class_envitia_1_1_map_link_1_1_t_s_l_n_device_capabilities.html#a0239ef4f3dd207ca0ed30b95745a1c36',1,'Envitia::MapLink::TSLNDeviceCapabilities']]],
   ['horizontalpixels_23',['horizontalPixels',['../class_envitia_1_1_map_link_1_1_t_s_l_n_device_capabilities.html#a53b914573c9c4f77a3e5465d851e15c6',1,'Envitia::MapLink::TSLNDeviceCapabilities']]],
-  ['hostileenemy_24',['hostileEnemy',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#aa99847409b50a74f91ca93cb1b9e2238',1,'Envitia::MapLink::TSLNAPP6ASymbol']]],
-  ['hostility_25',['hostility',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#a19250dc2f2889761c86d6bac87bfb035',1,'Envitia::MapLink::TSLNAPP6ASymbol']]],
-  ['hostilityenum_26',['HostilityEnum',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#a58a88ddc5d82cc045ee04b9666d3e5cc',1,'Envitia::MapLink::TSLNAPP6ASymbol']]]
+  ['hostile_24',['Hostile',['../group__group__dotnet__maplink.html#gga051a328b4ee5cf844ecb7aefeabba5c0aa62a927d0ab6a08f916aa9f5ec0306e4',1,'Envitia::MapLink']]],
+  ['hostileenemy_25',['hostileEnemy',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#aa99847409b50a74f91ca93cb1b9e2238',1,'Envitia::MapLink::TSLNAPP6ASymbol']]],
+  ['hostility_26',['hostility',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#a19250dc2f2889761c86d6bac87bfb035',1,'Envitia::MapLink::TSLNAPP6ASymbol']]],
+  ['hostilityenum_27',['HostilityEnum',['../class_envitia_1_1_map_link_1_1_t_s_l_n_a_p_p6_a_symbol.html#a58a88ddc5d82cc045ee04b9666d3e5cc',1,'Envitia::MapLink::TSLNAPP6ASymbol']]],
+  ['hq_28',['Hq',['../group__group__dotnet__maplink.html#ggaf52358bc566382fc831f9c79fd3e8defac8a7b031cad2020b5e80cb8816c4d822',1,'Envitia::MapLink']]],
+  ['hqdummy_29',['HqDummy',['../group__group__dotnet__maplink.html#ggaf52358bc566382fc831f9c79fd3e8defade1dd36153ec21477402189b5407d796',1,'Envitia::MapLink']]],
+  ['hqtaskforce_30',['HqTaskForce',['../group__group__dotnet__maplink.html#ggaf52358bc566382fc831f9c79fd3e8defa4fd0559f369e10c862556c85344e1b8c',1,'Envitia::MapLink']]],
+  ['hqtaskforcedummy_31',['HqTaskForceDummy',['../group__group__dotnet__maplink.html#ggaf52358bc566382fc831f9c79fd3e8defa699e05e229dd3f5892020e92f3221a20',1,'Envitia::MapLink']]],
+  ['hqtfdummy_32',['HqTfDummy',['../class_envitia_1_1_map_link_1_1_t_s_l_n_sidc2525d.html#a018460d792c096218a1f7e18b0b86e24',1,'Envitia::MapLink::TSLNSidc2525d']]]
 ];
