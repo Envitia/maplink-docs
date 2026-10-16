@@ -7,5 +7,6 @@ var searchData=
   ['_21tslnenvelope_4',['!TSLNEnvelope',['../class_envitia_1_1_map_link_1_1_t_s_l_n_envelope.html#a7e44c4a3992cb727b521ec26812ba26b',1,'Envitia::MapLink::TSLNEnvelope']]],
   ['_21tslnmuextent_5',['!TSLNMUExtent',['../class_envitia_1_1_map_link_1_1_t_s_l_n_m_u_extent.html#aa7f51b0a6add32180304aaf9df5f91da',1,'Envitia::MapLink::TSLNMUExtent']]],
   ['_21tslnpickresult_6',['!TSLNPickResult',['../class_envitia_1_1_map_link_1_1_t_s_l_n_pick_result.html#accf2d88d03e8f4732958ac680924e0af',1,'Envitia::MapLink::TSLNPickResult']]],
-  ['_21tslnrenderinginterface_7',['!TSLNRenderingInterface',['../class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_interface.html#ad669579e1015b2945b0105ae6b993eaf',1,'Envitia::MapLink::TSLNRenderingInterface']]]
+  ['_21tslnrenderinginterface_7',['!TSLNRenderingInterface',['../class_envitia_1_1_map_link_1_1_t_s_l_n_rendering_interface.html#ad669579e1015b2945b0105ae6b993eaf',1,'Envitia::MapLink::TSLNRenderingInterface']]],
+  ['_21tslnwglsurface_8',['!TSLNWGLSurface',['../class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a5826272b5cd1f01f6137008688d70162',1,'Envitia::MapLink::OpenGLSurface::TSLNWGLSurface']]]
 ];

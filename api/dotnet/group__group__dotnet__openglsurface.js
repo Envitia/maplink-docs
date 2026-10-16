@@ -45,6 +45,7 @@ var group__group__dotnet__openglsurface =
       [ "createBitmap", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#a6dd863f62d669bef819ea09ab3f6209e", null ],
       [ "createContext", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#a55f80528c8825e22e0aac9f0481bbd36", null ],
       [ "deleteContext", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#a840a0106c0d43c3647a40b51404a5979", null ],
+      [ "detach", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#ae1f4de2f68fa969e753cefa6f69e6910", null ],
       [ "fbo", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#aa167a6908e99113389e3f7f101062053", null ],
       [ "height", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#aeaed2b70296f7a4a6c8993b393a52880", null ],
       [ "initGL", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_open_g_l_display_helper.html#a661051a0afee373d38f131d2288afaaa", null ],
@@ -179,8 +180,10 @@ var group__group__dotnet__openglsurface =
     ] ],
     [ "Envitia::MapLink::OpenGLSurface::TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html", [
       [ "TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a26dfa0165d65e3909536e41eda02a30b", null ],
+      [ "~TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a021c259211f565b0d4fb398af2b1127c", null ],
       [ "TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a03a2900b8bc41a52c80ee5dd55fcd872", null ],
       [ "TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#ac54d9b0a871ec50d62af201fb40206ea", null ],
+      [ "!TSLNWGLSurface", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a5826272b5cd1f01f6137008688d70162", null ],
       [ "attach", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a0d78b7b5ee6fd9e0eee8fb6967a80b65", null ],
       [ "clone", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#ad618b0b1e59b8b29ba67c3ed0efd3e20", null ],
       [ "context", "class_envitia_1_1_map_link_1_1_open_g_l_surface_1_1_t_s_l_n_w_g_l_surface.html#a37f639113accbc33750344258bfde1d7", null ],

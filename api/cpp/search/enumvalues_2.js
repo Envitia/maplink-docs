@@ -13,6 +13,14 @@ var searchData=
   ['clockwisespiral_5fcentrestart_10',['ClockwiseSpiral_CentreStart',['../class_t_s_l_w_m_s_data_layer.html#a113f9805e5e2dee2d8ce30bc204744deaf03534b7cdacd47bae244a51cc2b9d6b',1,'TSLWMSDataLayer']]],
   ['clockwisespiral_5ftopleftstart_11',['ClockwiseSpiral_TopLeftStart',['../class_t_s_l_w_m_s_data_layer.html#a113f9805e5e2dee2d8ce30bc204744dea1e826c784932b0eb2e47f0e343ad9528',1,'TSLWMSDataLayer']]],
   ['clockwisespiral_5ftoprightstart_12',['ClockwiseSpiral_TopRightStart',['../class_t_s_l_w_m_s_data_layer.html#a113f9805e5e2dee2d8ce30bc204744deaa47cae1be6d21b9dfa64e693429720be',1,'TSLWMSDataLayer']]],
-  ['custombearing_13',['CustomBearing',['../class_t_s_l_track_graphic_ruler.html#a6805d0ff344a18a9e8455889bc3e9dfbaccb44344e9cbdb1a61d3f7c577d48f48',1,'TSLTrackGraphicRuler']]],
-  ['customdistance_14',['CustomDistance',['../class_t_s_l_track_graphic_ruler.html#a7a55aebe362a71ef5df43c0a8fa110eba87a5d33e646e10d8975b0ba37b1f9b0a',1,'TSLTrackGraphicRuler']]]
+  ['colourbar_13',['ColourBar',['../struct_t_s_l_military_symbology_options.html#ac1c14c85536e46b4f7a8b7e5b59813e0a414d4ec4b623214c29dc2a04b0ae5b91',1,'TSLMilitarySymbologyOptions']]],
+  ['controlmeasure_14',['ControlMeasure',['../struct_t_s_l_sidc2525d.html#ad3f9d1a4bd136e974c582a2ce718649caf88cc94556668b7ea2474e1ffe7f61bb',1,'TSLSidc2525d::ControlMeasure'],['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5daf88cc94556668b7ea2474e1ffe7f61bb',1,'TSLSidcApp6d::ControlMeasure']]],
+  ['custombearing_15',['CustomBearing',['../class_t_s_l_track_graphic_ruler.html#a6805d0ff344a18a9e8455889bc3e9dfbaccb44344e9cbdb1a61d3f7c577d48f48',1,'TSLTrackGraphicRuler']]],
+  ['customdistance_16',['CustomDistance',['../class_t_s_l_track_graphic_ruler.html#a7a55aebe362a71ef5df43c0a8fa110eba87a5d33e646e10d8975b0ba37b1f9b0a',1,'TSLTrackGraphicRuler']]],
+  ['cyberspace_17',['Cyberspace',['../struct_t_s_l_sidc2525d.html#ad3f9d1a4bd136e974c582a2ce718649ca9a93f035fbc2ddbcec753a5def253815',1,'TSLSidc2525d']]],
+  ['cyberspaceair_18',['CyberspaceAir',['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5da393a1d63b28f98b1ba4cab8ed146c0df',1,'TSLSidcApp6d']]],
+  ['cyberspaceland_19',['CyberspaceLand',['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5daff48a083eba6ef5282a9163466afafcd',1,'TSLSidcApp6d']]],
+  ['cyberspacespace_20',['CyberspaceSpace',['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5da3c7eafa9fda29c9e39977ebc92645a8f',1,'TSLSidcApp6d']]],
+  ['cyberspacesubsurface_21',['CyberspaceSubsurface',['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5dae3e20f8c13110bc0c34d9f0e71f42407',1,'TSLSidcApp6d']]],
+  ['cyberspacesurface_22',['CyberspaceSurface',['../struct_t_s_l_sidc_app6d.html#a669e1ff73de9db2471b17b815c07cb5da52e00ed0eae79fea871a707097af0c34',1,'TSLSidcApp6d']]]
 ];
