@@ -4,7 +4,7 @@ releases-11:
     date: October 15 2026
     summary: Map Build SDK, Updated Military Symbology, Rocky 9.
     release-notes: 11.4/11.4.1
-    sbom: no-sbom
+    sbom: 11.4/envitia-maplinkpro-11.4.1.cdx.json
  -  version: 11.3.3
     date: August 21 2026
     summary: CVE remediations.
