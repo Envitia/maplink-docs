@@ -1202,4 +1202,6 @@ A good starting point when developing using the WMS Data Layer is to refer to th
 
 There are certain limitations with its use in conjunction with MapLink 3D drawing surfaces due to the coordinate system support.
 
+## Military Symbology
 
+MIL-STD-2525D and APP-6D are supported via the [Military Symbology API](military-symbology)
