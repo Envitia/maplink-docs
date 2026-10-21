@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['idporganisation_0',['IDPOrganisation',['../class_t_s_l_w_m_s_e_c_p_service_settings_callbacks_1_1_i_d_p_organisation.html',1,'TSLWMSECPServiceSettingsCallbacks']]],
-  ['information_1',['Information',['../class_t_s_l_o_w_c_resource_1_1_information.html',1,'TSLOWCResource::Information'],['../class_t_s_l_o_w_s_context_1_1_information.html',1,'TSLOWSContext::Information']]]
+  ['headingindicatorband_0',['HeadingIndicatorBand',['../class_t_s_l_track_point_symbol.html#struct_t_s_l_track_point_symbol_1_1_heading_indicator_band',1,'TSLTrackPointSymbol']]]
 ];
