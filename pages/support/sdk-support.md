@@ -45,6 +45,7 @@ All supported MapLink Pro runtime SDKs are listed.
 | Impact Assessment | **Archived** | | | | | | |
 | Interaction Modes | Supported | 11.4.1 | 11.4.1 | | Yes | Yes | |
 | KML 2D Layer | Supported | 11.4.1 | | | Yes | | |
+| [Map Build SDK](../releases/11.4/11.4.1) | Supported | 11.4.1 | 11.4.1 | | Yes | | |
 | MapLink OWS | Supported | 11.4.1 | | | Yes | | |
 | Network | Supported | 11.4.1 | | | Yes | | |
 | OGC Filter SDK | **Archived** | | | | | | |
@@ -96,8 +97,10 @@ MapLink Tools support configuration and optimisation of MapLink runtimes.
 | GL Data Optimiser | Supported | 11.4.1 | 11.4.1 | |
 | Imagery Masking Tool | Supported | 10.2 | | |
 | Image Studio | Supported | 11.4.1 | | |
+| [Map Compiler](../releases/11.4/11.4.1) | Supported | 11.4.1 | 11.4.1 | |
+| [Map Factory](../releases/11.4/11.4.1) | Supported | 11.4.1 | 11.4.1 | |
 | **MapLink Studio** | Supported | 11.4.1* | | |
-| MapLink Studio Automation | Supported | 11.4.1 | | |
+| MapLink Studio Automation | **Deprecated** | 11.4.1 | | |
 | MapViewer | Supported | 11.4.1 | | |
 | Print Template Studio | Supported | 10.2 | | |
 | Raster Compressor | Supported | | | 10.2 |
