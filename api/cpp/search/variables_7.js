@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['i_0',['i',['../class_t_s_l_terrain_v_s_output.html#a6f70ce5e34459b1b2ac7404a62efec4b',1,'TSLTerrainVSOutput::dataUnion']]],
-  ['id_1',['id',['../structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_symbol_style.html#a51c27c34c9a8e3b103621f0b4ba79779',1,'envitia::maplink::earth::geometry::Style::SymbolStyle']]],
-  ['imagepath_2',['imagePath',['../structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_symbol_style.html#a92ef06228cb59c74ebaa2d50695719da',1,'envitia::maplink::earth::geometry::Style::SymbolStyle']]],
-  ['infinity_3',['infinity',['../struct_t_s_l_path_cost.html#aca8356631a991b79b398167268905d97',1,'TSLPathCost::infinity'],['../class_t_s_l_opt_path_cost.html#a4529f6dfbf04ef47c5c9d510b6fe8884',1,'TSLOptPathCost::infinity']]]
+  ['haspolygonalhead_0',['hasPolygonalHead',['../struct_t_s_l_arrow_operation_1_1_properties.html#abb8d44303e203ece70d110c9b8043645',1,'TSLArrowOperation::Properties']]],
+  ['headclosed_1',['headClosed',['../struct_t_s_l_arrow_operation_1_1_properties.html#a9cac21d104dfb63c7650d9e352abb42e',1,'TSLArrowOperation::Properties']]],
+  ['headhasenclosingline_2',['headHasEnclosingLine',['../struct_t_s_l_arrow_operation_1_1_properties.html#a290b6a9048ac50409943d65328cfbb0f',1,'TSLArrowOperation::Properties']]],
+  ['height_3',['height',['../structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_extrusion_style.html#a9541366b8872c32de3b66e9383b8c574',1,'envitia::maplink::earth::geometry::Style::ExtrusionStyle']]],
+  ['heightoffset_4',['heightOffset',['../structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_draping_style.html#a08f13c8a32ba7e718c7b520646045aa7',1,'envitia::maplink::earth::geometry::Style::DrapingStyle']]],
+  ['high_5',['high',['../structenvitia_1_1interval.html#aa77ddc568af169d2d4e63bef3a75ddd0',1,'envitia::interval']]],
+  ['horizontalalignment_6',['horizontalAlignment',['../structenvitia_1_1maplink_1_1earth_1_1geometry_1_1_style_1_1_text_style.html#af857e9e4ae9be207a1ad6f4a8a74364d',1,'envitia::maplink::earth::geometry::Style::TextStyle::horizontalAlignment'],['../structenvitia_1_1maplink_1_1earth_1_1_track_symbol_1_1_annotation_attributes.html#a9adfc20b46b0596f6dfb0b2d33747810',1,'envitia::maplink::earth::TrackSymbol::AnnotationAttributes::horizontalAlignment']]],
+  ['hqtfdummy_7',['hqTfDummy',['../struct_t_s_l_sidc2525d.html#a255a839594c4cbcc5720133fb4304ef6',1,'TSLSidc2525d::hqTfDummy'],['../struct_t_s_l_sidc_app6d.html#a4e3cf106c266b5055a655053e0187eb7',1,'TSLSidcApp6d::hqTfDummy']]]
 ];
