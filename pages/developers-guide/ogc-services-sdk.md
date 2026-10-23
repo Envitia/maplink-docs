@@ -121,10 +121,7 @@ For raster 'GetMap' requests, the response object should be cast up to the platf
 In the following example a pseudo implementation of these functions is provided.
 
 ```cpp
-TSLWMSAvailableLayer * MyDataSource::getLayers (TSLWMSRegister *wmsRegister,
-
-const TSLWMSRequest* r)
-
+TSLWMSAvailableLayer * MyDataSource::getLayers (TSLWMSRegister *wmsRegister, const TSLWMSRequest* r)
 {
 
 if ( !m_isConfigurationValid )
