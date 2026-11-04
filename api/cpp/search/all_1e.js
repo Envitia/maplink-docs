@@ -19,7 +19,7 @@ var searchData=
   ['win_5fcolorref_16',['win_colorref',['../structenvitia_1_1win__colorref.html',1,'envitia::win_colorref'],['../structenvitia_1_1win__colorref.html#a01320d818c2835597b01065bf7e3e53d',1,'envitia::win_colorref::win_colorref()=default'],['../structenvitia_1_1win__colorref.html#a000aa4a61da636cd102d4d890dfe8d47',1,'envitia::win_colorref::win_colorref(uint32_t v) noexcept'],['../structenvitia_1_1win__colorref.html#ac7f07d5a9e48bf1b72afca11cf3386e6',1,'envitia::win_colorref::win_colorref(unsigned char R, unsigned char G, unsigned char B) noexcept'],['../structenvitia_1_1win__colorref.html#ab9e861d0d6b415a0747c7678f125b15e',1,'envitia::win_colorref::win_colorref(double R, double G, double B) noexcept']]],
   ['windows_17',['Microsoft Windows',['../_map_link_8h.html#autotoc_md35',1,'']]],
   ['windows_20compiler_20setup_18',['Windows Compiler Setup',['../tslstring_8h.html#autotoc_md61',1,'']]],
-  ['windows_20only_20at_20present_19',['Print support - Windows only at present',['../C:/Azure/azureAgent2/vsts-agent-win-x64-3.246.0/_work/20/s/SDK/CoreSDK/api/MapLinkDrawing.h#autotoc_md57',1,'']]],
+  ['windows_20only_20at_20present_19',['Print support - Windows only at present',['../C:/Azure/azureAgent/vsts-agent-win-x64-3.246.0/_work/7/s/SDK/CoreSDK/api/MapLinkDrawing.h#autotoc_md57',1,'']]],
   ['windows_20operations_20',['Windows Operations',['../group__apigroup__editor__windows__operations.html',1,'']]],
   ['with_20a_20drawing_20surface_21',['Associating a TrackDisplayManager with a drawing surface',['../trackdisplaymanager_page.html#trackdisplaymanager_basics_association',1,'']]],
   ['with_20the_20tslmotifsurface_22',['Limitations in conjunction with the TSLMotifSurface',['../class_t_s_l_raster_buffer.html#autotoc_md28',1,'']]],
