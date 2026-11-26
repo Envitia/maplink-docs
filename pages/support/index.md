@@ -6,15 +6,13 @@ title: MapLink Pro Support
 
 <a href="mailto:support@envitia.com" class="btn-sm btn-cta">Create a support ticket</a>
 
-Envitia offers maintenance & support contracts on their products. Envitia supports the two latest major versions of MapLink Pro, giving customers plenty of time to upgrade to the latest major version.
-
-We do not offer upgrades or patches to end-of-life versions of MapLink Pro. If you still require support for end-of-life versions, this will incur a premium and will be based on best-endeavours using in-support versions of the product.
-
-> **MapLink Pro 11: The next major release of MapLink Pro has now been released. MapLink Pro 8.x will now enter support and maintenance end-of-life. If this affects your contracts, please contact us to discuss how to bring your systems up-to-date.**
+Envitia offers maintenance & support contracts on their products. We have formalised our MapLink Pro version support lifecycle, [see here for details](./version-lifecycle.md).
 
 ## SDK & Feature Deprecation
 
 A deprecated SDK or feature will continue to be available in the product until the next major version. Where possible, a deprecation will be accompanied with a recommendation for an alternative solution.
+
+[Supported SDK information](sdk-support.md)
 
 ## Releases
 
@@ -25,11 +23,11 @@ A deprecated SDK or feature will continue to be available in the product until t
 ## Resources
 
 <div class="btn-row">
-  <a href="platform-support" class="btn-sm">Supported OS & Compilers</a>
-  <a href="sdk-support" class="btn-sm">Supported SDKs</a>
-  <a href="geospatial-formats" class="btn-sm">Geospatial Formats</a>
-  <a href="install-and-upgrade" class="btn-sm">Install & Upgrade Notes</a>
-  <a href="deployment-guide" class="btn-sm">Deployment Guide</a>
+<p/><a href="platform-support" class="btn-sm">Supported OS & Compilers</a>
+<p/><a href="sdk-support" class="btn-sm">Supported SDKs</a>
+<p/><a href="geospatial-formats" class="btn-sm">Geospatial Formats</a>
+<p/><a href="install-and-upgrade" class="btn-sm">Install & Upgrade Notes</a>
+<p/><a href="deployment-guide" class="btn-sm">Deployment Guide</a>
 </div>
 
 ## Get Started with MapLink Pro 11
