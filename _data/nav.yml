@@ -37,6 +37,8 @@ pages:
 - title: SUPPORT
   url: /pages/support/
   children:
+    - title: Version Support Lifecycle
+      url: /pages/support/version-lifecycle
     - title: Install & Upgrade
       url: /pages/support/install-and-upgrade
     - title: Platform Support
@@ -63,5 +65,5 @@ pages:
   highlight: true
 
 messages:
-- title: New! MapLink Pro 11.4 with new Map Build SDK and updated military symbology
-  url: /pages/releases/11.4/11.4.1
+- title: New Version Support Lifecycle Published
+  url: /pages/support/version-lifecycle
